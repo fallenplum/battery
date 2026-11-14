@@ -1,0 +1,55 @@
+{
+  "study_id": "srsr_physics_early_precursor_v1",
+  "date_local": "2026-11-15",
+  "stage": "D0_directed_observability_and_target_audit",
+  "families": ["HUST", "MATR", "Stanford_2"],
+  "expected_provided_cells": 427,
+  "prefix_cutoffs": [10, 50, 100],
+  "prefix_selection": "supplied_cycle_number <= K, preserve absent original cycle numbers",
+  "curve_protocol": {
+    "HUST": {"direction": "charge", "voltage_window_V": [3.1, 3.4]},
+    "MATR": {"direction": "discharge", "voltage_window_V": [2.8, 3.3]},
+    "Stanford_2": {"direction": "discharge", "voltage_window_V": [3.4, 4.1]},
+    "reference_current": "median of upper 20 percent signed active currents in first five provided cycles",
+    "current_tolerance_fraction": 0.05,
+    "minimum_contiguous_segment_points": 15,
+    "minimum_distinct_voltage_points": 12,
+    "voltage_grid_points": 64,
+    "extrapolation": false,
+    "minimum_window_charge_fraction_of_declared_nominal": 0.01,
+    "K100_observed_curve_support_minimum_records": 80,
+    "IC_DV_output": "observed shape diagnostic only until independent qualification"
+  },
+  "capacity_target": {
+    "definition": "max-minus-min discharge Ah / declared nominal Ah in each supplied record",
+    "numeric_valid_range": [0, 1.5],
+    "range_endpoints_excluded": true,
+    "slopes": [[200, 500], [500, 1000]],
+    "endpoint_half_window_cycles": 5,
+    "minimum_valid_endpoint_records": 5,
+    "eol_threshold": 0.8,
+    "eol_rule": "first actually observed valid crossing, preserve censoring when absent",
+    "official_extrapolated_life": "reference metadata, independent from observed event"
+  },
+  "knee": {
+    "model": "continuous piecewise linear hinge",
+    "minimum_points_each_side": 30,
+    "minimum_span_each_side_cycles": "max(30,0.15*observed_span)",
+    "candidate_grid_maximum": 201,
+    "minimum_BIC_improvement_vs_linear": 10,
+    "minimum_SSE_relative_improvement": 0.1,
+    "median_sensitivity_windows": [5, 11, 21],
+    "stability_maximum_tau_range_fraction": 0.1,
+    "future_candidate_after_cycle": 100,
+    "output_name": "stable knee candidate under the registered observational algorithm"
+  },
+  "identity": {
+    "provided_file_sha256": "must match previous exhaustive audit",
+    "legacy_576": "join by exact filename and SHA256",
+    "physical_axis": "source-supported and original-source-authenticated flags are separate",
+    "source_recovery": "official HUST archive with independent safe symbolic pickle parsing"
+  },
+  "model_training": "requires subsequent frozen task contract after D0 coverage, before model test scoring",
+  "test_exposure": "historical benchmark data; report subsequent diagnostic modeling as exploratory",
+  "completion": "427 per-cell results, actual support intersections, failure reasons, examples and independent verification"
+}
