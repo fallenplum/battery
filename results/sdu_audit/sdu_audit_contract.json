@@ -1,0 +1,64 @@
+{
+  "cohort": "SDU_ADDED_SNAPSHOT_20261115",
+  "prefix_cutoffs_supplied": [
+    10,
+    50,
+    100
+  ],
+  "response": {
+    "direction": "discharge",
+    "voltage_window_V": [
+      3.4,
+      4.1
+    ]
+  },
+  "duplicates": "exclude later exact VIQ fingerprints, retain identity uncertainty for first record",
+  "removed_indices": "persist original pre-removal indices, never apply as supplied indices",
+  "feature_and_target_functions": {
+    "preprocessor_file": "preprocess_SDU.py",
+    "preprocessor_sha256": "a1c5c1f0e155b6e0c951d27be1376be8a718b74f59408c990af6a21cd0be8709",
+    "reference_auditor_sha256": "196617c517005c9e19589faefd27b9969d65a75bc40a5daed14dcec300814d0d",
+    "sdu_auditor_sha256": "7f9d0202f4a8f645cf2e6843710a358d155525d68204676f03e599f8134b8f78",
+    "source_to_zip_generation_linkage": "UNVERIFIED",
+    "evidence_lines": {
+      "input_columns_and_counter": [
+        23,
+        90
+      ],
+      "hardcoded_deletions": [
+        134,
+        187
+      ],
+      "diagnostic_whole_cycle_replacement": [
+        192,
+        243
+      ],
+      "renumber_and_time_normalization": [
+        240,
+        265
+      ],
+      "capacity_and_materials": [
+        267,
+        288
+      ]
+    },
+    "official_original_source": "https://zenodo.org/records/14859405",
+    "original_archives": [
+      {
+        "file": "Primary_use_phase.zip",
+        "reported_size_GB": 2.7,
+        "md5": "15d94a62d47dd9036899889b3f36992d"
+      },
+      {
+        "file": "Second_life_phase.zip",
+        "reported_size_GB": 1.8,
+        "md5": "0ba11864d2c1017c84d96dfe578956fc"
+      }
+    ],
+    "independent_cohort": true,
+    "frozen_main_D0_cohort_changed": false,
+    "run_d0_sha256": "8eabe72d566163c1f027af935248a79085b3d48a26c165d0f322b4ecb33b0a64",
+    "physics_targets_sha256": "4e1654cd4c589cbc0d385b11c9466a39851a776596c1d9ba00a4ca017e309cfc"
+  },
+  "qualification_scope": "supplied-coordinate observed candidates, strict authentication remains false"
+}

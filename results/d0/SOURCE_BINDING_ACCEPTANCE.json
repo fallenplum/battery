@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "cells": 427,
+  "official_source_bound_HUST": 77,
+  "HUST_full_cycle_mapping_rule": "original contiguous cycle IDs minus documented first two for 7-5",
+  "provided_prefix_VI": "all first 100 retained records matched raw V and mA/1000 exactly",
+  "knee_true_event_labels": 0,
+  "capacity_target_version": "active-discharge maximum minus finite record baseline / nominal",
+  "superseded_cache_versions": [
+    "d0_cache",
+    "d0_cache_v2"
+  ],
+  "current_cache_version": "d0_cache_v3",
+  "pre_model_score_implementation_repairs": [
+    "Reject any excessive within-segment capacity reset",
+    "Preserve prefix extraction when suffix record ordering changes",
+    "Bind resumption to scanner, target code, audited data and settings hashes",
+    "Restrict capacity maximum to matching current phase"
+  ]
+}

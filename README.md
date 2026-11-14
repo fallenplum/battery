@@ -6,7 +6,14 @@
 
 `SRSR Physics early precursor v1` 从 HUST、MATR、Stanford_2 的 427 个供应电池文件开展定向 D0 审计，核验循环坐标、曲线可比性、早期特征与未来结局支持。历史 576 电池及已完成响应研究仅用于身份映射和证据追踪。
 
-数据资格、实际完成范围与科学限制随执行结果更新，统一见 `results/d0` 和 `report`。
+本轮D0、探索性实验B与新增SDU审计已完成。具体结果见[完整实验报告](report/EXPERIMENT_REPORT_ZH.md)及[SDU审计](report/SDU_DATA_AUDIT_ZH.md)。
+
+## 当前结果
+
+- HUST官方归档77颗、146122个原始循环完成安全静态解析，供应前100记录的V/I逐点匹配。供应K100完整的76颗进入实验B，训练/验证/测试为33/11/32。
+- 主目标500–1000圈平均退化速率，联合模型MAE为3.1316e-5，容量对照为3.4020e-5。配对MAE改善95%区间跨0，稳定增量收益证据有限。
+- HUST77颗均未观察到80%阈值事件，EOL保留右删失。膝点算法存在光滑曲率反例，候选作为形状诊断记录。
+- 新增SDU有86颗、49146圈，完整元数据与全点检查完成。9199条后续重复VIQ、原始循环/Protocol_ID缺口及真实温度支持均已记录。
 
 ## 文件
 
@@ -14,8 +21,24 @@
 - `scripts/run_d0.py` 执行逐电池供应信号审计及早期特征提取。
 - `scripts/physics_targets.py` 生成未来斜率、EOL事件/删失和膝点候选。
 - `results/d0` 保存逐电池资格、未来工况、特征和目标支持表。
+- `scripts/hust_safe_pickle.py` 使用符号解析恢复对象数据，不执行pickle全局构造器。
+- `scripts/build_hust_raw_targets.py` 从原始净容量计数生成未来目标并核验测量定义。
+- `scripts/run_experiment_b.py` 注册、选模、封存及评价实验B。
+- `scripts/audit_sdu.py` 与 `scripts/refresh_sdu_d0.py` 审计新增SDU并验证最终D0定义。
+- `data/cell_metadata.csv` 为B使用的不可变供应元数据快照，`data/legacy_576_ids.json` 为历史队列身份集合。
 
-数据源路径、私有缓存与恢复的源数据由命令行参数指定。运行方式及最终结果见报告。
+数据源路径、私有缓存与恢复的源数据由命令行参数指定。各脚本通过`--help`提供参数。B的注册文件保留所有输入SHA、精确ID拆分、模型列和选模规则。
+
+## B复现命令
+
+在新的输出目录复现，已完成输出的评价入口保持封存。
+
+```bash
+python scripts/run_experiment_b.py --eligible-csv results/d0/eligible_cells.csv --features-csv results/d0/early_observed_features.csv --target-csv results/d0/HUST_RAW_CAPACITY_TARGET_SUPPORT.csv --metadata-csv data/cell_metadata.csv --output runtime/experiment_b_reproduction --register-only
+python scripts/run_experiment_b.py --eligible-csv results/d0/eligible_cells.csv --features-csv results/d0/early_observed_features.csv --target-csv results/d0/HUST_RAW_CAPACITY_TARGET_SUPPORT.csv --metadata-csv data/cell_metadata.csv --output runtime/experiment_b_reproduction
+```
+
+原始数据来源及测量口径见[来源审计](report/PROVENANCE_REVIEW_ZH.md)和[原始容量目标核验](report/HUST_RAW_CAPACITY_TARGET_REVIEW_ZH.md)。后者明确区分原始计数与供应电流积分重建容量。
 
 ## 优势与风险
 

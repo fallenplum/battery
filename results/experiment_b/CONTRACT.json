@@ -1,0 +1,162 @@
+{
+  "cell_id_normalization": "Remove optional .pkl suffix only",
+  "cohort_rule": "HUST original cycle axis authenticated, cycles1..100 complete, at least80 valid K100 curves, every required input finite, and both registered targets observed. All targets and models use this same intersection.",
+  "excluded_cells": [
+    {
+      "cell_id": "HUST_7-5",
+      "reasons": "CYCLES_1_THROUGH_100_INCOMPLETE"
+    }
+  ],
+  "implementation_sha256": "44216d6c78911b05ece3888ae0e017d475ff354f3b0b644d5dd5044562ddbede",
+  "input_row_counts": {
+    "eligible": 427,
+    "features": 1281,
+    "metadata": 1214,
+    "target": 77
+  },
+  "inputs": {
+    "eligible": {
+      "bytes": 243385,
+      "file_name": "eligible_cells.csv",
+      "sha256": "3766aaa91af303536c729ec196292de994577a3b3f1572bf0eb20baa98da77bf"
+    },
+    "features": {
+      "bytes": 339467,
+      "file_name": "early_observed_features.csv",
+      "sha256": "6ad5ac4a1bb2371968ee86f40ea7f51131d4f4af0b8fd649c3d66bae1cee635a"
+    },
+    "metadata": {
+      "bytes": 2221036,
+      "file_name": "cell_metadata.csv",
+      "sha256": "773d7a6431202397d02ccbfcb191bb4f07a3be3d609396969d42191aa9090c12"
+    },
+    "target": {
+      "bytes": 142103,
+      "file_name": "HUST_RAW_CAPACITY_TARGET_SUPPORT.csv",
+      "sha256": "5250db20d7f43497279ea1d9e38686ab8412f5defa368ec858d34b5280b85734"
+    }
+  },
+  "limitations": [
+    "Historical data exploratory holdout. New-to576 does not establish fresh independent confirmation.",
+    "Test cells may share source/device/protocol structures with train cells. This is not a held-out-protocol study.",
+    "The three prior device-context rates extend the prior VIQ-only information contract.",
+    "Chamber30C is design metadata, actual cell temperature is unmeasured.",
+    "Registered stable hinge candidates are shape diagnostics. Knee supervised targets are excluded.",
+    "Bootstrap intervals condition on the fitted models and the selected test-cell cohort."
+  ],
+  "mean_control": "Receives the same prior context availability, predicts the source-train target mean and ignores covariates",
+  "models": {
+    "combined": [
+      "prior_discharge_rate_1_C",
+      "prior_discharge_rate_2_C",
+      "prior_discharge_rate_3_C",
+      "early_capacity_level",
+      "early_capacity_slope",
+      "early_capacity_std",
+      "qv_window_capacity_start_Ah",
+      "qv_window_capacity_end_Ah",
+      "delta_qv_mean_Ah",
+      "delta_qv_std_Ah",
+      "delta_qv_log10_variance",
+      "delta_qv_range_Ah",
+      "delta_qv_rms_Ah"
+    ],
+    "context_capacity": [
+      "prior_discharge_rate_1_C",
+      "prior_discharge_rate_2_C",
+      "prior_discharge_rate_3_C",
+      "early_capacity_level",
+      "early_capacity_slope",
+      "early_capacity_std"
+    ],
+    "context_only": [
+      "prior_discharge_rate_1_C",
+      "prior_discharge_rate_2_C",
+      "prior_discharge_rate_3_C"
+    ],
+    "context_qv_shape": [
+      "prior_discharge_rate_1_C",
+      "prior_discharge_rate_2_C",
+      "prior_discharge_rate_3_C",
+      "qv_window_capacity_start_Ah",
+      "qv_window_capacity_end_Ah",
+      "delta_qv_mean_Ah",
+      "delta_qv_std_Ah",
+      "delta_qv_log10_variance",
+      "delta_qv_range_Ah",
+      "delta_qv_rms_Ah"
+    ],
+    "mean": [
+      "prior_discharge_rate_1_C",
+      "prior_discharge_rate_2_C",
+      "prior_discharge_rate_3_C"
+    ]
+  },
+  "paired_comparison": {
+    "bootstrap_unit": "test_cell",
+    "candidate": "combined",
+    "control": "context_capacity",
+    "improvement": "abs_error(control)-abs_error(candidate)",
+    "interval": "percentile_95",
+    "resamples": 2000,
+    "seed": 20261115
+  },
+  "prefix": 100,
+  "prior_context": {
+    "columns": [
+      "prior_discharge_rate_1_C",
+      "prior_discharge_rate_2_C",
+      "prior_discharge_rate_3_C"
+    ],
+    "last_stage": "excluded_due_to_incorrect_hardcoded_rate",
+    "role": "additional_source_confirmed_prior_device_context",
+    "source": "metadata JSON discharge_protocol[0:3].rate_in_C"
+  },
+  "role_counts": {
+    "test": 32,
+    "train": 33,
+    "val": 11
+  },
+  "selection": {
+    "alphas": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "metric": "validation_MAE",
+    "scaler_fit": "train_only",
+    "selected_model_refit_on_validation": false,
+    "ties": "first alpha in ascending registered order"
+  },
+  "software": {
+    "numpy": "1.26.4",
+    "python": "3.11.14",
+    "scipy": "1.11.4",
+    "sklearn": "1.7.2"
+  },
+  "split_rule": {
+    "historical_members": "train or validation",
+    "new_to_576_members": "all test",
+    "same_exact_cells_for_both_targets": true,
+    "sort_key": "sha256('physics-B-20261115|'+cell_id)",
+    "train_count": "floor(0.75*historical_eligible_count)"
+  },
+  "split_sha256": "903aacd1b5e0cd6e092ae93dde865e2124266638a59880e978c23d70fab9d107",
+  "status": "READY",
+  "targets": {
+    "measurement": "caller_supplied_official_HUST_raw_discharge_counter_capacity_targets",
+    "primary": "r500_1000",
+    "secondary": "r200_500",
+    "unit": "SOH_ratio_per_original_cycle"
+  },
+  "temperature": {
+    "actual_cell_temperature_measured": false,
+    "chamber_setpoint_C": 30.0,
+    "used_as_model_input": false
+  },
+  "test_policy": "Freeze selected coefficients and alpha before opening test predictions. Cache each model prediction atomically. Completed EVALUATED outputs reject reevaluation.",
+  "unsupported_reasons": [],
+  "version": "HUST_EARLY_FEATURE_FUTURE_RATE_EXPERIMENT_B_20261115"
+}

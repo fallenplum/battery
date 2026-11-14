@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "source_file_name": "HUST_1-1.pkl",
+  "source_sha256": "c7b4c2e04dc643daf68cece688fd43a160fd9614170ae73901f9c4bbc27cbc78",
+  "scanner_sha256": "8eabe72d566163c1f027af935248a79085b3d48a26c165d0f322b4ecb33b0a64",
+  "checks": [
+    {
+      "name": "K10_suffix_extreme_values_invariance",
+      "pass": true,
+      "numeric_feature_columns": 14,
+      "differing_keys": []
+    },
+    {
+      "name": "K10_suffix_reverse_records_invariance",
+      "pass": true,
+      "numeric_feature_columns": 14,
+      "differing_keys": []
+    },
+    {
+      "name": "K10_suffix_delete_invariance",
+      "pass": true,
+      "numeric_feature_columns": 14,
+      "differing_keys": []
+    },
+    {
+      "name": "K50_suffix_extreme_values_invariance",
+      "pass": true,
+      "numeric_feature_columns": 14,
+      "differing_keys": []
+    },
+    {
+      "name": "K50_suffix_reverse_records_invariance",
+      "pass": true,
+      "numeric_feature_columns": 14,
+      "differing_keys": []
+    },
+    {
+      "name": "K50_suffix_delete_invariance",
+      "pass": true,
+      "numeric_feature_columns": 14,
+      "differing_keys": []
+    },
+    {
+      "name": "K100_suffix_extreme_values_invariance",
+      "pass": true,
+      "numeric_feature_columns": 14,
+      "differing_keys": []
+    },
+    {
+      "name": "K100_suffix_reverse_records_invariance",
+      "pass": true,
+      "numeric_feature_columns": 14,
+      "differing_keys": []
+    },
+    {
+      "name": "K100_suffix_delete_invariance",
+      "pass": true,
+      "numeric_feature_columns": 14,
+      "differing_keys": []
+    },
+    {
+      "name": "missing_cycles_1_2_do_not_certify_complete_K100",
+      "pass": true,
+      "retained_prefix_records": 98,
+      "complete": false,
+      "source_supported": false
+    },
+    {
+      "name": "charge_oriented_window_capacity_sign",
+      "pass": true,
+      "reason": "observed_curve_supported"
+    },
+    {
+      "name": "discharge_oriented_window_capacity_sign",
+      "pass": true,
+      "reason": "observed_curve_supported"
+    },
+    {
+      "name": "single_large_Q_counter_reset_rejected",
+      "pass": true,
+      "reason": "capacity_reset_or_reversal"
+    },
+    {
+      "name": "missing_discharge_phase_rejects_positive_Qd_column",
+      "pass": true,
+      "value": null
+    },
+    {
+      "name": "real_single_cell_cache_fixture",
+      "pass": true,
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "stale_code_cache_rejected",
+      "pass": true,
+      "returncode": 1
+    },
+    {
+      "name": "cached_source_sha_mismatch_rejected",
+      "pass": true,
+      "returncode": 1
+    },
+    {
+      "name": "original_source_bytes_and_stats_unchanged",
+      "pass": true
+    }
+  ],
+  "additional_phase_semantics_diagnostic": {
+    "name": "inactive_phase_capacity_column_contamination",
+    "correct_active_phase_span": 0.2,
+    "returned_value": 0.2,
+    "rejected_or_active_phase_only": true,
+    "scope": "Malformed capacity-column counterexample. The current dataset requires an independent source-column semantics check."
+  },
+  "interpretation": "Prefix numerical causality and listed regression checks only. Full physical-cycle, original-device and future-policy certification are separate."
+}

@@ -1,0 +1,67 @@
+{
+  "status": "COMPLETE_ORIGINAL_RAW_COUNTER_TARGET_AUDIT",
+  "cells": 77,
+  "raw_cycle_rows": 146122,
+  "valid_raw_capacity_cycles": 146122,
+  "invalid_reasons": {
+    "AVAILABLE": 146122
+  },
+  "N_mid_slope": 77,
+  "N_late_slope": 77,
+  "N_EOL_observed_event": 0,
+  "N_EOL_right_censored": 77,
+  "N_knee_stable_candidate": 77,
+  "all_counter_boundary_changes_zero_within_tolerance": true,
+  "per_cell_ratio_median_distribution": {
+    "count": 77,
+    "min": 1.0096997152243092,
+    "median": 1.016492168967798,
+    "max": 1.0240236010816304,
+    "p05": 1.0120049647726121,
+    "p95": 1.0213513351049093
+  },
+  "counter_monotonic_tolerance_mAh": 1e-06,
+  "large_drop_review_threshold_fraction_nominal": 0.1,
+  "SOH_capacity_denominator_Ah": 1.1,
+  "endpoint_sampling_scope": "First observed D0 sample through final observed D3 sample; unobserved boundary intervals are not extrapolated",
+  "counter_origin_scope": "Capacity column from original authors' public record, not independent instrument calibration",
+  "raw_private_trajectory": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\private\\raw_sources\\HUST\\raw_discharge_capacity_trajectory.csv",
+  "provided_cache_sha256": "2c3ca11833ab9aa01a9b73038166c304aed6e3d9b2167430aabac064e556b727",
+  "target_contract": {
+    "version": "SRSR_PHYSICS_OBSERVED_TARGETS_V1_20261115",
+    "rates": {
+      "r200_500": [
+        200,
+        500
+      ],
+      "r500_1000": [
+        500,
+        1000
+      ]
+    },
+    "endpoint_radius_cycles": 5,
+    "minimum_endpoint_observations": 5,
+    "eol_threshold": 0.8,
+    "knee_median_windows_observations": [
+      5,
+      11,
+      21
+    ],
+    "knee_primary_median_window": 11,
+    "knee_maximum_grid_points": 201,
+    "knee_minimum_side_observations": 30,
+    "knee_minimum_side_span_cycles": 30.0,
+    "knee_minimum_side_fraction_of_cycle_span": 0.15,
+    "knee_minimum_bic_gain": 10.0,
+    "knee_minimum_relative_sse_improvement": 0.1,
+    "knee_maximum_tau_range_fraction_of_cycle_span": 0.1,
+    "linear_parameter_count": 2,
+    "hinge_parameter_count_including_tau": 4
+  },
+  "target_code_sha256": "4e1654cd4c589cbc0d385b11c9466a39851a776596c1d9ba00a4ca017e309cfc",
+  "source_archive_sha256": "071d24617153693b0d29059568525e620f6af6512acc9d00c98c7adcf15125db",
+  "unsafe_pickle_global_invocations": 0,
+  "rul_dq_used_as_labels": false,
+  "early_features_or_models_fitted": false,
+  "elapsed_seconds": 188.42
+}

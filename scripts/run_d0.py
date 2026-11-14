@@ -70,10 +70,17 @@ def load_existing_pickle(path):
 
 def capacity(cycle, key, nominal):
     q = np.asarray(cycle.get(key), dtype=float)
+    current = np.asarray(cycle.get("current_in_A"), dtype=float)
+    if q.ndim != 1 or current.shape != q.shape:
+        return None
+    phase = current < -0.01 * nominal if key.startswith("discharge") else current > 0.01 * nominal
+    active = phase & np.isfinite(q) & np.isfinite(current)
+    if np.count_nonzero(active) < 15:
+        return None
     valid = q[np.isfinite(q)]
     if valid.size < 2:
         return None
-    value = float(valid.max() - valid.min()) / nominal
+    value = float(q[active].max() - valid.min()) / nominal
     return value if 0 < value < 1.5 else None
 
 
@@ -118,7 +125,7 @@ def observed_curve(cycle, setting, reference, nominal):
         return None, "voltage_window_not_covered", None
     if np.mean(np.diff(voltage) * sign < -0.002) > 0.1:
         return None, "voltage_reversal_excess", None
-    if np.mean(np.diff(charge) < -nominal * 1e-5) > 0.05:
+    if np.any(np.diff(charge) < -nominal * 1e-5):
         return None, "capacity_reset_or_reversal", None
     order = np.argsort(voltage, kind="stable")
     unique_v, unique_ix = np.unique(voltage[order], return_index=True)
@@ -182,8 +189,7 @@ def inspect_cell(path, root, audited, legacy_ids):
     nominal = float(payload["nominal_capacity_in_Ah"])
     cycles = payload["cycle_data"]
     numbers = [int(cycle["cycle_number"]) for cycle in cycles]
-    if len(numbers) != len(set(numbers)) or numbers != sorted(numbers):
-        raise ValueError(f"Ambiguous supplied cycle order for {path.name}")
+    global_cycle_order_valid = len(numbers) == len(set(numbers)) and numbers == sorted(numbers)
     setting = SETTINGS[family]
     early = [cycle for cycle in cycles if int(cycle["cycle_number"]) <= 100]
     reference = current_reference(early, setting["direction"])
@@ -202,6 +208,7 @@ def inspect_cell(path, root, audited, legacy_ids):
     row = {"cell_id": identifier, "family": family, "provided_file": path.relative_to(root).as_posix(),
            "provided_file_sha256": digest, "legacy_576_member": path.name in legacy_ids,
            "provided_cycles": len(cycles), "supplied_cycle_min": min(numbers), "supplied_cycle_max": max(numbers),
+           "full_trajectory_cycle_order_valid": global_cycle_order_valid,
            "prefix_K100_records": len(early), "prefix_K100_numbers_complete": prefix_complete,
            "physical_cycle_source_supported": source_supported,
            "physical_cycle_axis_authenticated": False,
@@ -218,6 +225,7 @@ def inspect_cell(path, root, audited, legacy_ids):
            "observed_IC_shape_proxy_records": len(proxies),
            "future_policy_status": "observed_only", "future_policy_basis": "static_design_requires_measured_suffix_check",
            "capacity_coordinate": "supplied_cycle_number", "prefix_capacity_valid": sum(q is not None for n, q in zip(numbers, discharge) if n <= 100),
+           "invalid_capacity_records": sum(q is None for q in discharge),
            "feature_support_scope": "processed_observed_QV_under_early_current_matching"}
     features = [{"cell_id": identifier, "family": family, **make_features(numbers, discharge, curves, prefix)} for prefix in PREFIXES]
     valid_numbers = [n for n, q in zip(numbers, discharge) if q is not None]
@@ -257,8 +265,8 @@ def aggregate(records, output):
         coverage.append({"family": family, "N_provided": len(cells),
                          "N_raw_instrument_source": sum(row["original_instrument_source_available"] for row in cells),
                          "N_K_valid_supplied_numbers": sum(row["prefix_K100_numbers_complete"] for row in cells),
-                         "N_K_source_supported": sum(row["physical_cycle_source_supported"] for row in cells),
-                         "N_K_strict_authenticated": sum(row["physical_cycle_axis_authenticated"] for row in cells),
+                         "N_K_source_supported": sum(row["physical_cycle_source_supported"] and row["prefix_K100_numbers_complete"] for row in cells),
+                         "N_K_strict_authenticated": sum(row["physical_cycle_axis_authenticated"] and row["prefix_K100_numbers_complete"] for row in cells),
                          "N_curve_observed_supported": sum(row["curve_valid_records_K100"] >= 80 for row in cells),
                          "N_ICA_valid": 0, "N_DVA_valid": 0,
                          "N_mid_slope": sum(row["target_mid_supported"] for row in cells),
@@ -266,8 +274,9 @@ def aggregate(records, output):
                          "N_EOLevent": sum(row["target_EOL_event"] for row in cells),
                          "N_EOTime_censored": sum(row["target_EOL_censored"] for row in cells),
                          "N_knee_stable_candidate": sum(row["target_knee_stable_candidate"] for row in cells),
+                         "N_knee_event": 0,
                          "N_policy_known": sum(row["future_policy_status"] in ("known_fixed", "known_scheduled") for row in cells),
-                         "N_curve_K_mid_late_source_intersection": sum(row["physical_cycle_source_supported"] and row["curve_valid_records_K100"] >= 80 and row["target_mid_supported"] and row["target_late_supported"] for row in cells)})
+                         "N_curve_K_mid_late_source_intersection": sum(row["physical_cycle_source_supported"] and row["prefix_K100_numbers_complete"] and row["curve_valid_records_K100"] >= 80 and row["target_mid_supported"] and row["target_late_supported"] for row in cells)})
     write_csv(output / "feature_coverage_by_family_protocol.csv", coverage)
     write_json(output / "D0_STATUS.json", {"provided_cells_completed": len(eligible), "expected": 427,
                                            "coverage": coverage, "status": "COMPLETE" if len(eligible) == 427 else "PARTIAL"})
@@ -285,10 +294,22 @@ def main():
     audit = read_audit(args.prior_audit / "standardized_cells.jsonl")
     legacy = set(json.loads(args.legacy_manifest.read_text(encoding="utf-8"))["cells"])
     cache = args.private_cache / "d0_cells.jsonl"
+    signature = {"scanner_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                 "target_code_sha256": hashlib.sha256(Path(__file__).with_name("physics_targets.py").read_bytes()).hexdigest(),
+                 "prior_audit_sha256": hashlib.sha256((args.prior_audit / "standardized_cells.jsonl").read_bytes()).hexdigest(),
+                 "settings": SETTINGS, "numpy_version": np.__version__}
+    signature_path = args.private_cache / "RUN_SIGNATURE.json"
+    if cache.exists():
+        if not signature_path.exists() or json.loads(signature_path.read_text(encoding="utf-8")) != signature:
+            raise RuntimeError("Cache is bound to different code or data. Select a new private cache directory.")
+    write_json(signature_path, signature)
     results = {}
     if cache.exists():
         for line in cache.read_text(encoding="utf-8").splitlines():
             record = json.loads(line)
+            relative = record["eligible"]["provided_file"]
+            if record["eligible"]["provided_file_sha256"] != audit[relative]["sha256"]:
+                raise RuntimeError("Cached source hash differs from the audited source")
             results[record["eligible"]["cell_id"]] = record
     # The less traceable sources are audited while HUST source recovery proceeds.
     paths = [path for family in ("MATR", "Stanford_2", "HUST") for path in sorted((args.dataset_root / family).glob("*.pkl"))]
