@@ -1,0 +1,121 @@
+{
+  "title": "Cross-prefix Q(V) summary-drift source-validation screening (not blind test)",
+  "source_commit": "c2a89f273574c401bd11f442f5a5e9b72b6782a3",
+  "date": "2026-11-15",
+  "executed_by": "in-conversation numerical analysis using GitHub-connected published CSVs and deterministic JS Ridge fit; Python replication script subsequently committed",
+  "data": "HUST raw capacity; MATR and Stanford supplied-cycle capacity; existing source-train/source-validation splits only",
+  "method": {
+    "input_arms": [
+      "prior context+early K100 capacity",
+      "prior context+early K100 capacity+7 QV summary",
+      "preceding+8 K10/K50/K100 QV drift increments"
+    ],
+    "target_multiplier": 10000,
+    "alpha_grid": [
+      0.01,
+      0.1,
+      1,
+      10,
+      100
+    ],
+    "selection": "inner source-train deterministic interleaved 3 folds, source-validation once per model",
+    "all_test_cells_excluded": true,
+    "new_independent_test_claim": false,
+    "source_validation_historical_exposure": true
+  },
+  "unit": "1e-4 SOH ratio / cycle",
+  "rows": [
+    {
+      "family": "HUST",
+      "target": "r200_500",
+      "train": 33,
+      "val": 11,
+      "capacity": 0.041910367292269386,
+      "qv100": 0.047357032689774696,
+      "drift": 0.051026609662522926,
+      "alpha": [
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "family": "HUST",
+      "target": "r500_1000",
+      "train": 33,
+      "val": 11,
+      "capacity": 0.16560336991168312,
+      "qv100": 0.1732280327989866,
+      "drift": 0.3303009173271372,
+      "alpha": [
+        10,
+        10,
+        0.1
+      ]
+    },
+    {
+      "family": "MATR",
+      "target": "r200_500",
+      "train": 74,
+      "val": 20,
+      "capacity": 1.2673673974811863,
+      "qv100": 0.9132561205216103,
+      "drift": 0.7794867584506994,
+      "alpha": [
+        0.01,
+        0.1,
+        0.1
+      ]
+    },
+    {
+      "family": "MATR",
+      "target": "r500_1000",
+      "train": 15,
+      "val": 5,
+      "capacity": 1.4461465451670272,
+      "qv100": 1.7959384891199615,
+      "drift": 1.512129088541985,
+      "alpha": [
+        10,
+        10,
+        100
+      ]
+    },
+    {
+      "family": "Stanford_2",
+      "target": "r200_500",
+      "train": 75,
+      "val": 26,
+      "capacity": 0.9324349677956684,
+      "qv100": 0.8550266700138176,
+      "drift": 0.8852015575578203,
+      "alpha": [
+        10,
+        10,
+        100
+      ]
+    },
+    {
+      "family": "Stanford_2",
+      "target": "r500_1000",
+      "train": 37,
+      "val": 16,
+      "capacity": 3.8419091370598264,
+      "qv100": 3.606967306284788,
+      "drift": 3.346738641080435,
+      "alpha": [
+        100,
+        100,
+        10
+      ]
+    }
+  ],
+  "limitations": [
+    "The QV difference features are published scalar summaries, not locally resolved 64-point Q(V) tensors.",
+    "Historical source-validation selection and protocol composition; these are not statistically independent results.",
+    "Not an isolated effect of original electrochemical degradation mechanism; protocol and sensor processing can influence all features.",
+    "Python script uses a different sorting implementation for source-fold creation and can yield slightly different numeric coefficients/selected alphas; keep both execution identities distinct.",
+    "No access to original private waveform arrays for running the next local-bin/persistence model in this conversation."
+  ],
+  "research_decision": "MATR r200_500 prioritized for local-bin+temporal-signature source-only experiments; Stanford evaluated as OOD stress and HUST physical-coordinate sanity; no proof of cross-domain physical mechanism."
+}
