@@ -8,9 +8,17 @@
 
 冻结输入含16857条早期Q(V)曲线及123431个有效未来SOH观测。两段速率支持分别151和42颗，主任务保留全部169颗。SOH主口径为设备放电计数除以1.1Ah，名义80%事件169颗。制造条码续测、初始化和后续表征记录均有独立来源身份，原生时钟与Step标签异常保留字段警告。
 
-训练种子固定为42，M0、M1、M2、M3、M3-NL、M3-NP、M3-NR按五折电芯互斥及一次协议外推运行，每项150轮、从头初始化。全部169颗继承历史选择和探索暴露，当前评估属于队列内部探索性证据。
+训练种子固定为42，M0、M1、M2、M3、M3-NL、M3-NP、M3-NR按五折电芯互斥及一次协议外推完成42个单元，每项150轮、从头初始化，总计87150次正式优化器更新。全部169颗继承历史选择和探索暴露，当前评估属于队列内部探索性证据。
 
-数据记录位于 `data/unified_matr_seed42`，模型位于 `models/unified_matr`，训练与分析入口位于 `scripts/unified_matr`。来源报告、数据资格报告和工程报告分别位于 `report/UNIFIED_MATR_SOURCE_RECOVERY_ZH.md`、`data/unified_matr_seed42/dataset_qa_report.md` 和 `report/UNIFIED_MATR_ENGINEERING_RUNTIME_ZH.md`。本轮正式矩阵正在执行。
+主OOF轨迹MAE为M0的0.028632、M1的0.018762、M2的0.018946及M3的0.023268。M1相对M0降低34.47%，完整M3相对M2误差增加22.82%。M3与NL、NP的主OOF配对区间均跨0。未见协议敏感性中M3的MAE为0.046896，M0为0.032889。当前结果未支持完整三模块贡献链。
+
+全部42个选中权重的正常CUDA入口重放及独立统计重算通过，测试轨迹最大绝对差0.0。M2与M3-NR的预期逐值训练复现通过0/6，分析状态为`ANALYZED_WITH_REPRODUCTION_FAILURE`。旧解析Flow组缺少结构性趋势单调保证，已观测查询的实际上升情况与合同口径偏离均有记录。
+
+完整结果见[seed42最终报告](report/UNIFIED_MATR_SEED42_FINAL_ZH.md)、[全部自动分析表](results/unified_matr_seed42/analysis/RESULTS_REPORT_ZH.md)、[独立核验](results/unified_matr_seed42/FINAL_SCIENTIFIC_VERIFICATION.json)及[复现命令](report/UNIFIED_MATR_REPRODUCTION_ZH.md)。42单元的选中权重、可恢复状态与逐电芯预测位于`results/unified_matr_seed42/runs`，两类结果图位于`report/figures/unified_matr_seed42`。
+
+数据记录位于 `data/unified_matr_seed42`，模型位于 `models/unified_matr`，训练与分析入口位于 `scripts/unified_matr`。来源报告、数据资格报告和工程报告分别位于 `report/UNIFIED_MATR_SOURCE_RECOVERY_ZH.md`、`data/unified_matr_seed42/dataset_qa_report.md` 和 `report/UNIFIED_MATR_ENGINEERING_RUNTIME_ZH.md`。
+
+用户补充原供应数据通过BatteryLife的processed Zenodo入口下载。论文附录A.1与官方`process_scripts`中的处理脚本已有对应核对，本地SDU归档与官方发布MD5一致。下载record、代码checkout与实际生成映射的认证范围见[BatteryLife发布版来源补充](report/BATTERYLIFE_ZENODO_RELEASE_LINEAGE_ZH.md)。
 
 ## MATR与Stanford扩展
 

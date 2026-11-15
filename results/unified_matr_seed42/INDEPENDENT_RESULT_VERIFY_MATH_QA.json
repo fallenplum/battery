@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "verification_source_sha256": "7639fd8d8105b5a9ce92f4697d9e3c191bbdc488729e76bc71bf56bf4091e135",
+  "checks": [
+    {
+      "id": "bootstrap_reproducible",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "bootstrap_empty_preserves_missing",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "crossing_linear_interpolation",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "no_crossing_fixed_horizon",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "concordance_event_censor_and_time_ties",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "cell_mean_and_unsupported_denominator",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "actual_observed_query_trend_rises_and_cycle_distances",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "EOL_at_risk_event_censor_and_prediction_ties",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "EOL_paired_cell_protocol_bootstrap_empty_draws_retained",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "independent_scaler_matches_normal_supported_moments",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "independent_scaler_excludes_heldout_cell",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "synthetic_nonconstant_EOL_pair_loop_vs_matrix_schema",
+      "status": "PASS",
+      "detail": {
+        "missing": []
+      }
+    },
+    {
+      "id": "synthetic_nonconstant_EOL_pair_loop_vs_matrix_identities",
+      "status": "PASS",
+      "detail": {
+        "rows": 14,
+        "keys": [
+          "scope",
+          "arm"
+        ]
+      }
+    },
+    {
+      "id": "synthetic_nonconstant_EOL_pair_loop_vs_matrix_values",
+      "status": "PASS",
+      "detail": {
+        "different_columns": []
+      }
+    },
+    {
+      "id": "synthetic_nonconstant_EOL_cell_and_cluster_bootstrap_schema",
+      "status": "PASS",
+      "detail": {
+        "missing": []
+      }
+    },
+    {
+      "id": "synthetic_nonconstant_EOL_cell_and_cluster_bootstrap_identities",
+      "status": "PASS",
+      "detail": {
+        "rows": 28,
+        "keys": [
+          "scope",
+          "contrast",
+          "sampling_unit"
+        ]
+      }
+    },
+    {
+      "id": "synthetic_nonconstant_EOL_cell_and_cluster_bootstrap_values",
+      "status": "PASS",
+      "detail": {
+        "different_columns": []
+      }
+    }
+  ],
+  "summary": {
+    "test_results_read": false,
+    "scope": "synthetic verification mathematics only"
+  },
+  "error": null,
+  "optimizer_updates_performed_by_verifier": 0,
+  "model_fits_performed_by_verifier": 0,
+  "historical_exposure": "All fixed169 cells participated in historical exploration. Training-seed uncertainty is unmeasured under seed42 only."
+}

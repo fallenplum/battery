@@ -1,0 +1,771 @@
+{
+  "study_id": "unified_matr_physics_seed42_v1",
+  "seed": 42,
+  "config_sha256": "25a488e1e27e6dffe5246ad8a9433810a9906aa7eb29d1288f4d21294dc6e72d",
+  "data_freeze_sha256": "276016ea2f72c2d9c366c44b00906c80cf8234f741b48b60a6a2562c57fff4fb",
+  "sources": [
+    {
+      "path": "models/unified_matr/__init__.py",
+      "sha256": "cce92d5151ff423530d8424cd7e177f9627162b040b40a27d2638afc74da0868"
+    },
+    {
+      "path": "models/unified_matr/legacy_operators.py",
+      "sha256": "dafc5eca07888e3cf95ea9618bbfe6051863054518f7922cad5ca87f3c17e8f7"
+    },
+    {
+      "path": "models/unified_matr/model.py",
+      "sha256": "485bfd06f41da5137f85645577b443ebf7a9b72687d4b5dc84928020a4c96252"
+    },
+    {
+      "path": "models/unified_matr/persistence_oracle.py",
+      "sha256": "b702f661c5769c1609ec24c8f6fbac3a3514273eb57c8cf70edf0ddfd2b03889"
+    },
+    {
+      "path": "models/unified_matr/runner_selfcheck.py",
+      "sha256": "33753dc41861edcdeb1a46142979a238cd8f9e40ed491a5598a20f3873381d9f"
+    },
+    {
+      "path": "models/unified_matr/selfcheck.py",
+      "sha256": "cd4f9adceddc8b448598795757fc31e685225de1938ed073fb26d8d4d67b0719"
+    },
+    {
+      "path": "scripts/unified_matr/analyze_results.py",
+      "sha256": "328dd6817d274613c4ae721bb610bdcefdef9e1c368759bada4e17102fcec7c4"
+    },
+    {
+      "path": "scripts/unified_matr/audit_continuations.py",
+      "sha256": "cd1b4f12e2340344978157e6bfbe100ec2dfa129d5c684f58bad71310ad9755e"
+    },
+    {
+      "path": "scripts/unified_matr/audit_native_channels.py",
+      "sha256": "77a3cfd9dcaf60369659142d36d07c3215ebe930c2eb0f49b4f83775d90cc96b"
+    },
+    {
+      "path": "scripts/unified_matr/audit_source_records.py",
+      "sha256": "fa4b4e584c75c2d8e9d571a21c95e10f34b3a06af2e60ae7ee15f19de694fe7f"
+    },
+    {
+      "path": "scripts/unified_matr/audit_source_recovery.py",
+      "sha256": "48ef07eaca6ba764cc4d89a01c2638068c3dad3f6d62afa04168c8c388382cd4"
+    },
+    {
+      "path": "scripts/unified_matr/audit_static_fields.py",
+      "sha256": "27ade9beecf683c1373d23ad82b1e8702bfa79bf1e2664d5d0e66a0cf054ac6c"
+    },
+    {
+      "path": "scripts/unified_matr/build_dataset.py",
+      "sha256": "470eca1affbadc9379c9cb3a1bb7fda865c6b96b9ae8866a08ac2916a7cdd897"
+    },
+    {
+      "path": "scripts/unified_matr/build_instrument_bindings.py",
+      "sha256": "9d226a25bc0ce021bcc35c2010544aed1f74c3d90452120f166e31b21d827bf1"
+    },
+    {
+      "path": "scripts/unified_matr/build_source_registry.py",
+      "sha256": "b4321440119eb0ee9d69c3011443e277874f6b904d3724b221fa8895ae3e0332"
+    },
+    {
+      "path": "scripts/unified_matr/dataset_utils.py",
+      "sha256": "9bbe7727b212096b50fa372a9c447276251aa8b9fd6d3ba0225904580844f3f4"
+    },
+    {
+      "path": "scripts/unified_matr/discover_instrument_sources.py",
+      "sha256": "10ded5ee222af3d3811fa00f6634360063531de51549dd5b1d329f4b18d52d33"
+    },
+    {
+      "path": "scripts/unified_matr/enrich_metadata.py",
+      "sha256": "67496480f23000411eb6943432e7a80f6cac0583aed0ff0783bacd2df29969c2"
+    },
+    {
+      "path": "scripts/unified_matr/inspect_sources.py",
+      "sha256": "342d8e59f5863a0b8586cb89558285481b53a4d1652f9a2a6301d34f22d0a21e"
+    },
+    {
+      "path": "scripts/unified_matr/instrument_csv.py",
+      "sha256": "7d1195b20b08c2d5abaf96e563faef497bbd8d75bb0d5093176bae5f01472982"
+    },
+    {
+      "path": "scripts/unified_matr/measurements.py",
+      "sha256": "e0c397cdcd26ba267cb9914f2e19d441a3682b91a8f952804025f9b9d8f1ee10"
+    },
+    {
+      "path": "scripts/unified_matr/physics_features.py",
+      "sha256": "3104722ae13bca400a9a7ef8138b2a90f4805d8c3de244335a789dac65169d9a"
+    },
+    {
+      "path": "scripts/unified_matr/pilot_instrument_cell.py",
+      "sha256": "5c3ff73e49c32d7aba3e3ea69ed9b16c3fe99980398a34cd6b15a36febdea644"
+    },
+    {
+      "path": "scripts/unified_matr/probe_frozen_loader.py",
+      "sha256": "b6d418d188c48169576047bf9c3def4bbc27ea9ffbff6a81cbe07deaef980027"
+    },
+    {
+      "path": "scripts/unified_matr/raw_reader.py",
+      "sha256": "71f6f7789a3d2729da8924aad1d09bc73e905f4ca9a7133fb4499d066be65648"
+    },
+    {
+      "path": "scripts/unified_matr/recover_instrument_csv.py",
+      "sha256": "522e8c4ebcb63c0a07b421f2636a27b51cefb78d6558c62c2ddacd834ceed96e"
+    },
+    {
+      "path": "scripts/unified_matr/recover_schedule_metadata.py",
+      "sha256": "8ddd53726dd7fcdab9df86efe5b13641ef63cf3516cc403fea72d2af4c4a2227"
+    },
+    {
+      "path": "scripts/unified_matr/recover_sources.py",
+      "sha256": "9fdb11e1b77af7e03a29b6dd2e3a4ebba950b2b861a9ee3cd548c675f8d632eb"
+    },
+    {
+      "path": "scripts/unified_matr/recover_test_metadata.py",
+      "sha256": "fb0300b58dce11f493d00f7d81c1590a9bea22363618862018321a43344c09b7"
+    },
+    {
+      "path": "scripts/unified_matr/replay_source_step_counterexamples.py",
+      "sha256": "d950bebf1f06a36dd564df97e25661fba3b45b92112a8207681be6aab4b33324"
+    },
+    {
+      "path": "scripts/unified_matr/scan_instrument_restarts.py",
+      "sha256": "4da41583101df3cf63e44be3e504ceeaaaadad85db98da2adf5e7ee11a4b8235"
+    },
+    {
+      "path": "scripts/unified_matr/splits.py",
+      "sha256": "a78d80c408580e376bdb5e8056f48555d521250cece292133dd3be39566e9c89"
+    },
+    {
+      "path": "scripts/unified_matr/train_seed42.py",
+      "sha256": "b5aa9251414191bb74c818064cef5bb6fe2fc1f01971bdd6f3027a757f174608"
+    },
+    {
+      "path": "scripts/unified_matr/verify_dataset.py",
+      "sha256": "df34c6ed383eb9f54b76d6c7102ff1003aaa93d62ac1d936ca1c8a9732a29efc"
+    },
+    {
+      "path": "scripts/unified_matr/verify_identity_bindings.py",
+      "sha256": "fcfff96d716626bb6e0c60b88164eaaa645a8d0e4278032d64564f0e4ed4c862"
+    },
+    {
+      "path": "scripts/unified_matr/verify_instrument_binding.py",
+      "sha256": "64d89e52587a0e910b3927bb37821b05b20a868c27e27bf4c804ece1b2e3598e"
+    },
+    {
+      "path": "scripts/unified_matr/verify_instrument_csv.py",
+      "sha256": "07447f279a7a0bf039b1a6e10abd053eada91906979a3351c2f86d965975f8dd"
+    },
+    {
+      "path": "scripts/unified_matr/verify_native_channel_audit.py",
+      "sha256": "7a79e452dc479b4be3b3316796da8dd2060b9b5afb6fcb08454f9776ad85137b"
+    },
+    {
+      "path": "scripts/unified_matr/verify_physics_features.py",
+      "sha256": "9ca697a5585f274ce5977f6e6d766dac5f0fd027064b5b5fd4d1bf4db0cf8712"
+    },
+    {
+      "path": "scripts/unified_matr/verify_schedule_metadata.py",
+      "sha256": "cbac1f535576152731adda057972b5a173202a9f17befda95e6cab4fb9971ce8"
+    },
+    {
+      "path": "scripts/unified_matr/verify_source_discharge_step.py",
+      "sha256": "1642ca4531752afbf8031086b397def862dbbcce1c9a3e1c2b884c3ba622fcdc"
+    },
+    {
+      "path": "scripts/unified_matr/verify_test_metadata.py",
+      "sha256": "f95cd2cae5def39f5593f3d9177f6c26ce19e304eb6b2cc135d073def25f2a66"
+    },
+    {
+      "path": "scripts/run_experiment_b.py",
+      "sha256": "44216d6c78911b05ece3888ae0e017d475ff354f3b0b644d5dd5044562ddbede"
+    }
+  ],
+  "planned_units": 42,
+  "config": {
+    "study_id": "unified_matr_physics_seed42_v1",
+    "training_seeds": [
+      42
+    ],
+    "user_override": "2026-11-15 user requested single seed 42",
+    "contract_file": "SRSR_Physics_统一研究问题_一次性数据处理与模型实验总合同.md",
+    "main_cohort": "169 existing MATR unique physical cells, no suffix-dependent input admission",
+    "prefix_max_original_cycle": 100,
+    "raw_axis_required": true,
+    "voltage_grid": {
+      "min_V": 2.8,
+      "max_V": 3.3,
+      "size": 64
+    },
+    "discharge": {
+      "nominal_capacity_Ah": 1.1,
+      "design_rate_C": 4.0,
+      "source_current_scale_to_A": 1.1,
+      "source_time_scale_to_seconds": 60.0,
+      "source_units_evidence": "https://github.com/chueh-ermon/BMS-autoanalysis/blob/master/cell_analysis.m",
+      "minimum_discharge_current_A": 0.005,
+      "current_tolerance_fraction": 0.1,
+      "min_contiguous_points": 16,
+      "max_voltage_reversal_V": 0.02,
+      "capacity_reset_tolerance_Ah": 1e-05,
+      "full_discharge_min_start_voltage_V": 3.3,
+      "full_discharge_max_end_voltage_V": 2.1,
+      "max_summary_counter_difference_Ah": 0.005,
+      "capacity_zero_tolerance_Ah": 0.0001,
+      "curve_min_prefix_support": 1,
+      "curve_support_report_threshold": 80,
+      "initial_capacity_normalization_cycles": [
+        1,
+        10
+      ],
+      "main_soh_denominator": "nominal_capacity_1.1Ah",
+      "soh100_anchor_original_cycles": [
+        96,
+        100
+      ],
+      "soh100_anchor_reduction": "median of valid observed capacities in the registered prefix interval",
+      "absolute_Q_zero": "instrument discharge counter zero, verified against pre-discharge samples",
+      "shape_Q_zero": "Q at 3.3V, oriented as discharge progresses"
+    },
+    "reference": {
+      "first_qualified_cycles": 10,
+      "maximum_original_cycle": 10,
+      "minimum_cycles": 5,
+      "prefix_only": true
+    },
+    "models": [
+      "M0",
+      "M1",
+      "M2",
+      "M3",
+      "M3-NL",
+      "M3-NP",
+      "M3-NR"
+    ],
+    "split": {
+      "outer_cell_folds": 5,
+      "validation_fraction_of_outer_train": 0.2,
+      "stratify_by": "exact original charging protocol",
+      "identity_unit": "physical cell UID including cross-batch continuations",
+      "protocol_sensitivity_test_fraction": 0.2,
+      "seed": 42,
+      "historical_exposure": "All 169 supplied cells participated in historical exploration. New cross-validation is internal exploratory evidence."
+    },
+    "training": {
+      "initialization": "shared from-scratch seed42",
+      "epochs": 150,
+      "batch_size": 8,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "gradient_clip_norm": 1.0,
+      "checkpoint_selection": "minimum validation cell-mean trajectory MAE",
+      "early_stopping": false,
+      "trajectory_loss": "per-cell mean absolute error over all observed valid future cycles",
+      "auxiliary_rate_windows": [
+        [
+          200,
+          500
+        ],
+        [
+          500,
+          1000
+        ]
+      ],
+      "auxiliary_rate_scale": 1000,
+      "auxiliary_rate_loss_weight": 0.1,
+      "persistence_soft_penalty_weight": 0.001,
+      "observation_soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "observation_residual_amplitude": 0.03,
+      "num_workers": 0,
+      "max_concurrent_gpu_runs": 1
+    },
+    "reporting": {
+      "primary": "cell-mean full observed future trajectory MAE and RMSE",
+      "horizon_bins": [
+        [
+          101,
+          200
+        ],
+        [
+          201,
+          500
+        ],
+        [
+          501,
+          1000
+        ],
+        [
+          1001,
+          1000000
+        ]
+      ],
+      "secondary_rates": [
+        [
+          200,
+          500
+        ],
+        [
+          500,
+          1000
+        ]
+      ],
+      "eol80_prediction_query_max_cycle": 5000,
+      "eol80_definition": "first interpolated trend crossing of nominal SOH0.8 after cycle100, prediction censored at registered5000 query horizon",
+      "eol80_metric": "Harrell concordance over observed EOL80 events and right-censored last-valid original cycles; restrict this secondary endpoint to cells still at risk at100",
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 42,
+      "sampling_units": [
+        "paired physical cell",
+        "exact protocol group"
+      ],
+      "single_seed_limitation": "Training-seed variability is unmeasured."
+    },
+    "formal_training_requires": "verified DATA_FREEZE.json with complete source identity and original cycle-axis QA"
+  },
+  "initialization": {
+    "models": {
+      "M0": {
+        "arm": "M0",
+        "seed": 42,
+        "parameters": 101901,
+        "trainable_parameters": 101901,
+        "initial_state_sha256": "14996a6994432674a41d335fa07d2bd371c3f45b3786dd9105ae548160dd0803",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": false,
+        "rate_flow": false,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M1": {
+        "arm": "M1",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": false,
+        "rate_flow": false,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M2": {
+        "arm": "M2",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": true,
+        "rate_flow": false,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M3": {
+        "arm": "M3",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "84d5a04b58a2649f9d11041bce8a6a8c6d7eed7631e635d9157af5618c3e4c73",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": true,
+        "rate_flow": true,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M3-NL": {
+        "arm": "M3-NL",
+        "seed": 42,
+        "parameters": 134331,
+        "trainable_parameters": 134331,
+        "initial_state_sha256": "6846278dc1c2ecd666108292dae5cb60bb3cef86842fcf5f8afacb7fa65c2217",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": true,
+        "rate_flow": true,
+        "local_removed": true,
+        "nonlocal_matching_hidden": 126,
+        "input_ablation": "global_features_policy_anchor_and_support_only",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M3-NP": {
+        "arm": "M3-NP",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "84d5a04b58a2649f9d11041bce8a6a8c6d7eed7631e635d9157af5618c3e4c73",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": false,
+        "rate_flow": true,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M3-NR": {
+        "arm": "M3-NR",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": true,
+        "rate_flow": false,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      }
+    },
+    "common_initialization_checks": [
+      {
+        "arms": [
+          "M0",
+          "M1"
+        ],
+        "common_tensors": 63,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M2"
+        ],
+        "common_tensors": 63,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M3"
+        ],
+        "common_tensors": 56,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M3-NL"
+        ],
+        "common_tensors": 52,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M3-NP"
+        ],
+        "common_tensors": 56,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M3-NR"
+        ],
+        "common_tensors": 63,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M2"
+        ],
+        "common_tensors": 89,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M3"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M3-NL"
+        ],
+        "common_tensors": 61,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M3-NP"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M3-NR"
+        ],
+        "common_tensors": 89,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M2",
+          "M3"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M2",
+          "M3-NL"
+        ],
+        "common_tensors": 61,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M2",
+          "M3-NP"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M2",
+          "M3-NR"
+        ],
+        "common_tensors": 89,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3",
+          "M3-NL"
+        ],
+        "common_tensors": 67,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3",
+          "M3-NP"
+        ],
+        "common_tensors": 88,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3",
+          "M3-NR"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3-NL",
+          "M3-NP"
+        ],
+        "common_tensors": 67,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3-NL",
+          "M3-NR"
+        ],
+        "common_tensors": 61,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3-NP",
+          "M3-NR"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      }
+    ],
+    "NL_parameter_difference_from_M3": 30
+  }
+}
