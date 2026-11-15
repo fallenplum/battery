@@ -65,6 +65,17 @@ class BoundedRelativeHazardHead(nn.Module):
         return H,lam
 
 
+    def soft_transition_parameters(self, state, condition):
+        """Only statistical model coordinates; not physically verified knee events."""
+        p = self.net(torch.cat((state, condition), -1))
+        center = 100.0 + 1000.0 * (0.1 + 3.5 * torch.sigmoid(p[:, 4]))
+        width = 1000.0 * (0.05 + 0.8 * torch.sigmoid(p[:, 5]))
+        amplitude = 2.0 * torch.tanh(p[:, 3])
+        return {"soft_transition_center_cycle": center,
+                "soft_transition_width_cycles": width,
+                "soft_transition_signed_amplitude": amplitude}
+
+
 class M5BoundedModel(MethodologyFullModel):
     """Reuse all M4 early-cycle routes, transform the latent hazard at output."""
     def __init__(self, policy_dim, global_dim, local_feature_dim, seed=42, dropout=.1,
@@ -106,6 +117,8 @@ class M5BoundedModel(MethodologyFullModel):
                 relative_hazard_integral=H,
                 structure="positive_bounded_relative_hazard_exponential_trend",
                 transition_parameter_semantics="unvalidated_soft_transition_not_knee_label")
+            result["diagnostics"]["flow"].update(self.flow_head.soft_transition_parameters(
+                result["diagnostics"]["state"], result["diagnostics"]["condition"]))
         return result
 
 
