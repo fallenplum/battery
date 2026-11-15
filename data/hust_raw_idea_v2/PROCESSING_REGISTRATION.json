@@ -1,0 +1,177 @@
+{
+  "study_id": "HUST_RAW_IDEA_DATASET_V2_20261115",
+  "config": {
+    "study_id": "HUST_RAW_IDEA_DATASET_V2_20261115",
+    "engineering_recipe_revision": 3,
+    "source_cells": 77,
+    "prefix_original_cycles": [
+      1,
+      100
+    ],
+    "primary_view": "actual2C_loaded_response",
+    "views": [
+      {
+        "name": "actual2C_loaded_response",
+        "phase": "Constant current discharge_3",
+        "direction": "discharge",
+        "current_A": -2.2,
+        "voltage_min_V": 2.8,
+        "voltage_max_V": 3.1,
+        "grid_size": 64,
+        "current_tolerance_A": 0.055,
+        "minimum_window_native_points": 15,
+        "minimum_distinct_voltage_points": 12,
+        "maximum_voltage_reversal_V": 0.02,
+        "minimum_window_charge_Ah": 0.011
+      },
+      {
+        "name": "common5C_charge_response",
+        "phase": "Constant current charge",
+        "direction": "charge",
+        "current_A": 5.5,
+        "voltage_min_V": 3.1,
+        "voltage_max_V": 3.4,
+        "grid_size": 64,
+        "current_tolerance_A": 0.055,
+        "minimum_window_native_points": 15,
+        "minimum_distinct_voltage_points": 12,
+        "maximum_voltage_reversal_V": 0.02,
+        "minimum_window_charge_Ah": 0.011
+      }
+    ],
+    "measurement": {
+      "nominal_capacity_Ah": 1.1,
+      "source_current_to_A": 0.001,
+      "source_capacity_to_Ah": 0.001,
+      "counter_numeric_tolerance_mAh": 1e-06,
+      "capacity_definition": "source-provided net Capacity at first D0 minus last D3, mAh divided by1000",
+      "d3_absolute_Q_definition": "source-provided net Capacity at first D0 minus current native Capacity, mAh divided by1000",
+      "charge_absolute_Q_definition": "native source-provided Capacity divided by1000, after verifying the phase starts at zero",
+      "source_capacity_algorithm_certified": false,
+      "independent_instrument_calibration_certified": false,
+      "temporal_sampling_certified": false,
+      "integral_closure_changes_capacity": false,
+      "native_q_origin_retained": true,
+      "current_dependency": "phase start through the final acquisition-order native point used to bracket the registered interpolation window; later phase current retained as audit"
+    },
+    "features": {
+      "reference_original_cycles": [
+        1,
+        10
+      ],
+      "reference_minimum_curves": 5,
+      "reference_reduction": "pointwise median",
+      "bins": 8,
+      "global_dimensions": 20,
+      "local_dimensions": 26,
+      "dynamic_window_valid_observations": 10,
+      "dynamic_denominator": "actual original-cycle distance",
+      "absolute_Q_preserved_in_decomposition": true,
+      "reference_view_normalization": "V unchanged; I and absolute Q divided by median early-reference Q95-Q05 span",
+      "population_scaler_fitted": false,
+      "soh100_anchor_original_cycles": [
+        96,
+        100
+      ],
+      "soh100_anchor_reduction": "median of valid complete source-provided discharge capacities divided by1.1Ah",
+      "anchor_requires_same_view_curve_support": false,
+      "input_qualification": "at least one view curve, at least5 reference curves, identifiable decomposition, finite positive reference span, and available prefix capacity anchor",
+      "coverage80_is_only_descriptive": true
+    },
+    "targets": {
+      "soh_denominator_Ah": 1.1,
+      "primary_rate_windows": [
+        [
+          200,
+          500
+        ],
+        [
+          500,
+          1000
+        ]
+      ],
+      "primary_rate_method": "exact valid observed endpoints",
+      "audit_rate_window_radius": 5,
+      "audit_rate_minimum_observations": 5,
+      "audit_rate_suffix": "_window5_audit",
+      "eol80_threshold": 0.8,
+      "eol80_method": "first valid observed nominal SOH at or below0.8 with observed event/censor support",
+      "source_rul_or_dq_used_as_future_target": false,
+      "source_rul_or_dq_used_as_input": false
+    },
+    "policy_columns": [
+      "design_charge_initial_C",
+      "design_charge_second_C",
+      "design_charge_voltage_limit_V",
+      "design_discharge_stage0_C",
+      "design_discharge_stage1_C",
+      "design_discharge_stage2_C",
+      "design_discharge_stage3_C",
+      "observed_prefix_discharge_stage3_C",
+      "observed_prefix_charge_initial_C",
+      "design_chamber_setpoint_C",
+      "nominal_capacity_Ah",
+      "discharge_final_design_observed_conflict"
+    ],
+    "policy_provenance": {
+      "design": "Original published Methods and BatteryLife cited discharge-rate mapping",
+      "observed": "median of each original phase current median across original cycles1..100 only",
+      "design_discharge_stage3_C": 1.0,
+      "observed_discharge_stage3_target_C": 2.0,
+      "chamber_setpoint_is_measured_cell_temperature": false,
+      "protocol_group": "tuple of the three declared variable discharge rates with common declared controls",
+      "future_actual_controls_used_as_input": false
+    },
+    "validation_scope": {
+      "ica_dva_certified": false,
+      "dynamic_resistance_certified": false,
+      "polarization_parameter_certified": false,
+      "two_views_are_independently_qualified": true,
+      "full_multistage_discharge_globally_sorted_by_voltage": false,
+      "training_or_model_selection_performed": false,
+      "optimizer_updates_performed": 0
+    }
+  },
+  "config_sha256": "a35d3db6f53c71cd95ef719e79ca1d34339eaf9ed4fe190254edd89a328bed0f",
+  "source_archive_identity_sha256": "7292ba1a03cd983ddb0f44afdf903c1b7cef3b33ef58b5f4bf88263139865e22",
+  "source_outer_sha256": "7c7aa54ede2a52c69e79368155d2f84306faf5060fc0c0ac24a7fba1cd88b515",
+  "source_inner_sha256": "071d24617153693b0d29059568525e620f6af6512acc9d00c98c7adcf15125db",
+  "source_recovery_receipt_sha256": "c2fddb527df4ae8f258f9c51ab56890e1b6f5c5fc874857493322d8ca34c8023",
+  "prefix_support_sha256": "737aaa24b4f2ac1f7ed69e6e6904df7dafb765628d9927e9079d364982d715b3",
+  "protocol_source_sha256": "88c2dc696d20b1fe08d56aa0d3f13783567775e72b14bbbfc08f5fa71040bd5e",
+  "independent_source_audit": {
+    "all_cycle_quality_file": "all_cycle_quality.csv",
+    "all_cycle_quality_sha256": "10185ff5a7e2046df92f11a9d8d38b4446a98fac77451426d90ede7c8f8520dc",
+    "raw_audit_summary_sha256": "e2ded76bfc45d7f8f623ca681083466fd241eb097bdb06a11519b2ce0559a6cd",
+    "full_audit_verification_sha256": "6d264c3d059787ccbfadeba2f9fcc21a2a15dc6f6d9adacd42c9f714f2f249a2"
+  },
+  "code": [
+    {
+      "path": "scripts/hust_raw_v2/build_idea_dataset.py",
+      "sha256": "1c1c7a1d53c5c89d1173a92e854c6df8cadf64c1cfe4777f09ed92b21a8f0e62"
+    },
+    {
+      "path": "scripts/hust_raw_v2/measurements.py",
+      "sha256": "bb7349358d0d766f984801c8808896515a4a208fe563f124a4b9d83f6e12b0be"
+    },
+    {
+      "path": "scripts/hust_raw_v2/prefix_support.py",
+      "sha256": "521989e0fc93fe681de74735b4c556c95fe3a88c89986385f6a7fc7f8bfd3b6c"
+    },
+    {
+      "path": "scripts/hust_safe_pickle.py",
+      "sha256": "ca992358d254d2fb986bba8559e10bdbe9097e6b4424af4acf281ebe8d85eca9"
+    },
+    {
+      "path": "scripts/physics_targets.py",
+      "sha256": "4e1654cd4c589cbc0d385b11c9466a39851a776596c1d9ba00a4ca017e309cfc"
+    },
+    {
+      "path": "scripts/unified_matr/physics_features.py",
+      "sha256": "3104722ae13bca400a9a7ef8138b2a90f4805d8c3de244335a789dac65169d9a"
+    }
+  ],
+  "model_fits": 0,
+  "future_prediction_results_used": 0,
+  "selection_basis": "Fixed source phases and two voltage windows, approved before full label derivation and checked only against original cycles1..100"
+}

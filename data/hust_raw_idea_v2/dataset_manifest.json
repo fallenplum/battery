@@ -1,0 +1,578 @@
+{
+  "status": "DERIVED_DATASET_COMPLETE_PENDING_INDEPENDENT_QA",
+  "study_id": "HUST_RAW_IDEA_DATASET_V2_20261115",
+  "registration_sha256": "50c7ee07dd81598bce88aa991cd637fd3394fc4c2ac69ae8db86d264fd5d6344",
+  "source_cells": 77,
+  "source_capacity_rows": 146122,
+  "valid_source_capacity_rows": 146122,
+  "future_observed_points": 138422,
+  "rate_support": {
+    "r200_500": 77,
+    "r500_1000": 77
+  },
+  "observed_eol80_events": 0,
+  "right_censored_cells": 77,
+  "views": {
+    "actual2C_loaded_response": {
+      "definition": {
+        "name": "actual2C_loaded_response",
+        "phase": "Constant current discharge_3",
+        "direction": "discharge",
+        "current_A": -2.2,
+        "voltage_min_V": 2.8,
+        "voltage_max_V": 3.1,
+        "grid_size": 64,
+        "current_tolerance_A": 0.055,
+        "minimum_window_native_points": 15,
+        "minimum_distinct_voltage_points": 12,
+        "maximum_voltage_reversal_V": 0.02,
+        "minimum_window_charge_Ah": 0.011
+      },
+      "cells": 77,
+      "valid_curves": 7698,
+      "decomposition_valid_curves": 7698,
+      "input_eligible_cells": 77,
+      "coverage_ge80_cells": 77,
+      "reference_valid_cells": 77,
+      "physics_config": {
+        "prefix_max_cycle": 100,
+        "reference_max_cycle": 10,
+        "reference_min_curves": 5,
+        "grid_size": 64,
+        "voltage_min": 2.8,
+        "voltage_max": 3.1,
+        "bins": 8,
+        "smooth_window": 5,
+        "smooth_degree": 2,
+        "huber_delta": 1.345,
+        "irls_max_iterations": 20,
+        "coefficient_tolerance": 1e-10,
+        "noise_floor_Ah": 1e-06,
+        "derivative_floor_Ah_per_V": 1e-08,
+        "max_scaled_basis_condition": 1000000.0,
+        "dynamic_observations": 10,
+        "anchor_max_age_cycles": 4
+      },
+      "array_shapes": {
+        "raw_viq": [
+          77,
+          100,
+          64,
+          3
+        ],
+        "reference_viq": [
+          77,
+          100,
+          64,
+          3
+        ],
+        "point_mask": [
+          77,
+          100,
+          64
+        ],
+        "cycle_ids": [
+          77,
+          100
+        ],
+        "q_absolute": [
+          77,
+          100,
+          64
+        ],
+        "q_native_Ah": [
+          77,
+          100,
+          64
+        ],
+        "q_shape": [
+          77,
+          100,
+          64
+        ],
+        "curve_valid_mask": [
+          77,
+          100
+        ],
+        "q_origin_capacity_mAh": [
+          77,
+          100
+        ],
+        "q_origin_point_index": [
+          77,
+          100
+        ],
+        "window_native_points": [
+          77,
+          100
+        ],
+        "retained_window_native_points": [
+          77,
+          100
+        ],
+        "policy": [
+          77,
+          12
+        ],
+        "policy_mask": [
+          77,
+          12
+        ],
+        "anchor_soh100": [
+          77
+        ],
+        "input_eligible": [
+          77
+        ],
+        "reference_cycle_mask": [
+          77,
+          100
+        ],
+        "reference_qspan_95_05_Ah": [
+          77
+        ],
+        "global_features": [
+          77,
+          100,
+          20
+        ],
+        "global_mask": [
+          77,
+          100,
+          20
+        ],
+        "local_residual": [
+          77,
+          100,
+          64
+        ],
+        "local_mask": [
+          77,
+          100,
+          64
+        ],
+        "local_features": [
+          77,
+          100,
+          8,
+          26
+        ],
+        "local_feature_mask": [
+          77,
+          100,
+          8,
+          26
+        ],
+        "reference_q": [
+          77,
+          64
+        ],
+        "reference_derivative_Ah_per_V": [
+          77,
+          64
+        ],
+        "delta_q": [
+          77,
+          100,
+          64
+        ],
+        "decomposition_valid": [
+          77,
+          100
+        ],
+        "failure_code": [
+          77,
+          100
+        ],
+        "fit_weights": [
+          77,
+          100,
+          64
+        ],
+        "anchor_query_cycles": [
+          77,
+          3
+        ],
+        "anchor_observed_cycles": [
+          77,
+          3
+        ],
+        "anchor_support": [
+          77,
+          3
+        ],
+        "anchor_global_features": [
+          77,
+          3,
+          20
+        ],
+        "anchor_global_mask": [
+          77,
+          3,
+          20
+        ],
+        "anchor_local_features": [
+          77,
+          3,
+          8,
+          26
+        ],
+        "anchor_local_mask": [
+          77,
+          3,
+          8,
+          26
+        ],
+        "cell_uid": [
+          77
+        ],
+        "voltage_grid_V": [
+          64
+        ],
+        "policy_columns": [
+          12
+        ],
+        "global_columns": [
+          20
+        ],
+        "local_columns": [
+          26
+        ]
+      },
+      "q_shape_zero_at_voltage_V": 3.1,
+      "loaded_shape_certification": "response decomposition only; ICA/DVA and electrochemical parameter certification unavailable"
+    },
+    "common5C_charge_response": {
+      "definition": {
+        "name": "common5C_charge_response",
+        "phase": "Constant current charge",
+        "direction": "charge",
+        "current_A": 5.5,
+        "voltage_min_V": 3.1,
+        "voltage_max_V": 3.4,
+        "grid_size": 64,
+        "current_tolerance_A": 0.055,
+        "minimum_window_native_points": 15,
+        "minimum_distinct_voltage_points": 12,
+        "maximum_voltage_reversal_V": 0.02,
+        "minimum_window_charge_Ah": 0.011
+      },
+      "cells": 77,
+      "valid_curves": 3897,
+      "decomposition_valid_curves": 3354,
+      "input_eligible_cells": 34,
+      "coverage_ge80_cells": 37,
+      "reference_valid_cells": 34,
+      "physics_config": {
+        "prefix_max_cycle": 100,
+        "reference_max_cycle": 10,
+        "reference_min_curves": 5,
+        "grid_size": 64,
+        "voltage_min": 3.1,
+        "voltage_max": 3.4,
+        "bins": 8,
+        "smooth_window": 5,
+        "smooth_degree": 2,
+        "huber_delta": 1.345,
+        "irls_max_iterations": 20,
+        "coefficient_tolerance": 1e-10,
+        "noise_floor_Ah": 1e-06,
+        "derivative_floor_Ah_per_V": 1e-08,
+        "max_scaled_basis_condition": 1000000.0,
+        "dynamic_observations": 10,
+        "anchor_max_age_cycles": 4
+      },
+      "array_shapes": {
+        "raw_viq": [
+          77,
+          100,
+          64,
+          3
+        ],
+        "reference_viq": [
+          77,
+          100,
+          64,
+          3
+        ],
+        "point_mask": [
+          77,
+          100,
+          64
+        ],
+        "cycle_ids": [
+          77,
+          100
+        ],
+        "q_absolute": [
+          77,
+          100,
+          64
+        ],
+        "q_native_Ah": [
+          77,
+          100,
+          64
+        ],
+        "q_shape": [
+          77,
+          100,
+          64
+        ],
+        "curve_valid_mask": [
+          77,
+          100
+        ],
+        "q_origin_capacity_mAh": [
+          77,
+          100
+        ],
+        "q_origin_point_index": [
+          77,
+          100
+        ],
+        "window_native_points": [
+          77,
+          100
+        ],
+        "retained_window_native_points": [
+          77,
+          100
+        ],
+        "policy": [
+          77,
+          12
+        ],
+        "policy_mask": [
+          77,
+          12
+        ],
+        "anchor_soh100": [
+          77
+        ],
+        "input_eligible": [
+          77
+        ],
+        "reference_cycle_mask": [
+          77,
+          100
+        ],
+        "reference_qspan_95_05_Ah": [
+          77
+        ],
+        "global_features": [
+          77,
+          100,
+          20
+        ],
+        "global_mask": [
+          77,
+          100,
+          20
+        ],
+        "local_residual": [
+          77,
+          100,
+          64
+        ],
+        "local_mask": [
+          77,
+          100,
+          64
+        ],
+        "local_features": [
+          77,
+          100,
+          8,
+          26
+        ],
+        "local_feature_mask": [
+          77,
+          100,
+          8,
+          26
+        ],
+        "reference_q": [
+          77,
+          64
+        ],
+        "reference_derivative_Ah_per_V": [
+          77,
+          64
+        ],
+        "delta_q": [
+          77,
+          100,
+          64
+        ],
+        "decomposition_valid": [
+          77,
+          100
+        ],
+        "failure_code": [
+          77,
+          100
+        ],
+        "fit_weights": [
+          77,
+          100,
+          64
+        ],
+        "anchor_query_cycles": [
+          77,
+          3
+        ],
+        "anchor_observed_cycles": [
+          77,
+          3
+        ],
+        "anchor_support": [
+          77,
+          3
+        ],
+        "anchor_global_features": [
+          77,
+          3,
+          20
+        ],
+        "anchor_global_mask": [
+          77,
+          3,
+          20
+        ],
+        "anchor_local_features": [
+          77,
+          3,
+          8,
+          26
+        ],
+        "anchor_local_mask": [
+          77,
+          3,
+          8,
+          26
+        ],
+        "cell_uid": [
+          77
+        ],
+        "voltage_grid_V": [
+          64
+        ],
+        "policy_columns": [
+          12
+        ],
+        "global_columns": [
+          20
+        ],
+        "local_columns": [
+          26
+        ]
+      },
+      "q_shape_zero_at_voltage_V": 3.4,
+      "loaded_shape_certification": "response decomposition only; ICA/DVA and electrochemical parameter certification unavailable"
+    }
+  },
+  "policy_columns": [
+    "design_charge_initial_C",
+    "design_charge_second_C",
+    "design_charge_voltage_limit_V",
+    "design_discharge_stage0_C",
+    "design_discharge_stage1_C",
+    "design_discharge_stage2_C",
+    "design_discharge_stage3_C",
+    "observed_prefix_discharge_stage3_C",
+    "observed_prefix_charge_initial_C",
+    "design_chamber_setpoint_C",
+    "nominal_capacity_Ah",
+    "discharge_final_design_observed_conflict"
+  ],
+  "global_columns": [
+    "a_Ah",
+    "b_V",
+    "a_Ah_causal_median",
+    "a_Ah_transient",
+    "a_Ah_causal_MAD",
+    "a_Ah_robust_slope_per_cycle",
+    "a_Ah_last_slope_per_cycle",
+    "a_Ah_slope_change_per_cycle_squared",
+    "a_Ah_signed_direction",
+    "a_Ah_direction_consistency",
+    "a_Ah_support_count",
+    "b_V_causal_median",
+    "b_V_transient",
+    "b_V_causal_MAD",
+    "b_V_robust_slope_per_cycle",
+    "b_V_last_slope_per_cycle",
+    "b_V_slope_change_per_cycle_squared",
+    "b_V_signed_direction",
+    "b_V_direction_consistency",
+    "b_V_support_count"
+  ],
+  "local_columns": [
+    "residual_signed_mean_Ah",
+    "residual_rms_Ah",
+    "residual_squared_integral_Ah2_V",
+    "absolute_residual_centroid_V",
+    "absolute_residual_peak_V",
+    "availability_fraction",
+    "high_frequency_noise_proxy_Ah",
+    "delta_q_signed_mean_Ah",
+    "residual_signed_mean_Ah_causal_median",
+    "residual_signed_mean_Ah_transient",
+    "residual_signed_mean_Ah_causal_MAD",
+    "residual_signed_mean_Ah_robust_slope_per_cycle",
+    "residual_signed_mean_Ah_last_slope_per_cycle",
+    "residual_signed_mean_Ah_slope_change_per_cycle_squared",
+    "residual_signed_mean_Ah_signed_direction",
+    "residual_signed_mean_Ah_direction_consistency",
+    "residual_signed_mean_Ah_support_count",
+    "residual_rms_Ah_causal_median",
+    "residual_rms_Ah_transient",
+    "residual_rms_Ah_causal_MAD",
+    "residual_rms_Ah_robust_slope_per_cycle",
+    "residual_rms_Ah_last_slope_per_cycle",
+    "residual_rms_Ah_slope_change_per_cycle_squared",
+    "residual_rms_Ah_signed_direction",
+    "residual_rms_Ah_direction_consistency",
+    "residual_rms_Ah_support_count"
+  ],
+  "capacity_provenance": {
+    "nominal_capacity_Ah": 1.1,
+    "source_current_to_A": 0.001,
+    "source_capacity_to_Ah": 0.001,
+    "counter_numeric_tolerance_mAh": 1e-06,
+    "capacity_definition": "source-provided net Capacity at first D0 minus last D3, mAh divided by1000",
+    "d3_absolute_Q_definition": "source-provided net Capacity at first D0 minus current native Capacity, mAh divided by1000",
+    "charge_absolute_Q_definition": "native source-provided Capacity divided by1000, after verifying the phase starts at zero",
+    "source_capacity_algorithm_certified": false,
+    "independent_instrument_calibration_certified": false,
+    "temporal_sampling_certified": false,
+    "integral_closure_changes_capacity": false,
+    "native_q_origin_retained": true,
+    "current_dependency": "phase start through the final acquisition-order native point used to bracket the registered interpolation window; later phase current retained as audit"
+  },
+  "policy_provenance": {
+    "design": "Original published Methods and BatteryLife cited discharge-rate mapping",
+    "observed": "median of each original phase current median across original cycles1..100 only",
+    "design_discharge_stage3_C": 1.0,
+    "observed_discharge_stage3_target_C": 2.0,
+    "chamber_setpoint_is_measured_cell_temperature": false,
+    "protocol_group": "tuple of the three declared variable discharge rates with common declared controls",
+    "future_actual_controls_used_as_input": false
+  },
+  "independent_source_audit": {
+    "all_cycle_quality_file": "all_cycle_quality.csv",
+    "all_cycle_quality_sha256": "10185ff5a7e2046df92f11a9d8d38b4446a98fac77451426d90ede7c8f8520dc",
+    "raw_audit_summary_sha256": "e2ded76bfc45d7f8f623ca681083466fd241eb097bdb06a11519b2ce0559a6cd",
+    "full_audit_verification_sha256": "6d264c3d059787ccbfadeba2f9fcc21a2a15dc6f6d9adacd42c9f714f2f249a2"
+  },
+  "population_statistics_fitted": false,
+  "model_fits": 0,
+  "optimizer_updates": 0,
+  "two_view_qualification_is_independent": true,
+  "source_rul_dq_used_as_model_inputs_or_future_targets": false,
+  "temporal_features_inferred_from_missing_measurements": false,
+  "training_or_model_selection_performed": false,
+  "shared_operator_source": "scripts/unified_matr/physics_features.py, reused with per-view registered physical voltage windows. HUST field names and capacity provenance are declared here.",
+  "historical_exposure": "All77 HUST cells participated in previous exploration"
+}

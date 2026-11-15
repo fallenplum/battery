@@ -1,0 +1,65 @@
+{
+  "status": "DATA_QUALIFICATION_PASS",
+  "checked_utc": "2026-11-15T11:53:51.815074+00:00",
+  "source_cells": 77,
+  "prefix_max_original_cycle": 100,
+  "independent_checks": 113,
+  "views": {
+    "actual2C_loaded_response": {
+      "valid_curves": 7698,
+      "decomposition_valid_curves": 7698,
+      "input_eligible_cells": 77
+    },
+    "common5C_charge_response": {
+      "valid_curves": 3897,
+      "decomposition_valid_curves": 3354,
+      "input_eligible_cells": 34
+    }
+  },
+  "future_observed_points": 138422,
+  "rate_support": {
+    "r200_500": 77,
+    "r500_1000": 77
+  },
+  "observed_eol80_events": 0,
+  "right_censored_cells": 77,
+  "normal_model_entrypoint_cases": 14,
+  "interface_probe_seed": 42,
+  "model_fits": 0,
+  "optimizer_updates": 0,
+  "scientific_performance_evaluated": false,
+  "records": [
+    {
+      "path": "data/hust_raw_idea_v2/DATASET_COMPLETE.json",
+      "bytes": 3539,
+      "sha256": "81a9317a749ca651334c12606c07e2b867ef127e9080306ad1cf2f58290109e6"
+    },
+    {
+      "path": "results/hust_raw_idea_audit_v2/FINAL_DATASET_QA.json",
+      "bytes": 27888,
+      "sha256": "586dbb3183d5ccb3692941fc0c99bd156754d405ba890c3eb3e103a2e8792ef5"
+    },
+    {
+      "path": "configs/hust_raw_idea_v2.json",
+      "bytes": 4847,
+      "sha256": "a35d3db6f53c71cd95ef719e79ca1d34339eaf9ed4fe190254edd89a328bed0f"
+    },
+    {
+      "path": "results/hust_raw_idea_audit_v2/HUST_RAW_AUDIT.json",
+      "bytes": 7086,
+      "sha256": "e2ded76bfc45d7f8f623ca681083466fd241eb097bdb06a11519b2ce0559a6cd"
+    },
+    {
+      "path": "results/hust_raw_idea_audit_v2/FULL_AUDIT_VERIFICATION.json",
+      "bytes": 6058,
+      "sha256": "6d264c3d059787ccbfadeba2f9fcc21a2a15dc6f6d9adacd42c9f714f2f249a2"
+    }
+  ],
+  "measurement_limitations": [
+    "Source-provided net Capacity generation and independent calibration remain uncertified.",
+    "Published terminal discharge1C conflicts with observed2C.",
+    "One source interruption and four repeated-time steps carry recorded-time integration warnings.",
+    "Charge view has34 eligible cells out of77.",
+    "All77 cells have historical exploration exposure and no observed exact nominal80percent event."
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "status": "FULL_CURRENT_ARCHIVE_REPLAY_COMPLETE",
+  "current_archive_identity": {
+    "outer_path": "D:\\develop\\patchtst\\BatteryLife\\dataset\\hust_raw.zip",
+    "outer_bytes": 1166410635,
+    "outer_mtime_ns": 1794738860879554300,
+    "outer_sha256": "7c7aa54ede2a52c69e79368155d2f84306faf5060fc0c0ac24a7fba1cd88b515",
+    "outer_member_count": 1,
+    "inner_member_name": "nsc7hnsg4s-2/our_data.zip",
+    "inner_bytes": 1188136932,
+    "inner_crc32_verified": true,
+    "inner_crc32": "b887fff0",
+    "inner_sha256": "071d24617153693b0d29059568525e620f6af6512acc9d00c98c7adcf15125db",
+    "old_official_inner_sha256": "071d24617153693b0d29059568525e620f6af6512acc9d00c98c7adcf15125db",
+    "inner_equals_old_official": true,
+    "replay_inner_cache_path": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\private\\raw_sources\\HUST\\our_data.zip",
+    "replay_cache_sha256": "071d24617153693b0d29059568525e620f6af6512acc9d00c98c7adcf15125db",
+    "replay_cache_matches_current_inner": true,
+    "source_stat_unchanged": true,
+    "elapsed_s": 6.157000000006519
+  },
+  "safe_parser_sha256": "ca992358d254d2fb986bba8559e10bdbe9097e6b4424af4acf281ebe8d85eca9",
+  "audit_script_sha256": "a0793169c592531446028fa4c47abd5ec56ea803cb11ea53e991ca2371168323",
+  "read_strategy": "Current outer ZIP inner stream fully CRC/SHA verified, replay byte-identical old inner cache, all 77 member bytes CRC/SHA verified again and symbolically parsed",
+  "cells": 77,
+  "cycles": 146122,
+  "points": 91736659,
+  "all_members_match_old_official": true,
+  "all_member_CRC32_rechecked": true,
+  "globals_seen_symbolically_never_executed": [
+    "builtins.slice",
+    "numpy.core.multiarray._reconstruct",
+    "numpy.core.multiarray.scalar",
+    "numpy.dtype",
+    "numpy.ndarray",
+    "pandas.core.frame.DataFrame",
+    "pandas.core.indexes.base.Index",
+    "pandas.core.indexes.base._new_Index",
+    "pandas.core.indexes.range.RangeIndex",
+    "pandas.core.internals.managers.BlockManager"
+  ],
+  "root_schemas": {
+    "[\"rul\", \"dq\", \"data\"]": 77
+  },
+  "dataframe_schemas": {
+    "{\"Capacity (mAh)\": \"float64\", \"Current (mA)\": \"float64\", \"Cycle number\": \"int64\", \"Status\": \"object\", \"Time (s)\": \"int64\", \"Voltage (V)\": \"float64\"}": 146122
+  },
+  "dataframe_attrs_states": {
+    "{\"_flags\": {\"allows_duplicate_labels\": true}, \"_metadata\": [], \"_typ\": \"dataframe\", \"attrs\": {}}": 146122
+  },
+  "counts": {
+    "phase_order_invalid_cycles": 0,
+    "cycle_column_mismatch_cycles": 0,
+    "negative_time_steps": 0,
+    "duplicate_time_steps": 4,
+    "rul_not_N_minus_cycle_plus1": 0,
+    "boundary_capacity_changes_gt1e_6": 0,
+    "dq_not_net_discharge_within1e_6": 0,
+    "dq_below_or_equal_0p8_nominal": 0
+  },
+  "missing_or_nonfinite_numeric_and_labels": 0,
+  "exact_duplicate_cycle_content_count_excluding_cycle_label": 0,
+  "duplicate_examples": [],
+  "early_window_support": {
+    "D3_2p8_3p1": {
+      "prefix_cycles": 7700,
+      "native_points": {
+        "count": 7700,
+        "min": 43.0,
+        "p05": 50.0,
+        "median": 64.0,
+        "p95": 77.0,
+        "max": 85.0
+      },
+      "bracketed_cycles": 7698,
+      "current_median_within_0p05C_cycles": 7700,
+      "voltage_direction_violations": 7,
+      "voltage_direction_violations_gt10mV": 0,
+      "capacity_direction_violations": 0,
+      "nonpositive_time_steps": 0,
+      "threshold_support": {
+        "2": {
+          "cycles": 7700,
+          "cells_all100": 77
+        },
+        "5": {
+          "cycles": 7700,
+          "cells_all100": 77
+        },
+        "8": {
+          "cycles": 7700,
+          "cells_all100": 77
+        },
+        "10": {
+          "cycles": 7700,
+          "cells_all100": 77
+        },
+        "15": {
+          "cycles": 7700,
+          "cells_all100": 77
+        },
+        "20": {
+          "cycles": 7700,
+          "cells_all100": 77
+        },
+        "25": {
+          "cycles": 7700,
+          "cells_all100": 77
+        },
+        "30": {
+          "cycles": 7700,
+          "cells_all100": 77
+        }
+      }
+    },
+    "CC_3p1_3p4": {
+      "prefix_cycles": 7700,
+      "native_points": {
+        "count": 7700,
+        "min": 1.0,
+        "p05": 7.0,
+        "median": 15.0,
+        "p95": 21.0,
+        "max": 23.0
+      },
+      "bracketed_cycles": 7700,
+      "current_median_within_0p05C_cycles": 7700,
+      "voltage_direction_violations": 0,
+      "voltage_direction_violations_gt10mV": 0,
+      "capacity_direction_violations": 0,
+      "nonpositive_time_steps": 0,
+      "threshold_support": {
+        "2": {
+          "cycles": 7699,
+          "cells_all100": 76
+        },
+        "5": {
+          "cycles": 7640,
+          "cells_all100": 66
+        },
+        "8": {
+          "cycles": 7141,
+          "cells_all100": 41
+        },
+        "10": {
+          "cycles": 6173,
+          "cells_all100": 30
+        },
+        "15": {
+          "cycles": 3897,
+          "cells_all100": 0
+        },
+        "20": {
+          "cycles": 1484,
+          "cells_all100": 0
+        },
+        "25": {
+          "cycles": 0,
+          "cells_all100": 0
+        },
+        "30": {
+          "cycles": 0,
+          "cells_all100": 0
+        }
+      }
+    }
+  },
+  "native_field_capacity": "Source-provided signed/net Capacity (mAh). Independent device-measured provenance and hidden sampling/integration algorithm are unauthenticated.",
+  "rul_semantics": "N_recorded_cycles - original_cycle + 1, inclusive administrative remaining record count. This formula alone does not establish an observed 80%-nominal event.",
+  "dq_semantics": "Original source label equals Capacity at first D0 sample minus Capacity at last D3 sample, in mAh, checked at tolerance 1e-6mAh.",
+  "missing_raw_metadata": [
+    "measured temperature",
+    "calendar timestamps",
+    "instrument export headers and calibration",
+    "rest-only rows",
+    "formation/diagnostic flags",
+    "electrode loading and geometry",
+    "electrolyte",
+    "impedance"
+  ],
+  "external_declarations": {
+    "chemistry": "LFP/graphite",
+    "cell_model": "A123 APR18650M1A",
+    "nominal_Ah": 1.1,
+    "nominal_V": 3.3,
+    "chamber_C": 30,
+    "tester": "80-channel Neware CT-4008",
+    "charge": "5C to80%SOC, 1C to3.6V, CV toC/20",
+    "terminal_discharge_paper_C": 1,
+    "terminal_discharge_observed_C": 2,
+    "rest_paper_s": 30,
+    "initial_cells_paper": 80,
+    "fault_exclusions_paper": 3,
+    "sources": [
+      "https://data.mendeley.com/datasets/nsc7hnsg4s/2",
+      "https://pubs.rsc.org/en/content/articlehtml/2022/ee/d2ee01676a"
+    ]
+  },
+  "private_cycle_quality_path": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\private\\raw_sources\\HUST_IDEA_V2\\all_cycle_quality.csv",
+  "private_cycle_quality_sha256": "10185ff5a7e2046df92f11a9d8d38b4446a98fac77451426d90ede7c8f8520dc",
+  "elapsed_s": 335.155999999959
+}

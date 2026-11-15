@@ -1,0 +1,111 @@
+{
+  "study_id": "HUST_RAW_IDEA_DATASET_V2_20261115",
+  "source_cells": 77,
+  "prefix_original_cycles": [1, 100],
+  "primary_view": "actual2C_loaded_response",
+  "views": [
+    {
+      "name": "actual2C_loaded_response",
+      "phase": "Constant current discharge_3",
+      "direction": "discharge",
+      "current_A": -2.2,
+      "voltage_min_V": 2.8,
+      "voltage_max_V": 3.1,
+      "grid_size": 64,
+      "current_tolerance_A": 0.055,
+      "minimum_window_native_points": 15,
+      "minimum_distinct_voltage_points": 12,
+      "maximum_voltage_reversal_V": 0.02,
+      "minimum_window_charge_Ah": 0.011
+    },
+    {
+      "name": "common5C_charge_response",
+      "phase": "Constant current charge",
+      "direction": "charge",
+      "current_A": 5.5,
+      "voltage_min_V": 3.1,
+      "voltage_max_V": 3.4,
+      "grid_size": 64,
+      "current_tolerance_A": 0.055,
+      "minimum_window_native_points": 15,
+      "minimum_distinct_voltage_points": 12,
+      "maximum_voltage_reversal_V": 0.02,
+      "minimum_window_charge_Ah": 0.011
+    }
+  ],
+  "measurement": {
+    "nominal_capacity_Ah": 1.1,
+    "source_current_to_A": 0.001,
+    "source_capacity_to_Ah": 0.001,
+    "counter_numeric_tolerance_mAh": 0.000001,
+    "capacity_definition": "source-provided net Capacity at first D0 minus last D3, mAh divided by1000",
+    "d3_absolute_Q_definition": "source-provided net Capacity at first D0 minus current native Capacity, mAh divided by1000",
+    "charge_absolute_Q_definition": "native source-provided Capacity divided by1000, after verifying the phase starts at zero",
+    "source_capacity_algorithm_certified": false,
+    "independent_instrument_calibration_certified": false,
+    "temporal_sampling_certified": false,
+    "integral_closure_changes_capacity": false,
+    "native_q_origin_retained": true
+  },
+  "features": {
+    "reference_original_cycles": [1, 10],
+    "reference_minimum_curves": 5,
+    "reference_reduction": "pointwise median",
+    "bins": 8,
+    "global_dimensions": 20,
+    "local_dimensions": 26,
+    "dynamic_window_valid_observations": 10,
+    "dynamic_denominator": "actual original-cycle distance",
+    "absolute_Q_preserved_in_decomposition": true,
+    "reference_view_normalization": "V unchanged; I and absolute Q divided by median early-reference Q95-Q05 span",
+    "population_scaler_fitted": false,
+    "soh100_anchor_original_cycles": [96, 100],
+    "soh100_anchor_reduction": "median of valid complete source-provided discharge capacities divided by1.1Ah",
+    "anchor_requires_same_view_curve_support": false,
+    "input_qualification": "at least one view curve, at least5 reference curves, identifiable decomposition, finite positive reference span, and available prefix capacity anchor",
+    "coverage80_is_only_descriptive": true
+  },
+  "targets": {
+    "soh_denominator_Ah": 1.1,
+    "primary_rate_windows": [[200, 500], [500, 1000]],
+    "primary_rate_method": "exact valid observed endpoints",
+    "audit_rate_window_radius": 5,
+    "audit_rate_minimum_observations": 5,
+    "audit_rate_suffix": "_window5_audit",
+    "eol80_threshold": 0.8,
+    "eol80_method": "first valid observed nominal SOH at or below0.8 with observed event/censor support",
+    "source_rul_or_dq_used_as_future_target": false,
+    "source_rul_or_dq_used_as_input": false
+  },
+  "policy_columns": [
+    "design_charge_initial_C",
+    "design_charge_second_C",
+    "design_charge_voltage_limit_V",
+    "design_discharge_stage0_C",
+    "design_discharge_stage1_C",
+    "design_discharge_stage2_C",
+    "design_discharge_stage3_C",
+    "observed_prefix_discharge_stage3_C",
+    "observed_prefix_charge_initial_C",
+    "design_chamber_setpoint_C",
+    "nominal_capacity_Ah",
+    "discharge_final_design_observed_conflict"
+  ],
+  "policy_provenance": {
+    "design": "Original published Methods and BatteryLife cited discharge-rate mapping",
+    "observed": "median of each original phase current median across original cycles1..100 only",
+    "design_discharge_stage3_C": 1.0,
+    "observed_discharge_stage3_target_C": 2.0,
+    "chamber_setpoint_is_measured_cell_temperature": false,
+    "protocol_group": "tuple of the three declared variable discharge rates with common declared controls",
+    "future_actual_controls_used_as_input": false
+  },
+  "validation_scope": {
+    "ica_dva_certified": false,
+    "dynamic_resistance_certified": false,
+    "polarization_parameter_certified": false,
+    "two_views_are_independently_qualified": true,
+    "full_multistage_discharge_globally_sorted_by_voltage": false,
+    "training_or_model_selection_authorized_by_this_processing": false
+  }
+}
