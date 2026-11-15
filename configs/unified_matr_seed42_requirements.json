@@ -1,0 +1,164 @@
+{
+  "schema_version": 2,
+  "study_id": "unified_matr_physics_seed42_v1",
+  "purpose": "Machine-readable DATA-FREEZE review requirements. Values marked engineering_default are implementation choices made before source reconstruction and scoring.",
+  "contract": {
+    "file": "SRSR_Physics_统一研究问题_一次性数据处理与模型实验总合同.md",
+    "sha256": "c59764b219f629eb5767706809a5393536fe977fa6092ae127156340c62a50d7",
+    "training_seeds": [42],
+    "override": "Explicit user request for seed42 only supersedes contract G2 repeated-seed wording.",
+    "main_cohort": "169 historically selected MATR LFP/graphite physical cells",
+    "main_task": "known-policy, cell-disjoint, early-K100 -> future-observed-SOH-trajectory",
+    "source_sections": ["C", "D0-1", "D0-2", "D0-3", "D0-4", "D0-5", "E", "F3", "G"]
+  },
+  "artifacts": {
+    "dataset_manifest.json": {
+      "required_fields": ["contract_sha256", "config_sha256", "source_mat_archives", "source_instrument_csv", "recipe", "measurement_units", "original_axis", "capacity_measurement", "SOH_primary", "SOH_secondary", "reference_cells", "historical_exposure", "training_seeds", "metadata_enrichment"],
+      "semantic_storage": {"source_file_digests": ["source_mat_archives", "source_instrument_csv"], "source_code_sha256": "recipe.files", "engineering_defaults": "config_sha256 and frozen config file", "instrument_identity": "instrument_identity_bindings.json and cells.instrument_metadata_json"}
+    },
+    "cells.parquet": {
+      "required_fields": ["cell_uid", "chemistry", "source_segments", "protocol_uid", "policy_original", "nominal_capacity_Ah", "initial_observed_capacity_Ah", "main_soh_denominator", "raw_cycle_certified", "original_cycle_last", "raw_records", "prefix_curve_valid_count", "future_observed_capacity_count", "input_eligible", "input_failure_reasons", "historical_exposure", "supplied_metadata_json", "original_release_static_metadata_json", "instrument_metadata_json", "source_schedule_metadata_json", "source_instrument_device_id"],
+      "semantic_storage": {"original_source_batches_and_measurement_phases": "raw_record_audit.parquet", "initial_capacity_cycle_ids": "dataset_manifest.reference_cells and independently recomputed original cycles1..10", "admission_status": "input_eligible plus input_failure_reasons"}
+    },
+    "early_viq_qv_64.npz": {
+      "alternative": "early_viq_qv_64.zarr",
+      "required_arrays": ["cell_uid", "cycle_ids", "voltage_grid_V", "raw_viq", "reference_viq", "q_absolute", "q_shape", "curve_valid_mask", "point_mask", "failure_code", "policy", "policy_mask", "anchor_soh100", "input_eligible", "fit_weights", "anchor_query_cycles", "anchor_observed_cycles", "anchor_support"],
+      "semantic_storage": {"original_cycle_id": "cycle_ids", "processed_mapping_source_and_phase": "instrument_cycle_mapping.parquet and raw_record_audit.parquet", "absolute_Q_Ah": "q_absolute", "Q_at_3p3V_zero_Ah": "q_shape"},
+      "q_shape": [169, 100, 64],
+      "voltage_grid": {"minimum_V": 2.8, "maximum_V": 3.3, "size": 64, "increasing": true},
+      "missing_representation": "NaN values plus explicit false masks. An array index never substitutes for an unverified physical cycle."
+    },
+    "early_physics_features.parquet": {
+      "semantic_fields": ["cell_uid", "original_cycle_id", "reference_cycle_ids", "reference_valid", "a_Ah", "b_V", "r_64_Ah", "decomposition_valid", "global_features", "global_mask", "local_features", "local_feature_mask", "fit_weights", "weighted_normalized_projection", "unweighted_projection", "basis_condition", "reconstruction_error_Ah", "feature_failure_reasons", "ica_dva_certified", "resistance_polarization_certified"],
+      "semantic_storage": {"feature_arrays_and_masks": "early_viq_qv_64.npz, parquet flattened global/local/residual/fit_weights", "references_diagnostics_and_failures": "dataset_manifest.reference_cells", "exact_consumer_assertions": "scripts/unified_matr/verify_dataset.py verify_features"},
+      "global_shape_per_cycle": [20],
+      "residual_shape_per_cycle": [64],
+      "local_shape_per_cycle": [8, 26],
+      "flattened_feature_columns_allowed": true,
+      "anchor_fields": ["anchor_query_cycles", "anchor_observed_cycles", "anchor_support", "anchor_global_features", "anchor_global_mask", "anchor_local_features", "anchor_local_mask"]
+    },
+    "future_soh.parquet": {
+      "required_fields": ["cell_uid", "original_cycle_id", "processed_cycle_id", "source_file_sha256", "source_batch", "source_segment_id", "source_record_index", "measurement_phase", "capacity_Ah", "soh_nominal", "soh_initial", "observed_mask", "capacity_valid", "raw_record_present", "censor_mask", "failure_reasons"],
+      "semantic_storage": {"soh_main": "soh_nominal with 1.1Ah denominator", "observed_end_cycle": "cells.last_observed_valid_cycle", "derived_cell_targets": "cells.r200_500/r500_1000 finite masks and eol80 columns"},
+      "cycle_minimum": 101,
+      "all_observed_future_cycles_required": true,
+      "derived_cell_targets": ["rate_200_500", "rate_200_500_mask", "rate_500_1000", "rate_500_1000_mask", "eol80_first_observed_crossing_cycle", "eol80_observed", "eol80_right_censored"]
+    },
+    "split_contract.json": {
+      "required_fields": ["seed", "splits", "protocol_groups", "protocol_group_sizes", "settings", "identity_unit", "historical_exposure", "singleton_protocol_limitation", "split_fingerprint"],
+      "semantic_storage": {"main_folds_and_unseen_protocol_sensitivity": "splits entries", "continuation_aliases_and_duplicate_identities": "instrument_identity_bindings.json and independently validated native mapping"},
+      "seed": 42,
+      "exclusive_unit": "unique physical cell UID",
+      "main_stratification": "exact pre-specified charging protocol",
+      "same_protocol_across_main_splits_allowed": true,
+      "historical_exposure_all_fixed169": true
+    },
+    "dataset_qa_report.md": {
+      "required_sections": ["source_recovery_and_SHA", "physical_identity_and_original_axis", "phase_counter_origin_and_units", "all_cells_qualification_denominators", "curve_support_and_failures", "physics_reconstruction_and_orthogonality", "prefix_future_isolation", "full_observed_future_and_censoring", "split_and_historical_exposure", "freeze_status_and_missing_archives"]
+    },
+    "dataset_fingerprint.sha256": {
+      "required_coverage": ["all_frozen_data_artifacts", "split_contract", "source_manifest", "reconstruction_config", "feature_config", "source_code"],
+      "self_hash_excluded": true
+    }
+  },
+  "identity": {
+    "required_per_raw_record": ["cell_uid", "original_cycle_id", "processed_cycle_id", "source_file_sha256", "source_batch", "measurement_phase", "protocol_uid", "source_cell_index", "source_segment_id", "source_record_index", "summary_original_cycle_raw", "original_local_cycle"],
+    "continuation_aliases": {"b2c7": "b1c0", "b2c8": "b1c1", "b2c9": "b1c2", "b2c15": "b1c3", "b2c16": "b1c4"},
+    "continuation_axis": "Retain source-authored segment-local summary sequence separately. Original instrument Cycle_Index and continuation offsets require original-log or independently authenticated record mapping evidence.",
+    "instrument_axis_evidence": {
+      "author_source_url": "https://raw.githubusercontent.com/chueh-ermon/BMS-autoanalysis/master/cell_analysis.m",
+      "original_instrument_field": "Cycle_Index=result_data(:,5)",
+      "source_selection": "unique(Cycle_Index), delete first and last, then select instrument j per exported record k",
+      "exported_summary_cycle": "(1:k)'",
+      "instrument_cycle_index_exported": false,
+      "missing_evidence": "Original instrument logs or independently source-authenticated per-record Cycle_Index mapping, including omitted cycles and continuation boundaries",
+      "MATLAB_only_affected_source_batches": [1, 2, 3, 4],
+      "MATLAB_only_affected_fixed_cells": 169,
+      "raw_cycle_certified": false,
+      "freeze_allowed_without_mapping": false,
+      "source_I_to_A_factor": 1.1,
+      "source_t_to_seconds_factor": 60,
+      "source_negative_time_repair": "Author cell_analysis.m lines95-98 adjust the suffix of any negative ending relative-time record"
+    },
+    "native_instrument_recovery": {
+      "status": "174_OF_174_NATIVE_CSV_COMPLETE_INDEPENDENT_SOURCE_AUDITS_PASS_FINAL_DATA_GATE_PENDING",
+      "verified_native_log_examples": ["MATR_b2c0", "MATR_b1c0"],
+      "complete_cohort_and_continuation_QA": "174 sources and all5 continuation joins independently audited, final artifact-wide DATA-FREEZE verification pending",
+      "full_native_rows": 143396900,
+      "full_original_metadata_fields": 24,
+      "original_metadata_files": 174,
+      "original_schedule_files": 174,
+      "within_file_restart": "b1c18 only, run1 is independently source-audited nonaging characterization and has no main aging cycle ID",
+      "source_step_label_exceptions": "6780 electrically qualified main D records retain differing native Step labels, including386 early prefix rows. Literal step equality is an audit field. Control-system cause remains unverified.",
+      "reader": "scripts/unified_matr/instrument_csv.py",
+      "native_units": {"Current": "A", "Test_Time": "s", "Charge_Capacity": "Ah", "Discharge_Capacity": "Ah"},
+      "native_first_and_last_cycle_groups_retained": true,
+      "native_cycle_zero_role": "initial discharge/conditioning candidate, measurement-qualified separately",
+      "independent_binding_results": ["results/unified_matr_seed42/b2c0_INSTRUMENT_BINDING_QA.json", "results/unified_matr_seed42/b1c0_INSTRUMENT_BINDING_QA.json"],
+      "unqualified_segment_handling": "Retain affected original source, record-level failure/missing reasons and full qualification denominators. Only certified observations enter model inputs/targets."
+    },
+    "legacy_shift_risks": [{"cell": "b1c0", "processed_index_from": 11}, {"cell": "b1c18", "processed_index_from": 39}, {"cell": "b2c12", "processed_index_from": 252}, {"cell": "b2c44", "processed_index_from": 247}],
+    "legacy_index_is_not_original_axis": true,
+    "historically_excluded_raw_cells": ["b1c8", "b1c10", "b1c12", "b1c13", "b1c22", "b3c2", "b3c23", "b3c32", "b3c37", "b3c42", "b3c43"]
+  },
+  "physics": {
+    "api": "scripts.unified_matr.physics_features.extract_prefix_features(q_absolute, curve_valid, actualcycleids, vgrid, config=DEFAULT_CONFIG)",
+    "equation": "Q_n-Q_ref = a_Ah + b_V*dQ_ref/dV + r_Ah",
+    "absolute_charge_origin_required": true,
+    "reference": {"rule": "pointwise median of all qualified original cycles in 1..10", "minimum_curves": 5, "maximum_curves": 10, "status": "engineering_default"},
+    "derivative": {"reference_smoothing": "Savitzky-Golay", "window": 5, "degree": 2, "gradient": "physical voltage, second-order boundaries", "status": "engineering_default"},
+    "robust_fit": {"estimator": "Huber IRLS", "delta": 1.345, "max_iterations": 20, "noise_floor_Ah": 0.000001, "scale": "1.4826*median(abs(residual-median(residual)))", "coefficient_tolerance": 1e-10, "status": "engineering_default"},
+    "orthogonality": {
+      "primary_inner_product": "final IRLS weights",
+      "weighted_normalized_projection": "B.T@(w*r)/(sqrt(sum(w*B^2))*max(sqrt(sum(w*r^2)),noise_floor*sqrt(sum(w))))",
+      "unweighted_projection": "mean(B*r), B=[1, reference_derivative/derivative_RMS], unit Ah",
+      "stored_weights_required": true,
+      "extra_OLS_projection_in_primary_features": false,
+      "OLS_mathematical_control_allowed": true,
+      "reason": "An unweighted OLS projection after IRLS on the same basis algebraically returns the OLS decomposition and removes robust coefficient resistance."
+    },
+    "identifiability": {"derivative_RMS_floor_Ah_per_V": 1e-8, "maximum_scaled_basis_condition": 1000000, "constant_derivative_masks": true, "status": "engineering_default"},
+    "voltage_bins": {"count": 8, "equal_width": true, "window_V": [2.8, 3.3]},
+    "local_base_features": ["residual_signed_mean_Ah", "residual_rms_Ah", "residual_squared_integral_Ah2_V", "absolute_residual_centroid_V", "absolute_residual_peak_V", "availability_fraction", "high_frequency_noise_proxy_Ah", "delta_q_signed_mean_Ah"],
+    "local_energy_interpretation": "Voltage integral of squared residual, Ah^2 V",
+    "noise_interpretation": "MAD of Q minus SG(5,2) per bin, a mixed measurement/interpolation/shape noise proxy",
+    "dynamics": {"channels": ["a_Ah", "b_V", "per_bin_residual_signed_mean_Ah", "per_bin_residual_rms_Ah"], "rolling_observations": 10, "slope_estimator": "median of all pair slopes within last valid observations", "minimum_slope_observations": 3, "actual_cycle_normalization": true, "statistics": ["causal_median", "transient", "causal_MAD", "robust_slope_per_cycle", "last_slope_per_cycle", "slope_change_per_cycle_squared", "signed_direction", "direction_consistency", "support_count"], "status": "engineering_default"},
+    "anchors": {"query_cycles": [10, 50, 100], "selection": "latest decomposition-valid cycle within [K-4,K]", "missing_anchor_mask": true, "future_borrowing": false, "status": "engineering_default"},
+    "optional_physics": {"ICA_DVA_certified_default": false, "resistance_polarization_certified_default": false, "missing_values": "NaN plus explicit false masks"}
+  },
+  "machine_assertions": [
+    {"id": "source_all4", "section": "D0-1", "assertion": "all four original archives fully downloaded, full SHA recorded and original HDF5 readable"},
+    {"id": "source_identity", "section": "D0-1", "assertion": "all 169 fixed UIDs retained in qualification, continuations share UID, original instrument Cycle_Index certified by independently source-authenticated mapping rather than author summary 1:k"},
+    {"id": "capacity_phase", "section": "D0-2", "assertion": "every valid capacity derives from a complete sign-consistent discharge phase, has certified counter origin and A/Ah units, and preserves time/integration support independently. A failed clock field alone does not invalidate device-counter Q(V). Original step-label exceptions remain explicit."},
+    {"id": "capacity_dual_normalization", "section": "D0-2", "assertion": "both nominal and early-initial SOH saved, main comparable definition registered before scoring"},
+    {"id": "curve_grid", "section": "D0-3", "assertion": "grid exactly linspace(2.8,3.3,64), no extrapolation, constant-current/contiguity/monotonicity checks use preregistered tolerances"},
+    {"id": "curve_origins", "section": "D0-3", "assertion": "absolute Q retains certified device discharge-counter origin and shape version has explicit 3.3V anchor"},
+    {"id": "prefix_only", "section": "D0-4", "assertion": "every input/reference/interpolated curve/denoised statistic is computed using original cycles<=100, with reference using only cycles<=10"},
+    {"id": "future_perturbation", "section": "D0-4", "assertion": "mutating or truncating every suffix waveform, suffix temperature, suffix length and suffix target leaves early input/feature hashes unchanged"},
+    {"id": "fold_local_scaler", "section": "D0-4", "assertion": "all population imputation/normalization/regularization statistics are fitted on each training fold only"},
+    {"id": "full_future", "section": "D0-4/F3", "assertion": "all observed valid future SOH are target rows, absent future cycles retain mask/censor semantics, no future survival admission filter"},
+    {"id": "physics_full", "section": "E", "assertion": "all preset global/local/dynamic/residual features and same-shaped masks generated, reconstruction identity and weighted projection QA recorded"},
+    {"id": "physical_axis_differences", "section": "E", "assertion": "all temporal slopes and changes use actual original cycle distances, missing cycles retained and no consecutive renumbering"},
+    {"id": "optional_missing", "section": "E", "assertion": "ICA/DVA and resistance/polarization stay masked unless the complete stipulated source certification exists"},
+    {"id": "split_identity", "section": "F3", "assertion": "no physical cell, continuation or generated duplicate crosses train/validation/test within any fold"},
+    {"id": "protocol_and_exposure", "section": "F3", "assertion": "exact protocol stratification, fixed unseen-protocol sensitivity and all169 historical exposure published, singleton protocol variance claims absent"},
+    {"id": "all_artifacts", "section": "D0-5", "assertion": "every required artifact, complete qualification denominator, field-level reason and global fingerprint exists"},
+    {"id": "freeze_before_train", "section": "G", "assertion": "formal scoring starts only after complete DATA-FREEZE verification, every trained model references identical data fingerprint"},
+    {"id": "seed42_only", "section": "user_override", "assertion": "formal model matrix contains exactly M0,M1,M2,M3,M3-NL,M3-NP,M3-NR with training_seed=42"}
+  ],
+  "reversible_engineering_choices": {
+    "reference_and_robustness": "Fixed in physics_features.DEFAULT_CONFIG and recorded above before real-source feature computation.",
+    "representation": "NPZ is permitted by contract, float64 feature arithmetic, boolean validity masks, NaN missing values.",
+    "SOH_standard": "Nominal 1.1Ah main denominator with separate early-initial capacity version, as registered in unified_matr_seed42.json.",
+    "curve_thresholds": "Current tolerance, minimum points, reversal tolerance, integration/summary tolerance and prefix support threshold are engineering choices recorded in unified_matr_seed42.json.",
+    "split_details": "5 outer folds, training-only validation 20% and unseen-protocol sensitivity allocation are engineering choices, not contract-mandated sample counts.",
+    "qualification": "A cell failing a declared measurement check remains in the fixed169 qualification denominator with reasons and masks.",
+    "post_freeze": "Any material correction requires a new explicit version and retained history. Model performance never selects data edits."
+  },
+  "review_scope": {
+    "performed": ["full contract review", "all174 native CSV full-field metadata and transition audit", "all174 original Metadata24-field audit", "all174 SDU full Step/Limit field audit", "independent physical identity join", "independent all174 native-run transition scan", "all5 continuation boundaries", "b1c18 post-restart nonaging protocol audit", "synthetic physics mathematical QA", "source phase counter and time-dependency regression controls"],
+    "final_certification_artifacts": ["data/unified_matr_seed42/dataset_qa.json", "data/unified_matr_seed42/dataset_qa_report.md", "data/unified_matr_seed42/dataset_fingerprint.sha256", "data/unified_matr_seed42/DATA_FREEZE.json"],
+    "final_certification_rule": "Only the actual artifact-wide verifier result plus successful normal training-loader probe can certify DATA-FREEZE. This checklist never supplies a substitute PASS.",
+    "scientific_stop_conditions": ["missing main raw identity", "missing main original cycle mapping", "uncertified discharge-capacity phase", "systematic future leakage"]
+  }
+}

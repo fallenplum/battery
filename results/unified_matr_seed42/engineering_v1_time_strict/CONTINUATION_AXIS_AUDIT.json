@@ -1,0 +1,710 @@
+{
+  "status": "ALL_FIVE_CANDIDATE_JOINS_PASS",
+  "results": [
+    {
+      "cell_uid": "MATR_b1c0",
+      "status": "CANDIDATE_JOIN_EVIDENCE_PASS",
+      "checks": {
+        "same_barcode_and_channel": true,
+        "official_continuation_alias": true,
+        "successor_chronologically_later": true,
+        "successor_resets_native_counter_to_zero": true,
+        "restart_zero_has_no_comparable_regular_discharge": true,
+        "cross_test_boundary_datetimes_finite": true
+      },
+      "source_segments": [
+        "b1c0",
+        "b2c7"
+      ],
+      "regular_cycle_offsets": {
+        "b1c0": 0,
+        "b2c7": 1190
+      },
+      "predecessor_last_native_cycle": 1190,
+      "predecessor_last_record": {
+        "instrument_cycle_id": 1190,
+        "points": 136,
+        "source_row_start": 1904010,
+        "source_row_stop_exclusive": 1904146,
+        "first_datetime_unix": 1498503346.0639,
+        "last_datetime_unix": 1498503467.7995,
+        "first_data_point": 1904010.0,
+        "last_data_point": 1904145.0,
+        "time_reversal_count": 0,
+        "current_min_A": 0.0,
+        "current_max_A": 3.9616022,
+        "step_indices": [
+          5.0,
+          12.0
+        ],
+        "voltage_first_V": 2.0171995,
+        "voltage_last_V": 3.3771143,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 0.0,
+        "capacity_valid": false,
+        "curve_valid": false,
+        "capacity_Ah": null,
+        "failure_reasons": [
+          "INSUFFICIENT_CONTIGUOUS_4C_DISCHARGE"
+        ]
+      },
+      "successor_initial_record": {
+        "instrument_cycle_id": 0,
+        "points": 2669,
+        "source_row_start": 0,
+        "source_row_stop_exclusive": 2669,
+        "first_datetime_unix": 1498880698.5719,
+        "last_datetime_unix": 1498893758.2214,
+        "first_data_point": 0.0,
+        "last_data_point": 2668.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4010935,
+        "current_max_A": 3.9611034,
+        "step_indices": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0
+        ],
+        "voltage_first_V": 3.2233248,
+        "voltage_last_V": 2.0162039,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 1.2564532,
+        "capacity_valid": false,
+        "curve_valid": false,
+        "capacity_Ah": null,
+        "failure_reasons": [
+          "DISCHARGE_PHASE_CONTAINS_POSITIVE_CURRENT",
+          "DISCHARGE_START_VOLTAGE_INCOMPLETE",
+          "PARENT_CAPACITY_MEASUREMENT_INVALID"
+        ]
+      },
+      "successor_first_regular_record": {
+        "instrument_cycle_id": 1,
+        "points": 1067,
+        "source_row_start": 2669,
+        "source_row_stop_exclusive": 3736,
+        "first_datetime_unix": 1498893758.2439,
+        "last_datetime_unix": 1498896945.5299,
+        "first_data_point": 2669.0,
+        "last_data_point": 3735.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4015741,
+        "current_max_A": 3.9616442,
+        "step_indices": [
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        "voltage_first_V": 2.0169849,
+        "voltage_last_V": 2.0161037,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 1.0219246,
+        "capacity_valid": true,
+        "curve_valid": true,
+        "capacity_Ah": 1.0219246,
+        "failure_reasons": []
+      },
+      "calendar_gap_seconds": 377230.77239990234,
+      "global_regular_cycle_rule": "predecessor native ID unchanged, successor regular ID=predecessor last native ID+successor native ID, both native0 groups excluded from regular query labels",
+      "primary_terminal_measurement_valid": false,
+      "terminal_rule": "Keep the actual terminal native index. Preserve a valid terminal measurement, otherwise preserve its masked slot.",
+      "internal_clock_anomaly_counts": {
+        "b1c0": {
+          "DateTime_reverse_count": 0,
+          "DateTime_nonfinite_count": 0
+        },
+        "b2c7": {
+          "DateTime_reverse_count": 0,
+          "DateTime_nonfinite_count": 0
+        }
+      },
+      "axis_scope": "Explicit cumulative regular-cycle reconstruction across a documented instrument reset",
+      "source_sha256": {
+        "b1c0": "c37ec9267ae40e496f73446f3c4c41d7df40d6c9d7578a177dd47fa36323c41f",
+        "b2c7": "d1660ded98e7f911077c020f1aa64881aa1f5eb460e2e799fd96aea7578552df"
+      }
+    },
+    {
+      "cell_uid": "MATR_b1c1",
+      "status": "CANDIDATE_JOIN_EVIDENCE_PASS",
+      "checks": {
+        "same_barcode_and_channel": true,
+        "official_continuation_alias": true,
+        "successor_chronologically_later": true,
+        "successor_resets_native_counter_to_zero": true,
+        "restart_zero_has_no_comparable_regular_discharge": true,
+        "cross_test_boundary_datetimes_finite": true
+      },
+      "source_segments": [
+        "b1c1",
+        "b2c8"
+      ],
+      "regular_cycle_offsets": {
+        "b1c1": 0,
+        "b2c8": 1179
+      },
+      "predecessor_last_native_cycle": 1179,
+      "predecessor_last_record": {
+        "instrument_cycle_id": 1179,
+        "points": 554,
+        "source_row_start": 1894947,
+        "source_row_stop_exclusive": 1895501,
+        "first_datetime_unix": 1498501830.4884,
+        "last_datetime_unix": 1498503467.8251,
+        "first_data_point": 1894947.0,
+        "last_data_point": 1895500.0,
+        "time_reversal_count": 0,
+        "current_min_A": 0.0,
+        "current_max_A": 3.9629688,
+        "step_indices": [
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          12.0
+        ],
+        "voltage_first_V": 2.0171947,
+        "voltage_last_V": 3.6001921,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 3.3509986e-09,
+        "capacity_valid": false,
+        "curve_valid": false,
+        "capacity_Ah": null,
+        "failure_reasons": [
+          "INSUFFICIENT_CONTIGUOUS_4C_DISCHARGE"
+        ]
+      },
+      "successor_initial_record": {
+        "instrument_cycle_id": 0,
+        "points": 2576,
+        "source_row_start": 0,
+        "source_row_stop_exclusive": 2576,
+        "first_datetime_unix": 1498880698.5786,
+        "last_datetime_unix": 1498895765.1921,
+        "first_data_point": 0.0,
+        "last_data_point": 2575.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4016218,
+        "current_max_A": 3.9607019,
+        "step_indices": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0
+        ],
+        "voltage_first_V": 3.4452124,
+        "voltage_last_V": 2.0352287,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 1.6909004,
+        "capacity_valid": false,
+        "curve_valid": false,
+        "capacity_Ah": null,
+        "failure_reasons": [
+          "DISCHARGE_PHASE_CONTAINS_POSITIVE_CURRENT",
+          "DISCHARGE_CAPACITY_OUT_OF_INSTRUMENT_RANGE",
+          "PARENT_CAPACITY_MEASUREMENT_INVALID"
+        ]
+      },
+      "successor_first_regular_record": {
+        "instrument_cycle_id": 1,
+        "points": 1074,
+        "source_row_start": 2576,
+        "source_row_stop_exclusive": 3650,
+        "first_datetime_unix": 1498895765.224,
+        "last_datetime_unix": 1498898848.9209,
+        "first_data_point": 2576.0,
+        "last_data_point": 3649.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4015846,
+        "current_max_A": 3.9612761,
+        "step_indices": [
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        "voltage_first_V": 2.0374804,
+        "voltage_last_V": 2.0282001,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 1.0245416,
+        "capacity_valid": true,
+        "curve_valid": true,
+        "capacity_Ah": 1.0245416,
+        "failure_reasons": []
+      },
+      "calendar_gap_seconds": 377230.75349998474,
+      "global_regular_cycle_rule": "predecessor native ID unchanged, successor regular ID=predecessor last native ID+successor native ID, both native0 groups excluded from regular query labels",
+      "primary_terminal_measurement_valid": false,
+      "terminal_rule": "Keep the actual terminal native index. Preserve a valid terminal measurement, otherwise preserve its masked slot.",
+      "internal_clock_anomaly_counts": {
+        "b1c1": {
+          "DateTime_reverse_count": 0,
+          "DateTime_nonfinite_count": 0
+        },
+        "b2c8": {
+          "DateTime_reverse_count": 0,
+          "DateTime_nonfinite_count": 0
+        }
+      },
+      "axis_scope": "Explicit cumulative regular-cycle reconstruction across a documented instrument reset",
+      "source_sha256": {
+        "b1c1": "becd4ac97b195ab6a996265401ecce067b3b51d696a0510d8a7c6183f53f9545",
+        "b2c8": "b6242f61d9618958d441a59a61ad403b6fba46dc38aa5ecc44dc1170a0de0728"
+      }
+    },
+    {
+      "cell_uid": "MATR_b1c2",
+      "status": "CANDIDATE_JOIN_EVIDENCE_PASS",
+      "checks": {
+        "same_barcode_and_channel": true,
+        "official_continuation_alias": true,
+        "successor_chronologically_later": true,
+        "successor_resets_native_counter_to_zero": true,
+        "restart_zero_has_no_comparable_regular_discharge": true,
+        "cross_test_boundary_datetimes_finite": true
+      },
+      "source_segments": [
+        "b1c2",
+        "b2c9"
+      ],
+      "regular_cycle_offsets": {
+        "b1c2": 0,
+        "b2c9": 1177
+      },
+      "predecessor_last_native_cycle": 1177,
+      "predecessor_last_record": {
+        "instrument_cycle_id": 1177,
+        "points": 287,
+        "source_row_start": 1903831,
+        "source_row_stop_exclusive": 1904118,
+        "first_datetime_unix": 1498502760.7443,
+        "last_datetime_unix": 1498503467.8317,
+        "first_data_point": 1903831.0,
+        "last_data_point": 1904117.0,
+        "time_reversal_count": 0,
+        "current_min_A": 0.0,
+        "current_max_A": 3.9628649,
+        "step_indices": [
+          5.0,
+          12.0
+        ],
+        "voltage_first_V": 2.0167723,
+        "voltage_last_V": 3.5183735,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 0.0,
+        "capacity_valid": false,
+        "curve_valid": false,
+        "capacity_Ah": null,
+        "failure_reasons": [
+          "INSUFFICIENT_CONTIGUOUS_4C_DISCHARGE"
+        ]
+      },
+      "successor_initial_record": {
+        "instrument_cycle_id": 0,
+        "points": 2703,
+        "source_row_start": 0,
+        "source_row_stop_exclusive": 2703,
+        "first_datetime_unix": 1498880698.5911,
+        "last_datetime_unix": 1498896190.8697,
+        "first_data_point": 0.0,
+        "last_data_point": 2702.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4013777,
+        "current_max_A": 3.9606886,
+        "step_indices": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0
+        ],
+        "voltage_first_V": 3.3383036,
+        "voltage_last_V": 2.0323591,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 1.6980618,
+        "capacity_valid": false,
+        "curve_valid": false,
+        "capacity_Ah": null,
+        "failure_reasons": [
+          "DISCHARGE_PHASE_CONTAINS_POSITIVE_CURRENT",
+          "DISCHARGE_CAPACITY_OUT_OF_INSTRUMENT_RANGE",
+          "PARENT_CAPACITY_MEASUREMENT_INVALID"
+        ]
+      },
+      "successor_first_regular_record": {
+        "instrument_cycle_id": 1,
+        "points": 1070,
+        "source_row_start": 2703,
+        "source_row_stop_exclusive": 3773,
+        "first_datetime_unix": 1498896190.9001,
+        "last_datetime_unix": 1498899325.8647,
+        "first_data_point": 2703.0,
+        "last_data_point": 3772.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.401649,
+        "current_max_A": 3.9623833,
+        "step_indices": [
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        "voltage_first_V": 2.0345058,
+        "voltage_last_V": 2.0274267,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 1.0295508,
+        "capacity_valid": true,
+        "curve_valid": true,
+        "capacity_Ah": 1.0295508,
+        "failure_reasons": []
+      },
+      "calendar_gap_seconds": 377230.7593998909,
+      "global_regular_cycle_rule": "predecessor native ID unchanged, successor regular ID=predecessor last native ID+successor native ID, both native0 groups excluded from regular query labels",
+      "primary_terminal_measurement_valid": false,
+      "terminal_rule": "Keep the actual terminal native index. Preserve a valid terminal measurement, otherwise preserve its masked slot.",
+      "internal_clock_anomaly_counts": {
+        "b1c2": {
+          "DateTime_reverse_count": 0,
+          "DateTime_nonfinite_count": 0
+        },
+        "b2c9": {
+          "DateTime_reverse_count": 0,
+          "DateTime_nonfinite_count": 0
+        }
+      },
+      "axis_scope": "Explicit cumulative regular-cycle reconstruction across a documented instrument reset",
+      "source_sha256": {
+        "b1c2": "c13b74ee7c4a553663ce5b00c890a27c603e26497035a265dc94804cf7e50f8e",
+        "b2c9": "ea36b3b8cc9af93a57c2923527109ca6bd452a246812f7ed380d8a95661cbcf0"
+      }
+    },
+    {
+      "cell_uid": "MATR_b1c3",
+      "status": "CANDIDATE_JOIN_EVIDENCE_PASS",
+      "checks": {
+        "same_barcode_and_channel": true,
+        "official_continuation_alias": true,
+        "successor_chronologically_later": true,
+        "successor_resets_native_counter_to_zero": true,
+        "restart_zero_has_no_comparable_regular_discharge": true,
+        "cross_test_boundary_datetimes_finite": true
+      },
+      "source_segments": [
+        "b1c3",
+        "b2c15"
+      ],
+      "regular_cycle_offsets": {
+        "b1c3": 0,
+        "b2c15": 1226
+      },
+      "predecessor_last_native_cycle": 1226,
+      "predecessor_last_record": {
+        "instrument_cycle_id": 1226,
+        "points": 929,
+        "source_row_start": 1911555,
+        "source_row_stop_exclusive": 1912484,
+        "first_datetime_unix": 1498500856.0961,
+        "last_datetime_unix": 1498503467.8536,
+        "first_data_point": 1911555.0,
+        "last_data_point": 1912483.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4019198,
+        "current_max_A": 4.4014959,
+        "step_indices": [
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          12.0
+        ],
+        "voltage_first_V": 2.0182567,
+        "voltage_last_V": 1.9997153,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 0.96796095,
+        "capacity_valid": true,
+        "curve_valid": true,
+        "capacity_Ah": 0.96796095,
+        "failure_reasons": []
+      },
+      "successor_initial_record": {
+        "instrument_cycle_id": 0,
+        "points": 2532,
+        "source_row_start": 0,
+        "source_row_stop_exclusive": 2532,
+        "first_datetime_unix": 1498880750.6968,
+        "last_datetime_unix": 1498892936.3148,
+        "first_data_point": 0.0,
+        "last_data_point": 2531.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4016824,
+        "current_max_A": 4.4010706,
+        "step_indices": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0
+        ],
+        "voltage_first_V": 2.8858581,
+        "voltage_last_V": 2.0171838,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 1.0920783,
+        "capacity_valid": false,
+        "curve_valid": false,
+        "capacity_Ah": null,
+        "failure_reasons": [
+          "DISCHARGE_PHASE_CONTAINS_POSITIVE_CURRENT",
+          "DISCHARGE_START_VOLTAGE_INCOMPLETE",
+          "PARENT_CAPACITY_MEASUREMENT_INVALID"
+        ]
+      },
+      "successor_first_regular_record": {
+        "instrument_cycle_id": 1,
+        "points": 1077,
+        "source_row_start": 2532,
+        "source_row_stop_exclusive": 3609,
+        "first_datetime_unix": 1498892936.3443,
+        "last_datetime_unix": 1498896080.1086,
+        "first_data_point": 2532.0,
+        "last_data_point": 3608.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4016991,
+        "current_max_A": 4.4020357,
+        "step_indices": [
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        "voltage_first_V": 2.018168,
+        "voltage_last_V": 2.0173936,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 0.97206396,
+        "capacity_valid": true,
+        "curve_valid": true,
+        "capacity_Ah": 0.97206396,
+        "failure_reasons": []
+      },
+      "calendar_gap_seconds": 377282.84319996834,
+      "global_regular_cycle_rule": "predecessor native ID unchanged, successor regular ID=predecessor last native ID+successor native ID, both native0 groups excluded from regular query labels",
+      "primary_terminal_measurement_valid": true,
+      "terminal_rule": "Keep the actual terminal native index. Preserve a valid terminal measurement, otherwise preserve its masked slot.",
+      "internal_clock_anomaly_counts": {
+        "b1c3": {
+          "DateTime_reverse_count": 0,
+          "DateTime_nonfinite_count": 0
+        },
+        "b2c15": {
+          "DateTime_reverse_count": 0,
+          "DateTime_nonfinite_count": 0
+        }
+      },
+      "axis_scope": "Explicit cumulative regular-cycle reconstruction across a documented instrument reset",
+      "source_sha256": {
+        "b1c3": "4ee0ee9be2c24db067a47c729c2f4a85379162ab53329f0bcf431c20b8874fee",
+        "b2c15": "d658c98f59e5e8284d1cb1f0d76f454d5c15565d7bacc9882d3a2e20a18a2da2"
+      }
+    },
+    {
+      "cell_uid": "MATR_b1c4",
+      "status": "CANDIDATE_JOIN_EVIDENCE_PASS",
+      "checks": {
+        "same_barcode_and_channel": true,
+        "official_continuation_alias": true,
+        "successor_chronologically_later": true,
+        "successor_resets_native_counter_to_zero": true,
+        "restart_zero_has_no_comparable_regular_discharge": true,
+        "cross_test_boundary_datetimes_finite": true
+      },
+      "source_segments": [
+        "b1c4",
+        "b2c16"
+      ],
+      "regular_cycle_offsets": {
+        "b1c4": 0,
+        "b2c16": 1227
+      },
+      "predecessor_last_native_cycle": 1227,
+      "predecessor_last_record": {
+        "instrument_cycle_id": 1227,
+        "points": 479,
+        "source_row_start": 1905051,
+        "source_row_stop_exclusive": 1905530,
+        "first_datetime_unix": 1498502108.3106,
+        "last_datetime_unix": 1498503467.8687,
+        "first_data_point": 1905051.0,
+        "last_data_point": 1905529.0,
+        "time_reversal_count": 0,
+        "current_min_A": 0.0,
+        "current_max_A": 4.4017458,
+        "step_indices": [
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          12.0
+        ],
+        "voltage_first_V": 2.0165687,
+        "voltage_last_V": 3.6001925,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 8.8787848e-09,
+        "capacity_valid": false,
+        "curve_valid": false,
+        "capacity_Ah": null,
+        "failure_reasons": [
+          "INSUFFICIENT_CONTIGUOUS_4C_DISCHARGE"
+        ]
+      },
+      "successor_initial_record": {
+        "instrument_cycle_id": 0,
+        "points": 2581,
+        "source_row_start": 0,
+        "source_row_stop_exclusive": 2581,
+        "first_datetime_unix": 1498880750.7069,
+        "last_datetime_unix": 1498895785.3855,
+        "first_data_point": 0.0,
+        "last_data_point": 2580.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4017406,
+        "current_max_A": 4.4006844,
+        "step_indices": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0
+        ],
+        "voltage_first_V": 3.4318261,
+        "voltage_last_V": 2.0319753,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 1.6754677,
+        "capacity_valid": false,
+        "curve_valid": false,
+        "capacity_Ah": null,
+        "failure_reasons": [
+          "DISCHARGE_PHASE_CONTAINS_POSITIVE_CURRENT",
+          "DISCHARGE_CAPACITY_OUT_OF_INSTRUMENT_RANGE",
+          "PARENT_CAPACITY_MEASUREMENT_INVALID"
+        ]
+      },
+      "successor_first_regular_record": {
+        "instrument_cycle_id": 1,
+        "points": 1039,
+        "source_row_start": 2581,
+        "source_row_stop_exclusive": 3620,
+        "first_datetime_unix": 1498895785.4142,
+        "last_datetime_unix": 1498898745.6233,
+        "first_data_point": 2581.0,
+        "last_data_point": 3619.0,
+        "time_reversal_count": 0,
+        "current_min_A": -4.4017754,
+        "current_max_A": 4.4012108,
+        "step_indices": [
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        "voltage_first_V": 2.0337634,
+        "voltage_last_V": 2.0257154,
+        "Qd_first_Ah": 0.0,
+        "Qd_last_Ah": 1.0074891,
+        "capacity_valid": true,
+        "curve_valid": true,
+        "capacity_Ah": 1.0074891,
+        "failure_reasons": []
+      },
+      "calendar_gap_seconds": 377282.8381998539,
+      "global_regular_cycle_rule": "predecessor native ID unchanged, successor regular ID=predecessor last native ID+successor native ID, both native0 groups excluded from regular query labels",
+      "primary_terminal_measurement_valid": false,
+      "terminal_rule": "Keep the actual terminal native index. Preserve a valid terminal measurement, otherwise preserve its masked slot.",
+      "internal_clock_anomaly_counts": {
+        "b1c4": {
+          "DateTime_reverse_count": 1,
+          "DateTime_nonfinite_count": 0
+        },
+        "b2c16": {
+          "DateTime_reverse_count": 0,
+          "DateTime_nonfinite_count": 0
+        }
+      },
+      "axis_scope": "Explicit cumulative regular-cycle reconstruction across a documented instrument reset",
+      "source_sha256": {
+        "b1c4": "f151cc56e4436308e60e07bca9ce37c0577c92b2770ea58fdb72b4bcc0ab9259",
+        "b2c16": "25944eb9eb5609c00d5442206a543ecc20bbb6702110f158ded5e808fdcefc58"
+      }
+    }
+  ],
+  "signature": {
+    "parser_sha256": "3d11aff5a1fc69b2c0d4f4b61aeac67d599901ceb556a00c7dde490a0c089075",
+    "measurements_sha256": "ff1ee1a64506d2d7c6518bb51572465756ca4fc8edac5fb4b2dda3e8b832d128",
+    "discharge_config_sha256": "b17dbacd0cba77eb4e8987e8c59adf3b25810a969001c2f06dbd6a4043d194b1",
+    "auditor_sha256": "cd1b4f12e2340344978157e6bfbe100ec2dfa129d5c684f58bad71310ad9755e"
+  },
+  "bindings_sha256": "952ac1ab447f8a464faab8935f72dc13ae2d613c99b63b4a7a8c7fcf0b3fc330",
+  "cycle_axis_scope": "Cumulative native regular-cycle index with explicit restart conditioning and retained partial-attempt/gap slots",
+  "DATA_FREEZE_allowed": false
+}

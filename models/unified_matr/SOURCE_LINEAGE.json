@@ -1,0 +1,728 @@
+{
+  "status": "ENGINEERING_COMPLETE_SCIENTIFIC_TRAINING_NOT_STARTED",
+  "registered_seed": 42,
+  "formal_optimizer_updates": 0,
+  "data_freeze_gate": "PASS_580_CHECKS_44_FILES",
+  "contract": {
+    "filename": "SRSR_Physics_统一研究问题_一次性数据处理与模型实验总合同.md",
+    "sha256": "c59764b219f629eb5767706809a5393536fe977fa6092ae127156340c62a50d7",
+    "bytes": 15796
+  },
+  "legacy_source_root": "D:\\develop\\patchtst\\battery_ai\\_srsr_viq_physics_response_v1\\runtime",
+  "source_files": [
+    {
+      "path": "src/models/battery_mamba_prefix_future/model.py",
+      "source_line_starts": [
+        53,
+        81,
+        91
+      ],
+      "reuse": "dense_ssd, gated RMS normalization, restricted one-group Mamba2 equations",
+      "sha256": "1ac751e937580af39ba610d7283a1832005b3e204d2a997231dc49546633b158",
+      "bytes": 16130
+    },
+    {
+      "path": "scripts/signal_only_4lodo_epo/model.py",
+      "source_line_starts": [
+        88,
+        108,
+        187
+      ],
+      "reuse": "masked identity recurrence, local/history geometry, VIQ patch frontend pattern",
+      "sha256": "2fadb546f5622d015447b6a61743ccee2cad09756035955566d6e99389ebac69",
+      "bytes": 19481
+    },
+    {
+      "path": "scripts/self_reference_selection/model.py",
+      "source_line_starts": [
+        24
+      ],
+      "reuse": "SR111 local selection slices Delta,B,C from reference and x,z from raw",
+      "sha256": "c24cce986669568d1558c95633ed7950032bb34eba6c525844e37fa580676340",
+      "bytes": 11298
+    },
+    {
+      "path": "scripts/self_reference_selection/views.py",
+      "source_line_starts": [
+        11,
+        43
+      ],
+      "reuse": "early physical Q-span reference normalization for I and absolute Q, same original V",
+      "sha256": "af398bca9ba474a6a0afeea360b4a35ea64863a4db3a06c46766eb96cc6040d9",
+      "bytes": 8538
+    },
+    {
+      "path": "scripts/state_dynamics_shared_flow/model.py",
+      "source_line_starts": [
+        11,
+        46
+      ],
+      "reuse": "analytic affine flow, positive rates, native decoder correction",
+      "sha256": "e0a03b02608cdfee9cbe794efd5a0e4f9ac18f50453ea24376b5df3640f1a926",
+      "bytes": 10427
+    },
+    {
+      "path": "scripts/common_flow_state_encoder_factorial/model.py",
+      "source_line_starts": [
+        131
+      ],
+      "reuse": "pooled mean+last state inference and 16-dimensional latent state",
+      "sha256": "77a75b74979474647267bc4a670a04d0abde6f8a001ee3e9878caafa0c118649",
+      "bytes": 10955
+    },
+    {
+      "path": "scripts/signal_only_4lodo_epo/data.py",
+      "source_line_starts": [
+        296
+      ],
+      "reuse": "historical native SOH conversion 0.8+0.2*encoded",
+      "sha256": "2ee6583470c81c812e592cea5b5101b7dca00e4aa09d13bf3245eaf1c0235aee",
+      "bytes": 28581
+    }
+  ],
+  "implementation_files": [
+    {
+      "path": "models/__init__.py",
+      "sha256": "b74c76b1419dba2d556202fea6ab19f387d66477df44c81b5315255a66711628",
+      "bytes": 52
+    },
+    {
+      "path": "models/unified_matr/__init__.py",
+      "sha256": "cce92d5151ff423530d8424cd7e177f9627162b040b40a27d2638afc74da0868",
+      "bytes": 189
+    },
+    {
+      "path": "models/unified_matr/legacy_operators.py",
+      "sha256": "dafc5eca07888e3cf95ea9618bbfe6051863054518f7922cad5ca87f3c17e8f7",
+      "bytes": 7001
+    },
+    {
+      "path": "models/unified_matr/model.py",
+      "sha256": "485bfd06f41da5137f85645577b443ebf7a9b72687d4b5dc84928020a4c96252",
+      "bytes": 20487
+    },
+    {
+      "path": "models/unified_matr/selfcheck.py",
+      "sha256": "cd4f9adceddc8b448598795757fc31e685225de1938ed073fb26d8d4d67b0719",
+      "bytes": 16382
+    },
+    {
+      "path": "models/unified_matr/runner_selfcheck.py",
+      "sha256": "33753dc41861edcdeb1a46142979a238cd8f9e40ed491a5598a20f3873381d9f",
+      "bytes": 7343
+    },
+    {
+      "path": "scripts/unified_matr/train_seed42.py",
+      "sha256": "b5aa9251414191bb74c818064cef5bb6fe2fc1f01971bdd6f3027a757f174608",
+      "bytes": 30240
+    },
+    {
+      "path": "scripts/unified_matr/splits.py",
+      "sha256": "a78d80c408580e376bdb5e8056f48555d521250cece292133dd3be39566e9c89",
+      "bytes": 11276
+    },
+    {
+      "path": "scripts/unified_matr/analyze_results.py",
+      "sha256": "328dd6817d274613c4ae721bb610bdcefdef9e1c368759bada4e17102fcec7c4",
+      "bytes": 61490
+    },
+    {
+      "path": "models/unified_matr/persistence_oracle.py",
+      "sha256": "b702f661c5769c1609ec24c8f6fbac3a3514273eb57c8cf70edf0ddfd2b03889",
+      "bytes": 7583
+    },
+    {
+      "path": "scripts/unified_matr/probe_frozen_loader.py",
+      "sha256": "b6d418d188c48169576047bf9c3def4bbc27ea9ffbff6a81cbe07deaef980027",
+      "bytes": 7727
+    }
+  ],
+  "reused_math": {
+    "local_selection": "SR111 raw x/z; reference Delta/B/C; local d64/head16/state4/expand1",
+    "history": "two masked Mamba2 d64/head16/state16/expand2 with valid mean+last pooling",
+    "analytic_flow": "exp(-rate*t)*state + (-expm1(-rate*t))*mean; generator16_32_32; decoder16_64_1_no_final_bias",
+    "reference_view": "N_V=R_V; N_I=standardize_reference(physical_I/median_early_Q95_Q05_span); N_Q=standardize_reference(absolute_Q/same_span)",
+    "time_scale_cycles": 1000,
+    "analytic_native_correction_scale": 0.2,
+    "backend": "pure_PyTorch_dense_causal_SSD_reference_O_L_squared"
+  },
+  "explicit_task_adaptations": [
+    "All seven arms from-scratch seed42 without reuse of historical frozen weights.",
+    "Single qualified discharge on 64 registered voltage-grid points, eight patches of eight points; historical frontend had two phases and 150 points.",
+    "Known-policy value+availability encoder shared by all seven arms.",
+    "Same observed-prefix native SOH100 anchor supplied to all seven arms.",
+    "Common bounded observation residual added to all seven arms, including M0, and common output range [0,1.2]. M0 is the original operators under this declared task adaptation.",
+    "Early reference scale uses contract-qualified first-five-to-ten valid original discharge cycles; old source used first20 supplied slots with phase priority.",
+    "M3-NL bypasses all raw/reference values and all local values/masks. Active global-only frontend plus original local/history operators retain global features, policy, anchor and support only.",
+    "M3-NL global-input bottleneck width approximates full-information model parameter budget. All matching parameters are active, and the actual difference is reported.",
+    "Positive-rate Flow uses one-original-cycle trapezoidal integration anchored at100, with rate in SOH per1000cycles.",
+    "True-cycle-gap learnable EMA persistence allows signed drift and returns a soft mean-squared gap-normalized change penalty.",
+    "M2 and M3-NR are the same registered graph and initialization, retained as a duplicate consistency control.",
+    "Sinusoidal prefix position uses actual original cycle IDs and supported cycles must be strictly increasing; invalid slots preserve masks."
+  ],
+  "fixed_loss_interface": {
+    "primary": "runner cell-mean masked future-trajectory MAE",
+    "rate_auxiliary": "runner 0.1 * mean supported window rate MAE *1000",
+    "persistence_recommendation_weight": 0.001,
+    "persistence_applies_to": [
+      "M2",
+      "M3",
+      "M3-NL",
+      "M3-NR"
+    ],
+    "ordinary_fusion_persistence_penalty": 0
+  },
+  "engineering_receipts": [
+    {
+      "path": "models/unified_matr/ENGINEERING_SELFCHECK_CPU.json",
+      "sha256": "1a463e2cbc172e3ca8c902b27a460379371d7245f125ed0bdc27bc163f74caab",
+      "bytes": 17563
+    },
+    {
+      "path": "models/unified_matr/ENGINEERING_SELFCHECK_CUDA.json",
+      "sha256": "fafccfa69d759066042092d5c5dae5ebb912200bfed73453184ea0927b91eaa2",
+      "bytes": 18588
+    },
+    {
+      "path": "models/unified_matr/ENGINEERING_RUNNER_SELFCHECK.json",
+      "sha256": "41e3c3445be190998c529bca05282b521f92ef400971f88e284e66bd0e24400e",
+      "bytes": 13556
+    },
+    {
+      "path": "models/unified_matr/ENGINEERING_SPLITS_SELFCHECK.json",
+      "sha256": "64a4a9e378e491d52c9e19118ff97811e36b437f00718dbe0ac06be2543e9a07",
+      "bytes": 2358
+    },
+    {
+      "path": "models/unified_matr/ENGINEERING_ANALYSIS_SELFCHECK.json",
+      "sha256": "f456c6d9a9c505982b58d9df9e46503eec4050d3ed9c35c611622abe8d2a0b02",
+      "bytes": 2914
+    },
+    {
+      "path": "models/unified_matr/ENGINEERING_PERSISTENCE_ORACLE.json",
+      "sha256": "5eedf7476afb2cd7f63ac4fe7dc1ecd82b0878b5c9794d052372fe797a6f6e53",
+      "bytes": 29583
+    },
+    {
+      "path": "models/unified_matr/ENGINEERING_GPU_PROFILE.json",
+      "sha256": "a5fbf4ffd7b1d87f6ecbfab5db2583fea2a3f0fed907b1853bbfa85748f07ab3",
+      "bytes": 29047
+    }
+  ],
+  "confidence": {
+    "operator_fidelity": "high_from_direct_old_source_bitwise_checks",
+    "biological_mechanism": "not_established",
+    "scientific_predictive_performance": "not_run"
+  },
+  "engineering_summary": {
+    "cpu": {
+      "status": "PASS",
+      "checks": 95,
+      "optimizer_updates": 0,
+      "scope": "synthetic_engineering_selfcheck_only",
+      "deterministic_algorithms": true,
+      "cublas_workspace_config": ":4096:8",
+      "query_fixture": "dense integer100..5000 plus off-grid200.5; forward and backward allseven arms"
+    },
+    "cuda": {
+      "status": "PASS",
+      "checks": 102,
+      "optimizer_updates": 0,
+      "scope": "synthetic_engineering_selfcheck_only",
+      "deterministic_algorithms": true,
+      "cublas_workspace_config": ":4096:8",
+      "query_fixture": "dense integer100..5000 plus off-grid200.5; forward and backward allseven arms",
+      "maximum_CPU_CUDA_absolute_error": 1.1920928955078125e-07
+    },
+    "ENGINEERING_RUNNER_SELFCHECK.json": {
+      "status": "PASS",
+      "checks": 24,
+      "optimizer_updates": 0,
+      "scope": "runner_guard_loss_scaler_resume_engineering_only"
+    },
+    "ENGINEERING_SPLITS_SELFCHECK.json": {
+      "status": "PASS",
+      "checks": 20,
+      "optimizer_updates": 0,
+      "scope": "synthetic_split_engineering_only"
+    },
+    "ENGINEERING_ANALYSIS_SELFCHECK.json": {
+      "status": "PASS",
+      "checks": 26,
+      "optimizer_updates": 0,
+      "scope": "synthetic_analysis_mathematics_and_guards_only",
+      "formal_results_read": false
+    }
+  },
+  "reused_repository_dependencies": [
+    {
+      "path": "scripts/run_experiment_b.py",
+      "sha256": "44216d6c78911b05ece3888ae0e017d475ff354f3b0b644d5dd5044562ddbede",
+      "bytes": 24260,
+      "reuse": "OS-held execution_lock only; historical experiment logic is not executed"
+    }
+  ],
+  "registered_actual_dimensions": {
+    "policy_dim": 15,
+    "global_dim": 20,
+    "local_feature_dim": 26
+  },
+  "parameter_registry": [
+    {
+      "arm": "M0",
+      "seed": 42,
+      "parameters": 101901,
+      "trainable_parameters": 101901,
+      "initial_state_sha256": "14996a6994432674a41d335fa07d2bd371c3f45b3786dd9105ae548160dd0803",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": false,
+      "rate_flow": false,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M1",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": false,
+      "rate_flow": false,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M2",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": true,
+      "rate_flow": false,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M3",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "84d5a04b58a2649f9d11041bce8a6a8c6d7eed7631e635d9157af5618c3e4c73",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": true,
+      "rate_flow": true,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M3-NL",
+      "seed": 42,
+      "parameters": 134331,
+      "trainable_parameters": 134331,
+      "initial_state_sha256": "6846278dc1c2ecd666108292dae5cb60bb3cef86842fcf5f8afacb7fa65c2217",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": true,
+      "rate_flow": true,
+      "local_removed": true,
+      "nonlocal_matching_hidden": 126,
+      "input_ablation": "global_features_policy_anchor_and_support_only",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M3-NP",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "84d5a04b58a2649f9d11041bce8a6a8c6d7eed7631e635d9157af5618c3e4c73",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": false,
+      "rate_flow": true,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M3-NR",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": true,
+      "rate_flow": false,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    }
+  ],
+  "common_observation_model": {
+    "formula": "bound*tanh(g(state,condition,tau))",
+    "bound": 0.03,
+    "time_ramp": false,
+    "trend_anchor": "observed_prefix_SOH100",
+    "observation_at100": "bounded and allowed to differ from trend anchor",
+    "decision_basis": "Common observation layer is a task adaptation; the unsupported 1000cycle ramp was removed before scientific training, following contract review."
+  },
+  "runner_audit_repairs": [
+    "Data freeze verifies all consumed artifact hashes, seed42, four source archives, independent QA PASS, authenticated instrument-axis mapping SHA and same frozen training config before registration.",
+    "Exactly seven arms, five cell folds plus one protocol-heldout split, 150epochs, batch8, fixed AdamW settings, fixed selection and loss weights are validated.",
+    "Actual P15/G20/L26 parameter counts and common same-key same-shape initial state values are checked before runs; each training unit verifies the registered initialization hash.",
+    "Supported nonfinite feature values fail closed; train-only scaler keeps missing masks; fully missing trajectory batch contributes finite zero loss without changing update count.",
+    "Atomic resume state saves model, optimizer, Python/NumPy/CPU/CUDA RNG, journal history and a selected-weight snapshot; resume restores RNG and repairs journal to the committed epoch.",
+    "OS-held single matrix writer lock reused from historical code; fixed actual optimizer-update budget is checked per unit.",
+    "Selection becomes immutable before test prediction; a completed unit verifies hashes and update count, then skips recomputation."
+  ],
+  "split_design": {
+    "function": "scripts/unified_matr/splits.py::build_splits(cells_rows,configsplit)",
+    "assignment_fields": [
+      "cell_uid",
+      "protocol_uid"
+    ],
+    "input_qualification_used": false,
+    "future_labels_used": false,
+    "physical_UIDs_assigned_before_masking": true,
+    "outer_cell_folds": 5,
+    "outer_protocol_and_cell_count_balance": "difference at most one",
+    "validation_fraction": 0.2,
+    "validation_quotas": "protocol proportional, largest remainders",
+    "sensitivity_heldout_protocol_group_fraction": 0.2,
+    "sensitivity_protocol_identity_disjoint": true,
+    "randomness": "fixed sha256 namespace with seed42; no PRNG fitting or labels"
+  },
+  "strict_determinism_backend_repair": {
+    "observed_failure": "CUDA cumsum has no strict deterministic implementation in the installed Torch backend; previous GPU QA lacked the formal strictdet flag.",
+    "torch_version": "2.4.1+cu121",
+    "repair": "When CUDA and deterministic algorithms are enabled, copy the small cumulative-scan operand to CPU, cumsum there, then copy back to the original device. Autograd copy operators preserve gradients.",
+    "affected_math": [
+      "dense SSD cumulative log decay",
+      "nonnegative rate trapezoid cumulative integral"
+    ],
+    "parameters_added": 0,
+    "dtype_preserved": true,
+    "scientific_optimizer_updates_before_and_after": 0,
+    "refreshed_QA": "Allseven arms strictdet CPU and CUDA forward/backward with dense100..5000 plus200.5; CPU old-source bitwise and CPU/CUDA prediction tolerance checked."
+  },
+  "post_training_analysis": {
+    "source": "scripts/unified_matr/analyze_results.py",
+    "implementation_status": "CODE_COMPLETE_ENGINEERING_CHECKED",
+    "scientific_results_read": false,
+    "scientific_analysis_executed": false,
+    "required_formal_units": 42,
+    "scopes": [
+      "five-fold unique-physical-cell OOF",
+      "separate protocol-heldout sensitivity"
+    ],
+    "contrasts": [
+      [
+        "M3",
+        "M0"
+      ],
+      [
+        "M1",
+        "M0"
+      ],
+      [
+        "M2",
+        "M1"
+      ],
+      [
+        "M3",
+        "M2"
+      ],
+      [
+        "M3",
+        "M3-NL"
+      ],
+      [
+        "M3",
+        "M3-NP"
+      ],
+      [
+        "M3",
+        "M3-NR"
+      ]
+    ],
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 42,
+    "units": [
+      "paired physical cell",
+      "exact protocol group"
+    ],
+    "EOL_prediction_horizon": 5000,
+    "EOL_metric": "Harrell C at-risk100; strict earlier observed event comparability, outcome ties excluded, prediction ties0.5",
+    "M2_NR_reproduction": [
+      "trajectory/trend",
+      "rate endpoints",
+      "EOL risk scores",
+      "training history excluding elapsed",
+      "safe-loaded selected weight tensors"
+    ]
+  },
+  "persistence_vectorization": {
+    "decision": "retained_after_equivalence_and_matched_runtime_gain",
+    "learned_parameters": 64,
+    "parameter_count_change": 0,
+    "loop_model_source_SHA256": "4d435bd04ded2030d6561e025e8e838ac14c52d4d765c867ba8db2001e430e12",
+    "formula": "dense causal EMA with effective elapsed=sum(valid & seen ? clamp(current-previous_valid,1):0), first valid write1, missing state hold/output0, same soft penalty denominator",
+    "zero_retention_limit": "explicit constant branch avoids log0 while retaining saturated-sigmoid values and gradients",
+    "oracle_cases": 28,
+    "oracle_status": "PASS",
+    "maximum_absolute_errors": {
+      "states": 4.76837158203125e-07,
+      "penalty": 3.725290298461914e-09,
+      "value_gradient": 1.7462298274040222e-10,
+      "cycle_gradient": 5.689798854291439e-09,
+      "retain_logits_gradient": 9.313225746154785e-10
+    },
+    "finite_arithmetic": "same real-valued function checked at preregistered FP64 and FP32 tolerances",
+    "matched_runtime_settings": {
+      "batch_size": 8,
+      "P": 15,
+      "G": 20,
+      "L": 26,
+      "query_first": 101,
+      "query_last": 2500,
+      "FP32": true,
+      "strictdet": true,
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "torch_intraop_threads": 4,
+      "torch_interop_threads": 24,
+      "inter_op_policy": "unchanged installed default, matching formal train entry",
+      "seed": 42,
+      "warmups_each_arm_each_backend": 2,
+      "timed_each_arm_each_backend": 3,
+      "timing_excludes": [
+        "gradient audit",
+        "optimizer",
+        "clipping",
+        "input transfer",
+        "validation",
+        "checkpoint I/O"
+      ]
+    },
+    "projection_87150_updates": {
+      "forward_backward_only_seconds": {
+        "loop": 8647.949279041495,
+        "vectorized": 2323.614466402796
+      },
+      "forward_backward_only_hours": {
+        "loop": 2.402208133067082,
+        "vectorized": 0.6454484628896656
+      },
+      "speedup": 3.721765983162192,
+      "confidence": "medium for end-to-end duration; short current-environment microprofile"
+    },
+    "scientific_optimizer_updates": 0,
+    "future_labels_used_for_optimization": false
+  },
+  "runtime_profile": {
+    "receipt": "models/unified_matr/ENGINEERING_GPU_PROFILE.json",
+    "report": "report/UNIFIED_MATR_ENGINEERING_RUNTIME_ZH.md",
+    "scientific_optimizer_updates": 0,
+    "future_label_reads": 0,
+    "source_math_changes": "only oracle-certified parameter-preserving EMA vectorization",
+    "limits": [
+      "three timed passes per arm/backend",
+      "current shared-resource state including live dataset builder",
+      "unchanged control paths show startup and environment timing variation",
+      "forward/backward projection excludes optimizer, clipping, input transfer, validation and checkpoint cost",
+      "operator profiler adds instrumentation overhead; lightweight timers determine local host costs"
+    ]
+  },
+  "data_freeze_snapshot": {
+    "certificate_sha256": "276016ea2f72c2d9c366c44b00906c80cf8234f741b48b60a6a2562c57fff4fb",
+    "files": 44,
+    "QA_status": "PASS",
+    "QA_checks": 580,
+    "fixed_input_eligible_cells": 169,
+    "valid_prefix_curves": 16857,
+    "future_valid_points": 123431,
+    "rate_support": {
+      "r200_500": 151,
+      "r500_1000": 42
+    },
+    "EOL_events": 169,
+    "EOL_censored": 0,
+    "formal_model_optimizer_updates_at_engineering_seal": 0
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "synthetic_checks": {
+    "native_index_gaps_and_first_last_preserved": true,
+    "chunk_boundary_exact_invariance_5_sizes": true,
+    "native_units_missing_optional_and_no_global_axis_inference": true,
+    "instrument_counter_reset_rejected_without_reindexing": true,
+    "noninteger_instrument_index_rejected": true,
+    "partial_download_trailing_text_trimmed_and_flagged": true,
+    "authenticated_restart_separates_same_local_IDs_across_4_chunk_sizes": true,
+    "restart_without_valid_Step_Index_evidence_rejected": true,
+    "restart_without_valid_Data_Point_evidence_rejected": true,
+    "restart_without_valid_DateTime_evidence_rejected": true,
+    "independent_native_to_release_binding_and_negative_control": true
+  },
+  "real_four_batch_prefix_checks": [
+    {
+      "source_batch": 1,
+      "test_id": "5c86c0bdfa2ede00015ddf71",
+      "sample_sha256": "532d8244412e27113f76a4db9368e181603e01c21d192126248e59a354d9da8d",
+      "source_field_names": [
+        "Data_Point",
+        "Test_Time",
+        "DateTime",
+        "Step_Time",
+        "Step_Index",
+        "Cycle_Index",
+        "Current",
+        "Voltage",
+        "Charge_Capacity",
+        "Discharge_Capacity",
+        "Charge_Energy",
+        "Discharge_Energy",
+        "dV/dt",
+        "Internal_Resistance",
+        "Temperature"
+      ],
+      "instrument_cycle_ids_seen": [
+        0
+      ],
+      "rows_read": 485,
+      "first_Test_Time_s": 0.0,
+      "first_current_A": 0.0,
+      "source_file_complete": false,
+      "raw_cycle_certified": false
+    },
+    {
+      "source_batch": 2,
+      "test_id": "5c86bf28fa2ede00015ddd8d",
+      "sample_sha256": "e6eac39859f1c7e67740ecf6cc2560508390d579513fbe29241f91f5c9857460",
+      "source_field_names": [
+        "Data_Point",
+        "Test_Time",
+        "DateTime",
+        "Step_Time",
+        "Step_Index",
+        "Cycle_Index",
+        "Current",
+        "Voltage",
+        "Charge_Capacity",
+        "Discharge_Capacity",
+        "Charge_Energy",
+        "Discharge_Energy",
+        "dV/dt",
+        "Internal_Resistance",
+        "Temperature"
+      ],
+      "instrument_cycle_ids_seen": [
+        0
+      ],
+      "rows_read": 439,
+      "first_Test_Time_s": 0.0074,
+      "first_current_A": -0.11000019,
+      "source_file_complete": false,
+      "raw_cycle_certified": false
+    },
+    {
+      "source_batch": 3,
+      "test_id": "5c86bd71fa2ede00015ddbbd",
+      "sample_sha256": "f447d7f439b67401bde4fc11a5d4a9fe89da426405927788277b44773426e622",
+      "source_field_names": [
+        "Data_Point",
+        "Test_Time",
+        "DateTime",
+        "Step_Time",
+        "Step_Index",
+        "Cycle_Index",
+        "Current",
+        "Voltage",
+        "Charge_Capacity",
+        "Discharge_Capacity",
+        "Charge_Energy",
+        "Discharge_Energy",
+        "dV/dt",
+        "Internal_Resistance",
+        "Temperature",
+        "Aux_Voltage"
+      ],
+      "instrument_cycle_ids_seen": [
+        0
+      ],
+      "rows_read": 617,
+      "first_Test_Time_s": 60.0056,
+      "first_current_A": 0.0,
+      "source_file_complete": false,
+      "raw_cycle_certified": false
+    },
+    {
+      "source_batch": 4,
+      "test_id": "5dcef219110002c7215b2c9e",
+      "sample_sha256": "966dc5df3980d7cbf5f716e0d478a862928b2bcacc94613fcaa4e2ce9c54745d",
+      "source_field_names": [
+        "Data_Point",
+        "Test_Time",
+        "DateTime",
+        "Step_Time",
+        "Step_Index",
+        "Cycle_Index",
+        "Current",
+        "Voltage",
+        "Charge_Capacity",
+        "Discharge_Capacity",
+        "Charge_Energy",
+        "Discharge_Energy",
+        "dV/dt",
+        "Internal_Resistance",
+        "Temperature",
+        "Aux_Voltage"
+      ],
+      "instrument_cycle_ids_seen": [
+        0
+      ],
+      "rows_read": 504,
+      "first_Test_Time_s": -5414.5629,
+      "first_current_A": -0.42874718,
+      "source_file_complete": false,
+      "raw_cycle_certified": false
+    }
+  ],
+  "scope": "Streaming properties and genuine 64KiB schema samples. Whole-log SHA, identity, full instrument-cycle coverage and continuation QA remain separate.",
+  "module_sha256": "7d1195b20b08c2d5abaf96e563faef497bbd8d75bb0d5093176bae5f01472982"
+}

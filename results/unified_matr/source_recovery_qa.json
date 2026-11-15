@@ -1,0 +1,73 @@
+{
+  "status": "PASS_SOURCE_RECOVERY_COMPLETE_INSTRUMENT_MAPPING_QA_PENDING",
+  "checks": {
+    "four_matlab_archives_complete_lengths_match": true,
+    "four_matlab_complete_SHA_receipts_bound_to_registry": true,
+    "previous_three_static_policy_byte_ranges_match_complete_archives": true,
+    "all185_matlab_segments_have_unique_official_csv_identity": true,
+    "fixed169_physical_ids_and174_segments_match_without_future_support_filter": true,
+    "fixed169_have169_distinct_physical_barcodes": true,
+    "all5_continuation_pairs_share_same_actual_barcode": true,
+    "all186_actual_http_source_sizes_and_etags_registered": true,
+    "no_missing_or_ambiguous_fixed_cohort_source_identity": true,
+    "author_parser_immutable_commit_and_full_local_sha": true,
+    "matlab_summary_sequence_retains_uncertified_instrument_axis": true,
+    "full_instrument_mapping_kept_pending_independent_record_replay": true,
+    "every_complete_csv_has_whole_file_sha_and_matching_length": true
+  },
+  "matlab_source_bytes": 10870637553,
+  "matlab_source_segments": 185,
+  "matlab_unique_normalized_barcodes": 180,
+  "official_instrument_tests": 186,
+  "official_instrument_bytes": 28061961088,
+  "official_csv_publisher_stale_size_records": 46,
+  "official_csv_publisher_size_overstatement_bytes": 58686963,
+  "official_edp_tests_outside_matlab_snapshot": [
+    {
+      "source_batch": 4,
+      "source_channel": "46",
+      "test_id": "5dcef422110002c7215b2cee",
+      "file_id": "5dcef3c5110002c7215b2ced",
+      "file_name": "2019-01-24_batch9_CH46.csv",
+      "bytes": 4005938440
+    }
+  ],
+  "fixed_cohort_cells": 169,
+  "fixed_required_csv_segments": 174,
+  "fixed_required_csv_bytes": 21837210616,
+  "complete_csv_files": 174,
+  "pending_csv_files": 0,
+  "complete_csv_bytes": 21837210616,
+  "author_source_proof": {
+    "url": "https://raw.githubusercontent.com/chueh-ermon/BMS-autoanalysis/aa54406731665e3ef1f77ad43dbc55ff7c763fd3/cell_analysis.m",
+    "commit": "aa54406731665e3ef1f77ad43dbc55ff7c763fd3",
+    "local_file": "author_cell_analysis_aa54406731665e3ef1f77ad43dbc55ff7c763fd3.m",
+    "bytes": 6869,
+    "sha256": "6cf481b35e05465feb9a5d66381e92cdc934867b173dd51a627184b2bc1d1ce9",
+    "source_lines": {
+      "instrument_cycle_input": 27,
+      "cycle_selection": [
+        78,
+        82
+      ],
+      "native_time_to_minutes": 91,
+      "current_normalization": 92,
+      "author_generated_summary_sequence": 154
+    }
+  },
+  "short_source_excerpts": [
+    {
+      "line": 92,
+      "code": "battery.cycles(k).I = Current(cycle_indices)/1.1;"
+    },
+    {
+      "line": 154,
+      "code": "battery.summary.cycle = (1:k)';"
+    }
+  ],
+  "third_party_full_code_scope": "Private local source evidence, original immutable URL and SHA retained",
+  "source_identity_confidence": "high, exact decoded manufacturer barcode and physical channel within each original batch",
+  "instrument_axis_scope": "Actual instrument Cycle_Index exists in native CSV; full per-record mapping and prefix/phase qualification are independent downstream QA",
+  "formal_model_evaluation_performed": false,
+  "code_sha256": "48ef07eaca6ba764cc4d89a01c2638068c3dad3f6d62afa04168c8c388382cd4"
+}

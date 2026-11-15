@@ -1,0 +1,111 @@
+{
+  "status": "REAL_INSTRUMENT_ENGINEERING_PILOT",
+  "cell_uid": "MATR_b2c0",
+  "source_csv_sha256": "35c6c6f0a6979ebf348b1e7f080faa6d3fb89d85325f01bc436b57915d411575",
+  "source_bytes": 72068947,
+  "native_cycle_count": 328,
+  "native_cycle_first": 0,
+  "native_cycle_last": 327,
+  "native_cycle_gaps": 0,
+  "valid_capacities": 324,
+  "qualified_original_1_to100_curves": 99,
+  "reference_cycles": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "global_valid_values": 1964,
+  "local_valid_values": 20464,
+  "integration_counter_ratio_median": 1.0003772063712528,
+  "failure_counts": {
+    "DISCHARGE_PHASE_CONTAINS_POSITIVE_CURRENT": 1,
+    "DISCHARGE_START_VOLTAGE_INCOMPLETE": 1,
+    "DISCHARGE_COUNTER_ZERO_UNCERTIFIED": 1,
+    "DISCHARGE_CAPACITY_OUT_OF_INSTRUMENT_RANGE": 1,
+    "WINDOW_FULL_SUPPORT_MISSING": 1,
+    "PARENT_CAPACITY_MEASUREMENT_INVALID": 1,
+    "TIME_COUNTER_REVERSES_WITHIN_CYCLE": 3
+  },
+  "real_prefix_future_perturbation_invariant": true,
+  "first_rows": [
+    {
+      "instrument_cycle_id": 0,
+      "capacity_valid": false,
+      "curve_valid": false,
+      "capacity_Ah": null,
+      "ratio": 0.26289294265520535,
+      "reasons": [
+        "DISCHARGE_PHASE_CONTAINS_POSITIVE_CURRENT",
+        "DISCHARGE_START_VOLTAGE_INCOMPLETE",
+        "DISCHARGE_COUNTER_ZERO_UNCERTIFIED",
+        "DISCHARGE_CAPACITY_OUT_OF_INSTRUMENT_RANGE",
+        "WINDOW_FULL_SUPPORT_MISSING",
+        "PARENT_CAPACITY_MEASUREMENT_INVALID"
+      ],
+      "source_row_start": 0,
+      "source_row_stop_exclusive": 11639
+    },
+    {
+      "instrument_cycle_id": 1,
+      "capacity_valid": true,
+      "curve_valid": true,
+      "capacity_Ah": 1.0680572,
+      "ratio": 1.0008596158880603,
+      "reasons": [],
+      "source_row_start": 11639,
+      "source_row_stop_exclusive": 12947
+    },
+    {
+      "instrument_cycle_id": 2,
+      "capacity_valid": true,
+      "curve_valid": true,
+      "capacity_Ah": 1.0700541,
+      "ratio": 1.0007570115170334,
+      "reasons": [],
+      "source_row_start": 12947,
+      "source_row_stop_exclusive": 14210
+    }
+  ],
+  "last_rows": [
+    {
+      "instrument_cycle_id": 325,
+      "capacity_valid": true,
+      "curve_valid": true,
+      "capacity_Ah": 0.82770199,
+      "ratio": 1.0002735859539846,
+      "reasons": [],
+      "source_row_start": 483343,
+      "source_row_stop_exclusive": 484923
+    },
+    {
+      "instrument_cycle_id": 326,
+      "capacity_valid": true,
+      "curve_valid": true,
+      "capacity_Ah": 0.8264913,
+      "ratio": 1.0003283285700448,
+      "reasons": [],
+      "source_row_start": 484923,
+      "source_row_stop_exclusive": 486519
+    },
+    {
+      "instrument_cycle_id": 327,
+      "capacity_valid": true,
+      "curve_valid": true,
+      "capacity_Ah": 0.82398337,
+      "ratio": 1.000357234012689,
+      "reasons": [],
+      "source_row_start": 486519,
+      "source_row_stop_exclusive": 488030
+    }
+  ],
+  "formal_training_runs": 0,
+  "optimizer_updates": 0,
+  "scope": "One complete original instrument CSV. Source identity/continuation registry and full-cohort data freeze remain separate requirements."
+}

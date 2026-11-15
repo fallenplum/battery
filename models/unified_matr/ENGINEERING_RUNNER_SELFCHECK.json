@@ -1,0 +1,547 @@
+{
+  "status": "PASS",
+  "scope": "runner_guard_loss_scaler_resume_engineering_only",
+  "checks": 24,
+  "formal_training": false,
+  "optimizer_updates": 0,
+  "scientific_predictions": 0,
+  "records": [
+    {
+      "check": "registered_seed42_budget_accepted",
+      "status": "PASS"
+    },
+    {
+      "check": "changed_budget_rejected_epochs",
+      "status": "PASS"
+    },
+    {
+      "check": "changed_budget_rejected_batch_size",
+      "status": "PASS"
+    },
+    {
+      "check": "changed_budget_rejected_learning_rate",
+      "status": "PASS"
+    },
+    {
+      "check": "changed_budget_rejected_early_stopping",
+      "status": "PASS"
+    },
+    {
+      "check": "additional_seed_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "incomplete_arm_matrix_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "missing_DATA_FREEZE_rejected_before_data_access",
+      "status": "PASS"
+    },
+    {
+      "check": "pending_DATA_FREEZE_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "status_string_without_original_axis_evidence_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "atomic_selected_snapshot_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "check": "selected_tensor_change_detected",
+      "status": "PASS"
+    },
+    {
+      "check": "history_rolls_back_to_atomic_checkpoint_without_duplicate_epochs",
+      "status": "PASS"
+    },
+    {
+      "check": "concurrent_matrix_writer_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "released_matrix_lock_reusable",
+      "status": "PASS"
+    },
+    {
+      "check": "all_scaler_statistics_train_cell_only",
+      "status": "PASS"
+    },
+    {
+      "check": "reference_voltage_preserves_original_view_exactly",
+      "status": "PASS"
+    },
+    {
+      "check": "supported_nonfinite_feature_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "trajectory_loss_equal_cell_weight_with_nan_missing_targets",
+      "status": "PASS"
+    },
+    {
+      "check": "masked_trajectory_loss_finite_gradient",
+      "status": "PASS"
+    },
+    {
+      "check": "all_missing_batch_zero_loss_preserves_fixed_updates",
+      "status": "PASS"
+    },
+    {
+      "check": "resume_python_numpy_torch_rng_exact_replay",
+      "status": "PASS"
+    },
+    {
+      "check": "resume_CUDA_rng_exact_replay",
+      "status": "PASS"
+    },
+    {
+      "check": "actual_P15_G20_L26_initialization_registry_all_pairs",
+      "status": "PASS"
+    }
+  ],
+  "initialization": {
+    "models": {
+      "M0": {
+        "arm": "M0",
+        "seed": 42,
+        "parameters": 101901,
+        "trainable_parameters": 101901,
+        "initial_state_sha256": "14996a6994432674a41d335fa07d2bd371c3f45b3786dd9105ae548160dd0803",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": false,
+        "rate_flow": false,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M1": {
+        "arm": "M1",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": false,
+        "rate_flow": false,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M2": {
+        "arm": "M2",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": true,
+        "rate_flow": false,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M3": {
+        "arm": "M3",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "84d5a04b58a2649f9d11041bce8a6a8c6d7eed7631e635d9157af5618c3e4c73",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": true,
+        "rate_flow": true,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M3-NL": {
+        "arm": "M3-NL",
+        "seed": 42,
+        "parameters": 134331,
+        "trainable_parameters": 134331,
+        "initial_state_sha256": "6846278dc1c2ecd666108292dae5cb60bb3cef86842fcf5f8afacb7fa65c2217",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": true,
+        "rate_flow": true,
+        "local_removed": true,
+        "nonlocal_matching_hidden": 126,
+        "input_ablation": "global_features_policy_anchor_and_support_only",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M3-NP": {
+        "arm": "M3-NP",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "84d5a04b58a2649f9d11041bce8a6a8c6d7eed7631e635d9157af5618c3e4c73",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": false,
+        "rate_flow": true,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      },
+      "M3-NR": {
+        "arm": "M3-NR",
+        "seed": 42,
+        "parameters": 134301,
+        "trainable_parameters": 134301,
+        "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "flow_head_parameters": 2752,
+        "single_discharge_patch_geometry": [
+          8,
+          8
+        ],
+        "local_width_heads_state": [
+          64,
+          4,
+          4
+        ],
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "latent_state_dim": 16,
+        "persistent": true,
+        "rate_flow": false,
+        "local_removed": false,
+        "nonlocal_matching_hidden": null,
+        "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "time_scale_cycles": 1000,
+        "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+      }
+    },
+    "common_initialization_checks": [
+      {
+        "arms": [
+          "M0",
+          "M1"
+        ],
+        "common_tensors": 63,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M2"
+        ],
+        "common_tensors": 63,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M3"
+        ],
+        "common_tensors": 56,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M3-NL"
+        ],
+        "common_tensors": 52,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M3-NP"
+        ],
+        "common_tensors": 56,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M0",
+          "M3-NR"
+        ],
+        "common_tensors": 63,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M2"
+        ],
+        "common_tensors": 89,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M3"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M3-NL"
+        ],
+        "common_tensors": 61,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M3-NP"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M1",
+          "M3-NR"
+        ],
+        "common_tensors": 89,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M2",
+          "M3"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M2",
+          "M3-NL"
+        ],
+        "common_tensors": 61,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M2",
+          "M3-NP"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M2",
+          "M3-NR"
+        ],
+        "common_tensors": 89,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3",
+          "M3-NL"
+        ],
+        "common_tensors": 67,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3",
+          "M3-NP"
+        ],
+        "common_tensors": 88,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3",
+          "M3-NR"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3-NL",
+          "M3-NP"
+        ],
+        "common_tensors": 67,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3-NL",
+          "M3-NR"
+        ],
+        "common_tensors": 61,
+        "exact_equal": true
+      },
+      {
+        "arms": [
+          "M3-NP",
+          "M3-NR"
+        ],
+        "common_tensors": 82,
+        "exact_equal": true
+      }
+    ],
+    "NL_parameter_difference_from_M3": 30
+  }
+}

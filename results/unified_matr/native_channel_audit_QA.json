@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "checks": {
+    "174_unique_required_sources_complete": true,
+    "summary_complete_numeric_and_transition_coverage": true,
+    "parquet_file_field_keys_unique": true,
+    "all174_parquet_source_identities_covered": true,
+    "all2695_native_file_field_rows_covered": true,
+    "all_perfield_support_partitions_valid": true,
+    "numeric_zero_support_bounded_by_finite_values": true,
+    "all174_numeric_and_transition_SHA_receipts_match": true,
+    "all_actual_native_header_columns_audited": true,
+    "all_fields_in_each_file_have_equal_native_row_count": true,
+    "all_native_contexts_obey_kind_and_row_boundary": true,
+    "all_context_counts_and_finite_statistics_consistent": true,
+    "all_transition_macro_counts_recomputed_from_per_source_caches": true,
+    "total_native_rows_and_bytes_recomputed": true,
+    "temperature_IR_and_auxiliary_fields_retained": true,
+    "only_b1c18_embedded_cycle_reset_in_full_inventory": true
+  },
+  "source_segments": 174,
+  "field_rows": 2695,
+  "native_rows": 143396900,
+  "source_bytes": 21837210616,
+  "transition_totals": {
+    "cycle_index_change": 140402,
+    "cycle_index_decrease": 1,
+    "cycle_index_forward_jump": 34,
+    "data_point_nonincrease": 0,
+    "datetime_reverse": 6,
+    "test_time_reverse": 500
+  },
+  "parquet_sha256": "73f6e8b034840e3644d6e035ef22f0586f309e8be60d674b9e736af3b976d4f4",
+  "summary_sha256": "e4ad6330e4e3f105b1b3c513ce0272c70afcb820252949b482687c4615215f63",
+  "model_fits_or_input_mask_changes": 0,
+  "code_sha256": "7a79e452dc479b4be3b3316796da8dd2060b9b5afb6fcb08454f9776ad85137b"
+}

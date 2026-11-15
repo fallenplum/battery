@@ -1,0 +1,44 @@
+{
+  "status": "PRE_FREEZE_ENGINEERING_AMENDMENTS",
+  "training_seeds": [
+    42
+  ],
+  "formal_training_runs": 0,
+  "scientific_scores_exposed": false,
+  "previous_engineering_recipe": {
+    "files": {
+      "build_dataset.py": "325e2c3ef01b49c1d1e0e0e6cb4eef8811c446fdfcf9f6c9d4b8fabca8b3802c",
+      "dataset_utils.py": "87f35e9f1000de25b5a611d03a332c34f1ecc44e7243457e596ae2796ad1be96",
+      "instrument_csv.py": "3d11aff5a1fc69b2c0d4f4b61aeac67d599901ceb556a00c7dde490a0c089075",
+      "measurements.py": "ff1ee1a64506d2d7c6518bb51572465756ca4fc8edac5fb4b2dda3e8b832d128",
+      "physics_features.py": "3104722ae13bca400a9a7ef8138b2a90f4805d8c3de244335a789dac65169d9a",
+      "splits.py": "a78d80c408580e376bdb5e8056f48555d521250cece292133dd3be39566e9c89"
+    },
+    "config_sha256": "25a488e1e27e6dffe5246ad8a9433810a9906aa7eb29d1288f4d21294dc6e72d"
+  },
+  "preserved_previous_cache_cells": 42,
+  "changes": [
+    {
+      "id": "field_specific_time_validity",
+      "evidence": "Native Data_Point and Cycle_Index remain ordered while Test_Time resets. Device discharge counter and Q(V) do not use Test_Time.",
+      "correction": "Keep counter and VIQ qualification independent. Time faults mask integration and retain explicit warnings."
+    },
+    {
+      "id": "native_counter_restart",
+      "evidence": "b1c18 source rows964481 to964482 reset Cycle_Index691 to0 while Data_Point/DateTime advance. Author unique-index export concatenates different measurement runs.",
+      "correction": "Keep native run identity and chronological cycle groups. Audit run measurement roles before physical regular-cycle assignment. Preserve original raw source and all failures."
+    },
+    {
+      "id": "strict_cuda_backend",
+      "evidence": "PyTorch2.4.1 CUDA cumsum rejects strict deterministic algorithms.",
+      "correction": "Use differentiable CPU scan for strict CUDA prefix sums and rerun full strict-mode CPU/CUDA engineering checks."
+    },
+    {
+      "id": "instrument_step_anchored_discharge",
+      "evidence": "b3c4 native1 has a tiny negative IR sample atStep6 before positiveStep8 topoff and a complete4C discharge atStep10. Whole-record first/last negative incorrectly joined different stages.",
+      "correction": "Anchor complete discharge boundaries to the instrument step containing the longest4C CC segment, retaining CV and adjacent endpoint count. Keep pre-phase zero, current tolerance, voltage support and all original numerical thresholds. Regressions include valid IR pulses and invalid nonzero-counter native12."
+    }
+  ],
+  "selection_basis": "Source semantics and engineering correctness, before any new model fit or score",
+  "preserved_v2_cache_cells": 161
+}

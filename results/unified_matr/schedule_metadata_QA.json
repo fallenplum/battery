@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "checks": {
+    "174_source_segment_links_and_files_complete": true,
+    "all174_EDP_source_schedule_identifiers_join": true,
+    "all174_original_source_whole_file_SHA_and_bytes_match": true,
+    "all174_schedule_names_equal_original_Metadata_names": true,
+    "all174_declared_steps_and_contiguous_indexes_match": true,
+    "all_step_limit_section_counts_match_original_declarations": true,
+    "all_source_fields_replayed_exactly_into_unique_schedule_JSON": true,
+    "all_unique_source_fields_replayed_exactly_into_parquet": true,
+    "unique_schedule_SHA_and_field_counts_match": true,
+    "source_bytes_recomputed_from_complete_receipts": true,
+    "parquet_SHA_matches_JSON": true,
+    "source_discharge_steps9_10_12_coverage_recomputed": true,
+    "zero_model_input_or_measurement_threshold_changes": true
+  },
+  "source_segments": 174,
+  "source_files": 174,
+  "source_bytes": 3695390,
+  "unique_schedule_contents": 80,
+  "unique_field_rows": 67391,
+  "original_main_discharge_step_counts": {
+    "10": 127,
+    "12": 43,
+    "9": 4
+  },
+  "schedule_metadata_audit_sha256": "5eb16d8a8e10638b5e3ce9c458047bcae20d223ed5fb8654cbaad6926013ebf5",
+  "code_sha256": "cbac1f535576152731adda057972b5a173202a9f17befda95e6cab4fb9971ce8",
+  "native_step_index_replay_performed": false,
+  "model_fits_or_input_mask_changes": 0
+}

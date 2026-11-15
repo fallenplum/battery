@@ -1,0 +1,734 @@
+{
+  "status": "PASS",
+  "scope": "synthetic_engineering_selfcheck_only",
+  "formal_training": false,
+  "optimizer_updates": 0,
+  "seed": 42,
+  "device": "cuda",
+  "checks": 102,
+  "records": [
+    {
+      "check": "dense_ssd_matches_serial_FP64",
+      "status": "PASS",
+      "maximum_absolute_error": 4.440892098500626e-16
+    },
+    {
+      "check": "dense_ssd_old_source_bitwise_equal",
+      "status": "PASS"
+    },
+    {
+      "check": "history_masked_mamba_old_source_bitwise_equal",
+      "status": "PASS"
+    },
+    {
+      "check": "SR111_Delta_B_C_routing_old_source_bitwise_equal",
+      "status": "PASS"
+    },
+    {
+      "check": "old_analytic_flow_semigroup",
+      "status": "PASS"
+    },
+    {
+      "check": "legacy_flow_exact_boundary_tolerance_FP64",
+      "status": "PASS"
+    },
+    {
+      "check": "analytic_flow_head_old_source_bitwise_equal_native_conversion",
+      "status": "PASS"
+    },
+    {
+      "check": "common_initial_state_values_M0_M1",
+      "status": "PASS",
+      "common_tensors": 63
+    },
+    {
+      "check": "common_initial_state_values_M0_M2",
+      "status": "PASS",
+      "common_tensors": 63
+    },
+    {
+      "check": "common_initial_state_values_M0_M3",
+      "status": "PASS",
+      "common_tensors": 56
+    },
+    {
+      "check": "common_initial_state_values_M0_M3-NL",
+      "status": "PASS",
+      "common_tensors": 52
+    },
+    {
+      "check": "common_initial_state_values_M0_M3-NP",
+      "status": "PASS",
+      "common_tensors": 56
+    },
+    {
+      "check": "common_initial_state_values_M0_M3-NR",
+      "status": "PASS",
+      "common_tensors": 63
+    },
+    {
+      "check": "common_initial_state_values_M1_M2",
+      "status": "PASS",
+      "common_tensors": 89
+    },
+    {
+      "check": "common_initial_state_values_M1_M3",
+      "status": "PASS",
+      "common_tensors": 82
+    },
+    {
+      "check": "common_initial_state_values_M1_M3-NL",
+      "status": "PASS",
+      "common_tensors": 61
+    },
+    {
+      "check": "common_initial_state_values_M1_M3-NP",
+      "status": "PASS",
+      "common_tensors": 82
+    },
+    {
+      "check": "common_initial_state_values_M1_M3-NR",
+      "status": "PASS",
+      "common_tensors": 89
+    },
+    {
+      "check": "common_initial_state_values_M2_M3",
+      "status": "PASS",
+      "common_tensors": 82
+    },
+    {
+      "check": "common_initial_state_values_M2_M3-NL",
+      "status": "PASS",
+      "common_tensors": 61
+    },
+    {
+      "check": "common_initial_state_values_M2_M3-NP",
+      "status": "PASS",
+      "common_tensors": 82
+    },
+    {
+      "check": "common_initial_state_values_M2_M3-NR",
+      "status": "PASS",
+      "common_tensors": 89
+    },
+    {
+      "check": "common_initial_state_values_M3_M3-NL",
+      "status": "PASS",
+      "common_tensors": 67
+    },
+    {
+      "check": "common_initial_state_values_M3_M3-NP",
+      "status": "PASS",
+      "common_tensors": 88
+    },
+    {
+      "check": "common_initial_state_values_M3_M3-NR",
+      "status": "PASS",
+      "common_tensors": 82
+    },
+    {
+      "check": "common_initial_state_values_M3-NL_M3-NP",
+      "status": "PASS",
+      "common_tensors": 67
+    },
+    {
+      "check": "common_initial_state_values_M3-NL_M3-NR",
+      "status": "PASS",
+      "common_tensors": 61
+    },
+    {
+      "check": "common_initial_state_values_M3-NP_M3-NR",
+      "status": "PASS",
+      "common_tensors": 82
+    },
+    {
+      "check": "five_full_information_arms_exact_parameter_match",
+      "status": "PASS"
+    },
+    {
+      "check": "analytic_rate_flow_heads_2752_active_parameters",
+      "status": "PASS"
+    },
+    {
+      "check": "NL_active_width_approximate_budget_match",
+      "status": "PASS",
+      "full_parameters": 134301,
+      "global_only_parameters": 134331,
+      "delta": 30
+    },
+    {
+      "check": "M0_finite_forward",
+      "status": "PASS"
+    },
+    {
+      "check": "M0_full_query_shape",
+      "status": "PASS"
+    },
+    {
+      "check": "M0_trend_shared_observed_anchor",
+      "status": "PASS"
+    },
+    {
+      "check": "M0_observation_bound",
+      "status": "PASS"
+    },
+    {
+      "check": "M0_common_bounded_observation_formula_without_time_ramp",
+      "status": "PASS"
+    },
+    {
+      "check": "M0_no_persistence_penalty",
+      "status": "PASS"
+    },
+    {
+      "check": "M0_CPU_CUDA_prediction_parity",
+      "status": "PASS",
+      "maximum_absolute_error": 1.1920928955078125e-07
+    },
+    {
+      "check": "M0_all_registered_parameters_receive_nonzero_finite_gradient",
+      "status": "PASS",
+      "inactive": []
+    },
+    {
+      "check": "M1_finite_forward",
+      "status": "PASS"
+    },
+    {
+      "check": "M1_full_query_shape",
+      "status": "PASS"
+    },
+    {
+      "check": "M1_trend_shared_observed_anchor",
+      "status": "PASS"
+    },
+    {
+      "check": "M1_observation_bound",
+      "status": "PASS"
+    },
+    {
+      "check": "M1_common_bounded_observation_formula_without_time_ramp",
+      "status": "PASS"
+    },
+    {
+      "check": "M1_no_persistence_penalty",
+      "status": "PASS"
+    },
+    {
+      "check": "M1_CPU_CUDA_prediction_parity",
+      "status": "PASS",
+      "maximum_absolute_error": 1.1920928955078125e-07
+    },
+    {
+      "check": "M1_all_registered_parameters_receive_nonzero_finite_gradient",
+      "status": "PASS",
+      "inactive": []
+    },
+    {
+      "check": "M2_finite_forward",
+      "status": "PASS"
+    },
+    {
+      "check": "M2_full_query_shape",
+      "status": "PASS"
+    },
+    {
+      "check": "M2_trend_shared_observed_anchor",
+      "status": "PASS"
+    },
+    {
+      "check": "M2_observation_bound",
+      "status": "PASS"
+    },
+    {
+      "check": "M2_common_bounded_observation_formula_without_time_ramp",
+      "status": "PASS"
+    },
+    {
+      "check": "M2_CPU_CUDA_prediction_parity",
+      "status": "PASS",
+      "maximum_absolute_error": 1.1920928955078125e-07
+    },
+    {
+      "check": "M2_all_registered_parameters_receive_nonzero_finite_gradient",
+      "status": "PASS",
+      "inactive": []
+    },
+    {
+      "check": "M3_finite_forward",
+      "status": "PASS"
+    },
+    {
+      "check": "M3_full_query_shape",
+      "status": "PASS"
+    },
+    {
+      "check": "M3_trend_shared_observed_anchor",
+      "status": "PASS"
+    },
+    {
+      "check": "M3_observation_bound",
+      "status": "PASS"
+    },
+    {
+      "check": "M3_common_bounded_observation_formula_without_time_ramp",
+      "status": "PASS"
+    },
+    {
+      "check": "M3_monotone_trend",
+      "status": "PASS"
+    },
+    {
+      "check": "M3_nonnegative_rate",
+      "status": "PASS"
+    },
+    {
+      "check": "M3_CPU_CUDA_prediction_parity",
+      "status": "PASS",
+      "maximum_absolute_error": 1.1920928955078125e-07
+    },
+    {
+      "check": "M3_all_registered_parameters_receive_nonzero_finite_gradient",
+      "status": "PASS",
+      "inactive": []
+    },
+    {
+      "check": "M3-NL_finite_forward",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NL_full_query_shape",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NL_trend_shared_observed_anchor",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NL_observation_bound",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NL_common_bounded_observation_formula_without_time_ramp",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NL_monotone_trend",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NL_nonnegative_rate",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NL_CPU_CUDA_prediction_parity",
+      "status": "PASS",
+      "maximum_absolute_error": 1.1920928955078125e-07
+    },
+    {
+      "check": "M3-NL_all_registered_parameters_receive_nonzero_finite_gradient",
+      "status": "PASS",
+      "inactive": []
+    },
+    {
+      "check": "M3-NP_finite_forward",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NP_full_query_shape",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NP_trend_shared_observed_anchor",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NP_observation_bound",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NP_common_bounded_observation_formula_without_time_ramp",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NP_monotone_trend",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NP_nonnegative_rate",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NP_no_persistence_penalty",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NP_CPU_CUDA_prediction_parity",
+      "status": "PASS",
+      "maximum_absolute_error": 5.960464477539063e-08
+    },
+    {
+      "check": "M3-NP_all_registered_parameters_receive_nonzero_finite_gradient",
+      "status": "PASS",
+      "inactive": []
+    },
+    {
+      "check": "M3-NR_finite_forward",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NR_full_query_shape",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NR_trend_shared_observed_anchor",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NR_observation_bound",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NR_common_bounded_observation_formula_without_time_ramp",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NR_CPU_CUDA_prediction_parity",
+      "status": "PASS",
+      "maximum_absolute_error": 1.1920928955078125e-07
+    },
+    {
+      "check": "M3-NR_all_registered_parameters_receive_nonzero_finite_gradient",
+      "status": "PASS",
+      "inactive": []
+    },
+    {
+      "check": "M2_NR_duplicate_graph_initial_outputs",
+      "status": "PASS"
+    },
+    {
+      "check": "NL_raw_reference_local_values_and_local_masks_bitwise_invariant",
+      "status": "PASS"
+    },
+    {
+      "check": "M0_explicit_physical_inputs_bitwise_invariant",
+      "status": "PASS"
+    },
+    {
+      "check": "invalid_values_do_not_enter_supported_predictions",
+      "status": "PASS"
+    },
+    {
+      "check": "M0_all_invalid_prefix_finite",
+      "status": "PASS"
+    },
+    {
+      "check": "M1_all_invalid_prefix_finite",
+      "status": "PASS"
+    },
+    {
+      "check": "M2_all_invalid_prefix_finite",
+      "status": "PASS"
+    },
+    {
+      "check": "M3_all_invalid_prefix_finite",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NL_all_invalid_prefix_finite",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NP_all_invalid_prefix_finite",
+      "status": "PASS"
+    },
+    {
+      "check": "M3-NR_all_invalid_prefix_finite",
+      "status": "PASS"
+    },
+    {
+      "check": "future_cycle_as_inference_input_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "duplicate_or_unsorted_supported_cycle_rejected",
+      "status": "PASS"
+    }
+  ],
+  "deterministic_algorithms": true,
+  "cublas_workspace_config": ":4096:8",
+  "query_fixture": "dense integer100..5000 plus off-grid200.5; forward and backward allseven arms",
+  "dimension_fixture": {
+    "policy_dim": 15,
+    "global_dim": 20,
+    "local_feature_dim": 26
+  },
+  "models": [
+    {
+      "arm": "M0",
+      "seed": 42,
+      "parameters": 101901,
+      "trainable_parameters": 101901,
+      "initial_state_sha256": "14996a6994432674a41d335fa07d2bd371c3f45b3786dd9105ae548160dd0803",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": false,
+      "rate_flow": false,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M1",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": false,
+      "rate_flow": false,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M2",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": true,
+      "rate_flow": false,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M3",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "84d5a04b58a2649f9d11041bce8a6a8c6d7eed7631e635d9157af5618c3e4c73",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": true,
+      "rate_flow": true,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M3-NL",
+      "seed": 42,
+      "parameters": 134331,
+      "trainable_parameters": 134331,
+      "initial_state_sha256": "6846278dc1c2ecd666108292dae5cb60bb3cef86842fcf5f8afacb7fa65c2217",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": true,
+      "rate_flow": true,
+      "local_removed": true,
+      "nonlocal_matching_hidden": 126,
+      "input_ablation": "global_features_policy_anchor_and_support_only",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M3-NP",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "84d5a04b58a2649f9d11041bce8a6a8c6d7eed7631e635d9157af5618c3e4c73",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": false,
+      "rate_flow": true,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    },
+    {
+      "arm": "M3-NR",
+      "seed": 42,
+      "parameters": 134301,
+      "trainable_parameters": 134301,
+      "initial_state_sha256": "febe1f6a056cf1481c5fd217933be9000b7bfd7f746523c7eb888c8359c7bee4",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "flow_head_parameters": 2752,
+      "single_discharge_patch_geometry": [
+        8,
+        8
+      ],
+      "local_width_heads_state": [
+        64,
+        4,
+        4
+      ],
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "latent_state_dim": 16,
+      "persistent": true,
+      "rate_flow": false,
+      "local_removed": false,
+      "nonlocal_matching_hidden": null,
+      "input_ablation": "raw_reference_VIQ_with_arm_specific_physics",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "time_scale_cycles": 1000,
+      "initialization": "from_scratch_per_module_seed42_common_state_keys_identical"
+    }
+  ]
+}

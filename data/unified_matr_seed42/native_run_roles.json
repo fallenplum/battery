@@ -1,0 +1,18 @@
+{
+  "status": "SOURCE_PROTOCOL_ROLES_BEFORE_DATA_FREEZE",
+  "primary_run_default": "declared_original_aging_protocol",
+  "additional_runs": [
+    {
+      "cell_uid": "MATR_b1c18",
+      "source_file_id": "5c86c28ffa2ede00015de128",
+      "source_csv_sha256": "64f8b55e4de2b5fc92d48446d49cf8353c4dbde6a0ecc0f27ee6226507458dd0",
+      "run_index": 1,
+      "role": "post_restart_nonaging_characterization",
+      "include_in_aging_axis": false,
+      "evidence_report": "results/unified_matr_seed42/b1c18_POST_RESTART_PROTOCOL_AUDIT.json",
+      "evidence_report_sha256": "a90a2ca152cf36f35bf7212e5198c11e194812c1a8abd628f9010a55890fc733",
+      "basis": "All54groups lack4C discharge and observed0..16-step low-rate/charging characterization differs from original13-step aging schedule. Same-CSV run boundary is chronological. Cross-metadata timestamp alignment remains unvalidated."
+    }
+  ],
+  "unregistered_additional_run": "Require source-protocol audit before assigning a physical aging-cycle coordinate. Preserve raw instrument index and acquisition rows."
+}
