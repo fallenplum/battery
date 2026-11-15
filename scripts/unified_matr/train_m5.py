@@ -4,6 +4,9 @@ No changes to the archived M4 source/weights or the frozen MATR features.
 """
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.unified_matr import train_methodology_full as base
 
 ARM = "M5_BOUNDED_TRANSITION"
