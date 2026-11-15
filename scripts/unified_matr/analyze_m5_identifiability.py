@@ -42,7 +42,8 @@ def early_features(inputs):
         local_mask = np.asarray(inputs["local_feature_mask"][i], dtype=bool)
         global_values = np.where(global_mask, inputs["global_features"][i], np.nan)
         local_values = np.where(local_mask, inputs["local_features"][i], np.nan)
-        last = int(np.flatnonzero(available)[-1])
+        physically_valid = available & (global_mask.any(-1) | local_mask.any((1, 2)))
+        last = int(np.flatnonzero(physically_valid)[-1]) if physically_valid.any() else int(np.flatnonzero(available)[-1])
         g = global_values[last]
         l = local_values[last][:, list(LOCAL_COLUMNS)].reshape(-1)
         gm = global_mask[last].astype(float)
