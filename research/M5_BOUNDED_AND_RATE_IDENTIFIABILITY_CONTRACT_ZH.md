@@ -52,7 +52,7 @@ python scripts/unified_matr/train_m5.py --data data/unified_matr_seed42 --output
 python scripts/unified_matr/analyze_m5_identifiability.py --data data/unified_matr_seed42 --output results/unified_matr_m5_identifiability_seed42
 ```
 
-**关于 Knee：不应把“不能精确辨识瞬时转折点”当成已证实命题。** 本轮只能报告拟合型 Hinge 候选 `kappa_proxy`：改变未来拟合起点（101、201、301真实循环）、对同自由度二次平滑函数比较拟合、统计5% SSE剖面宽度，判定从轨迹上定义的候选坐标有多依赖模型选择。该算法使用未来观测仅生成**非监督诊断结果**，不会被输入 M5 或早期 Q(V) 速率回归。Hinge 可以在光滑指数/二次曲线上产生“稳定拐点”（原 D0 负对照已证实），所以不能用它计算物理 Knee 的精准率。只有后续有独立真实 Knee 认证，才能真正验证“早期 Q(V) 无法精确估计其时机”。
+**关于 Knee：不应把“不能精确辨识瞬时转折点”当成已证实命题。** 本轮只能报告拟合型 Hinge 候选 `kappa_proxy`：改变未来拟合起点（101、201、301真实循环）、对同自由度二次平滑函数比较拟合、统计5% SSE剖面宽度，判定从轨迹上定义的候选坐标有多依赖模型选择。该算法使用未来观测仅生成**非监督诊断结果**，不会被输入 M5 或早期 Q(V) 速率回归。Hinge 可以在光滑指数/二次曲线上产生“稳定拐点”（原 D0 负对照已证实），所以不能用它计算物理 Knee 的精准率。M5 另保存 soft_transition_center_cycle/soft_transition_width_cycles/soft_transition_signed_amplitude 三项诊断，用于检查同等轨迹精度下的参数稳定性；参数是否可辨识仍需多种子或剖面分析。只有后续有独立真实 Knee 认证，才能真正验证“早期 Q(V) 无法精确估计其时机”。
 
 ## D. 交付与科学门槛
 
