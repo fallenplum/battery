@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETE_EXPLORATORY_MULTIFAMILY_EXTENSION",
+  "base_cells": {
+    "MATR": 169,
+    "Stanford_2": 181
+  },
+  "targets": [
+    "r200_500",
+    "r500_1000"
+  ],
+  "decisions": [
+    {
+      "family": "MATR",
+      "target": "r200_500",
+      "test_cells": 57,
+      "relative_MAE_reduction": 0.492834629860979,
+      "cell_CI_excludes_zero_in_positive_direction": true,
+      "protocol_macro_CI_excludes_zero_in_positive_direction": true,
+      "scope": "one registered historical exploratory supplied-coordinate holdout"
+    },
+    {
+      "family": "MATR",
+      "target": "r500_1000",
+      "test_cells": 20,
+      "relative_MAE_reduction": 0.0069391169616951735,
+      "cell_CI_excludes_zero_in_positive_direction": false,
+      "protocol_macro_CI_excludes_zero_in_positive_direction": false,
+      "scope": "one registered historical exploratory supplied-coordinate holdout"
+    },
+    {
+      "family": "Stanford_2",
+      "target": "r200_500",
+      "test_cells": 80,
+      "relative_MAE_reduction": -0.22426575622025777,
+      "cell_CI_excludes_zero_in_positive_direction": false,
+      "protocol_macro_CI_excludes_zero_in_positive_direction": false,
+      "scope": "one registered historical exploratory supplied-coordinate holdout"
+    },
+    {
+      "family": "Stanford_2",
+      "target": "r500_1000",
+      "test_cells": 45,
+      "relative_MAE_reduction": -0.5137667627331409,
+      "cell_CI_excludes_zero_in_positive_direction": false,
+      "protocol_macro_CI_excludes_zero_in_positive_direction": false,
+      "scope": "one registered historical exploratory supplied-coordinate holdout"
+    }
+  ],
+  "coordinate": "supplied_cycle_number",
+  "historical_HUST_snapshot": "e8a7295d5199775006f7a0b750f58cb96488d5df",
+  "prior_context": "All compared models share source-confirmed pre-aging design parameters"
+}

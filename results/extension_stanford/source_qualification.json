@@ -1,0 +1,112 @@
+{
+  "family": "Stanford_2",
+  "qualification": "USABLE_FOR_SUPPLIED_CYCLE_OBSERVATIONAL_PREDICTION",
+  "provided_cells": 181,
+  "K100_complete": 181,
+  "K100_at_least80_observed_curves": 181,
+  "curve_reference_current_A_range": [
+    0.1800152212381363,
+    0.18006286025047302
+  ],
+  "legacy_576_members": 101,
+  "target_support": {
+    "r200_500": {
+      "supported": 181,
+      "legacy_576": 101,
+      "new_to_576": 80,
+      "unavailable_reasons": {}
+    },
+    "r500_1000": {
+      "supported": 98,
+      "legacy_576": 53,
+      "new_to_576": 45,
+      "unavailable_reasons": {
+        "END_ENDPOINT_WINDOW_INSUFFICIENT_SUPPORT": 83
+      }
+    }
+  },
+  "EOL_candidate_supplied_nominal80_events": 181,
+  "source_identity": {
+    "local_name_rule": "Stanford_Nova_Regular_<seq_num>",
+    "metadata_matched_cells": 181,
+    "source_parameter_rows": 183,
+    "source_unique_device_hashes": 181,
+    "source_table_extra_sequence_numbers": [
+      197,
+      298
+    ],
+    "physical_cycle_axis_authenticated": false,
+    "full_BEEP_payload_numeric_replay": "unperformed"
+  },
+  "prior_context": {
+    "available_before_aging": true,
+    "shared_by_all_models": true,
+    "formation_parameters": [
+      "formation_temperature",
+      "formation_charge_current_1",
+      "formation_cutoff_voltage_1",
+      "formation_charge_current_2",
+      "formation_verification_repeat",
+      "ocv_time"
+    ],
+    "formation_group_count": 63,
+    "formation_group_size_distribution": {
+      "3": 55,
+      "2": 8
+    },
+    "group_definition": "exact released six-parameter tuple, current table distinct count retained",
+    "aging_protocol": {
+      "charge_C": 1.0,
+      "discharge_C": 0.75,
+      "upper_V": 4.4,
+      "lower_V": 3.0,
+      "aging_chamber_setpoint_C": 30
+    },
+    "working_temperature_is_not_formation_temperature": true,
+    "ocv_time_unit": "hours inferred from 0/72/168 released values and paper 0/3/7 days"
+  },
+  "observation_contract": {
+    "coordinate": "supplied_cycle_number after preprocessing renumbering",
+    "prefix": "supplied number <=100",
+    "phase": "discharge current sign",
+    "common_voltage_window_V": [
+      3.4,
+      4.1
+    ],
+    "current_reference": "prefix-only, approximately0.18A",
+    "target_capacity_definition": "phase-confirmed Qd maximum minus record finite baseline, divided by declared0.24Ah",
+    "supplied_EOL_reference": "0.8 times declared nominal capacity",
+    "paper_EOL_reference": "0.8 times initial aging capacity",
+    "actual_EOLEvent_scope": "observed supplied capacity threshold event, physical original-cycle mapping unverified",
+    "ICA_DVA_scope": "observed geometry/proxy diagnostics, no independent electrode-mechanism certification"
+  },
+  "preprocessing": {
+    "source": {
+      "bytes": 5671,
+      "sha256": "e8969b29ffded9f9443b05e4e30e6add65af57c06657a9c95bd215e743e7c056"
+    },
+    "interpolated_input_key": "cycles_interpolated",
+    "formation_or_initial_record_removed": true,
+    "cycle_renumbered": true,
+    "small_negative_current_rows_removed": "-0.001A < current <0",
+    "inactive_capacity_channel_zeroed_by_current_sign": true,
+    "unified_time_normalization_called": true,
+    "source_to_current_generation_link": "unverified"
+  },
+  "evidence": {
+    "formation_parameter_csv": {
+      "url": "https://raw.githubusercontent.com/cx26/formation-analysis/main/data/Formation_2022-Parameter.csv",
+      "bytes": 26828,
+      "sha256": "3a9696ec055ce231a61bdfb0f5bbbc9f54a564d46c09396de29cf162f4d2dd8e"
+    },
+    "dataset": "https://data.matr.io/8/",
+    "paper": "https://doi.org/10.1016/j.joule.2024.07.024",
+    "author_code": "https://github.com/cx26/formation-analysis"
+  },
+  "confidence": {
+    "local_counts_and_parameter_join": "high",
+    "aging_design_and_formation_priors": "high",
+    "strict_original_cycle_alignment": "unverified"
+  },
+  "eligibility_rule": "Use qualified observed curves and actually supported supplied-coordinate outcomes. Source certification limits claims and does not prohibit prediction."
+}

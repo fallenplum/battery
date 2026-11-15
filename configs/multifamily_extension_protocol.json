@@ -1,0 +1,40 @@
+{
+  "study_id": "srsr_physics_multifamily_extension_v1",
+  "date_local": "2026-11-15",
+  "authorization": "User explicitly included MATR and Stanford after the HUST-only Experiment B",
+  "families": ["MATR", "Stanford_2"],
+  "purpose": "Complete observed early-curve prediction experiments on both eligible sources",
+  "prefix": 100,
+  "coordinate": "supplied_cycle_number",
+  "measurement": "provided discharge-active maximum minus finite whole-record baseline divided by declared nominal capacity",
+  "physical_evidence": "Original physical-cycle certification is reported alongside observed-coordinate prediction",
+  "primary_target": "r200_500",
+  "secondary_target": "r500_1000",
+  "target_support_rule": "Fixed base-cohort roles, target-specific observed support, same cells across all models for each target",
+  "early_windows": {
+    "MATR": {"phase": "discharge", "voltage_V": [2.8, 3.3], "points": 64},
+    "Stanford_2": {"phase": "discharge", "voltage_V": [3.4, 4.1], "points": 64}
+  },
+  "model_inputs": {
+    "prefix_features": "Same three early capacity and seven observed Q(V) features as the registered extraction",
+    "MATR_context": "Recovered original charge-policy design and explicit stage-presence flags",
+    "Stanford_context": "Author-released pre-aging formation parameters and documented shared aging design",
+    "fairness": "Every compared model has the same pre-prediction context availability",
+    "unmeasured_cell_temperature": "Recorded in source qualification"
+  },
+  "models": ["mean", "context_only", "context_capacity", "context_qv_shape", "combined"],
+  "selection": {"method": "Ridge", "alphas": [0.01, 0.1, 1, 10, 100], "scaler": "target-specific training only", "metric": "validation MAE"},
+  "split": {
+    "historical_576_members": "SHA-sorted 75 percent training and 25 percent validation",
+    "others": "test",
+    "hash_prefix": "physics-B-extension-20261115|"
+  },
+  "uncertainty": {
+    "cell_paired_bootstrap": 2000,
+    "protocol_macro_group_bootstrap": 2000,
+    "seed": 20261115,
+    "comparison": "combined minus capacity control in lower absolute error direction"
+  },
+  "test_rule": "Register immutable family contract, freeze all supported-target source selections, then evaluate and seal",
+  "interpretation": "Historical exploratory per-family evidence with measurement and target-specific denominators"
+}

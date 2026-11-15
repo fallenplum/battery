@@ -1,0 +1,504 @@
+{
+  "contract_sha256": "bb43b57b8d6cdd82ffc077e4e3f4c29ebde28880d4e40fa328667de6782bd779",
+  "models": {
+    "r500_1000": {
+      "combined": {
+        "alpha": 1.0,
+        "coef_scaled": [
+          4.002113568015602e-05,
+          0.0,
+          7.565683557363094e-05,
+          0.0,
+          -6.0254952963731286e-05,
+          0.0,
+          6.262747957088644e-05,
+          -1.791436372530332e-05,
+          1.0984007242733894e-05,
+          -1.791436372530332e-05,
+          1.7914363725303394e-05,
+          0.0,
+          0.0,
+          0.0,
+          -7.3375551073930095e-06,
+          2.1886011104568952e-05,
+          6.995372397640315e-05,
+          7.5808288898080605e-06,
+          1.0194686155846372e-05,
+          3.920646107100652e-06,
+          4.394370722591319e-05,
+          4.633129251208641e-05,
+          1.631503409315661e-05,
+          1.1201623761757872e-05
+        ],
+        "features": [
+          "prior_charge_first_switch_soc",
+          "prior_charge_first_switch_soc_missing",
+          "prior_charge_rate_1_C",
+          "prior_charge_rate_1_missing",
+          "prior_charge_rate_2_C",
+          "prior_charge_rate_2_missing",
+          "prior_charge_rate_3_C",
+          "prior_charge_rate_3_missing",
+          "prior_charge_rate_4_C",
+          "prior_charge_rate_4_missing",
+          "prior_charge_stage_count",
+          "prior_common_topoff_rate_C",
+          "prior_discharge_rate_C",
+          "prior_fast_charge_end_soc",
+          "early_capacity_level",
+          "early_capacity_slope",
+          "early_capacity_std",
+          "qv_window_capacity_start_Ah",
+          "qv_window_capacity_end_Ah",
+          "delta_qv_mean_Ah",
+          "delta_qv_std_Ah",
+          "delta_qv_log10_variance",
+          "delta_qv_range_Ah",
+          "delta_qv_rms_Ah"
+        ],
+        "intercept": 0.0002169749038954827,
+        "kind": "ridge",
+        "scaler_fit_role": "train_only",
+        "scaler_mean": [
+          0.52,
+          0.0,
+          5.113333333333333,
+          0.0,
+          4.62,
+          0.0,
+          1.5999999999999999,
+          0.6666666666666666,
+          1.3215999999999999,
+          0.6666666666666666,
+          2.6666666666666665,
+          1.0,
+          4.0,
+          0.8000000000000002,
+          0.9653143406621303,
+          -2.9386996397040046e-06,
+          0.000632154049126037,
+          0.9784197170653393,
+          0.963080515662249,
+          -0.010708349298658383,
+          0.009818699163645918,
+          -4.060095913836287,
+          0.03291228617673243,
+          0.014575447512279852
+        ],
+        "scaler_scale": [
+          0.2691715685828155,
+          1.0,
+          0.8220840724781269,
+          1.0,
+          0.7538346414610213,
+          1.0,
+          2.272150229775018,
+          0.47140452079103173,
+          1.8743145520429594,
+          0.47140452079103173,
+          0.9428090415820635,
+          1.0,
+          1.0,
+          1.0,
+          0.010411678779192564,
+          1.0913637932107615e-05,
+          0.0001867010071273971,
+          0.010842536111048812,
+          0.01210627087253762,
+          0.004129763387367964,
+          0.0029663588970740835,
+          0.289905828780991,
+          0.011898904650931292,
+          0.004948349070844654
+        ],
+        "validation_MAE": 0.00013910760446481657,
+        "validation_grid": [
+          {
+            "alpha": 0.01,
+            "validation_MAE": 0.00021697500892035575
+          },
+          {
+            "alpha": 0.1,
+            "validation_MAE": 0.00014509603529767038
+          },
+          {
+            "alpha": 1.0,
+            "validation_MAE": 0.00013910760446481657
+          },
+          {
+            "alpha": 10.0,
+            "validation_MAE": 0.0001795938489119962
+          },
+          {
+            "alpha": 100.0,
+            "validation_MAE": 0.0001558052257766425
+          }
+        ]
+      },
+      "context_capacity": {
+        "alpha": 0.1,
+        "coef_scaled": [
+          2.0902837512471427e-05,
+          0.0,
+          0.00012419217543570315,
+          0.0,
+          -4.288245819272156e-05,
+          0.0,
+          0.0003829666838813023,
+          9.441334176967268e-05,
+          -5.743502913251736e-06,
+          9.441334176967268e-05,
+          -9.44133417696729e-05,
+          0.0,
+          0.0,
+          0.0,
+          -6.443051828718084e-05,
+          4.621754721557112e-05,
+          5.77697879611578e-05
+        ],
+        "features": [
+          "prior_charge_first_switch_soc",
+          "prior_charge_first_switch_soc_missing",
+          "prior_charge_rate_1_C",
+          "prior_charge_rate_1_missing",
+          "prior_charge_rate_2_C",
+          "prior_charge_rate_2_missing",
+          "prior_charge_rate_3_C",
+          "prior_charge_rate_3_missing",
+          "prior_charge_rate_4_C",
+          "prior_charge_rate_4_missing",
+          "prior_charge_stage_count",
+          "prior_common_topoff_rate_C",
+          "prior_discharge_rate_C",
+          "prior_fast_charge_end_soc",
+          "early_capacity_level",
+          "early_capacity_slope",
+          "early_capacity_std"
+        ],
+        "intercept": 0.00021697490389548194,
+        "kind": "ridge",
+        "scaler_fit_role": "train_only",
+        "scaler_mean": [
+          0.52,
+          0.0,
+          5.113333333333333,
+          0.0,
+          4.62,
+          0.0,
+          1.5999999999999999,
+          0.6666666666666666,
+          1.3215999999999999,
+          0.6666666666666666,
+          2.6666666666666665,
+          1.0,
+          4.0,
+          0.8000000000000002,
+          0.9653143406621303,
+          -2.9386996397040046e-06,
+          0.000632154049126037
+        ],
+        "scaler_scale": [
+          0.2691715685828155,
+          1.0,
+          0.8220840724781269,
+          1.0,
+          0.7538346414610213,
+          1.0,
+          2.272150229775018,
+          0.47140452079103173,
+          1.8743145520429594,
+          0.47140452079103173,
+          0.9428090415820635,
+          1.0,
+          1.0,
+          1.0,
+          0.010411678779192564,
+          1.0913637932107615e-05,
+          0.0001867010071273971
+        ],
+        "validation_MAE": 0.0001212999227594143,
+        "validation_grid": [
+          {
+            "alpha": 0.01,
+            "validation_MAE": 0.00016411768558878965
+          },
+          {
+            "alpha": 0.1,
+            "validation_MAE": 0.0001212999227594143
+          },
+          {
+            "alpha": 1.0,
+            "validation_MAE": 0.00013348334738759349
+          },
+          {
+            "alpha": 10.0,
+            "validation_MAE": 0.00014461465451670266
+          },
+          {
+            "alpha": 100.0,
+            "validation_MAE": 0.0001755079581599059
+          }
+        ]
+      },
+      "context_only": {
+        "alpha": 0.01,
+        "coef_scaled": [
+          1.4101454030503242e-05,
+          0.0,
+          7.555985359126253e-05,
+          0.0,
+          -6.762286811858648e-05,
+          0.0,
+          0.0007254616185705885,
+          2.1576529628746097e-06,
+          -0.0005427146890755122,
+          2.157652962864739e-06,
+          -2.157652962865059e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "features": [
+          "prior_charge_first_switch_soc",
+          "prior_charge_first_switch_soc_missing",
+          "prior_charge_rate_1_C",
+          "prior_charge_rate_1_missing",
+          "prior_charge_rate_2_C",
+          "prior_charge_rate_2_missing",
+          "prior_charge_rate_3_C",
+          "prior_charge_rate_3_missing",
+          "prior_charge_rate_4_C",
+          "prior_charge_rate_4_missing",
+          "prior_charge_stage_count",
+          "prior_common_topoff_rate_C",
+          "prior_discharge_rate_C",
+          "prior_fast_charge_end_soc"
+        ],
+        "intercept": 0.00021697490389548275,
+        "kind": "ridge",
+        "scaler_fit_role": "train_only",
+        "scaler_mean": [
+          0.52,
+          0.0,
+          5.113333333333333,
+          0.0,
+          4.62,
+          0.0,
+          1.5999999999999999,
+          0.6666666666666666,
+          1.3215999999999999,
+          0.6666666666666666,
+          2.6666666666666665,
+          1.0,
+          4.0,
+          0.8000000000000002
+        ],
+        "scaler_scale": [
+          0.2691715685828155,
+          1.0,
+          0.8220840724781269,
+          1.0,
+          0.7538346414610213,
+          1.0,
+          2.272150229775018,
+          0.47140452079103173,
+          1.8743145520429594,
+          0.47140452079103173,
+          0.9428090415820635,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "validation_MAE": 0.00012738929653793673,
+        "validation_grid": [
+          {
+            "alpha": 0.01,
+            "validation_MAE": 0.00012738929653793673
+          },
+          {
+            "alpha": 0.1,
+            "validation_MAE": 0.00013329839563701757
+          },
+          {
+            "alpha": 1.0,
+            "validation_MAE": 0.00013381457748372501
+          },
+          {
+            "alpha": 10.0,
+            "validation_MAE": 0.00013701349069394697
+          },
+          {
+            "alpha": 100.0,
+            "validation_MAE": 0.00017677374968781717
+          }
+        ]
+      },
+      "context_qv_shape": {
+        "alpha": 100.0,
+        "coef_scaled": [
+          -6.737085658398304e-06,
+          0.0,
+          8.597886747713379e-06,
+          0.0,
+          -3.5866025610317485e-07,
+          0.0,
+          7.2237689993398365e-06,
+          -7.028784114380262e-06,
+          6.532494714884739e-06,
+          -7.028784114380262e-06,
+          7.02878411438026e-06,
+          0.0,
+          0.0,
+          0.0,
+          -1.0730960700336832e-05,
+          -1.0822308812743276e-05,
+          -8.29792957849812e-06,
+          9.403881120898127e-06,
+          7.797257749948057e-06,
+          7.896097124492195e-06,
+          8.912033033719391e-06
+        ],
+        "features": [
+          "prior_charge_first_switch_soc",
+          "prior_charge_first_switch_soc_missing",
+          "prior_charge_rate_1_C",
+          "prior_charge_rate_1_missing",
+          "prior_charge_rate_2_C",
+          "prior_charge_rate_2_missing",
+          "prior_charge_rate_3_C",
+          "prior_charge_rate_3_missing",
+          "prior_charge_rate_4_C",
+          "prior_charge_rate_4_missing",
+          "prior_charge_stage_count",
+          "prior_common_topoff_rate_C",
+          "prior_discharge_rate_C",
+          "prior_fast_charge_end_soc",
+          "qv_window_capacity_start_Ah",
+          "qv_window_capacity_end_Ah",
+          "delta_qv_mean_Ah",
+          "delta_qv_std_Ah",
+          "delta_qv_log10_variance",
+          "delta_qv_range_Ah",
+          "delta_qv_rms_Ah"
+        ],
+        "intercept": 0.00021697490389548305,
+        "kind": "ridge",
+        "scaler_fit_role": "train_only",
+        "scaler_mean": [
+          0.52,
+          0.0,
+          5.113333333333333,
+          0.0,
+          4.62,
+          0.0,
+          1.5999999999999999,
+          0.6666666666666666,
+          1.3215999999999999,
+          0.6666666666666666,
+          2.6666666666666665,
+          1.0,
+          4.0,
+          0.8000000000000002,
+          0.9784197170653393,
+          0.963080515662249,
+          -0.010708349298658383,
+          0.009818699163645918,
+          -4.060095913836287,
+          0.03291228617673243,
+          0.014575447512279852
+        ],
+        "scaler_scale": [
+          0.2691715685828155,
+          1.0,
+          0.8220840724781269,
+          1.0,
+          0.7538346414610213,
+          1.0,
+          2.272150229775018,
+          0.47140452079103173,
+          1.8743145520429594,
+          0.47140452079103173,
+          0.9428090415820635,
+          1.0,
+          1.0,
+          1.0,
+          0.010842536111048812,
+          0.01210627087253762,
+          0.004129763387367964,
+          0.0029663588970740835,
+          0.289905828780991,
+          0.011898904650931292,
+          0.004948349070844654
+        ],
+        "validation_MAE": 0.00015324143040435954,
+        "validation_grid": [
+          {
+            "alpha": 0.01,
+            "validation_MAE": 0.00024736771711258423
+          },
+          {
+            "alpha": 0.1,
+            "validation_MAE": 0.00016054957895887865
+          },
+          {
+            "alpha": 1.0,
+            "validation_MAE": 0.0001678029896435706
+          },
+          {
+            "alpha": 10.0,
+            "validation_MAE": 0.00019074371807614295
+          },
+          {
+            "alpha": 100.0,
+            "validation_MAE": 0.00015324143040435954
+          }
+        ]
+      },
+      "mean": {
+        "features": [
+          "prior_charge_first_switch_soc",
+          "prior_charge_first_switch_soc_missing",
+          "prior_charge_rate_1_C",
+          "prior_charge_rate_1_missing",
+          "prior_charge_rate_2_C",
+          "prior_charge_rate_2_missing",
+          "prior_charge_rate_3_C",
+          "prior_charge_rate_3_missing",
+          "prior_charge_rate_4_C",
+          "prior_charge_rate_4_missing",
+          "prior_charge_stage_count",
+          "prior_common_topoff_rate_C",
+          "prior_discharge_rate_C",
+          "prior_fast_charge_end_soc"
+        ],
+        "kind": "mean",
+        "mean": 0.0002169749038954828,
+        "validation_MAE": 0.00020170516646323796
+      }
+    }
+  },
+  "train_ids": [
+    "MATR_b1c0",
+    "MATR_b1c5",
+    "MATR_b3c0",
+    "MATR_b3c16",
+    "MATR_b3c18",
+    "MATR_b3c22",
+    "MATR_b3c33",
+    "MATR_b3c38",
+    "MATR_b3c45",
+    "MATR_b3c7",
+    "MATR_b4c23",
+    "MATR_b4c37",
+    "MATR_b4c40",
+    "MATR_b4c44",
+    "MATR_b4c5"
+  ],
+  "validation_ids": [
+    "MATR_b1c1",
+    "MATR_b1c2",
+    "MATR_b1c24",
+    "MATR_b4c10",
+    "MATR_b4c35"
+  ]
+}

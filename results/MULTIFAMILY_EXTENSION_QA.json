@@ -1,0 +1,2431 @@
+{
+  "status": "PASS",
+  "families": {
+    "MATR": {
+      "status": "PASS",
+      "checks": {
+        "family_and_fixed_supplied_coordinate": true,
+        "base_admission_recomputed_without_future_target_filter": true,
+        "base_legacy_roles_match_actual576_ids": true,
+        "hash_split_independent_of_target_support": true,
+        "base_roles_pairwise_disjoint_complete": true,
+        "role_counts_and_split_sha_match": true,
+        "protocol_groups_come_from_pre_prediction_context": true,
+        "context_all_finite_prior_columns_only": true,
+        "all_models_share_same_prior_budget": true,
+        "registered_all_input_hashes_lengths_match": true,
+        "runner_and_frozen_hust_core_sha_match": true,
+        "family_freeze_hash_chain": true,
+        "all_family_completed_artifact_hashes_match": true,
+        "family_receipt_covers_every_output_file": true,
+        "all_target_selections_frozen_before_family_test_open": true,
+        "physical_axis_evidence_preserved_without_admission_exclusion": true,
+        "registered_alpha_scaler_refit_policy": true,
+        "historical_exploratory_limits_preserved": true,
+        "r200_500__target_specific_support_and_fixed_base_roles": true,
+        "r200_500__all_cell_target_masks_and_reasons_recomputed": true,
+        "r200_500__target_selection_and_hash_chain": true,
+        "r200_500__target_receipt_all_output_hashes": true,
+        "r200_500__source_train_val_ids_exact_target_mask": true,
+        "r200_500__five_models_exact_registered_set": true,
+        "r200_500__target_aggregate_contains_all_prediction_arrays_once": true,
+        "r200_500__all_model_metrics_independently_recomputed": true,
+        "r200_500__all_protocol_metrics_support_and_reasons_recomputed": true,
+        "r200_500__paired_cell_bootstrap_2000_recomputed": true,
+        "r200_500__all_negative_cases_and_magnitudes_preserved": true,
+        "r500_1000__target_specific_support_and_fixed_base_roles": true,
+        "r500_1000__all_cell_target_masks_and_reasons_recomputed": true,
+        "r500_1000__target_selection_and_hash_chain": true,
+        "r500_1000__target_receipt_all_output_hashes": true,
+        "r500_1000__source_train_val_ids_exact_target_mask": true,
+        "r500_1000__five_models_exact_registered_set": true,
+        "r500_1000__target_aggregate_contains_all_prediction_arrays_once": true,
+        "r500_1000__all_model_metrics_independently_recomputed": true,
+        "r500_1000__all_protocol_metrics_support_and_reasons_recomputed": true,
+        "r500_1000__paired_cell_bootstrap_2000_recomputed": true,
+        "r500_1000__all_negative_cases_and_magnitudes_preserved": true,
+        "cell_target_support_rows_complete_unique": true,
+        "all_stored_model_prediction_and_validation_checks": true,
+        "family_completed_target_list_and_prediction_array_counts": true,
+        "family_aggregate_matches_target_outputs__predictions.csv": true,
+        "family_aggregate_matches_target_outputs__metrics.csv": true,
+        "family_aggregate_matches_target_outputs__protocol_metrics.csv": true,
+        "family_aggregate_matches_target_outputs__paired_mae_improvement.csv": true,
+        "family_aggregate_matches_target_outputs__negative_cases.csv": true,
+        "protocol_macro_equal_weight_and_group_bootstrap_2000_recomputed": true
+      },
+      "base_role_counts": {
+        "train": 77,
+        "val": 26,
+        "test": 66
+      },
+      "context_numeric_columns": 14,
+      "target_results": {
+        "r200_500": {
+          "status": "COMPLETE_EXPLORATORY_HOLDOUT",
+          "role_counts": {
+            "train": 74,
+            "val": 20,
+            "test": 57
+          },
+          "missing_target_by_base_role": {
+            "train": 3,
+            "val": 6,
+            "test": 9
+          },
+          "test_IDs": [
+            "MATR_b1c11",
+            "MATR_b1c15",
+            "MATR_b1c16",
+            "MATR_b1c20",
+            "MATR_b1c21",
+            "MATR_b1c23",
+            "MATR_b1c3",
+            "MATR_b1c34",
+            "MATR_b1c35",
+            "MATR_b1c4",
+            "MATR_b1c40",
+            "MATR_b1c41",
+            "MATR_b1c9",
+            "MATR_b2c10",
+            "MATR_b2c13",
+            "MATR_b2c14",
+            "MATR_b2c23",
+            "MATR_b2c28",
+            "MATR_b2c45",
+            "MATR_b2c5",
+            "MATR_b3c1",
+            "MATR_b3c10",
+            "MATR_b3c11",
+            "MATR_b3c12",
+            "MATR_b3c13",
+            "MATR_b3c14",
+            "MATR_b3c17",
+            "MATR_b3c19",
+            "MATR_b3c25",
+            "MATR_b3c26",
+            "MATR_b3c27",
+            "MATR_b3c3",
+            "MATR_b3c30",
+            "MATR_b3c34",
+            "MATR_b3c35",
+            "MATR_b3c36",
+            "MATR_b3c39",
+            "MATR_b3c4",
+            "MATR_b3c40",
+            "MATR_b3c41",
+            "MATR_b3c44",
+            "MATR_b3c5",
+            "MATR_b3c9",
+            "MATR_b4c18",
+            "MATR_b4c19",
+            "MATR_b4c24",
+            "MATR_b4c26",
+            "MATR_b4c28",
+            "MATR_b4c3",
+            "MATR_b4c33",
+            "MATR_b4c34",
+            "MATR_b4c38",
+            "MATR_b4c4",
+            "MATR_b4c42",
+            "MATR_b4c6",
+            "MATR_b4c8",
+            "MATR_b4c9"
+          ],
+          "negative_cases": 10,
+          "cell_paired_MAE_improvement": 8.440099295280965e-05,
+          "cell_bootstrap_CI95": [
+            6.322539230250964e-05,
+            0.00010606014541370152
+          ],
+          "test_protocol_groups": 28,
+          "protocol_macro_MAE_improvement": 7.63773568236351e-05,
+          "protocol_group_bootstrap_CI95": [
+            4.674870677657485e-05,
+            0.00010599789548171178
+          ]
+        },
+        "r500_1000": {
+          "status": "COMPLETE_EXPLORATORY_HOLDOUT",
+          "role_counts": {
+            "train": 15,
+            "val": 5,
+            "test": 20
+          },
+          "missing_target_by_base_role": {
+            "train": 62,
+            "val": 21,
+            "test": 46
+          },
+          "test_IDs": [
+            "MATR_b1c23",
+            "MATR_b1c3",
+            "MATR_b1c4",
+            "MATR_b1c41",
+            "MATR_b1c9",
+            "MATR_b3c1",
+            "MATR_b3c10",
+            "MATR_b3c17",
+            "MATR_b3c19",
+            "MATR_b3c26",
+            "MATR_b3c3",
+            "MATR_b3c34",
+            "MATR_b3c35",
+            "MATR_b3c39",
+            "MATR_b3c4",
+            "MATR_b3c9",
+            "MATR_b4c18",
+            "MATR_b4c19",
+            "MATR_b4c24",
+            "MATR_b4c38"
+          ],
+          "negative_cases": 12,
+          "cell_paired_MAE_improvement": 9.339816245164869e-07,
+          "cell_bootstrap_CI95": [
+            -2.2545747269480237e-05,
+            2.5848230415926543e-05
+          ],
+          "test_protocol_groups": 12,
+          "protocol_macro_MAE_improvement": 2.6806870043413427e-06,
+          "protocol_group_bootstrap_CI95": [
+            -2.930260461229509e-05,
+            3.478570548701333e-05
+          ]
+        }
+      },
+      "model_checks": [
+        {
+          "target": "r200_500",
+          "model": "combined",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r200_500",
+          "model": "context_capacity",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r200_500",
+          "model": "context_only",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r200_500",
+          "model": "context_qv_shape",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r200_500",
+          "model": "mean",
+          "features_match_contract": true,
+          "mean_uses_target_train_only": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "combined",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "context_capacity",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "context_only",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "context_qv_shape",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "mean",
+          "features_match_contract": true,
+          "mean_uses_target_train_only": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        }
+      ],
+      "protocol_role_support": [
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[3.6,3.6],\"fast_charge_end_soc\":[0.8,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[3.6,4.85],\"fast_charge_end_soc\":[0.02,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[3.6,5.0],\"fast_charge_end_soc\":[0.09,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[3.6,6.0,5.6,4.755],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 3,
+          "test": 1,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[3.6,6.0],\"fast_charge_end_soc\":[0.3,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[3.7,5.9],\"fast_charge_end_soc\":[0.31,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.0,4.0],\"fast_charge_end_soc\":[0.8,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.0,4.85],\"fast_charge_end_soc\":[0.04,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.0,5.0],\"fast_charge_end_soc\":[0.13,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.0,6.0],\"fast_charge_end_soc\":[0.4,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.4,4.4],\"fast_charge_end_soc\":[0.8,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.4,4.85],\"fast_charge_end_soc\":[0.08,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.4,5.0],\"fast_charge_end_soc\":[0.24,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.4,5.5],\"fast_charge_end_soc\":[0.47,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.4,5.6,5.2,4.252],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 3,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.65,4.85],\"fast_charge_end_soc\":[0.19,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.65,5.0],\"fast_charge_end_soc\":[0.44,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.65,6.0],\"fast_charge_end_soc\":[0.69,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.8,4.8],\"fast_charge_end_soc\":[0.8,0.8],\"discharge_rate_C\":4.0}",
+          "train": 6,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.8,5.2,5.2,4.16],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 3,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.9,4.25],\"fast_charge_end_soc\":[0.69,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.9,4.5],\"fast_charge_end_soc\":[0.61,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.0,4.0],\"fast_charge_end_soc\":[0.67,0.8],\"discharge_rate_C\":4.0}",
+          "train": 6,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.2,3.5],\"fast_charge_end_soc\":[0.66,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.2,4.0],\"fast_charge_end_soc\":[0.58,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.2,4.25],\"fast_charge_end_soc\":[0.5,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.2,4.5],\"fast_charge_end_soc\":[0.37,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.2,4.75],\"fast_charge_end_soc\":[0.1,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.2,5.2,4.8,4.16],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.3,4.0],\"fast_charge_end_soc\":[0.54,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 8,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.4,3.0],\"fast_charge_end_soc\":[0.5,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.4,3.0],\"fast_charge_end_soc\":[0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 1,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.4,3.0],\"fast_charge_end_soc\":[0.7,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.4,3.6],\"fast_charge_end_soc\":[0.4,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.4,3.6],\"fast_charge_end_soc\":[0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.4,5.4],\"fast_charge_end_soc\":[0.8,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.6,4.25],\"fast_charge_end_soc\":[0.38,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.6,4.3],\"fast_charge_end_soc\":[0.36,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 8,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.6,4.5],\"fast_charge_end_soc\":[0.25,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.6,4.6],\"fast_charge_end_soc\":[0.19,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 6,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.6,4.75],\"fast_charge_end_soc\":[0.05,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.9,3.1],\"fast_charge_end_soc\":[0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.9,4.6],\"fast_charge_end_soc\":[0.15,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,3.0],\"fast_charge_end_soc\":[0.4,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,3.0],\"fast_charge_end_soc\":[0.5,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,3.0],\"fast_charge_end_soc\":[0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,3.6],\"fast_charge_end_soc\":[0.3,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,3.6],\"fast_charge_end_soc\":[0.4,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,3.6],\"fast_charge_end_soc\":[0.5,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,4.75],\"fast_charge_end_soc\":[0.04,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,5.6,4.4,3.834],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 4,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[7.0,3.0],\"fast_charge_end_soc\":[0.4,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[7.0,3.6],\"fast_charge_end_soc\":[0.3,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[7.0,3.6],\"fast_charge_end_soc\":[0.4,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[7.0,4.8,4.8,3.652],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 3,
+          "val": 1,
+          "test": 1,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[8.0,3.6],\"fast_charge_end_soc\":[0.15,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[8.0,3.6],\"fast_charge_end_soc\":[0.25,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[8.0,3.6],\"fast_charge_end_soc\":[0.35,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[8.0,4.4,4.4,3.94],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 1,
+          "test": 2,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[8.0,6.0,4.8,3.0],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 3,
+          "val": 1,
+          "test": 1,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "{\"fast_charge_rates_C\":[8.0,7.0,5.2,2.68],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 1,
+          "test": 3,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[3.6,3.6],\"fast_charge_end_soc\":[0.8,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[3.6,6.0,5.6,4.755],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.0,4.0],\"fast_charge_end_soc\":[0.8,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.4,4.4],\"fast_charge_end_soc\":[0.8,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.4,5.6,5.2,4.252],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.8,4.8],\"fast_charge_end_soc\":[0.8,0.8],\"discharge_rate_C\":4.0}",
+          "train": 3,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[4.8,5.2,5.2,4.16],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.0,4.0],\"fast_charge_end_soc\":[0.67,0.8],\"discharge_rate_C\":4.0}",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.2,5.2,4.8,4.16],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.3,4.0],\"fast_charge_end_soc\":[0.54,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 5,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.4,3.6],\"fast_charge_end_soc\":[0.4,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.6,4.3],\"fast_charge_end_soc\":[0.36,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.6,4.6],\"fast_charge_end_soc\":[0.19,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[5.9,3.1],\"fast_charge_end_soc\":[0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,3.0],\"fast_charge_end_soc\":[0.4,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,3.6],\"fast_charge_end_soc\":[0.3,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[6.0,5.6,4.4,3.834],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[7.0,4.8,4.8,3.652],\"fast_charge_end_soc\":[0.2,0.4,0.6,0.8],\"discharge_rate_C\":4.0}",
+          "train": 1,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "{\"fast_charge_rates_C\":[8.0,3.6],\"fast_charge_end_soc\":[0.15,0.8],\"discharge_rate_C\":4.0}",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        }
+      ],
+      "maximum_stored_ridge_normal_equation_residual": 2.42861286636753e-17,
+      "contract_sha256": "bb43b57b8d6cdd82ffc077e4e3f4c29ebde28880d4e40fa328667de6782bd779",
+      "selection_sha256": "c084b48c6100474f1ba79075284a78ddbed8f992c49cb8aeeeee8828ffcf7961"
+    },
+    "Stanford_2": {
+      "status": "PASS",
+      "checks": {
+        "family_and_fixed_supplied_coordinate": true,
+        "base_admission_recomputed_without_future_target_filter": true,
+        "base_legacy_roles_match_actual576_ids": true,
+        "hash_split_independent_of_target_support": true,
+        "base_roles_pairwise_disjoint_complete": true,
+        "role_counts_and_split_sha_match": true,
+        "protocol_groups_come_from_pre_prediction_context": true,
+        "context_all_finite_prior_columns_only": true,
+        "all_models_share_same_prior_budget": true,
+        "registered_all_input_hashes_lengths_match": true,
+        "runner_and_frozen_hust_core_sha_match": true,
+        "family_freeze_hash_chain": true,
+        "all_family_completed_artifact_hashes_match": true,
+        "family_receipt_covers_every_output_file": true,
+        "all_target_selections_frozen_before_family_test_open": true,
+        "physical_axis_evidence_preserved_without_admission_exclusion": true,
+        "registered_alpha_scaler_refit_policy": true,
+        "historical_exploratory_limits_preserved": true,
+        "r200_500__target_specific_support_and_fixed_base_roles": true,
+        "r200_500__all_cell_target_masks_and_reasons_recomputed": true,
+        "r200_500__target_selection_and_hash_chain": true,
+        "r200_500__target_receipt_all_output_hashes": true,
+        "r200_500__source_train_val_ids_exact_target_mask": true,
+        "r200_500__five_models_exact_registered_set": true,
+        "r200_500__target_aggregate_contains_all_prediction_arrays_once": true,
+        "r200_500__all_model_metrics_independently_recomputed": true,
+        "r200_500__all_protocol_metrics_support_and_reasons_recomputed": true,
+        "r200_500__paired_cell_bootstrap_2000_recomputed": true,
+        "r200_500__all_negative_cases_and_magnitudes_preserved": true,
+        "r500_1000__target_specific_support_and_fixed_base_roles": true,
+        "r500_1000__all_cell_target_masks_and_reasons_recomputed": true,
+        "r500_1000__target_selection_and_hash_chain": true,
+        "r500_1000__target_receipt_all_output_hashes": true,
+        "r500_1000__source_train_val_ids_exact_target_mask": true,
+        "r500_1000__five_models_exact_registered_set": true,
+        "r500_1000__target_aggregate_contains_all_prediction_arrays_once": true,
+        "r500_1000__all_model_metrics_independently_recomputed": true,
+        "r500_1000__all_protocol_metrics_support_and_reasons_recomputed": true,
+        "r500_1000__paired_cell_bootstrap_2000_recomputed": true,
+        "r500_1000__all_negative_cases_and_magnitudes_preserved": true,
+        "cell_target_support_rows_complete_unique": true,
+        "all_stored_model_prediction_and_validation_checks": true,
+        "family_completed_target_list_and_prediction_array_counts": true,
+        "family_aggregate_matches_target_outputs__predictions.csv": true,
+        "family_aggregate_matches_target_outputs__metrics.csv": true,
+        "family_aggregate_matches_target_outputs__protocol_metrics.csv": true,
+        "family_aggregate_matches_target_outputs__paired_mae_improvement.csv": true,
+        "family_aggregate_matches_target_outputs__negative_cases.csv": true,
+        "protocol_macro_equal_weight_and_group_bootstrap_2000_recomputed": true
+      },
+      "base_role_counts": {
+        "train": 75,
+        "val": 26,
+        "test": 80
+      },
+      "context_numeric_columns": 14,
+      "target_results": {
+        "r200_500": {
+          "status": "COMPLETE_EXPLORATORY_HOLDOUT",
+          "role_counts": {
+            "train": 75,
+            "val": 26,
+            "test": 80
+          },
+          "missing_target_by_base_role": {
+            "train": 0,
+            "val": 0,
+            "test": 0
+          },
+          "test_IDs": [
+            "Stanford_Nova_Regular_121",
+            "Stanford_Nova_Regular_122",
+            "Stanford_Nova_Regular_123",
+            "Stanford_Nova_Regular_124",
+            "Stanford_Nova_Regular_125",
+            "Stanford_Nova_Regular_126",
+            "Stanford_Nova_Regular_127",
+            "Stanford_Nova_Regular_128",
+            "Stanford_Nova_Regular_129",
+            "Stanford_Nova_Regular_134",
+            "Stanford_Nova_Regular_135",
+            "Stanford_Nova_Regular_151",
+            "Stanford_Nova_Regular_152",
+            "Stanford_Nova_Regular_154",
+            "Stanford_Nova_Regular_155",
+            "Stanford_Nova_Regular_156",
+            "Stanford_Nova_Regular_157",
+            "Stanford_Nova_Regular_158",
+            "Stanford_Nova_Regular_159",
+            "Stanford_Nova_Regular_160",
+            "Stanford_Nova_Regular_161",
+            "Stanford_Nova_Regular_162",
+            "Stanford_Nova_Regular_169",
+            "Stanford_Nova_Regular_170",
+            "Stanford_Nova_Regular_171",
+            "Stanford_Nova_Regular_172",
+            "Stanford_Nova_Regular_173",
+            "Stanford_Nova_Regular_174",
+            "Stanford_Nova_Regular_175",
+            "Stanford_Nova_Regular_176",
+            "Stanford_Nova_Regular_177",
+            "Stanford_Nova_Regular_184",
+            "Stanford_Nova_Regular_185",
+            "Stanford_Nova_Regular_186",
+            "Stanford_Nova_Regular_187",
+            "Stanford_Nova_Regular_188",
+            "Stanford_Nova_Regular_189",
+            "Stanford_Nova_Regular_193",
+            "Stanford_Nova_Regular_194",
+            "Stanford_Nova_Regular_195",
+            "Stanford_Nova_Regular_196",
+            "Stanford_Nova_Regular_198",
+            "Stanford_Nova_Regular_199",
+            "Stanford_Nova_Regular_200",
+            "Stanford_Nova_Regular_201",
+            "Stanford_Nova_Regular_217",
+            "Stanford_Nova_Regular_219",
+            "Stanford_Nova_Regular_223",
+            "Stanford_Nova_Regular_224",
+            "Stanford_Nova_Regular_225",
+            "Stanford_Nova_Regular_226",
+            "Stanford_Nova_Regular_227",
+            "Stanford_Nova_Regular_228",
+            "Stanford_Nova_Regular_229",
+            "Stanford_Nova_Regular_230",
+            "Stanford_Nova_Regular_269",
+            "Stanford_Nova_Regular_270",
+            "Stanford_Nova_Regular_271",
+            "Stanford_Nova_Regular_272",
+            "Stanford_Nova_Regular_273",
+            "Stanford_Nova_Regular_274",
+            "Stanford_Nova_Regular_275",
+            "Stanford_Nova_Regular_276",
+            "Stanford_Nova_Regular_277",
+            "Stanford_Nova_Regular_278",
+            "Stanford_Nova_Regular_279",
+            "Stanford_Nova_Regular_280",
+            "Stanford_Nova_Regular_281",
+            "Stanford_Nova_Regular_282",
+            "Stanford_Nova_Regular_283",
+            "Stanford_Nova_Regular_284",
+            "Stanford_Nova_Regular_291",
+            "Stanford_Nova_Regular_292",
+            "Stanford_Nova_Regular_293",
+            "Stanford_Nova_Regular_315",
+            "Stanford_Nova_Regular_316",
+            "Stanford_Nova_Regular_317",
+            "Stanford_Nova_Regular_318",
+            "Stanford_Nova_Regular_319",
+            "Stanford_Nova_Regular_320"
+          ],
+          "negative_cases": 39,
+          "cell_paired_MAE_improvement": -1.7773929310714442e-05,
+          "cell_bootstrap_CI95": [
+            -6.182936528550647e-05,
+            5.596099667171405e-06
+          ],
+          "test_protocol_groups": 28,
+          "protocol_macro_MAE_improvement": -1.699665724614278e-05,
+          "protocol_group_bootstrap_CI95": [
+            -5.493960195008908e-05,
+            8.300078135067667e-06
+          ]
+        },
+        "r500_1000": {
+          "status": "COMPLETE_EXPLORATORY_HOLDOUT",
+          "role_counts": {
+            "train": 37,
+            "val": 16,
+            "test": 45
+          },
+          "missing_target_by_base_role": {
+            "train": 38,
+            "val": 10,
+            "test": 35
+          },
+          "test_IDs": [
+            "Stanford_Nova_Regular_126",
+            "Stanford_Nova_Regular_127",
+            "Stanford_Nova_Regular_128",
+            "Stanford_Nova_Regular_129",
+            "Stanford_Nova_Regular_152",
+            "Stanford_Nova_Regular_156",
+            "Stanford_Nova_Regular_157",
+            "Stanford_Nova_Regular_160",
+            "Stanford_Nova_Regular_170",
+            "Stanford_Nova_Regular_195",
+            "Stanford_Nova_Regular_199",
+            "Stanford_Nova_Regular_200",
+            "Stanford_Nova_Regular_217",
+            "Stanford_Nova_Regular_223",
+            "Stanford_Nova_Regular_224",
+            "Stanford_Nova_Regular_225",
+            "Stanford_Nova_Regular_226",
+            "Stanford_Nova_Regular_227",
+            "Stanford_Nova_Regular_228",
+            "Stanford_Nova_Regular_230",
+            "Stanford_Nova_Regular_269",
+            "Stanford_Nova_Regular_270",
+            "Stanford_Nova_Regular_271",
+            "Stanford_Nova_Regular_272",
+            "Stanford_Nova_Regular_273",
+            "Stanford_Nova_Regular_274",
+            "Stanford_Nova_Regular_275",
+            "Stanford_Nova_Regular_276",
+            "Stanford_Nova_Regular_277",
+            "Stanford_Nova_Regular_278",
+            "Stanford_Nova_Regular_279",
+            "Stanford_Nova_Regular_280",
+            "Stanford_Nova_Regular_281",
+            "Stanford_Nova_Regular_282",
+            "Stanford_Nova_Regular_283",
+            "Stanford_Nova_Regular_284",
+            "Stanford_Nova_Regular_291",
+            "Stanford_Nova_Regular_292",
+            "Stanford_Nova_Regular_293",
+            "Stanford_Nova_Regular_315",
+            "Stanford_Nova_Regular_316",
+            "Stanford_Nova_Regular_317",
+            "Stanford_Nova_Regular_318",
+            "Stanford_Nova_Regular_319",
+            "Stanford_Nova_Regular_320"
+          ],
+          "negative_cases": 23,
+          "cell_paired_MAE_improvement": -0.00021723776063469171,
+          "cell_bootstrap_CI95": [
+            -0.0006336072747662816,
+            3.093402848137195e-05
+          ],
+          "test_protocol_groups": 21,
+          "protocol_macro_MAE_improvement": -0.00011797783633401574,
+          "protocol_group_bootstrap_CI95": [
+            -0.00048191856313722957,
+            0.00011414014866029738
+          ]
+        }
+      },
+      "model_checks": [
+        {
+          "target": "r200_500",
+          "model": "combined",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r200_500",
+          "model": "context_capacity",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r200_500",
+          "model": "context_only",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r200_500",
+          "model": "context_qv_shape",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r200_500",
+          "model": "mean",
+          "features_match_contract": true,
+          "mean_uses_target_train_only": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "combined",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "context_capacity",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "context_only",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "context_qv_shape",
+          "features_match_contract": true,
+          "scaler_recomputed_from_target_training_only": true,
+          "stored_coefficients_satisfy_ridge_normal_equations": true,
+          "stored_intercept_uses_training_only": true,
+          "alpha_matches_registered_validation_argmin": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        },
+        {
+          "target": "r500_1000",
+          "model": "mean",
+          "features_match_contract": true,
+          "mean_uses_target_train_only": true,
+          "selected_validation_MAE_recomputed": true,
+          "test_IDs_exact_target_mask_for_every_model": true,
+          "test_prediction_replayed_from_frozen_coefficients": true,
+          "truth_errors_protocol_and_role_match_source": true,
+          "prediction_receipt_and_freeze_sha_chain": true,
+          "test_prediction_publication_after_all_source_selections": true
+        }
+      ],
+      "protocol_role_support": [
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.0048,4.06,0.0216,0.0,72.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.0168,3.84,0.0504,2.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.0264,3.72,0.036,2.0,0.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.0264,3.77,0.1656,2.0,0.0]",
+          "train": 1,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.0552,4.09,0.0048,0.0,72.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.084,3.97,0.108,5.0,168.0]",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.1224,3.91,0.0048,5.0,72.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.18,3.74,0.4,1.0,0.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.22,3.83,0.31,1.0,0.0]",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.2952,4.1,0.2832,3.0,168.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.4,3.65,0.27,1.0,0.0]",
+          "train": 1,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.432,3.66,0.036,2.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[25.0,0.53,4.1,0.49,1.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.0048,3.6,0.3408,3.0,72.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.0048,3.64,0.0216,2.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.0048,3.9,0.036,3.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.0168,3.65,0.0048,2.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.0456,3.8,0.588,3.0,168.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.0456,4.01,0.0216,5.0,0.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.0648,3.76,0.4296,5.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.0648,4.07,0.0048,3.0,168.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.1608,4.05,0.0792,5.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.3264,3.75,0.1944,2.0,72.0]",
+          "train": 1,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.3552,4.0,0.384,0.0,168.0]",
+          "train": 1,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.44,4.05,0.53,1.0,0.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.48,3.83,0.1224,3.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.57,3.78,0.66,1.0,0.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.62,3.6,0.44,1.0,0.0]",
+          "train": 1,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[35.0,0.66,3.92,0.57,1.0,0.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[40.0,0.0048,3.61,0.0216,2.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[40.0,0.0048,3.81,0.0792,3.0,0.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[40.0,0.0048,3.88,0.0048,0.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[40.0,0.012,3.8,0.012,0.0,0.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[40.0,0.0168,3.93,0.0648,0.0,72.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[40.0,0.0168,3.99,0.5304,0.0,168.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[40.0,0.0264,3.98,0.0048,3.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[40.0,0.036,4.02,0.648,2.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[40.0,0.1032,3.67,0.4728,0.0,0.0]",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.0048,3.86,0.2544,0.0,72.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.0168,3.68,0.18,2.0,168.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.0168,3.73,0.0504,5.0,168.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.0264,3.71,0.0048,3.0,72.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.0456,3.87,0.72,3.0,72.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.1512,3.74,0.036,2.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.18,3.89,0.0504,5.0,72.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.1992,3.79,0.0648,0.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.2184,3.82,0.0048,3.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.2376,4.04,0.1512,5.0,168.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.2664,3.96,0.0048,2.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.27,3.87,0.22,1.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.31,3.69,0.62,1.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.35,3.96,0.35,1.0,0.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.3936,3.62,0.0216,3.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[45.0,0.49,4.01,0.18,1.0,0.0]",
+          "train": 1,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[55.0,0.0048,3.78,0.0216,2.0,72.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[55.0,0.0048,3.94,0.0048,5.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[55.0,0.0048,4.03,0.312,3.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[55.0,0.0168,3.95,0.1368,3.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[55.0,0.036,3.69,0.0048,0.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[55.0,0.0744,4.08,0.0936,2.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[55.0,0.0936,3.92,0.2256,3.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[55.0,0.1128,3.7,0.0216,5.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r200_500",
+          "protocol_group": "formation_tuple:[55.0,0.132,3.63,0.0048,2.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.0048,4.06,0.0216,0.0,72.0]",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.0264,3.72,0.036,2.0,0.0]",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.0552,4.09,0.0048,0.0,72.0]",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.084,3.97,0.108,5.0,168.0]",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.1224,3.91,0.0048,5.0,72.0]",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.18,3.74,0.4,1.0,0.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.22,3.83,0.31,1.0,0.0]",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.2952,4.1,0.2832,3.0,168.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.4,3.65,0.27,1.0,0.0]",
+          "train": 1,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.432,3.66,0.036,2.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[25.0,0.53,4.1,0.49,1.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.0048,3.6,0.3408,3.0,72.0]",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.0048,3.64,0.0216,2.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.0048,3.9,0.036,3.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.0168,3.65,0.0048,2.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.0456,3.8,0.588,3.0,168.0]",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.0648,3.76,0.4296,5.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.0648,4.07,0.0048,3.0,168.0]",
+          "train": 1,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.3552,4.0,0.384,0.0,168.0]",
+          "train": 0,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.44,4.05,0.53,1.0,0.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.48,3.83,0.1224,3.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.57,3.78,0.66,1.0,0.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.62,3.6,0.44,1.0,0.0]",
+          "train": 1,
+          "val": 2,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[35.0,0.66,3.92,0.57,1.0,0.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[40.0,0.0048,3.88,0.0048,0.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[40.0,0.0168,3.93,0.0648,0.0,72.0]",
+          "train": 0,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[40.0,0.1032,3.67,0.4728,0.0,0.0]",
+          "train": 2,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.0048,3.86,0.2544,0.0,72.0]",
+          "train": 0,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.0168,3.68,0.18,2.0,168.0]",
+          "train": 0,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.0168,3.73,0.0504,5.0,168.0]",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.0264,3.71,0.0048,3.0,72.0]",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.0456,3.87,0.72,3.0,72.0]",
+          "train": 1,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.1512,3.74,0.036,2.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.2184,3.82,0.0048,3.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 1,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.2376,4.04,0.1512,5.0,168.0]",
+          "train": 1,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.2664,3.96,0.0048,2.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.27,3.87,0.22,1.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.31,3.69,0.62,1.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.35,3.96,0.35,1.0,0.0]",
+          "train": 2,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[45.0,0.49,4.01,0.18,1.0,0.0]",
+          "train": 1,
+          "val": 1,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[55.0,0.0048,3.78,0.0216,2.0,72.0]",
+          "train": 3,
+          "val": 0,
+          "test": 0,
+          "test_group_seen_in_train": true
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[55.0,0.0048,3.94,0.0048,5.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[55.0,0.0048,4.03,0.312,3.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[55.0,0.0168,3.95,0.1368,3.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[55.0,0.036,3.69,0.0048,0.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[55.0,0.0744,4.08,0.0936,2.0,168.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[55.0,0.0936,3.92,0.2256,3.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[55.0,0.1128,3.7,0.0216,5.0,72.0]",
+          "train": 0,
+          "val": 0,
+          "test": 2,
+          "test_group_seen_in_train": false
+        },
+        {
+          "target": "r500_1000",
+          "protocol_group": "formation_tuple:[55.0,0.132,3.63,0.0048,2.0,0.0]",
+          "train": 0,
+          "val": 0,
+          "test": 3,
+          "test_group_seen_in_train": false
+        }
+      ],
+      "maximum_stored_ridge_normal_equation_residual": 9.540979117872439e-18,
+      "contract_sha256": "90da3f36837f0a685adab0859a610641353fa27f3026103ed83deee4b9e9f3cb",
+      "selection_sha256": "7f3c0662cdd86adc81193f9e47b8d8b9e965345464ab1534993165874402e2b2"
+    }
+  },
+  "historical_snapshot": {
+    "baseline_commit": "e8a7295d5199775006f7a0b750f58cb96488d5df",
+    "checked_files": 106,
+    "checked_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "configs/d0_protocol.json",
+      "configs/hust_source_registry.json",
+      "data/cell_metadata.csv",
+      "data/legacy_576_ids.json",
+      "report/EXPERIMENT_REPORT_ZH.md",
+      "report/HUST_RAW_CAPACITY_TARGET_REVIEW_ZH.md",
+      "report/KNEE_TARGET_VALIDITY_ZH.md",
+      "report/PROVENANCE_REVIEW_ZH.md",
+      "report/SDU_DATA_AUDIT_ZH.md",
+      "report/figures/D0_OBSERVED_CURVE_EXAMPLES.png",
+      "requirements.txt",
+      "results/FINAL_DATA_QUALIFICATION_QA.json",
+      "results/FINAL_EXPERIMENT_QA.json",
+      "results/RUN_ENVIRONMENT.json",
+      "results/STAGE_DECISION.json",
+      "results/d0/D0_STATUS.json",
+      "results/d0/FEATURE_CAUSALITY_AND_REGRESSION_QA.json",
+      "results/d0/HUST_BOUNDARY_SAMPLING_DIAGNOSTIC.json",
+      "results/d0/HUST_RAW_CAPACITY_AUDIT_SUMMARY.json",
+      "results/d0/HUST_RAW_CAPACITY_CODE_IDENTITY.json",
+      "results/d0/HUST_RAW_CAPACITY_TARGET_SUPPORT.csv",
+      "results/d0/HUST_RAW_CAPACITY_VERIFICATION.json",
+      "results/d0/HUST_RAW_VS_PROVIDED_CAPACITY.csv",
+      "results/d0/HUST_SOURCE_AUDIT_SUMMARY.json",
+      "results/d0/KNEE_NEGATIVE_CONTROLS.json",
+      "results/d0/SAFE_STATIC_PARSER_VALIDATION.json",
+      "results/d0/SOURCE_BINDING_ACCEPTANCE.json",
+      "results/d0/early_observed_features.csv",
+      "results/d0/eligible_cells.csv",
+      "results/d0/feature_coverage_by_family_protocol.csv",
+      "results/d0/future_condition_contract.csv",
+      "results/d0/future_target_support.csv",
+      "results/d0/old576_current_data_identity.csv",
+      "results/d0/policy_scheduled_evidence.csv",
+      "results/d0/provenance_review.json",
+      "results/d0/source_identity_alignment.csv",
+      "results/experiment_b/CONTRACT.json",
+      "results/experiment_b/EVALUATED.json",
+      "results/experiment_b/SELECTIONS.json",
+      "results/experiment_b/SELECTIONS.sha256",
+      "results/experiment_b/TEST_OPENED.json",
+      "results/experiment_b/excluded_cells.csv",
+      "results/experiment_b/metrics.csv",
+      "results/experiment_b/negative_cases.csv",
+      "results/experiment_b/paired_mae_improvement.csv",
+      "results/experiment_b/predictions.csv",
+      "results/experiment_b/predictions/r200_500__combined.csv",
+      "results/experiment_b/predictions/r200_500__combined.json",
+      "results/experiment_b/predictions/r200_500__context_capacity.csv",
+      "results/experiment_b/predictions/r200_500__context_capacity.json",
+      "results/experiment_b/predictions/r200_500__context_only.csv",
+      "results/experiment_b/predictions/r200_500__context_only.json",
+      "results/experiment_b/predictions/r200_500__context_qv_shape.csv",
+      "results/experiment_b/predictions/r200_500__context_qv_shape.json",
+      "results/experiment_b/predictions/r200_500__mean.csv",
+      "results/experiment_b/predictions/r200_500__mean.json",
+      "results/experiment_b/predictions/r500_1000__combined.csv",
+      "results/experiment_b/predictions/r500_1000__combined.json",
+      "results/experiment_b/predictions/r500_1000__context_capacity.csv",
+      "results/experiment_b/predictions/r500_1000__context_capacity.json",
+      "results/experiment_b/predictions/r500_1000__context_only.csv",
+      "results/experiment_b/predictions/r500_1000__context_only.json",
+      "results/experiment_b/predictions/r500_1000__context_qv_shape.csv",
+      "results/experiment_b/predictions/r500_1000__context_qv_shape.json",
+      "results/experiment_b/predictions/r500_1000__mean.csv",
+      "results/experiment_b/predictions/r500_1000__mean.json",
+      "results/experiment_b/protocol_metrics.csv",
+      "results/experiment_b/split.csv",
+      "results/sdu_audit/SDU_AUDIT_VERIFICATION.json",
+      "results/sdu_audit/sdu_D0_refresh_provenance.json",
+      "results/sdu_audit/sdu_archive_members.csv",
+      "results/sdu_audit/sdu_audit_contract.json",
+      "results/sdu_audit/sdu_cell_metadata.csv",
+      "results/sdu_audit/sdu_channel_quality.csv",
+      "results/sdu_audit/sdu_data_dictionary.json",
+      "results/sdu_audit/sdu_early_observed_features.csv",
+      "results/sdu_audit/sdu_eligible_cells.csv",
+      "results/sdu_audit/sdu_family_summary.json",
+      "results/sdu_audit/sdu_feature_coverage.csv",
+      "results/sdu_audit/sdu_future_condition_contract.csv",
+      "results/sdu_audit/sdu_future_target_support.csv",
+      "results/sdu_audit/sdu_independent_verification.json",
+      "results/sdu_audit/sdu_label_alignment.csv",
+      "results/sdu_audit/sdu_metadata_field_coverage.csv",
+      "results/sdu_audit/sdu_prefix_eligibility.csv",
+      "results/sdu_audit/sdu_preprocessing_lineage.json",
+      "results/sdu_audit/sdu_voltage_and_replacement_review.csv",
+      "scripts/audit_hust_raw_source.py",
+      "scripts/audit_sdu.py",
+      "scripts/build_final_report.py",
+      "scripts/build_hust_raw_targets.py",
+      "scripts/finalize_d0.py",
+      "scripts/hust_safe_pickle.py",
+      "scripts/physics_targets.py",
+      "scripts/recover_hust_archive.py",
+      "scripts/refresh_sdu_d0.py",
+      "scripts/render_d0_examples.py",
+      "scripts/run_d0.py",
+      "scripts/run_experiment_b.py",
+      "scripts/verify_d0_features.py",
+      "scripts/verify_data_qualification.py",
+      "scripts/verify_experiment_b.py",
+      "scripts/verify_hust_raw_targets.py",
+      "results/DELIVERY_MANIFEST.json"
+    ],
+    "changed_or_missing": [],
+    "allowed_versioned_document_update": "README.md extension index"
+  },
+  "source_context": {
+    "status": "PASS",
+    "checks": {
+      "matr_three_policy_archive_hashes_static_only": true,
+      "matr_124_original_policy_IDs_recovered": true,
+      "matr_all169_prior_values_SOC_masks_and_protocols_match_design_sources": true,
+      "matr_b4_nine_published_profiles_five_each": true,
+      "matr_context_contains_no_measured_future_values": true,
+      "stanford_author_parameter_sha_matches_source_report": true,
+      "stanford_all181_source_formation_and_aging_design_priors_recomputed": true,
+      "stanford_all_context_available_before_aging_and_design_scope_retained": true
+    },
+    "matr_policy_archives": [
+      {
+        "file_name": "batch1_original_policies.json",
+        "sha256": "67b22518cb1acc102fd6d678249c9d7cb6b237d4f0b103bc92786212a43bf56a"
+      },
+      {
+        "file_name": "batch2_original_policies.json",
+        "sha256": "af9828f8416d61c1eeba47af73d68303fbce1d5249ae4537a6b79bb955939cd0"
+      },
+      {
+        "file_name": "batch3_original_policies.json",
+        "sha256": "f6f7f204d006249381ce4af54e12719e0d0e8e608c12c49aefd860554acd5a09"
+      }
+    ],
+    "stanford_author_parameter_sha256": "3a9696ec055ce231a61bdfb0f5bbbc9f54a564d46c09396de29cf162f4d2dd8e",
+    "scope": "All prior numeric values matched to assigned designs or pre-aging formation parameters; fixed aging chamber30C and rest-time units retain primary-source interpretation from the qualification report",
+    "physical_binding_limit": "Batch4 design-vector match retained; individual original-archive mapping remains unverified"
+  },
+  "fits_or_test_entrypoints_invoked": 0,
+  "prediction_replay": "Stored scaler/coefficient matrix multiplication only; experiment modules never imported",
+  "alpha_validation_check": "Registered ascending candidate-grid argmin and independent selected-model validation MAE; no candidate refit",
+  "bootstrap_replay": {
+    "cell_resamples": 2000,
+    "protocol_group_resamples": 2000,
+    "seed": 20261115
+  },
+  "scope": "Historical exploratory supplied-coordinate cohorts; physical-axis qualification remains in source reports",
+  "code_sha256": "5f534125e36d5bb1a11b6c182e082510e58ad71d8a0d56b610b901b90276a858"
+}

@@ -2,13 +2,21 @@
 
 本仓库记录电池早期电学响应、未来退化结局与数据资格审计的代码、合同及结果。
 
+## MATR与Stanford扩展
+
+已补齐MATR169颗与Stanford181颗的预测实验，分别按中期和晚期实际观察范围保留有效样本。MATR中期加入Q(V)后MAE下降49.28%，电池和工况组配对区间均为正。Stanford当前联合线性模型出现分布外外推失败，原始负结果与真实前缀复核完整保留。
+
+最新结果见[多数据集扩展报告](report/MULTIFAMILY_EXTENSION_REPORT_ZH.md)、[MATR资格](report/MATR_EXTENSION_QUALIFICATION_ZH.md)、[Stanford资格](report/STANFORD_EXTENSION_QUALIFICATION_ZH.md)及[106项独立核验](results/MULTIFAMILY_EXTENSION_QA.json)。
+
+本轮按供应循环坐标定义预测任务，原始物理循环标定状态作为解释边界保留。完整历史HUST研究见下文。
+
 ## 当前实验
 
 `SRSR Physics early precursor v1` 从 HUST、MATR、Stanford_2 的 427 个供应电池文件开展定向 D0 审计，核验循环坐标、曲线可比性、早期特征与未来结局支持。历史 576 电池及已完成响应研究仅用于身份映射和证据追踪。
 
 本轮D0、探索性实验B与新增SDU审计已完成。具体结果见[完整实验报告](report/EXPERIMENT_REPORT_ZH.md)及[SDU审计](report/SDU_DATA_AUDIT_ZH.md)。
 
-## 当前结果
+## 首轮HUST与SDU结果
 
 - HUST官方归档77颗、146122个原始循环完成安全静态解析，供应前100记录的V/I逐点匹配。供应K100完整的76颗进入实验B，训练/验证/测试为33/11/32。
 - 主目标500–1000圈平均退化速率，联合模型MAE为3.1316e-5，容量对照为3.4020e-5。配对MAE改善95%区间跨0，稳定增量收益证据有限。
