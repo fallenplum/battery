@@ -1,0 +1,639 @@
+{
+  "study_id": "unified_matr_methodology_full_seed42",
+  "arm": "M4_FULL_METHOD",
+  "seed": 42,
+  "planned_units": 1,
+  "planned_optimizer_updates": 12450,
+  "expected_updates_by_split": {
+    "cell_fold_0": 2100,
+    "cell_fold_1": 2100,
+    "cell_fold_2": 2100,
+    "cell_fold_3": 2100,
+    "cell_fold_4": 2100,
+    "unseen_protocol_sensitivity": 1950
+  },
+  "methodology_contract": {
+    "path": "research/M4_FULL_METHODOLOGY_RUN_ONLY_ZH.md",
+    "sha256": "94ac2388411306e162243ced735188c373c03a6daabbe1cf49e9ae94c7136523"
+  },
+  "config_sha256": "25a488e1e27e6dffe5246ad8a9433810a9906aa7eb29d1288f4d21294dc6e72d",
+  "data_freeze_sha256": "276016ea2f72c2d9c366c44b00906c80cf8234f741b48b60a6a2562c57fff4fb",
+  "data_fingerprint_sha256": "04af53bc81d03e976b1f4e9dce776540f251bfc2d960311e0f0b3ffd80eedaec",
+  "split_contract_sha256": "292c3f5e2615b700f3604b730c44963a0a1760aa9a4f29aa56ec6f16a2492b9b",
+  "frozen_files": [
+    {
+      "path": "dataset_manifest.json",
+      "sha256": "8707a00b0d053f0ada9fdcd22804de8d64a0b49c70f29c23272cb5d61ac2aff0",
+      "bytes": 7094384
+    },
+    {
+      "path": "cells.parquet",
+      "sha256": "833526d2db44fadeb5323b5cbaf80d554ec8c9bd03013af4482b0b3904807c13",
+      "bytes": 205267
+    },
+    {
+      "path": "early_viq_qv_64.npz",
+      "sha256": "e78a41972fd4d7a9b2d62d7097029d9c5c9a016ef7fa23e4da7b1b4c2c40034f",
+      "bytes": 47000004
+    },
+    {
+      "path": "early_physics_features.parquet",
+      "sha256": "650b887337e08774d2bb79e82899281d14c86804ffd51c237db1f7090c812b4a",
+      "bytes": 31739695
+    },
+    {
+      "path": "future_soh.parquet",
+      "sha256": "362249b3fcf17dab2ad1c792255c6a23a49036240b0fd5f263a723d5fb28ea94",
+      "bytes": 4098756
+    },
+    {
+      "path": "raw_record_audit.parquet",
+      "sha256": "ddd4278741c14d5ed4d3db1e1161fc18b2fb25e92baaa910191176601b6acb0f",
+      "bytes": 22255204
+    },
+    {
+      "path": "instrument_cycle_mapping.parquet",
+      "sha256": "44e1ddc9be53703ec9eb433487556690028cfdd055f998542452b19060479775",
+      "bytes": 13876987
+    },
+    {
+      "path": "instrument_identity_bindings.json",
+      "sha256": "891db3b732df70a2cdf0f837250568db5ea0e331c4b34397cd35a2f8b5a357d1",
+      "bytes": 382612
+    },
+    {
+      "path": "split_contract.json",
+      "sha256": "292c3f5e2615b700f3604b730c44963a0a1760aa9a4f29aa56ec6f16a2492b9b",
+      "bytes": 36501
+    },
+    {
+      "path": "dataset_qa.json",
+      "sha256": "655ef72ca1f40f45dedecb0cf7ae27ccf4e92ec6911baef11a475f114edfe8f0",
+      "bytes": 301622
+    },
+    {
+      "path": "dataset_qa_report.md",
+      "sha256": "4ba81bd4360a52ac907ecec15ecbd4b654dc3adad704886a247da2b5fed20538",
+      "bytes": 58010
+    },
+    {
+      "path": "../../configs/unified_matr_seed42.json",
+      "sha256": "25a488e1e27e6dffe5246ad8a9433810a9906aa7eb29d1288f4d21294dc6e72d",
+      "bytes": 3934
+    },
+    {
+      "path": "../../configs/unified_matr_seed42_splits.json",
+      "sha256": "292c3f5e2615b700f3604b730c44963a0a1760aa9a4f29aa56ec6f16a2492b9b",
+      "bytes": 36501
+    },
+    {
+      "path": "../../configs/unified_matr_native_run_roles.json",
+      "sha256": "d86a8b4b27b75f9cff282db2a771e32bd062fa37335d160bb9ea5fe30b3b02ca",
+      "bytes": 1081
+    },
+    {
+      "path": "../../results/unified_matr/instrument_metadata_audit.json",
+      "sha256": "3193f71eb98df11d09f96c09ed13e48ea94533301df9e7ac5faa280253422724",
+      "bytes": 396946
+    },
+    {
+      "path": "../../results/unified_matr/instrument_metadata_audit.csv",
+      "sha256": "bb255df3298a59927aebda9990be59320e7a834a3456d4d5259b06dbe8819c41",
+      "bytes": 105614
+    },
+    {
+      "path": "official_release_label_comparison.parquet",
+      "sha256": "036365c8303d83cbc439e68f4cd99df93362ae48505f6ffcd7509e830e73f1f0",
+      "bytes": 11439
+    },
+    {
+      "path": "../cell_metadata.csv",
+      "sha256": "773d7a6431202397d02ccbfcb191bb4f07a3be3d609396969d42191aa9090c12",
+      "bytes": 2221036
+    },
+    {
+      "path": "../../configs/unified_matr_seed42_requirements.json",
+      "sha256": "fb135a8796b596e83d41a7b7350b3cf2755cf8bce4a4b8fe119fead23b7fb01e",
+      "bytes": 19031
+    },
+    {
+      "path": "../../contracts/SRSR_Physics_统一研究问题_一次性数据处理与模型实验总合同.md",
+      "sha256": "c59764b219f629eb5767706809a5393536fe977fa6092ae127156340c62a50d7",
+      "bytes": 15796
+    },
+    {
+      "path": "../../results/unified_matr/source_static_field_audit.json",
+      "sha256": "451bc1ae3fee1c8985f96a7de73a2f643b384a97e1ab7f5165f7fd08d3b6b4bd",
+      "bytes": 181314
+    },
+    {
+      "path": "../../results/unified_matr/instrument_metadata_QA.json",
+      "sha256": "c842a2008fbac57d6e49513e3acd3b32a0553b6ede513ec3c1247be18ec743e7",
+      "bytes": 1104
+    },
+    {
+      "path": "../../results/unified_matr/schedule_metadata_audit.json",
+      "sha256": "5eb16d8a8e10638b5e3ce9c458047bcae20d223ed5fb8654cbaad6926013ebf5",
+      "bytes": 5706800
+    },
+    {
+      "path": "../../results/unified_matr/schedule_metadata_QA.json",
+      "sha256": "51f918261153f7e9f6ec2b8434002d26d3428f36505ad424d6cb3e7b8cc9afc7",
+      "bytes": 1379
+    },
+    {
+      "path": "../../results/unified_matr/schedule_static_fields.parquet",
+      "sha256": "5cf35a7a5462c4f10d63deb7e68304ebb432209b0f729bf29a1361b8bf310b31",
+      "bytes": 40887
+    },
+    {
+      "path": "../../results/unified_matr/native_channel_audit_summary.json",
+      "sha256": "e4ad6330e4e3f105b1b3c513ce0272c70afcb820252949b482687c4615215f63",
+      "bytes": 343198
+    },
+    {
+      "path": "../../results/unified_matr/native_channel_audit_QA.json",
+      "sha256": "b6718fe2f45a6964b661f3ea85b4bc7cabd5dc4489e607ea3eeda50c10afe1ed",
+      "bytes": 1631
+    },
+    {
+      "path": "../../results/unified_matr/native_channel_audit.parquet",
+      "sha256": "73f6e8b034840e3644d6e035ef22f0586f309e8be60d674b9e736af3b976d4f4",
+      "bytes": 104973
+    },
+    {
+      "path": "../../results/unified_matr/SOURCE_DISCHARGE_STEP_QA.json",
+      "sha256": "5d7dc76f6e4ec38e1d294dbf6ebaad4433d12b64d9518f879e3e660cac295b01",
+      "bytes": 11315720
+    },
+    {
+      "path": "../../results/unified_matr/SOURCE_DISCHARGE_STEP_NATIVE_REPLAY.json",
+      "sha256": "1edda4d4954ec1bffc42a6c7783cda37a757f469887fc20cb8fa674652d614d5",
+      "bytes": 10676
+    },
+    {
+      "path": "../../results/unified_matr_seed42/b1c18_POST_RESTART_PROTOCOL_AUDIT.json",
+      "sha256": "a90a2ca152cf36f35bf7212e5198c11e194812c1a8abd628f9010a55890fc733",
+      "bytes": 56757
+    },
+    {
+      "path": "../../scripts/unified_matr/build_dataset.py",
+      "sha256": "470eca1affbadc9379c9cb3a1bb7fda865c6b96b9ae8866a08ac2916a7cdd897",
+      "bytes": 31772
+    },
+    {
+      "path": "../../scripts/unified_matr/dataset_utils.py",
+      "sha256": "9bbe7727b212096b50fa372a9c447276251aa8b9fd6d3ba0225904580844f3f4",
+      "bytes": 5164
+    },
+    {
+      "path": "../../scripts/unified_matr/instrument_csv.py",
+      "sha256": "7d1195b20b08c2d5abaf96e563faef497bbd8d75bb0d5093176bae5f01472982",
+      "bytes": 11747
+    },
+    {
+      "path": "../../scripts/unified_matr/measurements.py",
+      "sha256": "e0c397cdcd26ba267cb9914f2e19d441a3682b91a8f952804025f9b9d8f1ee10",
+      "bytes": 14441
+    },
+    {
+      "path": "../../scripts/unified_matr/physics_features.py",
+      "sha256": "3104722ae13bca400a9a7ef8138b2a90f4805d8c3de244335a789dac65169d9a",
+      "bytes": 16391
+    },
+    {
+      "path": "../../scripts/unified_matr/splits.py",
+      "sha256": "a78d80c408580e376bdb5e8056f48555d521250cece292133dd3be39566e9c89",
+      "bytes": 11276
+    },
+    {
+      "path": "../../scripts/unified_matr/enrich_metadata.py",
+      "sha256": "67496480f23000411eb6943432e7a80f6cac0583aed0ff0783bacd2df29969c2",
+      "bytes": 4946
+    },
+    {
+      "path": "../../scripts/unified_matr/verify_dataset.py",
+      "sha256": "df34c6ed383eb9f54b76d6c7102ff1003aaa93d62ac1d936ca1c8a9732a29efc",
+      "bytes": 54664
+    },
+    {
+      "path": "../../scripts/unified_matr/verify_physics_features.py",
+      "sha256": "9ca697a5585f274ce5977f6e6d766dac5f0fd027064b5b5fd4d1bf4db0cf8712",
+      "bytes": 7692
+    },
+    {
+      "path": "../../scripts/unified_matr/verify_instrument_csv.py",
+      "sha256": "07447f279a7a0bf039b1a6e10abd053eada91906979a3351c2f86d965975f8dd",
+      "bytes": 8664
+    },
+    {
+      "path": "../../scripts/unified_matr/scan_instrument_restarts.py",
+      "sha256": "4da41583101df3cf63e44be3e504ceeaaaadad85db98da2adf5e7ee11a4b8235",
+      "bytes": 7409
+    },
+    {
+      "path": "../../scripts/unified_matr/probe_frozen_loader.py",
+      "sha256": "b6d418d188c48169576047bf9c3def4bbc27ea9ffbff6a81cbe07deaef980027",
+      "bytes": 7727
+    },
+    {
+      "path": "dataset_fingerprint.sha256",
+      "sha256": "04af53bc81d03e976b1f4e9dce776540f251bfc2d960311e0f0b3ffd80eedaec",
+      "bytes": 4810
+    }
+  ],
+  "sources": [
+    {
+      "path": "models/unified_matr/__init__.py",
+      "sha256": "cce92d5151ff423530d8424cd7e177f9627162b040b40a27d2638afc74da0868"
+    },
+    {
+      "path": "models/unified_matr/model.py",
+      "sha256": "485bfd06f41da5137f85645577b443ebf7a9b72687d4b5dc84928020a4c96252"
+    },
+    {
+      "path": "models/unified_matr/legacy_operators.py",
+      "sha256": "dafc5eca07888e3cf95ea9618bbfe6051863054518f7922cad5ca87f3c17e8f7"
+    },
+    {
+      "path": "models/unified_matr/methodology_full.py",
+      "sha256": "a1194adab453b6a9bd03dce5211b7f1fa9ccd6eed66f333695941ef03284bdee"
+    },
+    {
+      "path": "models/unified_matr/methodology_operators.py",
+      "sha256": "341cd9cdcc74bb587c556e781f8b9625e97c715f04dec27d20bdf66b2ea52967"
+    },
+    {
+      "path": "scripts/run_experiment_b.py",
+      "sha256": "44216d6c78911b05ece3888ae0e017d475ff354f3b0b644d5dd5044562ddbede"
+    },
+    {
+      "path": "scripts/unified_matr/train_seed42.py",
+      "sha256": "b5aa9251414191bb74c818064cef5bb6fe2fc1f01971bdd6f3027a757f174608"
+    },
+    {
+      "path": "scripts/unified_matr/train_methodology_full.py",
+      "sha256": "67d52db2eedcdc2320d0147a92aa8c1c866f80baae24025e78884e3735cbdc79"
+    }
+  ],
+  "initialization": {
+    "models": {
+      "M4_FULL_METHOD": {
+        "arm": "M4_FULL_METHOD",
+        "seed": 42,
+        "parameters": 154621,
+        "trainable_parameters": 154621,
+        "initial_state_sha256": "233f8b9ae6053153981f478a1cf14af4a1b5090073833677116a12d4b5d555dd",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26
+      }
+    }
+  },
+  "model_implementation_registry": {
+    "arm": "M4_FULL_METHOD",
+    "seed": 42,
+    "parameters": 154621,
+    "trainable_parameters": 154621,
+    "initial_state_sha256": "233f8b9ae6053153981f478a1cf14af4a1b5090073833677116a12d4b5d555dd",
+    "policy_dim": 15,
+    "global_dim": 20,
+    "local_feature_dim": 26,
+    "rho_context_dim": 172,
+    "rho_hidden_width": 64,
+    "rho_bounds": [
+      0.01,
+      0.99
+    ],
+    "rho_explicit_robust_drift_columns": [
+      2,
+      11
+    ],
+    "local_quality_dim": 32,
+    "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+    "history_layers_width_state": [
+      2,
+      64,
+      16
+    ],
+    "history_write_gate_input_dim": 96,
+    "write_projection_zero_initialized": true,
+    "write_projection_bias": false,
+    "dynamic_retention": true,
+    "actual_postconvolution_history_B_modulation": true,
+    "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+    "rate_head_unit": "SOH per1000cycles",
+    "rate_per_cycle_unit": "SOH percycle",
+    "rate_integration": "fixed unit-cycle trapezoid with1000cycle time normalization",
+    "observation_bound": 0.03,
+    "soh_bounds": [
+      0.0,
+      1.2
+    ],
+    "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved"
+  },
+  "environment": {
+    "python": "3.11.14",
+    "torch": "2.4.1+cu121",
+    "numpy": "1.26.4",
+    "cuda_runtime": "12.1",
+    "cuda_device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "deterministic_algorithms": true,
+    "cuda_matmul_tf32": false,
+    "cudnn_benchmark": false,
+    "cublas_workspace_config": ":4096:8",
+    "torch_num_threads": 4,
+    "precision": "float32"
+  },
+  "training": {
+    "initialization": "shared from-scratch seed42",
+    "epochs": 150,
+    "batch_size": 8,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "gradient_clip_norm": 1.0,
+    "checkpoint_selection": "minimum validation cell-mean trajectory MAE",
+    "early_stopping": false,
+    "trajectory_loss": "per-cell mean absolute error over all observed valid future cycles",
+    "auxiliary_rate_windows": [
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1000
+      ]
+    ],
+    "auxiliary_rate_scale": 1000,
+    "auxiliary_rate_loss_weight": 0.1,
+    "persistence_soft_penalty_weight": 0.001,
+    "observation_soh_bounds": [
+      0.0,
+      1.2
+    ],
+    "observation_residual_amplitude": 0.03,
+    "num_workers": 0,
+    "max_concurrent_gpu_runs": 1
+  },
+  "reporting": {
+    "primary": "cell-mean full observed future trajectory MAE and RMSE",
+    "horizon_bins": [
+      [
+        101,
+        200
+      ],
+      [
+        201,
+        500
+      ],
+      [
+        501,
+        1000
+      ],
+      [
+        1001,
+        1000000
+      ]
+    ],
+    "secondary_rates": [
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1000
+      ]
+    ],
+    "eol80_prediction_query_max_cycle": 5000,
+    "eol80_definition": "first interpolated trend crossing of nominal SOH0.8 after cycle100, prediction censored at registered5000 query horizon",
+    "eol80_metric": "Harrell concordance over observed EOL80 events and right-censored last-valid original cycles; restrict this secondary endpoint to cells still at risk at100",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 42,
+    "sampling_units": [
+      "paired physical cell",
+      "exact protocol group"
+    ],
+    "single_seed_limitation": "Training-seed variability is unmeasured."
+  },
+  "config": {
+    "study_id": "unified_matr_methodology_full_seed42",
+    "training_seeds": [
+      42
+    ],
+    "user_override": "2026-11-15 user requested single seed 42",
+    "contract_file": "SRSR_Physics_统一研究问题_一次性数据处理与模型实验总合同.md",
+    "main_cohort": "169 existing MATR unique physical cells, no suffix-dependent input admission",
+    "prefix_max_original_cycle": 100,
+    "raw_axis_required": true,
+    "voltage_grid": {
+      "min_V": 2.8,
+      "max_V": 3.3,
+      "size": 64
+    },
+    "discharge": {
+      "nominal_capacity_Ah": 1.1,
+      "design_rate_C": 4.0,
+      "source_current_scale_to_A": 1.1,
+      "source_time_scale_to_seconds": 60.0,
+      "source_units_evidence": "https://github.com/chueh-ermon/BMS-autoanalysis/blob/master/cell_analysis.m",
+      "minimum_discharge_current_A": 0.005,
+      "current_tolerance_fraction": 0.1,
+      "min_contiguous_points": 16,
+      "max_voltage_reversal_V": 0.02,
+      "capacity_reset_tolerance_Ah": 1e-05,
+      "full_discharge_min_start_voltage_V": 3.3,
+      "full_discharge_max_end_voltage_V": 2.1,
+      "max_summary_counter_difference_Ah": 0.005,
+      "capacity_zero_tolerance_Ah": 0.0001,
+      "curve_min_prefix_support": 1,
+      "curve_support_report_threshold": 80,
+      "initial_capacity_normalization_cycles": [
+        1,
+        10
+      ],
+      "main_soh_denominator": "nominal_capacity_1.1Ah",
+      "soh100_anchor_original_cycles": [
+        96,
+        100
+      ],
+      "soh100_anchor_reduction": "median of valid observed capacities in the registered prefix interval",
+      "absolute_Q_zero": "instrument discharge counter zero, verified against pre-discharge samples",
+      "shape_Q_zero": "Q at 3.3V, oriented as discharge progresses"
+    },
+    "reference": {
+      "first_qualified_cycles": 10,
+      "maximum_original_cycle": 10,
+      "minimum_cycles": 5,
+      "prefix_only": true
+    },
+    "models": [
+      "M4_FULL_METHOD"
+    ],
+    "split": {
+      "outer_cell_folds": 5,
+      "validation_fraction_of_outer_train": 0.2,
+      "stratify_by": "exact original charging protocol",
+      "identity_unit": "physical cell UID including cross-batch continuations",
+      "protocol_sensitivity_test_fraction": 0.2,
+      "seed": 42,
+      "historical_exposure": "All 169 supplied cells participated in historical exploration. New cross-validation is internal exploratory evidence."
+    },
+    "training": {
+      "initialization": "shared from-scratch seed42",
+      "epochs": 150,
+      "batch_size": 8,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "gradient_clip_norm": 1.0,
+      "checkpoint_selection": "minimum validation cell-mean trajectory MAE",
+      "early_stopping": false,
+      "trajectory_loss": "per-cell mean absolute error over all observed valid future cycles",
+      "auxiliary_rate_windows": [
+        [
+          200,
+          500
+        ],
+        [
+          500,
+          1000
+        ]
+      ],
+      "auxiliary_rate_scale": 1000,
+      "auxiliary_rate_loss_weight": 0.1,
+      "persistence_soft_penalty_weight": 0.001,
+      "observation_soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "observation_residual_amplitude": 0.03,
+      "num_workers": 0,
+      "max_concurrent_gpu_runs": 1
+    },
+    "reporting": {
+      "primary": "cell-mean full observed future trajectory MAE and RMSE",
+      "horizon_bins": [
+        [
+          101,
+          200
+        ],
+        [
+          201,
+          500
+        ],
+        [
+          501,
+          1000
+        ],
+        [
+          1001,
+          1000000
+        ]
+      ],
+      "secondary_rates": [
+        [
+          200,
+          500
+        ],
+        [
+          500,
+          1000
+        ]
+      ],
+      "eol80_prediction_query_max_cycle": 5000,
+      "eol80_definition": "first interpolated trend crossing of nominal SOH0.8 after cycle100, prediction censored at registered5000 query horizon",
+      "eol80_metric": "Harrell concordance over observed EOL80 events and right-censored last-valid original cycles; restrict this secondary endpoint to cells still at risk at100",
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 42,
+      "sampling_units": [
+        "paired physical cell",
+        "exact protocol group"
+      ],
+      "single_seed_limitation": "Training-seed variability is unmeasured."
+    },
+    "formal_training_requires": "verified DATA_FREEZE.json with complete source identity and original cycle-axis QA"
+  },
+  "computational_graph": {
+    "I1": "frozen robust a_Ah/b_V/residual64 plus PhysicalResponseEncoder global/local routes",
+    "I2": "past-only response-conditioned dynamic persistence and valid-only actual history B modulation",
+    "I3": "nonnegative effective rate per1000 cycles integrated on fixed physical unit-cycle grid",
+    "inputs": [
+      "raw_viq",
+      "point_mask",
+      "cycle_ids",
+      "reference_viq",
+      "policy",
+      "policy_mask",
+      "global_features",
+      "global_mask",
+      "local_residual",
+      "local_mask",
+      "local_features",
+      "local_feature_mask",
+      "anchor_soh100"
+    ],
+    "state_dim": 16,
+    "condition_dim": 16,
+    "rho_bounds": [
+      0.01,
+      0.99
+    ],
+    "observation_amplitude": 0.03,
+    "rho_network_dimensions": [
+      172,
+      64,
+      64
+    ],
+    "rho_final_weight_initialization_std": 0.001,
+    "rho_final_bias_initialization": "logit(0.9)",
+    "rho_context": "phi64 + previous_global20 + previous_global_mask20 + quality32 + policy15 + policy_mask15 + gap1 + seen1 + robust_a_b_drift2 + drift_mask2",
+    "robust_global_drift_columns": [
+      2,
+      11
+    ],
+    "quality_dimensions": "local_residual_valid_fraction8 + local_feature_valid_fraction8 + scaled_noise_proxy8 + noise_mask8",
+    "local_noise_feature_column": 6,
+    "write_gate_dimensions": [
+      96,
+      16
+    ],
+    "write_gate_context": "persistent_state64 + quality32",
+    "write_projection_dimensions": [
+      64,
+      16
+    ],
+    "write_projection_initialization": "exact_zero_weight_without_bias",
+    "history_routing": "Both history mixers modify post-convolution B and then call dense_ssd with Bprime",
+    "cycle_gap": "actual current cycle minus previous valid cycle, with first valid initialization and invalid hold",
+    "persistence_penalty": "mean squared persistent-state change per actual cycle over valid transitions and64 channels",
+    "persistence_penalty_coefficient": 0.001,
+    "precision": "float32",
+    "fresh_formal_initialization_after_smoke": true
+  },
+  "historical_exposure": "All169 cells have been exposed in earlier exploratory experiments. This is internal single-seed evidence.",
+  "full_duplicate_training_planned": true,
+  "full_duplicate_training_scope": {
+    "split": "cell_fold_0",
+    "repeats_after_formal": 1,
+    "epochs": 150,
+    "additional_optimizer_updates": 2100,
+    "role": "complete fresh-seed42 training reproduction",
+    "included_in_formal_12450_updates": false
+  },
+  "full_duplicate_training_limitation": "One complete fold0 repeat checks repeatability under the registered environment. Cross-seed variability remains unmeasured.",
+  "phase": "engineering_smoke",
+  "epochs": 1
+}

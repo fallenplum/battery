@@ -1,0 +1,797 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "exact",
+      "status": "PASS",
+      "detected": "PASS",
+      "checks": [
+        {
+          "id": "complete_reproduction_registration_and_budget",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/SELECTED.pt",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/SELECTION_FROZEN.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_cell_metrics.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_eol_predictions.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_mechanism_diagnostics.npz",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_mechanism_summary.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_metrics.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_predictions.parquet",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_rate_predictions.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/training.jsonl",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/TRAIN_SCALER.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/TRAIN_STATE.pt",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/UNIT_CONTRACT.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_schema",
+          "status": "PASS",
+          "detail": {
+            "missing": []
+          }
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_identities",
+          "status": "PASS",
+          "detail": {
+            "rows": 20,
+            "keys": [
+              "comparison"
+            ]
+          }
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_values",
+          "status": "PASS",
+          "detail": {
+            "different_columns": []
+          }
+        },
+        {
+          "id": "complete_training_reproduction_reported_status",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_training_reproduction_first_divergent_epoch",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_fold0_training_reproduced_exactly",
+          "status": "PASS",
+          "detail": [
+            {
+              "comparison": "all150_epoch_history_core",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_model",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_optimizer",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_random_state",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_selected_checkpoint",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_next_epoch",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_best_mae",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_successful_updates",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_contract",
+              "exact_equal": true
+            },
+            {
+              "comparison": "selected_checkpoint_all_tensors_and_metadata",
+              "exact_equal": true
+            },
+            {
+              "comparison": "UNIT_CONTRACT.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "TRAIN_SCALER.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_metrics.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "selection_validation_and_epoch",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_predictions.parquet",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_cell_metrics.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_rate_predictions.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_eol_predictions.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_mechanism_summary.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "all_saved_mechanism_tensors",
+              "exact_equal": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "optimizer_mismatch",
+      "status": "PASS",
+      "detected": "FAIL",
+      "checks": [
+        {
+          "id": "complete_reproduction_registration_and_budget",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/SELECTED.pt",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/SELECTION_FROZEN.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_cell_metrics.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_eol_predictions.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_mechanism_diagnostics.npz",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_mechanism_summary.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_metrics.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_predictions.parquet",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_rate_predictions.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/training.jsonl",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/TRAIN_SCALER.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/TRAIN_STATE.pt",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/UNIT_CONTRACT.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_schema",
+          "status": "PASS",
+          "detail": {
+            "missing": []
+          }
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_identities",
+          "status": "PASS",
+          "detail": {
+            "rows": 20,
+            "keys": [
+              "comparison"
+            ]
+          }
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_values",
+          "status": "PASS",
+          "detail": {
+            "different_columns": []
+          }
+        },
+        {
+          "id": "complete_training_reproduction_reported_status",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_training_reproduction_first_divergent_epoch",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_fold0_training_reproduction_failure",
+          "status": "QUALIFIED_FINDING",
+          "detail": [
+            {
+              "comparison": "all150_epoch_history_core",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_model",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_optimizer",
+              "exact_equal": false
+            },
+            {
+              "comparison": "final_random_state",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_selected_checkpoint",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_next_epoch",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_best_mae",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_successful_updates",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_contract",
+              "exact_equal": true
+            },
+            {
+              "comparison": "selected_checkpoint_all_tensors_and_metadata",
+              "exact_equal": true
+            },
+            {
+              "comparison": "UNIT_CONTRACT.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "TRAIN_SCALER.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_metrics.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "selection_validation_and_epoch",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_predictions.parquet",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_cell_metrics.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_rate_predictions.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_eol_predictions.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_mechanism_summary.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "all_saved_mechanism_tensors",
+              "exact_equal": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "RNG_mismatch",
+      "status": "PASS",
+      "detected": "FAIL",
+      "checks": [
+        {
+          "id": "complete_reproduction_registration_and_budget",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/SELECTED.pt",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/SELECTION_FROZEN.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_cell_metrics.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_eol_predictions.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_mechanism_diagnostics.npz",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_mechanism_summary.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_metrics.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_predictions.parquet",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_rate_predictions.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/training.jsonl",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/TRAIN_SCALER.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/TRAIN_STATE.pt",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/UNIT_CONTRACT.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_schema",
+          "status": "PASS",
+          "detail": {
+            "missing": []
+          }
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_identities",
+          "status": "PASS",
+          "detail": {
+            "rows": 20,
+            "keys": [
+              "comparison"
+            ]
+          }
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_values",
+          "status": "PASS",
+          "detail": {
+            "different_columns": []
+          }
+        },
+        {
+          "id": "complete_training_reproduction_reported_status",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_training_reproduction_first_divergent_epoch",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_fold0_training_reproduction_failure",
+          "status": "QUALIFIED_FINDING",
+          "detail": [
+            {
+              "comparison": "all150_epoch_history_core",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_model",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_optimizer",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_random_state",
+              "exact_equal": false
+            },
+            {
+              "comparison": "final_selected_checkpoint",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_next_epoch",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_best_mae",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_successful_updates",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_contract",
+              "exact_equal": true
+            },
+            {
+              "comparison": "selected_checkpoint_all_tensors_and_metadata",
+              "exact_equal": true
+            },
+            {
+              "comparison": "UNIT_CONTRACT.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "TRAIN_SCALER.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_metrics.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "selection_validation_and_epoch",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_predictions.parquet",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_cell_metrics.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_rate_predictions.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_eol_predictions.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_mechanism_summary.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "all_saved_mechanism_tensors",
+              "exact_equal": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "history_mismatch",
+      "status": "PASS",
+      "detected": "FAIL",
+      "checks": [
+        {
+          "id": "complete_reproduction_registration_and_budget",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/SELECTED.pt",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/SELECTION_FROZEN.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_cell_metrics.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_eol_predictions.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_mechanism_diagnostics.npz",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_mechanism_summary.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_metrics.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_predictions.parquet",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/test_rate_predictions.csv",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/training.jsonl",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/TRAIN_SCALER.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/TRAIN_STATE.pt",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "reproduction_hash/UNIT_CONTRACT.json",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_schema",
+          "status": "PASS",
+          "detail": {
+            "missing": []
+          }
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_identities",
+          "status": "PASS",
+          "detail": {
+            "rows": 20,
+            "keys": [
+              "comparison"
+            ]
+          }
+        },
+        {
+          "id": "complete_training_reproduction_arithmetic_values",
+          "status": "PASS",
+          "detail": {
+            "different_columns": []
+          }
+        },
+        {
+          "id": "complete_training_reproduction_reported_status",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_training_reproduction_first_divergent_epoch",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "id": "complete_fold0_training_reproduction_failure",
+          "status": "QUALIFIED_FINDING",
+          "detail": [
+            {
+              "comparison": "all150_epoch_history_core",
+              "exact_equal": false
+            },
+            {
+              "comparison": "final_model",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_optimizer",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_random_state",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_selected_checkpoint",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_next_epoch",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_best_mae",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_successful_updates",
+              "exact_equal": true
+            },
+            {
+              "comparison": "final_contract",
+              "exact_equal": true
+            },
+            {
+              "comparison": "selected_checkpoint_all_tensors_and_metadata",
+              "exact_equal": true
+            },
+            {
+              "comparison": "UNIT_CONTRACT.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "TRAIN_SCALER.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_metrics.json",
+              "exact_equal": true
+            },
+            {
+              "comparison": "selection_validation_and_epoch",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_predictions.parquet",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_cell_metrics.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_rate_predictions.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_eol_predictions.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "test_mechanism_summary.csv",
+              "exact_equal": true
+            },
+            {
+              "comparison": "all_saved_mechanism_tensors",
+              "exact_equal": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "optimizer_updates": 0,
+  "source_role": "synthetic_fixtures_only",
+  "analysis_source_sha256": "2f5b72cf052f7132be1c43b27983158740ea762368f59652bbd120e67e3deab3",
+  "verifier_source_sha256": "54c0a68aee9d7c205888ae7f6e8f573e0d4e0362b76a3423ad7ada84e981ef08"
+}

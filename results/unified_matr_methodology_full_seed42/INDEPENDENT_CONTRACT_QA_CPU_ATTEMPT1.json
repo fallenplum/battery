@@ -1,0 +1,371 @@
+{
+  "status": "FAIL",
+  "device": "cpu",
+  "checks": [
+    {
+      "check": "dense_dynamic_scan_matches_scalar_recurrence_FP64",
+      "status": "PASS",
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "invalid_internal_state_holds_previous_valid",
+      "status": "PASS",
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "persistence_penalty_has_same_per_cycle_squared_units",
+      "status": "PASS",
+      "maximum_absolute_error": 6.938893903907228e-18,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "scalar_gradient_oracle_phi",
+      "status": "PASS",
+      "maximum_absolute_error": 1.1102230246251565e-16,
+      "tolerance": 4e-11
+    },
+    {
+      "check": "zero_invalid_gradient_phi",
+      "status": "PASS"
+    },
+    {
+      "check": "scalar_gradient_oracle_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 8.416878305439468e-15,
+      "tolerance": 4e-11
+    },
+    {
+      "check": "zero_invalid_gradient_rho",
+      "status": "PASS"
+    },
+    {
+      "check": "first_valid_exact_initialization",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "all_invalid_cell_visible_state_zero",
+      "status": "PASS"
+    },
+    {
+      "check": "actual_cycle_gap_uses_previous_valid",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "rho_context_registered_172_coordinates",
+      "status": "PASS"
+    },
+    {
+      "check": "rho_previous_valid_global",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "rho_robust_causal_median_drift_columns2_11",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "rho_first_valid_has_no_previous_global_or_drift",
+      "status": "PASS"
+    },
+    {
+      "check": "quality_residual_support_per_bin",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "quality_noise_mask_zeroes_unsupported_proxy",
+      "status": "PASS"
+    },
+    {
+      "check": "rho_context_known_policy_values",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "rho_clipped_bounds",
+      "status": "PASS"
+    },
+    {
+      "check": "rho_responds_to_current_physics",
+      "status": "PASS",
+      "maximum_absolute_change": 2.4557113647460938e-05
+    },
+    {
+      "check": "rho_responds_to_previous_valid_global",
+      "status": "PASS",
+      "maximum_absolute_change": 2.294778823852539e-05
+    },
+    {
+      "check": "rho_responds_to_quality",
+      "status": "PASS",
+      "maximum_absolute_change": 1.9848346710205078e-05
+    },
+    {
+      "check": "rho_responds_to_policy",
+      "status": "PASS",
+      "maximum_absolute_change": 2.7060508728027344e-05
+    },
+    {
+      "check": "rho_responds_to_actual_gap",
+      "status": "PASS",
+      "maximum_absolute_change": 2.8192996978759766e-05
+    },
+    {
+      "check": "rho_responds_to_robust_drift",
+      "status": "PASS",
+      "maximum_absolute_change": 2.2113323211669922e-05
+    },
+    {
+      "check": "future_prefix_response_cannot_change_earlier_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "future_prefix_response_cannot_change_earlier_persistence",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "normal_entry_output_shapes_finite",
+      "status": "PASS"
+    },
+    {
+      "check": "both_history_WB_exact_zero_without_bias",
+      "status": "PASS"
+    },
+    {
+      "check": "initial_b_modulation_exact_zero",
+      "status": "PASS"
+    },
+    {
+      "check": "first_backward_reaches_both_WB",
+      "status": "PASS",
+      "gradient_l2": [
+        0.001911931554786861,
+        0.0006977113662287593
+      ]
+    },
+    {
+      "check": "layer0_B_is_actual_postconvolution_split",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "layer0_Bprime_actually_passed_to_dense_ssd",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "layer0_Bprime_matches_registered_formula",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "layer0_controlled_WB_produces_nonzero_B_change",
+      "status": "PASS"
+    },
+    {
+      "check": "layer0_invalid_cycles_never_modulate_B",
+      "status": "PASS"
+    },
+    {
+      "check": "layer1_B_is_actual_postconvolution_split",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "layer1_Bprime_actually_passed_to_dense_ssd",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "layer1_Bprime_matches_registered_formula",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "layer1_controlled_WB_produces_nonzero_B_change",
+      "status": "PASS"
+    },
+    {
+      "check": "layer1_invalid_cycles_never_modulate_B",
+      "status": "PASS"
+    },
+    {
+      "check": "controlled_WB_perturbation_changes_normal_prediction",
+      "status": "PASS",
+      "maximum_absolute_change": 2.086162567138672e-07
+    },
+    {
+      "check": "perturbed_write_graph_reaches_dynamic_rho",
+      "status": "PASS",
+      "gradient_l2": 5.867218533239793e-06
+    },
+    {
+      "check": "arbitrary_invalid_payload_has_no_prediction_effect",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "invalid_record_input_gradient_zero_raw_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "invalid_record_input_gradient_zero_reference_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "invalid_record_input_gradient_zero_global_features",
+      "status": "PASS"
+    },
+    {
+      "check": "invalid_record_input_gradient_zero_local_residual",
+      "status": "PASS"
+    },
+    {
+      "check": "invalid_record_input_gradient_zero_local_features",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_invalid_supported_prefix_cycle_101",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_invalid_supported_prefix_cycle_0",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_invalid_supported_prefix_cycle_1.5",
+      "status": "PASS"
+    },
+    {
+      "check": "trend_anchor100_is_prefix_anchor",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "raw_trend_monotone_and_nonnegative_rate",
+      "status": "PASS"
+    },
+    {
+      "check": "observation_residual_bounded_003_and_output_bounded",
+      "status": "PASS"
+    },
+    {
+      "check": "physical_rate_per_cycle_equals_per1000_div1000",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "isolated_vs_joint_query_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 3e-07
+    },
+    {
+      "check": "query_reordering_invariant_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 3e-07
+    },
+    {
+      "check": "isolated_vs_joint_query_integrated_loss",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 3e-07
+    },
+    {
+      "check": "query_reordering_invariant_integrated_loss",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 3e-07
+    },
+    {
+      "check": "isolated_vs_joint_query_rate_per_1000_cycles",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 3e-07
+    },
+    {
+      "check": "query_reordering_invariant_rate_per_1000_cycles",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 3e-07
+    },
+    {
+      "check": "isolated_vs_joint_query_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 3e-07
+    },
+    {
+      "check": "query_reordering_invariant_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 3e-07
+    },
+    {
+      "check": "constant_rate_integral_physical_1000_denominator",
+      "status": "PASS",
+      "maximum_absolute_error": 4.0745185003743245e-14,
+      "tolerance": 1e-12
+    },
+    {
+      "check": "inherited_pre_fixed_initial_rate_scale_01_per1000",
+      "status": "PASS",
+      "maximum_absolute_error": 4.1935450112440265e-09,
+      "tolerance": 2e-08
+    }
+  ],
+  "passed_checks": 65,
+  "source_sha256": {
+    "models/unified_matr/__init__.py": "cce92d5151ff423530d8424cd7e177f9627162b040b40a27d2638afc74da0868",
+    "models/unified_matr/model.py": "485bfd06f41da5137f85645577b443ebf7a9b72687d4b5dc84928020a4c96252",
+    "models/unified_matr/legacy_operators.py": "dafc5eca07888e3cf95ea9618bbfe6051863054518f7922cad5ca87f3c17e8f7",
+    "models/unified_matr/methodology_full.py": "8c8e86b4c2311abb24415f1e52d2ac4df7312db87c8ffa0d3f9197aed3134c0f",
+    "models/unified_matr/methodology_operators.py": "22cdefc4cb947ed88f02fac902980f25ecccb4361796a030cc5b22c1add061be",
+    "scripts/run_experiment_b.py": "44216d6c78911b05ece3888ae0e017d475ff354f3b0b644d5dd5044562ddbede",
+    "scripts/unified_matr/train_seed42.py": "b5aa9251414191bb74c818064cef5bb6fe2fc1f01971bdd6f3027a757f174608",
+    "scripts/unified_matr/train_methodology_full.py": "b4ea71111d95f3ca53f1117cfe55a36b14d4a9247b5e1bbf00b5ec7054f9597d",
+    "scripts/verify_m4_method_contract.py": "9e4daed519e8c1a366d6fe408d9601781a8b77455a630cadc462916699f1f809"
+  },
+  "contract_sha256": "94ac2388411306e162243ced735188c373c03a6daabbe1cf49e9ae94c7136523",
+  "environment": {
+    "torch": "2.4.1+cu121",
+    "numpy": "1.26.4",
+    "cuda": "12.1",
+    "device_name": "CPU",
+    "deterministic_algorithms": true
+  },
+  "scope": "Engineering controls and actual training-prefix forward/backward only. No optimizer updates or test scoring.",
+  "rate_scale": {
+    "physical_units": "SOH/cycle = rate_per_1000_cycles/1000",
+    "initialization": "0.1/1000 SOH/cycle is the pre-fixed inherited rate-head scale. No test-informed tuning."
+  },
+  "advantages_zh": "独立标量递推及梯度oracle、真实卷积与SSD输入捕获、冻结数据正常入口验证。",
+  "limitations_zh": "工程检查验证合同实现与数值行为，正式六单元预测能力仍须实际训练和冻结评分。未重复整套训练。",
+  "confidence_zh": "高，限已执行工程控制与逐文件SHA绑定范围。",
+  "failure": "Traceback (most recent call last):\n  File \"D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\scripts\\verify_m4_method_contract.py\", line 362, in main\n    verify_loss(records, args.device)\n  File \"D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\scripts\\verify_m4_method_contract.py\", line 275, in verify_loss\n    settings = json.loads((ROOT / \"configs/unified_matr_seed42.json\").read_text())[\"training\"]\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Anaconda\\envs\\tslib\\Lib\\pathlib.py\", line 1059, in read_text\n    return f.read()\n           ^^^^^^^^\nUnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 186: illegal multibyte sequence\n"
+}

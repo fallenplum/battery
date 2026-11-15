@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "scope": "recorded_synthetic_normal_model_shape_finite_backward_initial_B_write_gradient_checks",
+  "recorded_utc": "2026-11-15T14:55:06.134630+00:00",
+  "model_arm": "M4_FULL_METHOD",
+  "model_initialization_seed": 42,
+  "fixture_source": "models/unified_matr/selfcheck.py::make_batch",
+  "fixture_source_sha256": "cd4f9adceddc8b448598795757fc31e685225de1938ed073fb26d8d4d67b0719",
+  "fixture_isolated_generator_seed": 422026,
+  "input_shapes": {
+    "raw_viq": [
+      2,
+      100,
+      64,
+      3
+    ],
+    "reference_viq": [
+      2,
+      100,
+      64,
+      3
+    ],
+    "point_mask": [
+      2,
+      100,
+      64
+    ],
+    "cycle_ids": [
+      2,
+      100
+    ],
+    "policy": [
+      2,
+      15
+    ],
+    "policy_mask": [
+      2,
+      15
+    ],
+    "global_features": [
+      2,
+      100,
+      20
+    ],
+    "global_mask": [
+      2,
+      100,
+      20
+    ],
+    "local_residual": [
+      2,
+      100,
+      64
+    ],
+    "local_mask": [
+      2,
+      100,
+      64
+    ],
+    "local_features": [
+      2,
+      100,
+      8,
+      26
+    ],
+    "local_feature_mask": [
+      2,
+      100,
+      8,
+      26
+    ],
+    "anchor_soh100": [
+      2
+    ]
+  },
+  "query": {
+    "minimum": 100,
+    "maximum": 5000,
+    "integer_queries": 4901,
+    "additional_off_grid": [
+      200.5
+    ],
+    "total_queries": 4902
+  },
+  "precision": "FP32",
+  "strict_deterministic_algorithms": true,
+  "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+  "torch_threads": 4,
+  "checks": [
+    {
+      "device": "cpu",
+      "parameters": 154621,
+      "rho_context_dim": 172,
+      "finite_gradient_tensors": 95,
+      "write_projection_gradient_max_abs": [
+        2.8237458536750637e-05,
+        2.197072171838954e-05
+      ],
+      "status": "PASS",
+      "trajectory_shape": [
+        2,
+        4902
+      ],
+      "raw_trend_shape_matches": true,
+      "anchor_matches_prefix": true,
+      "positive_rate_per_cycle": true,
+      "initial_history_write_modulation_exact_zero": true,
+      "both_history_write_projection_gradients_nonzero": true
+    },
+    {
+      "device": "cuda",
+      "parameters": 154621,
+      "rho_context_dim": 172,
+      "finite_gradient_tensors": 95,
+      "write_projection_gradient_max_abs": [
+        3.306228609289974e-05,
+        1.729620089463424e-05
+      ],
+      "status": "PASS",
+      "trajectory_shape": [
+        2,
+        4902
+      ],
+      "raw_trend_shape_matches": true,
+      "anchor_matches_prefix": true,
+      "positive_rate_per_cycle": true,
+      "initial_history_write_modulation_exact_zero": true,
+      "both_history_write_projection_gradients_nonzero": true
+    }
+  ],
+  "model_fits": 0,
+  "optimizer_updates": 0,
+  "dropout_RNG_repeated_comparison_performed_in_this_check": false,
+  "cross_device_bitwise_comparison_performed": false,
+  "additional_repeatability_validation": "Independent model QA and the normal-entrypoint real smoke record their own seeded replay receipts",
+  "model_sources": [
+    {
+      "path": "models/unified_matr/methodology_full.py",
+      "sha256": "8c8e86b4c2311abb24415f1e52d2ac4df7312db87c8ffa0d3f9197aed3134c0f"
+    },
+    {
+      "path": "models/unified_matr/methodology_operators.py",
+      "sha256": "22cdefc4cb947ed88f02fac902980f25ecccb4361796a030cc5b22c1add061be"
+    }
+  ],
+  "method_contract_sha256": "94ac2388411306e162243ced735188c373c03a6daabbe1cf49e9ae94c7136523",
+  "dynamic_ema_oracle": {
+    "receipt": "EMA_ORACLE_QA.json",
+    "sha256": "cc400883e4a03f8b316819e835d136f0e81a9a57adb038ea0affdffda372c17f",
+    "cases": 20
+  },
+  "baseline_guard": {
+    "baseline_commit": "5f136087b33a34859b0ab707f61e90b648df8643",
+    "files_checked": 975,
+    "all_bytes_and_SHA_match": true,
+    "differences": []
+  }
+}

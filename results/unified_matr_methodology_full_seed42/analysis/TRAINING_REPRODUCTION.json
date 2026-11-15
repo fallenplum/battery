@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "split": "cell_fold_0",
+  "seed": 42,
+  "epochs_per_fit": 150,
+  "additional_optimizer_updates": 2100,
+  "formal_optimizer_updates": 12450,
+  "comparison_checks": [
+    {
+      "comparison": "all150_epoch_history_core",
+      "exact_equal": true
+    },
+    {
+      "comparison": "final_model",
+      "exact_equal": true
+    },
+    {
+      "comparison": "final_optimizer",
+      "exact_equal": true
+    },
+    {
+      "comparison": "final_random_state",
+      "exact_equal": true
+    },
+    {
+      "comparison": "final_selected_checkpoint",
+      "exact_equal": true
+    },
+    {
+      "comparison": "final_next_epoch",
+      "exact_equal": true
+    },
+    {
+      "comparison": "final_best_mae",
+      "exact_equal": true
+    },
+    {
+      "comparison": "final_successful_updates",
+      "exact_equal": true
+    },
+    {
+      "comparison": "final_contract",
+      "exact_equal": true
+    },
+    {
+      "comparison": "selected_checkpoint_all_tensors_and_metadata",
+      "exact_equal": true
+    },
+    {
+      "comparison": "UNIT_CONTRACT.json",
+      "exact_equal": true
+    },
+    {
+      "comparison": "TRAIN_SCALER.json",
+      "exact_equal": true
+    },
+    {
+      "comparison": "test_metrics.json",
+      "exact_equal": true
+    },
+    {
+      "comparison": "selection_validation_and_epoch",
+      "exact_equal": true
+    },
+    {
+      "comparison": "test_predictions.parquet",
+      "exact_equal": true
+    },
+    {
+      "comparison": "test_cell_metrics.csv",
+      "exact_equal": true
+    },
+    {
+      "comparison": "test_rate_predictions.csv",
+      "exact_equal": true
+    },
+    {
+      "comparison": "test_eol_predictions.csv",
+      "exact_equal": true
+    },
+    {
+      "comparison": "test_mechanism_summary.csv",
+      "exact_equal": true
+    },
+    {
+      "comparison": "all_saved_mechanism_tensors",
+      "exact_equal": true
+    }
+  ],
+  "repeat_complete_sha256": "feecbde52987105b67e48d28f38046248fb3dae5bdc2e70a5555473a50191fe6",
+  "first_divergent_epoch": null,
+  "scope_limitation": "One full fold0 duplicate in one registered environment. Cross-seed variance is unmeasured."
+}

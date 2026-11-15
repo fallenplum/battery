@@ -1,0 +1,239 @@
+{
+  "status": "FAIL",
+  "device": "cpu",
+  "checks": [
+    {
+      "check": "dense_dynamic_scan_matches_scalar_recurrence_FP64",
+      "status": "PASS",
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "invalid_internal_state_holds_previous_valid",
+      "status": "PASS",
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "persistence_penalty_has_same_per_cycle_squared_units",
+      "status": "PASS",
+      "maximum_absolute_error": 6.938893903907228e-18,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "scalar_gradient_oracle_phi",
+      "status": "PASS",
+      "maximum_absolute_error": 1.1102230246251565e-16,
+      "tolerance": 4e-11
+    },
+    {
+      "check": "zero_invalid_gradient_phi",
+      "status": "PASS"
+    },
+    {
+      "check": "scalar_gradient_oracle_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 8.416878305439468e-15,
+      "tolerance": 4e-11
+    },
+    {
+      "check": "zero_invalid_gradient_rho",
+      "status": "PASS"
+    },
+    {
+      "check": "first_valid_exact_initialization",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "all_invalid_cell_visible_state_zero",
+      "status": "PASS"
+    },
+    {
+      "check": "actual_cycle_gap_uses_previous_valid",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "rho_context_registered_172_coordinates",
+      "status": "PASS"
+    },
+    {
+      "check": "rho_previous_valid_global",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "rho_robust_causal_median_drift_columns2_11",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "rho_first_valid_has_no_previous_global_or_drift",
+      "status": "PASS"
+    },
+    {
+      "check": "quality_residual_support_per_bin",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "quality_noise_mask_zeroes_unsupported_proxy",
+      "status": "PASS"
+    },
+    {
+      "check": "rho_context_known_policy_values",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "rho_clipped_bounds",
+      "status": "PASS"
+    },
+    {
+      "check": "rho_responds_to_current_physics",
+      "status": "PASS",
+      "maximum_absolute_change": 2.4557113647460938e-05
+    },
+    {
+      "check": "rho_responds_to_previous_valid_global",
+      "status": "PASS",
+      "maximum_absolute_change": 2.294778823852539e-05
+    },
+    {
+      "check": "rho_responds_to_quality",
+      "status": "PASS",
+      "maximum_absolute_change": 1.9848346710205078e-05
+    },
+    {
+      "check": "rho_responds_to_policy",
+      "status": "PASS",
+      "maximum_absolute_change": 2.7060508728027344e-05
+    },
+    {
+      "check": "rho_responds_to_actual_gap",
+      "status": "PASS",
+      "maximum_absolute_change": 2.8192996978759766e-05
+    },
+    {
+      "check": "rho_responds_to_robust_drift",
+      "status": "PASS",
+      "maximum_absolute_change": 2.2113323211669922e-05
+    },
+    {
+      "check": "future_prefix_response_cannot_change_earlier_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "future_prefix_response_cannot_change_earlier_persistence",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "M4_actual_SSD_matches_independent_serial_FP64",
+      "status": "PASS",
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_x",
+      "status": "PASS",
+      "maximum_absolute_error": 4.440892098500626e-16,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_delta",
+      "status": "PASS",
+      "maximum_absolute_error": 1.4210854715202004e-14,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_A",
+      "status": "PASS",
+      "maximum_absolute_error": 1.249000902703301e-16,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_B",
+      "status": "PASS",
+      "maximum_absolute_error": 8.881784197001252e-16,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_C",
+      "status": "PASS",
+      "maximum_absolute_error": 4.440892098500626e-16,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_skip",
+      "status": "PASS",
+      "maximum_absolute_error": 1.4210854715202004e-14,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "normal_entry_output_shapes_finite",
+      "status": "PASS"
+    },
+    {
+      "check": "both_history_WB_exact_zero_without_bias",
+      "status": "PASS"
+    },
+    {
+      "check": "initial_b_modulation_exact_zero",
+      "status": "PASS"
+    },
+    {
+      "check": "first_backward_reaches_both_WB",
+      "status": "PASS",
+      "gradient_l2": [
+        0.001911931554786861,
+        0.0006977113662287593
+      ]
+    },
+    {
+      "check": "layer0_B_is_actual_postconvolution_split",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    }
+  ],
+  "passed_checks": 38,
+  "source_sha256": {
+    "models/unified_matr/__init__.py": "cce92d5151ff423530d8424cd7e177f9627162b040b40a27d2638afc74da0868",
+    "models/unified_matr/model.py": "485bfd06f41da5137f85645577b443ebf7a9b72687d4b5dc84928020a4c96252",
+    "models/unified_matr/legacy_operators.py": "dafc5eca07888e3cf95ea9618bbfe6051863054518f7922cad5ca87f3c17e8f7",
+    "models/unified_matr/methodology_full.py": "a1194adab453b6a9bd03dce5211b7f1fa9ccd6eed66f333695941ef03284bdee",
+    "models/unified_matr/methodology_operators.py": "341cd9cdcc74bb587c556e781f8b9625e97c715f04dec27d20bdf66b2ea52967",
+    "scripts/run_experiment_b.py": "44216d6c78911b05ece3888ae0e017d475ff354f3b0b644d5dd5044562ddbede",
+    "scripts/unified_matr/train_seed42.py": "b5aa9251414191bb74c818064cef5bb6fe2fc1f01971bdd6f3027a757f174608",
+    "scripts/unified_matr/train_methodology_full.py": "67d52db2eedcdc2320d0147a92aa8c1c866f80baae24025e78884e3735cbdc79",
+    "scripts/verify_m4_method_contract.py": "a20dd45e04412478f430a4a62cb5dbef106be8821754f4456a9115becfc7d568"
+  },
+  "contract_sha256": "94ac2388411306e162243ced735188c373c03a6daabbe1cf49e9ae94c7136523",
+  "environment": {
+    "torch": "2.4.1+cu121",
+    "numpy": "1.26.4",
+    "cuda": "12.1",
+    "device_name": "CPU",
+    "deterministic_algorithms": true
+  },
+  "scope": "Engineering controls and actual training-prefix forward/backward only. No optimizer updates or test scoring.",
+  "rate_scale": {
+    "physical_units": "SOH/cycle = rate_per_1000_cycles/1000",
+    "initialization": "0.1/1000 SOH/cycle is the pre-fixed inherited rate-head scale. No test-informed tuning."
+  },
+  "advantages_zh": "独立标量递推及梯度oracle、真实卷积与SSD输入捕获、冻结数据正常入口验证。",
+  "limitations_zh": "工程检查验证合同实现与数值行为，正式六单元预测能力仍须实际训练和冻结评分。未重复整套训练。",
+  "confidence_zh": "高，限已执行工程控制与逐文件SHA绑定范围。",
+  "failure": "Traceback (most recent call last):\n  File \"D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\scripts\\verify_m4_method_contract.py\", line 414, in main\n    verify_model(records, args.device)\n  File \"D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\scripts\\verify_m4_method_contract.py\", line 228, in verify_model\n    close(records, f\"layer{layer}_Bprime_actually_passed_to_dense_ssd\", captured_ssd_b[layer], history[\"Bprime\"], 0)\n  File \"D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\scripts\\verify_m4_method_contract.py\", line 51, in close\n    error = maximum_error(first, second)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\scripts\\verify_m4_method_contract.py\", line 47, in maximum_error\n    return float((first.detach() - second.detach()).abs().max().cpu())\n                  ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~\nRuntimeError: The size of tensor a (4) must match the size of tensor b (16) at non-singleton dimension 2\n"
+}

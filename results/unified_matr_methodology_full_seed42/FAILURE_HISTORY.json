@@ -1,0 +1,45 @@
+{
+  "failures": [
+    {
+      "path": "failures/attempt_001_gradient_repeat/FAILURE.json",
+      "phase": "engineering_first_batch",
+      "formal_optimizer_updates": 0
+    },
+    {
+      "path": "failures/attempt_002_partial_scan_fix/after_scan_fix_repeat12.json",
+      "phase": "engineering_first_batch_partial_scan_fix",
+      "formal_optimizer_updates": 0,
+      "fresh_repeats": 12,
+      "status": "FAILED_EXACT_GRADIENT_REPRODUCIBILITY",
+      "source_snapshots": [
+        "methodology_full.py",
+        "methodology_operators.py"
+      ]
+    }
+  ],
+  "formal_failures": [],
+  "resolution": {
+    "status": "ENGINEERING_REPEAT_FAILURE_RESOLVED_BEFORE_FORMAL_TRAINING",
+    "scope": "M4-local synchronous autograd scan nodes across dynamic persistence, local/history SSD and rate integration",
+    "mathematical_formulas_and_initial_parameters_unchanged": true,
+    "observed_forward_loss_unchanged": true,
+    "fresh_training_batch_repetitions": 20,
+    "independent_cuda_fresh_training_batch_repetitions": 12,
+    "final_real_smoke_status": "PASS",
+    "engineering_optimizer_updates": 14,
+    "formal_optimizer_updates_before_resolution": 0,
+    "validation_hyperparameter_search_after_failure": false,
+    "test_observations_consumed_during_repair": 0,
+    "authority_receipts": [
+      "SMOKE_QA.json",
+      "MODEL_ENGINEERING_QA_AFTER_SCAN_FIX.json",
+      "INDEPENDENT_CONTRACT_QA_CPU_FINAL.json",
+      "INDEPENDENT_CONTRACT_QA_CUDA_FINAL.json"
+    ],
+    "verification_scripts_initial_failures": [
+      "INDEPENDENT_CONTRACT_QA_CPU_ATTEMPT1.json",
+      "INDEPENDENT_CONTRACT_QA_CPU_FINAL_ATTEMPT1.json"
+    ]
+  },
+  "recorded_at_UTC": "2026-11-15T15:09:52.816110+00:00"
+}

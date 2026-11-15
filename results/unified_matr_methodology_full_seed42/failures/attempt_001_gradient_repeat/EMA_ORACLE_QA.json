@@ -1,0 +1,289 @@
+{
+  "status": "PASS",
+  "scope": "independent_dynamic_ema_loop_oracle_forward_backward_and_causality",
+  "optimizer_updates": 0,
+  "formal_fits": 0,
+  "checks": [
+    {
+      "case": "regular",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 1.3322676295501878e-15,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        2.6020852139652106e-18,
+        8.153200337090993e-17,
+        1.474514954580286e-17
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "missing_and_all_missing",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 2.7755575615628914e-15,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        2.3852447794681098e-18,
+        1.4723999730080158e-16,
+        5.204170427930421e-18
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "single_observation",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 0.0,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "retention_bounds",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 5.551115123125783e-16,
+      "penalty_abs_error": 5.551115123125783e-17,
+      "input_gradient_max_abs_errors": [
+        3.469446951953614e-18,
+        4.4081084160572164e-16,
+        1.1817803680091998e-17
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "nonincreasing_gap_clamp",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 6.661338147750939e-15,
+      "penalty_abs_error": 1.1102230246251565e-16,
+      "input_gradient_max_abs_errors": [
+        1.1275702593849246e-17,
+        1.718892697095423e-16,
+        9.64939933512099e-18
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "regular",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 9.5367431640625e-07,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        1.862645149230957e-09,
+        8.940696716308594e-08,
+        1.210719347000122e-08
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "missing_and_all_missing",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 2.9802322387695312e-06,
+      "penalty_abs_error": 2.9802322387695312e-08,
+      "input_gradient_max_abs_errors": [
+        5.587935447692871e-09,
+        1.7413952946299105e-07,
+        3.958120942115784e-09
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "single_observation",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 0.0,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "retention_bounds",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 3.5762786865234375e-07,
+      "penalty_abs_error": 2.9802322387695312e-08,
+      "input_gradient_max_abs_errors": [
+        2.7939677238464355e-09,
+        8.262512096735009e-08,
+        3.725290298461914e-09
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "nonincreasing_gap_clamp",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 3.0994415283203125e-06,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        3.725290298461914e-09,
+        5.5913730534484785e-08,
+        6.51925802230835e-09
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "regular",
+      "device": "cuda",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 1.3322676295501878e-15,
+      "penalty_abs_error": 1.1102230246251565e-16,
+      "input_gradient_max_abs_errors": [
+        2.6020852139652106e-18,
+        7.806255641895632e-17,
+        8.673617379884035e-18
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "missing_and_all_missing",
+      "device": "cuda",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 2.7200464103316335e-15,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        2.3852447794681098e-18,
+        1.6349291336578834e-16,
+        5.637851296924623e-18
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "single_observation",
+      "device": "cuda",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 0.0,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "retention_bounds",
+      "device": "cuda",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 6.661338147750939e-16,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        3.469446951953614e-18,
+        4.542139787430734e-16,
+        1.1492543028346347e-17
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "nonincreasing_gap_clamp",
+      "device": "cuda",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "state_max_abs_error": 6.661338147750939e-15,
+      "penalty_abs_error": 1.1102230246251565e-16,
+      "input_gradient_max_abs_errors": [
+        1.0408340855860843e-17,
+        1.8624468316986833e-16,
+        9.107298248878237e-18
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "regular",
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 1.1920928955078125e-06,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        1.862645149230957e-09,
+        3.073364496231079e-08,
+        6.51925802230835e-09
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "missing_and_all_missing",
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 2.86102294921875e-06,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        5.587935447692871e-09,
+        4.9029807769329636e-08,
+        2.3283064365386963e-09
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "single_observation",
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 0.0,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "retention_bounds",
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 3.5762786865234375e-07,
+      "penalty_abs_error": 2.9802322387695312e-08,
+      "input_gradient_max_abs_errors": [
+        1.862645149230957e-09,
+        8.262512096735009e-08,
+        3.958120942115784e-09
+      ],
+      "future_token_prefix_invariance_exact": true
+    },
+    {
+      "case": "nonincreasing_gap_clamp",
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "state_max_abs_error": 2.86102294921875e-06,
+      "penalty_abs_error": 0.0,
+      "input_gradient_max_abs_errors": [
+        3.4924596548080444e-09,
+        6.626963511280337e-08,
+        7.450580596923828e-09
+      ],
+      "future_token_prefix_invariance_exact": true
+    }
+  ],
+  "source_sha256": "33fb864eb943ad999a0f2eea1e2a1c36c8ab4a15dc11432d5a2d55cbaffc3fc2"
+}

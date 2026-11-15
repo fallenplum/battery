@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "model_contract_sha256": "515e5ed9c9e9b76b1c1f7ceb823a8e6d1d153ee622f6ebb55f4e41d2dacb1142",
+  "checks": {
+    "fresh_seed42_forward_backward_exact": true,
+    "all_gradients_finite": true,
+    "initial_B_modulation_zero": true,
+    "B_write_projection_gradient_nonzero": true,
+    "independent_CPU_shape_mask_gradient_B_routing_anchor_queries": true,
+    "independent_CUDA_shape_mask_gradient_B_routing_anchor_queries": true,
+    "twenty_fresh_training_batch_repeats_exact": true,
+    "twelve_independent_fresh_CUDA_training_batch_repeats_exact": true,
+    "all_training_source_hashes_unchanged": true
+  },
+  "engineering_epochs": 1,
+  "engineering_optimizer_updates": 14,
+  "formal_optimizer_updates": 0,
+  "test_observations_consumed": 0,
+  "fresh_formal_seed42_initialization_required": true,
+  "first_batch_reproducibility": "FIRST_BATCH_REPRODUCIBILITY.json",
+  "files": [
+    {
+      "path": "engineering_smoke/cell_fold_0/M4_FULL_METHOD/ENGINEERING_EPOCH_COMPLETE.json",
+      "sha256": "e20edaf2f7a4f743b2e5f42ffa1f08bcda25f8807ba0a3a7bd8d37b229f27158"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M4_FULL_METHOD/SELECTED.pt",
+      "sha256": "ac2bb11ca1f528415a16ce2be564a5614592a7db6684c8c440f456ed4585ee08"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M4_FULL_METHOD/SELECTION_FROZEN.json",
+      "sha256": "b9f3649c255bae5a198ae10146bfa6706150f567fcc3583d6dc18704feba199a"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M4_FULL_METHOD/TRAIN_SCALER.json",
+      "sha256": "f0b8fd1fdafd58a1f641bbe30cbaad3a0e8b950e93fa6a0bcff7ebd2e58c0efd"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M4_FULL_METHOD/TRAIN_STATE.pt",
+      "sha256": "e17f62939bc0576029d9fcdb791506b55dbbd25f4ef7076caba056e3ba488867"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M4_FULL_METHOD/training.jsonl",
+      "sha256": "35a297fd93fe7d125ab6d51ddfdbe40dd1ce4ccd380d0c9b115955ba939e62e0"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M4_FULL_METHOD/UNIT_CONTRACT.json",
+      "sha256": "c567aec71e012ee16e7e4088589e8cc9c9d380ffaf58711ef6b20685fc016401"
+    },
+    {
+      "path": "engineering_smoke/FIRST_BATCH_REPRODUCIBILITY.json",
+      "sha256": "a2c95ef9cdc23c9c004d7ca250d1d5e3e6739cc181b83ae9a0da050060ac84f7"
+    },
+    {
+      "path": "engineering_smoke/RUN_REGISTRATION.json",
+      "sha256": "fe1da51e3cf35ee49166e74b72c06c061d803919a7153c6cefc7fb653ce2df93"
+    },
+    {
+      "path": "INDEPENDENT_CONTRACT_QA_CPU_FINAL.json",
+      "sha256": "5b14f3b0bb62f50ff0f9f0192dad7749fbf8a4bd098b75218a601906f72cbf95"
+    },
+    {
+      "path": "INDEPENDENT_CONTRACT_QA_CUDA_FINAL.json",
+      "sha256": "9f9a3c5eacf680b376d27c793056639e793fe19221a0bb1d1fbb4bd528a72c47"
+    },
+    {
+      "path": "MODEL_ENGINEERING_QA_AFTER_SCAN_FIX.json",
+      "sha256": "5e89d8ac0c2dc5e1e5a56963fc7ba1d9e638f07e315689b91d7cf3207235441b"
+    },
+    {
+      "path": "engineering_diagnostics/after_all_scan_fix_repeat20.json",
+      "sha256": "eeac364f89cb0876472dc76218a3d299f3b7a9ddfa5454e185171fd4ef697e6e"
+    }
+  ],
+  "model_mathematical_checks": "Independent CPU/CUDA final88 checks and M4-local synchronous scan engineering controls reviewed before formal launch.",
+  "engineering_control_receipts": [
+    "INDEPENDENT_CONTRACT_QA_CPU_FINAL.json",
+    "INDEPENDENT_CONTRACT_QA_CUDA_FINAL.json",
+    "MODEL_ENGINEERING_QA_AFTER_SCAN_FIX.json",
+    "engineering_diagnostics/after_all_scan_fix_repeat20.json"
+  ],
+  "reviewed_at_UTC": "2026-11-15T15:08:36.469526+00:00"
+}

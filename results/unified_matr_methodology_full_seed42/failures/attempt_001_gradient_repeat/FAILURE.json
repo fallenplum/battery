@@ -1,0 +1,77 @@
+{
+  "attempt": 1,
+  "phase": "engineering_first_batch",
+  "status": "FAILED_EXACT_GRADIENT_REPRODUCIBILITY",
+  "at_UTC": "2026-11-15T14:56:50.578337+00:00",
+  "formal_optimizer_updates": 0,
+  "engineering_optimizer_updates": 0,
+  "prediction_and_loss_exact": true,
+  "all_gradients_finite": true,
+  "two_B_projections_initial_zero_and_gradient_nonzero": true,
+  "differing_parameters": [
+    "persistence.rho_net.0.bias",
+    "persistence.rho_net.0.weight",
+    "persistence.rho_net.2.bias",
+    "persistence.rho_net.2.weight",
+    "physics.bin_combine.bias",
+    "physics.bin_combine.weight",
+    "physics.bin_position",
+    "physics.combine.0.bias",
+    "physics.combine.0.weight",
+    "physics.combine.2.bias",
+    "physics.combine.2.weight",
+    "physics.global_encoder.0.bias",
+    "physics.global_encoder.0.weight",
+    "physics.global_encoder.2.bias",
+    "physics.global_encoder.2.weight",
+    "physics.local_encoder.0.bias",
+    "physics.local_encoder.0.weight",
+    "physics.local_encoder.2.bias",
+    "physics.local_encoder.2.weight",
+    "physics.local_projection.bias",
+    "physics.local_projection.weight",
+    "physics.residual_encoder.0.bias",
+    "physics.residual_encoder.0.weight",
+    "physics.residual_encoder.2.bias",
+    "physics.residual_encoder.2.weight"
+  ],
+  "cause_status": "cross-device backward accumulation order under investigation",
+  "files": [
+    {
+      "path": "failures/attempt_001_gradient_repeat/MODEL_CONTRACT.json",
+      "sha256": "09ef1681f6f7bc0a8fb2f9236094a083c6e20fb41bdb10b188c753a58d1ef705"
+    },
+    {
+      "path": "failures/attempt_001_gradient_repeat/FIRST_BATCH_REPRODUCIBILITY.json",
+      "sha256": "2ddc3e0d285c13d47331e245f8b93606331c3bd72e51ad72a62111e4a14b2164"
+    },
+    {
+      "path": "failures/attempt_001_gradient_repeat/EMA_ORACLE_QA.json",
+      "sha256": "cc400883e4a03f8b316819e835d136f0e81a9a57adb038ea0affdffda372c17f"
+    },
+    {
+      "path": "failures/attempt_001_gradient_repeat/MODEL_ENGINEERING_QA.json",
+      "sha256": "e88fb42e82c8b26bd9df450384a8d399350ca7ff5662b6f2bc65eb2af9bf746d"
+    },
+    {
+      "path": "failures/attempt_001_gradient_repeat/INDEPENDENT_CONTRACT_QA_CPU.json",
+      "sha256": "051dfdd30739daabdca77d2bd83904ce10a0c81a86096e68d97d21fc068ccb0a"
+    },
+    {
+      "path": "failures/attempt_001_gradient_repeat/INDEPENDENT_CONTRACT_QA_CUDA.json",
+      "sha256": "eab18dbc682dbf23ca0e3562715582d2e3b64c54cc2f517a64b6ad5e383ad425"
+    },
+    {
+      "path": "failures/attempt_001_gradient_repeat/methodology_full.py",
+      "sha256": "8c8e86b4c2311abb24415f1e52d2ac4df7312db87c8ffa0d3f9197aed3134c0f"
+    },
+    {
+      "path": "failures/attempt_001_gradient_repeat/methodology_operators.py",
+      "sha256": "22cdefc4cb947ed88f02fac902980f25ecccb4361796a030cc5b22c1add061be"
+    },
+    {
+      "path": "failures/attempt_001_gradient_repeat/train_methodology_full.py",
+      "sha256": "b4ea71111d95f3ca53f1117cfe55a36b14d4a9247b5e1bbf00b5ec7054f9597d"
+    }
+  ]
+}

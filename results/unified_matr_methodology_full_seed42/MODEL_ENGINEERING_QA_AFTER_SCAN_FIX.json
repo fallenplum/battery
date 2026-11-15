@@ -1,0 +1,241 @@
+{
+  "status": "PASS",
+  "scope": "mathematically equivalent M4-local scan adjoints and normal model engineering",
+  "optimizer_updates": 0,
+  "formal_updates": 0,
+  "checks": [
+    {
+      "check": "cumsum/cpu/torch.float64",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "SSD/cpu/torch.float64",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "local_reference_mixer/cpu/torch.float64",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "rate_integral/cpu/torch.float64",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "cumsum/cpu/torch.float32",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "SSD/cpu/torch.float32",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "local_reference_mixer/cpu/torch.float32",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "rate_integral/cpu/torch.float32",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "cumsum/cuda/torch.float64",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "SSD/cuda/torch.float64",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "local_reference_mixer/cuda/torch.float64",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "rate_integral/cuda/torch.float64",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "cumsum/cuda/torch.float32",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "SSD/cuda/torch.float32",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "local_reference_mixer/cuda/torch.float32",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    },
+    {
+      "check": "rate_integral/cuda/torch.float32",
+      "status": "PASS",
+      "forward_bitwise_equal": true,
+      "maximum_gradient_difference": 0.0
+    }
+  ],
+  "models": [
+    {
+      "device": "cpu",
+      "registry": {
+        "arm": "M4_FULL_METHOD",
+        "seed": 42,
+        "parameters": 154621,
+        "trainable_parameters": 154621,
+        "initial_state_sha256": "233f8b9ae6053153981f478a1cf14af4a1b5090073833677116a12d4b5d555dd",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "rho_context_dim": 172,
+        "rho_hidden_width": 64,
+        "rho_bounds": [
+          0.01,
+          0.99
+        ],
+        "rho_explicit_robust_drift_columns": [
+          2,
+          11
+        ],
+        "local_quality_dim": 32,
+        "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "history_write_gate_input_dim": 96,
+        "write_projection_zero_initialized": true,
+        "write_projection_bias": false,
+        "dynamic_retention": true,
+        "actual_postconvolution_history_B_modulation": true,
+        "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+        "rate_head_unit": "SOH per1000cycles",
+        "rate_per_cycle_unit": "SOH percycle",
+        "rate_integration": "fixed unit-cycle trapezoid with1000cycle time normalization",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved"
+      },
+      "finite_gradient_tensors": 95,
+      "WB_gradient_max_abs": [
+        3.155825470457785e-05,
+        1.5198373148450628e-05
+      ],
+      "trajectory_shape": [
+        2,
+        4902
+      ],
+      "queries": {
+        "count": 4902,
+        "minimum": 100,
+        "maximum": 5000,
+        "additional_off_grid": 200.5
+      }
+    },
+    {
+      "device": "cuda",
+      "registry": {
+        "arm": "M4_FULL_METHOD",
+        "seed": 42,
+        "parameters": 154621,
+        "trainable_parameters": 154621,
+        "initial_state_sha256": "233f8b9ae6053153981f478a1cf14af4a1b5090073833677116a12d4b5d555dd",
+        "policy_dim": 15,
+        "global_dim": 20,
+        "local_feature_dim": 26,
+        "rho_context_dim": 172,
+        "rho_hidden_width": 64,
+        "rho_bounds": [
+          0.01,
+          0.99
+        ],
+        "rho_explicit_robust_drift_columns": [
+          2,
+          11
+        ],
+        "local_quality_dim": 32,
+        "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+        "history_layers_width_state": [
+          2,
+          64,
+          16
+        ],
+        "history_write_gate_input_dim": 96,
+        "write_projection_zero_initialized": true,
+        "write_projection_bias": false,
+        "dynamic_retention": true,
+        "actual_postconvolution_history_B_modulation": true,
+        "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+        "rate_head_unit": "SOH per1000cycles",
+        "rate_per_cycle_unit": "SOH percycle",
+        "rate_integration": "fixed unit-cycle trapezoid with1000cycle time normalization",
+        "observation_bound": 0.03,
+        "soh_bounds": [
+          0.0,
+          1.2
+        ],
+        "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved"
+      },
+      "finite_gradient_tensors": 95,
+      "WB_gradient_max_abs": [
+        2.4119681256706826e-05,
+        1.4839257346466184e-05
+      ],
+      "trajectory_shape": [
+        2,
+        4902
+      ],
+      "queries": {
+        "count": 4902,
+        "minimum": 100,
+        "maximum": 5000,
+        "additional_off_grid": 200.5
+      }
+    }
+  ],
+  "common_baseline_initial_tensors_exact": 87,
+  "real_first_batch_forward_before_after_exact": true,
+  "real_fresh_first_batch_repetitions_exact": 20,
+  "repair_scope": "Local/reference SSD, history SSD, dynamic EMA and rate integral use a CPU forward/reverse adjoint inside a single CUDA autograd node. Baseline source files remain unchanged.",
+  "model_sources": [
+    {
+      "path": "models/unified_matr/methodology_full.py",
+      "sha256": "a1194adab453b6a9bd03dce5211b7f1fa9ccd6eed66f333695941ef03284bdee"
+    },
+    {
+      "path": "models/unified_matr/methodology_operators.py",
+      "sha256": "341cd9cdcc74bb587c556e781f8b9625e97c715f04dec27d20bdf66b2ea52967"
+    }
+  ],
+  "source_sha256": "159c7743e4d5570a8f5f42f228b3f8639120b2a3d5207c057b85252c236b4e96"
+}
