@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "model_contract_sha256": "47c4432fbba2dcfa4ef528f05227adbf0e83211bd59b0e2171f597b9a507a874",
+  "checks": {
+    "fresh_seed42_forward_backward_exact": true,
+    "all_gradients_finite": true,
+    "initial_B_modulation_zero": true,
+    "B_write_projection_gradient_nonzero": true
+  },
+  "engineering_epochs": 1,
+  "engineering_optimizer_updates": 14,
+  "formal_optimizer_updates": 0,
+  "test_observations_consumed": 0,
+  "fresh_formal_seed42_initialization_required": true,
+  "first_batch_reproducibility": "FIRST_BATCH_REPRODUCIBILITY.json",
+  "files": [
+    {
+      "path": "engineering_smoke/cell_fold_0/M5_BOUNDED_TRANSITION/ENGINEERING_EPOCH_COMPLETE.json",
+      "sha256": "b6cc146bd46719a71bb316ebd93e1ef176056d44b28daf9646bc1c9a33f4866e"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M5_BOUNDED_TRANSITION/SELECTED.pt",
+      "sha256": "7e9f697fef513c3f2a2f7abbd2866db2ebc26ef850c2b60ce600da9526deb967"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M5_BOUNDED_TRANSITION/SELECTION_FROZEN.json",
+      "sha256": "0f27e9e066ca1ced3df6d7eb148073243e0d1eef72bb5d5c50b9cc0822bb169f"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M5_BOUNDED_TRANSITION/TRAIN_SCALER.json",
+      "sha256": "f0b8fd1fdafd58a1f641bbe30cbaad3a0e8b950e93fa6a0bcff7ebd2e58c0efd"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M5_BOUNDED_TRANSITION/TRAIN_STATE.pt",
+      "sha256": "411911a87049e2144c276d138eb0dbde438b1cd45ffe2746a4e8624f018ef956"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M5_BOUNDED_TRANSITION/training.jsonl",
+      "sha256": "84357d50051106143b3be0843c452c38a21a482e205cacb038f84ac6e40d7474"
+    },
+    {
+      "path": "engineering_smoke/cell_fold_0/M5_BOUNDED_TRANSITION/UNIT_CONTRACT.json",
+      "sha256": "5e01cf448242a127f6ced4b805bcb9628cd22f550c80258ff3fe7ae0b309600f"
+    },
+    {
+      "path": "engineering_smoke/FIRST_BATCH_REPRODUCIBILITY.json",
+      "sha256": "4a6bcce6a712724bc01a61aa292168c51f429192c1e5ff5f9d0df35ddb2e717e"
+    },
+    {
+      "path": "engineering_smoke/RUN_REGISTRATION.json",
+      "sha256": "e6059245495d5b37fd48bba993dbffd29ac407b8a0eba5114d838686901a88da"
+    },
+    {
+      "path": "ENGINEERING_CPU.json",
+      "sha256": "2b380b3b65fdf30d1f65754784e92b3cd912f49f7c2b8f0e269bda2835a3ec38"
+    },
+    {
+      "path": "ENGINEERING_CUDA.json",
+      "sha256": "08fe6d4bfec86f7ad695856b4def77f4269d953ca65c3b30b750b8932159e08a"
+    }
+  ],
+  "model_mathematical_checks": "External engineering controls must also be reviewed before formal launch.",
+  "independent_head_and_encoder_controls": [
+    "ENGINEERING_CPU.json",
+    "ENGINEERING_CUDA.json"
+  ],
+  "reviewed_at_UTC": "2026-11-15T19:54:16.456868+00:00"
+}

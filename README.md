@@ -97,3 +97,12 @@ python scripts/run_experiment_b.py --eligible-csv results/d0/eligible_cells.csv 
 ## 优势与风险
 
 优势为每颗电池身份、资格与未来目标可追溯，且在建模前登记特征计算条件。风险为异构来源的循环编号、预处理时间、插值和终止条件可能不同，需要按实际核验证据限定结论。
+
+
+## M5 有界动力学与早期 Q(V) 可辨识性实验
+
+2026-11-16 完成 seed42 的 M5 六组150轮正式训练、首折150轮完整复现，以及独立早期 Q(V) 速率分析。正式12,450次、复现2,100次、smoke14次，共14,564次优化器更新。M5主五折MAE为0.021381，未见协议MAE为0.030917。相对M4改善8.12%和35.92%，主五折MAE高于M1与A1。7个选定权重预测重放最大误差0，28,771项独立检查通过。详细结果见[完整报告](report/M5_BOUNDED_AND_IDENTIFIABILITY_FINAL_ZH.md)。
+
+早期Q(V)增加了151颗电池中期速率的预测信息，在共享42颗电池的速率变化量任务中增量证据不足。独立分析完成200次Ridge候选拟合、40个选定模型及507条Hinge资格诊断，408项复核通过。软转变中心与Hinge候选均缺少真实物理Knee认证。单种子、历史暴露和随访选择限制详见报告。
+
+完整代码、权重和逐电池产物位于[模型结果](results/unified_matr_m5_bounded_seed42/)及[速率分析](results/unified_matr_m5_identifiability_seed42/)。研究定义见[M5合同](research/M5_BOUNDED_AND_RATE_IDENTIFIABILITY_CONTRACT_ZH.md)。
