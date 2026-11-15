@@ -77,7 +77,7 @@ def forecast_targets(rate_targets, rate_mask):
     }
 
 
-def rate_task(inputs, identifiers, rate_targets, rate_mask, splits):
+def rate_task(inputs, identifiers, rate_targets, rate_mask, splits, cells):
     base, phys = early_features(inputs)
     designs = {"policy_capacity":base, "policy_capacity_plus_QV":np.hstack((base,phys))}
     ids = {u:i for i,u in enumerate(identifiers)}
@@ -97,7 +97,7 @@ def rate_task(inputs, identifiers, rate_targets, rate_mask, splits):
                                                     X[va],target[va]*1000,X[te])
                 for pos,value in zip(te,pred):
                     rows.append(dict(task=name,split=fold,model=model_name,
-                                     cell_uid=identifiers[pos],truth=float(target[pos]),
+                                     cell_uid=identifiers[pos],protocol_uid=str(cells.loc[identifiers[pos], 'protocol_uid']),truth=float(target[pos]),
                                      prediction=float(value/1000),
                                      abs_error=float(abs(value/1000-target[pos])),
                                      alpha=alpha,val_mae_1000=valerror,
@@ -107,6 +107,9 @@ def rate_task(inputs, identifiers, rate_targets, rate_mask, splits):
     summary = valid.groupby(["task","model"],as_index=False).agg(
         unique_test_cells=("cell_uid","nunique"),mae=("abs_error","mean"),
         truth_sd=("truth","std"),truth_mean=("truth","mean"))
+    macros=valid.groupby(["task","model","protocol_uid"],as_index=False)["abs_error"].mean()
+    macros=macros.groupby(["task","model"],as_index=False).agg(protocol_macro_mae=("abs_error","mean"),supported_protocols=("protocol_uid","nunique"))
+    summary=summary.merge(macros,on=["task","model"],how="left",validate="one_to_one")
     return df,summary
 
 
@@ -158,10 +161,10 @@ def main():
     a=p.parse_args()
     if a.output.exists():
         raise FileExistsError("Write one immutable analysis directory per execution")
-    inputs,ids,eligible,_,_,targets,observed,rates,mask,splits,_=load_frozen_data(a.data)
+    inputs,ids,eligible,cells,_,targets,observed,rates,mask,splits,_=load_frozen_data(a.data)
     if len(ids)!=169 or not eligible.all():
         raise RuntimeError("The fixed MATR169 data gate failed")
-    predicted,summary=rate_task(inputs,ids,rates,mask,splits)
+    predicted,summary=rate_task(inputs,ids,rates,mask,splits,cells)
     knee=knee_diagnostic(targets,observed,ids)
     a.output.mkdir(parents=True)
     predicted.to_csv(a.output/"rate_predictability_oof.csv",index=False)
