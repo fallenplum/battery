@@ -1,0 +1,463 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "strict_determinism": true,
+  "cublas_workspace_config": ":4096:8",
+  "optimizer_updates": 0,
+  "formal_fits": 0,
+  "checks": [
+    {
+      "name": "legacy_prediction_bitwise/torch.float64",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_signed_derivative_positive_tau/torch.float64",
+      "status": "PASS",
+      "max_absolute_error": 1.3877787807814457e-17
+    },
+    {
+      "name": "legacy_signed_rate_detached/torch.float64",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_centered_finite_difference",
+      "status": "PASS",
+      "max_absolute_error": 1.0767012281753807e-11
+    },
+    {
+      "name": "legacy_anchor_right_derivative",
+      "status": "PASS",
+      "max_absolute_error": 1.1445882167893107e-06
+    },
+    {
+      "name": "legacy_prediction_bitwise/torch.float32",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_signed_derivative_positive_tau/torch.float32",
+      "status": "PASS",
+      "max_absolute_error": 7.450580596923828e-09
+    },
+    {
+      "name": "legacy_signed_rate_detached/torch.float32",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/finite_outputs",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/shared_initial_tensors",
+      "status": "PASS",
+      "shared_tensors": 91
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/missing_state_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/finite_outputs",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/shared_initial_tensors",
+      "status": "PASS",
+      "shared_tensors": 91
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/missing_state_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/no_write_parameters",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/Bprime_is_B_layer0",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/Bprime_is_B_layer1",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/initial_current_response",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/initial_rho",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/initial_state",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/initial_prediction_matches_M4",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/controlled_WB_gate_perturbation_invariant",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/finite_outputs",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/shared_initial_tensors",
+      "status": "PASS",
+      "shared_tensors": 93
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/missing_state_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/rho_initial_point9",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/actual_gap_loop_state",
+      "status": "PASS",
+      "max_absolute_error": 1.3113021850585938e-06
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/actual_gap_loop_penalty",
+      "status": "PASS",
+      "max_absolute_error": 2.3283064365386963e-10
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/rho_response_policy_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/finite_outputs",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/shared_initial_tensors",
+      "status": "PASS",
+      "shared_tensors": 80
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/missing_state_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/all_local_values_and_masks_invariant",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/quality_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/global_path_equals_M4_zero_local_token",
+      "status": "PASS",
+      "max_absolute_error": 0.0
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/rho_equals_M4_zero_quality",
+      "status": "PASS",
+      "max_absolute_error": 0.0
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/state_equals_M4_zero_quality",
+      "status": "PASS",
+      "max_absolute_error": 0.0
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/penalty_equals_M4_zero_quality",
+      "status": "PASS",
+      "max_absolute_error": 0.0
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/gate_zero_quality_equivalence_layer0",
+      "status": "PASS",
+      "max_absolute_error": 0.0
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/gate_zero_quality_equivalence_layer1",
+      "status": "PASS",
+      "max_absolute_error": 0.0
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/retained_gradient/raw_viq",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/retained_gradient/reference_viq",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/retained_gradient/global_features",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/removed_gradient/local_residual",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/removed_gradient/local_features",
+      "status": "PASS"
+    }
+  ],
+  "model_registries": [
+    {
+      "arm": "A1_M4_LEGACY_FLOW",
+      "seed": 42,
+      "parameters": 154621,
+      "trainable_parameters": 154621,
+      "initial_state_sha256": "f2b8a1cd559f3eb8b96454c6e4fcc2ca206d026c68c51813d76482841f803af6",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "rho_context_dim": 172,
+      "rho_hidden_width": 64,
+      "rho_bounds": [
+        0.01,
+        0.99
+      ],
+      "rho_explicit_robust_drift_columns": [
+        2,
+        11
+      ],
+      "local_quality_dim": 32,
+      "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "history_write_gate_input_dim": 96,
+      "write_projection_zero_initialized": true,
+      "write_projection_bias": false,
+      "dynamic_retention": true,
+      "actual_postconvolution_history_B_modulation": true,
+      "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+      "rate_head_unit": "signed SOH per1000cycles",
+      "rate_per_cycle_unit": "signed SOH percycle",
+      "rate_integration": "none; signed decoder difference in integrated_loss compatibility field",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved",
+      "independent_parent": "M4_FULL_METHOD",
+      "active_parameters": 154621,
+      "parameter_matching": "actual active architecture counts; no artificial budget matching",
+      "flow_head_parameters": 2752,
+      "rho_compatibility_input_layout_dim": 172,
+      "static_rho_channels": 0,
+      "static_rho_initial": null,
+      "history_gate_compatibility_input_layout_dim": 96,
+      "local_physics_removed": false,
+      "diagnostic_quality_shape": 32,
+      "input_ablation": "complete_M4_inputs",
+      "raw_and_reference_VIQ_retained": true,
+      "local_self_reference_Mamba_retained": true,
+      "instantaneous_rate_diagnostic_only": true,
+      "nonnegative_rate_structure": false,
+      "signed_rate_derivative": "d(anchor-raw_trend)/d((cycle-100)/1000)",
+      "anchor_rate_semantics": "analytic right derivative; exact tau==0 output branch has zero autograd derivative",
+      "rate_auxiliary": "unchanged observed-trajectory endpoint difference",
+      "removed_quality_columns": null
+    },
+    {
+      "arm": "A2_M4_NO_B_WRITE",
+      "seed": 42,
+      "parameters": 149469,
+      "trainable_parameters": 149469,
+      "initial_state_sha256": "4c77e9fa7b440922c480779f4e90824be2dbfde83fbdad92c42f829368bf7fd9",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "rho_context_dim": 172,
+      "rho_hidden_width": 64,
+      "rho_bounds": [
+        0.01,
+        0.99
+      ],
+      "rho_explicit_robust_drift_columns": [
+        2,
+        11
+      ],
+      "local_quality_dim": 32,
+      "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "history_write_gate_input_dim": 0,
+      "write_projection_zero_initialized": false,
+      "write_projection_bias": false,
+      "dynamic_retention": true,
+      "actual_postconvolution_history_B_modulation": false,
+      "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+      "rate_head_unit": "SOH per1000cycles",
+      "rate_per_cycle_unit": "SOH percycle",
+      "rate_integration": "fixed unit-cycle trapezoid with1000cycle time normalization",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved",
+      "independent_parent": "M4_FULL_METHOD",
+      "active_parameters": 149469,
+      "parameter_matching": "actual active architecture counts; no artificial budget matching",
+      "flow_head_parameters": 2752,
+      "rho_compatibility_input_layout_dim": 172,
+      "static_rho_channels": 0,
+      "static_rho_initial": null,
+      "history_gate_compatibility_input_layout_dim": 0,
+      "local_physics_removed": false,
+      "diagnostic_quality_shape": 32,
+      "input_ablation": "complete_M4_inputs",
+      "raw_and_reference_VIQ_retained": true,
+      "local_self_reference_Mamba_retained": true,
+      "instantaneous_rate_diagnostic_only": false,
+      "nonnegative_rate_structure": true,
+      "signed_rate_derivative": null,
+      "anchor_rate_semantics": null,
+      "rate_auxiliary": "unchanged observed-trajectory endpoint difference",
+      "removed_quality_columns": null
+    },
+    {
+      "arm": "A3_M4_STATIC_RHO",
+      "seed": 42,
+      "parameters": 139453,
+      "trainable_parameters": 139453,
+      "initial_state_sha256": "959e657c51d13d3495cd4a9a578b725d2add2250f8dfc420bae1f5d1f4e755f3",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "rho_context_dim": 0,
+      "rho_hidden_width": 0,
+      "rho_bounds": [
+        0.01,
+        0.99
+      ],
+      "rho_explicit_robust_drift_columns": [
+        2,
+        11
+      ],
+      "local_quality_dim": 32,
+      "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "history_write_gate_input_dim": 96,
+      "write_projection_zero_initialized": true,
+      "write_projection_bias": false,
+      "dynamic_retention": false,
+      "actual_postconvolution_history_B_modulation": true,
+      "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+      "rate_head_unit": "SOH per1000cycles",
+      "rate_per_cycle_unit": "SOH percycle",
+      "rate_integration": "fixed unit-cycle trapezoid with1000cycle time normalization",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved",
+      "independent_parent": "M4_FULL_METHOD",
+      "active_parameters": 139453,
+      "parameter_matching": "actual active architecture counts; no artificial budget matching",
+      "flow_head_parameters": 2752,
+      "rho_compatibility_input_layout_dim": 172,
+      "static_rho_channels": 64,
+      "static_rho_initial": 0.9,
+      "history_gate_compatibility_input_layout_dim": 96,
+      "local_physics_removed": false,
+      "diagnostic_quality_shape": 32,
+      "input_ablation": "complete_M4_inputs",
+      "raw_and_reference_VIQ_retained": true,
+      "local_self_reference_Mamba_retained": true,
+      "instantaneous_rate_diagnostic_only": false,
+      "nonnegative_rate_structure": true,
+      "signed_rate_derivative": null,
+      "anchor_rate_semantics": null,
+      "rate_auxiliary": "unchanged observed-trajectory endpoint difference",
+      "removed_quality_columns": null
+    },
+    {
+      "arm": "A4_M4_NO_LOCAL_PHYSICS",
+      "seed": 42,
+      "parameters": 135245,
+      "trainable_parameters": 135245,
+      "initial_state_sha256": "a7817c8f10075cc9768666fb06a3e3f59c9ea4106eade669e1af23020ab5b5e3",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "rho_context_dim": 140,
+      "rho_hidden_width": 64,
+      "rho_bounds": [
+        0.01,
+        0.99
+      ],
+      "rho_explicit_robust_drift_columns": [
+        2,
+        11
+      ],
+      "local_quality_dim": 0,
+      "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "history_write_gate_input_dim": 64,
+      "write_projection_zero_initialized": true,
+      "write_projection_bias": false,
+      "dynamic_retention": true,
+      "actual_postconvolution_history_B_modulation": true,
+      "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+      "rate_head_unit": "SOH per1000cycles",
+      "rate_per_cycle_unit": "SOH percycle",
+      "rate_integration": "fixed unit-cycle trapezoid with1000cycle time normalization",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved",
+      "independent_parent": "M4_FULL_METHOD",
+      "active_parameters": 135245,
+      "parameter_matching": "actual active architecture counts; no artificial budget matching",
+      "flow_head_parameters": 2752,
+      "rho_compatibility_input_layout_dim": 172,
+      "static_rho_channels": 0,
+      "static_rho_initial": null,
+      "history_gate_compatibility_input_layout_dim": 96,
+      "local_physics_removed": true,
+      "diagnostic_quality_shape": 32,
+      "input_ablation": "remove_local_physics_and_its_quality_only",
+      "raw_and_reference_VIQ_retained": true,
+      "local_self_reference_Mamba_retained": true,
+      "instantaneous_rate_diagnostic_only": false,
+      "nonnegative_rate_structure": true,
+      "signed_rate_derivative": null,
+      "anchor_rate_semantics": null,
+      "rate_auxiliary": "unchanged observed-trajectory endpoint difference",
+      "removed_quality_columns": "rho[104:136], gate[64:96] for P15/G20"
+    }
+  ],
+  "real_training_first_batch": null,
+  "sources": [
+    {
+      "path": "scripts/check_methodology_ablations.py",
+      "sha256": "8532a20937fd2d3c6dcd6f5b804e082cb7bae57b18b1c7b3a01130fbf3d79dd9"
+    },
+    {
+      "path": "models/unified_matr/methodology_ablations.py",
+      "sha256": "8ad6ac6d7b67f103baece5b88d38a2c8719778cbb6577d4e9b51a6f171490330"
+    }
+  ]
+}

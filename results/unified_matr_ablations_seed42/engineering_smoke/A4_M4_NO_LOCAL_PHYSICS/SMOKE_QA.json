@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "arm": "A4_M4_NO_LOCAL_PHYSICS",
+  "checks": {
+    "fresh_seed42_forward_backward_exact": true,
+    "all_gradients_finite": true,
+    "initial_B_modulation_zero": true,
+    "B_write_branch_matches_ablation": true,
+    "active_B_write_gradients_nonzero": true
+  },
+  "model_contract_sha256": "753c249cd104542d02e42e835a1fac5f4b5aceef8a2ca210371ddba4bc428dcb",
+  "engineering_epochs": 1,
+  "engineering_optimizer_updates": 14,
+  "formal_optimizer_updates": 0,
+  "test_observations_consumed": 0,
+  "fresh_formal_seed42_initialization_required": true,
+  "files": [
+    {
+      "path": "engineering_smoke/A4_M4_NO_LOCAL_PHYSICS/cell_fold_0/A4_M4_NO_LOCAL_PHYSICS/ENGINEERING_EPOCH_COMPLETE.json",
+      "sha256": "cab427f918ba96173fadb138c3ab93ffe61eed0192345dc27f9c220db930fcb7"
+    },
+    {
+      "path": "engineering_smoke/A4_M4_NO_LOCAL_PHYSICS/cell_fold_0/A4_M4_NO_LOCAL_PHYSICS/SELECTED.pt",
+      "sha256": "123e22d70c91c390b623d660f5fe7ec435146a557d9674672a581ffb3d0b38e6"
+    },
+    {
+      "path": "engineering_smoke/A4_M4_NO_LOCAL_PHYSICS/cell_fold_0/A4_M4_NO_LOCAL_PHYSICS/SELECTION_FROZEN.json",
+      "sha256": "402d1adbc34802af9f02ae2a449f9382a1fe9f69e7f3cf6fcaea52205d681b59"
+    },
+    {
+      "path": "engineering_smoke/A4_M4_NO_LOCAL_PHYSICS/cell_fold_0/A4_M4_NO_LOCAL_PHYSICS/TRAIN_SCALER.json",
+      "sha256": "f0b8fd1fdafd58a1f641bbe30cbaad3a0e8b950e93fa6a0bcff7ebd2e58c0efd"
+    },
+    {
+      "path": "engineering_smoke/A4_M4_NO_LOCAL_PHYSICS/cell_fold_0/A4_M4_NO_LOCAL_PHYSICS/TRAIN_STATE.pt",
+      "sha256": "b7b3ae016576b61a1ea38c68fe45cd6293d76baff91e6f1081adaf6700cc015b"
+    },
+    {
+      "path": "engineering_smoke/A4_M4_NO_LOCAL_PHYSICS/cell_fold_0/A4_M4_NO_LOCAL_PHYSICS/training.jsonl",
+      "sha256": "e8b823570e7b630c32c389d61d5dedc042b10388b6bb25a17881fec07afd8078"
+    },
+    {
+      "path": "engineering_smoke/A4_M4_NO_LOCAL_PHYSICS/cell_fold_0/A4_M4_NO_LOCAL_PHYSICS/UNIT_CONTRACT.json",
+      "sha256": "7d06ab109cb3d3a04174f706c597a1959417013d9302f563e4ad785e7d2f490d"
+    },
+    {
+      "path": "engineering_smoke/A4_M4_NO_LOCAL_PHYSICS/FIRST_BATCH_REPRODUCIBILITY.json",
+      "sha256": "dd68b54e06f75dc83709e42c105b5eac51c6f347ef5891f274211c7496940489"
+    },
+    {
+      "path": "engineering_smoke/A4_M4_NO_LOCAL_PHYSICS/RUN_REGISTRATION.json",
+      "sha256": "0e3af648007d5c530818d54db912eb1c917e417eb8c5d17c753b00310192d6d8"
+    }
+  ]
+}

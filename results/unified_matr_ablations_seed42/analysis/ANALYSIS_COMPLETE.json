@@ -1,0 +1,112 @@
+{
+  "status": "ANALYZED",
+  "arms": [
+    "A1_M4_LEGACY_FLOW",
+    "A2_M4_NO_B_WRITE",
+    "A3_M4_STATIC_RHO",
+    "A4_M4_NO_LOCAL_PHYSICS"
+  ],
+  "seed": 42,
+  "completed_units": 24,
+  "formal_optimizer_updates": 49800,
+  "full_reproduction_optimizer_updates": 8400,
+  "engineering_optimizer_updates": 56,
+  "total_executed_optimizer_updates": 58256,
+  "model_contract_sha256": "753c249cd104542d02e42e835a1fac5f4b5aceef8a2ca210371ddba4bc428dcb",
+  "analysis_source_sha256": "dbd397d866752362a5309a545fc0587664e6b8173bf945b4419baa523c0a61b9",
+  "statistics_sources": [
+    {
+      "path": "scripts/unified_matr/analyze_results.py",
+      "sha256": "328dd6817d274613c4ae721bb610bdcefdef9e1c368759bada4e17102fcec7c4"
+    },
+    {
+      "path": "scripts/analyze_methodology_full_seed42.py",
+      "sha256": "127a9d0ae063270a6b872ec90863a284c444360055e8a75e872ad65c69c66af1"
+    }
+  ],
+  "reference_m4": {
+    "root": "results/unified_matr_methodology_full_seed42",
+    "model_contract_sha256": "515e5ed9c9e9b76b1c1f7ceb823a8e6d1d153ee622f6ebb55f4e41d2dacb1142",
+    "verification_sha256": "883f8659db86556c4496a43bdbf5f6b8ca37d06a5f5b1517e1e30ef0572d7dd4",
+    "analysis_sha256": "b43ad37b6af07a8002cb5d2c146e90b947b02738c3d1fc98c91c74fd37d4d02f"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 42,
+    "conditional_on_fitted_predictions": true
+  },
+  "files": [
+    {
+      "path": "cell_metrics.csv",
+      "sha256": "626c7efe08d450520072b559e6b7a21e5c9d1b4beced3efa19bdc45534971a2f"
+    },
+    {
+      "path": "eol80_paired_comparisons.csv",
+      "sha256": "c9f256effd6e8dc877adbe2be19b2b2faf3cd06e1fcc870247e46a2567d81a81"
+    },
+    {
+      "path": "eol80_predictions.csv",
+      "sha256": "2a3e8b555baa540e0e5c5ab9be031ae198e00c814858a134e1fda1180ae786e3"
+    },
+    {
+      "path": "eol80_summary.csv",
+      "sha256": "0612bd48b9d3899ad454c1d2f66f53a39e65f9434a99535c4be97a0336a34e4b"
+    },
+    {
+      "path": "full_vs_ablation_paired_cells.csv",
+      "sha256": "ba39838979f0005ba264488ba470f2da3689f9ee01166cb8ea6dacf68448f4ac"
+    },
+    {
+      "path": "full_vs_ablation_paired_comparisons.csv",
+      "sha256": "925843839b0df0d424fe930089815397e91700b3090ba0918ea6c43bb6a3ce7b"
+    },
+    {
+      "path": "known_counterexample_MATR_b1c2.csv",
+      "sha256": "54f54cad2e0fcb4d026fae97d6f2832aa1d62c3585d10f5c550986d3d6dc2c4a"
+    },
+    {
+      "path": "mechanism_summary.csv",
+      "sha256": "ee49bb1886df7859d1d9066f1bcea9843d7b6e7a62090e56e5d8df64721f2523"
+    },
+    {
+      "path": "observed_monotonic_diagnostics.csv",
+      "sha256": "da2582ddfc433ab887387494a187b99c678bab9bbb819ae71af93e94fc1297db"
+    },
+    {
+      "path": "protocol_metrics.csv",
+      "sha256": "a50817f820321ad09cb6a60d9d382781a2f56996d6651efc8ca77df5e7bb354e"
+    },
+    {
+      "path": "query_range_cell_diagnostics.csv",
+      "sha256": "f4739e8ea1d30abddf1aa84e28e5d95ffbadfe58871787cedacf97be7feb8152"
+    },
+    {
+      "path": "query_range_summary.csv",
+      "sha256": "2aa1528a2677b306a43641be54095af1e2c3bd1779194cf01b044af8299c2507"
+    },
+    {
+      "path": "rate_predictions_and_errors.csv",
+      "sha256": "8d391ed5dce73a9e0db8ed3b45faca66b00346504078a1744a2bb37836b3bbba"
+    },
+    {
+      "path": "split_metrics.csv",
+      "sha256": "5f5a308ac81dfd8fa3f2cb2962edba33c997608805d4e4df99139c1ff87e810c"
+    },
+    {
+      "path": "summary_metrics.csv",
+      "sha256": "043aecd46e391088325ea0919196fd981e2bd8467eebb4a8f1bee52eee4c506a"
+    },
+    {
+      "path": "training_units.csv",
+      "sha256": "fc57ca662a1c23931179263e8054f34703e047f985b7b7930f4e5bf274367b9e"
+    },
+    {
+      "path": "TRAINING_REPRODUCTIONS.json",
+      "sha256": "7d125e2c67cf4d80bf30c6ffe32532aa49231be31701473299245d408edfcc16"
+    },
+    {
+      "path": "ABLATION_RESULTS_ZH.md",
+      "sha256": "1a3a348f630ac7a8a051af244647e1b222dfa3e1f6c3f9fb01a9efe22d3aa5e4"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "arms": [
+    "A1_M4_LEGACY_FLOW",
+    "A2_M4_NO_B_WRITE",
+    "A3_M4_STATIC_RHO",
+    "A4_M4_NO_LOCAL_PHYSICS"
+  ],
+  "engineering_optimizer_updates": 56,
+  "formal_optimizer_updates": 0,
+  "test_observations_consumed": 0,
+  "model_contract_sha256": "753c249cd104542d02e42e835a1fac5f4b5aceef8a2ca210371ddba4bc428dcb",
+  "arm_smoke_receipts": [
+    {
+      "arm": "A1_M4_LEGACY_FLOW",
+      "sha256": "e370b74ddf809a73fcead13cc97a8aab73e86565a542a80e684ab01b1044120f"
+    },
+    {
+      "arm": "A2_M4_NO_B_WRITE",
+      "sha256": "93f72da6d4b8bc7cb51b23427224f57074406b2a53db5258a6927dd68d7df152"
+    },
+    {
+      "arm": "A3_M4_STATIC_RHO",
+      "sha256": "50640f5587b47cc42070b0c8a07172c20f3449a35c5a8bd9e423d6bf0fd97773"
+    },
+    {
+      "arm": "A4_M4_NO_LOCAL_PHYSICS",
+      "sha256": "1309a9190a881f9d06a800f0eb2937d2ada9a7d2d97dc7270b66f4ac785da5ed"
+    }
+  ],
+  "independent_engineering_controls": [
+    {
+      "path": "INDEPENDENT_ABLATION_QA_CPU_FINAL.json",
+      "sha256": "ed997024bb4440f4cdf0765228dec2dd07bbb9bd1f9932e3aa34baefdc20b7dd"
+    },
+    {
+      "path": "INDEPENDENT_ABLATION_QA_CUDA_FINAL.json",
+      "sha256": "408b0cf5b1fe36d133318e64398c7d716995b836244dad325f2b0cffc1ca19a9"
+    },
+    {
+      "path": "engineering/MODEL_ENGINEERING_CPU.json",
+      "sha256": "6085294e55ed39a46cb90d6fd752c7f4c6bd9dff379e6f4e75af4f922f83f557"
+    },
+    {
+      "path": "engineering/MODEL_ENGINEERING_CUDA.json",
+      "sha256": "bbafc845547cd9dc12e729c4c9fda58ec41bce7ba2b283e3ba92c22eea4d0dd3"
+    }
+  ],
+  "training_source_hashes_verified_before_formal_launch": true,
+  "reviewed_at_UTC": "2026-11-15T16:50:07.774601+00:00"
+}

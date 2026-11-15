@@ -1,0 +1,1001 @@
+{
+  "status": "PASS",
+  "device": "cuda",
+  "strict_determinism": true,
+  "cublas_workspace_config": ":4096:8",
+  "optimizer_updates": 0,
+  "formal_fits": 0,
+  "checks": [
+    {
+      "name": "legacy_prediction_bitwise/torch.float64",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_signed_derivative_positive_tau/torch.float64",
+      "status": "PASS",
+      "max_absolute_error": 4.163336342344337e-17
+    },
+    {
+      "name": "legacy_signed_rate_detached/torch.float64",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_centered_finite_difference",
+      "status": "PASS",
+      "max_absolute_error": 1.1105769082142558e-11
+    },
+    {
+      "name": "legacy_anchor_right_derivative",
+      "status": "PASS",
+      "max_absolute_error": 1.1445896046097248e-06
+    },
+    {
+      "name": "legacy_prediction_bitwise/torch.float32",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_signed_derivative_positive_tau/torch.float32",
+      "status": "PASS",
+      "max_absolute_error": 7.450580596923828e-09
+    },
+    {
+      "name": "legacy_signed_rate_detached/torch.float32",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/finite_outputs",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/shared_initial_tensors",
+      "status": "PASS",
+      "shared_tensors": 91
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/missing_state_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/finite_outputs",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/shared_initial_tensors",
+      "status": "PASS",
+      "shared_tensors": 91
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/missing_state_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/no_write_parameters",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/Bprime_is_B_layer0",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/Bprime_is_B_layer1",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/initial_current_response",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/initial_rho",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/initial_state",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/initial_prediction_matches_M4",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/controlled_WB_gate_perturbation_invariant",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/finite_outputs",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/shared_initial_tensors",
+      "status": "PASS",
+      "shared_tensors": 93
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/missing_state_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/rho_initial_point9",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/actual_gap_loop_state",
+      "status": "PASS",
+      "max_absolute_error": 1.1920928955078125e-06
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/actual_gap_loop_penalty",
+      "status": "PASS",
+      "max_absolute_error": 4.656612873077393e-10
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/rho_response_policy_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/finite_outputs",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/shared_initial_tensors",
+      "status": "PASS",
+      "shared_tensors": 80
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/missing_state_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/all_local_values_and_masks_invariant",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/quality_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/global_path_equals_M4_zero_local_token",
+      "status": "PASS",
+      "max_absolute_error": 9.5367431640625e-07
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/rho_equals_M4_zero_quality",
+      "status": "PASS",
+      "max_absolute_error": 0.0
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/state_equals_M4_zero_quality",
+      "status": "PASS",
+      "max_absolute_error": 0.0
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/penalty_equals_M4_zero_quality",
+      "status": "PASS",
+      "max_absolute_error": 0.0
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/gate_zero_quality_equivalence_layer0",
+      "status": "PASS",
+      "max_absolute_error": 1.1920928955078125e-07
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/gate_zero_quality_equivalence_layer1",
+      "status": "PASS",
+      "max_absolute_error": 1.1920928955078125e-07
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/retained_gradient/raw_viq",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/retained_gradient/reference_viq",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/retained_gradient/global_features",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/removed_gradient/local_residual",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/removed_gradient/local_features",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat1_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat2_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat3_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat4_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat5_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat6_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat7_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat8_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat9_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat10_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat11_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/repeat12_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A1_M4_LEGACY_FLOW/fresh_first_batch_exact",
+      "status": "PASS",
+      "repeats": 12
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat1_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat2_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat3_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat4_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat5_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat6_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat7_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat8_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat9_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat10_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat11_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/repeat12_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A2_M4_NO_B_WRITE/fresh_first_batch_exact",
+      "status": "PASS",
+      "repeats": 12
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat1_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat2_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat3_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat4_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat5_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat6_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat7_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat8_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat9_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat10_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat11_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/repeat12_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A3_M4_STATIC_RHO/fresh_first_batch_exact",
+      "status": "PASS",
+      "repeats": 12
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat1_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat2_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat3_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat4_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat5_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat6_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat7_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat8_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat9_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat10_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat11_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/repeat12_finite_gradients",
+      "status": "PASS"
+    },
+    {
+      "name": "A4_M4_NO_LOCAL_PHYSICS/fresh_first_batch_exact",
+      "status": "PASS",
+      "repeats": 12
+    }
+  ],
+  "model_registries": [
+    {
+      "arm": "A1_M4_LEGACY_FLOW",
+      "seed": 42,
+      "parameters": 154621,
+      "trainable_parameters": 154621,
+      "initial_state_sha256": "f2b8a1cd559f3eb8b96454c6e4fcc2ca206d026c68c51813d76482841f803af6",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "rho_context_dim": 172,
+      "rho_hidden_width": 64,
+      "rho_bounds": [
+        0.01,
+        0.99
+      ],
+      "rho_explicit_robust_drift_columns": [
+        2,
+        11
+      ],
+      "local_quality_dim": 32,
+      "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "history_write_gate_input_dim": 96,
+      "write_projection_zero_initialized": true,
+      "write_projection_bias": false,
+      "dynamic_retention": true,
+      "actual_postconvolution_history_B_modulation": true,
+      "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+      "rate_head_unit": "signed SOH per1000cycles",
+      "rate_per_cycle_unit": "signed SOH percycle",
+      "rate_integration": "none; signed decoder difference in integrated_loss compatibility field",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved",
+      "independent_parent": "M4_FULL_METHOD",
+      "active_parameters": 154621,
+      "parameter_matching": "actual active architecture counts; no artificial budget matching",
+      "flow_head_parameters": 2752,
+      "rho_compatibility_input_layout_dim": 172,
+      "static_rho_channels": 0,
+      "static_rho_initial": null,
+      "history_gate_compatibility_input_layout_dim": 96,
+      "local_physics_removed": false,
+      "diagnostic_quality_shape": 32,
+      "input_ablation": "complete_M4_inputs",
+      "raw_and_reference_VIQ_retained": true,
+      "local_self_reference_Mamba_retained": true,
+      "instantaneous_rate_diagnostic_only": true,
+      "nonnegative_rate_structure": false,
+      "signed_rate_derivative": "d(anchor-raw_trend)/d((cycle-100)/1000)",
+      "anchor_rate_semantics": "analytic right derivative; exact tau==0 output branch has zero autograd derivative",
+      "rate_auxiliary": "unchanged observed-trajectory endpoint difference",
+      "removed_quality_columns": null
+    },
+    {
+      "arm": "A2_M4_NO_B_WRITE",
+      "seed": 42,
+      "parameters": 149469,
+      "trainable_parameters": 149469,
+      "initial_state_sha256": "4c77e9fa7b440922c480779f4e90824be2dbfde83fbdad92c42f829368bf7fd9",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "rho_context_dim": 172,
+      "rho_hidden_width": 64,
+      "rho_bounds": [
+        0.01,
+        0.99
+      ],
+      "rho_explicit_robust_drift_columns": [
+        2,
+        11
+      ],
+      "local_quality_dim": 32,
+      "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "history_write_gate_input_dim": 0,
+      "write_projection_zero_initialized": false,
+      "write_projection_bias": false,
+      "dynamic_retention": true,
+      "actual_postconvolution_history_B_modulation": false,
+      "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+      "rate_head_unit": "SOH per1000cycles",
+      "rate_per_cycle_unit": "SOH percycle",
+      "rate_integration": "fixed unit-cycle trapezoid with1000cycle time normalization",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved",
+      "independent_parent": "M4_FULL_METHOD",
+      "active_parameters": 149469,
+      "parameter_matching": "actual active architecture counts; no artificial budget matching",
+      "flow_head_parameters": 2752,
+      "rho_compatibility_input_layout_dim": 172,
+      "static_rho_channels": 0,
+      "static_rho_initial": null,
+      "history_gate_compatibility_input_layout_dim": 0,
+      "local_physics_removed": false,
+      "diagnostic_quality_shape": 32,
+      "input_ablation": "complete_M4_inputs",
+      "raw_and_reference_VIQ_retained": true,
+      "local_self_reference_Mamba_retained": true,
+      "instantaneous_rate_diagnostic_only": false,
+      "nonnegative_rate_structure": true,
+      "signed_rate_derivative": null,
+      "anchor_rate_semantics": null,
+      "rate_auxiliary": "unchanged observed-trajectory endpoint difference",
+      "removed_quality_columns": null
+    },
+    {
+      "arm": "A3_M4_STATIC_RHO",
+      "seed": 42,
+      "parameters": 139453,
+      "trainable_parameters": 139453,
+      "initial_state_sha256": "959e657c51d13d3495cd4a9a578b725d2add2250f8dfc420bae1f5d1f4e755f3",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "rho_context_dim": 0,
+      "rho_hidden_width": 0,
+      "rho_bounds": [
+        0.01,
+        0.99
+      ],
+      "rho_explicit_robust_drift_columns": [
+        2,
+        11
+      ],
+      "local_quality_dim": 32,
+      "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "history_write_gate_input_dim": 96,
+      "write_projection_zero_initialized": true,
+      "write_projection_bias": false,
+      "dynamic_retention": false,
+      "actual_postconvolution_history_B_modulation": true,
+      "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+      "rate_head_unit": "SOH per1000cycles",
+      "rate_per_cycle_unit": "SOH percycle",
+      "rate_integration": "fixed unit-cycle trapezoid with1000cycle time normalization",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved",
+      "independent_parent": "M4_FULL_METHOD",
+      "active_parameters": 139453,
+      "parameter_matching": "actual active architecture counts; no artificial budget matching",
+      "flow_head_parameters": 2752,
+      "rho_compatibility_input_layout_dim": 172,
+      "static_rho_channels": 64,
+      "static_rho_initial": 0.9,
+      "history_gate_compatibility_input_layout_dim": 96,
+      "local_physics_removed": false,
+      "diagnostic_quality_shape": 32,
+      "input_ablation": "complete_M4_inputs",
+      "raw_and_reference_VIQ_retained": true,
+      "local_self_reference_Mamba_retained": true,
+      "instantaneous_rate_diagnostic_only": false,
+      "nonnegative_rate_structure": true,
+      "signed_rate_derivative": null,
+      "anchor_rate_semantics": null,
+      "rate_auxiliary": "unchanged observed-trajectory endpoint difference",
+      "removed_quality_columns": null
+    },
+    {
+      "arm": "A4_M4_NO_LOCAL_PHYSICS",
+      "seed": 42,
+      "parameters": 135245,
+      "trainable_parameters": 135245,
+      "initial_state_sha256": "a7817c8f10075cc9768666fb06a3e3f59c9ea4106eade669e1af23020ab5b5e3",
+      "policy_dim": 15,
+      "global_dim": 20,
+      "local_feature_dim": 26,
+      "rho_context_dim": 140,
+      "rho_hidden_width": 64,
+      "rho_bounds": [
+        0.01,
+        0.99
+      ],
+      "rho_explicit_robust_drift_columns": [
+        2,
+        11
+      ],
+      "local_quality_dim": 0,
+      "rho_explicit_drift_semantics": "actual-gap differences of frozen causal a/b median states, not raw a/b coefficients",
+      "history_layers_width_state": [
+        2,
+        64,
+        16
+      ],
+      "history_write_gate_input_dim": 64,
+      "write_projection_zero_initialized": true,
+      "write_projection_bias": false,
+      "dynamic_retention": true,
+      "actual_postconvolution_history_B_modulation": true,
+      "persistence_penalty": "mean squared state change per actual-cycle gap over valid transitions and64channels",
+      "rate_head_unit": "SOH per1000cycles",
+      "rate_per_cycle_unit": "SOH percycle",
+      "rate_integration": "fixed unit-cycle trapezoid with1000cycle time normalization",
+      "observation_bound": 0.03,
+      "soh_bounds": [
+        0.0,
+        1.2
+      ],
+      "initialization": "seed42 isolated CPU module initialization; common baseline state keys preserved",
+      "independent_parent": "M4_FULL_METHOD",
+      "active_parameters": 135245,
+      "parameter_matching": "actual active architecture counts; no artificial budget matching",
+      "flow_head_parameters": 2752,
+      "rho_compatibility_input_layout_dim": 172,
+      "static_rho_channels": 0,
+      "static_rho_initial": null,
+      "history_gate_compatibility_input_layout_dim": 96,
+      "local_physics_removed": true,
+      "diagnostic_quality_shape": 32,
+      "input_ablation": "remove_local_physics_and_its_quality_only",
+      "raw_and_reference_VIQ_retained": true,
+      "local_self_reference_Mamba_retained": true,
+      "instantaneous_rate_diagnostic_only": false,
+      "nonnegative_rate_structure": true,
+      "signed_rate_derivative": null,
+      "anchor_rate_semantics": null,
+      "rate_auxiliary": "unchanged observed-trajectory endpoint difference",
+      "removed_quality_columns": "rho[104:136], gate[64:96] for P15/G20"
+    }
+  ],
+  "real_training_first_batch": {
+    "training_cell_uids": [
+      "MATR_b2c23",
+      "MATR_b1c43",
+      "MATR_b3c28",
+      "MATR_b2c17",
+      "MATR_b4c6",
+      "MATR_b1c0",
+      "MATR_b2c10",
+      "MATR_b3c45"
+    ],
+    "query_count": 2138,
+    "input_sha256": {
+      "raw_viq": "454f25c40834aa6b59191f3fc42645c02d71411c68f6a1828b3e7224664f1dbd",
+      "point_mask": "d6e39672000b4480560cdc1cfe38a4cdd3c24cdc36cc3ebd52dc360562e2c43d",
+      "cycle_ids": "62e74f327ee716f8089b01cd313c40ad0854918a1c609a2bc56818fb5da484ec",
+      "reference_viq": "fac38888c98b0a15d68f0599d244fefbdfd2f11855f070c5452f59dff87a0cdf",
+      "policy": "240cd56fc9970795dd598fda839007b3aa8c787d258ec63ae780202f61a21da6",
+      "policy_mask": "a375216af4279b0223f0736e112b660596da0e5f010837f2bb3a353d565ef714",
+      "global_features": "5b4dd21416d0695542412d9e1ad4ff458256bf720101fa69079275b227834343",
+      "global_mask": "555073bdc59b409a54610069361de8c14b769dda2a76bc68d465a12a7669630e",
+      "local_residual": "7a37fdd28555e8051c1541fe182ae113ee555cda155e45fcc3aa331a36b4fc19",
+      "local_mask": "d6e39672000b4480560cdc1cfe38a4cdd3c24cdc36cc3ebd52dc360562e2c43d",
+      "local_features": "c2ad961c30ea1e11956298553be6df459fceab75c3b0a25d1ae587d2956790ed",
+      "local_feature_mask": "dce7381f9be1ac49c3f3d874a68f513ac1a4acd1a67998c910d417b6843b2d8b",
+      "anchor_soh100": "569825685e1a3b155ed7d5a5854141f71c3b82b33102d28b8c7e56d174a4c3fc"
+    },
+    "train_scaler_sha256": "23daf3215bde19cabd8d9815627558b6f2516f77d20de914421051a3f1b124b6",
+    "arms": {
+      "A1_M4_LEGACY_FLOW": [
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        },
+        {
+          "prediction_sha256": "c2425e58b975fb9ba5b9466e19a0da7e1967b529c2820e001e9a49ce5c9adc33",
+          "loss_sha256": "ea3fe138157ef59c07ef369d197a5dc4cb745a0e4dc28121a1e7ff17db4a3dfa",
+          "gradients_sha256": "d7a3d0afa4f6a7d156c6ecbe5859243160e69b7a0d042945ac66a02c6fb280f3",
+          "gradient_tensors": 97
+        }
+      ],
+      "A2_M4_NO_B_WRITE": [
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        },
+        {
+          "prediction_sha256": "1043ca290e67b81f07ba6561f1ab3be40ba23d006cd68e10d3fdb95f0af83f77",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "4e8a0e6fcd36072d1270a3aee76daabdeed412d9685e5f1cd76da992435d77d7",
+          "gradient_tensors": 89
+        }
+      ],
+      "A3_M4_STATIC_RHO": [
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        },
+        {
+          "prediction_sha256": "6bb1af75aa80ae1ca69b769a4f01408f3825aa49ac5814d248db22bd577758e7",
+          "loss_sha256": "fc4feb598320367fbf2676319fbf0ef2bf37e5c9c9d6bc7685060db4ef349ec3",
+          "gradients_sha256": "248c3f81dc9085ce6c2b8016d7ab12a5856707d206409aa0686630bf813f81da",
+          "gradient_tensors": 92
+        }
+      ],
+      "A4_M4_NO_LOCAL_PHYSICS": [
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        },
+        {
+          "prediction_sha256": "9ed4508b47c44c17a6e8fd4567502dbfafb0f4c7224f148c45d71abd7f35a18f",
+          "loss_sha256": "a0b6f3d9dfed05cec40be773e729efdfa8cb1d3e76e8060118f81baf3d21e747",
+          "gradients_sha256": "dbfea200c5f31d9183adb7525cf732e2863163af1356b4b4742f0602e41a444b",
+          "gradient_tensors": 82
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "scripts/check_methodology_ablations.py",
+      "sha256": "8532a20937fd2d3c6dcd6f5b804e082cb7bae57b18b1c7b3a01130fbf3d79dd9"
+    },
+    {
+      "path": "models/unified_matr/methodology_ablations.py",
+      "sha256": "8ad6ac6d7b67f103baece5b88d38a2c8719778cbb6577d4e9b51a6f171490330"
+    }
+  ]
+}

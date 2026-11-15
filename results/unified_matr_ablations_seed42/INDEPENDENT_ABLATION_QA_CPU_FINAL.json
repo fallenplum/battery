@@ -1,0 +1,1318 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "passed_checks": 231,
+  "checks": [
+    {
+      "check": "M4_eight_sources/historical_sha_preserved",
+      "status": "PASS",
+      "protected_count": 8,
+      "mismatches": []
+    },
+    {
+      "check": "old43_sources/historical_sha_preserved",
+      "status": "PASS",
+      "protected_count": 43,
+      "mismatches": []
+    },
+    {
+      "check": "dense_dynamic_scan_matches_scalar_recurrence_FP64",
+      "status": "PASS",
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "invalid_internal_state_holds_previous_valid",
+      "status": "PASS",
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "persistence_penalty_has_same_per_cycle_squared_units",
+      "status": "PASS",
+      "maximum_absolute_error": 6.938893903907228e-18,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "scalar_gradient_oracle_phi",
+      "status": "PASS",
+      "maximum_absolute_error": 1.1102230246251565e-16,
+      "tolerance": 4e-11
+    },
+    {
+      "check": "zero_invalid_gradient_phi",
+      "status": "PASS"
+    },
+    {
+      "check": "scalar_gradient_oracle_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 8.416878305439468e-15,
+      "tolerance": 4e-11
+    },
+    {
+      "check": "zero_invalid_gradient_rho",
+      "status": "PASS"
+    },
+    {
+      "check": "first_valid_exact_initialization",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "all_invalid_cell_visible_state_zero",
+      "status": "PASS"
+    },
+    {
+      "check": "actual_cycle_gap_uses_previous_valid",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "M4_actual_SSD_matches_independent_serial_FP64",
+      "status": "PASS",
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_x",
+      "status": "PASS",
+      "maximum_absolute_error": 4.440892098500626e-16,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_delta",
+      "status": "PASS",
+      "maximum_absolute_error": 1.4210854715202004e-14,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_A",
+      "status": "PASS",
+      "maximum_absolute_error": 1.249000902703301e-16,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_B",
+      "status": "PASS",
+      "maximum_absolute_error": 8.881784197001252e-16,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_C",
+      "status": "PASS",
+      "maximum_absolute_error": 4.440892098500626e-16,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "M4_actual_SSD_gradient_oracle_skip",
+      "status": "PASS",
+      "maximum_absolute_error": 1.4210854715202004e-14,
+      "tolerance": 5e-11
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.decoder.0.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.decoder.0.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.decoder.2.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.generator.0.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.generator.0.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.generator.2.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.generator.2.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.net.0.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.net.0.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.net.2.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.net.2.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.net.4.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/only_registered_component_changes/flow_head.rate_offset",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/has_expected_structural_change",
+      "status": "PASS",
+      "changed_state_keys": [
+        "flow_head.decoder.0.bias",
+        "flow_head.decoder.0.weight",
+        "flow_head.decoder.2.weight",
+        "flow_head.generator.0.bias",
+        "flow_head.generator.0.weight",
+        "flow_head.generator.2.bias",
+        "flow_head.generator.2.weight",
+        "flow_head.net.0.bias",
+        "flow_head.net.0.weight",
+        "flow_head.net.2.bias",
+        "flow_head.net.2.weight",
+        "flow_head.net.4.weight",
+        "flow_head.rate_offset"
+      ],
+      "shared_identical_state_elements": 152381
+    },
+    {
+      "check": "A1/unchanged_encoder_state",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/unchanged_encoder_condition",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/original_legacy_initialization/generator.0.weight",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/original_legacy_initialization/generator.0.bias",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/original_legacy_initialization/generator.2.weight",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/original_legacy_initialization/generator.2.bias",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/original_legacy_initialization/decoder.0.weight",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/original_legacy_initialization/decoder.0.bias",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/original_legacy_initialization/decoder.2.weight",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/exact_original_Flow_prediction",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/compatibility_signed_loss_is_minus_correction",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1/signed_rate_matches_analytic_Flow_derivative_after100",
+      "status": "PASS",
+      "maximum_absolute_error": 4.446922973085077e-21,
+      "tolerance": 3e-13
+    },
+    {
+      "check": "A1/control_demonstrates_allowed_Flow_recovery",
+      "status": "PASS",
+      "maximum_recovery": 0.02006747813990241
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/actual_history0_SSD_receives_Bprime",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/B_modulation_retained_layer0",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/actual_history1_SSD_receives_Bprime",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/B_modulation_retained_layer1",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/later_prefix_cannot_change_earlier_persistence_state",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/later_prefix_cannot_change_earlier_persistence_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/later_prefix_cannot_change_earlier_B_layer0",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/later_prefix_cannot_change_earlier_B_layer1",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/first_valid_after_leading_missing_initializes_current_response",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/internal_state_holds_across_invalid_records",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-06
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/invalid_record_zero_gradient_raw_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/invalid_record_zero_gradient_reference_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/invalid_record_zero_gradient_global_features",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/invalid_record_zero_gradient_local_residual",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/invalid_record_zero_gradient_local_features",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/all_reached_parameter_gradients_finite",
+      "status": "PASS",
+      "total_parameters": 154621,
+      "trainable_parameters": 154621,
+      "reached_parameters": 154621,
+      "nonzero_gradient_parameters": 154621
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/anchor100",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/observation_bound_003",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/query_reorder_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/query_single_joint_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/query_reorder_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/query_single_joint_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/query_reorder_rate_per_cycle",
+      "status": "PASS",
+      "maximum_absolute_error": 3.410605131648481e-13,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/query_single_joint_rate_per_cycle",
+      "status": "PASS",
+      "maximum_absolute_error": 3.979039320256561e-13,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/future_cycle_rejected_as_prefix",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/only_registered_component_changes/history.0.mixer.write_gate.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/only_registered_component_changes/history.0.mixer.write_gate.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/only_registered_component_changes/history.0.mixer.write_projection.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/only_registered_component_changes/history.1.mixer.write_gate.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/only_registered_component_changes/history.1.mixer.write_gate.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/only_registered_component_changes/history.1.mixer.write_projection.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/has_expected_structural_change",
+      "status": "PASS",
+      "changed_state_keys": [
+        "history.0.mixer.write_gate.bias",
+        "history.0.mixer.write_gate.weight",
+        "history.0.mixer.write_projection.weight",
+        "history.1.mixer.write_gate.bias",
+        "history.1.mixer.write_gate.weight",
+        "history.1.mixer.write_projection.weight"
+      ],
+      "shared_identical_state_elements": 149982
+    },
+    {
+      "check": "A2/initial_prediction_exact_zero_WB_M4",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2/persistence_retained_state",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2/persistence_retained_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2/persistence_retained_quality",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2/M4_controlled_WB_reaches_B",
+      "status": "PASS"
+    },
+    {
+      "check": "A2/actual_removed_B_parameters",
+      "status": "PASS"
+    },
+    {
+      "check": "A2/retained_dynamic_rho_varies",
+      "status": "PASS"
+    },
+    {
+      "check": "A2/selector_condition_still_affects_normal_prediction",
+      "status": "PASS",
+      "maximum_absolute_change": 2.384185791015625e-07
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/actual_history0_SSD_receives_Bprime",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/Bprime_equals_B_layer0",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/actual_history1_SSD_receives_Bprime",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/Bprime_equals_B_layer1",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/later_prefix_cannot_change_earlier_persistence_state",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/later_prefix_cannot_change_earlier_persistence_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/later_prefix_cannot_change_earlier_B_layer0",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/later_prefix_cannot_change_earlier_B_layer1",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/first_valid_after_leading_missing_initializes_current_response",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/internal_state_holds_across_invalid_records",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-06
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/invalid_record_zero_gradient_raw_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/invalid_record_zero_gradient_reference_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/invalid_record_zero_gradient_global_features",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/invalid_record_zero_gradient_local_residual",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/invalid_record_zero_gradient_local_features",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/all_reached_parameter_gradients_finite",
+      "status": "PASS",
+      "total_parameters": 149469,
+      "trainable_parameters": 149469,
+      "reached_parameters": 149469,
+      "nonzero_gradient_parameters": 149469
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/anchor100",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/observation_bound_003",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/query_reorder_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/query_single_joint_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/query_reorder_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/query_single_joint_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/query_reorder_rate_per_cycle",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/query_single_joint_rate_per_cycle",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/retained_nonnegative_rate_and_monotonic_trend",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/future_cycle_rejected_as_prefix",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/only_registered_component_changes/persistence.rho_net.0.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/only_registered_component_changes/persistence.rho_net.0.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/only_registered_component_changes/persistence.rho_net.2.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/only_registered_component_changes/persistence.rho_net.2.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/only_registered_component_changes/persistence.rho_net.logits",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/has_expected_structural_change",
+      "status": "PASS",
+      "changed_state_keys": [
+        "persistence.rho_net.0.bias",
+        "persistence.rho_net.0.weight",
+        "persistence.rho_net.2.bias",
+        "persistence.rho_net.2.weight",
+        "persistence.rho_net.logits"
+      ],
+      "shared_identical_state_elements": 139902
+    },
+    {
+      "check": "A3/static_channel_rho_initialized09",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 1e-07
+    },
+    {
+      "check": "A3/exactly64_learnable_rho_parameters",
+      "status": "PASS"
+    },
+    {
+      "check": "A3/rho_invariant_to_response_quality_policy",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3/actual_gap_remains_in_retention_exponent",
+      "status": "PASS",
+      "maximum_absolute_error": 2.980232238769531e-07,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A3/first_valid_initialization",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3/static_logits_receive_gradient",
+      "status": "PASS",
+      "gradient_l2": 1.2309328667470254e-07
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/actual_history0_SSD_receives_Bprime",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/B_modulation_retained_layer0",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/actual_history1_SSD_receives_Bprime",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/B_modulation_retained_layer1",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/later_prefix_cannot_change_earlier_persistence_state",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/later_prefix_cannot_change_earlier_persistence_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/later_prefix_cannot_change_earlier_B_layer0",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/later_prefix_cannot_change_earlier_B_layer1",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/first_valid_after_leading_missing_initializes_current_response",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/internal_state_holds_across_invalid_records",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-06
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/invalid_record_zero_gradient_raw_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/invalid_record_zero_gradient_reference_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/invalid_record_zero_gradient_global_features",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/invalid_record_zero_gradient_local_residual",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/invalid_record_zero_gradient_local_features",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/all_reached_parameter_gradients_finite",
+      "status": "PASS",
+      "total_parameters": 139453,
+      "trainable_parameters": 139453,
+      "reached_parameters": 139453,
+      "nonzero_gradient_parameters": 139453
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/anchor100",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/observation_bound_003",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/query_reorder_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/query_single_joint_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/query_reorder_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/query_single_joint_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/query_reorder_rate_per_cycle",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/query_single_joint_rate_per_cycle",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/retained_nonnegative_rate_and_monotonic_trend",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/future_cycle_rejected_as_prefix",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/history.0.mixer.write_gate.input_columns",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/history.0.mixer.write_gate.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/history.1.mixer.write_gate.input_columns",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/history.1.mixer.write_gate.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/persistence.rho_net.0.input_columns",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/persistence.rho_net.0.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.bin_combine.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.bin_combine.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.bin_position",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.combine.0.input_columns",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.combine.0.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.local_encoder.0.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.local_encoder.0.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.local_encoder.2.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.local_encoder.2.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.local_projection.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.local_projection.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.residual_encoder.0.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.residual_encoder.0.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.residual_encoder.2.bias",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/only_registered_component_changes/physics.residual_encoder.2.weight",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/has_expected_structural_change",
+      "status": "PASS",
+      "changed_state_keys": [
+        "history.0.mixer.write_gate.input_columns",
+        "history.0.mixer.write_gate.weight",
+        "history.1.mixer.write_gate.input_columns",
+        "history.1.mixer.write_gate.weight",
+        "persistence.rho_net.0.input_columns",
+        "persistence.rho_net.0.weight",
+        "physics.bin_combine.bias",
+        "physics.bin_combine.weight",
+        "physics.bin_position",
+        "physics.combine.0.input_columns",
+        "physics.combine.0.weight",
+        "physics.local_encoder.0.bias",
+        "physics.local_encoder.0.weight",
+        "physics.local_encoder.2.bias",
+        "physics.local_encoder.2.weight",
+        "physics.local_projection.bias",
+        "physics.local_projection.weight",
+        "physics.residual_encoder.0.bias",
+        "physics.residual_encoder.0.weight",
+        "physics.residual_encoder.2.bias",
+        "physics.residual_encoder.2.weight"
+      ],
+      "shared_identical_state_elements": 120654
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/global_combine_exact_M4_global_columns",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/rho_exact_retained_M4_columns140",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/gate0_exact_M4_state_columns64",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/gate1_exact_M4_state_columns64",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4/FP32_reduced_GEMM_rounding_difference_recorded",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "explanation": "The128-input and64-input CUDA GEMMs may round differently. Mathematical equivalence is checked in FP64 below."
+    },
+    {
+      "check": "A4/physics_equivalent_M4_zero_local_token_FP64_oracle",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-12
+    },
+    {
+      "check": "A4/local_quality_all_zero",
+      "status": "PASS"
+    },
+    {
+      "check": "A4/local_values_masks_noise_completely_removed_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4/local_values_masks_noise_completely_removed_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4/local_values_masks_noise_completely_removed_persistence_penalty",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4/retained_input_really_affects_prediction_raw_viq",
+      "status": "PASS",
+      "maximum_absolute_change": 1.1205673217773438e-05
+    },
+    {
+      "check": "A4/retained_input_really_affects_prediction_reference_viq",
+      "status": "PASS",
+      "maximum_absolute_change": 1.1920928955078125e-07
+    },
+    {
+      "check": "A4/retained_input_really_affects_prediction_global_features",
+      "status": "PASS",
+      "maximum_absolute_change": 8.508563041687012e-05
+    },
+    {
+      "check": "A4/retained_input_really_affects_prediction_policy",
+      "status": "PASS",
+      "maximum_absolute_change": 4.801154136657715e-05
+    },
+    {
+      "check": "A4/removed_input_zero_gradient_local_residual",
+      "status": "PASS",
+      "gradient_is_none": true
+    },
+    {
+      "check": "A4/removed_input_zero_gradient_local_features",
+      "status": "PASS",
+      "gradient_is_none": true
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/actual_history0_SSD_receives_Bprime",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/B_modulation_retained_layer0",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/actual_history1_SSD_receives_Bprime",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/B_modulation_retained_layer1",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/later_prefix_cannot_change_earlier_persistence_state",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/later_prefix_cannot_change_earlier_persistence_rho",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/later_prefix_cannot_change_earlier_B_layer0",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/later_prefix_cannot_change_earlier_B_layer1",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/first_valid_after_leading_missing_initializes_current_response",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/internal_state_holds_across_invalid_records",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 2e-06
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/invalid_record_zero_gradient_raw_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/invalid_record_zero_gradient_reference_viq",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/invalid_record_zero_gradient_global_features",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/invalid_record_zero_gradient_local_residual",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/invalid_record_zero_gradient_local_features",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/all_reached_parameter_gradients_finite",
+      "status": "PASS",
+      "total_parameters": 135245,
+      "trainable_parameters": 135245,
+      "reached_parameters": 135245,
+      "nonzero_gradient_parameters": 135245
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/anchor100",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/observation_bound_003",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/query_reorder_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/query_single_joint_trajectory",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/query_reorder_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/query_single_joint_raw_trend",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/query_reorder_rate_per_cycle",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/query_single_joint_rate_per_cycle",
+      "status": "PASS",
+      "maximum_absolute_error": 0.0,
+      "tolerance": 4e-07
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/retained_nonnegative_rate_and_monotonic_trend",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/future_cycle_rejected_as_prefix",
+      "status": "PASS"
+    },
+    {
+      "check": "training_and_reporting_exact_M4",
+      "status": "PASS"
+    },
+    {
+      "check": "frozen_data_identity_matches_M4",
+      "status": "PASS"
+    },
+    {
+      "check": "24_main_fits_49800_plus8400repeat_plus56smoke",
+      "status": "PASS",
+      "updates_per_arm": {
+        "cell_fold_0": 2100,
+        "cell_fold_1": 2100,
+        "cell_fold_2": 2100,
+        "cell_fold_3": 2100,
+        "cell_fold_4": 2100,
+        "unseen_protocol_sensitivity": 1950
+      }
+    },
+    {
+      "check": "same_endpoint_auxiliary_loss_and_fold_local_scaler",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/real_train_batch_gradients_finite_repeat0",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/real_train_batch_gradients_finite_repeat1",
+      "status": "PASS"
+    },
+    {
+      "check": "A1_M4_LEGACY_FLOW/fresh_real_train_first_batch_bitwise_reproducible",
+      "status": "PASS",
+      "fresh_repeats": 2,
+      "repeats": [
+        {
+          "prediction_sha256": "22c210af623a93dfbc6379499567587110f39ee1d3299a2f5182e884c9d86dc4",
+          "loss": 0.07700005173683167,
+          "gradient_sha256": "90f90ba3f3f6d766bec72b6f31c0a974b4289068253884759491f5e16e4966b5"
+        },
+        {
+          "prediction_sha256": "22c210af623a93dfbc6379499567587110f39ee1d3299a2f5182e884c9d86dc4",
+          "loss": 0.07700005173683167,
+          "gradient_sha256": "90f90ba3f3f6d766bec72b6f31c0a974b4289068253884759491f5e16e4966b5"
+        }
+      ],
+      "optimizer_updates": 0,
+      "test_observations_consumed": 0
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/real_train_batch_gradients_finite_repeat0",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/real_train_batch_gradients_finite_repeat1",
+      "status": "PASS"
+    },
+    {
+      "check": "A2_M4_NO_B_WRITE/fresh_real_train_first_batch_bitwise_reproducible",
+      "status": "PASS",
+      "fresh_repeats": 2,
+      "repeats": [
+        {
+          "prediction_sha256": "ed3f05e2f5141407a1f10a9afb3abbd3d9dd3dc71b1b10eec489132dcfdb564d",
+          "loss": 0.05167730525135994,
+          "gradient_sha256": "537bab7fd7742a59cf3210ec7c7722231c4d564ea6d4cb26e3c9dcff29762e97"
+        },
+        {
+          "prediction_sha256": "ed3f05e2f5141407a1f10a9afb3abbd3d9dd3dc71b1b10eec489132dcfdb564d",
+          "loss": 0.05167730525135994,
+          "gradient_sha256": "537bab7fd7742a59cf3210ec7c7722231c4d564ea6d4cb26e3c9dcff29762e97"
+        }
+      ],
+      "optimizer_updates": 0,
+      "test_observations_consumed": 0
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/real_train_batch_gradients_finite_repeat0",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/real_train_batch_gradients_finite_repeat1",
+      "status": "PASS"
+    },
+    {
+      "check": "A3_M4_STATIC_RHO/fresh_real_train_first_batch_bitwise_reproducible",
+      "status": "PASS",
+      "fresh_repeats": 2,
+      "repeats": [
+        {
+          "prediction_sha256": "cb0acf5c2e93255c5f2acbcb842e56de50e2868523c92262d72fcac65af3700a",
+          "loss": 0.05167730525135994,
+          "gradient_sha256": "0afeaf388243fac6c3884fe802725578f3e1c9a3455f42b5c64f8ce59aa22b01"
+        },
+        {
+          "prediction_sha256": "cb0acf5c2e93255c5f2acbcb842e56de50e2868523c92262d72fcac65af3700a",
+          "loss": 0.05167730525135994,
+          "gradient_sha256": "0afeaf388243fac6c3884fe802725578f3e1c9a3455f42b5c64f8ce59aa22b01"
+        }
+      ],
+      "optimizer_updates": 0,
+      "test_observations_consumed": 0
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/real_train_batch_gradients_finite_repeat0",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/real_train_batch_gradients_finite_repeat1",
+      "status": "PASS"
+    },
+    {
+      "check": "A4_M4_NO_LOCAL_PHYSICS/fresh_real_train_first_batch_bitwise_reproducible",
+      "status": "PASS",
+      "fresh_repeats": 2,
+      "repeats": [
+        {
+          "prediction_sha256": "c3b54e925063a5ab62210632ed81b23832b9242af157caf42b53648e8aab330b",
+          "loss": 0.05165916308760643,
+          "gradient_sha256": "1bb0796e73b026ee0d8122269d7e9ac3bf3913d8a0c4ccb7ee210f10973ff8a5"
+        },
+        {
+          "prediction_sha256": "c3b54e925063a5ab62210632ed81b23832b9242af157caf42b53648e8aab330b",
+          "loss": 0.05165916308760643,
+          "gradient_sha256": "1bb0796e73b026ee0d8122269d7e9ac3bf3913d8a0c4ccb7ee210f10973ff8a5"
+        }
+      ],
+      "optimizer_updates": 0,
+      "test_observations_consumed": 0
+    },
+    {
+      "check": "tested_source_hashes_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "models/unified_matr/__init__.py": "cce92d5151ff423530d8424cd7e177f9627162b040b40a27d2638afc74da0868",
+    "models/unified_matr/model.py": "485bfd06f41da5137f85645577b443ebf7a9b72687d4b5dc84928020a4c96252",
+    "models/unified_matr/legacy_operators.py": "dafc5eca07888e3cf95ea9618bbfe6051863054518f7922cad5ca87f3c17e8f7",
+    "models/unified_matr/methodology_full.py": "a1194adab453b6a9bd03dce5211b7f1fa9ccd6eed66f333695941ef03284bdee",
+    "models/unified_matr/methodology_operators.py": "341cd9cdcc74bb587c556e781f8b9625e97c715f04dec27d20bdf66b2ea52967",
+    "scripts/run_experiment_b.py": "44216d6c78911b05ece3888ae0e017d475ff354f3b0b644d5dd5044562ddbede",
+    "scripts/unified_matr/train_seed42.py": "b5aa9251414191bb74c818064cef5bb6fe2fc1f01971bdd6f3027a757f174608",
+    "scripts/unified_matr/train_methodology_full.py": "67d52db2eedcdc2320d0147a92aa8c1c866f80baae24025e78884e3735cbdc79",
+    "models/unified_matr/methodology_ablations.py": "8ad6ac6d7b67f103baece5b88d38a2c8719778cbb6577d4e9b51a6f171490330",
+    "scripts/unified_matr/train_methodology_ablations.py": "085e342209122b4c6fab51507f8cf13d712ae787626bc8484a548b5cdd3e6a7e",
+    "scripts/verify_m4_ablation_contract.py": "db76d8309469598dc04c5ad19b1ebc709fc7d4937d5ee4407afbfaa5a1417726",
+    "scripts/verify_m4_method_contract.py": "770c3c92dded38ba38e7d549da311fc799258fe3746f606896ed142d1280510d",
+    "configs/unified_matr_ablations_seed42.json": "564cd5bdcf2ff8283247b4f26b669f1ad0f5bd0cd52641ef4d8c1050a80344d8",
+    "research/M4_ABLATIONS_SEED42_CONTRACT_ZH.md": "8c67839cb66210f6bb5117a6510035f8773d3abbea0a17a60d08d16c04a508dc"
+  },
+  "contract_sha256": "8c67839cb66210f6bb5117a6510035f8773d3abbea0a17a60d08d16c04a508dc",
+  "optimizer_updates": 0,
+  "test_observations_consumed": 0,
+  "advantages_zh": "逐arm初始化差异核查、真实SSD输入捕获、移除信息零作用/梯度控制、保留路径扰动、真实训练首批复现。",
+  "limitations_zh": "工程合成控制与真实训练首批支持实现范围，正式性能及完整训练复现需要实际完成。参数量差异按信息移除连接直接记录。",
+  "confidence_zh": "高，限已执行工程控制与SHA绑定范围。",
+  "failure": null
+}

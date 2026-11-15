@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "arm": "A3_M4_STATIC_RHO",
+  "checks": {
+    "fresh_seed42_forward_backward_exact": true,
+    "all_gradients_finite": true,
+    "initial_B_modulation_zero": true,
+    "B_write_branch_matches_ablation": true,
+    "active_B_write_gradients_nonzero": true
+  },
+  "model_contract_sha256": "753c249cd104542d02e42e835a1fac5f4b5aceef8a2ca210371ddba4bc428dcb",
+  "engineering_epochs": 1,
+  "engineering_optimizer_updates": 14,
+  "formal_optimizer_updates": 0,
+  "test_observations_consumed": 0,
+  "fresh_formal_seed42_initialization_required": true,
+  "files": [
+    {
+      "path": "engineering_smoke/A3_M4_STATIC_RHO/cell_fold_0/A3_M4_STATIC_RHO/ENGINEERING_EPOCH_COMPLETE.json",
+      "sha256": "37231462b06edcf61269b45a5f884f3382d93fd3db9e449ba2d39b2cd89c9286"
+    },
+    {
+      "path": "engineering_smoke/A3_M4_STATIC_RHO/cell_fold_0/A3_M4_STATIC_RHO/SELECTED.pt",
+      "sha256": "b0d61e41573bff5db484ea120d481b64925bf9b5903faf91ebe31b055eafee1a"
+    },
+    {
+      "path": "engineering_smoke/A3_M4_STATIC_RHO/cell_fold_0/A3_M4_STATIC_RHO/SELECTION_FROZEN.json",
+      "sha256": "2a6636b3ffc6666db14e35862b233ddd5337cd43e0b4abec04de7def27b4c95a"
+    },
+    {
+      "path": "engineering_smoke/A3_M4_STATIC_RHO/cell_fold_0/A3_M4_STATIC_RHO/TRAIN_SCALER.json",
+      "sha256": "f0b8fd1fdafd58a1f641bbe30cbaad3a0e8b950e93fa6a0bcff7ebd2e58c0efd"
+    },
+    {
+      "path": "engineering_smoke/A3_M4_STATIC_RHO/cell_fold_0/A3_M4_STATIC_RHO/TRAIN_STATE.pt",
+      "sha256": "22fe625c6eb7e31f3c033333b973a09e03c06b140ed85eb919272cf48b15f8e4"
+    },
+    {
+      "path": "engineering_smoke/A3_M4_STATIC_RHO/cell_fold_0/A3_M4_STATIC_RHO/training.jsonl",
+      "sha256": "3986269fcf4ad14504550fa08c56845b4e7257bbfa3c5614453d4a27f95fb295"
+    },
+    {
+      "path": "engineering_smoke/A3_M4_STATIC_RHO/cell_fold_0/A3_M4_STATIC_RHO/UNIT_CONTRACT.json",
+      "sha256": "689044099c46aea69aa51cd7cecb755fb5e0eda21bf1df9ad704a3823aa3b393"
+    },
+    {
+      "path": "engineering_smoke/A3_M4_STATIC_RHO/FIRST_BATCH_REPRODUCIBILITY.json",
+      "sha256": "a2df4c7fb39a3da54a0d0947ffd5580675c0a1459460f1cce5c83d757312aea1"
+    },
+    {
+      "path": "engineering_smoke/A3_M4_STATIC_RHO/RUN_REGISTRATION.json",
+      "sha256": "6d24d108da632e6767109e8a41da6f26c9488ff584d4840006e777e4cadafa54"
+    }
+  ]
+}

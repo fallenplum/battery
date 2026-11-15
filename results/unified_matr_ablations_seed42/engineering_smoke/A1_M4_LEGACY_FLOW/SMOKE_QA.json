@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "arm": "A1_M4_LEGACY_FLOW",
+  "checks": {
+    "fresh_seed42_forward_backward_exact": true,
+    "all_gradients_finite": true,
+    "initial_B_modulation_zero": true,
+    "B_write_branch_matches_ablation": true,
+    "active_B_write_gradients_nonzero": true
+  },
+  "model_contract_sha256": "753c249cd104542d02e42e835a1fac5f4b5aceef8a2ca210371ddba4bc428dcb",
+  "engineering_epochs": 1,
+  "engineering_optimizer_updates": 14,
+  "formal_optimizer_updates": 0,
+  "test_observations_consumed": 0,
+  "fresh_formal_seed42_initialization_required": true,
+  "files": [
+    {
+      "path": "engineering_smoke/A1_M4_LEGACY_FLOW/cell_fold_0/A1_M4_LEGACY_FLOW/ENGINEERING_EPOCH_COMPLETE.json",
+      "sha256": "1e2b67c65eefaebbec266f0bb91fb387e357ca25389ed7a10fd70ed28b8f760a"
+    },
+    {
+      "path": "engineering_smoke/A1_M4_LEGACY_FLOW/cell_fold_0/A1_M4_LEGACY_FLOW/SELECTED.pt",
+      "sha256": "befa651616b75885a8f30637b57fd26b2d2376cb4513564543684e69a1b86ea8"
+    },
+    {
+      "path": "engineering_smoke/A1_M4_LEGACY_FLOW/cell_fold_0/A1_M4_LEGACY_FLOW/SELECTION_FROZEN.json",
+      "sha256": "91ce858f86d3f5f46c2e146c07e51dc52b89948ebc0a97716958896c13b73a35"
+    },
+    {
+      "path": "engineering_smoke/A1_M4_LEGACY_FLOW/cell_fold_0/A1_M4_LEGACY_FLOW/TRAIN_SCALER.json",
+      "sha256": "f0b8fd1fdafd58a1f641bbe30cbaad3a0e8b950e93fa6a0bcff7ebd2e58c0efd"
+    },
+    {
+      "path": "engineering_smoke/A1_M4_LEGACY_FLOW/cell_fold_0/A1_M4_LEGACY_FLOW/TRAIN_STATE.pt",
+      "sha256": "f12c1b85c73a4f398861fdb77f34cf2cf44fe6267ff3be2ffd720d8bd96f0e41"
+    },
+    {
+      "path": "engineering_smoke/A1_M4_LEGACY_FLOW/cell_fold_0/A1_M4_LEGACY_FLOW/training.jsonl",
+      "sha256": "2840ee522ff9215f26584ddb0d089988bcb4c862bd67ffece91ff993a04397d1"
+    },
+    {
+      "path": "engineering_smoke/A1_M4_LEGACY_FLOW/cell_fold_0/A1_M4_LEGACY_FLOW/UNIT_CONTRACT.json",
+      "sha256": "b492939bb17ceb84bd3a97d2c3c337f7ae88d8296c43c96aa4eb16e936d380c1"
+    },
+    {
+      "path": "engineering_smoke/A1_M4_LEGACY_FLOW/FIRST_BATCH_REPRODUCIBILITY.json",
+      "sha256": "96367e120d20fc779ac54bc1153b7e454e13e4a0fbd040b2065f24eac8f8733e"
+    },
+    {
+      "path": "engineering_smoke/A1_M4_LEGACY_FLOW/RUN_REGISTRATION.json",
+      "sha256": "a037a8597885d76fd3d5eeb374e66d8c61c927af88c7043a162f5a5c5faa528c"
+    }
+  ]
+}

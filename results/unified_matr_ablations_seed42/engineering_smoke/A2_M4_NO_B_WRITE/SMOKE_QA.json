@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "arm": "A2_M4_NO_B_WRITE",
+  "checks": {
+    "fresh_seed42_forward_backward_exact": true,
+    "all_gradients_finite": true,
+    "initial_B_modulation_zero": true,
+    "B_write_branch_matches_ablation": true,
+    "active_B_write_gradients_nonzero": true
+  },
+  "model_contract_sha256": "753c249cd104542d02e42e835a1fac5f4b5aceef8a2ca210371ddba4bc428dcb",
+  "engineering_epochs": 1,
+  "engineering_optimizer_updates": 14,
+  "formal_optimizer_updates": 0,
+  "test_observations_consumed": 0,
+  "fresh_formal_seed42_initialization_required": true,
+  "files": [
+    {
+      "path": "engineering_smoke/A2_M4_NO_B_WRITE/cell_fold_0/A2_M4_NO_B_WRITE/ENGINEERING_EPOCH_COMPLETE.json",
+      "sha256": "ef6b52f21f44bc464240c5ff92a508bd55456fe0bcc991a64714067f45256da8"
+    },
+    {
+      "path": "engineering_smoke/A2_M4_NO_B_WRITE/cell_fold_0/A2_M4_NO_B_WRITE/SELECTED.pt",
+      "sha256": "49a7811da0714773fb4feb68b0a65416e8e148c80af447e3703e5f8b7c50a29f"
+    },
+    {
+      "path": "engineering_smoke/A2_M4_NO_B_WRITE/cell_fold_0/A2_M4_NO_B_WRITE/SELECTION_FROZEN.json",
+      "sha256": "0e9c2f27b5c391481eb2cd7b737a5eb26118467e85ff1f9e554459779f35cf81"
+    },
+    {
+      "path": "engineering_smoke/A2_M4_NO_B_WRITE/cell_fold_0/A2_M4_NO_B_WRITE/TRAIN_SCALER.json",
+      "sha256": "f0b8fd1fdafd58a1f641bbe30cbaad3a0e8b950e93fa6a0bcff7ebd2e58c0efd"
+    },
+    {
+      "path": "engineering_smoke/A2_M4_NO_B_WRITE/cell_fold_0/A2_M4_NO_B_WRITE/TRAIN_STATE.pt",
+      "sha256": "c07056e5148e2ec3c404235ca8b1ba339b73cdde4434169bb995f154a032c059"
+    },
+    {
+      "path": "engineering_smoke/A2_M4_NO_B_WRITE/cell_fold_0/A2_M4_NO_B_WRITE/training.jsonl",
+      "sha256": "2f1f84cc7ef6df3dfb48327e064d70cf09bc3f09546af0b281770e965f03d54f"
+    },
+    {
+      "path": "engineering_smoke/A2_M4_NO_B_WRITE/cell_fold_0/A2_M4_NO_B_WRITE/UNIT_CONTRACT.json",
+      "sha256": "f4b44c20f6ad7701fe640bb1fbea9709c1983e3c21334d4065cfce869faeb6d6"
+    },
+    {
+      "path": "engineering_smoke/A2_M4_NO_B_WRITE/FIRST_BATCH_REPRODUCIBILITY.json",
+      "sha256": "598b6901f41e589e40928a115c81600a5276c48081086bf36b0f650a0da6740c"
+    },
+    {
+      "path": "engineering_smoke/A2_M4_NO_B_WRITE/RUN_REGISTRATION.json",
+      "sha256": "15bffe6e5f8b75f23cc3f97812dba84522ff7c0707454db1d600f8058d5967af"
+    }
+  ]
+}

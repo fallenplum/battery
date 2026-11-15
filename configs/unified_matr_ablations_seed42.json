@@ -1,0 +1,160 @@
+{
+  "study_id": "unified_matr_methodology_ablations_seed42",
+  "training_seeds": [
+    42
+  ],
+  "base_commit": "8e61e7c",
+  "base_training_config": "configs/unified_matr_seed42.json",
+  "m4_reference_root": "results/unified_matr_methodology_full_seed42",
+  "models": [
+    "A1_M4_LEGACY_FLOW",
+    "A2_M4_NO_B_WRITE",
+    "A3_M4_STATIC_RHO",
+    "A4_M4_NO_LOCAL_PHYSICS"
+  ],
+  "execution_order": "arm_first_then_original_six_splits",
+  "independent_from_full_M4": true,
+  "ablation_definitions": {
+    "A1_M4_LEGACY_FLOW": {
+      "only_change": "replace nonnegative rate integral head with original analytic LegacyFlowHead",
+      "nonnegative_rate_structure": false
+    },
+    "A2_M4_NO_B_WRITE": {
+      "only_change": "remove both history B write modulation branches",
+      "nonnegative_rate_structure": true
+    },
+    "A3_M4_STATIC_RHO": {
+      "only_change": "replace response-conditioned rho with64 trainable channel logits initialized atlogit(.9), constant over cycle and response",
+      "nonnegative_rate_structure": true
+    },
+    "A4_M4_NO_LOCAL_PHYSICS": {
+      "only_change": "remove local residual/bin physics branches and all local mask/noise inputs; retain raw/reference VIQ and global physics",
+      "global_encoder": "unchanged",
+      "combine": "retain original global64 input slice andbias then remaining shared layers",
+      "rho_context_dim": 140,
+      "write_gate_input_dim": 64,
+      "budget_matching": false,
+      "nonnegative_rate_structure": true
+    }
+  },
+  "split": {
+    "outer_cell_folds": 5,
+    "validation_fraction_of_outer_train": 0.2,
+    "stratify_by": "exact original charging protocol",
+    "identity_unit": "physical cell UID including cross-batch continuations",
+    "protocol_sensitivity_test_fraction": 0.2,
+    "seed": 42,
+    "historical_exposure": "All 169 supplied cells participated in historical exploration. New cross-validation is internal exploratory evidence."
+  },
+  "training": {
+    "initialization": "shared from-scratch seed42",
+    "epochs": 150,
+    "batch_size": 8,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "gradient_clip_norm": 1.0,
+    "checkpoint_selection": "minimum validation cell-mean trajectory MAE",
+    "early_stopping": false,
+    "trajectory_loss": "per-cell mean absolute error over all observed valid future cycles",
+    "auxiliary_rate_windows": [
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1000
+      ]
+    ],
+    "auxiliary_rate_scale": 1000,
+    "auxiliary_rate_loss_weight": 0.1,
+    "persistence_soft_penalty_weight": 0.001,
+    "observation_soh_bounds": [
+      0.0,
+      1.2
+    ],
+    "observation_residual_amplitude": 0.03,
+    "num_workers": 0,
+    "max_concurrent_gpu_runs": 1
+  },
+  "reporting": {
+    "primary": "cell-mean full observed future trajectory MAE and RMSE",
+    "horizon_bins": [
+      [
+        101,
+        200
+      ],
+      [
+        201,
+        500
+      ],
+      [
+        501,
+        1000
+      ],
+      [
+        1001,
+        1000000
+      ]
+    ],
+    "secondary_rates": [
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1000
+      ]
+    ],
+    "eol80_prediction_query_max_cycle": 5000,
+    "eol80_definition": "first interpolated trend crossing of nominal SOH0.8 after cycle100, prediction censored at registered5000 query horizon",
+    "eol80_metric": "Harrell concordance over observed EOL80 events and right-censored last-valid original cycles; restrict this secondary endpoint to cells still at risk at100",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 42,
+    "sampling_units": [
+      "paired physical cell",
+      "exact protocol group"
+    ],
+    "single_seed_limitation": "Training-seed variability is unmeasured."
+  },
+  "formal_units": 24,
+  "formal_optimizer_updates": 49800,
+  "engineering_epochs_per_arm": 1,
+  "engineering_optimizer_updates_per_arm": 14,
+  "engineering_optimizer_updates_total": 56,
+  "full_training_reproduction": {
+    "enabled": true,
+    "arms": [
+      "A1_M4_LEGACY_FLOW",
+      "A2_M4_NO_B_WRITE",
+      "A3_M4_STATIC_RHO",
+      "A4_M4_NO_LOCAL_PHYSICS"
+    ],
+    "split": "cell_fold_0",
+    "epochs": 150,
+    "optimizer_updates_per_arm": 2100,
+    "optimizer_updates_total": 8400,
+    "root_decision_pending": false,
+    "phase": "after_all24_formal_fits",
+    "execution_order": [
+      "A1_M4_LEGACY_FLOW",
+      "A2_M4_NO_B_WRITE",
+      "A3_M4_STATIC_RHO",
+      "A4_M4_NO_LOCAL_PHYSICS"
+    ]
+  },
+  "comparison": "same-split saved M4_FULL_METHOD predictions only",
+  "paired_contrast_direction": {
+    "error_metrics": "ablation_error_minus_full_error, positive favors full M4",
+    "concordance": "full_C_minus_ablation_C, positive favors full M4"
+  },
+  "historical_exposure": "The169 cells and prior M4 scores are already exposed. This is fixed-cohort internal single-seed evidence.",
+  "total_executed_optimizer_updates": 58256
+}
