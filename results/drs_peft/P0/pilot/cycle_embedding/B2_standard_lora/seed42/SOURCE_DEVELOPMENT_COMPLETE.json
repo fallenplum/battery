@@ -1,0 +1,95 @@
+{
+  "status": "SOURCE_DEVELOPMENT_COMPLETE",
+  "stage": "P0",
+  "method": "B2_standard_lora",
+  "bridge": "cycle_embedding",
+  "seed": 42,
+  "epochs": 60,
+  "updates": 660,
+  "validation": {
+    "cells": 30,
+    "observations": 21827,
+    "mae": 0.033880037829654555,
+    "rmse": 0.06123760462110317,
+    "protocol_macro_mae": 0.029305174641418234
+  },
+  "best_epoch": 56,
+  "trainable_parameters": 119457,
+  "elapsed_seconds": 47.744470298988745,
+  "peak_gpu_memory_bytes": {
+    "allocated": 311452160,
+    "reserved": 385875968
+  },
+  "verification_peak_gpu_memory_bytes": {
+    "allocated": 311452160,
+    "reserved": 385875968
+  },
+  "selected_checkpoint_sha256": "3d2715c9d739e59544494acf4da0aae9b025411126e5c317c1b79636d96634f6",
+  "prediction_replay_max_absolute_error": 0.0,
+  "target_query_labels_used": 0,
+  "frozen_parameter_sha256": "a30f5c06e0d594189d9fcec7e13e3b302b7fec004d5e69da4ca42deb5d123488",
+  "frozen_parameters_unchanged": true,
+  "final_target_test_status": "SEALED_NOT_EVALUATED",
+  "files": [
+    {
+      "path": "BACKBONE_IDENTITY.json",
+      "sha256": "f33ed94278775f87985f6c78d8932897e55e294961cad1350e7a92a4071ad452"
+    },
+    {
+      "path": "CHECKPOINT_SELECTED.pt",
+      "sha256": "3d2715c9d739e59544494acf4da0aae9b025411126e5c317c1b79636d96634f6"
+    },
+    {
+      "path": "CHECKPOINT_SELECTION.json",
+      "sha256": "e0cd70b14cb43a3020587e698e7cdad7992c9296831c560bcd2965f36d2603ca"
+    },
+    {
+      "path": "DATA_FINGERPRINT.json",
+      "sha256": "0d240f02cfc1896166e53d6e51b6983b2bd9a0d98883550446e884b49d37803a"
+    },
+    {
+      "path": "EPISODE_IDS.json",
+      "sha256": "45a672f6134ae2283fa3a8c05408271cc76d051f0c9ba622c21b18d8f581dc87"
+    },
+    {
+      "path": "EXECUTION_ENVIRONMENT.json",
+      "sha256": "1db4f325196418dadbb4a25437878349e65954e7227e3ebc1b67eb741384e4e1"
+    },
+    {
+      "path": "RUN_CONFIG.json",
+      "sha256": "0597d07a7a780807312df79df60933905ab1cf2be00f75e598938dfc47782c38"
+    },
+    {
+      "path": "SOURCE_SCALER.json",
+      "sha256": "3af971815f4c71e0d9f5a9aa5094167d1fad8b55160ec7774402c48c090b7c7d"
+    },
+    {
+      "path": "SOURCE_SNAPSHOT.json",
+      "sha256": "b6ddc943ba8acdaacda6a94424daf3c3acc220d9a039521a436b5988651a5350"
+    },
+    {
+      "path": "SOURCE_VALIDATION_CELL_METRICS.csv",
+      "sha256": "6f3078617481dc69a9e34b12cf970076ce4161fb00c5bfb04f73bc55d46d6b0d"
+    },
+    {
+      "path": "SOURCE_VALIDATION_PREDICTIONS.npz",
+      "sha256": "1fa265de271c79bc253498a84659acb75fe42510d90e1fd64c4ca7e4e3b172be"
+    },
+    {
+      "path": "TRAINABLE_PARAMETER_REPORT.json",
+      "sha256": "6c3d3e0e959bbf7d0636771e6139f4cafd4bc09d7393593147ae9e3699272f7c"
+    },
+    {
+      "path": "TRAIN_LOG.json",
+      "sha256": "f83102ce14bc106e46426afe80f201bab630feb9c66905fa5749d01838f29fb3"
+    },
+    {
+      "path": "TRAIN_LOG.jsonl",
+      "sha256": "4a376d22b8048f019852069efd8b80673be29aa9f5bb356e8bff77b197c4bdbb"
+    },
+    {
+      "path": "TRAIN_STATE.pt",
+      "sha256": "3538658dbac81fd8f5e4c9071dcf0eb83a8eb7f214ec85fc2e2f70357f0d189a"
+    }
+  ]
+}

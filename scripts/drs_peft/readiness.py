@@ -234,6 +234,22 @@ def freeze_json(path, value):
 
 def report(root, inventory, extras, lock, meta, environment):
     missing = [r['path'] for r in inventory if not r['exists']]
+    server_path = root / 'research/drs_peft/SERVER_ENVIRONMENT.json'
+    server_note = '服务器环境附件尚未回同步，硬件与软件身份等待实际ENV证据。'
+    if server_path.is_file():
+        server = json.loads(server_path.read_text(encoding='utf-8'))
+        gpu_names = sorted({str(item['name']) for item in server['gpus']})
+        memory = sorted({int(item['memory_bytes']) for item in server['gpus']})
+        versions = {name: server['versions'].get(name, '未记录') for name in
+                    ('uni2ts', 'numpy', 'pandas', 'scipy', 'safetensors', 'huggingface-hub')}
+        server_note = (f'已实读SERVER_ENVIRONMENT.json，SHA为{digest(server_path)}。'
+            f'实际设备{len(server["gpus"])}卡，型号{gpu_names}，设备可见容量字节{memory}。'
+            f'Python为{server["python"]}，Torch为{server["torch"]}，CUDA为{server["cuda"]}。'
+            f'依赖版本为{json.dumps(versions, ensure_ascii=False)}。'
+            '当前共享服务器指定GPU5单作业，使用隔离环境与本地vendor uni2ts。'
+            '关键vendor源码SHA保存在环境附件，各run另有执行环境。'
+            '旧系统Python3.8存在libcupti缺失，正式任务使用独立环境。'
+            '公共报告保留硬件和软件身份，连接凭据留在私有运行环境。')
     lines = ['# DRS-PEFT 仓库、数据与少样本划分审计', '',
         f'本轮完整读取合同16项材料所展开的17个文件，实际存在{len(inventory)-len(missing)}/{len(inventory)}。每项保留完整字节SHA。', '',
         '**状态为数据与仓库就绪。P0模型性能、P1–P5科学实验由各阶段真实运行记录验收。**', '',
@@ -288,12 +304,12 @@ def report(root, inventory, extras, lock, meta, environment):
     for name, package in environment['dependencies'].items():
         lines.append(f'| {name} | {package["installed"]} | {package["version"]} |')
     lines += ['', '```json', json.dumps({k: v for k, v in environment.items() if k not in ('dependencies', 'python_executable')}, ensure_ascii=False, indent=2), '```', '',
-        '服务器同期硬件核验由主执行代理提供，当前记录为8×RTX A6000、每卡49140MiB，准备以GPU5隔离单作业执行。新隔离环境计划复用只读Torch2.4.1+cu121。旧系统Python3.8存在libcupti缺失。服务器软件与实际运行细节以主执行代理后续ENV.json为准，本报告未复制服务器连接凭据。', '',
+        server_note, '',
         '## 优势与劣势（风险）', '',
         '- 优势为完整物理UID、源工况互斥、固定Query和独立Support，source-only归一化及真实前缀漂移使方法的信息预算可追溯。',
         '- 劣势（风险）为retrospective历史暴露、MATR exact-group高shot样本稀少、Stanford供应轴与BEEP版本缺口、HUST无EOL80事件，以及三域放电窗口和化学体系差异。跨域主结果需要真实训练与固定Query评分。', '',
         '## 置信度评级', '',
-        '本地存在性、SHA、UID划分、分母与已安装依赖的置信度为高，均由本CLI现场读取。原冻结580项数值性质引用其绑定的历史核验。方法有效性尚待真实训练和独立重放。服务器硬件依据主执行代理同期实测记录，环境附件补齐后可独立复核。', '',
+        '本地存在性、SHA、UID划分、分母与已安装依赖的置信度为高，均由本CLI现场读取。原冻结580项数值性质引用其绑定的历史核验。方法有效性由对应阶段真实训练与独立重放决定。已回同步的服务器环境附件可与各run交叉核验。', '',
         '## 拓展思考与可能关心的问题', '',
         '共同8Query子集支持同一对象上的K0/1/3/5曲线，全可行分母呈现数据覆盖。meta pooled K10可用于源校准预算开发，最终协议A的exact-group K10继续记录NOT_FEASIBLE。跨域K10由各自固定Support池执行。', '',
         '## 可重跑命令', '', '```powershell',
@@ -321,7 +337,7 @@ def main():
     freeze_json(root / 'research/drs_peft/DATA_SPLIT_LOCK.json', lock)
     environment = local_environment()
     target = root / 'research/drs_peft/REPOSITORY_READINESS_ZH.md'
-    target.write_text(report(root, inventory, extras, lock, meta, environment), encoding='utf-8')
+    target.write_text(report(root, inventory, extras, lock, meta, environment), encoding='utf-8', newline='\n')
     print(json.dumps(dict(status='REPOSITORY_AND_DATA_SPLIT_READY', mandatory_files_read=len(texts),
         meta_query=len(meta['query_ids']), meta_support_candidates=len(meta['support_pool_ids']),
         meta_contract_sha256=meta['meta_episode_contract_sha256'], split_lock_sha256=lock['split_lock_sha256'],
