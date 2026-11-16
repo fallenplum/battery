@@ -93,6 +93,28 @@ def main():
             check(f'{domain}_{fold}_capacity_match',abs(cap-full)/full<.01)
         for arm,ids in ids_seen.items():
             check(f'{domain}_{arm}_OOF_unique',len(ids)==len(b.ids) and set(ids)==set(b.ids))
+        lookup = {uid:i for i,uid in enumerate(b.ids)}
+        for path in sorted((OUT/'ORACLE_DIAGNOSTIC'/domain).glob('**/STARTS.json')):
+            log = json.loads(path.read_text())
+            i = lookup[log['cell_uid']]
+            m = b.observed[i]
+            label = path.parent.relative_to(OUT).as_posix()
+            with np.load(path.parent/'predictions.npz') as a:
+                check(label+'_query',np.array_equal(a['query'],b.query[m]))
+                check(label+'_target',np.array_equal(a['target'],b.targets[i,m]))
+                check(label+'_anchor',float(a['anchor'])==float(b.anchor[i]))
+                check(label+'_eight_starts',len(log['starts'])==8 and a['prediction'].shape==(8,int(m.sum())))
+                check(label+'_finite',np.isfinite(a['prediction']).all())
+                for j,r in enumerate(log['starts']):
+                    loss=float(np.abs(a['prediction'][j]-a['target']).mean())
+                    check(label+f'_start_{j}_loss',abs(loss-r['mae'])<1e-13)
+                    calculated=evaluate(log['family'],r['raw'],(a['query'].astype(float)-100)/1000,
+                                        float(b.anchor[i]),log['shared_values'])[0]
+                    check(label+f'_start_{j}_function',np.allclose(calculated,a['prediction'][j],atol=1e-13,rtol=1e-13))
+            check(label+'_best',log['best_start']==min(log['starts'],key=lambda r:r['mae'])['start'])
+        for fold in settings()['folds']:
+            shared=json.loads((OUT/'ORACLE_DIAGNOSTIC'/domain/'shared'/fold/'COMPLETE.json').read_text())
+            check(f'{domain}_{fold}_shared_train_only',shared['training_ids']==b.folds[fold]['train'])
         models = json.loads((OUT/'D4'/domain/'RATE_PROXY_MODELS.json').read_text())
         check(f'{domain}_rate_proxy_units',len(models)==80)
         for j,r in enumerate(models):
