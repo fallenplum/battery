@@ -649,3 +649,182 @@ def test_p1_candidate_family_streaming_is_secondary_and_state_preserving(tmp_pat
     assert len(pd.read_csv(tmp_path / "P1_CANDIDATE_CELL_CHECKS.csv")) == 40
     assert state_fingerprint(model) == fingerprint
     assert [parameter.requires_grad for parameter in model.parameters()] == flags
+
+
+def test_p2_driver_attempts_all_trials_and_retains_failures(
+    tmp_path_factory, monkeypatch
+):
+    import json
+    from pathlib import Path
+    import sys
+    from types import SimpleNamespace
+
+    import numpy as np
+
+    from scripts.drs_peft import run_p2
+    from scripts.drs_peft.data import file_hash, write_json
+
+    folder = tmp_path_factory.mktemp("p2driver")
+    public = folder / "results"
+    private = folder / "runtime"
+    write_json(
+        public / "P0/P0_GATE.json", dict(status="NEGATIVE", execution_complete=True)
+    )
+    write_json(
+        public / "P0/BRIDGE_SELECTION.json", dict(selected_bridge="native_multivariate")
+    )
+    write_json(public / "P1/P1_GATE.json", dict(status="NEGATIVE"))
+    selected = folder / "source.pt"
+    selected.write_bytes(b"synthetic source fixture")
+    config = Path(__file__).resolve().parents[2] / "configs/drs_peft/execution_v1.json"
+    calls = []
+    fixture_state = {"fail_grad_core": True}
+
+    def fake_step(optimizer):
+        return None
+
+    monkeypatch.setattr(torch.optim.AdamW, "step", fake_step)
+    monkeypatch.setattr(run_p2, "configure", lambda: None)
+    monkeypatch.setattr(
+        run_p2,
+        "load_source",
+        lambda root: (
+            SimpleNamespace(),
+            dict(policy=np.zeros((85, 1))),
+            None,
+            dict(
+                source_cell_roles=dict(
+                    source_train=[f"synthetic-{i}" for i in range(85)]
+                )
+            ),
+        ),
+    )
+    monkeypatch.setattr(run_p2, "load_p0_checkpoint", lambda *args: ({}, selected))
+    monkeypatch.setattr(run_p2, "_basis_bundle", lambda *args: {})
+    monkeypatch.setattr(run_p2, "_factory", lambda *args: lambda: None)
+
+    def train_fixture(*args, **kwargs):
+        destination = Path(args[7])
+        destination.mkdir(parents=True, exist_ok=True)
+        closed = destination / "SOURCE_DEVELOPMENT_COMPLETE.json"
+        if closed.exists():
+            return json.loads(closed.read_text(encoding="utf-8"))
+        method = args[9]
+        lr = kwargs["adapter_lr"]
+        calls.append((method, lr))
+        write_json(
+            destination / "RUN_CONFIG.json", dict(fixture=True, method=method, lr=lr)
+        )
+        torch.optim.AdamW.step(None)
+        if (
+            method == "grad_core"
+            and fixture_state["fail_grad_core"]
+            or method == "lora"
+            and lr == 0.0001
+        ):
+            torch.save(dict(updates=1, elapsed=0.01), destination / "TRAIN_STATE.pt")
+            raise FloatingPointError("synthetic nonfinite LR trial")
+        if method == "lora_ga" and lr == 0.0001:
+            raise torch.cuda.OutOfMemoryError("synthetic CUDA OOM")
+        checkpoint = destination / "CHECKPOINT_SELECTED.pt"
+        checkpoint.write_bytes(b"synthetic fitted state")
+        receipt = dict(
+            status="SOURCE_DEVELOPMENT_COMPLETE",
+            updates=1,
+            elapsed_seconds=0.01,
+            validation=dict(mae=float(lr)),
+            selected_checkpoint_sha256=file_hash(checkpoint),
+            target_query_labels_used=0,
+        )
+        write_json(destination / "SOURCE_DEVELOPMENT_COMPLETE.json", receipt)
+        return receipt
+
+    monkeypatch.setattr(run_p2, "train_source_unit", train_fixture)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "run_p2",
+            "--config",
+            str(config),
+            "--output-root",
+            str(public),
+            "--private-root",
+            str(private),
+            "--backbone-dir",
+            str(folder),
+            "--device",
+            "cpu",
+            "--phase",
+            "search",
+        ],
+    )
+    run_p2.main()
+    assert len(calls) == 18
+    assert all(
+        sum(actual == method for actual, _ in calls) == 3
+        for method in {value[0] for value in calls}
+    )
+    decision = json.loads((public / "P2/P2_GATE.json").read_text(encoding="utf-8"))
+    assert decision["status"] == "BLOCKED"
+    assert decision["failed_methods"] == ["grad_core"]
+    failures = list(private.glob("search/**/FAILED_TRIAL.json"))
+    assert len(failures) == 5
+    for path in failures:
+        record = json.loads(path.read_text(encoding="utf-8"))
+        assert record["optimizer_steps_completed_total"] == 1
+        assert record["optimizer_steps_completed_this_invocation"] == 1
+        assert record["target_query_labels_used"] == 0
+    assert torch.optim.AdamW.step is fake_step
+    fixture_state["fail_grad_core"] = False
+    worker_public = folder / "worker_results"
+    worker_private = folder / "worker_runtime"
+    for name in ("P0/P0_GATE.json", "P0/BRIDGE_SELECTION.json", "P1/P1_GATE.json"):
+        write_json(
+            worker_public / name,
+            json.loads((public / name).read_text(encoding="utf-8")),
+        )
+    base_args = [
+        "run_p2",
+        "--config",
+        str(config),
+        "--output-root",
+        str(worker_public),
+        "--private-root",
+        str(worker_private),
+        "--backbone-dir",
+        str(folder),
+        "--device",
+        "cpu",
+    ]
+    monkeypatch.setattr(sys, "argv", base_args + ["--phase", "search"])
+    run_p2.main()
+    frozen = {
+        name: file_hash(worker_public / "P2" / name)
+        for name in (
+            "P2_REGISTRATION.json",
+            "P2_LR_SELECTION.json",
+            "P2_SEARCH_COMPLETE.json",
+        )
+    }
+    before = len(calls)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        base_args + ["--phase", "formal", "--formal-seeds", "42", "--no-summary"],
+    )
+    run_p2.main()
+    assert len(calls) - before == 10
+    assert (
+        len(list(worker_private.glob("formal/**/SOURCE_DEVELOPMENT_COMPLETE.json")))
+        == 10
+    )
+    assert not list(worker_private.glob("formal/**/seed123"))
+    assert not list(worker_private.glob("formal/**/seed2026"))
+    assert not (worker_public / "P2/P2_GATE.json").exists()
+    assert all(
+        file_hash(worker_public / "P2" / name) == digest
+        for name, digest in frozen.items()
+    )
+    run_p2.main()
+    assert len(calls) - before == 10

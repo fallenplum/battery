@@ -102,6 +102,10 @@ Head和Bridge的训练参数应加到源阶段总预算中。P4冻结这些组�
 
 ## 工程检查与当前边界
 
-tests/drs_peft/test_peft.py在本机tslib环境运行，13项tensor测试通过，覆盖CPU/CUDA、batch1/8、显式矩阵oracle、零增量等价、核心/门控梯度、目标delta唯一作用域、state_dict恢复、上下文恢复和批置换、XS的Sigma、GA补偿、参数匹配与安装失败回滚。本次测试只执行1次合成AdamW更新，属于工程证据。
+tests/drs_peft/test_peft.py在本机tslib环境完整运行20项测试通过，覆盖CPU/CUDA、batch1/8、显式矩阵oracle、零增量等价、核心/门控梯度、目标delta唯一作用域、state_dict恢复、上下文恢复和批置换、XS的Sigma、GA补偿、参数匹配与安装失败回滚。新增P1真梯度toy覆盖source-only目标哨兵、极端目标未来扰动、零梯度无定义项、缓存hash、首尾重算及临时flags恢复。三seed门槛、label-shuffle证据边界、P0阴性工程放行、P2两预算负支与失败分类也有合成fixture验证。每次完整suite执行1次合成AdamW更新，方法审计agent累计完整suite三次，共3次合成更新，属于工程证据。
+
+run_p1.py复用正式P0 B0的官方权重与源头部，主QV每seed315个逐cell采集、10个首尾重算，另有qkvo_ffn source12/meta8流式次要描述性诊断，总计345个单cell前后向、0优化器更新。次要诊断只保留源均值、谱、留出投影、IDs与hash，缺少完整candidate协方差和重采样推断，禁止据此更改主QV目标或rank。LoRA-GA使用的mean_gradients为physical-cell等权，P1 mean-SVD的group_mean_gradients单独按exact protocol等权保存。
+
+P2在H1阴性时仍完成同rank4六方法与近实际参数core56四方法的三seed受控比较，额外rank2/8停止。每方法三LR在seed42上各60epoch搜索后冻结LR，所有正式seed各120epoch。明确定义的nonfinite/CUDA OOM登记失败trial与真实已完成step，其他身份或hash错误直接中止。必要方法三个LR全部失败时标BLOCKED。最终目标Query标签参与训练、梯度、选模或评分计算为0，整cohort数据文件可以在内存加载。
 
 优势为参数作用域、原始W0身份和条件化更新有明确可核对的实现，强对照算子已有原始代码参照。风险为新的少样本迁移性能尚未由这些tensor测试建立，Σ条件数、source group有限支持、门控尺度自由度与固定子空间的外域失配均需真实数据评价。实现算子核验置信度为高，H1/H2/H3和新颖性的实验支持仍待后续阶段证据。
