@@ -106,3 +106,27 @@ python scripts/run_experiment_b.py --eligible-csv results/d0/eligible_cells.csv 
 早期Q(V)增加了151颗电池中期速率的预测信息，在共享42颗电池的速率变化量任务中增量证据不足。独立分析完成200次Ridge候选拟合、40个选定模型及507条Hinge资格诊断，408项复核通过。软转变中心与Hinge候选均缺少真实物理Knee认证。单种子、历史暴露和随访选择限制详见报告。
 
 完整代码、权重和逐电池产物位于[模型结果](results/unified_matr_m5_bounded_seed42/)及[速率分析](results/unified_matr_m5_identifiability_seed42/)。研究定义见[M5合同](research/M5_BOUNDED_AND_RATE_IDENTIFIABILITY_CONTRACT_ZH.md)。
+
+
+## N012 独立编码器与解码器实验
+
+2026-11-16 登记的 seed42 实验已完成 MATR169 与 HUST77 的 N0 资格核验，以及两域各45组、共90组150轮从头训练。正式更新141,750次。90个选定权重正常重放误差均为0，2,953项独立验收通过。逐折选择、四时距、协议分组、原始训练/验证曲线、全部权重与逐电池预测一并交付。
+
+| 数据域 | N1折内选模 MAE | N2折内选模 MAE |
+| --- | --- | --- |
+| MATR | 0.030660 | 0.030332 |
+| HUST | 0.023898 | 0.021824 |
+
+MATR本轮嵌套选模误差高于历史M1的0.018762，历史M1的显式物理统计及训练损失也有差异。两域的physics_basis相对free_rate与monotone_spline的MAE配对区间均覆盖零，三项具体基函数的独立收益证据不足。Stanford维持本轮原生轴资格N0_BLOCKED，已有181颗供应坐标资料的使用口径保留。
+
+完整材料见[N0数据审计](report/N012/N0_DATA_AUDIT.md)、[N1编码器结果](report/N012/N1_RESULTS.md)、[N2解码器结果](report/N012/N2_RESULTS.md)、[最终研究评估](report/N012/N012_FINAL_RESEARCH_ASSESSMENT.md)及[完整产物](results/N012_independent/)。[本机执行合同](research/N012_LOCAL_EXECUTION_LOCK_ZH.md)列明正式运行前的修正与单种子范围。[评价计划](research/N012_EVALUATION_PLAN_ZH.md)在任何新候选测试评分之前封存。
+
+```powershell
+python -m pytest -q tests/test_n012.py --basetemp runtime/n012_pytest
+python -m n012.run --repo-root . --domain MATR --phase all --epochs 150 --device cuda --out results/N012_independent
+python -m n012.run --repo-root . --domain HUST --phase all --epochs 150 --device cuda --out results/N012_independent
+python -m n012.analyze --out results/N012_independent
+python -m n012.verify --out results/N012_independent --device cuda
+python -m n012.plot_history --out results/N012_independent
+python -m n012.report --out results/N012_independent
+```

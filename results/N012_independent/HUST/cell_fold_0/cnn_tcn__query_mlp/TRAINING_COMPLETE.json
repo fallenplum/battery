@@ -1,0 +1,133 @@
+{
+  "status": "TRAINED_VALIDATION_ONLY",
+  "unit_contract": {
+    "domain": "HUST",
+    "fold": "cell_fold_0",
+    "encoder": "cnn_tcn",
+    "decoder": "query_mlp",
+    "seed": 42,
+    "epochs": 150,
+    "batch_size": 8,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "width": 64,
+    "gradient_clip": 1.0,
+    "loss": "cell_weighted_masked_future_MAE",
+    "split_sha256": "d3d63a381cdcb4bb1d58db6202531b62b77c5a1e499afb809128d3b63f688189",
+    "roles": {
+      "train": [
+        "HUST_9-7",
+        "HUST_10-1",
+        "HUST_2-6",
+        "HUST_9-5",
+        "HUST_10-8",
+        "HUST_1-6",
+        "HUST_9-1",
+        "HUST_10-2",
+        "HUST_6-4",
+        "HUST_10-5",
+        "HUST_3-8",
+        "HUST_6-1",
+        "HUST_5-2",
+        "HUST_1-4",
+        "HUST_5-4",
+        "HUST_9-6",
+        "HUST_2-4",
+        "HUST_8-4",
+        "HUST_9-8",
+        "HUST_1-3",
+        "HUST_3-5",
+        "HUST_6-2",
+        "HUST_3-3",
+        "HUST_8-7",
+        "HUST_3-2",
+        "HUST_5-6",
+        "HUST_2-3",
+        "HUST_10-6",
+        "HUST_8-8",
+        "HUST_7-3",
+        "HUST_4-6",
+        "HUST_5-1",
+        "HUST_6-8",
+        "HUST_2-2",
+        "HUST_4-8",
+        "HUST_1-2",
+        "HUST_2-5",
+        "HUST_7-2",
+        "HUST_10-3",
+        "HUST_8-1",
+        "HUST_6-6",
+        "HUST_10-7",
+        "HUST_4-1",
+        "HUST_10-4",
+        "HUST_5-7",
+        "HUST_3-6",
+        "HUST_9-2",
+        "HUST_2-8",
+        "HUST_5-5"
+      ],
+      "validation": [
+        "HUST_8-2",
+        "HUST_7-5",
+        "HUST_7-6",
+        "HUST_3-1",
+        "HUST_9-3",
+        "HUST_7-1",
+        "HUST_4-5",
+        "HUST_1-8",
+        "HUST_2-7",
+        "HUST_7-8",
+        "HUST_1-7",
+        "HUST_9-4"
+      ],
+      "test": [
+        "HUST_8-3",
+        "HUST_4-7",
+        "HUST_5-3",
+        "HUST_4-4",
+        "HUST_3-7",
+        "HUST_6-3",
+        "HUST_1-1",
+        "HUST_8-5",
+        "HUST_7-4",
+        "HUST_7-7",
+        "HUST_8-6",
+        "HUST_6-5",
+        "HUST_4-2",
+        "HUST_3-4",
+        "HUST_1-5",
+        "HUST_4-3"
+      ]
+    },
+    "study_sha256": "edf0fce8fd55df57bd1047b1f9ac56c753b8711fd9a474db173e4074295adb31",
+    "expected_updates": 1050
+  },
+  "validation_mae": 0.01485349942699526,
+  "best_epoch": 142,
+  "updates": 1050,
+  "parameters": 104273,
+  "elapsed_seconds": 45.09400000004098,
+  "test_observations_consumed": 0,
+  "files": [
+    {
+      "path": "UNIT_CONTRACT.json",
+      "sha256": "70949ec4e14ddb30a88f324701e1f3596108b0cf7f9e5ea7b8f0eded32b641cf"
+    },
+    {
+      "path": "SCALER_TRAIN_ONLY.json",
+      "sha256": "87e3842bb4a5ad32ebf243d17e20b7605fd81ef17b3f6025782b8f10f42efa83"
+    },
+    {
+      "path": "HISTORY.json",
+      "sha256": "99ea85d1fccb542164e31e405c0dab8cfe48c5c26f97d37edae261e5d61da37e"
+    },
+    {
+      "path": "BEST.pt",
+      "sha256": "3ff838e3f2180141cffb383a50d36b5e30f14e2f161c5f7ad4acebdbc642cba5"
+    },
+    {
+      "path": "TRAIN_STATE.pt",
+      "sha256": "a0afdae0a9c3b39cee3c6ee72f29d092950b3bd69965676b49e1935fb9d3ff24"
+    }
+  ]
+}

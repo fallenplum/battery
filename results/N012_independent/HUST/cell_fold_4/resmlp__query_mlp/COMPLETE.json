@@ -1,0 +1,181 @@
+{
+  "status": "EVALUATED",
+  "unit_contract": {
+    "domain": "HUST",
+    "fold": "cell_fold_4",
+    "encoder": "resmlp",
+    "decoder": "query_mlp",
+    "seed": 42,
+    "epochs": 150,
+    "batch_size": 8,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "width": 64,
+    "gradient_clip": 1.0,
+    "loss": "cell_weighted_masked_future_MAE",
+    "split_sha256": "aca05d0d812a60b35ca4bd725811bad6fe14b75e12a9168328cb7f3a9e851129",
+    "roles": {
+      "train": [
+        "HUST_1-8",
+        "HUST_2-5",
+        "HUST_5-7",
+        "HUST_4-2",
+        "HUST_7-4",
+        "HUST_2-3",
+        "HUST_9-8",
+        "HUST_9-7",
+        "HUST_10-5",
+        "HUST_8-3",
+        "HUST_8-7",
+        "HUST_6-6",
+        "HUST_8-6",
+        "HUST_4-5",
+        "HUST_2-4",
+        "HUST_6-8",
+        "HUST_4-7",
+        "HUST_5-2",
+        "HUST_1-6",
+        "HUST_5-1",
+        "HUST_3-6",
+        "HUST_4-3",
+        "HUST_10-4",
+        "HUST_3-4",
+        "HUST_1-4",
+        "HUST_6-2",
+        "HUST_4-6",
+        "HUST_7-5",
+        "HUST_8-4",
+        "HUST_6-5",
+        "HUST_8-2",
+        "HUST_10-3",
+        "HUST_8-8",
+        "HUST_7-6",
+        "HUST_7-8",
+        "HUST_3-7",
+        "HUST_1-7",
+        "HUST_3-3",
+        "HUST_10-1",
+        "HUST_10-2",
+        "HUST_9-1",
+        "HUST_6-1",
+        "HUST_4-8",
+        "HUST_1-2",
+        "HUST_8-5",
+        "HUST_3-1",
+        "HUST_3-2",
+        "HUST_6-3",
+        "HUST_7-7",
+        "HUST_4-1"
+      ],
+      "validation": [
+        "HUST_5-3",
+        "HUST_7-1",
+        "HUST_10-8",
+        "HUST_1-3",
+        "HUST_1-5",
+        "HUST_5-4",
+        "HUST_9-3",
+        "HUST_10-7",
+        "HUST_9-2",
+        "HUST_10-6",
+        "HUST_1-1",
+        "HUST_4-4"
+      ],
+      "test": [
+        "HUST_6-4",
+        "HUST_7-2",
+        "HUST_3-8",
+        "HUST_3-5",
+        "HUST_5-5",
+        "HUST_9-4",
+        "HUST_7-3",
+        "HUST_2-6",
+        "HUST_8-1",
+        "HUST_2-8",
+        "HUST_2-7",
+        "HUST_9-6",
+        "HUST_5-6",
+        "HUST_9-5",
+        "HUST_2-2"
+      ]
+    },
+    "study_sha256": "edf0fce8fd55df57bd1047b1f9ac56c753b8711fd9a474db173e4074295adb31",
+    "expected_updates": 1050
+  },
+  "validation_mae": 0.02158013588550674,
+  "best_epoch": 38,
+  "updates": 1050,
+  "parameters": 43905,
+  "elapsed_seconds": 25.51600000000326,
+  "test_observations_consumed": 0,
+  "files": [
+    {
+      "path": "UNIT_CONTRACT.json",
+      "sha256": "6fbcfe20671551bcbdbfcb9dd4500192ecfde7658647fdb917dd888dbdcdc102"
+    },
+    {
+      "path": "SCALER_TRAIN_ONLY.json",
+      "sha256": "519f61f412598b5cfa49d4067e6eeed3794d0b722ae89b10d776af19a98a1215"
+    },
+    {
+      "path": "HISTORY.json",
+      "sha256": "12c71014d943ae5a4b9b8f533f9366de71603c4a1d48e0b2db994e26ef29972f"
+    },
+    {
+      "path": "BEST.pt",
+      "sha256": "bbabd1dc609d26cfdf370f1e891e2fda4828be6002cdd9ed877da4bbb2dec17d"
+    },
+    {
+      "path": "TRAIN_STATE.pt",
+      "sha256": "ba0df7926e263f9f50232947fb3fbb643636a25328e43c8926361b7261ac285e"
+    },
+    {
+      "path": "TEST_CELLS.json",
+      "sha256": "8bf6c9c4d8e9e17b72a4b0caca0237858ef7a09f4bdd0e3ff8e055537eaed17b"
+    },
+    {
+      "path": "test_predictions.npz",
+      "sha256": "9bd925a4580b27ba6c0e07ef2c38f4fe2df59292abc9d27d4e0d55f8622ff830"
+    }
+  ],
+  "domain": "HUST",
+  "fold": "cell_fold_4",
+  "encoder": "resmlp",
+  "decoder": "query_mlp",
+  "test": {
+    "n_cells": 15,
+    "n_obs": 27683,
+    "mae": 0.02195410074376204,
+    "rmse": 0.03263052188109274,
+    "101_200": {
+      "n_cells": 15,
+      "n_obs": 1500,
+      "mae": 0.0012146915594736735,
+      "rmse": 0.0013644945575598825
+    },
+    "201_500": {
+      "n_cells": 15,
+      "n_obs": 4500,
+      "mae": 0.004726796733008491,
+      "rmse": 0.005118747378341089
+    },
+    "501_1000": {
+      "n_cells": 15,
+      "n_obs": 7500,
+      "mae": 0.01110711033344269,
+      "rmse": 0.011897998215390474
+    },
+    "1001_plus": {
+      "n_cells": 15,
+      "n_obs": 14183,
+      "mae": 0.04161291407600731,
+      "rmse": 0.04868995839118355
+    }
+  },
+  "seed": 42,
+  "epochs": 150,
+  "selection_frozen_before_test": true,
+  "selection_file": "HUST/N2_SELECTION.json",
+  "selection_sha256": "89b58f23dcb26ff2b8278896df3a3d16b5aee5250240515237fe79d2ff94048d",
+  "training_complete_sha256": "aa565df875614146190e083ff797df79699241e96d5864ec5883a3c035dad132"
+}

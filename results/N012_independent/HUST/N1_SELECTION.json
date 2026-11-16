@@ -1,0 +1,157 @@
+{
+  "encoder_per_outer_fold": {
+    "cell_fold_0": "resmlp",
+    "cell_fold_1": "voltage_cnn",
+    "cell_fold_2": "temporal_tcn",
+    "cell_fold_3": "resmlp",
+    "cell_fold_4": "voltage_cnn"
+  },
+  "selection_folds": [
+    "cell_fold_0",
+    "cell_fold_1",
+    "cell_fold_2",
+    "cell_fold_3",
+    "cell_fold_4"
+  ],
+  "criterion": "each outer fold inner validation only",
+  "nested_selection": true,
+  "test_not_used_for_selection": true,
+  "study_sha256": "edf0fce8fd55df57bd1047b1f9ac56c753b8711fd9a474db173e4074295adb31",
+  "candidates": {
+    "cell_fold_0": {
+      "resmlp": {
+        "validation_mae": 0.014405509741493903,
+        "best_epoch": 102,
+        "training_complete_sha256": "fe5ca00446fc4fdf1e84c508c66fa6711f4d7cf8f952c63519148e251e4c4e1d"
+      },
+      "voltage_cnn": {
+        "validation_mae": 0.015269072892764024,
+        "best_epoch": 142,
+        "training_complete_sha256": "a90d97199394e2de80298ae03d960dc5181ad6ef4262e2766d5c711602d41ba2"
+      },
+      "temporal_tcn": {
+        "validation_mae": 0.01463330588757576,
+        "best_epoch": 111,
+        "training_complete_sha256": "817d3801c6d16dedd58ba57037909733da61ba466f90b1815d5c0ccbe9e88014"
+      },
+      "cnn_tcn": {
+        "validation_mae": 0.01485349942699526,
+        "best_epoch": 142,
+        "training_complete_sha256": "f5078c9dee5cc962db41e74754c83d85836b5f6bde00b7c4c60ec18a488a07f5"
+      },
+      "cnn_transformer": {
+        "validation_mae": 0.01469456083377719,
+        "best_epoch": 118,
+        "training_complete_sha256": "b92f358a1925edff98134d544d90a0c9da7f296a3bc44258f29a87ceb7f7e8ad"
+      }
+    },
+    "cell_fold_1": {
+      "resmlp": {
+        "validation_mae": 0.01979446540745808,
+        "best_epoch": 119,
+        "training_complete_sha256": "548e4b98168daf5af2f4e3c97e2765a7360398f683a26ab80c73e6f42652b452"
+      },
+      "voltage_cnn": {
+        "validation_mae": 0.015350718044234707,
+        "best_epoch": 128,
+        "training_complete_sha256": "9733624fdf9f1a422639ca66bea32546f2fe831c5fe7b79082cbf8a4ac566e80"
+      },
+      "temporal_tcn": {
+        "validation_mae": 0.01714448078863889,
+        "best_epoch": 110,
+        "training_complete_sha256": "cb066d3955e2f73ad60b4ad33665f0cb72749ad1677776f42d68aa3d2feba7ab"
+      },
+      "cnn_tcn": {
+        "validation_mae": 0.017065099764012166,
+        "best_epoch": 87,
+        "training_complete_sha256": "ac254c8f4013099d35e2831b7876d0c3e285013fa3d0467b01c1a8ee9f0bea30"
+      },
+      "cnn_transformer": {
+        "validation_mae": 0.01709120251260172,
+        "best_epoch": 87,
+        "training_complete_sha256": "73382848051e5f442b309aed51a491a382cc5a560b2807242e970a901574f62b"
+      }
+    },
+    "cell_fold_2": {
+      "resmlp": {
+        "validation_mae": 0.020572401792340145,
+        "best_epoch": 86,
+        "training_complete_sha256": "67776d8739000723bd3af3a8ef724bad5e6782d38381cee1a90a348e13bc5743"
+      },
+      "voltage_cnn": {
+        "validation_mae": 0.02097341922701722,
+        "best_epoch": 94,
+        "training_complete_sha256": "2d4abadf1dd7005c215960da3820d836f21983ffd9bdb4d55b48deefecf9f412"
+      },
+      "temporal_tcn": {
+        "validation_mae": 0.0196314663883622,
+        "best_epoch": 98,
+        "training_complete_sha256": "ed6083190353c571194fa804540ed35fa8f8fb0c988367bec229f113e5dc53ab"
+      },
+      "cnn_tcn": {
+        "validation_mae": 0.021369753599079503,
+        "best_epoch": 84,
+        "training_complete_sha256": "d05f814993f3a045760ea2d79cff1f938d0de45102763fc47c1c0cff506fb95d"
+      },
+      "cnn_transformer": {
+        "validation_mae": 0.02094802468122013,
+        "best_epoch": 127,
+        "training_complete_sha256": "eaf55ca3f8c79539b0c96eb6c36edbfb18ce120bb85bdde175a92e47a92daa2c"
+      }
+    },
+    "cell_fold_3": {
+      "resmlp": {
+        "validation_mae": 0.019888293973041496,
+        "best_epoch": 129,
+        "training_complete_sha256": "7bebcf683341b350dcb293042d6a22bdc440c9e0156944e201253e01c7ce5837"
+      },
+      "voltage_cnn": {
+        "validation_mae": 0.020108206270025776,
+        "best_epoch": 126,
+        "training_complete_sha256": "180daa768c50a69029401ff47550d2c7135af849e557a288b3a841f5c1a91e51"
+      },
+      "temporal_tcn": {
+        "validation_mae": 0.020974125809700674,
+        "best_epoch": 106,
+        "training_complete_sha256": "c3e4de2196c63b66e6770a733636388da3b4926b643279857ce1648d8c61d417"
+      },
+      "cnn_tcn": {
+        "validation_mae": 0.021521354252488707,
+        "best_epoch": 114,
+        "training_complete_sha256": "ec505addade2082209e39482497bedec8711f98fbc56f30a09ea7a061e4eaf07"
+      },
+      "cnn_transformer": {
+        "validation_mae": 0.020413046007961438,
+        "best_epoch": 78,
+        "training_complete_sha256": "025cd6bf713816c411b7e3aba8388c68537cbe515f5c49a4c2daaf93f0a17e0e"
+      }
+    },
+    "cell_fold_4": {
+      "resmlp": {
+        "validation_mae": 0.02158013588550674,
+        "best_epoch": 38,
+        "training_complete_sha256": "aa565df875614146190e083ff797df79699241e96d5864ec5883a3c035dad132"
+      },
+      "voltage_cnn": {
+        "validation_mae": 0.018538763061666127,
+        "best_epoch": 112,
+        "training_complete_sha256": "98fba43dc7167dd8badc7182ed5d546087b29a8f7e9248e46a2d70eff53b7f71"
+      },
+      "temporal_tcn": {
+        "validation_mae": 0.021218701802870735,
+        "best_epoch": 25,
+        "training_complete_sha256": "493e00689b36bdf56bd7ec92f53130489adae4eac7b86f7efce26bb081166ea5"
+      },
+      "cnn_tcn": {
+        "validation_mae": 0.02139235351141423,
+        "best_epoch": 38,
+        "training_complete_sha256": "5effe9cac6b170e3457a2bf74030f59df843b0154c89ca3ce6b5c29e0dcfacd9"
+      },
+      "cnn_transformer": {
+        "validation_mae": 0.018922697413072894,
+        "best_epoch": 82,
+        "training_complete_sha256": "2a01ca509e230a58b66586169d239427a6e2f1a8e334d0de6f399599116f8652"
+      }
+    }
+  }
+}

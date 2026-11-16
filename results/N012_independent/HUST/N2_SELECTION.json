@@ -1,0 +1,165 @@
+{
+  "selected_encoder_per_fold": {
+    "cell_fold_0": "resmlp",
+    "cell_fold_1": "voltage_cnn",
+    "cell_fold_2": "temporal_tcn",
+    "cell_fold_3": "resmlp",
+    "cell_fold_4": "voltage_cnn"
+  },
+  "selected_decoder_per_fold": {
+    "cell_fold_0": "legacy_flow",
+    "cell_fold_1": "physics_basis",
+    "cell_fold_2": "physics_basis",
+    "cell_fold_3": "legacy_flow",
+    "cell_fold_4": "monotone_spline"
+  },
+  "selection_folds": [
+    "cell_fold_0",
+    "cell_fold_1",
+    "cell_fold_2",
+    "cell_fold_3",
+    "cell_fold_4"
+  ],
+  "criterion": "each outer fold inner validation only",
+  "nested_selection": true,
+  "test_not_used_for_selection": true,
+  "study_sha256": "edf0fce8fd55df57bd1047b1f9ac56c753b8711fd9a474db173e4074295adb31",
+  "N1_selection_sha256": "cac02a428ede1064dd5c00ef4b6ad0c1fa864fb9ac3d87e13b547e90aae00bdb",
+  "candidates": {
+    "cell_fold_0": {
+      "query_mlp": {
+        "validation_mae": 0.014405509741493903,
+        "best_epoch": 102,
+        "training_complete_sha256": "fe5ca00446fc4fdf1e84c508c66fa6711f4d7cf8f952c63519148e251e4c4e1d"
+      },
+      "legacy_flow": {
+        "validation_mae": 0.010997778727925851,
+        "best_epoch": 146,
+        "training_complete_sha256": "829e82af43668e8b0ddcf03976365d6559dfd40e0bcee683b121382a0c080dfb"
+      },
+      "free_rate": {
+        "validation_mae": 0.013907643069646923,
+        "best_epoch": 80,
+        "training_complete_sha256": "5224ede38b1fabf0f829a165581e8d0e3d412c9df9617d22a1d7d7688acfff3d"
+      },
+      "monotone_spline": {
+        "validation_mae": 0.012187390449467178,
+        "best_epoch": 149,
+        "training_complete_sha256": "5f8f463af5868bb385ff72f2927252e9e18c6bb09ded345372a6911d7fb57252"
+      },
+      "physics_basis": {
+        "validation_mae": 0.012118123780273065,
+        "best_epoch": 45,
+        "training_complete_sha256": "4624db27fc9768076b1cbd73d5980a04aaf599de2e401a9aae87d1327e0eb46a"
+      }
+    },
+    "cell_fold_1": {
+      "query_mlp": {
+        "validation_mae": 0.015350718044234707,
+        "best_epoch": 128,
+        "training_complete_sha256": "9733624fdf9f1a422639ca66bea32546f2fe831c5fe7b79082cbf8a4ac566e80"
+      },
+      "legacy_flow": {
+        "validation_mae": 0.014602878656946526,
+        "best_epoch": 69,
+        "training_complete_sha256": "3e76d09c13bdb8bba8b8dc6a35fa965b06e13611b1ed8ad3ba3ee4df51c65762"
+      },
+      "free_rate": {
+        "validation_mae": 0.015716163427487686,
+        "best_epoch": 79,
+        "training_complete_sha256": "ae956c22ddb6d295513b4fb93bd4aec16df69f1910a493e7db6cebcc96a854b3"
+      },
+      "monotone_spline": {
+        "validation_mae": 0.015141224939530093,
+        "best_epoch": 39,
+        "training_complete_sha256": "7f8ef688ca479ac964200d4bfce3514078659a6e75db7b4c4b62c847d8cd92cf"
+      },
+      "physics_basis": {
+        "validation_mae": 0.013786778747287053,
+        "best_epoch": 91,
+        "training_complete_sha256": "4e79516c2c3d8cf0cb913b4d15f9a3c27b9dff155ef2d227b991651d1f3185f7"
+      }
+    },
+    "cell_fold_2": {
+      "query_mlp": {
+        "validation_mae": 0.0196314663883622,
+        "best_epoch": 98,
+        "training_complete_sha256": "ed6083190353c571194fa804540ed35fa8f8fb0c988367bec229f113e5dc53ab"
+      },
+      "legacy_flow": {
+        "validation_mae": 0.017048247236879803,
+        "best_epoch": 47,
+        "training_complete_sha256": "e95e90371996d35088394819e773d6fdb7b0adb583af3749a78137b11aeca266"
+      },
+      "free_rate": {
+        "validation_mae": 0.020706530381961363,
+        "best_epoch": 58,
+        "training_complete_sha256": "2ee34027f5d45acef0a336514b375e0bac30d2a4cc42d32fcfb8b34502801e75"
+      },
+      "monotone_spline": {
+        "validation_mae": 0.018972898945999846,
+        "best_epoch": 34,
+        "training_complete_sha256": "909de75ef97eeeabd012b43f805e881f6715d0576867ee10119d23bdc7880637"
+      },
+      "physics_basis": {
+        "validation_mae": 0.016698856968146405,
+        "best_epoch": 42,
+        "training_complete_sha256": "c78a161e11bdd3fcb83d6fbfe935740baaccc08832bcfed424a37abe179d0cab"
+      }
+    },
+    "cell_fold_3": {
+      "query_mlp": {
+        "validation_mae": 0.019888293973041496,
+        "best_epoch": 129,
+        "training_complete_sha256": "7bebcf683341b350dcb293042d6a22bdc440c9e0156944e201253e01c7ce5837"
+      },
+      "legacy_flow": {
+        "validation_mae": 0.018791107185872603,
+        "best_epoch": 117,
+        "training_complete_sha256": "44147478bcfa85093a13213f70d5c05fd8f14227164eb25e0cfcfb49f742930e"
+      },
+      "free_rate": {
+        "validation_mae": 0.019917285041422893,
+        "best_epoch": 55,
+        "training_complete_sha256": "19efbddc248932227496fd20d2cc16c5a97dfb8efed198a722dd605222f090c7"
+      },
+      "monotone_spline": {
+        "validation_mae": 0.018894958036823832,
+        "best_epoch": 27,
+        "training_complete_sha256": "0aea0826d323a81eb27260d6c2c86f54162c1fdf1f308298cd22527fa05fe8cd"
+      },
+      "physics_basis": {
+        "validation_mae": 0.020750500757772777,
+        "best_epoch": 58,
+        "training_complete_sha256": "661f321c96d3b092540085cadaa86da89b6d0eeb0ce5ead5986dc6e37218ead2"
+      }
+    },
+    "cell_fold_4": {
+      "query_mlp": {
+        "validation_mae": 0.018538763061666127,
+        "best_epoch": 112,
+        "training_complete_sha256": "98fba43dc7167dd8badc7182ed5d546087b29a8f7e9248e46a2d70eff53b7f71"
+      },
+      "legacy_flow": {
+        "validation_mae": 0.01761806701785981,
+        "best_epoch": 25,
+        "training_complete_sha256": "6e465653558c1c08defaeeff64d1169f065b9d6f77892b617949354930c91f6e"
+      },
+      "free_rate": {
+        "validation_mae": 0.019961703509468784,
+        "best_epoch": 99,
+        "training_complete_sha256": "c14410dd833b0cca04d9f97f4140bc9f81774c4925e4379bf3f6b89b13102858"
+      },
+      "monotone_spline": {
+        "validation_mae": 0.016268400935313412,
+        "best_epoch": 6,
+        "training_complete_sha256": "4f69d413f5f57c1b1810f984050f014b5749beff681c21964dbb402853d308cf"
+      },
+      "physics_basis": {
+        "validation_mae": 0.016445358284137516,
+        "best_epoch": 29,
+        "training_complete_sha256": "565dc5587e626b84571c3fc108305db6696659dd05f3c053ac1018a3daf44057"
+      }
+    }
+  }
+}
