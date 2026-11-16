@@ -1,0 +1,373 @@
+{
+  "audit_type": "SOURCE_DEVELOPMENT_IMPLEMENTATION_AUDIT",
+  "status": "PASSED_IMPLEMENTATION_AUDIT",
+  "effectiveness_scope": "one registered LR-search unit; P2 method-matrix and target fewshot outcomes remain pending",
+  "audited_unit": {
+    "method": "lora",
+    "rank": 4,
+    "seed": 42,
+    "trial": 0,
+    "adapter_lr": 0.0001,
+    "common_lr": 0.0003,
+    "source_training_cells": 85,
+    "source_meta_validation_cells": 30,
+    "source_optimizer_updates": 660,
+    "epochs": 60,
+    "batches_per_epoch": 11
+  },
+  "audit_execution": {
+    "device": "CPU",
+    "GPU_hidden": true,
+    "optimizer_updates": 0,
+    "torch": "2.4.1+cu121",
+    "cpu_threads": 1
+  },
+  "objective": {
+    "loss": "physical_cell_mean_observed_full_future_MAE",
+    "query_grid": [
+      101,
+      5000
+    ],
+    "query_points": 4900,
+    "valid_meta_observations": 21827,
+    "recomputed_cell_mean_MAE": 0.025850552718330356
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "persisted_updates": 660,
+    "all_active_state_steps": [
+      660
+    ],
+    "optimizer_state_entries": 34,
+    "epochs_sequential": true,
+    "history_updates_verified": true
+  },
+  "checkpoint_selection": {
+    "rule": "first strict source-meta-validation cell-mean MAE minimum",
+    "best_epoch": 55,
+    "selected_checkpoint_sha256": "d556efe2601654c728dd9997289fd52791171688b6d80c15a804a65526b204b5",
+    "selected_state_tensor_count": 35,
+    "selected_disk_state_equals_training_selected": true
+  },
+  "provenance": {
+    "source_commit": "a0f651f",
+    "initial_P0_B0_checkpoint_sha256": "a368f07bd3aaf7b43c409b5309133e2ed0f6b90dec4e3564d01707da01a2704d",
+    "initial_complete_model_equals_P1_source_sha256": "63f04b3f5ad3d3a09e6501a19f580837bb23624fd7dd1eea0899e9233fe711f6",
+    "frozen_parameter_sha256": "a30f5c06e0d594189d9fcec7e13e3b302b7fec004d5e69da4ca42deb5d123488",
+    "CPU_reconstructed_B0_and_P1_full_state_exact": true,
+    "CPU_reconstructed_frozen_parameters_exact": true,
+    "source_scaler_parsed_equal_to_P0": true,
+    "source_scaler_SHA_difference": "Linux LF versus Windows CRLF only",
+    "source_snapshot": [
+      {
+        "path": "models/drs_peft/backbone.py",
+        "sha256": "540d22ff3471b77ad3dd518b20b576c2ede5bec663a9e3a1c00f71c492c7c871"
+      },
+      {
+        "path": "models/drs_peft/bridges.py",
+        "sha256": "e59a1e70896dd0cbe7172c4a79c37ea5c92a9465d4eb199339b4c1eac25cad4d"
+      },
+      {
+        "path": "models/drs_peft/trajectory.py",
+        "sha256": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4"
+      },
+      {
+        "path": "models/drs_peft/peft.py",
+        "sha256": "49272bc035b6fd0984eae08f1f4b5bb402b6b46c958fd9e8a0505c0c44ccdfa9"
+      },
+      {
+        "path": "scripts/drs_peft/train.py",
+        "sha256": "ebe562930e80697e01ffd103246a6a5263f6b1123c191e9e8efca8b9474aba70"
+      },
+      {
+        "path": "scripts/drs_peft/data.py",
+        "sha256": "4dc110c68ed99a28ef61dfeb0bad50951d4855a3fb17b29dabc86d4b9ed5f585"
+      },
+      {
+        "path": "scripts/drs_peft/episodes.py",
+        "sha256": "d8540a62a8aa5d932646315a863cff03f3e3d56e563a0e0caf4e96c006383a94"
+      },
+      {
+        "path": "scripts/drs_peft/run_p2.py",
+        "sha256": "59536a2b752105c1c5858ac8c9939309e39ffe64b8bb1058a626ff6067a9351c"
+      },
+      {
+        "path": "scripts/drs_peft/run_p1.py",
+        "sha256": "1a96fcabd4b22809a0d9733a9296dfa187474127585aaca26d5a45e02c71350f"
+      },
+      {
+        "path": "scripts/drs_peft/gradient_audit.py",
+        "sha256": "9453ae0a2fdab9c48cfde1a8ab5898c770bd1874a4dcf16108ab834619dd57a6"
+      },
+      {
+        "path": "configs/drs_peft/stage_gates_v1.json",
+        "sha256": "12b45c444f8009f0f8e77e9ac22e1e04308558ea255b5e2310eebc7ce8073f00"
+      },
+      {
+        "path": "configs/drs_peft/execution_v1.json",
+        "sha256": "868b55908c3bedefd53400f7e9ebb4491dcd8c405719cc84f27528fb2623e8df"
+      },
+      {
+        "path": "configs/drs_peft/episodes_v1.json",
+        "sha256": "b9e6b41522055c1ba6b0b995f8bc23821e7878c89ff0de8950a6724eaa34942c"
+      }
+    ]
+  },
+  "parameters": {
+    "total_trainable": 100033,
+    "bridge_trainable": 56832,
+    "head_trainable": 6337,
+    "adapter_trainable": 36864,
+    "target_matrices": 12,
+    "matrix_shape": [
+      384,
+      384
+    ],
+    "per_matrix_adapter_trainable": 3072,
+    "lora_alpha": 4,
+    "lora_scaling": 1.0
+  },
+  "independent_CPU_replay": {
+    "source_meta_cells": 30,
+    "query_points": 4900,
+    "max_absolute_error": 1.4066696166992188e-05,
+    "tolerance": {
+      "atol": 0.0001,
+      "rtol": 0,
+      "origin": "existing scripts/drs_peft/replay_p0.py"
+    },
+    "CPU_cell_mean_MAE": 0.025850589400353296,
+    "GPU_saved_cell_mean_MAE": 0.025850552718330356,
+    "prior_completed_CPU_reconstruction_verified": true
+  },
+  "serialized_replay": {
+    "GPU_receipt_max_absolute_error": 0.0,
+    "saved_selected_tensor_equality_verified": true
+  },
+  "gradient_mean_audit": {
+    "source_cells": 85,
+    "exact_protocol_groups": 47,
+    "physical_mean_definition": "uniform mean of physical-cell mean-observed-future MAE gradients",
+    "group_mean_definition": "equal exact-protocol groups, then equal cells within group",
+    "mean_gradients_destination": "LoRA-GA gradient initialization",
+    "group_mean_gradients_destination": "P1 equal-protocol mean-SVD control",
+    "bundle_sha256": "1b7c8acdc9b8f4696cee2f2f6dd28674bab2280e578f3180f26886195a70f15f",
+    "all_12_physical_means_bitwise_equal": true,
+    "all_12_group_means_bitwise_equal": true,
+    "layers": [
+      {
+        "layer": "encoder.layers.0.self_attn.q_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.07906673752834861,
+        "source_gradient_array_sha256": "85cbb807f7ac0767d650de3bcc8ca9259bbea9948e22ce8119c2c01e47b23ee8"
+      },
+      {
+        "layer": "encoder.layers.0.self_attn.v_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.07948957672198818,
+        "source_gradient_array_sha256": "6ba04d3c1de5d8a1cc3daf4f1d9696eac8c0cd45b4b433a8fed6eb6f04deac68"
+      },
+      {
+        "layer": "encoder.layers.1.self_attn.q_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.07060972743638998,
+        "source_gradient_array_sha256": "23a126fcacbf1a5d794073f5dc79533b9f29fdbc4a8f2f113d10ec57c10cb339"
+      },
+      {
+        "layer": "encoder.layers.1.self_attn.v_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.08163252622391584,
+        "source_gradient_array_sha256": "75a67425b317fec826dd3ffa315b6eb390ce0200390af9a4df01baa51c18986a"
+      },
+      {
+        "layer": "encoder.layers.2.self_attn.q_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.1073253597336134,
+        "source_gradient_array_sha256": "7f45bf156b25109f0ed0ef725cbc6035ac46d9357ee83bbdbcbbc9eef9b5b661"
+      },
+      {
+        "layer": "encoder.layers.2.self_attn.v_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.07583326738351706,
+        "source_gradient_array_sha256": "9f16dea5e38db603e70d134999a3666a24e32391bb13114ec043386dd5345c11"
+      },
+      {
+        "layer": "encoder.layers.3.self_attn.q_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.08891112781185141,
+        "source_gradient_array_sha256": "5c638b3c69b9a690bdb74a26b103f6047c8fd8718bebcc320a09545c228845e7"
+      },
+      {
+        "layer": "encoder.layers.3.self_attn.v_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.07725179476172575,
+        "source_gradient_array_sha256": "a987c9b6a7996ffda8dfa3a6aefe6ed395620598e867ab9de60c20fdbe1db8f9"
+      },
+      {
+        "layer": "encoder.layers.4.self_attn.q_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.12425622201432943,
+        "source_gradient_array_sha256": "9222f82822bb563013968e12d1e073cfdf78b379834a1dab54f57eb5accb0f44"
+      },
+      {
+        "layer": "encoder.layers.4.self_attn.v_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.08200915943241643,
+        "source_gradient_array_sha256": "d8f631c318dd910e770207f78dcc57258ff50dcd7b1fac6cc18f3ddfb55d77a9"
+      },
+      {
+        "layer": "encoder.layers.5.self_attn.q_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.08645856991608754,
+        "source_gradient_array_sha256": "684876f1feecdfa4d085aa3e2e4b356f07cecfa19c070bb7f711d8fd5d2cb50a"
+      },
+      {
+        "layer": "encoder.layers.5.self_attn.v_proj",
+        "physical_cell_mean_bitwise_equal": true,
+        "protocol_group_mean_bitwise_equal": true,
+        "physical_vs_group_relative_Frobenius": 0.09050128764826627,
+        "source_gradient_array_sha256": "428b035fd183611decdf323247afb583afbdb547b41d5d7690b3fc4ac6956388"
+      }
+    ]
+  },
+  "information_budget": {
+    "final_target_query_labels_used": 0,
+    "full_cohort_future_target_members_read_by_independent_audit": false,
+    "source_meta_future_labels_read_from_existing_SOURCE_VALIDATION_PREDICTIONS": true,
+    "training_loading_semantics": "cohort arrays may load in memory; gradients, selection and scores index source/meta roles"
+  },
+  "private_files": [
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/BACKBONE_IDENTITY.json",
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/CHECKPOINT_SELECTED.pt",
+      "sha256": "d556efe2601654c728dd9997289fd52791171688b6d80c15a804a65526b204b5"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/CHECKPOINT_SELECTION.json",
+      "sha256": "5b28ad8896268c3ecfcdf806e85a5748b91e4d2a2d2d6a6ab521cbf1a3263d9c"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/DATA_FINGERPRINT.json",
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/EPISODE_IDS.json",
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/EXECUTION_ENVIRONMENT.json",
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/RUN_CONFIG.json",
+      "sha256": "012c7f5a0339768d6d3a9df7da64e959b253d021e7c0f11ac797aed8cebfb1c6"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/SOURCE_SCALER.json",
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/SOURCE_SNAPSHOT.json",
+      "sha256": "f3c5ef01e0d10c73b9db4056ab5a7315bf2a24fd742fd760ad42ddc7db724c2b"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "sha256": "e348e078dd205e84ea03b2921f3bff9755ea7f5ca9b3d04f95d1292ef1b9245f"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/SOURCE_VALIDATION_PREDICTIONS.npz",
+      "sha256": "be4f5e013c95a0a06865b12f7995146297054d583874d00608ce4cfda36448c9"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/TRAIN_LOG.json",
+      "sha256": "3bff0999c7c16ac77156ece9b1790cdf93d8b4c6d70074de4febc061898d2f72"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/TRAIN_LOG.jsonl",
+      "sha256": "44f0bdac60ea49b4cb8b626ef956c906071793db846df96817ee58268b53cfad"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/TRAIN_STATE.pt",
+      "sha256": "8f853f409c92be11ea95200d3f6f67421d72aaac06edafa366809c2ff445c370"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/TRAINABLE_PARAMETER_REPORT.json",
+      "sha256": "a715f66d4ccebcd34dcf2d1fa9ac9564f5d41065bc611f2ac66809917addfb53"
+    },
+    {
+      "path": "runtime/drs_peft/P2/search/lora/rank4/trial0/seed42/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "sha256": "3734c339c0a38bced5f92ba0d29e42100ae2a493d0bfdde06a51a8405bebb967"
+    }
+  ],
+  "public_files": [
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/BACKBONE_IDENTITY.json",
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/CHECKPOINT_SELECTION.json",
+      "sha256": "5b28ad8896268c3ecfcdf806e85a5748b91e4d2a2d2d6a6ab521cbf1a3263d9c"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/DATA_FINGERPRINT.json",
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/EPISODE_IDS.json",
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/EXECUTION_ENVIRONMENT.json",
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/RUN_CONFIG.json",
+      "sha256": "012c7f5a0339768d6d3a9df7da64e959b253d021e7c0f11ac797aed8cebfb1c6"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/SOURCE_SCALER.json",
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/SOURCE_SNAPSHOT.json",
+      "sha256": "f3c5ef01e0d10c73b9db4056ab5a7315bf2a24fd742fd760ad42ddc7db724c2b"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "sha256": "e348e078dd205e84ea03b2921f3bff9755ea7f5ca9b3d04f95d1292ef1b9245f"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/TRAIN_LOG.json",
+      "sha256": "3bff0999c7c16ac77156ece9b1790cdf93d8b4c6d70074de4febc061898d2f72"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/TRAIN_LOG.jsonl",
+      "sha256": "44f0bdac60ea49b4cb8b626ef956c906071793db846df96817ee58268b53cfad"
+    },
+    {
+      "path": "results/drs_peft/P2/search/lora/rank4/trial0/seed42/TRAINABLE_PARAMETER_REPORT.json",
+      "sha256": "a715f66d4ccebcd34dcf2d1fa9ac9564f5d41065bc611f2ac66809917addfb53"
+    }
+  ],
+  "limitations": [
+    "source-meta-validation participates in epoch and LR selection",
+    "remaining P2 methods and fewshot target episodes require completed controlled comparisons",
+    "P1 label-shuffle capture did not weaken, so battery-specific direction claims remain unestablished"
+  ]
+}

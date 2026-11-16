@@ -1,0 +1,731 @@
+{
+  "plan": {
+    "stage": "P2",
+    "P1_status": "PASSED",
+    "branch": "FULL_REGISTERED_PRIMARY_AND_PARAMETER_CURVES",
+    "common_initialization": "matching formal source-seed P0 B0 selected bridge/head and official W0",
+    "methods": [
+      "lora",
+      "lora_xs",
+      "weight_svd_core",
+      "grad_core",
+      "random_core",
+      "lora_ga"
+    ],
+    "source_seeds": [
+      42,
+      123,
+      2026
+    ],
+    "source_query_labels_only": true,
+    "target_Query_future_labels_accessed": false,
+    "rank": 4,
+    "source_train_cells": 85,
+    "source_batches_per_epoch": 11,
+    "parameter_matched_core_rank": 56,
+    "search": [
+      {
+        "stage": "search",
+        "method": "lora",
+        "rank": 4,
+        "seed": 42,
+        "trial": 0,
+        "adapter_lr": 0.0001,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "lora",
+        "rank": 4,
+        "seed": 42,
+        "trial": 1,
+        "adapter_lr": 0.0003,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "lora",
+        "rank": 4,
+        "seed": 42,
+        "trial": 2,
+        "adapter_lr": 0.001,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "lora_xs",
+        "rank": 4,
+        "seed": 42,
+        "trial": 0,
+        "adapter_lr": 0.0001,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "lora_xs",
+        "rank": 4,
+        "seed": 42,
+        "trial": 1,
+        "adapter_lr": 0.001,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "lora_xs",
+        "rank": 4,
+        "seed": 42,
+        "trial": 2,
+        "adapter_lr": 0.01,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "weight_svd_core",
+        "rank": 4,
+        "seed": 42,
+        "trial": 0,
+        "adapter_lr": 0.001,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "weight_svd_core",
+        "rank": 4,
+        "seed": 42,
+        "trial": 1,
+        "adapter_lr": 0.01,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "weight_svd_core",
+        "rank": 4,
+        "seed": 42,
+        "trial": 2,
+        "adapter_lr": 0.1,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "grad_core",
+        "rank": 4,
+        "seed": 42,
+        "trial": 0,
+        "adapter_lr": 0.001,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "grad_core",
+        "rank": 4,
+        "seed": 42,
+        "trial": 1,
+        "adapter_lr": 0.01,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "grad_core",
+        "rank": 4,
+        "seed": 42,
+        "trial": 2,
+        "adapter_lr": 0.1,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "random_core",
+        "rank": 4,
+        "seed": 42,
+        "trial": 0,
+        "adapter_lr": 0.001,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "random_core",
+        "rank": 4,
+        "seed": 42,
+        "trial": 1,
+        "adapter_lr": 0.01,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "random_core",
+        "rank": 4,
+        "seed": 42,
+        "trial": 2,
+        "adapter_lr": 0.1,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "lora_ga",
+        "rank": 4,
+        "seed": 42,
+        "trial": 0,
+        "adapter_lr": 0.0001,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "lora_ga",
+        "rank": 4,
+        "seed": 42,
+        "trial": 1,
+        "adapter_lr": 0.0003,
+        "epochs": 60
+      },
+      {
+        "stage": "search",
+        "method": "lora_ga",
+        "rank": 4,
+        "seed": 42,
+        "trial": 2,
+        "adapter_lr": 0.001,
+        "epochs": 60
+      }
+    ],
+    "formal": [
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "lora",
+        "rank": 4,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "lora",
+        "rank": 4,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "lora",
+        "rank": 4,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "lora_xs",
+        "rank": 4,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "lora_xs",
+        "rank": 4,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "lora_xs",
+        "rank": 4,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "weight_svd_core",
+        "rank": 4,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "weight_svd_core",
+        "rank": 4,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "weight_svd_core",
+        "rank": 4,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "grad_core",
+        "rank": 4,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "grad_core",
+        "rank": 4,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "grad_core",
+        "rank": 4,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "random_core",
+        "rank": 4,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "random_core",
+        "rank": 4,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "random_core",
+        "rank": 4,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "lora_ga",
+        "rank": 4,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "lora_ga",
+        "rank": 4,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "primary",
+        "method": "lora_ga",
+        "rank": 4,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "lora_xs",
+        "rank": 56,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "lora_xs",
+        "rank": 56,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "lora_xs",
+        "rank": 56,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "weight_svd_core",
+        "rank": 56,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "weight_svd_core",
+        "rank": 56,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "weight_svd_core",
+        "rank": 56,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "grad_core",
+        "rank": 56,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "grad_core",
+        "rank": 56,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "grad_core",
+        "rank": 56,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "random_core",
+        "rank": 56,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "random_core",
+        "rank": 56,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "parameter_matched",
+        "method": "random_core",
+        "rank": 56,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora",
+        "rank": 2,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora",
+        "rank": 2,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora",
+        "rank": 2,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_xs",
+        "rank": 2,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_xs",
+        "rank": 2,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_xs",
+        "rank": 2,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "weight_svd_core",
+        "rank": 2,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "weight_svd_core",
+        "rank": 2,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "weight_svd_core",
+        "rank": 2,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "grad_core",
+        "rank": 2,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "grad_core",
+        "rank": 2,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "grad_core",
+        "rank": 2,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "random_core",
+        "rank": 2,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "random_core",
+        "rank": 2,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "random_core",
+        "rank": 2,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_ga",
+        "rank": 2,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_ga",
+        "rank": 2,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_ga",
+        "rank": 2,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora",
+        "rank": 8,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora",
+        "rank": 8,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora",
+        "rank": 8,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_xs",
+        "rank": 8,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_xs",
+        "rank": 8,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_xs",
+        "rank": 8,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "weight_svd_core",
+        "rank": 8,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "weight_svd_core",
+        "rank": 8,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "weight_svd_core",
+        "rank": 8,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "grad_core",
+        "rank": 8,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "grad_core",
+        "rank": 8,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "grad_core",
+        "rank": 8,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "random_core",
+        "rank": 8,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "random_core",
+        "rank": 8,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "random_core",
+        "rank": 8,
+        "seed": 2026,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_ga",
+        "rank": 8,
+        "seed": 42,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_ga",
+        "rank": 8,
+        "seed": 123,
+        "epochs": 120
+      },
+      {
+        "stage": "formal",
+        "setting": "rank_curve",
+        "method": "lora_ga",
+        "rank": 8,
+        "seed": 2026,
+        "epochs": 120
+      }
+    ],
+    "search_updates_per_unit": 660,
+    "formal_updates_per_unit": 1320,
+    "search_rule": "lowest source-meta-validation cell mean MAE; listed LR order breaks ties",
+    "formal_rule": "all three source seeds receive the same selected per-method LR and 120-epoch update allowance",
+    "rank_curve_rule": "Both H1 branches retain primary r4 and actual-parameter matched core56; P1 NEGATIVE stops extra ranks2/8",
+    "hyperparameter_selection_and_reporting": "source-meta-validation is reused and intervals are conditional on selected settings; final target Query remains sealed",
+    "P3_P4_large_expansion_allowed": false
+  },
+  "config_sha256": "868b55908c3bedefd53400f7e9ebb4491dcd8c405719cc84f27528fb2623e8df",
+  "P1_gate_sha256": "d715180b8868010210ae32952710422eff6d267d7d7cf6e7c4e45e7cccfe601b",
+  "driver_sha256": "59536a2b752105c1c5858ac8c9939309e39ffe64b8bb1058a626ff6067a9351c"
+}
