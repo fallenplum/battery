@@ -1,0 +1,43 @@
+{
+  "status": "ALL_RECOVERED",
+  "prediction_scope": "LEGAL_EARLY_FORECAST",
+  "formal_units_invalidated": 0,
+  "failures": [
+    {
+      "stage": "audit_v1",
+      "reason": "old completed_units returns registration and units; tuple not unpacked",
+      "correction": "unpack pair and assert 45 actual units; rerun full audit"
+    },
+    {
+      "stage": "test_discovery",
+      "reason": "unittest collected zero pytest-style old tests",
+      "correction": "pytest collected and passed 19 tests; zero-test run excluded"
+    },
+    {
+      "stage": "publication_route",
+      "reason": "default proxy port unavailable and direct routes reset/timed out",
+      "correction": "authenticated HTTPS git using active local proxy7897; TLS verification retained"
+    },
+    {
+      "stage": "report_optional_dependency",
+      "reason": "tabulate unavailable",
+      "correction": "reuse existing N012 Markdown table renderer"
+    },
+    {
+      "stage": "numeric_formula_check",
+      "reason": "2e-14 tolerance ignored Torch threshold20 softplus approximation",
+      "correction": "derive and apply per-case analytic exp(-20) truncation bound; all16 formula checks pass"
+    },
+    {
+      "stage": "figure_QA",
+      "reason": "profile/training legends overlapped curves in first export",
+      "correction": "move legends; regenerate and inspect every final PDF page"
+    },
+    {
+      "stage": "contract_comparison_coverage",
+      "reason": "missing standalone GL-rate spline versus physics contrast",
+      "correction": "append required pair using original frozen predictions; all earlier estimates exactly unchanged"
+    }
+  ],
+  "training_and_predictions_changed": false
+}

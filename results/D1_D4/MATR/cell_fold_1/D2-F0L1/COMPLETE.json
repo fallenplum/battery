@@ -1,0 +1,69 @@
+{
+  "prediction_scope": "LEGAL_EARLY_FORECAST",
+  "status": "EVALUATED",
+  "training_sha256": "6991cb29daf7d3bacb21307e320c5208b47e03eeb7a426131df72b1ce31fe87d",
+  "test": {
+    "n_cells": 34,
+    "n_obs": 24479,
+    "mae": 0.02999461157852544,
+    "rmse": 0.043360054859446544,
+    "101_200": {
+      "n_cells": 34,
+      "n_obs": 3399,
+      "mae": 0.003696694162652667,
+      "rmse": 0.0042877976249287315
+    },
+    "201_500": {
+      "n_cells": 34,
+      "n_obs": 10173,
+      "mae": 0.01954584464829211,
+      "rmse": 0.021944632259715793
+    },
+    "501_1000": {
+      "n_cells": 31,
+      "n_obs": 9781,
+      "mae": 0.044340998483985754,
+      "rmse": 0.05284115965597812
+    },
+    "1001_plus": {
+      "n_cells": 8,
+      "n_obs": 1126,
+      "mae": 0.11928116172668735,
+      "rmse": 0.12111868413431667
+    }
+  },
+  "files": [
+    {
+      "path": "UNIT_CONTRACT.json",
+      "sha256": "9f595e7f83c238eb05f1082795cd029ae6dc4cf45f99aacc533aa9b13be4c6a0"
+    },
+    {
+      "path": "SCALER_TRAIN_ONLY.json",
+      "sha256": "14384dddc02db7c1a90d2553ce78dc7bbf3dfc7e1149dee94493eb6ff67a930b"
+    },
+    {
+      "path": "HISTORY.json",
+      "sha256": "5f02709c4f213ea621ecb592520090f226c3c2f90932a774aaab3c9efd3cb120"
+    },
+    {
+      "path": "GRADIENT_PROBES.json",
+      "sha256": "ed8926f7143d27196293712eb3a6cb415fb3abf59cf64a30ee5f97bfb2449594"
+    },
+    {
+      "path": "BEST.pt",
+      "sha256": "93c83770cef5e9896ca36681c69881fe768daa9830b876afe92122ddcfcf40b6"
+    },
+    {
+      "path": "TRAIN_STATE.pt",
+      "sha256": "412de0b7b13b07b9a6ef1fa767b377e02786a8d33be34c29dae28278c2e898c8"
+    },
+    {
+      "path": "TRAINING_COMPLETE.json",
+      "sha256": "6991cb29daf7d3bacb21307e320c5208b47e03eeb7a426131df72b1ce31fe87d"
+    },
+    {
+      "path": "test_predictions.npz",
+      "sha256": "81d82c843b946116645f81a57e7c650d1bd4c288c2dc96c9a8789f47aadeae3d"
+    }
+  ]
+}
