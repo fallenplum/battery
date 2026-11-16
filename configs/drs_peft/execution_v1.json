@@ -1,0 +1,38 @@
+{
+  "study_id": "DRS_PEFT_20261117_v1",
+  "training_seeds": [42, 123, 2026],
+  "pilot_seed": 42,
+  "source_domain": "MATR",
+  "bridges": ["native_multivariate", "cycle_embedding"],
+  "head": "anchor_plus_0.2_query_MLP_difference_u1000",
+  "loss": "physical_cell_mean_observed_full_future_MAE",
+  "query_grid": {"start":101,"stop_inclusive":5000,"step":1,"diagnostic_stop_inclusive":6000},
+  "training": {"batch_size":8,"learning_rate":0.0003,"weight_decay":0.01,"gradient_clip":1.0,"optimizer":"AdamW","amp":false,"tf32":false,"cpu_threads":2},
+  "P0": {
+    "pilot_epochs":60,
+    "formal_epochs":120,
+    "methods":["B0_pretrained_frozen","B1_random_frozen","B2_standard_lora","B3_battery_direct"],
+    "lora_rank":4,
+    "lora_alpha":4,
+    "lora_dropout":0.0,
+    "target_names":["q_proj","v_proj"],
+    "bridge_selection":"lowest mean source-meta-validation MAE of pilot B0 and B2, tie by listed bridge order",
+    "epoch_selection":"first strict minimum own source-meta-validation cell mean MAE",
+    "formal_test_query_access":"deferred until all method and adaptation hyperparameters locked",
+    "run_completion_before_target_test":"SOURCE_DEVELOPMENT_COMPLETE only; no final COMPLETED claim"
+  },
+  "P1":{"ranks":[2,4,8,16,40,56,80],"primary_rank":4,"target_family":"qv","random_basis_replicates":20,"basis_bootstrap_refits":30,"bootstrap_draws":2000,"full_candidate_family_diagnostic":"qkvo_ffn using first 12 sorted source cells and first 8 meta-validation cells, never used to change main QV target set","raw_and_nominal_units_control":true},
+  "P2": {
+    "methods":["lora","lora_xs","weight_svd_core","grad_core","random_core","lora_ga"],
+    "rank_curve":[2,4,8],
+    "primary_rank":4,
+    "primary_matched_core_rank":56,
+    "learning_rate_candidates":{"lora":[0.0001,0.0003,0.001],"lora_ga":[0.0001,0.0003,0.001],"lora_xs":[0.0001,0.001,0.01],"weight_svd_core":[0.001,0.01,0.1],"grad_core":[0.001,0.01,0.1],"random_core":[0.001,0.01,0.1]},
+    "shared_bridge_head_learning_rate":0.0003,
+    "pilot_epochs":60,"formal_epochs":120,
+    "search":"seed42 primary rank4, equal three LR trials per method; then chosen LR frozen across formal seeds and rank curves",
+    "target_query_access":false
+  },
+  "statistics":{"bootstrap_draws":2000,"seed":42,"confidence_level":0.95,"primary_unit":"physical_cell","sensitivity_unit":"exact_protocol_group"},
+  "P4":{"shots":[0,1,3,5,10],"support_draws":5,"primary_protocol_A_curve":"four preselected size>=7 groups, common eight Query cells for K0/1/3/5; K10 infeasible","all_feasible_episodes_reported_separately":true,"meta_calibration_source":"fixed 15 source-meta-validation query and 15 support cells, physical IDs disjoint","target_gradient_updates":[10,30,100],"target_core_lrs":[0.001,0.01],"ridge_lambdas":[0.0001,0.01,1,100],"shrinkage_gammas":[0.25,0.5,1.0],"source_meta_validation_selects_all_calibration_hyperparameters":true}
+}

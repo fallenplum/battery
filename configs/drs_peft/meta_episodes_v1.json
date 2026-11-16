@@ -1,0 +1,902 @@
+{
+  "schema": "DRS_PEFT_SOURCE_META_EPISODES_v1",
+  "scope": "SOURCE_CALIBRATION_DEVELOPMENT",
+  "domain": "MATR",
+  "coordinate": "original_instrument_cycle",
+  "episode_seed": 42,
+  "source_episode_contract_sha256": "1bc2f831eebc70998c73c6224773e590754c23e8abc395b0f3dbe597b4ff80c6",
+  "selection_inputs": [
+    "physical_cell_UID",
+    "registered_exact_protocol_group"
+  ],
+  "future_outcomes_read_for_split": false,
+  "meta_exact_group_counts": {
+    "protocol_0572a607455cd8e9": 2,
+    "protocol_189033a58647ae09": 1,
+    "protocol_1fad571e4f673fd6": 5,
+    "protocol_38bd5d441653afe4": 1,
+    "protocol_481f2347b79378aa": 1,
+    "protocol_619b6f54aa110d83": 1,
+    "protocol_6912e688b4a75de1": 1,
+    "protocol_879076109bd8ea83": 2,
+    "protocol_957f3d2801ad9106": 1,
+    "protocol_9f4ece425738882d": 1,
+    "protocol_ade460faa4f77490": 1,
+    "protocol_ca0486a66f677150": 2,
+    "protocol_da9ff502051411bf": 5,
+    "protocol_e049687554a9404b": 1,
+    "protocol_e8f8e98292cf74a3": 5
+  },
+  "allocation": "one stable SHA-ordered Query per exact meta group; all remaining cells form pooled Support candidates",
+  "query_ids": [
+    "MATR_b1c23",
+    "MATR_b1c26",
+    "MATR_b1c30",
+    "MATR_b1c4",
+    "MATR_b2c0",
+    "MATR_b2c14",
+    "MATR_b2c20",
+    "MATR_b2c32",
+    "MATR_b2c33",
+    "MATR_b2c37",
+    "MATR_b2c41",
+    "MATR_b2c45",
+    "MATR_b4c1",
+    "MATR_b4c15",
+    "MATR_b4c42"
+  ],
+  "support_pool_ids": [
+    "MATR_b1c27",
+    "MATR_b1c3",
+    "MATR_b1c31",
+    "MATR_b4c14",
+    "MATR_b4c18",
+    "MATR_b4c2",
+    "MATR_b4c20",
+    "MATR_b4c29",
+    "MATR_b4c3",
+    "MATR_b4c30",
+    "MATR_b4c34",
+    "MATR_b4c38",
+    "MATR_b4c39",
+    "MATR_b4c41",
+    "MATR_b4c6"
+  ],
+  "protocol": "pooled_source_meta_groups_for_calibration_hyperparameter_selection",
+  "labels_permitted_for": "source-only calibration development and hyperparameter selection",
+  "target_final_query_labels_permitted": false,
+  "source_train_groups_disjoint": true,
+  "target_test_groups_disjoint": true,
+  "support_and_query_groups_may_overlap": true,
+  "grouping_limit": "Pooled development episodes do not estimate unseen exact-group K10 target performance",
+  "shots": [
+    {
+      "k": 0,
+      "status": "FEASIBLE",
+      "requested_draws": 5,
+      "unique_support_sets": 1,
+      "available_support_cells": 15,
+      "mathematically_available_support_sets": 1,
+      "query_ids": [
+        "MATR_b1c23",
+        "MATR_b1c26",
+        "MATR_b1c30",
+        "MATR_b1c4",
+        "MATR_b2c0",
+        "MATR_b2c14",
+        "MATR_b2c20",
+        "MATR_b2c32",
+        "MATR_b2c33",
+        "MATR_b2c37",
+        "MATR_b2c41",
+        "MATR_b2c45",
+        "MATR_b4c1",
+        "MATR_b4c15",
+        "MATR_b4c42"
+      ],
+      "draws": [
+        {
+          "draw": 0,
+          "support_ids": [],
+          "support_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 1,
+          "support_ids": [],
+          "support_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "duplicate_of_draw": 0,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 2,
+          "support_ids": [],
+          "support_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "duplicate_of_draw": 0,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 3,
+          "support_ids": [],
+          "support_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "duplicate_of_draw": 0,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 4,
+          "support_ids": [],
+          "support_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "duplicate_of_draw": 0,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        }
+      ]
+    },
+    {
+      "k": 1,
+      "status": "FEASIBLE",
+      "requested_draws": 5,
+      "unique_support_sets": 4,
+      "available_support_cells": 15,
+      "mathematically_available_support_sets": 15,
+      "query_ids": [
+        "MATR_b1c23",
+        "MATR_b1c26",
+        "MATR_b1c30",
+        "MATR_b1c4",
+        "MATR_b2c0",
+        "MATR_b2c14",
+        "MATR_b2c20",
+        "MATR_b2c32",
+        "MATR_b2c33",
+        "MATR_b2c37",
+        "MATR_b2c41",
+        "MATR_b2c45",
+        "MATR_b4c1",
+        "MATR_b4c15",
+        "MATR_b4c42"
+      ],
+      "draws": [
+        {
+          "draw": 0,
+          "support_ids": [
+            "MATR_b4c20"
+          ],
+          "support_set_sha256": "fa0c57031397629c663e594f0b425f37ed25ece203a48c3e74e14cb4da3e3c1b",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 1,
+          "support_ids": [
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "8eff22c004d68a2e8ad2d7ee4e7977ed3c15f7a158ed758b0ab4c2b51f6b9927",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 2,
+          "support_ids": [
+            "MATR_b4c39"
+          ],
+          "support_set_sha256": "5022317aa2838ed0c3541e612e1dfe7f2d66257cb1abb8a9e8422ed03f3ed8dc",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 3,
+          "support_ids": [
+            "MATR_b4c2"
+          ],
+          "support_set_sha256": "31608084e6205c0bad74838a34d475c90c0e544c1d3bd285330e2af5972ce8fa",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 4,
+          "support_ids": [
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "8eff22c004d68a2e8ad2d7ee4e7977ed3c15f7a158ed758b0ab4c2b51f6b9927",
+          "duplicate_of_draw": 1,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        }
+      ]
+    },
+    {
+      "k": 3,
+      "status": "FEASIBLE",
+      "requested_draws": 5,
+      "unique_support_sets": 5,
+      "available_support_cells": 15,
+      "mathematically_available_support_sets": 455,
+      "query_ids": [
+        "MATR_b1c23",
+        "MATR_b1c26",
+        "MATR_b1c30",
+        "MATR_b1c4",
+        "MATR_b2c0",
+        "MATR_b2c14",
+        "MATR_b2c20",
+        "MATR_b2c32",
+        "MATR_b2c33",
+        "MATR_b2c37",
+        "MATR_b2c41",
+        "MATR_b2c45",
+        "MATR_b4c1",
+        "MATR_b4c15",
+        "MATR_b4c42"
+      ],
+      "draws": [
+        {
+          "draw": 0,
+          "support_ids": [
+            "MATR_b1c31",
+            "MATR_b4c20",
+            "MATR_b4c3"
+          ],
+          "support_set_sha256": "9fff34c33d3b47e7aeaf60ef7649dec5def2d018d51cfb17db16894008d7663b",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 1,
+          "support_ids": [
+            "MATR_b1c27",
+            "MATR_b4c14",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "23e22e975861b0b5efa982b7d60a4ccf428f8184b2a46ce65d6284b10480df76",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 2,
+          "support_ids": [
+            "MATR_b4c34",
+            "MATR_b4c39",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "385437e984b49bcb0b986779e1863b4043e13299e3874942ee7b530514b23b5a",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 3,
+          "support_ids": [
+            "MATR_b4c2",
+            "MATR_b4c20",
+            "MATR_b4c41"
+          ],
+          "support_set_sha256": "85e918ec91ecfd73f2bba941bcb7940f8dab0290dea2a34549e91be2b3c36e8a",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 4,
+          "support_ids": [
+            "MATR_b1c27",
+            "MATR_b4c29",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "d9b27eb7756ffdcd016a0c4bbd3c2a711cd9d929df1319296f5a75a1c3a50f74",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        }
+      ]
+    },
+    {
+      "k": 5,
+      "status": "FEASIBLE",
+      "requested_draws": 5,
+      "unique_support_sets": 5,
+      "available_support_cells": 15,
+      "mathematically_available_support_sets": 3003,
+      "query_ids": [
+        "MATR_b1c23",
+        "MATR_b1c26",
+        "MATR_b1c30",
+        "MATR_b1c4",
+        "MATR_b2c0",
+        "MATR_b2c14",
+        "MATR_b2c20",
+        "MATR_b2c32",
+        "MATR_b2c33",
+        "MATR_b2c37",
+        "MATR_b2c41",
+        "MATR_b2c45",
+        "MATR_b4c1",
+        "MATR_b4c15",
+        "MATR_b4c42"
+      ],
+      "draws": [
+        {
+          "draw": 0,
+          "support_ids": [
+            "MATR_b1c3",
+            "MATR_b1c31",
+            "MATR_b4c14",
+            "MATR_b4c20",
+            "MATR_b4c3"
+          ],
+          "support_set_sha256": "4812090ea5ae011be248bc3d148c421f94933d83077d3d6a3732d659aaf6b3f1",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 1,
+          "support_ids": [
+            "MATR_b1c27",
+            "MATR_b4c14",
+            "MATR_b4c2",
+            "MATR_b4c3",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "8b3277e4b71442351abc040398c52f6f0b006328e1779b255255dc0e81e12f2d",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 2,
+          "support_ids": [
+            "MATR_b4c20",
+            "MATR_b4c29",
+            "MATR_b4c34",
+            "MATR_b4c39",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "545d50bba786731a58cee3a9c91117371e5696cd44df6e2f99ea5ec1c9485757",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 3,
+          "support_ids": [
+            "MATR_b1c31",
+            "MATR_b4c2",
+            "MATR_b4c20",
+            "MATR_b4c34",
+            "MATR_b4c41"
+          ],
+          "support_set_sha256": "6ef8c849f66f8d3caed24be2452e81e0bf5566c66ffc02e8353b2559d8837896",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 4,
+          "support_ids": [
+            "MATR_b1c27",
+            "MATR_b4c29",
+            "MATR_b4c30",
+            "MATR_b4c34",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "6b04b50d5b46a197161593a9ccd447a9dcede2c3bd4d1e51ceb1f263dd554356",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        }
+      ]
+    },
+    {
+      "k": 10,
+      "status": "FEASIBLE",
+      "requested_draws": 5,
+      "unique_support_sets": 5,
+      "available_support_cells": 15,
+      "mathematically_available_support_sets": 3003,
+      "query_ids": [
+        "MATR_b1c23",
+        "MATR_b1c26",
+        "MATR_b1c30",
+        "MATR_b1c4",
+        "MATR_b2c0",
+        "MATR_b2c14",
+        "MATR_b2c20",
+        "MATR_b2c32",
+        "MATR_b2c33",
+        "MATR_b2c37",
+        "MATR_b2c41",
+        "MATR_b2c45",
+        "MATR_b4c1",
+        "MATR_b4c15",
+        "MATR_b4c42"
+      ],
+      "draws": [
+        {
+          "draw": 0,
+          "support_ids": [
+            "MATR_b1c3",
+            "MATR_b1c31",
+            "MATR_b4c14",
+            "MATR_b4c18",
+            "MATR_b4c2",
+            "MATR_b4c20",
+            "MATR_b4c3",
+            "MATR_b4c30",
+            "MATR_b4c34",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "da4d89c9a7931d1a8fae9220446e093754c2f01a9dd87f689a4af112f7678ce2",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 1,
+          "support_ids": [
+            "MATR_b1c27",
+            "MATR_b1c3",
+            "MATR_b4c14",
+            "MATR_b4c18",
+            "MATR_b4c2",
+            "MATR_b4c29",
+            "MATR_b4c3",
+            "MATR_b4c30",
+            "MATR_b4c34",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "7ce28f894ddd7d9f0b18c7d5ccbaa5d417d584a518927b501baca22da0608682",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 2,
+          "support_ids": [
+            "MATR_b1c31",
+            "MATR_b4c14",
+            "MATR_b4c18",
+            "MATR_b4c20",
+            "MATR_b4c29",
+            "MATR_b4c3",
+            "MATR_b4c30",
+            "MATR_b4c34",
+            "MATR_b4c39",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "c966ce9046051d9f6d3aeefe777f9bdf5e1cc21b6dbde30f681b84138af4de9d",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 3,
+          "support_ids": [
+            "MATR_b1c3",
+            "MATR_b1c31",
+            "MATR_b4c14",
+            "MATR_b4c2",
+            "MATR_b4c20",
+            "MATR_b4c29",
+            "MATR_b4c30",
+            "MATR_b4c34",
+            "MATR_b4c41",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "88614430a3be024cc66c3f3da83a9582b8d19bd9a3f7acbf94a864e7766b5e7d",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        },
+        {
+          "draw": 4,
+          "support_ids": [
+            "MATR_b1c27",
+            "MATR_b4c18",
+            "MATR_b4c2",
+            "MATR_b4c20",
+            "MATR_b4c29",
+            "MATR_b4c3",
+            "MATR_b4c30",
+            "MATR_b4c34",
+            "MATR_b4c39",
+            "MATR_b4c6"
+          ],
+          "support_set_sha256": "449324749e79b97b7ee904fec8de01495e28032fae13f4231db28dc3d0c0c6d7",
+          "duplicate_of_draw": null,
+          "query_ids": [
+            "MATR_b1c23",
+            "MATR_b1c26",
+            "MATR_b1c30",
+            "MATR_b1c4",
+            "MATR_b2c0",
+            "MATR_b2c14",
+            "MATR_b2c20",
+            "MATR_b2c32",
+            "MATR_b2c33",
+            "MATR_b2c37",
+            "MATR_b2c41",
+            "MATR_b2c45",
+            "MATR_b4c1",
+            "MATR_b4c15",
+            "MATR_b4c42"
+          ]
+        }
+      ]
+    }
+  ],
+  "query_fixed_across_methods_shots_draws": true,
+  "duplicate_support_sets_reuse_checkpoint": true,
+  "meta_episode_contract_sha256": "a3ddb86c9130826211bb6ee1999ad825720f3764acb539f0840dbe24e6e43027"
+}

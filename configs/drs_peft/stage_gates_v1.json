@@ -1,0 +1,130 @@
+{
+  "version": "1.0",
+  "contract_date": "2026-11-17",
+  "scope": "source-only stage decisions; target Query labels reserved for final scoring",
+  "status_terms": ["PASSED", "NEGATIVE", "BLOCKED", "PARTIAL", "NOT_FEASIBLE"],
+  "seeds": {"pilot": [42], "formal": [42,123,2026]},
+  "primary_metric": "mean_over_physical_cells(mean_over_observed_future_points(abs_error))",
+  "statistical_rule": {
+    "bootstrap_draws": 2000,
+    "confidence_level": 0.95,
+    "units": ["physical_cell", "exact_protocol_group"],
+    "source_seed_results_reported_separately": true,
+    "support_draw_results_reported_separately": true,
+    "no_cycle_as_independent_shot_or_bootstrap_unit": true,
+    "multiple_comparisons": "exploratory; primary rank and decision contrasts frozen before diagnostics"
+  },
+  "query_grid_rule": {
+    "fixed_before_test": true,
+    "must_cover_all_qualified_observations_for_full_future_primary_metric": true,
+    "query_cell_observed_end_is_never_an_input": true,
+    "example_101_2500_is_not_mandatory": true,
+    "known_HUST_observations_extend_to_cycle": 2689
+  },
+  "parameter_budget": {
+    "matrix_shape": [384,384],
+    "target_layers": "all six official attention blocks, exact Q/V paths from backbone audit",
+    "target_matrix_count": 12,
+    "rank_matched": [2,4,8],
+    "gradient_capture_ranks": [2,4,8,16,40,56,80],
+    "parameter_matched_pairs": [
+      {"lora_rank":2,"core_rank":40,"lora_per_matrix":1536,"core_per_matrix":1600,"relative_core_excess":0.041666666666666664},
+      {"lora_rank":4,"core_rank":56,"lora_per_matrix":3072,"core_per_matrix":3136,"relative_core_excess":0.020833333333333332},
+      {"lora_rank":8,"core_rank":80,"lora_per_matrix":6144,"core_per_matrix":6400,"relative_core_excess":0.041666666666666664}
+    ],
+    "near_match_max_relative_difference": 0.05,
+    "report_head_bridge_adapter_trainable_separately": true,
+    "report_source_and_target_scopes_separately": true,
+    "frozen_basis_and_compensation_storage_reported": true,
+    "no_unused_dummy_parameters_for_budget_matching": true,
+    "compute_schedule": "pilot a fixed limited rank/budget subset, then source-validation selects one registered primary pair; do not run a full rank-by-layer-by-K Cartesian product"
+  },
+  "P0": {
+    "entry": "qualified source cohort, independent physical IDs and exact protocol split registered",
+    "required_methods": ["B0_pretrained_frozen", "B1_random_frozen", "B2_standard_lora"],
+    "B3": "retrain a direct battery model on the new split or label historical results diagnostic-only",
+    "required_bridges": ["native_multivariate", "cycle_embedding"],
+    "selection_data": "source validation only",
+    "pass_requires": ["official checkpoint identity verified", "both bridge interfaces have prefix semantics", "real baseline training completed", "CPU/CUDA and batch1/8 QA", "query-future deletion/permutation/extreme-perturbation invariance", "independent prediction replay"],
+    "pretrained_gain_required_for_entry_to_P1": false,
+    "if_pretrained_no_gain": "complete bridge/task-consistency diagnostics, retain results and record the continuation risk",
+    "training_budget": "epochs, updates, validation search allowance and actual memory limits frozen in the run config after engineering pilot"
+  },
+  "P1": {
+    "entry_requires": ["P0_PASSED"],
+    "primary_rank": 4,
+    "primary_target_set": "six-block Q/V, uniformly shared by comparison methods",
+    "random_basis_replicates": 20,
+    "formal_source_seeds_required": [42,123,2026],
+    "minimum_independent_meta_validation_protocol_groups": 2,
+    "controls": ["random_orthogonal", "weight_svd_orthogonal", "permuted_source_outcomes"],
+    "basis_fit_data": "source training only, excluding the evaluated meta-validation protocol",
+    "gradient_definition": "mean of physical-cell normalized future trajectory loss gradients",
+    "zero_gradient_policy": "record as unsupported with denominator; never silently turn an undefined capture ratio into evidence",
+    "capture_metric": "squared_Frobenius(U.T @ G_holdout @ V) / squared_Frobenius(G_holdout), with column-orthonormal U and V",
+    "bootstrap_stability_metric": "mean of left/right normalized projection overlaps with bootstrap refits",
+    "pass_any_of": {
+      "stable_heldout_capture": {
+        "mean_absolute_capture_gap_vs_each_control_at_least": 0.02,
+        "paired_group_bootstrap_CI_low_above": 0.0,
+        "mean_projection_overlap_at_least": 0.5,
+        "source_seeds_with_positive_gap_vs_both_random_and_weight_svd": 3
+      },
+      "heldout_update_improvement": {
+        "direction_fit_data": "source train; never use the evaluated heldout gradient to optimize that same heldout sample",
+        "mean_relative_MAE_improvement_vs_each_random_and_weight_svd_control_at_least": 0.01,
+        "paired_cell_and_group_bootstrap_CI_low_above": 0.0,
+        "source_seeds_with_positive_MAE_improvement": 3
+      }
+    },
+    "single_seed_status": "PARTIAL",
+    "if_failed": "H1_NOT_SUPPORTED; P2 controlled comparisons may continue; P3/P4 large matrices remain stopped and NEGATIVE"
+  },
+  "P2": {
+    "entry_requires": ["P0_PASSED", "P1_audit_completed"],
+    "methods": ["LORA", "LORA_XS_faithful_sigma", "WEIGHT_SVD_CORE_orthogonal", "GRAD_LOWDIM", "RANDOM_LOWDIM", "LORA_GA"],
+    "same_bridge_head_checkpoint_loss_and_target_modules": true,
+    "search_budget_rule": "same number of source-validation LR trials and same optimizer updates for each method; actual LR values registered per method",
+    "primary_rank_matched_rank": 4,
+    "primary_parameter_matched_pair": {"lora_rank":4,"core_rank":56},
+    "pass_requires": ["GRAD_LOWDIM exceeds faithful LoRA-XS and random-core on source development and heldout source protocols", "orthogonal weight-SVD control reported to isolate basis direction from Sigma conditioning", "primary mean relative MAE gain >= 0.01", "paired cell/group bootstrap CI lower bounds > 0", "direction of gain consistent across three registered source seeds", "rank-matched and actual-parameter curves both reported"],
+    "if_failed": "retain NEGATIVE; do not use P3 gates to retroactively claim the P2 subspace innovation",
+    "if_P1_failed": "controlled comparison only; no automatic P3/P4 expansion"
+  },
+  "P3": {
+    "entry_requires": ["P1_PASSED", "P2_PASSED"],
+    "gate_inputs": "current physical cell K100 prefix and trusted known policy only",
+    "source_only_trainable_components": ["registered gate networks", "source core", "common bridge/head if registered uniformly"],
+    "formula": "W0 + U @ diag(drift_gate[cell]) @ C @ diag(abs_gate[cell]) @ V.T",
+    "ablation_set": ["NO_GATE", "ABS_ONLY", "DRIFT_ONLY", "TWO_VIEW", "STATIC_GATE", "SHUFFLED_DRIFT_diagnostic", "NO_LOCAL"],
+    "core_zero_caveat": "gate gradients at exact C=0 are zero; start from trained P2 C0 or register a core warmup and then verify both gate branches",
+    "pass_requires": ["TWO_VIEW exceeds P2 and STATIC_GATE on fixed source validation", "mean relative MAE gain >= 0.01", "paired bootstrap CI lower bounds > 0", "shuffle intervention weakens the relevant conditioning gain", "local-feature support denominators reported"],
+    "if_failed": "retain P2 without dynamic gates for P4; keep P3 negative results"
+  },
+  "P4": {
+    "entry_requires": ["P1_PASSED", "P2_PASSED", "P3_completed_or_explicitly_omitted_by_negative_gate"],
+    "K": [0,1,3,5,10],
+    "support_draws_per_feasible_K": 5,
+    "fixed_query_pool_across_K_and_draws": true,
+    "development_gate_data": "source meta-validation episodes; any separate target-development set must be registered before use",
+    "final_target_query_policy": "final target Query labels are reserved for the fully frozen evaluation; do not tune P4 on final Query and call the same Query an independent P5 test",
+    "target_core_definition": "C_eff = C_source_frozen + delta_core, with delta_core initially zero",
+    "target_trainable_allowlist": ["delta_core"],
+    "target_frozen": ["W0", "U", "V", "source_core", "bridge", "head", "source gate networks"],
+    "lora_baseline_exception": "separate registered source-LoRA-to-target-LoRA baseline can update its actual A/B parameters and must report that budget",
+    "K0_requires_bitwise_or_registered_numeric_identity_to_source_predictor": true,
+    "adaptation_hyperparameters": "source meta-validation or valid support-only leave-one-cell-out; 1-shot uses source-selected hyperparameters",
+    "jacobian_ridge": {"origin":"delta_core=0", "weighting":"per-cell normalized supported observations, with registered temporal correlation/downsampling", "solver":"solve or stable SVD", "claim":"local weighted-square approximation; final score remains cell-mean MAE"},
+    "pass_requires": ["K>0 beats the method's own source 0-shot on shared Query cells", "low-shot improvement exceeds both standard LoRA and faithful LoRA-XS under matched information access", "paired bootstrap and seed/draw uncertainty retained", "no cherry-picked support draws", "negative-transfer rate per Query cell reported"],
+    "if_only_beats_lora_but_not_lora_xs": "evidence for low adaptation dimensionality; degradation-specific benefit unproven"
+  },
+  "P5": {
+    "entry_requires": ["P4_PASSED", "all structure/hyperparameters/support seeds frozen before target Query scoring"],
+    "bootstrap_minimum_draws": 2000,
+    "required_strata": ["domain", "coordinate_semantics", "source_seed", "support_draw", "protocol", "horizon", "censoring_status"],
+    "novelty_primary_sources": ["LoRA", "LoRA-XS", "LoRA-GA", "LoRA-SB", "HiRA", "ABBA", "Time-PEFT", "Timer-LoRA battery", "BatteryMFormer", "PBT"],
+    "known_prior_art": "both frozen U C V.T and gradient-derived frozen bases with a trainable core have existing methods",
+    "required_failure_case": "MATR_b1c2 if present in eligible locked Query pool, plus all new severe failures",
+    "theory_limit": "conditional matrix projection and local regularized estimation; no unproved nonlinear generalization or electrochemical-identification claim"
+  }
+}
