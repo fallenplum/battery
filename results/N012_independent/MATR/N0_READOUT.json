@@ -1,0 +1,268 @@
+{
+  "status": "N0_PASS",
+  "domain": "MATR",
+  "qualified_cells": 169,
+  "physical_cycle_semantics": "published original instrument cycle keys",
+  "prefix_cutoff": 100,
+  "input_channels": [
+    "V",
+    "I",
+    "Q",
+    "Q_minus_prefix_reference_Q"
+  ],
+  "tensor_shape": [
+    169,
+    100,
+    64,
+    4
+  ],
+  "query_min": 101.0,
+  "query_max": 2238.0,
+  "observed_future_points": 123431,
+  "unavailable_future_grid_positions": 237891,
+  "internal_missing_future_cycles": 39,
+  "valid_prefix_curves": 16857,
+  "unique_protocols": 77,
+  "observed_EOL80_events": 169,
+  "EOL80_right_censored": 0,
+  "nominal_capacity_Ah": 1.1,
+  "policy_dimensions": 15,
+  "data_fingerprint": "9c4d058a3c77f26f3f2361ecc782f287f089709bca1de60b9f95f1530e9f526a",
+  "source": {
+    "source": "original-axis 169-cell MATR",
+    "data_freeze": "DATA_FREEZE_PASS",
+    "historical_exposure": true,
+    "freeze_file": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\data\\unified_matr_seed42\\DATA_FREEZE.json",
+    "files": [
+      {
+        "path": "data/unified_matr_seed42/dataset_manifest.json",
+        "sha256": "8707a00b0d053f0ada9fdcd22804de8d64a0b49c70f29c23272cb5d61ac2aff0",
+        "bytes": 7094384
+      },
+      {
+        "path": "data/unified_matr_seed42/cells.parquet",
+        "sha256": "833526d2db44fadeb5323b5cbaf80d554ec8c9bd03013af4482b0b3904807c13",
+        "bytes": 205267
+      },
+      {
+        "path": "data/unified_matr_seed42/early_viq_qv_64.npz",
+        "sha256": "e78a41972fd4d7a9b2d62d7097029d9c5c9a016ef7fa23e4da7b1b4c2c40034f",
+        "bytes": 47000004
+      },
+      {
+        "path": "data/unified_matr_seed42/early_physics_features.parquet",
+        "sha256": "650b887337e08774d2bb79e82899281d14c86804ffd51c237db1f7090c812b4a",
+        "bytes": 31739695
+      },
+      {
+        "path": "data/unified_matr_seed42/future_soh.parquet",
+        "sha256": "362249b3fcf17dab2ad1c792255c6a23a49036240b0fd5f263a723d5fb28ea94",
+        "bytes": 4098756
+      },
+      {
+        "path": "data/unified_matr_seed42/raw_record_audit.parquet",
+        "sha256": "ddd4278741c14d5ed4d3db1e1161fc18b2fb25e92baaa910191176601b6acb0f",
+        "bytes": 22255204
+      },
+      {
+        "path": "data/unified_matr_seed42/instrument_cycle_mapping.parquet",
+        "sha256": "44e1ddc9be53703ec9eb433487556690028cfdd055f998542452b19060479775",
+        "bytes": 13876987
+      },
+      {
+        "path": "data/unified_matr_seed42/instrument_identity_bindings.json",
+        "sha256": "891db3b732df70a2cdf0f837250568db5ea0e331c4b34397cd35a2f8b5a357d1",
+        "bytes": 382612
+      },
+      {
+        "path": "data/unified_matr_seed42/split_contract.json",
+        "sha256": "292c3f5e2615b700f3604b730c44963a0a1760aa9a4f29aa56ec6f16a2492b9b",
+        "bytes": 36501
+      },
+      {
+        "path": "data/unified_matr_seed42/dataset_qa.json",
+        "sha256": "655ef72ca1f40f45dedecb0cf7ae27ccf4e92ec6911baef11a475f114edfe8f0",
+        "bytes": 301622
+      },
+      {
+        "path": "data/unified_matr_seed42/dataset_qa_report.md",
+        "sha256": "4ba81bd4360a52ac907ecec15ecbd4b654dc3adad704886a247da2b5fed20538",
+        "bytes": 58010
+      },
+      {
+        "path": "configs/unified_matr_seed42.json",
+        "sha256": "25a488e1e27e6dffe5246ad8a9433810a9906aa7eb29d1288f4d21294dc6e72d",
+        "bytes": 3934
+      },
+      {
+        "path": "configs/unified_matr_seed42_splits.json",
+        "sha256": "292c3f5e2615b700f3604b730c44963a0a1760aa9a4f29aa56ec6f16a2492b9b",
+        "bytes": 36501
+      },
+      {
+        "path": "configs/unified_matr_native_run_roles.json",
+        "sha256": "d86a8b4b27b75f9cff282db2a771e32bd062fa37335d160bb9ea5fe30b3b02ca",
+        "bytes": 1081
+      },
+      {
+        "path": "results/unified_matr/instrument_metadata_audit.json",
+        "sha256": "3193f71eb98df11d09f96c09ed13e48ea94533301df9e7ac5faa280253422724",
+        "bytes": 396946
+      },
+      {
+        "path": "results/unified_matr/instrument_metadata_audit.csv",
+        "sha256": "bb255df3298a59927aebda9990be59320e7a834a3456d4d5259b06dbe8819c41",
+        "bytes": 105614
+      },
+      {
+        "path": "data/unified_matr_seed42/official_release_label_comparison.parquet",
+        "sha256": "036365c8303d83cbc439e68f4cd99df93362ae48505f6ffcd7509e830e73f1f0",
+        "bytes": 11439
+      },
+      {
+        "path": "data/cell_metadata.csv",
+        "sha256": "773d7a6431202397d02ccbfcb191bb4f07a3be3d609396969d42191aa9090c12",
+        "bytes": 2221036
+      },
+      {
+        "path": "configs/unified_matr_seed42_requirements.json",
+        "sha256": "fb135a8796b596e83d41a7b7350b3cf2755cf8bce4a4b8fe119fead23b7fb01e",
+        "bytes": 19031
+      },
+      {
+        "path": "contracts/SRSR_Physics_统一研究问题_一次性数据处理与模型实验总合同.md",
+        "sha256": "c59764b219f629eb5767706809a5393536fe977fa6092ae127156340c62a50d7",
+        "bytes": 15796
+      },
+      {
+        "path": "results/unified_matr/source_static_field_audit.json",
+        "sha256": "451bc1ae3fee1c8985f96a7de73a2f643b384a97e1ab7f5165f7fd08d3b6b4bd",
+        "bytes": 181314
+      },
+      {
+        "path": "results/unified_matr/instrument_metadata_QA.json",
+        "sha256": "c842a2008fbac57d6e49513e3acd3b32a0553b6ede513ec3c1247be18ec743e7",
+        "bytes": 1104
+      },
+      {
+        "path": "results/unified_matr/schedule_metadata_audit.json",
+        "sha256": "5eb16d8a8e10638b5e3ce9c458047bcae20d223ed5fb8654cbaad6926013ebf5",
+        "bytes": 5706800
+      },
+      {
+        "path": "results/unified_matr/schedule_metadata_QA.json",
+        "sha256": "51f918261153f7e9f6ec2b8434002d26d3428f36505ad424d6cb3e7b8cc9afc7",
+        "bytes": 1379
+      },
+      {
+        "path": "results/unified_matr/schedule_static_fields.parquet",
+        "sha256": "5cf35a7a5462c4f10d63deb7e68304ebb432209b0f729bf29a1361b8bf310b31",
+        "bytes": 40887
+      },
+      {
+        "path": "results/unified_matr/native_channel_audit_summary.json",
+        "sha256": "e4ad6330e4e3f105b1b3c513ce0272c70afcb820252949b482687c4615215f63",
+        "bytes": 343198
+      },
+      {
+        "path": "results/unified_matr/native_channel_audit_QA.json",
+        "sha256": "b6718fe2f45a6964b661f3ea85b4bc7cabd5dc4489e607ea3eeda50c10afe1ed",
+        "bytes": 1631
+      },
+      {
+        "path": "results/unified_matr/native_channel_audit.parquet",
+        "sha256": "73f6e8b034840e3644d6e035ef22f0586f309e8be60d674b9e736af3b976d4f4",
+        "bytes": 104973
+      },
+      {
+        "path": "results/unified_matr/SOURCE_DISCHARGE_STEP_QA.json",
+        "sha256": "5d7dc76f6e4ec38e1d294dbf6ebaad4433d12b64d9518f879e3e660cac295b01",
+        "bytes": 11315720
+      },
+      {
+        "path": "results/unified_matr/SOURCE_DISCHARGE_STEP_NATIVE_REPLAY.json",
+        "sha256": "1edda4d4954ec1bffc42a6c7783cda37a757f469887fc20cb8fa674652d614d5",
+        "bytes": 10676
+      },
+      {
+        "path": "results/unified_matr_seed42/b1c18_POST_RESTART_PROTOCOL_AUDIT.json",
+        "sha256": "a90a2ca152cf36f35bf7212e5198c11e194812c1a8abd628f9010a55890fc733",
+        "bytes": 56757
+      },
+      {
+        "path": "scripts/unified_matr/build_dataset.py",
+        "sha256": "470eca1affbadc9379c9cb3a1bb7fda865c6b96b9ae8866a08ac2916a7cdd897",
+        "bytes": 31772
+      },
+      {
+        "path": "scripts/unified_matr/dataset_utils.py",
+        "sha256": "9bbe7727b212096b50fa372a9c447276251aa8b9fd6d3ba0225904580844f3f4",
+        "bytes": 5164
+      },
+      {
+        "path": "scripts/unified_matr/instrument_csv.py",
+        "sha256": "7d1195b20b08c2d5abaf96e563faef497bbd8d75bb0d5093176bae5f01472982",
+        "bytes": 11747
+      },
+      {
+        "path": "scripts/unified_matr/measurements.py",
+        "sha256": "e0c397cdcd26ba267cb9914f2e19d441a3682b91a8f952804025f9b9d8f1ee10",
+        "bytes": 14441
+      },
+      {
+        "path": "scripts/unified_matr/physics_features.py",
+        "sha256": "3104722ae13bca400a9a7ef8138b2a90f4805d8c3de244335a789dac65169d9a",
+        "bytes": 16391
+      },
+      {
+        "path": "scripts/unified_matr/splits.py",
+        "sha256": "a78d80c408580e376bdb5e8056f48555d521250cece292133dd3be39566e9c89",
+        "bytes": 11276
+      },
+      {
+        "path": "scripts/unified_matr/enrich_metadata.py",
+        "sha256": "67496480f23000411eb6943432e7a80f6cac0583aed0ff0783bacd2df29969c2",
+        "bytes": 4946
+      },
+      {
+        "path": "scripts/unified_matr/verify_dataset.py",
+        "sha256": "df34c6ed383eb9f54b76d6c7102ff1003aaa93d62ac1d936ca1c8a9732a29efc",
+        "bytes": 54664
+      },
+      {
+        "path": "scripts/unified_matr/verify_physics_features.py",
+        "sha256": "9ca697a5585f274ce5977f6e6d766dac5f0fd027064b5b5fd4d1bf4db0cf8712",
+        "bytes": 7692
+      },
+      {
+        "path": "scripts/unified_matr/verify_instrument_csv.py",
+        "sha256": "07447f279a7a0bf039b1a6e10abd053eada91906979a3351c2f86d965975f8dd",
+        "bytes": 8664
+      },
+      {
+        "path": "scripts/unified_matr/scan_instrument_restarts.py",
+        "sha256": "4da41583101df3cf63e44be3e504ceeaaaadad85db98da2adf5e7ee11a4b8235",
+        "bytes": 7409
+      },
+      {
+        "path": "scripts/unified_matr/probe_frozen_loader.py",
+        "sha256": "b6d418d188c48169576047bf9c3def4bbc27ea9ffbff6a81cbe07deaef980027",
+        "bytes": 7727
+      },
+      {
+        "path": "data/unified_matr_seed42/dataset_fingerprint.sha256",
+        "sha256": "04af53bc81d03e976b1f4e9dce776540f251bfc2d960311e0f0b3ffd80eedaec",
+        "bytes": 4810
+      },
+      {
+        "path": "data/unified_matr_seed42/DATA_FREEZE.json",
+        "sha256": "276016ea2f72c2d9c366c44b00906c80cf8234f741b48b60a6a2562c57fff4fb"
+      }
+    ]
+  },
+  "five_folds_cell_disjoint": true,
+  "OOF_each_cell_once": true,
+  "train_only_standardization": true,
+  "targets_used_as_predictor_inputs": false,
+  "seed": 42
+}

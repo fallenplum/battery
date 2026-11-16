@@ -1,0 +1,24 @@
+{
+  "study_id": "N012_Independent_Trajectory_2026_11_16",
+  "scientific_objective": "early physical cycle K100 VIQ to full observed future SOH trajectory",
+  "probabilistic_branch": "not part of N0+N1+N2; reserved for P phase",
+  "data": {
+    "MATR": {"status": "READY_IF_CHECKED_OUT", "loader": "certified data/unified_matr_seed42", "cells": 169, "cycle_semantics": "original instrument cycles", "split": "frozen split_contract five folds"},
+    "HUST": {"status": "READY_IF_CHECKED_OUT", "loader": "qualified actual2C loaded response", "cells": 77, "cycle_semantics": "published original cycle keys", "split": "new deterministic five-fold cell split, not a prior blind test"},
+    "Stanford": {"status": "BLOCKED_NATIVE_AXIS", "cells_inventory": 181, "reason": "supplier cycle coordinate BEEP-reindexed; no qualified original-cycle K100 tensor"}
+  },
+  "n1": {
+    "models": ["resmlp", "voltage_cnn", "temporal_tcn", "cnn_tcn", "cnn_transformer"],
+    "fixed_decoder": "query_mlp", "encoder_width": 64,
+    "selection": "per outer fold, inner validation MAE only"
+  },
+  "n2": {
+    "fixed_encoder": "selected N1 encoder independently per outer fold",
+    "models": ["query_mlp", "legacy_flow", "free_rate", "monotone_spline", "physics_basis"],
+    "selection": "per outer fold, inner validation MAE only"
+  },
+  "training": {"seed":42,"epochs":150,"batch_size":8,"optimizer":"AdamW","learning_rate":0.0003,
+               "weight_decay":0.01,"gradient_clip":1.0,"loss":"cell-weighted masked future trajectory MAE"},
+  "reporting": {"unit":"SOH fraction","primary":"mean per-cell observed-future MAE and RMSE", "horizon_bins":[[101,200],[201,500],[501,1000],[1001,null]],
+                "do_not_claim":"historically exposed cells are not independent blind test"}
+}

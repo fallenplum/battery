@@ -1,0 +1,40 @@
+{
+  "status": "FAIL",
+  "device": "cuda",
+  "test_observations_consumed": 0,
+  "formal_optimizer_updates": 0,
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\n012\\engineering.py\", line 75, in main\n    loss.backward()\n  File \"D:\\Anaconda\\envs\\tslib\\Lib\\site-packages\\torch\\_tensor.py\", line 521, in backward\n    torch.autograd.backward(\n  File \"D:\\Anaconda\\envs\\tslib\\Lib\\site-packages\\torch\\autograd\\__init__.py\", line 289, in backward\n    _engine_run_backward(\n  File \"D:\\Anaconda\\envs\\tslib\\Lib\\site-packages\\torch\\autograd\\graph.py\", line 769, in _engine_run_backward\n    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: adaptive_avg_pool2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True)'. You can turn off determinism just for this operation, or you can use the 'warn_only=True' option, if that's acceptable for your application. You can also file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation.\n",
+  "checks": [
+    {
+      "name": "independent_model_operators",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/resmlp/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/resmlp/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/resmlp/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.04688844084739685,
+          "gradient_sha256": "c72e77eead429c6ceb9293771ff21e09b1b1b53d6ac20fcbd7350b2dc5a1672f",
+          "prediction_sha256": "dd4c5cb227c09c60a2d3effa170a98cf3ad61182f59eff9df363e66ac55614fd"
+        },
+        {
+          "loss": 0.04688844084739685,
+          "gradient_sha256": "c72e77eead429c6ceb9293771ff21e09b1b1b53d6ac20fcbd7350b2dc5a1672f",
+          "prediction_sha256": "dd4c5cb227c09c60a2d3effa170a98cf3ad61182f59eff9df363e66ac55614fd"
+        }
+      ]
+    }
+  ],
+  "passed_checks": 4,
+  "model_source_sha256": "9f1d24edae8341bea9021504cedf052d72cd24f3ffd7306d03e99d5170f6f07c",
+  "run_source_sha256": "9e6af08bb7f9b8d74f336452b9552644d799c397cf815863457ad6b210136c92"
+}

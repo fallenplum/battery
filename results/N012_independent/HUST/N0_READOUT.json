@@ -1,0 +1,161 @@
+{
+  "status": "N0_PASS",
+  "domain": "HUST",
+  "qualified_cells": 77,
+  "physical_cycle_semantics": "published original instrument cycle keys",
+  "prefix_cutoff": 100,
+  "input_channels": [
+    "V",
+    "I",
+    "Q",
+    "Q_minus_prefix_reference_Q"
+  ],
+  "tensor_shape": [
+    77,
+    100,
+    64,
+    4
+  ],
+  "query_min": 101.0,
+  "query_max": 2689.0,
+  "observed_future_points": 138422,
+  "unavailable_future_grid_positions": 60931,
+  "internal_missing_future_cycles": 0,
+  "valid_prefix_curves": 7698,
+  "unique_protocols": 77,
+  "observed_EOL80_events": 0,
+  "EOL80_right_censored": 77,
+  "nominal_capacity_Ah": 1.1,
+  "policy_dimensions": 12,
+  "data_fingerprint": "d9a5d893c9e3843a1a0ae6746191f36d1209158564ed4d9c4eb3ed1af58ba117",
+  "source": {
+    "source": "qualified actual-2C D3 view, prefix raw-cycle identity",
+    "data_freeze": "DATA_QUALIFICATION_PASS",
+    "historical_exposure": true,
+    "same_protocol_replicates": false,
+    "eol80": "all 77 events right-censored",
+    "files": [
+      {
+        "path": "data/hust_raw_idea_v2/DATASET_COMPLETE.json",
+        "sha256": "81a9317a749ca651334c12606c07e2b867ef127e9080306ad1cf2f58290109e6",
+        "bytes": 3539
+      },
+      {
+        "path": "results/hust_raw_idea_audit_v2/FINAL_DATASET_QA.json",
+        "sha256": "586dbb3183d5ccb3692941fc0c99bd156754d405ba890c3eb3e103a2e8792ef5",
+        "bytes": 27888
+      },
+      {
+        "path": "configs/hust_raw_idea_v2.json",
+        "sha256": "a35d3db6f53c71cd95ef719e79ca1d34339eaf9ed4fe190254edd89a328bed0f",
+        "bytes": 4847
+      },
+      {
+        "path": "results/hust_raw_idea_audit_v2/HUST_RAW_AUDIT.json",
+        "sha256": "e2ded76bfc45d7f8f623ca681083466fd241eb097bdb06a11519b2ce0559a6cd",
+        "bytes": 7086
+      },
+      {
+        "path": "results/hust_raw_idea_audit_v2/FULL_AUDIT_VERIFICATION.json",
+        "sha256": "6d264c3d059787ccbfadeba2f9fcc21a2a15dc6f6d9adacd42c9f714f2f249a2",
+        "bytes": 6058
+      },
+      {
+        "path": "data/hust_raw_idea_v2/PROCESSING_REGISTRATION.json",
+        "sha256": "50c7ee07dd81598bce88aa991cd637fd3394fc4c2ac69ae8db86d264fd5d6344",
+        "bytes": 7651
+      },
+      {
+        "path": "data/hust_raw_idea_v2/dataset_manifest.json",
+        "sha256": "4093b05cabe87939f33acaae1a5432c9cb576d3960e6319a08b09aa2ee1f929d",
+        "bytes": 14758
+      },
+      {
+        "path": "data/hust_raw_idea_v2/source_capacity_trajectory.parquet",
+        "sha256": "0c91c03f1c346182e9b4e11091cc523a39aa5a09b2d08a97fdb7efabf5778611",
+        "bytes": 6131966
+      },
+      {
+        "path": "data/hust_raw_idea_v2/future_soh.parquet",
+        "sha256": "78a8499a43bae347b1b66471faa3491d2b820c46bbeb1589ec96b56ddc512878",
+        "bytes": 5858263
+      },
+      {
+        "path": "data/hust_raw_idea_v2/cells.parquet",
+        "sha256": "1ba95c1d8d1125e5f1b1a9fafc7a2ba8f186928bfab54ca773b81bacebbe0dc6",
+        "bytes": 38582
+      },
+      {
+        "path": "data/hust_raw_idea_v2/policy_context.parquet",
+        "sha256": "d88d3f9bc4f71b1a75c7527c0c47fbb326ba8b6a53b46a866335a0cf9f350b46",
+        "bytes": 12570
+      },
+      {
+        "path": "data/hust_raw_idea_v2/views/actual2C_loaded_response/early_inputs.npz",
+        "sha256": "ddcebc4e8522c660df9ed59212ed6abdcc0c37815c3950c5ab1f95d519e13db3",
+        "bytes": 26877243
+      },
+      {
+        "path": "data/hust_raw_idea_v2/views/common5C_charge_response/early_inputs.npz",
+        "sha256": "13f726413ebd2f31ef8b7664f51ae89968592c0ca13c6128412ee8f645189c64",
+        "bytes": 13373437
+      },
+      {
+        "path": "data/hust_raw_idea_v2/views/actual2C_loaded_response/feature_diagnostics.parquet",
+        "sha256": "1007218546f7dd11de4bcbd34ecdb262171bb0555c56536a542b25e9283cb7bf",
+        "bytes": 371639
+      },
+      {
+        "path": "data/hust_raw_idea_v2/views/actual2C_loaded_response/view_qualification.parquet",
+        "sha256": "746ab3de608e3c3e833572e3f067fed95fb2edb0968ee7e4948058819bac7456",
+        "bytes": 14304
+      },
+      {
+        "path": "data/hust_raw_idea_v2/views/common5C_charge_response/feature_diagnostics.parquet",
+        "sha256": "fec1c07f8f8d821e3e3af6bff0c691796466e622fa116b688f79a28508173f04",
+        "bytes": 178378
+      },
+      {
+        "path": "data/hust_raw_idea_v2/views/common5C_charge_response/view_qualification.parquet",
+        "sha256": "739cb0ec629e0e2b20e56844e46369efb16d2a30f6494963c9065e2d6a6fe48e",
+        "bytes": 13757
+      },
+      {
+        "path": "data/hust_raw_idea_v2/prefix_support/prefix_view_support.csv",
+        "sha256": "a796adf9bc42e68ff61f4a263a8fbbdaf84a534c049c8d021ffae1779b07191c",
+        "bytes": 7672624
+      },
+      {
+        "path": "data/hust_raw_idea_v2/prefix_support/prefix_cell_support.csv",
+        "sha256": "1e91bcf23fdeb9323fc04139890ad546b6d0fe8dcb3f2af4feb3f8dc141460f1",
+        "bytes": 24818
+      },
+      {
+        "path": "data/hust_raw_idea_v2/prefix_support/prefix_stage_audit.csv",
+        "sha256": "25a2d9c5af1f347189ece12850fc9944d88ae52a703587a2caf94d73965ceca4",
+        "bytes": 17832188
+      },
+      {
+        "path": "data/hust_raw_idea_v2/prefix_support/PREFIX_SUPPORT_COMPLETE.json",
+        "sha256": "737aaa24b4f2ac1f7ed69e6e6904df7dafb765628d9927e9079d364982d715b3",
+        "bytes": 27402
+      },
+      {
+        "path": "data/hust_raw_idea_v2/DATA_QUALIFICATION.json",
+        "sha256": "f20ef55faa70a98e6ac77c5e184c18e58319c61d3141851a53dbd79a4282e255"
+      }
+    ],
+    "measurement_limitations": [
+      "Source-provided net Capacity generation and independent calibration remain uncertified.",
+      "Published terminal discharge1C conflicts with observed2C.",
+      "One source interruption and four repeated-time steps carry recorded-time integration warnings.",
+      "Charge view has34 eligible cells out of77.",
+      "All77 cells have historical exploration exposure and no observed exact nominal80percent event."
+    ]
+  },
+  "five_folds_cell_disjoint": true,
+  "OOF_each_cell_once": true,
+  "train_only_standardization": true,
+  "targets_used_as_predictor_inputs": false,
+  "seed": 42
+}
