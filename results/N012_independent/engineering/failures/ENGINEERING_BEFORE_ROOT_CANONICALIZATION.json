@@ -1,0 +1,658 @@
+{
+  "status": "PASS",
+  "device": "cuda",
+  "test_observations_consumed": 0,
+  "formal_optimizer_updates": 0,
+  "smoke_optimizer_updates": 28,
+  "smoke_elapsed_seconds": 0.7349999999860302,
+  "source_sha256": "f7095587e75d825416dabff45b882d5a08559651814c4e8c81c6d4ec1cde5eba",
+  "sources": [
+    {
+      "path": "n012/data.py",
+      "sha256": "d4271c44a42be8a9a46ae0a2e808826ef069158d2141056de236342fcc806099"
+    },
+    {
+      "path": "n012/model.py",
+      "sha256": "a78cfa9298d2e9f8b6edb82cefafdb5b6929a092e98ca6ac41f2fcf68a58c690"
+    },
+    {
+      "path": "n012/run.py",
+      "sha256": "9e6af08bb7f9b8d74f336452b9552644d799c397cf815863457ad6b210136c92"
+    },
+    {
+      "path": "n012/audit.py",
+      "sha256": "526fce34009abb8cf7fc243edef552ed2bbfefe0e2e0e1534f3ac626e1d3ad56"
+    },
+    {
+      "path": "n012/engineering.py",
+      "sha256": "f7095587e75d825416dabff45b882d5a08559651814c4e8c81c6d4ec1cde5eba"
+    },
+    {
+      "path": "tests/test_n012.py",
+      "sha256": "9807cfcf117cfa2d2daedb625d5128b86a4c5d2b349ee02dbf096bf6cded377a"
+    },
+    {
+      "path": "configs/N012_config.json",
+      "sha256": "2af3b833457ff80e7334999fd8f0ead561c7cd1c7c8cc9dd98fa3e8a2ba5c63d"
+    },
+    {
+      "path": "research/N012_EXECUTION_CONTRACT_ZH.md",
+      "sha256": "03d3a6f9b1cf6b7f2d33d0a5e03e5b498b81eab18d290b8f30fa7dcff43782bd"
+    }
+  ],
+  "actual_real_gradient_batches": 36,
+  "smoke_epochs": 2,
+  "checks": [
+    {
+      "name": "independent_model_operators",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/resmlp/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/resmlp/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/resmlp/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.04688844084739685,
+          "gradient_sha256": "c72e77eead429c6ceb9293771ff21e09b1b1b53d6ac20fcbd7350b2dc5a1672f",
+          "prediction_sha256": "dd4c5cb227c09c60a2d3effa170a98cf3ad61182f59eff9df363e66ac55614fd"
+        },
+        {
+          "loss": 0.04688844084739685,
+          "gradient_sha256": "c72e77eead429c6ceb9293771ff21e09b1b1b53d6ac20fcbd7350b2dc5a1672f",
+          "prediction_sha256": "dd4c5cb227c09c60a2d3effa170a98cf3ad61182f59eff9df363e66ac55614fd"
+        }
+      ]
+    },
+    {
+      "name": "MATR/voltage_cnn/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/voltage_cnn/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/voltage_cnn/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.04555124044418335,
+          "gradient_sha256": "fce166d9e903dfb9b126d8d82fbd03f51d8712080549bca748479397644f70c9",
+          "prediction_sha256": "a12838d46d3a1ca5c123021e38e8cb212c1985c873f466c916d44cde9b04cbb2"
+        },
+        {
+          "loss": 0.04555124044418335,
+          "gradient_sha256": "fce166d9e903dfb9b126d8d82fbd03f51d8712080549bca748479397644f70c9",
+          "prediction_sha256": "a12838d46d3a1ca5c123021e38e8cb212c1985c873f466c916d44cde9b04cbb2"
+        }
+      ]
+    },
+    {
+      "name": "MATR/temporal_tcn/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/temporal_tcn/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/temporal_tcn/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.044261038303375244,
+          "gradient_sha256": "cf0578c7b5a18430ccd303b64f830f2adb6083b10a625c5f7ac49ff056c3661a",
+          "prediction_sha256": "22df7928f7451325985bf1ce4ff0fad3f2976c784cef32f1dbf88681b77ec6f4"
+        },
+        {
+          "loss": 0.044261038303375244,
+          "gradient_sha256": "cf0578c7b5a18430ccd303b64f830f2adb6083b10a625c5f7ac49ff056c3661a",
+          "prediction_sha256": "22df7928f7451325985bf1ce4ff0fad3f2976c784cef32f1dbf88681b77ec6f4"
+        }
+      ]
+    },
+    {
+      "name": "MATR/cnn_tcn/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.04529130458831787,
+          "gradient_sha256": "b8e6c79c9d937d1b98b6a25b0d5aea8396b0b06a2bee9c48d9a50de51699ff1f",
+          "prediction_sha256": "fc2e0eacb83577d56d8296a56f72997bba02767cbddb3e4ebf16628fba1efa07"
+        },
+        {
+          "loss": 0.04529130458831787,
+          "gradient_sha256": "b8e6c79c9d937d1b98b6a25b0d5aea8396b0b06a2bee9c48d9a50de51699ff1f",
+          "prediction_sha256": "fc2e0eacb83577d56d8296a56f72997bba02767cbddb3e4ebf16628fba1efa07"
+        }
+      ]
+    },
+    {
+      "name": "MATR/cnn_transformer/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_transformer/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_transformer/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.046527452766895294,
+          "gradient_sha256": "783f3cd01b4ea949254db240043f8c22617ab005f3f4a5721d8d00a18a922ae8",
+          "prediction_sha256": "3fd0317e83c70329b8b5a831480b864eaa676e2736701df5b6b92d234921a073"
+        },
+        {
+          "loss": 0.046527452766895294,
+          "gradient_sha256": "783f3cd01b4ea949254db240043f8c22617ab005f3f4a5721d8d00a18a922ae8",
+          "prediction_sha256": "3fd0317e83c70329b8b5a831480b864eaa676e2736701df5b6b92d234921a073"
+        }
+      ]
+    },
+    {
+      "name": "MATR/cnn_tcn/legacy_flow/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/legacy_flow/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/legacy_flow/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.04640543833374977,
+          "gradient_sha256": "c5133ce1ae0e42d52803ba75b9da801192c06937ec00dcc23348c3bbf315675f",
+          "prediction_sha256": "30af1760826f044af0167feeb8b8e5415edb47413486f501acb2ad122887efc4"
+        },
+        {
+          "loss": 0.04640543833374977,
+          "gradient_sha256": "c5133ce1ae0e42d52803ba75b9da801192c06937ec00dcc23348c3bbf315675f",
+          "prediction_sha256": "30af1760826f044af0167feeb8b8e5415edb47413486f501acb2ad122887efc4"
+        }
+      ]
+    },
+    {
+      "name": "MATR/cnn_tcn/free_rate/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/free_rate/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/free_rate/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.029603390023112297,
+          "gradient_sha256": "50a7cd46ceaa28df39266cb1ab70413d5d1fa529940c63eeae9274cf8847bf90",
+          "prediction_sha256": "bd711a4b076f472d14ed6ca46933fefae76d7d7e85b3fbd773b7537f41219a1e"
+        },
+        {
+          "loss": 0.029603390023112297,
+          "gradient_sha256": "50a7cd46ceaa28df39266cb1ab70413d5d1fa529940c63eeae9274cf8847bf90",
+          "prediction_sha256": "bd711a4b076f472d14ed6ca46933fefae76d7d7e85b3fbd773b7537f41219a1e"
+        }
+      ]
+    },
+    {
+      "name": "MATR/cnn_tcn/monotone_spline/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/monotone_spline/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/monotone_spline/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.029210306704044342,
+          "gradient_sha256": "60c117c5bfeedb41ce03cf49cc30f5392db98e83aad30bc6d36595363c4aeade",
+          "prediction_sha256": "4695b977f77588be8e445f8fcf24f4bff3c7022423e2500581afcf5b320d02d0"
+        },
+        {
+          "loss": 0.029210306704044342,
+          "gradient_sha256": "60c117c5bfeedb41ce03cf49cc30f5392db98e83aad30bc6d36595363c4aeade",
+          "prediction_sha256": "4695b977f77588be8e445f8fcf24f4bff3c7022423e2500581afcf5b320d02d0"
+        }
+      ]
+    },
+    {
+      "name": "MATR/cnn_tcn/physics_basis/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/physics_basis/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/cnn_tcn/physics_basis/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.02478378638625145,
+          "gradient_sha256": "7a65f7bb72970815c1c68506d5bddf2ffc0f1a6ae15fdfa0cf5645b6f52acb8e",
+          "prediction_sha256": "61487bb36ef551292200024e8fcc7268ab611597306e972da2f2edadb9c9334b"
+        },
+        {
+          "loss": 0.02478378638625145,
+          "gradient_sha256": "7a65f7bb72970815c1c68506d5bddf2ffc0f1a6ae15fdfa0cf5645b6f52acb8e",
+          "prediction_sha256": "61487bb36ef551292200024e8fcc7268ab611597306e972da2f2edadb9c9334b"
+        }
+      ]
+    },
+    {
+      "name": "MATR/query_mlp/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/query_mlp/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/query_mlp/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/legacy_flow/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/legacy_flow/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/legacy_flow/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/free_rate/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/free_rate/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/free_rate/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/free_rate/nonincreasing",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/independent_free_rate_integral",
+      "status": "PASS",
+      "max_absolute_error": 1.2749171363068967e-07
+    },
+    {
+      "name": "MATR/monotone_spline/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/monotone_spline/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/monotone_spline/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/monotone_spline/nonincreasing",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/monotone_spline/nonnegative",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/physics_basis/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/physics_basis/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/physics_basis/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/physics_basis/nonincreasing",
+      "status": "PASS"
+    },
+    {
+      "name": "MATR/physics_basis/nonnegative",
+      "status": "PASS"
+    },
+    {
+      "name": "real_two_epoch_smoke",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/resmlp/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/resmlp/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/resmlp/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.09796704351902008,
+          "gradient_sha256": "4314d696d22a7028996c15f70a0c6fd62bc3c47ed4473b0509a91598a2dccd23",
+          "prediction_sha256": "312b07528e81af3681b4b63362605eb5a0ca9d6806172b1919025a3731ddef6b"
+        },
+        {
+          "loss": 0.09796704351902008,
+          "gradient_sha256": "4314d696d22a7028996c15f70a0c6fd62bc3c47ed4473b0509a91598a2dccd23",
+          "prediction_sha256": "312b07528e81af3681b4b63362605eb5a0ca9d6806172b1919025a3731ddef6b"
+        }
+      ]
+    },
+    {
+      "name": "HUST/voltage_cnn/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/voltage_cnn/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/voltage_cnn/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.10066725313663483,
+          "gradient_sha256": "c7476f10c2c99b61ed9b6269c8e7acdc4266a0cabd9c6685989a5c43a08f9662",
+          "prediction_sha256": "446736016e2f30f131aeda6fc708bc5d0884420969fdadfb6976542663f06519"
+        },
+        {
+          "loss": 0.10066725313663483,
+          "gradient_sha256": "c7476f10c2c99b61ed9b6269c8e7acdc4266a0cabd9c6685989a5c43a08f9662",
+          "prediction_sha256": "446736016e2f30f131aeda6fc708bc5d0884420969fdadfb6976542663f06519"
+        }
+      ]
+    },
+    {
+      "name": "HUST/temporal_tcn/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/temporal_tcn/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/temporal_tcn/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.09458236396312714,
+          "gradient_sha256": "00f901c30d85f05b57202b3c7b4f92a9cb2a1bb1a8d694a889d625873cf53752",
+          "prediction_sha256": "bd0fc6c6ebca9c65c7a66203384096eb3503fb6810d85e0d54993f3021006b96"
+        },
+        {
+          "loss": 0.09458236396312714,
+          "gradient_sha256": "00f901c30d85f05b57202b3c7b4f92a9cb2a1bb1a8d694a889d625873cf53752",
+          "prediction_sha256": "bd0fc6c6ebca9c65c7a66203384096eb3503fb6810d85e0d54993f3021006b96"
+        }
+      ]
+    },
+    {
+      "name": "HUST/cnn_tcn/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.09655027091503143,
+          "gradient_sha256": "f6f2ba42ad3df4f16bf1d606b92ae590678ae9ce8dfac612828215fc60090167",
+          "prediction_sha256": "68249f37e2848352cc30c8143826b880b96b6c9f2c9fa7d4a32a3136acc2816d"
+        },
+        {
+          "loss": 0.09655027091503143,
+          "gradient_sha256": "f6f2ba42ad3df4f16bf1d606b92ae590678ae9ce8dfac612828215fc60090167",
+          "prediction_sha256": "68249f37e2848352cc30c8143826b880b96b6c9f2c9fa7d4a32a3136acc2816d"
+        }
+      ]
+    },
+    {
+      "name": "HUST/cnn_transformer/query_mlp/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_transformer/query_mlp/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_transformer/query_mlp/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.09687326848506927,
+          "gradient_sha256": "d2abd28d5da8591bd03e8c8f1ec82964b987fb23aa23d0e4a54d859e70701811",
+          "prediction_sha256": "8222b074009d686f285495167009e5d17b008833b09b60857aaeed6e52de529f"
+        },
+        {
+          "loss": 0.09687326848506927,
+          "gradient_sha256": "d2abd28d5da8591bd03e8c8f1ec82964b987fb23aa23d0e4a54d859e70701811",
+          "prediction_sha256": "8222b074009d686f285495167009e5d17b008833b09b60857aaeed6e52de529f"
+        }
+      ]
+    },
+    {
+      "name": "HUST/cnn_tcn/legacy_flow/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/legacy_flow/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/legacy_flow/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.1076856404542923,
+          "gradient_sha256": "3688c3749ba733c6ea78c3db07b0db20e551345a6f7fb355fb210fd0dc4dd1e5",
+          "prediction_sha256": "c663669c4bd63ada79df099f3d27f24c0ee40992939087dc570309374b48a3f5"
+        },
+        {
+          "loss": 0.1076856404542923,
+          "gradient_sha256": "3688c3749ba733c6ea78c3db07b0db20e551345a6f7fb355fb210fd0dc4dd1e5",
+          "prediction_sha256": "c663669c4bd63ada79df099f3d27f24c0ee40992939087dc570309374b48a3f5"
+        }
+      ]
+    },
+    {
+      "name": "HUST/cnn_tcn/free_rate/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/free_rate/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/free_rate/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.02617572620511055,
+          "gradient_sha256": "d0116324c8d12173908a61b0b41c5e860c303921dba7a3a5dc4d056368030058",
+          "prediction_sha256": "3226284d154c98795bbdbaf7ec23df05896454c6acb0be3b5ada624dcd6f2ea9"
+        },
+        {
+          "loss": 0.02617572620511055,
+          "gradient_sha256": "d0116324c8d12173908a61b0b41c5e860c303921dba7a3a5dc4d056368030058",
+          "prediction_sha256": "3226284d154c98795bbdbaf7ec23df05896454c6acb0be3b5ada624dcd6f2ea9"
+        }
+      ]
+    },
+    {
+      "name": "HUST/cnn_tcn/monotone_spline/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/monotone_spline/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/monotone_spline/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.02610979974269867,
+          "gradient_sha256": "f64893cd9fd97ecf03d49c08676bef552b150d35203d310ee51f39c2eb126411",
+          "prediction_sha256": "a9eeacade3dfa33852e6749de3cdbbaee316501a99ec5b150db250e8cc0cf62e"
+        },
+        {
+          "loss": 0.02610979974269867,
+          "gradient_sha256": "f64893cd9fd97ecf03d49c08676bef552b150d35203d310ee51f39c2eb126411",
+          "prediction_sha256": "a9eeacade3dfa33852e6749de3cdbbaee316501a99ec5b150db250e8cc0cf62e"
+        }
+      ]
+    },
+    {
+      "name": "HUST/cnn_tcn/physics_basis/finite_all_gradients/0",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/physics_basis/finite_all_gradients/1",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/cnn_tcn/physics_basis/fresh_seed42_exact",
+      "status": "PASS",
+      "repeats": [
+        {
+          "loss": 0.04151628538966179,
+          "gradient_sha256": "0163e98d7fb50e3faada6734250b9f2ec8c5185bf1e23d5c7f5ac904c55a983b",
+          "prediction_sha256": "b3d87772d0e3f262d0b0ad0ce458357ef9b9d44088a926f5ef0d958b6b2388cf"
+        },
+        {
+          "loss": 0.04151628538966179,
+          "gradient_sha256": "0163e98d7fb50e3faada6734250b9f2ec8c5185bf1e23d5c7f5ac904c55a983b",
+          "prediction_sha256": "b3d87772d0e3f262d0b0ad0ce458357ef9b9d44088a926f5ef0d958b6b2388cf"
+        }
+      ]
+    },
+    {
+      "name": "HUST/query_mlp/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/query_mlp/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/query_mlp/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/legacy_flow/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/legacy_flow/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/legacy_flow/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/free_rate/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/free_rate/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/free_rate/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/free_rate/nonincreasing",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/independent_free_rate_integral",
+      "status": "PASS",
+      "max_absolute_error": 8.461947176297002e-08
+    },
+    {
+      "name": "HUST/monotone_spline/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/monotone_spline/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/monotone_spline/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/monotone_spline/nonincreasing",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/monotone_spline/nonnegative",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/physics_basis/far_queries_finite",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/physics_basis/anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/physics_basis/query_order",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/physics_basis/nonincreasing",
+      "status": "PASS"
+    },
+    {
+      "name": "HUST/physics_basis/nonnegative",
+      "status": "PASS"
+    }
+  ],
+  "passed_checks": 98
+}

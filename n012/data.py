@@ -118,7 +118,7 @@ def _assemble(archive, identifiers, eligible, future, folds, domain, provenance)
 
 
 def load_matr(repo_root):
-    repo_root=Path(repo_root)
+    repo_root=Path(repo_root).resolve()
     from scripts.unified_matr.train_seed42 import load_frozen_data
     root=repo_root/"data/unified_matr_seed42"
     inputs, ids, eligible, cells, query, targets, observed, rate_targets, rate_mask, split, freeze=load_frozen_data(root)
@@ -159,7 +159,7 @@ def _hust_folds(ids,seed=42,k=5,val_fraction=.2):
 
 
 def load_hust(repo_root):
-    repo_root=Path(repo_root)
+    repo_root=Path(repo_root).resolve()
     root=repo_root/"data/hust_raw_idea_v2"
     qual=json.loads((root/"DATA_QUALIFICATION.json").read_text(encoding="utf-8"))
     if qual.get("status")!="DATA_QUALIFICATION_PASS":
