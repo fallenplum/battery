@@ -18,6 +18,18 @@ from .model import RootCauseNet
 from .run import check_sources,predict
 
 
+def physical_jacobian(parameters,u,anchor,individual_count):
+    """Differentiate physical coordinates directly, including saturated raw maps."""
+    a,b,c,tau,tc,w = np.asarray(parameters,float)
+    v,v0 = (u-tau)/w,-tau/w
+    diff = softplus(v)-softplus(v0)
+    cumulative = a*np.log1p(u/tc)+b*u+c*w*diff
+    pred = anchor*np.exp(-cumulative)
+    dh = np.column_stack((np.log1p(u/tc),u,w*diff,c*(-expit(v)+expit(v0)),
+                          -a*u/(tc*(tc+u)),c*(diff-v*expit(v)+v0*expit(v0))))
+    return -pred[:,None]*dh[:,:individual_count]
+
+
 def parameter_diagnostics(domain):
     d = load_domain(domain)
     b = d.bundle
@@ -48,12 +60,7 @@ def parameter_diagnostics(domain):
                         supported_starts=len(eq),tau_range=float(np.ptp([r['parameters'][3] for r in eq]))))
                 q = np.asarray(b.query[b.observed[i]],float)
                 raw = np.array(best['raw'])
-                _,jac = evaluate(family,raw,(q-100)/1000,float(b.anchor[i]),log['shared_values'])
-                chain = np.r_[expit(raw[:3])*np.array([.05,.05,.06]),4*expit(raw[3])*(1-expit(raw[3]))]
-                if family == 'physics_free':
-                    chain = np.r_[chain,expit(raw[4:])]
-                # Convert optimizer derivatives to interpretable physical parameter coordinates.
-                physical_jac = jac/np.maximum(chain[None],1e-30)
+                physical_jac = physical_jacobian(best['parameters'],(q-100)/1000,float(b.anchor[i]),len(raw))
                 scaled = physical_jac*np.array(c['svd_scaled_parameter_step'][:len(raw)])[None]
                 s = np.linalg.svd(scaled,compute_uv=False)
                 svds.append(dict(**base,singular_values=json.dumps(s.tolist()),max_sv=float(s[0]),min_sv=float(s[-1]),
