@@ -1,0 +1,160 @@
+{
+  "stage": "P1",
+  "status": "PASSED",
+  "H1_status": "SHARED_SOURCE_LOW_DIMENSIONAL_CAPTURE_SUPPORTED",
+  "decision_config": {
+    "required_seeds": [
+      42,
+      123,
+      2026
+    ],
+    "primary_rank": 4,
+    "bootstrap_draws": 2000,
+    "minimum_capture_gap": 0.02,
+    "minimum_stability": 0.5,
+    "minimum_groups": 2
+  },
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "required_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "comparisons": [
+    {
+      "reference": "random_mean",
+      "rank": 4,
+      "mean_capture_gap": 0.8715100388037257,
+      "paired_protocol_CI_low": 0.8320182551307423,
+      "paired_protocol_CI_high": 0.9080194119360464,
+      "valid_protocol_groups": 15,
+      "seed_gaps": {
+        "42": 0.8775458192525261,
+        "123": 0.865373764802909,
+        "2026": 0.8716105323557425
+      },
+      "all_registered_seed_directions_positive": true,
+      "between_seed_gap_std": 0.006086649455702917,
+      "bootstrap_unit": "same exact-protocol group paired across seeds; condition on the fitted source seeds"
+    },
+    {
+      "reference": "weight_svd",
+      "rank": 4,
+      "mean_capture_gap": 0.8704648411542169,
+      "paired_protocol_CI_low": 0.832356282852191,
+      "paired_protocol_CI_high": 0.9069476511559935,
+      "valid_protocol_groups": 15,
+      "seed_gaps": {
+        "42": 0.876504023104786,
+        "123": 0.8643516862693557,
+        "2026": 0.8705388140885092
+      },
+      "all_registered_seed_directions_positive": true,
+      "between_seed_gap_std": 0.006076506120847354,
+      "bootstrap_unit": "same exact-protocol group paired across seeds; condition on the fitted source seeds"
+    },
+    {
+      "reference": "shuffled_cov",
+      "rank": 4,
+      "mean_capture_gap": -0.008788077657814716,
+      "paired_protocol_CI_low": -0.03339181430978085,
+      "paired_protocol_CI_high": 0.015748389113430673,
+      "valid_protocol_groups": 15,
+      "seed_gaps": {
+        "42": -0.011759777470061458,
+        "123": -0.0004146237632323869,
+        "2026": -0.0141898317401503
+      },
+      "all_registered_seed_directions_positive": false,
+      "between_seed_gap_std": 0.007352709604793067,
+      "bootstrap_unit": "same exact-protocol group paired across seeds; condition on the fitted source seeds"
+    }
+  ],
+  "basis_stability_mean": 0.937482619089002,
+  "basis_stability_by_seed": {
+    "42": 0.9533852523388446,
+    "123": 0.9309831685133773,
+    "2026": 0.9280794364147841
+  },
+  "permutation_capture_weakening_observed": false,
+  "battery_specificity_claim": "UNESTABLISHED; label-shuffle weakening alone cannot identify a battery-specific mechanism",
+  "permutation_interpretation": "the label-shuffle control does not establish outcome-specific source directions",
+  "heldout_update_branch": "NOT_EVALUATED_BY_ZERO_UPDATE_P1",
+  "P2_minimal_controls_allowed": true,
+  "P2_parameter_matched_controls_allowed": true,
+  "P2_additional_rank_curves_allowed": true,
+  "P2_large_rank_curve_allowed": true,
+  "P3_P4_large_expansion_allowed": true,
+  "optimizer_updates": 0,
+  "total_gradient_forward_backward_evaluations": 1035,
+  "target_Query_future_labels_accessed": false,
+  "inputs": [
+    {
+      "seed": 42,
+      "files": [
+        {
+          "path": "P1_RESULT.json",
+          "sha256": "3e9c899e97fea1d98d575c0e5b5094c04f43b7a4e0ebfd85dca512dd17c6e8be"
+        },
+        {
+          "path": "P1_REGISTRATION.json",
+          "sha256": "1202a93e59b4d49b8b3c6eb3ac149294f018f00501d64d94fcddb2adc0e85d8d"
+        },
+        {
+          "path": "P1_CAPTURE.csv",
+          "sha256": "8713923034f919ed8f1b67845c05dbebe321888f894d52329fbfb9400af03edb"
+        },
+        {
+          "path": "P1_BASIS_STABILITY.csv",
+          "sha256": "733629b42dc952d63e6eb0e41a2a3c8ad3db89b4466eea425490043981c45460"
+        }
+      ]
+    },
+    {
+      "seed": 123,
+      "files": [
+        {
+          "path": "P1_RESULT.json",
+          "sha256": "dcdc8dec83658b60bfe2850b39e3afbcfaef81e7b8e8fdcb636dde6116df208a"
+        },
+        {
+          "path": "P1_REGISTRATION.json",
+          "sha256": "20edb073dc4d6660eefe5258bb60f2b587395fae622d34ea9751978fb48d45c7"
+        },
+        {
+          "path": "P1_CAPTURE.csv",
+          "sha256": "c101a76f93b42cf21df17e7ee754c0cb47f0d618ed07ec3492d19b26812e98ba"
+        },
+        {
+          "path": "P1_BASIS_STABILITY.csv",
+          "sha256": "122a8b61cb2cc62bbbb9da2a542fc5b8ed4edad9c128e5b8f49a7a7e837d037c"
+        }
+      ]
+    },
+    {
+      "seed": 2026,
+      "files": [
+        {
+          "path": "P1_RESULT.json",
+          "sha256": "8f71a462b61b5001f25aa8f17f4d62713ddd9835c9de4f0d321c4bc1b604df39"
+        },
+        {
+          "path": "P1_REGISTRATION.json",
+          "sha256": "2013d0753f600d52d0765d901649652850e0cb37ecde02a76df7c29d4a502ab2"
+        },
+        {
+          "path": "P1_CAPTURE.csv",
+          "sha256": "05fb091a30889237a3742d53f9e8c6d673acb21ca4a7db45535d530d71d2debd"
+        },
+        {
+          "path": "P1_BASIS_STABILITY.csv",
+          "sha256": "f9e4ac0bfa500bfe9f56dcc99e7fb54809f61176c5bc79c2902105ad7aefb26e"
+        }
+      ]
+    }
+  ]
+}

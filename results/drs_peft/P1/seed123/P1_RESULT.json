@@ -1,0 +1,1552 @@
+{
+  "status": "COMPLETE_SOURCE_GRADIENT_DIAGNOSTIC",
+  "seed": 123,
+  "primary_rank": 4,
+  "source_cells": 85,
+  "source_groups": 47,
+  "meta_validation_cells": 30,
+  "meta_validation_groups": 15,
+  "within_group_variation_supported_source_groups": 19,
+  "meta_validation_groups_with_replicate_cells": 6,
+  "source_layers_with_nonzero_gradient": 12,
+  "target_matrices": 12,
+  "optimizer_updates": 0,
+  "physical_cell_gradient_evaluations": 315,
+  "independent_endpoint_replay_layer_gradients": 120,
+  "independent_endpoint_replay_physical_cells": 10,
+  "total_gradient_forward_backward_evaluations": 345,
+  "secondary_candidate_diagnostic": {
+    "status": "COMPLETE_SECONDARY_DESCRIPTIVE_DIAGNOSTIC",
+    "family": "qkvo_ffn",
+    "seed": 123,
+    "source_ids": [
+      "MATR_b1c0",
+      "MATR_b1c1",
+      "MATR_b1c11",
+      "MATR_b1c14",
+      "MATR_b1c15",
+      "MATR_b1c16",
+      "MATR_b1c17",
+      "MATR_b1c2",
+      "MATR_b1c20",
+      "MATR_b1c21",
+      "MATR_b1c24",
+      "MATR_b1c25"
+    ],
+    "meta_validation_ids": [
+      "MATR_b1c23",
+      "MATR_b1c26",
+      "MATR_b1c27",
+      "MATR_b1c3",
+      "MATR_b1c30",
+      "MATR_b1c31",
+      "MATR_b1c4",
+      "MATR_b2c0"
+    ],
+    "target_matrices": 42,
+    "extra_gradient_forward_backward_evaluations": 20,
+    "source_state_sha256": "f883d46dd40215c87c096df4d248875d8fd342a8a4eb5e9a995d74f996b2c232",
+    "optimizer_updates": 0,
+    "target_query_labels_used": 0,
+    "inferential_scope": "secondary mean-SVD spectrum and individual heldout capture; no covariance/bootstrap/family selection",
+    "main_QV_target_set_changed": false,
+    "rank_or_target_selection_permitted": false,
+    "source_mean_weighting": "uniform physical cells among the twelve lexicographically first source IDs",
+    "tensors": {
+      "path": "P1_CANDIDATE_MEANS.pt",
+      "sha256": "3cdafd4df17177e47edb4731b7ac8140ed0dba2fd0b95e626d434bf2128dc0ec"
+    }
+  },
+  "source_nominal_capacities_Ah": [
+    1.100000023841858
+  ],
+  "capacity_variation_supported": false,
+  "absolute_unit_control_interpretation": "same-checkpoint source-only unit perturbation; constant source capacity limits invariance claims",
+  "source_model_before_sha256": "f883d46dd40215c87c096df4d248875d8fd342a8a4eb5e9a995d74f996b2c232",
+  "source_model_after_sha256": "f883d46dd40215c87c096df4d248875d8fd342a8a4eb5e9a995d74f996b2c232",
+  "target_Query_future_labels_accessed": false,
+  "target_query_labels_used": 0,
+  "information_budget_semantics": "cohort files may be loaded in memory; final target future labels never enter gradients, selection, or scores",
+  "comparisons": [
+    {
+      "phase": "P1",
+      "seed": 123,
+      "reference": "random_mean",
+      "candidate": "grad_cov",
+      "rank": 4,
+      "valid_protocol_groups": 15,
+      "mean_capture_gap": 0.8653737648029091,
+      "paired_protocol_CI_low": 0.8212733893738902,
+      "paired_protocol_CI_high": 0.9060437569521718
+    },
+    {
+      "phase": "P1",
+      "seed": 123,
+      "reference": "weight_svd",
+      "candidate": "grad_cov",
+      "rank": 4,
+      "valid_protocol_groups": 15,
+      "mean_capture_gap": 0.8643516862693558,
+      "paired_protocol_CI_low": 0.8199858276194479,
+      "paired_protocol_CI_high": 0.9054328154935449
+    },
+    {
+      "phase": "P1",
+      "seed": 123,
+      "reference": "shuffled_cov",
+      "candidate": "grad_cov",
+      "rank": 4,
+      "valid_protocol_groups": 15,
+      "mean_capture_gap": -0.00041462376323239566,
+      "paired_protocol_CI_low": -0.020058342646685236,
+      "paired_protocol_CI_high": 0.02202483205702213
+    }
+  ],
+  "mean_basis_bootstrap_overlap": 0.9309831685133773,
+  "single_seed_capture_criterion_passed": true,
+  "H1_status": "PARTIAL_SINGLE_SEED_REQUIRES_THREE_SEED_AGGREGATION",
+  "basis_file": "P1_BASES.pt",
+  "gradient_cache_manifests": {
+    "source/nominal": {
+      "folder": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\p1_gradients\\seed123\\source_nominal_430b43dde5b74cd2",
+      "identity": {
+        "seed": 123,
+        "role": "source",
+        "variant": "nominal",
+        "model_sha256": "f883d46dd40215c87c096df4d248875d8fd342a8a4eb5e9a995d74f996b2c232",
+        "source_data_sha256": "778f98f34efc297304302883dae22288a3df608eacc8f83ecef9b838e012bb35",
+        "ids": [
+          "MATR_b1c0",
+          "MATR_b1c1",
+          "MATR_b1c11",
+          "MATR_b1c14",
+          "MATR_b1c15",
+          "MATR_b1c16",
+          "MATR_b1c17",
+          "MATR_b1c2",
+          "MATR_b1c20",
+          "MATR_b1c21",
+          "MATR_b1c24",
+          "MATR_b1c25",
+          "MATR_b1c32",
+          "MATR_b1c33",
+          "MATR_b1c34",
+          "MATR_b1c35",
+          "MATR_b1c38",
+          "MATR_b1c39",
+          "MATR_b1c40",
+          "MATR_b1c41",
+          "MATR_b1c42",
+          "MATR_b1c43",
+          "MATR_b1c44",
+          "MATR_b1c45",
+          "MATR_b1c9",
+          "MATR_b2c1",
+          "MATR_b2c10",
+          "MATR_b2c11",
+          "MATR_b2c12",
+          "MATR_b2c13",
+          "MATR_b2c18",
+          "MATR_b2c2",
+          "MATR_b2c21",
+          "MATR_b2c23",
+          "MATR_b2c27",
+          "MATR_b2c29",
+          "MATR_b2c3",
+          "MATR_b2c30",
+          "MATR_b2c31",
+          "MATR_b2c34",
+          "MATR_b2c35",
+          "MATR_b2c36",
+          "MATR_b2c38",
+          "MATR_b2c39",
+          "MATR_b2c4",
+          "MATR_b2c40",
+          "MATR_b2c42",
+          "MATR_b2c44",
+          "MATR_b2c46",
+          "MATR_b2c47",
+          "MATR_b2c5",
+          "MATR_b2c6",
+          "MATR_b3c0",
+          "MATR_b3c15",
+          "MATR_b3c20",
+          "MATR_b3c21",
+          "MATR_b3c22",
+          "MATR_b3c24",
+          "MATR_b3c28",
+          "MATR_b3c29",
+          "MATR_b3c31",
+          "MATR_b3c33",
+          "MATR_b3c38",
+          "MATR_b3c6",
+          "MATR_b3c8",
+          "MATR_b4c0",
+          "MATR_b4c10",
+          "MATR_b4c11",
+          "MATR_b4c12",
+          "MATR_b4c13",
+          "MATR_b4c16",
+          "MATR_b4c17",
+          "MATR_b4c19",
+          "MATR_b4c21",
+          "MATR_b4c23",
+          "MATR_b4c25",
+          "MATR_b4c26",
+          "MATR_b4c28",
+          "MATR_b4c32",
+          "MATR_b4c33",
+          "MATR_b4c35",
+          "MATR_b4c36",
+          "MATR_b4c37",
+          "MATR_b4c44",
+          "MATR_b4c9"
+        ],
+        "outcome_donors": [
+          "MATR_b1c0",
+          "MATR_b1c1",
+          "MATR_b1c11",
+          "MATR_b1c14",
+          "MATR_b1c15",
+          "MATR_b1c16",
+          "MATR_b1c17",
+          "MATR_b1c2",
+          "MATR_b1c20",
+          "MATR_b1c21",
+          "MATR_b1c24",
+          "MATR_b1c25",
+          "MATR_b1c32",
+          "MATR_b1c33",
+          "MATR_b1c34",
+          "MATR_b1c35",
+          "MATR_b1c38",
+          "MATR_b1c39",
+          "MATR_b1c40",
+          "MATR_b1c41",
+          "MATR_b1c42",
+          "MATR_b1c43",
+          "MATR_b1c44",
+          "MATR_b1c45",
+          "MATR_b1c9",
+          "MATR_b2c1",
+          "MATR_b2c10",
+          "MATR_b2c11",
+          "MATR_b2c12",
+          "MATR_b2c13",
+          "MATR_b2c18",
+          "MATR_b2c2",
+          "MATR_b2c21",
+          "MATR_b2c23",
+          "MATR_b2c27",
+          "MATR_b2c29",
+          "MATR_b2c3",
+          "MATR_b2c30",
+          "MATR_b2c31",
+          "MATR_b2c34",
+          "MATR_b2c35",
+          "MATR_b2c36",
+          "MATR_b2c38",
+          "MATR_b2c39",
+          "MATR_b2c4",
+          "MATR_b2c40",
+          "MATR_b2c42",
+          "MATR_b2c44",
+          "MATR_b2c46",
+          "MATR_b2c47",
+          "MATR_b2c5",
+          "MATR_b2c6",
+          "MATR_b3c0",
+          "MATR_b3c15",
+          "MATR_b3c20",
+          "MATR_b3c21",
+          "MATR_b3c22",
+          "MATR_b3c24",
+          "MATR_b3c28",
+          "MATR_b3c29",
+          "MATR_b3c31",
+          "MATR_b3c33",
+          "MATR_b3c38",
+          "MATR_b3c6",
+          "MATR_b3c8",
+          "MATR_b4c0",
+          "MATR_b4c10",
+          "MATR_b4c11",
+          "MATR_b4c12",
+          "MATR_b4c13",
+          "MATR_b4c16",
+          "MATR_b4c17",
+          "MATR_b4c19",
+          "MATR_b4c21",
+          "MATR_b4c23",
+          "MATR_b4c25",
+          "MATR_b4c26",
+          "MATR_b4c28",
+          "MATR_b4c32",
+          "MATR_b4c33",
+          "MATR_b4c35",
+          "MATR_b4c36",
+          "MATR_b4c37",
+          "MATR_b4c44",
+          "MATR_b4c9"
+        ],
+        "layers": {
+          "encoder.layers.0.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.0.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.v_proj": [
+            384,
+            384
+          ]
+        },
+        "torch_version": "2.4.1+cu121",
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "parameter_dtype": "torch.float32",
+        "implementation_sha256": {
+          "P1_gradient_audit": "9453ae0a2fdab9c48cfde1a8ab5898c770bd1874a4dcf16108ab834619dd57a6",
+          "models.drs_peft.backbone.MoiraiBackbone": "540d22ff3471b77ad3dd518b20b576c2ede5bec663a9e3a1c00f71c492c7c871",
+          "models.drs_peft.bridges.NativeBridge": "e59a1e70896dd0cbe7172c4a79c37ea5c92a9465d4eb199339b4c1eac25cad4d",
+          "models.drs_peft.trajectory.BatteryTSFM": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "models.drs_peft.trajectory.CycleQueryHead": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "torch.nn.modules.activation.GELU": "874378929737a0a48eb7bc2c890fd6b5f98ccbacf1a6c6a0b388a09c7d449b45",
+          "torch.nn.modules.container.ModuleDict": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.ModuleList": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.Sequential": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.dropout.Dropout": "7a88d165a702047a463a14bb8291b6c5acadac4c53a0ebbb0811605e9c1f011f",
+          "torch.nn.modules.linear.Linear": "1bf7fb52b71d1ef66db49c56d18abe116d6671ec03d7f1984b2f71936b96e918",
+          "torch.nn.modules.normalization.LayerNorm": "3656ccca6c714dc50f1e676022162de3b49e1df5910bc94eda3628b781028ff4",
+          "torch.nn.modules.sparse.Embedding": "1f77c1edf09fba2675da4739f33558f27dc95e1a06846f4bc62e92409cd88bcf",
+          "uni2ts.distribution._base.DistrParamProj": "62ff44fab7a7cefd4393e369ec80f9d38439e0d8257219c1a1381f8b960605ac",
+          "uni2ts.model.moirai.module.MoiraiModule": "3effb56da3143c2fe0d71986710982fa0c7571bec677a9f805b34cba02bc0d67",
+          "uni2ts.module.attention.GroupedQueryAttention": "5303826bd8b3b6f2ae297986b698bc4fc954fe3d1b802c190645fa3be664abe7",
+          "uni2ts.module.ffn.GatedLinearUnitFeedForward": "a7695ccb955f47d1a49df89e934cdb4c70328d17c2e9762d32e0c912d894c297",
+          "uni2ts.module.norm.RMSNorm": "0c6a2c7ddfe7a6a9d4a8f6e20134710721124cb0dbdd21902e269bf4db93f13d",
+          "uni2ts.module.packed_scaler.PackedStdScaler": "c99e9e37eb9b3dcc88ca96465222e570f261e626fa3127a081261bf26140039f",
+          "uni2ts.module.position.attn_bias.BinaryAttentionBias": "e8f21c6053cc16eea362a55ebd66fe2ba43c40a36b50fa824af041ce2805af49",
+          "uni2ts.module.position.attn_projection.QueryKeyProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.position.attn_projection.RotaryProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.transformer.TransformerEncoder": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.transformer.TransformerEncoderLayer": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.ts_embed.MultiInSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c",
+          "uni2ts.module.ts_embed.MultiOutSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c"
+        }
+      },
+      "files": [
+        {
+          "path": "layer_00.npy",
+          "sha256": "127d6cd4fab238738bfe5fb00bbbdd5cf3ee829115700ffe261f5410878a90a9",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_01.npy",
+          "sha256": "0a581d6b507f9fbd9dfca43cbb3897e1904330ed049122b22430513552e25497",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_02.npy",
+          "sha256": "1bd06f1c142e94aac964d1a464757148d0ba4c0141cf03f1fb4acb81b6ec4ff8",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_03.npy",
+          "sha256": "42b6aeecb7c55e07a82e957f17ec154484d46d6f15b4d9dccfb1a22ea22151c7",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_04.npy",
+          "sha256": "604ba6ecb2a315f151e1adb4cc0cb57aedf3e24979f155254cdbd5551f35f166",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_05.npy",
+          "sha256": "77d58d5a70f21b8e9e078e3779d75d1023761a07d1fda7aeb5b91189d473c3e4",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_06.npy",
+          "sha256": "545dbb9fba89a9974c44a95bb7958106c6068825a2156bcf2a63348dc6a537a6",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_07.npy",
+          "sha256": "6c1a07de937d57ed2d2d22156f61945936923e9854c25ac3f9be30416b2b6611",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_08.npy",
+          "sha256": "9bb9aed849e41f22df9a495eaf6250e504e91064a519143dc41d012d603c3b5a",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_09.npy",
+          "sha256": "082ed925a7dda70a33116c19f8d56bb437a701b1d17f7a5adbac9ac8718649f2",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_10.npy",
+          "sha256": "0c5df8444e562343b2d4715ccbfad74d2c5b7dcbbf12f731ebd9f071bc75775c",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_11.npy",
+          "sha256": "6d062e73bd48da6041a526f5f45e1ba86744b667ac4b0490444aa383156c70cb",
+          "bytes": 50135168
+        },
+        {
+          "path": "cell_gradient_checks.csv",
+          "sha256": "af0d5bc7c91c0049c13143a8f60b03dc13b24c9f4618b35ed8fc22e643d8d5ce",
+          "bytes": 164027
+        }
+      ]
+    },
+    "meta_validation/nominal": {
+      "folder": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\p1_gradients\\seed123\\meta_validation_nominal_ed3f2f3a21cf518d",
+      "identity": {
+        "seed": 123,
+        "role": "meta_validation",
+        "variant": "nominal",
+        "model_sha256": "f883d46dd40215c87c096df4d248875d8fd342a8a4eb5e9a995d74f996b2c232",
+        "source_data_sha256": "8ee6ce13dac0ba2e1b1e098190d70ebde52c4b110472c3ca77edcc1814d5b858",
+        "ids": [
+          "MATR_b1c23",
+          "MATR_b1c26",
+          "MATR_b1c27",
+          "MATR_b1c3",
+          "MATR_b1c30",
+          "MATR_b1c31",
+          "MATR_b1c4",
+          "MATR_b2c0",
+          "MATR_b2c14",
+          "MATR_b2c20",
+          "MATR_b2c32",
+          "MATR_b2c33",
+          "MATR_b2c37",
+          "MATR_b2c41",
+          "MATR_b2c45",
+          "MATR_b4c1",
+          "MATR_b4c14",
+          "MATR_b4c15",
+          "MATR_b4c18",
+          "MATR_b4c2",
+          "MATR_b4c20",
+          "MATR_b4c29",
+          "MATR_b4c3",
+          "MATR_b4c30",
+          "MATR_b4c34",
+          "MATR_b4c38",
+          "MATR_b4c39",
+          "MATR_b4c41",
+          "MATR_b4c42",
+          "MATR_b4c6"
+        ],
+        "outcome_donors": [
+          "MATR_b1c23",
+          "MATR_b1c26",
+          "MATR_b1c27",
+          "MATR_b1c3",
+          "MATR_b1c30",
+          "MATR_b1c31",
+          "MATR_b1c4",
+          "MATR_b2c0",
+          "MATR_b2c14",
+          "MATR_b2c20",
+          "MATR_b2c32",
+          "MATR_b2c33",
+          "MATR_b2c37",
+          "MATR_b2c41",
+          "MATR_b2c45",
+          "MATR_b4c1",
+          "MATR_b4c14",
+          "MATR_b4c15",
+          "MATR_b4c18",
+          "MATR_b4c2",
+          "MATR_b4c20",
+          "MATR_b4c29",
+          "MATR_b4c3",
+          "MATR_b4c30",
+          "MATR_b4c34",
+          "MATR_b4c38",
+          "MATR_b4c39",
+          "MATR_b4c41",
+          "MATR_b4c42",
+          "MATR_b4c6"
+        ],
+        "layers": {
+          "encoder.layers.0.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.0.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.v_proj": [
+            384,
+            384
+          ]
+        },
+        "torch_version": "2.4.1+cu121",
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "parameter_dtype": "torch.float32",
+        "implementation_sha256": {
+          "P1_gradient_audit": "9453ae0a2fdab9c48cfde1a8ab5898c770bd1874a4dcf16108ab834619dd57a6",
+          "models.drs_peft.backbone.MoiraiBackbone": "540d22ff3471b77ad3dd518b20b576c2ede5bec663a9e3a1c00f71c492c7c871",
+          "models.drs_peft.bridges.NativeBridge": "e59a1e70896dd0cbe7172c4a79c37ea5c92a9465d4eb199339b4c1eac25cad4d",
+          "models.drs_peft.trajectory.BatteryTSFM": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "models.drs_peft.trajectory.CycleQueryHead": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "torch.nn.modules.activation.GELU": "874378929737a0a48eb7bc2c890fd6b5f98ccbacf1a6c6a0b388a09c7d449b45",
+          "torch.nn.modules.container.ModuleDict": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.ModuleList": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.Sequential": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.dropout.Dropout": "7a88d165a702047a463a14bb8291b6c5acadac4c53a0ebbb0811605e9c1f011f",
+          "torch.nn.modules.linear.Linear": "1bf7fb52b71d1ef66db49c56d18abe116d6671ec03d7f1984b2f71936b96e918",
+          "torch.nn.modules.normalization.LayerNorm": "3656ccca6c714dc50f1e676022162de3b49e1df5910bc94eda3628b781028ff4",
+          "torch.nn.modules.sparse.Embedding": "1f77c1edf09fba2675da4739f33558f27dc95e1a06846f4bc62e92409cd88bcf",
+          "uni2ts.distribution._base.DistrParamProj": "62ff44fab7a7cefd4393e369ec80f9d38439e0d8257219c1a1381f8b960605ac",
+          "uni2ts.model.moirai.module.MoiraiModule": "3effb56da3143c2fe0d71986710982fa0c7571bec677a9f805b34cba02bc0d67",
+          "uni2ts.module.attention.GroupedQueryAttention": "5303826bd8b3b6f2ae297986b698bc4fc954fe3d1b802c190645fa3be664abe7",
+          "uni2ts.module.ffn.GatedLinearUnitFeedForward": "a7695ccb955f47d1a49df89e934cdb4c70328d17c2e9762d32e0c912d894c297",
+          "uni2ts.module.norm.RMSNorm": "0c6a2c7ddfe7a6a9d4a8f6e20134710721124cb0dbdd21902e269bf4db93f13d",
+          "uni2ts.module.packed_scaler.PackedStdScaler": "c99e9e37eb9b3dcc88ca96465222e570f261e626fa3127a081261bf26140039f",
+          "uni2ts.module.position.attn_bias.BinaryAttentionBias": "e8f21c6053cc16eea362a55ebd66fe2ba43c40a36b50fa824af041ce2805af49",
+          "uni2ts.module.position.attn_projection.QueryKeyProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.position.attn_projection.RotaryProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.transformer.TransformerEncoder": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.transformer.TransformerEncoderLayer": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.ts_embed.MultiInSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c",
+          "uni2ts.module.ts_embed.MultiOutSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c"
+        }
+      },
+      "files": [
+        {
+          "path": "layer_00.npy",
+          "sha256": "358f6ba6215cf0bb072621151bf2f3e8a2dfb10b780fbaf2103429d845723648",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_01.npy",
+          "sha256": "07ac97c51370dced3785c8f5aa32d8938fa85fe1c52e07d5e0fe61c6933bdad0",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_02.npy",
+          "sha256": "e88bcd309c8d0c34f35d28421d17a48e48efdaccc0529b7302db63fb5e3d2a7c",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_03.npy",
+          "sha256": "c113d531ca36d5ebfb162189f8a390e9f4282236ac678e9b4fdaf5682057f9cf",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_04.npy",
+          "sha256": "930f77fcee8f0007b8bb630062a93e982f1b0141237d40ebe828d0a97ae91abe",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_05.npy",
+          "sha256": "1a697ef10af0945ef420efdaa296a3dc226d2866f5b96366c825235aa65d58e9",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_06.npy",
+          "sha256": "5356bbb38829dd9a338f3e41514ead6c208c56ae02403df62a5c3de86295e502",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_07.npy",
+          "sha256": "fee7288acaee97a77272529fa82c709918cef965596b665787259de1f03aacd3",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_08.npy",
+          "sha256": "03a825a42a2037a9dc0227a8e326d874841596a49fdc98ea75fc4c54d97a6aef",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_09.npy",
+          "sha256": "ee766a52c3abb8643750c78e6b03a2ef2778ef7b9067fe2e16175fabddd7c3cb",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_10.npy",
+          "sha256": "44485a9457e10a21bde7ab67647b92425cad6ca6e36128862b1c7688bb5e3c8b",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_11.npy",
+          "sha256": "264e6540e6b8697eb6d999e2a395c6e612df67ed98427bc89e28082ff31e5474",
+          "bytes": 17694848
+        },
+        {
+          "path": "cell_gradient_checks.csv",
+          "sha256": "011aec710eec98f351b1e9fe9e93f4ebd2affc417fc1229334d488069cc460d7",
+          "bytes": 61070
+        }
+      ]
+    },
+    "source_shuffled/nominal": {
+      "folder": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\p1_gradients\\seed123\\source_shuffled_nominal_0a9eb5229902f13b",
+      "identity": {
+        "seed": 123,
+        "role": "source_shuffled",
+        "variant": "nominal",
+        "model_sha256": "f883d46dd40215c87c096df4d248875d8fd342a8a4eb5e9a995d74f996b2c232",
+        "source_data_sha256": "a926e1aac3906c894eb96ee6c2a00fce4e7948e5f2cbe1f4508cedb5f495cee2",
+        "ids": [
+          "MATR_b1c0",
+          "MATR_b1c1",
+          "MATR_b1c11",
+          "MATR_b1c14",
+          "MATR_b1c15",
+          "MATR_b1c16",
+          "MATR_b1c17",
+          "MATR_b1c2",
+          "MATR_b1c20",
+          "MATR_b1c21",
+          "MATR_b1c24",
+          "MATR_b1c25",
+          "MATR_b1c32",
+          "MATR_b1c33",
+          "MATR_b1c34",
+          "MATR_b1c35",
+          "MATR_b1c38",
+          "MATR_b1c39",
+          "MATR_b1c40",
+          "MATR_b1c41",
+          "MATR_b1c42",
+          "MATR_b1c43",
+          "MATR_b1c44",
+          "MATR_b1c45",
+          "MATR_b1c9",
+          "MATR_b2c1",
+          "MATR_b2c10",
+          "MATR_b2c11",
+          "MATR_b2c12",
+          "MATR_b2c13",
+          "MATR_b2c18",
+          "MATR_b2c2",
+          "MATR_b2c21",
+          "MATR_b2c23",
+          "MATR_b2c27",
+          "MATR_b2c29",
+          "MATR_b2c3",
+          "MATR_b2c30",
+          "MATR_b2c31",
+          "MATR_b2c34",
+          "MATR_b2c35",
+          "MATR_b2c36",
+          "MATR_b2c38",
+          "MATR_b2c39",
+          "MATR_b2c4",
+          "MATR_b2c40",
+          "MATR_b2c42",
+          "MATR_b2c44",
+          "MATR_b2c46",
+          "MATR_b2c47",
+          "MATR_b2c5",
+          "MATR_b2c6",
+          "MATR_b3c0",
+          "MATR_b3c15",
+          "MATR_b3c20",
+          "MATR_b3c21",
+          "MATR_b3c22",
+          "MATR_b3c24",
+          "MATR_b3c28",
+          "MATR_b3c29",
+          "MATR_b3c31",
+          "MATR_b3c33",
+          "MATR_b3c38",
+          "MATR_b3c6",
+          "MATR_b3c8",
+          "MATR_b4c0",
+          "MATR_b4c10",
+          "MATR_b4c11",
+          "MATR_b4c12",
+          "MATR_b4c13",
+          "MATR_b4c16",
+          "MATR_b4c17",
+          "MATR_b4c19",
+          "MATR_b4c21",
+          "MATR_b4c23",
+          "MATR_b4c25",
+          "MATR_b4c26",
+          "MATR_b4c28",
+          "MATR_b4c32",
+          "MATR_b4c33",
+          "MATR_b4c35",
+          "MATR_b4c36",
+          "MATR_b4c37",
+          "MATR_b4c44",
+          "MATR_b4c9"
+        ],
+        "outcome_donors": [
+          "MATR_b3c22",
+          "MATR_b2c10",
+          "MATR_b4c25",
+          "MATR_b1c2",
+          "MATR_b4c17",
+          "MATR_b3c31",
+          "MATR_b2c23",
+          "MATR_b4c33",
+          "MATR_b1c21",
+          "MATR_b4c28",
+          "MATR_b1c33",
+          "MATR_b4c26",
+          "MATR_b2c38",
+          "MATR_b3c21",
+          "MATR_b2c46",
+          "MATR_b2c12",
+          "MATR_b1c1",
+          "MATR_b1c41",
+          "MATR_b4c0",
+          "MATR_b1c11",
+          "MATR_b1c20",
+          "MATR_b4c16",
+          "MATR_b1c16",
+          "MATR_b1c35",
+          "MATR_b4c23",
+          "MATR_b2c31",
+          "MATR_b2c2",
+          "MATR_b1c45",
+          "MATR_b3c0",
+          "MATR_b2c40",
+          "MATR_b2c30",
+          "MATR_b2c21",
+          "MATR_b1c40",
+          "MATR_b1c39",
+          "MATR_b3c6",
+          "MATR_b4c35",
+          "MATR_b1c32",
+          "MATR_b4c44",
+          "MATR_b2c42",
+          "MATR_b2c35",
+          "MATR_b2c13",
+          "MATR_b3c38",
+          "MATR_b1c0",
+          "MATR_b2c36",
+          "MATR_b2c47",
+          "MATR_b2c29",
+          "MATR_b4c9",
+          "MATR_b2c5",
+          "MATR_b1c44",
+          "MATR_b4c19",
+          "MATR_b1c34",
+          "MATR_b3c29",
+          "MATR_b3c28",
+          "MATR_b1c43",
+          "MATR_b2c4",
+          "MATR_b4c37",
+          "MATR_b2c34",
+          "MATR_b2c18",
+          "MATR_b4c32",
+          "MATR_b3c8",
+          "MATR_b1c25",
+          "MATR_b1c38",
+          "MATR_b1c14",
+          "MATR_b4c13",
+          "MATR_b1c15",
+          "MATR_b1c24",
+          "MATR_b2c27",
+          "MATR_b2c3",
+          "MATR_b2c6",
+          "MATR_b4c12",
+          "MATR_b1c9",
+          "MATR_b3c33",
+          "MATR_b4c21",
+          "MATR_b2c11",
+          "MATR_b4c36",
+          "MATR_b3c20",
+          "MATR_b3c15",
+          "MATR_b2c39",
+          "MATR_b2c44",
+          "MATR_b4c11",
+          "MATR_b2c1",
+          "MATR_b1c42",
+          "MATR_b3c24",
+          "MATR_b1c17",
+          "MATR_b4c10"
+        ],
+        "layers": {
+          "encoder.layers.0.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.0.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.v_proj": [
+            384,
+            384
+          ]
+        },
+        "torch_version": "2.4.1+cu121",
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "parameter_dtype": "torch.float32",
+        "implementation_sha256": {
+          "P1_gradient_audit": "9453ae0a2fdab9c48cfde1a8ab5898c770bd1874a4dcf16108ab834619dd57a6",
+          "models.drs_peft.backbone.MoiraiBackbone": "540d22ff3471b77ad3dd518b20b576c2ede5bec663a9e3a1c00f71c492c7c871",
+          "models.drs_peft.bridges.NativeBridge": "e59a1e70896dd0cbe7172c4a79c37ea5c92a9465d4eb199339b4c1eac25cad4d",
+          "models.drs_peft.trajectory.BatteryTSFM": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "models.drs_peft.trajectory.CycleQueryHead": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "torch.nn.modules.activation.GELU": "874378929737a0a48eb7bc2c890fd6b5f98ccbacf1a6c6a0b388a09c7d449b45",
+          "torch.nn.modules.container.ModuleDict": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.ModuleList": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.Sequential": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.dropout.Dropout": "7a88d165a702047a463a14bb8291b6c5acadac4c53a0ebbb0811605e9c1f011f",
+          "torch.nn.modules.linear.Linear": "1bf7fb52b71d1ef66db49c56d18abe116d6671ec03d7f1984b2f71936b96e918",
+          "torch.nn.modules.normalization.LayerNorm": "3656ccca6c714dc50f1e676022162de3b49e1df5910bc94eda3628b781028ff4",
+          "torch.nn.modules.sparse.Embedding": "1f77c1edf09fba2675da4739f33558f27dc95e1a06846f4bc62e92409cd88bcf",
+          "uni2ts.distribution._base.DistrParamProj": "62ff44fab7a7cefd4393e369ec80f9d38439e0d8257219c1a1381f8b960605ac",
+          "uni2ts.model.moirai.module.MoiraiModule": "3effb56da3143c2fe0d71986710982fa0c7571bec677a9f805b34cba02bc0d67",
+          "uni2ts.module.attention.GroupedQueryAttention": "5303826bd8b3b6f2ae297986b698bc4fc954fe3d1b802c190645fa3be664abe7",
+          "uni2ts.module.ffn.GatedLinearUnitFeedForward": "a7695ccb955f47d1a49df89e934cdb4c70328d17c2e9762d32e0c912d894c297",
+          "uni2ts.module.norm.RMSNorm": "0c6a2c7ddfe7a6a9d4a8f6e20134710721124cb0dbdd21902e269bf4db93f13d",
+          "uni2ts.module.packed_scaler.PackedStdScaler": "c99e9e37eb9b3dcc88ca96465222e570f261e626fa3127a081261bf26140039f",
+          "uni2ts.module.position.attn_bias.BinaryAttentionBias": "e8f21c6053cc16eea362a55ebd66fe2ba43c40a36b50fa824af041ce2805af49",
+          "uni2ts.module.position.attn_projection.QueryKeyProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.position.attn_projection.RotaryProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.transformer.TransformerEncoder": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.transformer.TransformerEncoderLayer": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.ts_embed.MultiInSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c",
+          "uni2ts.module.ts_embed.MultiOutSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c"
+        }
+      },
+      "files": [
+        {
+          "path": "layer_00.npy",
+          "sha256": "6bed00a72fabe900e3169c2a8698e40b993adeef362a0f0dd066cf7706e6bdba",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_01.npy",
+          "sha256": "e07e70519e4e45d864c5bc014a90d5e6c6e1da3416a455c2bb7205eb41a2b2a4",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_02.npy",
+          "sha256": "b8d0afdc1141673409300fe62a9ba105f4c064fa5a2b44785efc77cf76678bfa",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_03.npy",
+          "sha256": "de55513fe2ad942c74036013d8686aebc307f16222d20c6a1ceef2b2e9fcb129",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_04.npy",
+          "sha256": "4b23c1fec06d19079de47951b226dace29366515c88925ccecee0dc29feb4b24",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_05.npy",
+          "sha256": "8a1d53d13e72ba90447e830969d9b9ef80f195ed1f51ca24b993ee6c7ef12dcd",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_06.npy",
+          "sha256": "0f7061e0c6223beb144c18275028255590d24631eea0fc88b140f3decf4e40c3",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_07.npy",
+          "sha256": "d3d760f7e0d482db1583a13de1ae7bcb5976949ee16474b9a41c79aeda0bd961",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_08.npy",
+          "sha256": "f8511c6c20fd05fdc8e3ea21970a8fb638f1074a2abe516e1ed25aa7a0f18568",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_09.npy",
+          "sha256": "90d9c43c347d5cc34398dfbfdbb3014ddd734986b50f811c528f373dc3c87c2f",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_10.npy",
+          "sha256": "2c1bf62a4fc89538229091eda38efe4e3f227b978ac099e1c1ece8ad211aa903",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_11.npy",
+          "sha256": "de06e84cb598489113ecb642981414755ac5be96845c64cb828da847f540b957",
+          "bytes": 50135168
+        },
+        {
+          "path": "cell_gradient_checks.csv",
+          "sha256": "3fef39ceff65a352af762fe0c5ab40aa4789772ce0328e2c0253c4c5165693cc",
+          "bytes": 172074
+        }
+      ]
+    },
+    "source/absolute_units": {
+      "folder": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\p1_gradients\\seed123\\source_absolute_units_f3bfe0c778a4f597",
+      "identity": {
+        "seed": 123,
+        "role": "source",
+        "variant": "absolute_units",
+        "model_sha256": "f883d46dd40215c87c096df4d248875d8fd342a8a4eb5e9a995d74f996b2c232",
+        "source_data_sha256": "778f98f34efc297304302883dae22288a3df608eacc8f83ecef9b838e012bb35",
+        "ids": [
+          "MATR_b1c0",
+          "MATR_b1c1",
+          "MATR_b1c11",
+          "MATR_b1c14",
+          "MATR_b1c15",
+          "MATR_b1c16",
+          "MATR_b1c17",
+          "MATR_b1c2",
+          "MATR_b1c20",
+          "MATR_b1c21",
+          "MATR_b1c24",
+          "MATR_b1c25",
+          "MATR_b1c32",
+          "MATR_b1c33",
+          "MATR_b1c34",
+          "MATR_b1c35",
+          "MATR_b1c38",
+          "MATR_b1c39",
+          "MATR_b1c40",
+          "MATR_b1c41",
+          "MATR_b1c42",
+          "MATR_b1c43",
+          "MATR_b1c44",
+          "MATR_b1c45",
+          "MATR_b1c9",
+          "MATR_b2c1",
+          "MATR_b2c10",
+          "MATR_b2c11",
+          "MATR_b2c12",
+          "MATR_b2c13",
+          "MATR_b2c18",
+          "MATR_b2c2",
+          "MATR_b2c21",
+          "MATR_b2c23",
+          "MATR_b2c27",
+          "MATR_b2c29",
+          "MATR_b2c3",
+          "MATR_b2c30",
+          "MATR_b2c31",
+          "MATR_b2c34",
+          "MATR_b2c35",
+          "MATR_b2c36",
+          "MATR_b2c38",
+          "MATR_b2c39",
+          "MATR_b2c4",
+          "MATR_b2c40",
+          "MATR_b2c42",
+          "MATR_b2c44",
+          "MATR_b2c46",
+          "MATR_b2c47",
+          "MATR_b2c5",
+          "MATR_b2c6",
+          "MATR_b3c0",
+          "MATR_b3c15",
+          "MATR_b3c20",
+          "MATR_b3c21",
+          "MATR_b3c22",
+          "MATR_b3c24",
+          "MATR_b3c28",
+          "MATR_b3c29",
+          "MATR_b3c31",
+          "MATR_b3c33",
+          "MATR_b3c38",
+          "MATR_b3c6",
+          "MATR_b3c8",
+          "MATR_b4c0",
+          "MATR_b4c10",
+          "MATR_b4c11",
+          "MATR_b4c12",
+          "MATR_b4c13",
+          "MATR_b4c16",
+          "MATR_b4c17",
+          "MATR_b4c19",
+          "MATR_b4c21",
+          "MATR_b4c23",
+          "MATR_b4c25",
+          "MATR_b4c26",
+          "MATR_b4c28",
+          "MATR_b4c32",
+          "MATR_b4c33",
+          "MATR_b4c35",
+          "MATR_b4c36",
+          "MATR_b4c37",
+          "MATR_b4c44",
+          "MATR_b4c9"
+        ],
+        "outcome_donors": [
+          "MATR_b1c0",
+          "MATR_b1c1",
+          "MATR_b1c11",
+          "MATR_b1c14",
+          "MATR_b1c15",
+          "MATR_b1c16",
+          "MATR_b1c17",
+          "MATR_b1c2",
+          "MATR_b1c20",
+          "MATR_b1c21",
+          "MATR_b1c24",
+          "MATR_b1c25",
+          "MATR_b1c32",
+          "MATR_b1c33",
+          "MATR_b1c34",
+          "MATR_b1c35",
+          "MATR_b1c38",
+          "MATR_b1c39",
+          "MATR_b1c40",
+          "MATR_b1c41",
+          "MATR_b1c42",
+          "MATR_b1c43",
+          "MATR_b1c44",
+          "MATR_b1c45",
+          "MATR_b1c9",
+          "MATR_b2c1",
+          "MATR_b2c10",
+          "MATR_b2c11",
+          "MATR_b2c12",
+          "MATR_b2c13",
+          "MATR_b2c18",
+          "MATR_b2c2",
+          "MATR_b2c21",
+          "MATR_b2c23",
+          "MATR_b2c27",
+          "MATR_b2c29",
+          "MATR_b2c3",
+          "MATR_b2c30",
+          "MATR_b2c31",
+          "MATR_b2c34",
+          "MATR_b2c35",
+          "MATR_b2c36",
+          "MATR_b2c38",
+          "MATR_b2c39",
+          "MATR_b2c4",
+          "MATR_b2c40",
+          "MATR_b2c42",
+          "MATR_b2c44",
+          "MATR_b2c46",
+          "MATR_b2c47",
+          "MATR_b2c5",
+          "MATR_b2c6",
+          "MATR_b3c0",
+          "MATR_b3c15",
+          "MATR_b3c20",
+          "MATR_b3c21",
+          "MATR_b3c22",
+          "MATR_b3c24",
+          "MATR_b3c28",
+          "MATR_b3c29",
+          "MATR_b3c31",
+          "MATR_b3c33",
+          "MATR_b3c38",
+          "MATR_b3c6",
+          "MATR_b3c8",
+          "MATR_b4c0",
+          "MATR_b4c10",
+          "MATR_b4c11",
+          "MATR_b4c12",
+          "MATR_b4c13",
+          "MATR_b4c16",
+          "MATR_b4c17",
+          "MATR_b4c19",
+          "MATR_b4c21",
+          "MATR_b4c23",
+          "MATR_b4c25",
+          "MATR_b4c26",
+          "MATR_b4c28",
+          "MATR_b4c32",
+          "MATR_b4c33",
+          "MATR_b4c35",
+          "MATR_b4c36",
+          "MATR_b4c37",
+          "MATR_b4c44",
+          "MATR_b4c9"
+        ],
+        "layers": {
+          "encoder.layers.0.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.0.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.v_proj": [
+            384,
+            384
+          ]
+        },
+        "torch_version": "2.4.1+cu121",
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "parameter_dtype": "torch.float32",
+        "implementation_sha256": {
+          "P1_gradient_audit": "9453ae0a2fdab9c48cfde1a8ab5898c770bd1874a4dcf16108ab834619dd57a6",
+          "models.drs_peft.backbone.MoiraiBackbone": "540d22ff3471b77ad3dd518b20b576c2ede5bec663a9e3a1c00f71c492c7c871",
+          "models.drs_peft.bridges.NativeBridge": "e59a1e70896dd0cbe7172c4a79c37ea5c92a9465d4eb199339b4c1eac25cad4d",
+          "models.drs_peft.trajectory.BatteryTSFM": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "models.drs_peft.trajectory.CycleQueryHead": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "torch.nn.modules.activation.GELU": "874378929737a0a48eb7bc2c890fd6b5f98ccbacf1a6c6a0b388a09c7d449b45",
+          "torch.nn.modules.container.ModuleDict": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.ModuleList": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.Sequential": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.dropout.Dropout": "7a88d165a702047a463a14bb8291b6c5acadac4c53a0ebbb0811605e9c1f011f",
+          "torch.nn.modules.linear.Linear": "1bf7fb52b71d1ef66db49c56d18abe116d6671ec03d7f1984b2f71936b96e918",
+          "torch.nn.modules.normalization.LayerNorm": "3656ccca6c714dc50f1e676022162de3b49e1df5910bc94eda3628b781028ff4",
+          "torch.nn.modules.sparse.Embedding": "1f77c1edf09fba2675da4739f33558f27dc95e1a06846f4bc62e92409cd88bcf",
+          "uni2ts.distribution._base.DistrParamProj": "62ff44fab7a7cefd4393e369ec80f9d38439e0d8257219c1a1381f8b960605ac",
+          "uni2ts.model.moirai.module.MoiraiModule": "3effb56da3143c2fe0d71986710982fa0c7571bec677a9f805b34cba02bc0d67",
+          "uni2ts.module.attention.GroupedQueryAttention": "5303826bd8b3b6f2ae297986b698bc4fc954fe3d1b802c190645fa3be664abe7",
+          "uni2ts.module.ffn.GatedLinearUnitFeedForward": "a7695ccb955f47d1a49df89e934cdb4c70328d17c2e9762d32e0c912d894c297",
+          "uni2ts.module.norm.RMSNorm": "0c6a2c7ddfe7a6a9d4a8f6e20134710721124cb0dbdd21902e269bf4db93f13d",
+          "uni2ts.module.packed_scaler.PackedStdScaler": "c99e9e37eb9b3dcc88ca96465222e570f261e626fa3127a081261bf26140039f",
+          "uni2ts.module.position.attn_bias.BinaryAttentionBias": "e8f21c6053cc16eea362a55ebd66fe2ba43c40a36b50fa824af041ce2805af49",
+          "uni2ts.module.position.attn_projection.QueryKeyProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.position.attn_projection.RotaryProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.transformer.TransformerEncoder": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.transformer.TransformerEncoderLayer": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.ts_embed.MultiInSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c",
+          "uni2ts.module.ts_embed.MultiOutSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c"
+        }
+      },
+      "files": [
+        {
+          "path": "layer_00.npy",
+          "sha256": "6c80ec3d51d8bf55924a93112e477ff4bd87c19c66927a456432fd03b431e694",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_01.npy",
+          "sha256": "0c134ca6c5898a293a4b2bb28fba48b2245451cc52a524831efe9ed02c2b9b4a",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_02.npy",
+          "sha256": "3d3436ccf326c3029f46f2bb4c258947fa149451fa42ac8911f823cafde284f9",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_03.npy",
+          "sha256": "e4636154976d2f67cd6f1d55543b7375e6556cca6067f9448b016122059f9632",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_04.npy",
+          "sha256": "d88ef32eeef64ad750589ac0cd983c0e3b3192c4b12acbe240ed29d6adffa0d2",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_05.npy",
+          "sha256": "83953254ff0629b01a26f9c183762e458ab8a0af618e788ed4775b54c903edb9",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_06.npy",
+          "sha256": "6775760ca95d208abd6a6aee0cfd9e4dafa57d650f44939c3bdef21c5992682d",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_07.npy",
+          "sha256": "bad522863498b42698ea4537d439d7884f6ee523d0eeb9295ab346e0a71280c2",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_08.npy",
+          "sha256": "9fa43e6093f693030f71e9eb067fb603e331122ee4210802b867f8e9a953a3c5",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_09.npy",
+          "sha256": "eb257e3f9fe14188c9142ced4788749ca8f6121b67fd5311f5f41cbdd31e336f",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_10.npy",
+          "sha256": "5cc715414c28fed59c64ecaa8f3a5837cbc9073954772f4d712581702df55b36",
+          "bytes": 50135168
+        },
+        {
+          "path": "layer_11.npy",
+          "sha256": "a56d30004f71630b31d6d2daa53820655a283a063d426b83467e46561ad43f23",
+          "bytes": 50135168
+        },
+        {
+          "path": "cell_gradient_checks.csv",
+          "sha256": "4c594390ea00b9b9e639c5fc382cc1842bb6019d79a5bfeddbfe1bbd108f9973",
+          "bytes": 171081
+        }
+      ]
+    },
+    "meta_validation/absolute_units": {
+      "folder": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\p1_gradients\\seed123\\meta_validation_absolute_units_2ed42c9e0d096d2e",
+      "identity": {
+        "seed": 123,
+        "role": "meta_validation",
+        "variant": "absolute_units",
+        "model_sha256": "f883d46dd40215c87c096df4d248875d8fd342a8a4eb5e9a995d74f996b2c232",
+        "source_data_sha256": "8ee6ce13dac0ba2e1b1e098190d70ebde52c4b110472c3ca77edcc1814d5b858",
+        "ids": [
+          "MATR_b1c23",
+          "MATR_b1c26",
+          "MATR_b1c27",
+          "MATR_b1c3",
+          "MATR_b1c30",
+          "MATR_b1c31",
+          "MATR_b1c4",
+          "MATR_b2c0",
+          "MATR_b2c14",
+          "MATR_b2c20",
+          "MATR_b2c32",
+          "MATR_b2c33",
+          "MATR_b2c37",
+          "MATR_b2c41",
+          "MATR_b2c45",
+          "MATR_b4c1",
+          "MATR_b4c14",
+          "MATR_b4c15",
+          "MATR_b4c18",
+          "MATR_b4c2",
+          "MATR_b4c20",
+          "MATR_b4c29",
+          "MATR_b4c3",
+          "MATR_b4c30",
+          "MATR_b4c34",
+          "MATR_b4c38",
+          "MATR_b4c39",
+          "MATR_b4c41",
+          "MATR_b4c42",
+          "MATR_b4c6"
+        ],
+        "outcome_donors": [
+          "MATR_b1c23",
+          "MATR_b1c26",
+          "MATR_b1c27",
+          "MATR_b1c3",
+          "MATR_b1c30",
+          "MATR_b1c31",
+          "MATR_b1c4",
+          "MATR_b2c0",
+          "MATR_b2c14",
+          "MATR_b2c20",
+          "MATR_b2c32",
+          "MATR_b2c33",
+          "MATR_b2c37",
+          "MATR_b2c41",
+          "MATR_b2c45",
+          "MATR_b4c1",
+          "MATR_b4c14",
+          "MATR_b4c15",
+          "MATR_b4c18",
+          "MATR_b4c2",
+          "MATR_b4c20",
+          "MATR_b4c29",
+          "MATR_b4c3",
+          "MATR_b4c30",
+          "MATR_b4c34",
+          "MATR_b4c38",
+          "MATR_b4c39",
+          "MATR_b4c41",
+          "MATR_b4c42",
+          "MATR_b4c6"
+        ],
+        "layers": {
+          "encoder.layers.0.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.0.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.1.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.2.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.3.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.4.self_attn.v_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.q_proj": [
+            384,
+            384
+          ],
+          "encoder.layers.5.self_attn.v_proj": [
+            384,
+            384
+          ]
+        },
+        "torch_version": "2.4.1+cu121",
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "parameter_dtype": "torch.float32",
+        "implementation_sha256": {
+          "P1_gradient_audit": "9453ae0a2fdab9c48cfde1a8ab5898c770bd1874a4dcf16108ab834619dd57a6",
+          "models.drs_peft.backbone.MoiraiBackbone": "540d22ff3471b77ad3dd518b20b576c2ede5bec663a9e3a1c00f71c492c7c871",
+          "models.drs_peft.bridges.NativeBridge": "e59a1e70896dd0cbe7172c4a79c37ea5c92a9465d4eb199339b4c1eac25cad4d",
+          "models.drs_peft.trajectory.BatteryTSFM": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "models.drs_peft.trajectory.CycleQueryHead": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4",
+          "torch.nn.modules.activation.GELU": "874378929737a0a48eb7bc2c890fd6b5f98ccbacf1a6c6a0b388a09c7d449b45",
+          "torch.nn.modules.container.ModuleDict": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.ModuleList": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.container.Sequential": "6ed4c0e08d7b640d895f0797a6cc8a918662540d53d34933fba105ad7409138b",
+          "torch.nn.modules.dropout.Dropout": "7a88d165a702047a463a14bb8291b6c5acadac4c53a0ebbb0811605e9c1f011f",
+          "torch.nn.modules.linear.Linear": "1bf7fb52b71d1ef66db49c56d18abe116d6671ec03d7f1984b2f71936b96e918",
+          "torch.nn.modules.normalization.LayerNorm": "3656ccca6c714dc50f1e676022162de3b49e1df5910bc94eda3628b781028ff4",
+          "torch.nn.modules.sparse.Embedding": "1f77c1edf09fba2675da4739f33558f27dc95e1a06846f4bc62e92409cd88bcf",
+          "uni2ts.distribution._base.DistrParamProj": "62ff44fab7a7cefd4393e369ec80f9d38439e0d8257219c1a1381f8b960605ac",
+          "uni2ts.model.moirai.module.MoiraiModule": "3effb56da3143c2fe0d71986710982fa0c7571bec677a9f805b34cba02bc0d67",
+          "uni2ts.module.attention.GroupedQueryAttention": "5303826bd8b3b6f2ae297986b698bc4fc954fe3d1b802c190645fa3be664abe7",
+          "uni2ts.module.ffn.GatedLinearUnitFeedForward": "a7695ccb955f47d1a49df89e934cdb4c70328d17c2e9762d32e0c912d894c297",
+          "uni2ts.module.norm.RMSNorm": "0c6a2c7ddfe7a6a9d4a8f6e20134710721124cb0dbdd21902e269bf4db93f13d",
+          "uni2ts.module.packed_scaler.PackedStdScaler": "c99e9e37eb9b3dcc88ca96465222e570f261e626fa3127a081261bf26140039f",
+          "uni2ts.module.position.attn_bias.BinaryAttentionBias": "e8f21c6053cc16eea362a55ebd66fe2ba43c40a36b50fa824af041ce2805af49",
+          "uni2ts.module.position.attn_projection.QueryKeyProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.position.attn_projection.RotaryProjection": "52911ba9ffb23647f21a072f3b67a3582144f46250d2de1e44c92b6add6f7208",
+          "uni2ts.module.transformer.TransformerEncoder": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.transformer.TransformerEncoderLayer": "ee164f6a83ea7c53161b9114ebe749add4a597a5e0cb936770a3e3888568c041",
+          "uni2ts.module.ts_embed.MultiInSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c",
+          "uni2ts.module.ts_embed.MultiOutSizeLinear": "31dea9bf137058b9ecc27c0641a4a514031df6eb4fc31a2998efe7fea124a23c"
+        }
+      },
+      "files": [
+        {
+          "path": "layer_00.npy",
+          "sha256": "d916531b4949e01f40e0519d15d74d80e6dc4cc60c148533947b40ce7ffe9b44",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_01.npy",
+          "sha256": "c222094ed25020ebd0b1fdf8dbea97f15045ae70790f10aff76628521c82365c",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_02.npy",
+          "sha256": "8ba909a335a79f0de41110e94ff8f1858eea28708d4ea70ff36c83b165751837",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_03.npy",
+          "sha256": "5288b341699bac5839a165b24747515ab70417196061c00d0e77195723f7cb6f",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_04.npy",
+          "sha256": "7d208f017f3ceb069231f85bfaeeec2ec0e063c4b801c4905cc4b16d28fb12a0",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_05.npy",
+          "sha256": "b8b224b33833fe23acc48b80b8b41ca4dcf4462a76d4ac8233c7be00fd44dfe6",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_06.npy",
+          "sha256": "49bf775dba334dea9d428556b4094dc595966dfeb2813a16561c314f6f91c125",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_07.npy",
+          "sha256": "000c4b0ba547669520c97682b6d8646af6fc12e035c9463c58782913ea974834",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_08.npy",
+          "sha256": "f5b1e9c079121ca3e99dbfe7211b0188bfd950640f7013c2b23fd1a268106d2d",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_09.npy",
+          "sha256": "80cadc2293b7a8b3859c1727340c6b036470acb9c52b3ac48f93374ba05e2b35",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_10.npy",
+          "sha256": "b723de760476049c295a5472b05cad90555699c892cb9fe56a8fb8ba61fe40f4",
+          "bytes": 17694848
+        },
+        {
+          "path": "layer_11.npy",
+          "sha256": "61ab3b6335acf5154ed46d346df59ac99f6f684f32dcb1964d30658dbf16660f",
+          "bytes": 17694848
+        },
+        {
+          "path": "cell_gradient_checks.csv",
+          "sha256": "6173b12623719938fe1a7aba54f67e819ee7059623da9a7eb5e0193d325d4fee",
+          "bytes": 63566
+        }
+      ]
+    }
+  },
+  "elapsed_seconds": 139.625
+}

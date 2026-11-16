@@ -1,0 +1,83 @@
+{
+  "status": "PASSED_SUMMARY_VERIFICATION",
+  "source_gate_status": "PASSED",
+  "source_gate_sha256": "d715180b8868010210ae32952710422eff6d267d7d7cf6e7c4e45e7cccfe601b",
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "gradient_forward_backward_evaluations": 1035,
+  "optimizer_updates": 0,
+  "target_Query_future_labels_used": false,
+  "physical_cells_per_seed_layer": 30,
+  "association_rows": 432,
+  "merged_cell_layer_rows": 1080,
+  "descriptive_only": true,
+  "changes_gate_or_target_selection": false,
+  "audits": [
+    {
+      "seed": 42,
+      "public_manifest_sha256": "e047e5a52224e2d2fc576cc226570a5e01cf49a4acc94c8c9339881658051061",
+      "verified_public_files": 18,
+      "p0_checkpoint_sha256": "a368f07bd3aaf7b43c409b5309133e2ed0f6b90dec4e3564d01707da01a2704d",
+      "p0_metrics_sha256": "e3576d4c152c52c53ea13f3ff5d0b24994bda2f1706ba990ad08699253cf1f9e",
+      "loss_mae_max_difference": 6.440129600437938e-08,
+      "maximum_replay_gradient_absolute_error": 0.0
+    },
+    {
+      "seed": 123,
+      "public_manifest_sha256": "4e0a08f4974194b76fc8692466a519bf055fb92135117d325cc07a0da8bef169",
+      "verified_public_files": 18,
+      "p0_checkpoint_sha256": "7eb66b82d85a68ffeeb45336441bfc05999fa4862ac350dfcaaaf3db8f0c92d7",
+      "p0_metrics_sha256": "2a678952f4ec6c85659cc9652d862e537bcb016132e506041a025cc42b0aec3a",
+      "loss_mae_max_difference": 1.327031187992045e-07,
+      "maximum_replay_gradient_absolute_error": 0.0
+    },
+    {
+      "seed": 2026,
+      "public_manifest_sha256": "d9ce021dcc981089191fda1a4351d6c2271f8fb86dd33690d78fce24f5b26980",
+      "verified_public_files": 18,
+      "p0_checkpoint_sha256": "fedd2c5acbfa46d8847852cbbfd96738d3a067355872e1db6ad9be8228409fc2",
+      "p0_metrics_sha256": "5c1fc4b41fc98e0d5dcf4096354c83ebf17f6ec72d433dbd1a717085b69a6274",
+      "loss_mae_max_difference": 6.252278880042317e-08,
+      "maximum_replay_gradient_absolute_error": 0.0
+    }
+  ],
+  "summary_script_sha256": "18bee1af1a696d66f98fa69425796f079725dcd8fd44b1c6625e23b94bad630a",
+  "helper_sha256": "0dcdaa6547a4050ca647890f67515f22bec7cee865d64f8e50aa3cb644ef29e1",
+  "outputs": [
+    {
+      "path": "results/drs_peft/P1/P1_ERROR_GRADIENT_CAPTURE_CELL.csv",
+      "sha256": "fc348a5e06934f28a7be9061eea6150c37a08cda210147b82480ed95e06a7c3d"
+    },
+    {
+      "path": "results/drs_peft/P1/P1_ERROR_ASSOCIATIONS.csv",
+      "sha256": "7ee60af72ae4f016e7f5f5ce8156fa9dff86cedafe54f697311664d6428985f6"
+    },
+    {
+      "path": "results/drs_peft/P1/P1_LAYER_CAPTURE_SUMMARY.csv",
+      "sha256": "07d9d6272a8d7e3e8de5281a44a8249253d6ac1b840bb239f4b8786493b2bb9d"
+    },
+    {
+      "path": "results/drs_peft/P1/P1_MEAN_AND_DEMEANED_CONTROLS.csv",
+      "sha256": "05a0ca9dfaa1912884a665149f3b5ec0b96bed80149f417ee0a403a5a44baa0b"
+    },
+    {
+      "path": "results/drs_peft/P1/P1_SOURCE_GROUP_MEAN_SVD_ANGLES.csv",
+      "sha256": "782417ffc2bc9fd8f275ba6cf5cafd92e443a5c660de6bff14ae9740dfe20ab2"
+    },
+    {
+      "path": "report/drs_peft/figures/P1_ERROR_ASSOCIATIONS.png",
+      "sha256": "fdcbf05cf7be9365d023f0db4a7d69fbd36d1489aa39d1796da5641f1e2d86ad"
+    },
+    {
+      "path": "report/drs_peft/figures/P1_ERROR_ASSOCIATIONS.pdf",
+      "sha256": "61d246c1b3418f094c6dbb95b655d99bc7abbca897f23ea9ba09b3541f038618"
+    },
+    {
+      "path": "report/drs_peft/P1_GRADIENT_AUDIT_ZH.md",
+      "sha256": "e40ec88d72f976416a7ab66b1f0d63b7dd5136df66295440859d1609fdd405f5"
+    }
+  ]
+}

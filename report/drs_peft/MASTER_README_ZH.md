@@ -2,7 +2,7 @@
 
 当前快照记录于2026-11-17。执行合同与数据、软件身份已预注册，提交为`16b37da3ea990e3d47634965b131ce8845dbc027`。
 
-**P0源开发Gate为`PASSED`，pilot6/6与formal12/12均已回同步并核验。P1为`RUNNING`，P2–P5为PENDING。H1/H2/H3均待对应科学实验检验。**
+**P0与P1源开发Gate均为`PASSED`。P2为`SEARCH_RUNNING`，P3–P5为PENDING。H1的共享梯度捕获得到支持，退化特异性仍待验证，H2/H3等待对应实验。**
 
 ## 研究范围与当前状态
 
@@ -12,13 +12,15 @@ P0 pilot矩阵为2条Bridge各运行B0预训练冻结、B1随机冻结、B2标�
 
 正式三seed的source-meta MAE均值为B0预训练冻结0.02884626、B1随机冻结0.03113055、B2标准LoRA 0.02727014、B3电池专用模型0.02704482。B0−B1配对差为−0.00228428941，seed+cell重抽样95%区间为[−0.00418150803,−0.000127554605]，seed+protocol-cluster区间为[−0.00444973678,−0.000857281531]。该证据来自源开发集及登记120epoch预算，预训练支持状态记录为SUPPORTED。
 
+P1三seed各完成345次梯度前后向，合计1035次、optimizer updates为0。主rank4的grad_cov对random平均捕获差0.87151004，protocol区间[0.83201826,0.90801941]；对weight-SVD差0.87046484，区间[0.83235628,0.90694765]。基重合均值0.93748262。真实标签相对置换标签差−0.00878808，区间[−0.03339181,0.01574839]，结局特异性保持未建立。P2已在本机启动登记的18个60epoch源验证学习率搜索单元，实际完成量由P2运行凭据更新。
+
 | 阶段 | 状态 | 当前证据与下一项验收 |
 |---|---|---|
 | 数据、身份与元数据 | READY | 三域缓存资格、SHA与独立Support/Query分母已冻结 |
 | 官方TSFM与Bridge | SOURCE_BRIDGE_FROZEN | 官方权重与两条Bridge已核验，source-meta pilot已锁native_multivariate |
 | P0基线 | PASSED | pilot6及formal12均完整，源训练19800updates，最终目标Query保持sealed |
-| P1退化梯度审计 | RUNNING | 三seed source-only任务启动，登记每seed345次autograd、optimizer updates为0，完成计数由P1凭据确认 |
-| P2低维子空间对照 | PENDING | 等待P1证据，按预注册Gate决定研究分支 |
+| P1退化梯度审计 | PASSED | 三seed1035次真实autograd、0update，主12QV及次42家族覆盖、梯度端点重放与loss/MAE闭合 |
+| P2低维子空间对照 | SEARCH_RUNNING | 本机已启动6方法×3个登记LR×60epoch搜索，最终目标Query保持sealed |
 | P3双视角门控 | PENDING | 等待P2独立增量证据 |
 | P4少样本核心校准 | PENDING | 先锁定source-meta校准预算，再读取注册Support监督 |
 | P5外部评测与完整交付 | PENDING | 等待架构与超参数全部固定后评分最终Query |
@@ -34,6 +36,7 @@ P0 pilot矩阵为2条Bridge各运行B0预训练冻结、B1随机冻结、B2标�
 - 方法先例、LoRA-XS/LoRA-GA实现区别、LoRA-SB等直接先行工作见[方法与创新审计](../../research/drs_peft/METHOD_AND_NOVELTY_AUDIT_ZH.md)。
 - 每阶段预算、方法矩阵、学习率搜索与统计设置见[执行配置](../../configs/drs_peft/execution_v1.json)。
 - 当前18单元真实成绩、配对区间及执行闭环见[P0阶段审计](P0_REPORT_ZH.md)，完整CSV见[源开发汇总](../../results/drs_peft/P0/P0_SUMMARY.csv)与[预训练配对重抽样](../../results/drs_peft/P0/P0_PAIRED_PRETRAINING_BOOTSTRAP.csv)。
+- 三seed真实捕获、label-shuffle边界、mean-SVD/去均值控制及432个描述性关联见[P1阶段审计](P1_GRADIENT_AUDIT_ZH.md)，原始判定见[P1 Gate](../../results/drs_peft/P1/P1_GATE.json)。
 
 ## 数据分母与测量坐标
 
@@ -78,6 +81,8 @@ B1跨OS同seed初始化出现了浮点差异，服务器实际随机backbone三s
 
 P1 source-only梯度与跨平台随机控制的后续预注册提交为`04b6f79dda51e3472a40db33f1fc2fc01fea2b59`。
 
+P0完整源开发交付提交为`bfa5a5e8e16e00e0be98a5597bc0b81c97aeed1e`，P2参数匹配与可恢复源搜索锁定提交为`a0f651f5b80c7f817a0b1ddcc48b0b0d340eb9f3`。服务器连接失败后，P1与当前P2搜索转用本机RTX4060 Laptop，模型与数据合同继续固定。
+
 ## 方案优势与劣势（风险）
 
 - 优势为独立物理UID预算、固定Query与嵌套Support、source-only归一化、共同Head和明确Bridge身份，可逐项审计退化方向、条件化门控及目标校准的贡献。
@@ -91,7 +96,7 @@ P1 source-only梯度与跨平台随机控制的后续预注册提交为`04b6f79d
 
 | 假设 | 当前判断 | 所需证据 |
 |---|---|---|
-| H1共享退化梯度子空间 | 待检验 | source-group留出捕获、稳定性与random/W-SVD控制 |
+| H1共享退化梯度子空间 | 共享捕获支持，退化特异性待验证 | 三seedrandom/W-SVD捕获及稳定性通过，label-shuffle控制未显示弱化 |
 | H2双视角条件化 | 待检验 | P2/STATIC、ABS、DRIFT、TWO_VIEW及shuffle/local质量控制 |
 | H3少样本核心校准 | 待检验 | 固定Query、相同Support与更新预算下对LoRA/LoRA-XS的真实增量 |
 
@@ -119,6 +124,7 @@ P1 source-only梯度与跨平台随机控制的后续预注册提交为`04b6f79d
 & D:\Anaconda\envs\tslib\python.exe -m scripts.drs_peft.episodes
 & D:\Anaconda\envs\tslib\python.exe -m scripts.drs_peft.train --help
 & D:\Anaconda\envs\tslib\python.exe -m scripts.drs_peft.summarize_p0
+& D:\Anaconda\envs\tslib\python.exe -m scripts.drs_peft.summarize_p1
 ```
 
 P0 pilot的等价入口如下，登记矩阵固定为2个Bridge×3个方法×seed42×60epochs。服务器实际命令及环境以运行manifest为准。
@@ -155,4 +161,4 @@ pilot完整结果仅用source-meta选择Bridge。之后同一入口的`--phase f
 
 数据计数、SHA、角色与预注册预算的置信度为高，均有本地实际产物支撑。P0服务器运行状态依据主执行代理同期实测。模型性能与H1/H2/H3结论等待真实日志、完整选权和重放证据。
 
-当前后续工作是完成P1三seed源梯度审计、random/W-SVD控制与独立重放，再按H1 Gate决定P2研究分支。P0正向预训练证据与B3的有限预算结果保留各自解释范围。共同8Query的K曲线与完整可行分母将在目标评测中并列展示。
+当前后续工作是完成P2登记搜索与正式同rank/近参数匹配对照。P1现有mean-SVD捕获差具有seed差异，全局mean-SVD/demeaned_cov的专属bootstrap稳定性及mean-SVD基完整下游训练仍有缺口。相对LoRA-SB的优越性需对应忠实下游对照支持。共同8Query的K曲线与完整可行分母将在目标评测中并列展示。
