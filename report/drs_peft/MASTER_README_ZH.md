@@ -2,7 +2,7 @@
 
 当前快照记录于2026-11-17。执行合同与数据、软件身份已预注册，提交为`16b37da3ea990e3d47634965b131ce8845dbc027`。
 
-**P0与P1源开发Gate均为`PASSED`。P2为`SEARCH_RUNNING`，P3–P5为PENDING。H1的共享梯度捕获得到支持，退化特异性仍待验证，H2/H3等待对应实验。**
+**P0与P1源开发Gate为`PASSED`，P1支持范围为窄共享梯度捕获。P2为`NEGATIVE`，P3/P4/P5为`NOT_RUN_NEGATIVE_P2_GATE`。H2/H3未评估，全部最终target Query尚无本轮正式评分。**
 
 ## 研究范围与当前状态
 
@@ -12,7 +12,11 @@ P0 pilot矩阵为2条Bridge各运行B0预训练冻结、B1随机冻结、B2标�
 
 正式三seed的source-meta MAE均值为B0预训练冻结0.02884626、B1随机冻结0.03113055、B2标准LoRA 0.02727014、B3电池专用模型0.02704482。B0−B1配对差为−0.00228428941，seed+cell重抽样95%区间为[−0.00418150803,−0.000127554605]，seed+protocol-cluster区间为[−0.00444973678,−0.000857281531]。该证据来自源开发集及登记120epoch预算，预训练支持状态记录为SUPPORTED。
 
-P1三seed各完成345次梯度前后向，合计1035次、optimizer updates为0。主rank4的grad_cov对random平均捕获差0.87151004，protocol区间[0.83201826,0.90801941]；对weight-SVD差0.87046484，区间[0.83235628,0.90694765]。基重合均值0.93748262。真实标签相对置换标签差−0.00878808，区间[−0.03339181,0.01574839]，结局特异性保持未建立。P2已在本机启动登记的18个60epoch源验证学习率搜索单元，实际完成量由P2运行凭据更新。
+P1三seed各完成345次梯度前后向，合计1035次、optimizer updates为0。主rank4的grad_cov对random平均捕获差0.87151004，protocol区间[0.83201826,0.90801941]。对weight-SVD差0.87046484，区间[0.83235628,0.90694765]。基重合均值0.93748262。真实标签相对置换标签差−0.00878808，区间[−0.03339181,0.01574839]，结局特异性保持未建立。
+
+P2搜索18/18与正式66/66均完整，分别完成11880和87120次更新，合计99000。gradient-core相对LoRA-XS的rank4与core56平均相对MAE改善为0.5812%与0.8510%，两个预算的cell/protocol区间均跨0，seed方向混合。相对random-core平均改善为2.4990%与3.4464%，cell区间均跨0，参数匹配预算的protocol区间为正。原预注册门槛判为NEGATIVE，P3/P4/P5依Gate保留未运行状态。
+
+本轮真实源训练共102个单元（P0为18、P2为84），合计118800次optimizer update。P1的1035次梯度前后向与0update单独记账，工程验证另列。最终工程套件61项测试通过，耗时59.94秒。
 
 | 阶段 | 状态 | 当前证据与下一项验收 |
 |---|---|---|
@@ -20,10 +24,10 @@ P1三seed各完成345次梯度前后向，合计1035次、optimizer updates为0�
 | 官方TSFM与Bridge | SOURCE_BRIDGE_FROZEN | 官方权重与两条Bridge已核验，source-meta pilot已锁native_multivariate |
 | P0基线 | PASSED | pilot6及formal12均完整，源训练19800updates，最终目标Query保持sealed |
 | P1退化梯度审计 | PASSED | 三seed1035次真实autograd、0update，主12QV及次42家族覆盖、梯度端点重放与loss/MAE闭合 |
-| P2低维子空间对照 | SEARCH_RUNNING | 本机已启动6方法×3个登记LR×60epoch搜索，最终目标Query保持sealed |
-| P3双视角门控 | PENDING | 等待P2独立增量证据 |
-| P4少样本核心校准 | PENDING | 先锁定source-meta校准预算，再读取注册Support监督 |
-| P5外部评测与完整交付 | PENDING | 等待架构与超参数全部固定后评分最终Query |
+| P2低维子空间对照 | NEGATIVE | 搜索18与正式66完整、99000updates，未达到两预算主控制门槛 |
+| P3双视角门控 | NOT_RUN_NEGATIVE_P2_GATE | 原P2 Gate关闭后续大矩阵放行，H2未评估 |
+| P4少样本核心校准 | NOT_RUN_NEGATIVE_P2_GATE | 原P2 Gate关闭后续大矩阵放行，H3未评估 |
+| P5外部评测与完整交付 | NOT_RUN_NEGATIVE_P2_GATE | 最终target Query保持未评分，保留注册身份与历史暴露记录 |
 
 ## 已有文件入口
 
@@ -37,6 +41,7 @@ P1三seed各完成345次梯度前后向，合计1035次、optimizer updates为0�
 - 每阶段预算、方法矩阵、学习率搜索与统计设置见[执行配置](../../configs/drs_peft/execution_v1.json)。
 - 当前18单元真实成绩、配对区间及执行闭环见[P0阶段审计](P0_REPORT_ZH.md)，完整CSV见[源开发汇总](../../results/drs_peft/P0/P0_SUMMARY.csv)与[预训练配对重抽样](../../results/drs_peft/P0/P0_PAIRED_PRETRAINING_BOOTSTRAP.csv)。
 - 三seed真实捕获、label-shuffle边界、mean-SVD/去均值控制及432个描述性关联见[P1阶段审计](P1_GRADIENT_AUDIT_ZH.md)，原始判定见[P1 Gate](../../results/drs_peft/P1/P1_GATE.json)。
+- P2完整84个单元、两预算配对区间、全部rank参数误差曲线及3颗源验证反例见[P2阶段结果](P2_RESULTS_ZH.md)，原判定见[P2 Gate](../../results/drs_peft/P2/P2_GATE.json)。
 
 ## 数据分母与测量坐标
 
@@ -97,8 +102,8 @@ P0完整源开发交付提交为`bfa5a5e8e16e00e0be98a5597bc0b81c97aeed1e`，P2�
 | 假设 | 当前判断 | 所需证据 |
 |---|---|---|
 | H1共享退化梯度子空间 | 共享捕获支持，退化特异性待验证 | 三seedrandom/W-SVD捕获及稳定性通过，label-shuffle控制未显示弱化 |
-| H2双视角条件化 | 待检验 | P2/STATIC、ABS、DRIFT、TWO_VIEW及shuffle/local质量控制 |
-| H3少样本核心校准 | 待检验 | 固定Query、相同Support与更新预算下对LoRA/LoRA-XS的真实增量 |
+| H2双视角条件化 | 未评估 | P3按NEGATIVE_P2_GATE保留未运行状态 |
+| H3少样本核心校准 | 未评估 | P4按NEGATIVE_P2_GATE保留未运行状态 |
 
 带载响应分解反映已观测电学结构，电极级LLI/LAM/SEI真值及微观机理解释需要额外认证。轨迹低维性到参数梯度低维性的关系由P1实测审查。
 
@@ -125,6 +130,7 @@ P0完整源开发交付提交为`bfa5a5e8e16e00e0be98a5597bc0b81c97aeed1e`，P2�
 & D:\Anaconda\envs\tslib\python.exe -m scripts.drs_peft.train --help
 & D:\Anaconda\envs\tslib\python.exe -m scripts.drs_peft.summarize_p0
 & D:\Anaconda\envs\tslib\python.exe -m scripts.drs_peft.summarize_p1
+& D:\Anaconda\envs\tslib\python.exe -m scripts.drs_peft.summarize_p2
 ```
 
 P0 pilot的等价入口如下，登记矩阵固定为2个Bridge×3个方法×seed42×60epochs。服务器实际命令及环境以运行manifest为准。
@@ -142,16 +148,16 @@ pilot完整结果仅用source-meta选择Bridge。之后同一入口的`--phase f
 
 ## 后续交付清单
 
-以下列出各阶段完整验收清单，当前完成状态以上文实际产物为准。P0报告随已回同步的真实结果更新，后续阶段由各自运行凭据补齐路径与状态。
+以下列出原合同交付覆盖。P0/P1/P2的source阶段产物已实际形成，P3/P4/P5依据阴性门槛记录未运行。
 
 | 阶段 | 必需文件和证据 |
 |---|---|
-| P0 | P0_REPORT_ZH.md、P0_METRICS.csv、P0_FAILURES.json、DATA_SPLIT_LOCK.json、TSFM_BACKBONE_AUDIT.json、BRIDGE_CONTRACT.json；B0/B1/B2/B3真实训练、参数拆分、权重SHA、固定验证预测及独立重构 |
+| P0 | P0_REPORT_ZH.md、P0_METRICS.csv、P0_FAILURES.json、DATA_SPLIT_LOCK.json、TSFM_BACKBONE_AUDIT.json、BRIDGE_CONTRACT.json，以及B0/B1/B2/B3真实训练、参数拆分、权重SHA、固定验证预测及独立重构 |
 | P1 | P1_GRADIENT_AUDIT_ZH.md、逐层CSV、主角度矩阵、random与W-SVD对照、SVD图、配置锁、源UID和状态指纹、H1 Gate |
 | P2 | P2_RESULTS_ZH.md、P2_METRICS.csv、P2_PARAM_BUDGET.csv、同rank与匹配可训练参数表、多seed结果、模型检查、逐cell预测与反例 |
-| P3 | P3_CONDITIONING_ZH.md、ABS/DRIFT/TWO_VIEW/STATIC/SHUFFLE/NO_LOCAL消融、质量mask、逐cell动态适配矩阵与梯度验证 |
-| P4 | P4_FEWSHOT_ZH.md、P4_SHOT_CURVES.csv、P4_NEGATIVE_TRANSFER.csv、全部Episode/seed/checkpoint/target-only updates、Support容量及mask摘要、逐Query预测 |
-| P5 | P5_FINAL_REPORT_ZH.md、完整Markdown/CSV主表、分域与消融表、主图、依赖版本、创新边界、LIMITATIONS、所有失败电芯与外推图 |
+| P3 | NOT_RUN_NEGATIVE_P2_GATE，双视角和局部消融性能未评估 |
+| P4 | NOT_RUN_NEGATIVE_P2_GATE，目标K-shot校准与负迁移性能未评估，Episode合同已冻结 |
+| P5 | NOT_RUN_NEGATIVE_P2_GATE，外域最终Query性能未评分，创新与数据边界保留在source报告 |
 
 每个正式run还需RUN_CONFIG、SOURCE_SNAPSHOT、DATA_FINGERPRINT、EPISODE_IDS、BACKBONE_IDENTITY、TRAINABLE_PARAMETER_REPORT、TRAIN_LOG、CHECKPOINT_SELECTED、CHECKPOINT_SELECTION、TEST_PREDICTIONS、TEST_CELL_METRICS、RESULT_METRICS及最终COMPLETED凭据。各阶段保存真实命令、有效分母、源/目标可训练参数、优化更新、GPU实耗和峰值显存。
 
@@ -159,6 +165,6 @@ pilot完整结果仅用source-meta选择Bridge。之后同一入口的`--phase f
 
 ## 置信度与后续关注
 
-数据计数、SHA、角色与预注册预算的置信度为高，均有本地实际产物支撑。P0服务器运行状态依据主执行代理同期实测。模型性能与H1/H2/H3结论等待真实日志、完整选权和重放证据。
+数据计数、SHA、角色、完整训练、重放及P2阴性门槛的置信度为高，均有实际产物支撑。P1支持固定source checkpoint上的共享低维梯度捕获，退化特异性未建立。H2/H3没有对应实验证据。source-meta复用与既有历史探索暴露限定结果的解释范围。
 
-当前后续工作是完成P2登记搜索与正式同rank/近参数匹配对照。P1现有mean-SVD捕获差具有seed差异，全局mean-SVD/demeaned_cov的专属bootstrap稳定性及mean-SVD基完整下游训练仍有缺口。相对LoRA-SB的优越性需对应忠实下游对照支持。共同8Query的K曲线与完整可行分母将在目标评测中并列展示。
+本轮结束于原合同的P2阴性门槛，完整平均值、区间、混合seed方向和高误差个体均保留。P1 mean-SVD捕获差具有seed差异，全局mean-SVD/demeaned_cov的专属bootstrap稳定性及mean-SVD基完整下游训练仍有缺口，相对LoRA-SB的优越性仍需对应忠实对照。共同8Query及全部Support/Query身份继续冻结，未来研究版本保留当前未评分状态与历史暴露前史。

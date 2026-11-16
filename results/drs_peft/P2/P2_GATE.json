@@ -1,0 +1,97 @@
+{
+  "stage": "P2",
+  "status": "NEGATIVE",
+  "P1_status": "PASSED",
+  "branch": "FULL_REGISTERED_PRIMARY_AND_PARAMETER_CURVES",
+  "complete_formal_units": 66,
+  "primary_controls": [
+    {
+      "setting": "rank_matched_primary",
+      "candidate": "grad_core",
+      "candidate_rank": 4,
+      "reference": "lora_xs",
+      "reference_rank": 4,
+      "paired_cells": 30,
+      "paired_protocol_groups": 15,
+      "mean_relative_MAE_improvement": 0.005812060874959947,
+      "paired_cell_CI_low": -0.000982264864696058,
+      "paired_cell_CI_high": 0.00120226814243362,
+      "paired_protocol_CI_low": -0.00057464732521771,
+      "paired_protocol_CI_high": 0.00042270677780679094,
+      "per_seed_relative_MAE_improvement": {
+        "42": 0.017196786337422162,
+        "123": 0.006085237108484257,
+        "2026": -0.0059726588343230694
+      },
+      "all_three_seed_directions_positive": false
+    },
+    {
+      "setting": "actual_parameter_matched_primary",
+      "candidate": "grad_core",
+      "candidate_rank": 56,
+      "reference": "lora_xs",
+      "reference_rank": 56,
+      "paired_cells": 30,
+      "paired_protocol_groups": 15,
+      "mean_relative_MAE_improvement": 0.008510496531661976,
+      "paired_cell_CI_low": -0.0029037768502317993,
+      "paired_cell_CI_high": 0.004880880466020841,
+      "paired_protocol_CI_low": -0.0021131116055208518,
+      "paired_protocol_CI_high": 0.0012078273851235883,
+      "per_seed_relative_MAE_improvement": {
+        "42": 0.015215182460356635,
+        "123": -0.0005223030373928871,
+        "2026": 0.010571731290281147
+      },
+      "all_three_seed_directions_positive": false
+    },
+    {
+      "setting": "rank_matched_primary",
+      "candidate": "grad_core",
+      "candidate_rank": 4,
+      "reference": "random_core",
+      "reference_rank": 4,
+      "paired_cells": 30,
+      "paired_protocol_groups": 15,
+      "mean_relative_MAE_improvement": 0.02499019225422666,
+      "paired_cell_CI_low": -0.00019912907815192665,
+      "paired_cell_CI_high": 0.0014339538846149982,
+      "paired_protocol_CI_low": -1.829459936101788e-05,
+      "paired_protocol_CI_high": 0.000730211180761485,
+      "per_seed_relative_MAE_improvement": {
+        "42": 0.03312588344857351,
+        "123": 0.022656048986241895,
+        "2026": 0.019160046367251916
+      },
+      "all_three_seed_directions_positive": true
+    },
+    {
+      "setting": "actual_parameter_matched_primary",
+      "candidate": "grad_core",
+      "candidate_rank": 56,
+      "reference": "random_core",
+      "reference_rank": 56,
+      "paired_cells": 30,
+      "paired_protocol_groups": 15,
+      "mean_relative_MAE_improvement": 0.03446443711070226,
+      "paired_cell_CI_low": -0.0015968505602873904,
+      "paired_cell_CI_high": 0.0024318147458972025,
+      "paired_protocol_CI_low": 4.371011873051491e-05,
+      "paired_protocol_CI_high": 0.0020083617986574828,
+      "per_seed_relative_MAE_improvement": {
+        "42": 0.02258067791122994,
+        "123": 0.032531550488103,
+        "2026": 0.047994556071127674
+      },
+      "all_three_seed_directions_positive": true
+    }
+  ],
+  "registered_two_budget_control_gain": false,
+  "parameter_matched_curves": "COMPLETE",
+  "additional_rank_curves": "COMPLETE",
+  "H1_stop_remains_active": false,
+  "P3_P4_large_expansion_allowed": false,
+  "target_Query_future_labels_accessed": false,
+  "uncertainty_scope": "paired source-meta-validation cells/protocols, conditional on selected LRs; source seeds reported separately",
+  "novelty_scope": "P2 uses established frozen U C V.T and gradient-basis constructions; source specificity remains an empirical claim"
+}

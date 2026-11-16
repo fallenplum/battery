@@ -108,6 +108,8 @@ run_p1.py复用正式P0 B0的官方权重与源头部，主QV每seed315个逐cel
 
 P2预注册矩阵在H1阴性时仍包含同rank4六方法与近实际参数core56四方法的三seed受控比较，额外rank2/8停止。每方法三LR在seed42上各60epoch搜索后冻结LR，所有正式seed各120epoch。明确定义的nonfinite/CUDA OOM登记失败trial与真实已完成step，其他身份或hash错误直接中止。必要方法三个LR全部失败时标BLOCKED。最终目标Query标签参与训练、梯度、选模或评分计算为0，整cohort数据文件可以在内存加载。
 
-本次证据更新时，真实P1三source seed合计1035次单cell前后向、0优化器更新，主QV共享低维捕获门槛通过。label-shuffle控制的捕获未弱化，结局特异方向和电池退化特异机制仍缺少对应支持。P2仍处于源内LR搜索阶段，首个LoRA r4 trial的660次更新、epoch55选权、冻结参数身份及磁盘checkpoint已逐项复核。CPU独立重建并重放30颗source-meta-validation电池，完整固定网格预测的CPU/GPU最大差为1.40667e-5，符合既有CPU重放容差1e-4。此复核只使用源训练和元验证允许的信息。
+真实P1三source seed合计1035次单cell前后向、0优化器更新，主QV共享低维捕获门槛通过。label-shuffle控制的捕获未弱化，结局特异方向和电池退化特异机制仍缺少对应支持。P2的18个搜索及66个正式单元全部闭环，共99000次源训练更新。梯度核心相对LoRA-XS的r4及近参数core56平均相对MAE改善分别为0.5812%与0.8510%，配对cell及protocol区间均跨0，三个seed的方向存在分歧。P2门槛结果为NEGATIVE，后续P3/P4扩展放行标志为False。H2、H3保持未评估状态。
+
+首个LoRA r4 trial的660次更新、epoch55选权、冻结参数身份及磁盘checkpoint已独立复核。CPU重建并重放30颗source-meta-validation电池，完整固定网格预测的CPU/GPU最大差为1.40667e-5，符合既有CPU重放容差1e-4。此复核只使用源训练和元验证允许的信息。
 
 优势为参数作用域、原始W0身份和条件化更新有明确可核对的实现，强对照算子已有原始代码参照。风险包括Σ条件数、source group有限支持、门控尺度自由度、label-shuffle未弱化及固定子空间的外域失配。实现算子与已完成单元身份核验的置信度为高，H2、H3及少样本新颖性结论仍需完整受控比较与冻结后的目标域结果。

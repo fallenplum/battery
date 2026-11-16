@@ -2,24 +2,26 @@
 
 ## 验证范围与状态
 
-**完整工程套件已通过 55 项测试。** 本记录覆盖官方骨干与桥接、早期输入、PEFT 算子、训练恢复、源域选权和产物重放。此处记录的更新均属于工程验证，正式 P0、P1、P2 和目标域少样本实验使用各自登记的运行产物。
+**最终完整工程套件已通过 61 项测试。** 本记录覆盖官方骨干与桥接、早期输入、PEFT 算子、训练恢复、源域选权和产物重放。此处记录的更新均属于工程验证，正式 P0、P1、P2 和目标域少样本实验使用各自登记的运行产物。
 
 本次最终训练器文件 SHA256 为 `ebe562930e80697e01ffd103246a6a5263f6b1123c191e9e8efca8b9474aba70`。最终磁盘恢复复核直接调用该版本的正常 `train_source_unit` 入口。
 
 ## 完整测试套件
 
-最终日志记录 `55 passed, 1 warning in 23.35s`。
+P0锁源时日志记录 `55 passed, 1 warning in 23.35s`。补齐P1与P2执行边界后，最终完整日志记录 `61 passed, 1 warning in 59.94s`。
 
 | 文件 | 通过数量 | 主要覆盖 |
 | --- | --- | --- |
 | `tests/drs_peft/test_bridges.py` | 23 | 官方权重逐张量一致、两种桥、B1/B8、CPU/CUDA、掩码、输入与 Q 投影梯度、原生路径与官方 forward 一致 |
 | `tests/drs_peft/test_battery_baseline.py` | 9 | 源域拟合物理尺度、合法 reference、旧 M1 summary 逐位一致、共享 head、全部参数梯度、CPU/CUDA dropout 重放 |
 | `tests/drs_peft/test_data.py` | 8 | 实体与协议划分、Support/Query 分母、真实 early drift、canonical 单位、源域限定标准化、Stanford 后缀扰动隔离 |
-| `tests/drs_peft/test_peft.py` | 15 | LoRA/core 显式矩阵等价、门控梯度、目标更新范围、序列化、LoRA-XS/GA、失败原子性、参数量和 P1 梯度缓存重放 |
+| `tests/drs_peft/test_peft.py` | 21 | LoRA/core 显式矩阵等价、门控梯度、目标更新范围、序列化、LoRA-XS/GA、失败原子性、参数量、P1 梯度缓存重放、三seed门槛及P2调度与失败留档 |
 
 首次完整套件使用 Windows 默认长临时目录时，2 项测试因临时产物路径过长写出失败。改用 `--basetemp runtime/drs_peft/pytest_short` 后，完整 55 项通过。该路径问题与后续正式训练目录分别保留记录。
 
 完整日志保存在 `D:\develop\patchtst\battery_ai\_srsr_physics_early_precursor_v1\private\drs_peft_20261117\QA_FULL55.log`。
+
+最终61项完整日志保存在同目录的 `QA_FULL61_FINAL.log`。两次完整套件均使用仓库内短临时目录。
 
 ## 正常训练入口与恢复
 

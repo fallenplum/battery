@@ -58,3 +58,30 @@ foreach ($sourceSeed in @(42,123,2026)) {
 ```
 
 每seed登记345次真实单cell梯度前后向，主诊断315次、独立端点重算10次、次要QKVO/FFN诊断20次。优化器更新为0。逐seed实际完成状态和耗时由各自 `P1_RESULT.json` 与 `P1_PUBLIC_COMPLETE.json` 记录，三seed科学门槛由 `P1_GATE.json` 汇总。
+
+## P2等额搜索与正式源比较
+
+P2执行器由提交 `a0f651f` 固定，SHA256为 `59536a2b752105c1c5858ac8c9939309e39ffe64b8bb1058a626ff6067a9351c`。18个LR搜索单元已全部闭环，每个60epoch、660updates，共11880updates。所选LR与全部候选原值保存在 `P2_LR_SELECTION.json` 和 `P2_SEARCH_TRIALS.csv`。
+
+```powershell
+$env:BATTERY_SOURCE_COMMIT='a0f651f'
+& $drsPython -u -m scripts.drs_peft.run_p2 --phase search --backbone-dir $drsBackbone --device cuda
+```
+
+正式66个单元已全部闭环。三个源seed分别使用独立进程运行下面对应命令，沿用共同的冻结LR选择与完整注册。每个单元120epoch、1320updates，主r4六方法、近参数core56四方法、r2/8六方法合计87120次正式更新。
+
+```powershell
+& $drsPython -u -m scripts.drs_peft.run_p2 --phase formal --formal-seeds 42 --no-summary --backbone-dir $drsBackbone --device cuda
+& $drsPython -u -m scripts.drs_peft.run_p2 --phase formal --formal-seeds 123 --no-summary --backbone-dir $drsBackbone --device cuda
+& $drsPython -u -m scripts.drs_peft.run_p2 --phase formal --formal-seeds 2026 --no-summary --backbone-dir $drsBackbone --device cuda
+```
+
+本机先核对两进程的真实CPU、RAM、GPU与epoch进展，再启动第三个seed。三进程现场测量GPU利用率89%、显存剩余3448MiB、宿主可用内存约4.93GB，各训练进程RSS约1.65GB。每个单元使用独占文件锁，工作进程读取同一注册与LR文件。逐单元训练及验证wall time、显存峰值、实际更新和磁盘checkpoint重放由凭据分别记录，阶段经过时间另计。
+
+完整矩阵闭环后，协调进程已实际执行汇总命令。
+
+```powershell
+& $drsPython -m scripts.drs_peft.run_p2 --phase summarize --backbone-dir $drsBackbone --device cuda
+```
+
+原执行器生成的P2 Gate为NEGATIVE。18个搜索及66个正式单元合计99000次更新，P0与P2合计102个真实训练单元、118800次更新。P1另计1035次梯度前后向、0次更新。当前门槛终止本版本P3/P4大矩阵扩展，H2/H3与最终target Query评测保持未执行状态。源阶段完成凭据、重放及负结果分别保留。
