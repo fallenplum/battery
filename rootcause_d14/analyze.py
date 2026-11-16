@@ -95,7 +95,8 @@ def summaries(frame):
         valid = g[g.n_obs>0]
         proto = valid.groupby('protocol_uid').mae.mean()
         rows.append(dict(prediction_scope=scope,domain=domain,arm=arm,role=role,window=window,
-            supported_cells=len(valid),observations=int(valid.n_obs.sum()),cell_mean_mae=valid.mae.mean(),
+            supported_cells=valid.cell_uid.nunique(),cell_fold_role_occurrences=len(valid),
+            aggregation_unit='cell_fold_role',observations=int(valid.n_obs.sum()),cell_mean_mae=valid.mae.mean(),
             cell_mean_rmse=valid.rmse.mean(),bias=valid.bias.mean(),protocol_macro_mae=proto.mean(),
             protocols=len(proto),negative_predictions=int(valid.negative_predictions.sum()),
             above1p2_predictions=int(valid.above1p2_predictions.sum())))
@@ -180,6 +181,12 @@ def oracle_cells(legal):
     frame = pd.DataFrame(records)
     frame.to_csv(OUT/'oracle_cell_metrics.csv',index=False)
     summaries(frame).to_csv(OUT/'oracle_summary_metrics.csv',index=False)
+    fold_summaries=[]
+    for fold,part in frame.groupby('fold'):
+        table=summaries(part)
+        table['fold']=fold
+        fold_summaries.append(table)
+    pd.concat(fold_summaries).to_csv(OUT/'oracle_fold_summary_metrics.csv',index=False)
     init = pd.DataFrame(initializations)
     for key in ('initial','raw','parameters'):
         init[key] = init[key].apply(json.dumps)
