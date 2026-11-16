@@ -9,7 +9,7 @@ from n012.verify import independent_scaler
 from n012.model import PhysicsBasis,MonotoneSpline
 from n012.run import write_json,configure
 from .data import ROOT,OUT,SCOPE,FEATURES,settings,load_domain
-from .oracle import evaluate,starts
+from .oracle import evaluate,starts,physics_values
 from .run import check_sources
 
 
@@ -25,6 +25,7 @@ def main():
     summary = pd.read_csv(OUT/'summary_metrics.csv')
     # Compare NumPy diagnostic functions to the original float64 torch heads.
     q = np.array([100.,101.,171.,200.,500.,1000.,2600.,6000.])
+    formula_checks=[]
     for family,cls in [('physics_free',PhysicsBasis),('spline10',MonotoneSpline)]:
         for j,raw in enumerate(starts(family)):
             net = cls(1).double()
@@ -39,7 +40,17 @@ def main():
                 expected = net(torch.zeros(1,1,dtype=torch.float64),torch.tensor([.98],dtype=torch.float64),
                                torch.tensor(q[None],dtype=torch.float64)).numpy()[0]
             actual = evaluate(family,raw,(q-100)/1000,.98)[0]
-            check(f'original_head_formula_{family}_{j}',np.allclose(actual,expected,atol=2e-14,rtol=2e-14))
+            tolerance=2e-14
+            if family=='physics_free':
+                parameters=physics_values(raw)
+                # Torch softplus uses x above 20; exact softplus differs by at most exp(-20).
+                tolerance+=.98*parameters[2]*parameters[5]*np.exp(-20)
+            error=float(np.max(np.abs(actual-expected)))
+            check(f'original_head_formula_{family}_{j}',error<=tolerance)
+            formula_checks.append(dict(prediction_scope='ORACLE_DIAGNOSTIC',family=family,start=j,
+                maximum_absolute_error=error,analytic_absolute_bound=tolerance))
+    write_json(OUT/'ORACLE_TORCH_NUMERIC_CHECK.json',dict(status='PASS',checks=formula_checks,
+        bound_reason='Torch softplus threshold20 linear branch versus exact float64 logaddexp'))
     for domain in settings()['domains']:
         d = load_domain(domain)
         b = d.bundle

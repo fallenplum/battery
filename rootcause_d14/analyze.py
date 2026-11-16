@@ -119,6 +119,7 @@ def comparisons(frame):
     contrasts = [('D1-0',arm) for arm in settings()['arms']]
     contrasts += [('D1-0-capmatch','D1-GL'),('D1-0','D1-0-capmatch'),('D1-GL','D2-F1L1'),
                   ('D2-F0L1','D2-F1L1'),('D2-F1L1','D2-GL-rate-spline'),('D2-F1L1','D2-GL-rate-physics'),
+                  ('D2-GL-rate-spline','D2-GL-rate-physics'),
                   ('N2-physics_basis','D2-GL-rate-physics'),('N2-monotone_spline','D2-GL-rate-spline'),
                   ('HISTORICAL-M1','D2-F1L1')]
     for domain in settings()['domains']:

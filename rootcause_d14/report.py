@@ -7,6 +7,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from n012.run import write_json,file_records
+from n012.report import table
 from .data import OUT,REPORT,ROOT,SCOPE,ORACLE,settings
 
 
@@ -18,7 +19,13 @@ def md(frame, columns=None, scope=SCOPE):
         frame = frame.copy()
     if 'prediction_scope' not in frame:
         frame.insert(0,'prediction_scope',scope)
-    return frame.to_markdown(index=False,floatfmt='.6f')
+    for name in frame.select_dtypes(include=['floating']).columns:
+        values=frame[name]
+        sensitive=(values.abs()>=1e6)|((values.abs()<1e-5)&values.ne(0))
+        if sensitive.any():
+            frame[name]=frame[name].astype(object)
+            frame.loc[sensitive,name]=values[sensitive].map(lambda value:f'{value:.6g}')
+    return table(frame,digits=6)
 
 
 def common():
@@ -129,6 +136,24 @@ def reports():
         text += '\n\n'
     text += '## 验收计数\n\n'
     text += f"合法K100新增神经网络训练80组，正式SGD/AdamW更新{counts['formal_updates']:,}次，合法OOF评价246颗物理电池。D3个体多初值拟合问题{counts['oracle_individual_multistart_problems']}个，每个8初值，共{counts['oracle_individual_optimizer_starts']}次个体优化。另有10个train-only共享尺度联合问题，共80次联合优化。D4 profile另有312次有限约束优化。rate proxy另有160个选定轻头与960次候选Ridge拟合。额外真实恢复烟测28次更新，原N012测试夹具的30次更新单列，均未纳入126000正式更新。\n"
+    text += '\n## 同输入、同辅助目标的解码头配对\n\n'
+    text += md(p[(p.reference=='D2-GL-rate-spline')&(p.candidate=='D2-GL-rate-physics')&(p.window=='all')],contrastcols)
+    text += '\n\n该对比属于原合同要求，初版汇总遗漏其单独行，现从同一批冻结预测补齐。全部既有对比的估计量保持原定义。两头的结果用于判断具体三分量参数化的独立贡献，具有相同输入与辅助loss。\n'
+    text += '\n## 速率目标的时距权衡\n\n'
+    text += md(s[s.arm.isin(['D1-GL','D2-F1L1'])&s.window.isin(['all','501_1000','1001_plus'])],
+               ['domain','arm','window','supported_cells','cell_mean_mae','bias'])
+    text += '\n\nMATR的rate辅助使完整轨迹主指标上升，同时降低501–1000圈MAE与正偏差。当前结果支持目标之间的权衡，无法将固定0.1权重解释为历史M1优势的充分原因。HUST主指标同样没有出现该辅助项的稳定增益。\n'
+    text += '\n## 长随访贡献与反例\n\n'
+    conc=pd.read_csv(OUT/'long_horizon_concentration.csv')
+    text += md(conc[(conc.reference=='D1-0')&(conc.candidate=='D1-GL')&conc.window.isin(['all','1001_plus'])])
+    text += '\n\n最大受损cell与top3正收益占比均保留，不能只依据总体均值解释所有电池。\n'
+    text += '\n## 速率代理、梯度与数值限制\n\n'
+    text += 'MATR的200–500圈rate加入G统计后R²约0.658，500–1000圈只有42颗支持，当前各固定代理的R²约0.062–0.190。HUST的500–1000圈rate在原始低维统计下R²约0.561。可预测性随域和窗口变化，现有代理结果无法证明K100的全局不可预测性。\n\n'
+    text += 'MATR训练probe中tau梯度范数中位数从第1轮约0.000218升至第12轮约0.007678，后续存在训练/验证分化。当前证据支持阶段性的弱激活与优化问题，初始化的因果贡献仍需独立控制。局部Jacobian病态与少量近等价初值应结合短随访支持解释。\n\n'
+    for domain in settings()['domains']:
+        pp=pd.read_csv(OUT/'D4'/domain/'profiles.csv')
+        text += f"{domain}共{len(pp)}次profile优化，{int(pp.converged.sum())}次报告收敛，{int((~pp.converged).sum())}次未收敛。未收敛点、约束残差及全部原始参数保留。\n\n"
+    text += '保留局部分段物理表征与形状约束头的受控比较。当前三分量physics_basis的独立优势证据不足，固定query_mlp的2×2对照中rate=0.1未改善完整轨迹主指标。函数oracle的低误差支持继续检验参数映射和学习过程，不能直接认证真实电化学机制。\n'
     text += '\n## 结论范围与后续\n\n各域和时距的阴性结果与反例全部保留。本轮保持原问题、数据与80组预注册矩阵，不按测试结果扩模型。三分量形状先验仍可作为受控函数对照，具体LLI/LAM/SEI解释缺少电极分辨测量与独立分量真值。单种子与历史暴露限制外推，尚未满足论文候选升级要求。\n\n优势为同队列、正交目标、显式信息预算、未来oracle隔离与实际权重重放。风险为有限oracle搜索、轻头样本量、近似参数匹配与多重探索。运行完整性置信度为高，跨域机制与训练种子稳定性置信度为低。\n\n## 拓展思考\n\n函数拟合能力与前缀映射需要各自的证据。保留实际可预测rate、参数病态与梯度覆盖之间的差异，有助于约束下一轮最小修改。\n\n## 你可能想知道\n\n全部逐cell预测、负例、断点状态、参数profile与源码哈希均有索引。HUST的右删失终点未被当作EOL事件。\n'
     (REPORT/'FINAL_CAUSAL_ASSESSMENT.md').write_text(text,encoding='utf-8')
 
@@ -163,8 +188,7 @@ def figures():
         a = p[(p.domain==domain)&(p.window=='all')&(p.reference=='D1-0')&(p.candidate=='D2-F1L1')]
         axes[0,col].scatter(np.arange(len(a)),a.improvement,s=8,color=palette[0],alpha=.75)
         axes[0,col].axhline(0,color='.35',lw=.6)
-        axes[0,col].set(title=f'{domain}, n={len(a)} cells',xlabel='OOF cell index',ylabel='MAE improvement, SOH fraction')
-        axes[0,col].text(.02,.98,'D1-0 minus GL + rate',transform=axes[0,col].transAxes,va='top',fontsize=8)
+        axes[0,col].set(title=f'{domain}, n={len(a)} cells\nD1-0 minus GL + rate',xlabel='OOF cell index',ylabel='MAE improvement, SOH fraction')
         for color,arm in zip(palette,['D1-0','D1-GL','D2-F0L1','D2-F1L1']):
             g=s[(s.domain==domain)&(s.arm==arm)].set_index('window').loc[[v[0] for v in __import__('rootcause_d14.analyze',fromlist=['WINDOWS']).WINDOWS][1:]]
             axes[1,col].plot(range(4),g.cell_mean_mae,'o-',ms=3,lw=1,color=color,label=arm)
@@ -178,33 +202,32 @@ def figures():
         fam = ['physics_shared','physics_free','spline10','positive_rate8','polynomial4','linear1']
         values = [legal[(legal.domain==domain)&(legal.arm=='D1-0')&(legal.window=='all')].mae.to_numpy()]
         values += [o[(o.domain==domain)&(o.role=='test')&(o.arm==f)&(o.window=='all')].mae.to_numpy() for f in fam]
-        ax.boxplot(values,showfliers=False,widths=.6)
+        ax.boxplot(values,showfliers=True,widths=.6,flierprops=dict(marker='.',markersize=2,alpha=.45))
         ax.set(xticks=np.arange(1,8),xticklabels=['Legal\nK100','Shared\nphysics','Free\nphysics','Spline\n10','Rate\n8','Poly\n4','Linear\n1'],
-               ylabel='Cell MAE, SOH fraction',title=f'{domain}, n={len(values[0])}')
+               ylabel='Cell MAE, SOH fraction',title=f'{domain}, n={len(values[0])}\nGroups 2–7 use future-label oracle')
         ax.tick_params(axis='x',labelsize=7)
-        ax.text(.98,.98,'Future-label oracle, groups 2–7',transform=ax.transAxes,ha='right',va='top',fontsize=7)
     save(fig,'02_oracle_expressivity')
-    fig,axes = plt.subplots(2,2,figsize=(8,6),layout='constrained')
+    fig,axes = plt.subplots(2,2,figsize=(8,6.8),layout='constrained')
     for col,domain in enumerate(settings()['domains']):
         st = pd.read_csv(OUT/'D4'/domain/'parameter_stability.csv')
         g=st[(st.family=='physics_free')&(st.parameter=='tau')].sort_values('last_cycle')
         axes[0,col].vlines(np.arange(len(g)),g.minimum,g.maximum,color=palette[0],alpha=.65,lw=.8)
+        axes[0,col].scatter(np.arange(len(g)),(g.minimum+g.maximum)/2,color=palette[0],s=2)
         axes[0,col].set(title=f'{domain}, n={len(g)} OOF cells',ylabel='Equivalent tau, 1000 cycles',xlabel='Cells sorted by follow-up')
         profile = pd.read_csv(OUT/'D4'/domain/'profiles.csv')
         for uid,g in profile[profile.parameter=='tau'].groupby('cell_uid'):
             axes[1,col].plot(g.fixed_value,g.mae,label=uid,lw=.8)
         axes[1,col].set(xlabel='Fixed tau, 1000 cycles',ylabel='Profile MAE, SOH fraction')
-        axes[1,col].legend(fontsize=6,ncol=2,loc='upper right')
+        axes[1,col].legend(fontsize=6,ncol=3,loc='upper center',bbox_to_anchor=(.5,-.24))
     save(fig,'03_parameter_stability')
-    fig,axes = plt.subplots(2,2,figsize=(8,6),layout='constrained')
+    fig,axes = plt.subplots(2,2,figsize=(8,6.8),layout='constrained')
     for col,domain in enumerate(settings()['domains']):
         for j,fold in enumerate(settings()['folds']):
             h = pd.DataFrame(json.loads((OUT/domain/fold/'D2-GL-rate-physics/HISTORY.json').read_text()))
             axes[0,col].plot(h.epoch,h.train_mae,color=plt.cm.viridis(j/5),lw=.7,alpha=.65)
             axes[0,col].plot(h.epoch,h.val_mae,color=plt.cm.viridis(j/5),lw=1,ls='--',label=fold.replace('cell_fold_','fold '))
-        axes[0,col].set(title=f'{domain}, GL + rate + physics',xlabel='Epoch',ylabel='MAE, SOH fraction')
-        axes[0,col].legend(fontsize=6,loc='upper right',ncol=2)
-        axes[0,col].text(.02,.98,'Solid train / dashed validation',transform=axes[0,col].transAxes,va='top',fontsize=7)
+        axes[0,col].set(title=f'{domain}, GL + rate + physics\nSolid train / dashed validation',xlabel='Epoch',ylabel='MAE, SOH fraction')
+        axes[0,col].legend(fontsize=6,loc='upper center',ncol=5,bbox_to_anchor=(.5,-.24))
         arms=['D1-0','D1-GL','D2-F1L1','N2-physics_basis','D2-GL-rate-physics']
         g=s[(s.domain==domain)&(s.window=='501_1000')].set_index('arm').loc[arms]
         axes[1,col].bar(range(5),g.bias,color=palette[0])
