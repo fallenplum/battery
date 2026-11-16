@@ -3,8 +3,9 @@
 使用项目既有Python 3.11与PyTorch 2.4.1 CUDA12.1环境，在仓库根目录执行。GPU为RTX4060 Laptop 8GiB，正式训练串行、torch CPU线程2、deterministic=True。数据保持只读，训练前先提交源码再登记。
 
 ```powershell
-python -m pytest tests/test_n012.py tests/test_d14.py -q
+python -m pytest tests/test_n012.py tests/test_d14.py tests/test_d14_physical_jacobian.py -q
 python -m rootcause_d14.run --phase audit
+python -m rootcause_d14.metadata
 python -m rootcause_d14.run --phase register
 python -m rootcause_d14.oracle --domain MATR --phase development
 python -m rootcause_d14.oracle --domain HUST --phase development

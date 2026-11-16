@@ -45,7 +45,7 @@ def reports():
     text += '\n\n## 受控配对\n\n'+md(p[(p.window=='all')&p.candidate.isin(['D1-G','D1-L','D1-GL','D1-0-capmatch'])],contrastcols)
     text += '\n\n## 容量与时距\n\n'+md(units.groupby(['domain','arm'])[['parameters','extra_params']].mean().reset_index())
     text += '\n\n'+md(s[s.arm.isin(['D1-0','D1-GL'])&s.window.isin(['101_200','201_500','501_1000','1001_plus'])],['domain','arm','window','supported_cells','cell_mean_mae','bias'])
-    text += '\n\n优势为同一原始支路、同一UID与相近参数容量对照。风险为额外分支改变优化路径，容量近似匹配仍无法消除函数形式差异。参考电流与旧架构的信息预算差异见UNMATCHED_INFORMATION.md。逐cell反例与长寿命贡献保留在worst_cases.csv和long_horizon_concentration.csv。输入增量的方向只适用于当前折与单种子，置信度为中。\n'
+    text += '\n\n优势为同一原始支路、同一UID与相近参数容量对照。风险为额外分支改变优化路径，容量近似匹配仍无法消除函数形式差异。完整reference VIQ可由现有四通道近似重建，具体舍入误差与旧架构的表征差异见UNMATCHED_INFORMATION.md。额外分支使用固定派生初始化种子420014，原主干与decoder初值沿用seed42。逐cell反例与长寿命贡献保留在worst_cases.csv和long_horizon_concentration.csv。输入增量的方向只适用于当前折与单种子，置信度为中。\n'
     (REPORT/'D1_PHYSICS_INPUT_ABLATION.md').write_text(text,encoding='utf-8')
     text = '# D2 速率辅助目标正交对照\n'+common()
     text += '\nF0L0为D1-0，F1L0为D1-GL，F0L1为D2-F0L1，F1L1为D2-F1L1。rate loss为supported-cell平均的supported-window MAE×1000×0.1。MATR两个窗口支持151与42颗，HUST两个窗口均支持77颗，mask保持全部主队列。历史trainer源码使用相同逐cell再逐window规则，目标并未改成全局window均值。\n'

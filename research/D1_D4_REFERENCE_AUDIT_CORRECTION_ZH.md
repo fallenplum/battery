@@ -1,0 +1,11 @@
+# 参考VIQ信息预算审计修正
+
+源构建代码核验发生于新增网络测试评分之前。MATR的build_dataset.py与HUST的build_idea_dataset.py均将同条曲线I/Q除以早期参考容量窗尺度，生成reference_viq。它与物理分解的reference_q中位曲线含义不同。
+
+初版审计仅比较raw_I与reference_I的直接差值，将其解释为独立信息缺口，该推断有误。利用N012已有Q与第四通道可恢复reference_Q，随后逐cell估计公共缩放比例，即可重建reference_I。246颗全部有效前缀逐值验证后，最大参考I误差为MATR约4.95e-7、HUST约1.99e-6个存储单位。只使用同cell的K100数据。
+
+当前UNMATCHED_INFORMATION.md与D1报告已采用更正解释。rootcause_d14/metadata.py生成当前逐字段及代数重建审计。data.py中的最初预注册审计模板随已执行训练源码原样冻结，RUN_COMMANDS.md明确先audit再metadata，后者产出当前解释。原直接比较数值保留，完整重建另存REFERENCE_FULL_RECOVERY_AUDIT.csv。
+
+这项更正改变对信息预算的解释，未修改任何合法模型、训练目标、初始化、数据、fold、测试查询与指标，也未依据测试结果选择模型。D1的贡献范围限定为显式早期表征及其优化路径，历史M1的完整算子、mask压缩、辅助目标及clamp仍存在差异。
+
+新增物理支路使用固定派生初始化种子420014，原主干和decoder参数初值沿用42。该构造也将CUDA随机态设为420014。当前两个域五折预选encoder均为resmlp/voltage_cnn/temporal_tcn/cnn_tcn，训练图无dropout随机层，实际数据次序由42派生的NumPy序列确定。所有新增臂使用同一固定初始化协议，仍属于一个整体seed42执行。
