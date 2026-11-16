@@ -10,8 +10,14 @@ from n012.run import write_json,file_records
 from .data import OUT,REPORT,ROOT,SCOPE,ORACLE,settings
 
 
-def md(frame, columns=None):
-    frame = frame[columns] if columns else frame
+def md(frame, columns=None, scope=SCOPE):
+    if columns:
+        columns = ['prediction_scope']+columns if 'prediction_scope' in frame and 'prediction_scope' not in columns else columns
+        frame = frame[columns].copy()
+    else:
+        frame = frame.copy()
+    if 'prediction_scope' not in frame:
+        frame.insert(0,'prediction_scope',scope)
     return frame.to_markdown(index=False,floatfmt='.6f')
 
 
@@ -66,7 +72,7 @@ def reports():
     text += '\n所有本节函数拟合的prediction_scope均为ORACLE_DIAGNOSTIC。每颗cell允许读取其完整真实未来SOH，八初值float64 L-BFGS-B最小化绝对误差。每个family的全部初值、参数、状态及预测保存在独立诊断目录，未提供给合法训练器。\n'
     text += '\nphysics_shared的time_c与smooth由对应折train未来曲线联合学习，个体4参数在该cell全部future上拟合。physics_free另允许每cell自由time_c与smooth，共6参数。后者自由度更高。spline10沿用十段正rate指数累计，positive_rate8是八段正SOH损失rate积分，polynomial4是锚点固定四次非单调多项式，linear1为非负线性损失。\n'
     text += '\n## OOF身份下的诊断汇总\n\n'+md(oo,cols)
-    text += '\n\n## 多初值优化状态\n\n'+md(ini.groupby(['domain','family']).agg(starts=('mae','size'),converged=('converged','sum'),median_iterations=('iterations','median'),median_gradient_inf=('gradient_inf','median')).reset_index())
+    text += '\n\n## 多初值优化状态\n\n'+md(ini.groupby(['domain','family']).agg(starts=('mae','size'),converged=('converged','sum'),median_iterations=('iterations','median'),median_gradient_inf=('gradient_inf','median')).reset_index(),scope=ORACLE)
     text += '\n\n数值搜索不保证全局最小。L-BFGS-B对非光滑MAE可能提前停止或达到预算，所有失败状态仍保留。softplus极小值在浮点中可能接近正边界，Jacobian病态与共享尺度漂移需结合D4解释。训练、验证、测试身份分别列在oracle_summary_metrics.csv，完整四时距、EOL前后与SOH回升在oracle_cell_metrics.csv。fit_gap包含函数自由度、共享尺度学习、参数映射与数值优化差异，无法解释为纯信息下界。优势为同锚点与同观测支持下的有限自由度对照。风险为未来标签访问和局部优化，函数能拟合的结论置信度为中，电化学机制识别证据仍不足。\n'
     (REPORT/'D3_ORACLE_EXPRESSIVITY.md').write_text(text,encoding='utf-8')
     stability,svd,proxy,profile,gradient = [],[],[],[],[]
@@ -91,8 +97,8 @@ def reports():
     gr.to_csv(OUT/'physics_gradient_summary.csv',index=False)
     text = '# D4 参数稳定性、速率可预测性与实际梯度\n'+common()
     text += '\n## 多初值稳定性\n\n近等价集合同时满足MAE≤best×1.05且差≤0.002，阈值敏感性1%与10%预先登记。\n\n'
-    text += md(st.groupby(['domain','family','parameter']).agg(cells=('range','size'),median_range=('range','median'),max_range=('range','max'),median_equivalent_starts=('equivalent_starts','median')).reset_index())
-    text += '\n\n## 缩放Jacobian\n\n'+md(sv.groupby(['domain','family','followup_group']).agg(cells=('condition','size'),median_condition=('condition','median'),median_near_zero=('near_zero_directions','median')).reset_index())
+    text += md(st.groupby(['domain','family','parameter']).agg(cells=('range','size'),median_range=('range','median'),max_range=('range','max'),median_equivalent_starts=('equivalent_starts','median')).reset_index(),scope=ORACLE)
+    text += '\n\n## 缩放Jacobian\n\n'+md(sv.groupby(['domain','family','followup_group']).agg(cells=('condition','size'),median_condition=('condition','median'),median_near_zero=('near_zero_directions','median')).reset_index(),scope=ORACLE)
     text += '\n\nJacobian用实际可观测query，以物理参数预定尺度[0.05,0.05,0.06,1,0.5,0.25]计算SVD。它只刻画当前位置与支持区间的局部病态。shared模式的两个共享参数固定，free模式有6个个体方向。profile子集固定为每域fold0排序最前3个train与3个test UID，未按拟合效果筛选。有效rate网格单位为SOH fraction/1000 cycles，SLSQP未收敛或约束残差较大的点保留在profiles.csv。\n'
     text += '\n## 合法K100预测真实端点rate\n\n'+md(pr)
     text += '\n\n轻头只拟合本折有支持的train电池，StandardScaler也只fit该train支持集，alpha仅由本折validation选择，未合并trainval重拟合。每窗口按原UID的OOF test评分。冻结z来自相同折已冻结D1/D2网络，属于已有监督表征的条件诊断。共160个选定rate proxy模型，6候选alpha对应960次Ridge拟合，独立记录于RATE_PROXY_MODELS.json。MATR第二段n=42，R²对少量长寿命电池敏感。\n'
@@ -162,7 +168,8 @@ def figures():
         for color,arm in zip(palette,['D1-0','D1-GL','D2-F0L1','D2-F1L1']):
             g=s[(s.domain==domain)&(s.arm==arm)].set_index('window').loc[[v[0] for v in __import__('rootcause_d14.analyze',fromlist=['WINDOWS']).WINDOWS][1:]]
             axes[1,col].plot(range(4),g.cell_mean_mae,'o-',ms=3,lw=1,color=color,label=arm)
-        axes[1,col].set(xticks=range(4),xticklabels=['101–200','201–500','501–1000','1001+'],ylabel='MAE, SOH fraction',xlabel='Physical cycle')
+        labels = [f'{name}\n(n={int(n)})' for name,n in zip(['101–200','201–500','501–1000','1001+'],g.supported_cells)]
+        axes[1,col].set(xticks=range(4),xticklabels=labels,ylabel='MAE, SOH fraction',xlabel='Physical cycle')
     axes[1,1].legend(loc='upper left',fontsize=7)
     save(fig,'01_paired_and_horizons')
     fig,axes = plt.subplots(1,2,figsize=(8,3.5),layout='constrained')
