@@ -199,7 +199,24 @@ def prepare_engine(args, config, data, fold, seed, method, role):
             model, args.private_root / "xs" / f"f{fold}s{seed}.pt"
         )
         engine.register_method(internal, payload)
-        write_json(args.public_root / "XS_COSTS" / f"f{fold}s{seed}.json", construction)
+        write_json(
+            args.public_root
+            / "XS_COSTS"
+            / f"f{fold}s{seed}_{engine.execution_id}.json",
+            {
+                **construction,
+                "execution_id": engine.execution_id,
+                "role": role,
+                "fold_id": fold,
+                "seed": int(seed),
+                "method": method,
+                "source_checkpoint_sha256": identity["source_checkpoint_sha256"],
+                "new_SVD_seconds": float(construction["SVD_seconds"])
+                if construction["new_SVD_evaluations"] > 0
+                else 0.0,
+                "counting_scope": "actual_new_factorizations_in_this_engine_construction;cached_reference_cost_retained_for_provenance",
+            },
+        )
     else:
         engine.register_method(internal)
     return engine, inputs, internal
@@ -1163,6 +1180,10 @@ def collect(args, config, registration):
         read_json(path)
         for path in sorted((args.public_root / "ENGINE_COSTS").glob("*.json"))
     ]
+    xs_events = [
+        read_json(path)
+        for path in sorted((args.public_root / "XS_COSTS").glob("*.json"))
+    ]
     ledger = {
         **source_header(args, config, registration),
         "expected_target_units": 930,
@@ -1180,6 +1201,11 @@ def collect(args, config, registration):
         ),
         "cost_counting_scope": "engine_process_cumulative_costs_not_selected_step_sum",
         "engine_cost_records": costs,
+        "actual_new_SVD_evaluations": sum(
+            event["new_SVD_evaluations"] for event in xs_events
+        ),
+        "actual_new_SVD_seconds": sum(event["new_SVD_seconds"] for event in xs_events),
+        "XS_construction_events": xs_events,
         "target_exposure": config["target"]["exposure_description"],
         "blind_confirmation": False,
     }

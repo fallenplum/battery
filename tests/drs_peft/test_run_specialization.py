@@ -48,6 +48,63 @@ def test_reference_family_and_zero_baseline_remain_explicit(tmp_path):
         runner.reference_family("ambiguous_ZERO", config)
 
 
+def test_xs_cache_hit_keeps_first_construction_cost_and_collect_counts_only_new_work(
+    tmp_path, monkeypatch
+):
+    args, config, registration = setup(tmp_path)
+    args.backbone_dir, args.device = tmp_path / "official", "cpu"
+    monkeypatch.setattr(runner, "audit_common_reference", lambda *args: None)
+    monkeypatch.setattr(
+        runner,
+        "reference_identity",
+        lambda *args: {"source_checkpoint_sha256": "same-source"},
+    )
+    monkeypatch.setattr(runner, "load_reference_model", lambda *args: object())
+    monkeypatch.setattr(
+        runner,
+        "NoPolicyInputs",
+        lambda: SimpleNamespace(transform=lambda data: {}),
+    )
+    monkeypatch.setattr(
+        runner,
+        "SpecializationEngine",
+        lambda *args, **kwargs: SimpleNamespace(register_method=lambda *args: None),
+    )
+    timestamps = iter((100, 200))
+    monkeypatch.setattr(runner.time, "time_ns", lambda: next(timestamps))
+    construction_records = iter(
+        (
+            {"SVD_seconds": 0.75, "new_SVD_evaluations": 12, "cache_reused": False},
+            {"SVD_seconds": 0.75, "new_SVD_evaluations": 0, "cache_reused": True},
+        )
+    )
+    monkeypatch.setattr(
+        runner,
+        "cache_xs_payload",
+        lambda *args: ({}, next(construction_records)),
+    )
+    data = SimpleNamespace(ids=["cell"], query=np.arange(101, 5001, dtype=np.float32))
+    runner.prepare_engine(args, config, data, "final", 42, "SPECIALIZED_XS", "tM")
+    runner.prepare_engine(args, config, data, "final", 42, "SPECIALIZED_XS", "tH")
+    paths = sorted((args.public_root / "XS_COSTS").glob("*.json"))
+    assert len(paths) == 2
+    first, cached = [json.loads(path.read_text(encoding="utf-8")) for path in paths]
+    assert first["execution_id"] != cached["execution_id"]
+    assert first["new_SVD_evaluations"] == 12
+    assert first["new_SVD_seconds"] == 0.75
+    assert cached["SVD_seconds"] == 0.75
+    assert cached["new_SVD_evaluations"] == 0
+    assert cached["new_SVD_seconds"] == 0.0
+    for _ in range(2):
+        runner.collect(args, config, registration)
+        ledger = json.loads(
+            (args.public_root / "EXECUTION_LEDGER.json").read_text(encoding="utf-8")
+        )
+        assert ledger["actual_new_SVD_evaluations"] == 12
+        assert ledger["actual_new_SVD_seconds"] == 0.75
+        assert len(ledger["XS_construction_events"]) == 2
+
+
 def test_target_matrix_preserves_two_zeros_and_four_distinct_adapters(tmp_path):
     args, config, registration = setup(tmp_path)
     specs = runner.target_units(args, config, registration)
