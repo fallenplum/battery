@@ -1,0 +1,398 @@
+"""Source-only post-P2 update geometry and local prediction sensitivity."""
+
+from __future__ import annotations
+
+import argparse
+import contextlib
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import torch
+from safetensors.torch import load_file
+from threadpoolctl import threadpool_limits
+
+from models.drs_peft.peft import SubspaceLinear, _local_seed
+from .data import file_hash, write_json
+from .gradient_audit import state_fingerprint
+from .run_p1 import load_p0_checkpoint
+from .run_p2 import _basis_bundle, _factory
+from .train import (
+    ROOT,
+    bind,
+    configure,
+    early_batch,
+    load_selected,
+    load_source,
+    make_model,
+    read_json,
+)
+
+METHODS = ("grad_core", "lora_xs")
+RANKS = (4, 56)
+SEEDS = (42, 123, 2026)
+QUERIES = (150, 350, 750, 1500, 3000)
+WINDOWS = (("all", 101, 5000), ("101_200", 101, 200),
+           ("201_500", 201, 500), ("501_1000", 501, 1000),
+           ("1001_plus", 1001, 5000))
+
+
+def _unit_path(root, unit):
+    return Path(root) / "formal" / unit["method"] / f"rank{unit['rank']}" / f"seed{unit['seed']}"
+
+
+def _units():
+    return [dict(method=method, rank=rank, seed=seed)
+            for method in METHODS for rank in RANKS for seed in SEEDS]
+
+
+def update_singular_values(u, core, v):
+    """Exact nonzero spectrum of U C V.T without materializing its dense matrix."""
+    _, ru = np.linalg.qr(np.asarray(u, dtype=np.float64), mode="reduced")
+    _, rv = np.linalg.qr(np.asarray(v, dtype=np.float64), mode="reduced")
+    return np.linalg.svd(ru @ np.asarray(core, dtype=np.float64) @ rv.T,
+                         compute_uv=False)
+
+
+def spectral_summary(singular):
+    singular = np.asarray(singular, dtype=np.float64)
+    energy = singular ** 2
+    total = float(energy.sum())
+    if total == 0:
+        return dict(frobenius=0., spectral_norm=0., stable_rank=0.,
+                    entropy_rank=0., rank99=0, numerical_rank=0)
+    probabilities = energy[energy > 0] / total
+    return dict(frobenius=float(np.sqrt(total)), spectral_norm=float(singular[0]),
+                stable_rank=float(total / energy[0]),
+                entropy_rank=float(np.exp(-(probabilities * np.log(probabilities)).sum())),
+                rank99=int(np.searchsorted(np.cumsum(energy) / total, .99) + 1),
+                numerical_rank=int((singular > singular[0] * 1e-7).sum()))
+
+
+def normalized_weight_jacobian(core_gradient, u, v):
+    """Gradient in Frobenius-orthonormal coordinates of the same update space.
+
+    If U=Qu Ru, V=Qv Rv, Z=Ru C Rv.T, then d y/d Z is
+    Ru^{-T} (d y/d C) Rv^{-1}. XS Sigma therefore cannot create a
+    spurious sensitivity increase merely by rescaling a core coordinate.
+    """
+    _, ru = np.linalg.qr(np.asarray(u, dtype=np.float64), mode="reduced")
+    _, rv = np.linalg.qr(np.asarray(v, dtype=np.float64), mode="reduced")
+    left = np.linalg.solve(ru.T, np.asarray(core_gradient, dtype=np.float64))
+    return np.linalg.solve(rv.T, left.T).T
+
+
+def _registration(args, episodes):
+    meta = episodes["source_cell_roles"]["source_meta_validation"]
+    units = []
+    for unit in _units():
+        folder = _unit_path(args.private_p2, unit)
+        config = read_json(folder / "RUN_CONFIG.json")
+        receipt = read_json(folder / "SOURCE_DEVELOPMENT_COMPLETE.json")
+        if any(config[key] != unit[key] for key in ("method", "rank", "seed")):
+            raise RuntimeError("P2 unit identity differs from its expected method/rank/seed")
+        public = args.public_root / "P2" / "formal" / unit["method"] / f"rank{unit['rank']}" / f"seed{unit['seed']}"
+        public_receipt = read_json(public / "SOURCE_DEVELOPMENT_COMPLETE.json")
+        if public_receipt["selected_checkpoint_sha256"] != receipt["selected_checkpoint_sha256"]:
+            raise RuntimeError("P2 public/private checkpoint provenance differs")
+        for record in receipt["files"]:
+            if file_hash(folder / record["path"]) != record["sha256"]:
+                raise RuntimeError("P2 frozen private artifact changed " + record["path"])
+        if config["validation_ids"] != meta or receipt["target_query_labels_used"] != 0:
+            raise RuntimeError("D2 requires the unchanged source-meta-only P2 comparison")
+        checkpoint = folder / "CHECKPOINT_SELECTED.pt"
+        if file_hash(checkpoint) != receipt["selected_checkpoint_sha256"]:
+            raise RuntimeError("P2 checkpoint changed")
+        units.append(dict(**unit, checkpoint_sha256=file_hash(checkpoint),
+                          predictions_sha256=file_hash(folder / "SOURCE_VALIDATION_PREDICTIONS.npz")))
+    return dict(stage="D2_POST_P2_SOURCE_DIAGNOSTIC", comparison="same core rank within each rank",
+                core_ranks=list(RANKS), seeds=list(SEEDS), methods=list(METHODS),
+                source_train_ids=episodes["source_cell_roles"]["source_train"],
+                source_meta_ids=meta, sensitivity_ids=sorted(meta)[:6],
+                sensitivity_queries=list(QUERIES), scalar_backward_evaluations=360,
+                sensitivity_selected_cell_forwards=72, zero_core_cell_forwards=72,
+                common_P0_cell_forwards=18, optimizer_updates=0,
+                target_Query_future_labels_accessed=False, units=units,
+                rank56_scope="equal core-size comparison; near LoRA rank4 adapter parameter budget",
+                error_windows=[list(value) for value in WINDOWS],
+                sensitivity_scope="local derivative at own selected checkpoint, not causal training attribution")
+
+
+def _bind_master_config(args, registration):
+    master = read_json(args.config)
+    d2 = master["D2"]
+    if (d2["methods"] != list(METHODS) or d2["ranks"] != list(RANKS)
+            or master["training_seeds"] != list(SEEDS)
+            or d2["sensitivity_source_meta_uids"] != registration["sensitivity_ids"]
+            or d2["sensitivity_query_cycles"] != list(QUERIES)
+            or d2["scalar_query_backward_evaluations"] != registration["scalar_backward_evaluations"]):
+        raise RuntimeError("D2 implementation differs from the master diagnostic configuration")
+    receipts = []
+    for unit in registration["units"]:
+        private = _unit_path(args.private_p2, unit)
+        public = _unit_path(args.public_root / "P2", unit)
+        receipts.append(dict(method=unit["method"], rank=unit["rank"], seed=unit["seed"],
+                             private_sha256=file_hash(private / "SOURCE_DEVELOPMENT_COMPLETE.json"),
+                             public_sha256=file_hash(public / "SOURCE_DEVELOPMENT_COMPLETE.json")))
+    bind(args.output / "D2_CONFIG_BINDING.json", dict(
+        config_sha256=file_hash(args.config),
+        registration_sha256=file_hash(args.output / "D2_REGISTRATION.json"),
+        parent_commit=master["parent_commit"], source_receipts=receipts))
+
+
+def run_structure(args, registration, data):
+    official = load_file(str(args.backbone_dir / "model.safetensors"), device="cpu")
+    geometry, spectrum, errors, cases = [], [], [], []
+    for unit in registration["units"]:
+        folder = _unit_path(args.private_p2, unit)
+        checkpoint = torch.load(folder / "CHECKPOINT_SELECTED.pt", map_location="cpu", weights_only=False)
+        state = checkpoint["model"]
+        layer_keys = sorted(key[:-5] for key in state if key.endswith(".core"))
+        for prefix in layer_keys:
+            layer_name = prefix.removeprefix("bridge.backbone.module.")
+            generator = torch.Generator(device="cpu").manual_seed(_local_seed(unit["seed"], layer_name))
+            initial_core = (torch.randn(unit["rank"], unit["rank"], dtype=torch.float64,
+                                       generator=generator) * 1e-5).float().numpy()
+            u = state[prefix + ".U"].double().numpy()
+            v = state[prefix + ".V"].double().numpy()
+            core = state[prefix + ".core"].double().numpy()
+            official_key = prefix.removeprefix("bridge.backbone.module.") + ".weight"
+            weight_norm = float(official[official_key].double().norm())
+            init = initial_core if unit["method"] == "lora_xs" else np.zeros_like(core)
+            for origin, update in (("relative_W0", core), ("selected_minus_initial", core - init)):
+                singular = update_singular_values(u, update, v)
+                summary = spectral_summary(singular)
+                geometry.append(dict(**{key: unit[key] for key in ("method", "rank", "seed")},
+                                     layer=official_key.removesuffix(".weight"), origin=origin,
+                                     base_weight_frobenius=weight_norm,
+                                     update_to_weight_ratio=summary["frobenius"] / weight_norm,
+                                     core_frobenius=float(np.linalg.norm(update)), **summary))
+                spectrum.extend(dict(method=unit["method"], rank=unit["rank"], seed=unit["seed"],
+                                     layer=official_key.removesuffix(".weight"), origin=origin,
+                                     index=i + 1, singular_value=float(value))
+                                for i, value in enumerate(singular))
+            sigma_key = prefix + ".singular_values"
+            sigma = state[sigma_key].double().numpy() if sigma_key in state else np.ones(unit["rank"])
+            geometry[-2]["coordinate_scale_min"] = float(sigma.min())
+            geometry[-2]["coordinate_scale_max"] = float(sigma.max())
+            geometry[-2]["coordinate_condition_number"] = float(sigma.max() / sigma.min())
+        prediction_path = folder / "SOURCE_VALIDATION_PREDICTIONS.npz"
+        with np.load(prediction_path, allow_pickle=False) as saved:
+            arrays = {key: saved[key] for key in saved.files}
+        required = {"prediction", "target", "observed", "query", "ids"}
+        if not required.issubset(arrays):
+            raise RuntimeError("Unexpected saved prediction schema " + repr(sorted(arrays)))
+        if arrays["ids"].tolist() != registration["source_meta_ids"]:
+            raise RuntimeError("D2 error table includes non-source-meta cells")
+        protocols = data.protocol_ids[data.rows(arrays["ids"].tolist())]
+        for i, uid in enumerate(arrays["ids"]):
+            for window, left, right in WINDOWS:
+                mask = arrays["observed"][i] & (arrays["query"] >= left) & (arrays["query"] <= right)
+                residual = arrays["prediction"][i, mask].astype(float) - arrays["target"][i, mask].astype(float)
+                errors.append(dict(method=unit["method"], rank=unit["rank"], seed=unit["seed"],
+                                   cell_uid=str(uid), protocol_uid=str(protocols[i]),
+                                   window=window, n_obs=int(mask.sum()),
+                                   mae=float(np.abs(residual).mean()) if len(residual) else np.nan,
+                                   rmse=float(np.sqrt(np.mean(residual ** 2))) if len(residual) else np.nan,
+                                   bias=float(residual.mean()) if len(residual) else np.nan))
+            if str(uid) in ("MATR_b4c15", "MATR_b4c14", "MATR_b4c2"):
+                valid = np.flatnonzero(arrays["observed"][i])
+                end = int(valid[-1])
+                cases.append(dict(method=unit["method"], rank=unit["rank"], seed=unit["seed"],
+                                  cell_uid=str(uid), last_observed_cycle=int(arrays["query"][end]),
+                                  target_at_last=float(arrays["target"][i, end]),
+                                  prediction_at_last=float(arrays["prediction"][i, end])))
+        print("D2_STRUCTURE_COMPLETE", unit["method"], unit["rank"], unit["seed"], flush=True)
+    for name, rows in (("D2_UPDATE_GEOMETRY.csv", geometry), ("D2_UPDATE_SPECTRA.csv", spectrum),
+                       ("D2_SOURCE_WINDOW_ERRORS.csv", errors), ("D2_PREVIOUS_COUNTEREXAMPLES.csv", cases)):
+        pd.DataFrame(rows).to_csv(args.output / name, index=False)
+    write_json(args.output / "D2_STRUCTURE_COMPLETE.json", dict(
+        status="COMPLETE", units=12, layer_updates=144, optimizer_updates=0,
+        target_Query_future_labels_accessed=False, source_sha256=file_hash(__file__),
+        config_sha256=file_hash(args.config),
+        registration_sha256=file_hash(args.output / "D2_REGISTRATION.json")))
+
+
+@contextlib.contextmanager
+def zero_cores(layers):
+    saved = [layer.core.detach().clone() for layer in layers.values()]
+    with torch.no_grad():
+        for layer in layers.values():
+            layer.core.zero_()
+    try:
+        yield
+    finally:
+        with torch.no_grad():
+            for layer, value in zip(layers.values(), saved):
+                layer.core.copy_(value)
+
+
+def run_sensitivity(args, registration, data, inputs, episodes):
+    if not set(registration["sensitivity_ids"]).issubset(registration["source_meta_ids"]):
+        raise RuntimeError("Sensitivity identities escape source-meta")
+    rows = data.rows(registration["sensitivity_ids"])
+    bridge = read_json(args.public_root / "P0/BRIDGE_SELECTION.json")["selected_bridge"]
+    query = torch.tensor(QUERIES, device=args.device, dtype=torch.float32)
+    output_jacobian, activation, effect, checks = [], [], [], []
+    p0_predictions = {}
+    for unit in registration["units"]:
+        basic = {key: unit[key] for key in ("method", "rank", "seed")}
+        p0, _ = load_p0_checkpoint(args.public_root, bridge, unit["seed"])
+        if unit["seed"] not in p0_predictions:
+            common = make_model(args.backbone_dir, inputs["policy"].shape[-1], bridge,
+                                "B0_pretrained_frozen", unit["seed"]).to(args.device)
+            load_selected(common, p0["model"])
+            common.eval()
+            with torch.no_grad():
+                p0_predictions[unit["seed"]] = {
+                    data.ids[row]: common(early_batch(inputs, np.asarray([row]), args.device), query)
+                    .cpu().numpy()[0] for row in rows}
+            del common
+        bundle = _basis_bundle(args.public_root, args.p1_private_root, unit["seed"],
+                               episodes["source_cell_roles"]["source_train"])
+        factory = _factory(args.backbone_dir, inputs["policy"].shape[-1], bridge,
+                           unit["method"], unit["seed"], unit["rank"], p0, bundle)
+        model = factory().to(args.device)
+        state = torch.load(_unit_path(args.private_p2, unit) / "CHECKPOINT_SELECTED.pt",
+                           map_location="cpu", weights_only=False)["model"]
+        load_selected(model, state)
+        model.eval()
+        before = state_fingerprint(model)
+        for parameter in model.parameters():
+            parameter.requires_grad_(False)
+        layers = {name: layer for name, layer in model.backbone.named_modules()
+                  if isinstance(layer, SubspaceLinear)}
+        if len(layers) != 12:
+            raise RuntimeError("D2 sensitivity requires the frozen twelve Q/V layers")
+        for layer in layers.values():
+            layer.core.requires_grad_(True)
+        core_parameters = [layer.core for layer in layers.values()]
+        with np.load(_unit_path(args.private_p2, unit) / "SOURCE_VALIDATION_PREDICTIONS.npz", allow_pickle=False) as saved:
+            saved_predictions = saved["prediction"].copy()
+            saved_ids = saved["ids"].tolist()
+            saved_queries = saved["query"].tolist()
+        replay_errors = []
+        for row in rows:
+            uid = data.ids[row]
+            early = early_batch(inputs, np.asarray([row]), args.device)
+            hooks = []
+            def hook(name):
+                def inspect(layer, args_in, result):
+                    x = args_in[0].detach()
+                    base = layer.base(x)
+                    delta = result.detach() - base
+                    delta_energy = float(delta.double().square().sum())
+                    base_energy = float(base.double().square().sum())
+                    activation.append(dict(**basic, cell_uid=uid, layer=name,
+                                           tensor_elements=result.numel(),
+                                           adapter_activation_frobenius=float(np.sqrt(delta_energy)),
+                                           base_activation_frobenius=float(np.sqrt(base_energy)),
+                                           adapter_to_base_activation_ratio=float(np.sqrt(delta_energy / base_energy))
+                                           if base_energy else np.nan))
+                return inspect
+            for name, layer in layers.items():
+                hooks.append(layer.register_forward_hook(hook(name)))
+            prediction = model(early, query)
+            for handle in hooks:
+                handle.remove()
+            for j, cycle in enumerate(QUERIES):
+                gradients = torch.autograd.grad(prediction[0, j], core_parameters,
+                                                retain_graph=j < len(QUERIES) - 1)
+                for (name, layer), gradient in zip(layers.items(), gradients):
+                    normalized = normalized_weight_jacobian(gradient.detach().cpu().numpy(),
+                                                            layer.U.detach().cpu().numpy(),
+                                                            layer.V.detach().cpu().numpy())
+                    output_jacobian.append(dict(**basic, cell_uid=uid, query_cycle=cycle,
+                                                layer=name, core_coordinate_frobenius=float(gradient.double().norm()),
+                                                unit_update_coordinate_frobenius=float(np.linalg.norm(normalized))))
+            selected = prediction.detach().cpu().numpy()[0]
+            reference = saved_predictions[saved_ids.index(uid), [saved_queries.index(cycle) for cycle in QUERIES]]
+            replay_errors.append(float(np.abs(selected - reference).max()))
+            if replay_errors[-1] > 1e-4:
+                raise RuntimeError("D2 selected checkpoint replay differs from frozen P2 predictions")
+            with torch.no_grad(), zero_cores(layers):
+                no_adapter = model(early, query).cpu().numpy()[0]
+            for j, cycle in enumerate(QUERIES):
+                effect.append(dict(**basic, cell_uid=uid, query_cycle=cycle,
+                                   selected_prediction=float(selected[j]), zero_core_prediction=float(no_adapter[j]),
+                                   common_p0_prediction=float(p0_predictions[unit["seed"]][uid][j]),
+                                   adapter_prediction_effect=float(selected[j] - no_adapter[j]),
+                                   bridge_head_prediction_shift=float(no_adapter[j] - p0_predictions[unit["seed"]][uid][j])))
+        after = state_fingerprint(model)
+        if before != after:
+            raise RuntimeError("D2 sensitivity changed model state")
+        checks.append(dict(**basic, state_sha256=before, unchanged=True, cells=len(rows),
+                           scalar_backward_evaluations=len(rows) * len(QUERIES),
+                           prediction_replay_max_absolute_error=max(replay_errors)))
+        del model, factory, p0, bundle, state
+        if args.device.startswith("cuda"):
+            torch.cuda.empty_cache()
+        print("D2_SENSITIVITY_COMPLETE", basic, flush=True)
+    del p0_predictions
+    for name, values in (("D2_JACOBIAN.csv", output_jacobian),
+                         ("D2_LAYER_ACTIVATIONS.csv", activation), ("D2_CORE_PREDICTION_EFFECT.csv", effect)):
+        pd.DataFrame(values).to_csv(args.output / name, index=False)
+    write_json(args.output / "D2_SENSITIVITY_COMPLETE.json", dict(
+        status="COMPLETE", model_checks=checks, optimizer_updates=0,
+        scalar_backward_evaluations=sum(row["scalar_backward_evaluations"] for row in checks),
+        target_Query_future_labels_accessed=False, source_sha256=file_hash(__file__),
+        config_sha256=file_hash(args.config),
+        registration_sha256=file_hash(args.output / "D2_REGISTRATION.json"), device=args.device,
+        activation_scope="all forward tensor elements, including packed padding positions"))
+
+
+def summarize(args):
+    geometry = pd.read_csv(args.output / "D2_UPDATE_GEOMETRY.csv")
+    errors = pd.read_csv(args.output / "D2_SOURCE_WINDOW_ERRORS.csv")
+    geometry_summary = geometry.groupby(["method", "rank", "origin"], as_index=False).agg(
+        mean_update_to_weight_ratio=("update_to_weight_ratio", "mean"),
+        mean_stable_rank=("stable_rank", "mean"), mean_entropy_rank=("entropy_rank", "mean"),
+        mean_rank99=("rank99", "mean"))
+    geometry_summary.to_csv(args.output / "D2_GEOMETRY_SUMMARY.csv", index=False)
+    error_summary = errors.groupby(["method", "rank", "window"], as_index=False).agg(
+        mae=("mae", "mean"), rmse=("rmse", "mean"), bias=("bias", "mean"),
+        physical_cell_seed_records=("mae", "count"))
+    error_summary.to_csv(args.output / "D2_ERROR_SUMMARY.csv", index=False)
+    for source, target, value in (
+        ("D2_JACOBIAN.csv", "D2_JACOBIAN_SUMMARY.csv", "unit_update_coordinate_frobenius"),
+        ("D2_LAYER_ACTIVATIONS.csv", "D2_ACTIVATION_SUMMARY.csv", "adapter_to_base_activation_ratio"),
+        ("D2_CORE_PREDICTION_EFFECT.csv", "D2_EFFECT_SUMMARY.csv", "adapter_prediction_effect"),
+    ):
+        path = args.output / source
+        if path.exists():
+            values = pd.read_csv(path)
+            groups = ["method", "rank"] + (["query_cycle"] if "query_cycle" in values else [])
+            values.groupby(groups, as_index=False)[value].agg(["mean", "median", "min", "max"]).to_csv(
+                args.output / target, index=False)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", type=Path, default=ROOT / "configs/drs_peft/diagnostics_v1.json")
+    parser.add_argument("--data-root", type=Path, default=ROOT / "runtime/drs_peft/data_v1")
+    parser.add_argument("--public-root", type=Path, default=ROOT / "results/drs_peft")
+    parser.add_argument("--private-p2", type=Path, default=ROOT / "runtime/drs_peft/P2")
+    parser.add_argument("--p1-private-root", type=Path, default=ROOT / "runtime/drs_peft/P1")
+    parser.add_argument("--output", type=Path, default=ROOT / "results/drs_peft/diagnostics_v1/D2_structure")
+    parser.add_argument("--backbone-dir", type=Path, required=True)
+    parser.add_argument("--phase", choices=("structure", "sensitivity", "summarize", "all"), default="structure")
+    parser.add_argument("--device", default="cpu")
+    args = parser.parse_args()
+    configure()
+    args.output.mkdir(parents=True, exist_ok=True)
+    data, inputs, _, episodes = load_source(args.data_root)
+    registration = _registration(args, episodes)
+    bind(args.output / "D2_REGISTRATION.json", registration)
+    _bind_master_config(args, registration)
+    with threadpool_limits(limits=2):
+        if args.phase in ("structure", "all"):
+            run_structure(args, registration, data)
+        if args.phase in ("sensitivity", "all"):
+            run_sensitivity(args, registration, data, inputs, episodes)
+        summarize(args)
+    print(json.dumps(dict(status="DONE", phase=args.phase, output=str(args.output)), ensure_ascii=False), flush=True)
+
+
+if __name__ == "__main__":
+    main()

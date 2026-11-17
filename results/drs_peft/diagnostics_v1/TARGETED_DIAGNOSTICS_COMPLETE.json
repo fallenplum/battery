@@ -1,0 +1,104 @@
+{
+  "status": "COMPLETE_SOURCE_ONLY_DIAGNOSTICS",
+  "final_target_query_labels_used": 0,
+  "new_formal_optimizer_updates": 19800,
+  "engineering_optimizer_updates": 22,
+  "D1_new_gradient_forward_backward_evaluations": 1044,
+  "D2_primary_and_independent_replay_scalar_backward_evaluations": 720,
+  "degradation_specificity_established": false,
+  "state_conditioning_supported": false,
+  "complementary_views_supported": false,
+  "rotating_dynamic_subspace_established": false,
+  "D3_independent_audit_status": "PASSED",
+  "qa_summary": "86 passed, 1 warning in 31.94s",
+  "parent_preservation": {
+    "status": "PASSED",
+    "parent_commit": "e9794316d86b5022d647c324b383e5eb57cde35c",
+    "parent_tree_sha256": "9c6cb77016d2fa11e154e57a83f2781228ebdaa90655cb6ffb5406c3fc7c1f80",
+    "checked_files": 12430,
+    "checked_bytes": 1689846426,
+    "failures": []
+  },
+  "inputs": [
+    {
+      "name": "registration",
+      "path": "configs/drs_peft/diagnostics_v1.json",
+      "sha256": "10f341464d9f6590faec0f5273dfa4082501c5b3886a638ead9ee4a50ad063e7"
+    },
+    {
+      "name": "D1_summary",
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_SUMMARY.json",
+      "sha256": "4f1d662be74685a02ffdf9ad9b5cff164eaffd5be11ce2be6a57e11e9b33d19f"
+    },
+    {
+      "name": "D1_pairs",
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_AUGMENTED_PAIR_SUMMARY.csv",
+      "sha256": "2ee10506d6d6c0caac9cec8781518d7f6b38624b5b3b87e0ed3ebc8ffd399688"
+    },
+    {
+      "name": "D1_capture",
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_TRUE_GRADIENT_CAPTURE_SUMMARY.csv",
+      "sha256": "64d4f07e8df5be6f28c8117c0aa49a2c63ed52c9e53f6f924ede21db7c1bdc0c"
+    },
+    {
+      "name": "D1_cross_cell",
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_CROSS_CELL_GEOMETRY_SUMMARY.csv",
+      "sha256": "43e1df9035b387a3ea66c69869777fde14ac2800a572109230174efd62358745"
+    },
+    {
+      "name": "D2_geometry",
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_GEOMETRY_SUMMARY.csv",
+      "sha256": "4c90940df9a6ceb400b5d76fe01c6d4a4db140cb63d72358b65933d5697b9424"
+    },
+    {
+      "name": "D2_errors",
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_ERROR_SUMMARY.csv",
+      "sha256": "4c2774d62b08210d6974c08e1ba5c3345bc48a8cdbcb5dd6229f51c4d29bbf6a"
+    },
+    {
+      "name": "D2_replay",
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_INDEPENDENT_REPLAY.json",
+      "sha256": "1cef41f5aecfb420f1a7801db7a35319deafad604d491c30b34c2afc64015fb2"
+    },
+    {
+      "name": "D3_gate",
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_GATE.json",
+      "sha256": "bd91e0066d3549e3498267296c0a7d58c1f74281f6f6edec2446479b6e7ef3ef"
+    },
+    {
+      "name": "D3_metrics",
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_METRICS.csv",
+      "sha256": "dd3cbc1882e080c504087709429f23617022bf0efdb0943522db36db64f423fd"
+    },
+    {
+      "name": "D3_cells",
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_CELL_METRICS.csv",
+      "sha256": "bde22bbc5f21a8266df4b82c35cc02543a6fb14baeed4bb44a2d37b8e9a7686c"
+    },
+    {
+      "name": "D3_comparisons",
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_COMPARISONS.json",
+      "sha256": "2c9391eb7699b67b40db9d7bc27967ddce848aeae295cd4f8b1066027bf8c56b"
+    },
+    {
+      "name": "D3_audit",
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_INDEPENDENT_AUDIT.json",
+      "sha256": "89be3c636b65dcbc107ec47ec79f2e0f96cd3132c289c12425b0b2dea68f4485"
+    },
+    {
+      "name": "QA_log",
+      "path": "results/drs_peft/diagnostics_v1/validation/QA_FULL.log",
+      "sha256": "3802575cf5f2fb38404fc625a355a8cf42ca7e0aef38c29edec240a719d7f81b"
+    },
+    {
+      "name": "parent_preservation",
+      "path": "results/drs_peft/diagnostics_v1/validation/PARENT_PRESERVATION.json",
+      "sha256": "802018802f60b982c6bbdf49c3ef2017067000f9a8f3bbaf868d3f507ed1f2c7"
+    }
+  ],
+  "report": {
+    "path": "report/drs_peft/diagnostics_v1/TARGETED_DIAGNOSTICS_FINAL_ZH.md",
+    "sha256": "46d56f64ac92ee77bb1c78d8c962faf6f97cda728242e577d2a2da53a15b5d3c"
+  },
+  "formatter_sha256": "36f3b18b1153208cffc108a29bc38b47b2abf2a576a9a1938621ae5f915361f9"
+}

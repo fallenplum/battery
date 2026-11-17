@@ -1,0 +1,280 @@
+{
+  "status": "PASSED",
+  "primary_device": "cuda",
+  "replay_device": "cpu",
+  "original_gpu_source_sha256": "27d6c535ba68cfa07f12225380ce32e3722d79bb1488928f932af79294b1bc0d",
+  "cpu_replay_source_sha256": "9d75c4648f2b73cba326ee91db373b6bc513b84d3529d2323bfdf1d17d5eab34",
+  "current_source_sha256": "9d75c4648f2b73cba326ee91db373b6bc513b84d3529d2323bfdf1d17d5eab34",
+  "source_revision_scope": "import and dict formatting, explicit synchronous hook binding, additional coverage and summary outputs",
+  "cross_device_absolute_tolerance": 0.0001,
+  "cross_device_relative_tolerance": 0.001,
+  "primary_scalar_query_backward_evaluations": 360,
+  "replay_scalar_query_backward_evaluations": 360,
+  "total_scalar_query_backward_evaluations": 720,
+  "optimizer_updates": 0,
+  "final_target_query_labels_used": 0,
+  "files": [
+    {
+      "file": "D2_UPDATE_GEOMETRY.csv",
+      "rows": 288,
+      "columns": 17,
+      "primary_sha256": "cad41a88dac25b47ecb1b403b267b6131bb8860825646381379b7ff8e7b69eff",
+      "replay_sha256": "cad41a88dac25b47ecb1b403b267b6131bb8860825646381379b7ff8e7b69eff",
+      "byte_identical": true,
+      "numeric_column_checks": [
+        {
+          "column": "rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "seed",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "base_weight_frobenius",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "update_to_weight_ratio",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "core_frobenius",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "frobenius",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "spectral_norm",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "stable_rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "entropy_rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "rank99",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "numerical_rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "coordinate_scale_min",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "coordinate_scale_max",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "coordinate_condition_number",
+          "maximum_absolute_difference": 0.0
+        }
+      ]
+    },
+    {
+      "file": "D2_UPDATE_SPECTRA.csv",
+      "rows": 8640,
+      "columns": 7,
+      "primary_sha256": "64297541a205d2d14c3bee86a87b7033915e283fb5baf421bc056b7d963ffc7b",
+      "replay_sha256": "64297541a205d2d14c3bee86a87b7033915e283fb5baf421bc056b7d963ffc7b",
+      "byte_identical": true,
+      "numeric_column_checks": [
+        {
+          "column": "rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "seed",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "index",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "singular_value",
+          "maximum_absolute_difference": 0.0
+        }
+      ]
+    },
+    {
+      "file": "D2_SOURCE_WINDOW_ERRORS.csv",
+      "rows": 1800,
+      "columns": 10,
+      "primary_sha256": "8eb000b07ed439f85e03c616780482b2869b6c1e7442e663ceaa98a69eec5776",
+      "replay_sha256": "8eb000b07ed439f85e03c616780482b2869b6c1e7442e663ceaa98a69eec5776",
+      "byte_identical": true,
+      "numeric_column_checks": [
+        {
+          "column": "rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "seed",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "n_obs",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "mae",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "rmse",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "bias",
+          "maximum_absolute_difference": 0.0
+        }
+      ]
+    },
+    {
+      "file": "D2_PREVIOUS_COUNTEREXAMPLES.csv",
+      "rows": 36,
+      "columns": 7,
+      "primary_sha256": "4e4235b2531699cdfbf97aaa72ecb2e62666b0c2c4deffb0983a6166bbe89b93",
+      "replay_sha256": "4e4235b2531699cdfbf97aaa72ecb2e62666b0c2c4deffb0983a6166bbe89b93",
+      "byte_identical": true,
+      "numeric_column_checks": [
+        {
+          "column": "rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "seed",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "last_observed_cycle",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "target_at_last",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "prediction_at_last",
+          "maximum_absolute_difference": 0.0
+        }
+      ]
+    },
+    {
+      "file": "D2_JACOBIAN.csv",
+      "rows": 4320,
+      "columns": 8,
+      "primary_sha256": "927339e6d8614ece9a14a3f23b6db9fb53e08bbcfd5773d6c8ef36e651df2f7e",
+      "replay_sha256": "7ea325affdcf9d3978414695117fca172449cd9d24cd1408480ef33b17cd0405",
+      "byte_identical": false,
+      "numeric_column_checks": [
+        {
+          "column": "rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "seed",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "query_cycle",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "core_coordinate_frobenius",
+          "maximum_absolute_difference": 0.00022294735745287397
+        },
+        {
+          "column": "unit_update_coordinate_frobenius",
+          "maximum_absolute_difference": 0.00022294735578398672
+        }
+      ]
+    },
+    {
+      "file": "D2_LAYER_ACTIVATIONS.csv",
+      "rows": 864,
+      "columns": 9,
+      "primary_sha256": "248dc660cab31a081decd82abfd84488cb9445befc6fbb91fbfd1451e10d3589",
+      "replay_sha256": "23e196ebda072ac78e609431c29ce67c05e15df5bc2f9f1f61ca95d32f150908",
+      "byte_identical": false,
+      "numeric_column_checks": [
+        {
+          "column": "rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "seed",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "tensor_elements",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "adapter_activation_frobenius",
+          "maximum_absolute_difference": 8.247832317564985e-05
+        },
+        {
+          "column": "base_activation_frobenius",
+          "maximum_absolute_difference": 0.00024088796234877918
+        },
+        {
+          "column": "adapter_to_base_activation_ratio",
+          "maximum_absolute_difference": 8.94374955706656e-07
+        }
+      ]
+    },
+    {
+      "file": "D2_CORE_PREDICTION_EFFECT.csv",
+      "rows": 360,
+      "columns": 10,
+      "primary_sha256": "da5e2d00472bc418f22c40ac609a340709e12adc11d7419a9067f8941c4846c5",
+      "replay_sha256": "25f8b4abee1268ddd448d571bb5777bb35bfa04b272e2df85e7265c6d6eb0490",
+      "byte_identical": false,
+      "numeric_column_checks": [
+        {
+          "column": "rank",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "seed",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "query_cycle",
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "column": "selected_prediction",
+          "maximum_absolute_difference": 1.4424324035644531e-05
+        },
+        {
+          "column": "zero_core_prediction",
+          "maximum_absolute_difference": 1.5974044799804688e-05
+        },
+        {
+          "column": "common_p0_prediction",
+          "maximum_absolute_difference": 6.914138793889801e-06
+        },
+        {
+          "column": "adapter_prediction_effect",
+          "maximum_absolute_difference": 1.0251998901394943e-05
+        },
+        {
+          "column": "bridge_head_prediction_shift",
+          "maximum_absolute_difference": 1.0251998901394943e-05
+        }
+      ]
+    }
+  ]
+}

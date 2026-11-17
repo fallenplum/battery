@@ -1,0 +1,272 @@
+{
+  "stage": "D2_POST_P2_SOURCE_DIAGNOSTIC",
+  "comparison": "same core rank within each rank",
+  "core_ranks": [
+    4,
+    56
+  ],
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "methods": [
+    "grad_core",
+    "lora_xs"
+  ],
+  "source_train_ids": [
+    "MATR_b1c0",
+    "MATR_b1c1",
+    "MATR_b1c11",
+    "MATR_b1c14",
+    "MATR_b1c15",
+    "MATR_b1c16",
+    "MATR_b1c17",
+    "MATR_b1c2",
+    "MATR_b1c20",
+    "MATR_b1c21",
+    "MATR_b1c24",
+    "MATR_b1c25",
+    "MATR_b1c32",
+    "MATR_b1c33",
+    "MATR_b1c34",
+    "MATR_b1c35",
+    "MATR_b1c38",
+    "MATR_b1c39",
+    "MATR_b1c40",
+    "MATR_b1c41",
+    "MATR_b1c42",
+    "MATR_b1c43",
+    "MATR_b1c44",
+    "MATR_b1c45",
+    "MATR_b1c9",
+    "MATR_b2c1",
+    "MATR_b2c10",
+    "MATR_b2c11",
+    "MATR_b2c12",
+    "MATR_b2c13",
+    "MATR_b2c18",
+    "MATR_b2c2",
+    "MATR_b2c21",
+    "MATR_b2c23",
+    "MATR_b2c27",
+    "MATR_b2c29",
+    "MATR_b2c3",
+    "MATR_b2c30",
+    "MATR_b2c31",
+    "MATR_b2c34",
+    "MATR_b2c35",
+    "MATR_b2c36",
+    "MATR_b2c38",
+    "MATR_b2c39",
+    "MATR_b2c4",
+    "MATR_b2c40",
+    "MATR_b2c42",
+    "MATR_b2c44",
+    "MATR_b2c46",
+    "MATR_b2c47",
+    "MATR_b2c5",
+    "MATR_b2c6",
+    "MATR_b3c0",
+    "MATR_b3c15",
+    "MATR_b3c20",
+    "MATR_b3c21",
+    "MATR_b3c22",
+    "MATR_b3c24",
+    "MATR_b3c28",
+    "MATR_b3c29",
+    "MATR_b3c31",
+    "MATR_b3c33",
+    "MATR_b3c38",
+    "MATR_b3c6",
+    "MATR_b3c8",
+    "MATR_b4c0",
+    "MATR_b4c10",
+    "MATR_b4c11",
+    "MATR_b4c12",
+    "MATR_b4c13",
+    "MATR_b4c16",
+    "MATR_b4c17",
+    "MATR_b4c19",
+    "MATR_b4c21",
+    "MATR_b4c23",
+    "MATR_b4c25",
+    "MATR_b4c26",
+    "MATR_b4c28",
+    "MATR_b4c32",
+    "MATR_b4c33",
+    "MATR_b4c35",
+    "MATR_b4c36",
+    "MATR_b4c37",
+    "MATR_b4c44",
+    "MATR_b4c9"
+  ],
+  "source_meta_ids": [
+    "MATR_b1c23",
+    "MATR_b1c26",
+    "MATR_b1c27",
+    "MATR_b1c3",
+    "MATR_b1c30",
+    "MATR_b1c31",
+    "MATR_b1c4",
+    "MATR_b2c0",
+    "MATR_b2c14",
+    "MATR_b2c20",
+    "MATR_b2c32",
+    "MATR_b2c33",
+    "MATR_b2c37",
+    "MATR_b2c41",
+    "MATR_b2c45",
+    "MATR_b4c1",
+    "MATR_b4c14",
+    "MATR_b4c15",
+    "MATR_b4c18",
+    "MATR_b4c2",
+    "MATR_b4c20",
+    "MATR_b4c29",
+    "MATR_b4c3",
+    "MATR_b4c30",
+    "MATR_b4c34",
+    "MATR_b4c38",
+    "MATR_b4c39",
+    "MATR_b4c41",
+    "MATR_b4c42",
+    "MATR_b4c6"
+  ],
+  "sensitivity_ids": [
+    "MATR_b1c23",
+    "MATR_b1c26",
+    "MATR_b1c27",
+    "MATR_b1c3",
+    "MATR_b1c30",
+    "MATR_b1c31"
+  ],
+  "sensitivity_queries": [
+    150,
+    350,
+    750,
+    1500,
+    3000
+  ],
+  "scalar_backward_evaluations": 360,
+  "sensitivity_selected_cell_forwards": 72,
+  "zero_core_cell_forwards": 72,
+  "common_P0_cell_forwards": 18,
+  "optimizer_updates": 0,
+  "target_Query_future_labels_accessed": false,
+  "units": [
+    {
+      "method": "grad_core",
+      "rank": 4,
+      "seed": 42,
+      "checkpoint_sha256": "e771af7a2d0945358f7eb7315e5416418d604d8db06e4e077d529200908c6bda",
+      "predictions_sha256": "2af42ba485dab93e596893296c3128563f688a03907f0c55fd44c9309056bad3"
+    },
+    {
+      "method": "grad_core",
+      "rank": 4,
+      "seed": 123,
+      "checkpoint_sha256": "e2f44d99b16c9419e0dfa1f4a60e5178acf2888c1edf3c0d201f38793c1425c8",
+      "predictions_sha256": "1c4e57e42dc56fafe8079ad205a939a7aaffa50710ef0390bfeb780e80a7d0ae"
+    },
+    {
+      "method": "grad_core",
+      "rank": 4,
+      "seed": 2026,
+      "checkpoint_sha256": "b888d645b15dcf7456e8186dd04c525632b49a262418468468d5a8f7317e1db1",
+      "predictions_sha256": "4df87d7ceedef5638f855e1fdcf45ade8fffa030b922c0c837c47c3ff9e8bddd"
+    },
+    {
+      "method": "grad_core",
+      "rank": 56,
+      "seed": 42,
+      "checkpoint_sha256": "765c8125e139a331cbf6cc1a657f5e9c488e93587932ecbc97e6942109b0d5f3",
+      "predictions_sha256": "af307b33943b0a2e2c449f33afd96de868df051a3cccb676ff2c00caf5a52535"
+    },
+    {
+      "method": "grad_core",
+      "rank": 56,
+      "seed": 123,
+      "checkpoint_sha256": "8a7aa731d24c7ae75bfeb27159565a5468c20e1d5bb0ccbc77fa66e2a5b7e8ef",
+      "predictions_sha256": "b3d231f451c85761b15115e056ac33658cc57d7cd8077df3539e4d933c079cf2"
+    },
+    {
+      "method": "grad_core",
+      "rank": 56,
+      "seed": 2026,
+      "checkpoint_sha256": "ab99f21f8511b451e22c0bd121f380218c08d0c9e28fc701e541cd047a1bb475",
+      "predictions_sha256": "cdf16424e4287830b426f4d26f3c36ad09949b058efcead072e1f15654722828"
+    },
+    {
+      "method": "lora_xs",
+      "rank": 4,
+      "seed": 42,
+      "checkpoint_sha256": "2db8eb0600ea611477d9aabb28c76e6d9e6399d7666b39c81da65ede4bde94e5",
+      "predictions_sha256": "f0f1f5c29d854b47a5f555476f5f1f18cee0fae8aaed3a20f762053e6ece80f2"
+    },
+    {
+      "method": "lora_xs",
+      "rank": 4,
+      "seed": 123,
+      "checkpoint_sha256": "5aacaa49929a70a1cb27c769bd4968f0f9c6ed22400f469d9608c8eeefbb5c5e",
+      "predictions_sha256": "0f7e89d30b1b840fd227405de02cc081f919cee8eea6f3cb1b4c3917db787337"
+    },
+    {
+      "method": "lora_xs",
+      "rank": 4,
+      "seed": 2026,
+      "checkpoint_sha256": "5d29cd6162311fa0edbe171825a3fefb6e5d6a4cafc90af6b44bf2ec4fd07a47",
+      "predictions_sha256": "04ffbc02077c106656797dc30ab274ad544fb6a80a7f44a92524e8bcbbcb8abb"
+    },
+    {
+      "method": "lora_xs",
+      "rank": 56,
+      "seed": 42,
+      "checkpoint_sha256": "741ec54728bd96a609197746c93a6b7b6e0ebad37c0ea3302ed61fe2ca1858e0",
+      "predictions_sha256": "731259452bd5d2ff44df239d47b0a25f4c3a951a86425608bedb498d6626ec83"
+    },
+    {
+      "method": "lora_xs",
+      "rank": 56,
+      "seed": 123,
+      "checkpoint_sha256": "1ec4384c584ef2d64743853c6ceb663f5b00ad55f43afeabbaae18fe2f1fa60e",
+      "predictions_sha256": "f8f61f080f068c768bda65449b4567b4bc31cc98b9a0f62f5bccc93760085e77"
+    },
+    {
+      "method": "lora_xs",
+      "rank": 56,
+      "seed": 2026,
+      "checkpoint_sha256": "f061eaeee2cefd09065e9694e3fb14b5a56e39b66883f34feed17d42f17a18c7",
+      "predictions_sha256": "39ab4f960f02b3ecd65fe9d35a46def8374b845a5221bdea12ef116b26b516a6"
+    }
+  ],
+  "rank56_scope": "equal core-size comparison; near LoRA rank4 adapter parameter budget",
+  "error_windows": [
+    [
+      "all",
+      101,
+      5000
+    ],
+    [
+      "101_200",
+      101,
+      200
+    ],
+    [
+      "201_500",
+      201,
+      500
+    ],
+    [
+      "501_1000",
+      501,
+      1000
+    ],
+    [
+      "1001_plus",
+      1001,
+      5000
+    ]
+  ],
+  "sensitivity_scope": "local derivative at own selected checkpoint, not causal training attribution"
+}

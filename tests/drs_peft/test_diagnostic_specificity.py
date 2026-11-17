@@ -4,6 +4,7 @@ import numpy as np
 import pytest
 import torch
 
+from scripts.drs_peft.cross_cell_specificity import gram_statistics, unit_gradients
 from scripts.drs_peft.data import file_hash, write_json
 from scripts.drs_peft.diagnostic_specificity import (
     checked_p1_arrays,
@@ -105,3 +106,23 @@ def test_compact_p1_cache_manifest_uses_checked_complete_layer_mapping(tmp_path)
     write_json(tmp_path / "seed42/P1_CACHE_MANIFEST.json", manifest)
     arrays, _, _ = checked_p1_arrays(tmp_path, 42, ["a", "b"], ["c"])
     assert arrays["true_full"]["q_proj"].shape == (2, 2, 2)
+
+
+def test_unit_gradient_normalization_preserves_readonly_float64_bytes(tmp_path):
+    path = tmp_path / "gradient.npy"
+    np.save(path, np.arange(12, dtype=np.float64).reshape(3, 2, 2))
+    before = file_hash(path)
+    value, nonzero = unit_gradients(path)
+    assert nonzero.all()
+    np.testing.assert_allclose(np.linalg.norm(value, axis=1), 1)
+    assert file_hash(path) == before
+
+
+def test_gram_rank_and_protocol_pair_counts_respect_cell_sign_flip():
+    value = np.array([[1, 0], [-1, 0], [1, 0]], dtype=float)
+    _, result = gram_statistics(value, np.ones(3, bool), ["a", "a", "b"])
+    assert result["participation_effective_rank"] == pytest.approx(1)
+    assert result["within_protocol_unordered_pairs"] == 1
+    assert result["cross_protocol_unordered_pairs"] == 2
+    assert result["within_protocol_absolute_cosine_mean"] == pytest.approx(1)
+    assert result["cross_protocol_absolute_cosine_mean"] == pytest.approx(1)

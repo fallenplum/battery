@@ -1,0 +1,1677 @@
+{
+  "status": "SEALED",
+  "parent_commit": "e9794316d86b5022d647c324b383e5eb57cde35c",
+  "branch": "codex/drs-peft-targeted-diagnostics-20261117",
+  "files": [
+    {
+      "path": "configs/drs_peft/diagnostics_v1.json",
+      "bytes": 5730,
+      "sha256": "10f341464d9f6590faec0f5273dfa4082501c5b3886a638ead9ee4a50ad063e7"
+    },
+    {
+      "path": "models/drs_peft/diagnostic_dualview.py",
+      "bytes": 10603,
+      "sha256": "d40d72b561b258cca1d385cad97ab524554aa73495e96290727e8685bfce0da6"
+    },
+    {
+      "path": "report/drs_peft/diagnostics_v1/D1_CROSS_CELL_GEOMETRY_ZH.md",
+      "bytes": 5218,
+      "sha256": "8eaa590403230f49e8067ad385807efb4bcc59940f53a3998899dae3eb6bb31d"
+    },
+    {
+      "path": "report/drs_peft/diagnostics_v1/D1_SPECIFICITY_ZH.md",
+      "bytes": 5354,
+      "sha256": "8319512f257336f14418fa89c70709b8d5f1fac928a71822329e1a4f086067a5"
+    },
+    {
+      "path": "report/drs_peft/diagnostics_v1/D2_STRUCTURE_REPORT_ZH.md",
+      "bytes": 9208,
+      "sha256": "6e1675d91cb127362e6e1fbe550e7afc2c48710eed9bf052107207f260d6c651"
+    },
+    {
+      "path": "report/drs_peft/diagnostics_v1/D3_DUAL_VIEW_REPORT_ZH.md",
+      "bytes": 6812,
+      "sha256": "e840f0371c919573be033570cf9852939ad35decdcfeacf93f037fe2a0e93ff1"
+    },
+    {
+      "path": "report/drs_peft/diagnostics_v1/TARGETED_DIAGNOSTICS_FINAL_ZH.md",
+      "bytes": 8508,
+      "sha256": "46d56f64ac92ee77bb1c78d8c962faf6f97cda728242e577d2a2da53a15b5d3c"
+    },
+    {
+      "path": "research/drs_peft/TARGETED_DIAGNOSTICS_CONTRACT_ZH.md",
+      "bytes": 5732,
+      "sha256": "02c6b785481acafbfcf442a1c971ec48298b82f8a7d2debfd362c69af3b77c0d"
+    },
+    {
+      "path": "research/drs_peft/diagnostics_v1/D3_IMPLEMENTATION_AUDIT_ZH.md",
+      "bytes": 5445,
+      "sha256": "e89a5078011d122a79a55fd4fcb0c5df468a129ea51b956a6760a35a3c8e1bfd"
+    },
+    {
+      "path": "research/drs_peft/diagnostics_v1/RUN_COMMANDS_AND_VALIDATION_ZH.md",
+      "bytes": 4997,
+      "sha256": "bf35e186ab418c03de55fa3e24ecde7e9dce8a756c9ad4ec661431c0230e7449"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_AUGMENTED_PAIR_SUMMARY.csv",
+      "bytes": 4014,
+      "sha256": "2ee10506d6d6c0caac9cec8781518d7f6b38624b5b3b87e0ed3ebc8ffd399688"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_CROSS_CELL_GEOMETRY.csv",
+      "bytes": 71348,
+      "sha256": "b7563d6f5e2075fd3b3bde9695f62fb57442925175822b77fa997b838f18d43a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_CROSS_CELL_GEOMETRY_SUMMARY.csv",
+      "bytes": 6029,
+      "sha256": "43e1df9035b387a3ea66c69869777fde14ac2800a572109230174efd62358745"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_CROSS_CELL_MANIFEST.json",
+      "bytes": 92445,
+      "sha256": "7f6854d26ac5e628569e8ae039b06f4954c40d3f90e29be59cb5315e37600281"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_CROSS_CELL_REPORT_MANIFEST.json",
+      "bytes": 1761,
+      "sha256": "7c27365c8621170100ac4b7afce84116187b3353d0aaa7c5f1bd4cc05a5148d1"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_GRADIENT_PAIR_METRICS_SUMMARY.csv",
+      "bytes": 2346,
+      "sha256": "b583f75abccca648cfb3386c662a41494e5002f1543d948116c27fdc5fa2ca68"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_OUTPUT_COEFFICIENTS_SUMMARY.csv",
+      "bytes": 2777,
+      "sha256": "fb73f0946cf3a69c9ae0e20c75ccbe68abe798bdacf9595cef8f8fc1928daf02"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_REPORT_MANIFEST.json",
+      "bytes": 9676,
+      "sha256": "207bf3d251b759e7d7fa65e72ae35b2e4497c372f8d92cd606a4b747d44af16a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_SIGN_CONDITIONED_GRADIENT_SUMMARY.csv",
+      "bytes": 3585,
+      "sha256": "f2d3c989e265a5fa5d2d9de0a6c727a3f85dd3d3c823dffa9b87d7d33162a510"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_SIGN_DIRECTION_ASSOCIATION.csv",
+      "bytes": 28026,
+      "sha256": "f89a0fae7dbda35fe5ad615d770e89fa3445da27780dc3ca02193f0224cc1785"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_SUBSPACE_OVERLAP_SUMMARY.csv",
+      "bytes": 25590,
+      "sha256": "0858e9ab5499cf679db23c98ceef0ffdf9eb95707f9f7e2f60683fdc69131799"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_SUMMARY.json",
+      "bytes": 952,
+      "sha256": "4f1d662be74685a02ffdf9ad9b5cff164eaffd5be11ce2be6a57e11e9b33d19f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/D1_TRUE_GRADIENT_CAPTURE_SUMMARY.csv",
+      "bytes": 12240,
+      "sha256": "64d4f07e8df5be6f28c8117c0aa49a2c63ed52c9e53f6f924ede21db7c1bdc0c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_COMPLETE.json",
+      "bytes": 1821,
+      "sha256": "80de942b4fb8d811b4abbda4256c45aa46f5fdf0f09cb6f9ffee7110d2bf4dad"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_GRADIENT_PAIR_METRICS.csv",
+      "bytes": 1236267,
+      "sha256": "265272b14ba012b0c007bfae14e7c5c3fbb8619cf897a0e4a730fafdec2ad807"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_GRADIENT_REPLAY.json",
+      "bytes": 26995,
+      "sha256": "3258319c1ffba0837dc5c9248db6d4d5625194b429702df014d5904906d0bc57"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_NEW_CACHE_MANIFEST.json",
+      "bytes": 62295,
+      "sha256": "bd65c25a3d45b526150da734c570375affce63e8e7af4b660ff4a200e5bb9a52"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_OUTPUT_COEFFICIENTS.csv",
+      "bytes": 113037,
+      "sha256": "ba23423976a87fa71dfe09a4f70bd7d27004693d06ba6b34e42e57d70847d56f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_PREFIX_CAPACITY_SLOPES.csv",
+      "bytes": 5809,
+      "sha256": "1f4174d4607b7320ff943b082bbe5914692efbaa6592fb66b2790fe7031d3154"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_REGISTRATION.json",
+      "bytes": 15746,
+      "sha256": "353f6bf5ae744f0e580fea45ba2ed8ba889976542e4c2843515c6e5f2f79a3d3"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_SOURCE_SNAPSHOT.json",
+      "bytes": 2287,
+      "sha256": "09f137626bb951a546aaced14effb5487147a4251216e2c7a1417e53a60914fc"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_SUBSPACE_OVERLAP.csv",
+      "bytes": 152633,
+      "sha256": "6d903cc54a471d270da897ace112d186312e80d259b8d083e5ab0353088fccc2"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed123/D1_TRUE_GRADIENT_CAPTURE.csv",
+      "bytes": 4450863,
+      "sha256": "d6da7798a3f57e9a1cbe8978c9b8661012e14eb19d745e9fad0105ad077e16df"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_COMPLETE.json",
+      "bytes": 1832,
+      "sha256": "cff1b8c32f1768f7dba56aab50b08241ee3e8ef733c523fd35f01a63b884938b"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_GRADIENT_PAIR_METRICS.csv",
+      "bytes": 1245101,
+      "sha256": "8e79cd686718cd2f8bd71f1c3a4cdbc947b8b61268e33406fa30a42130c3bb6f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_GRADIENT_REPLAY.json",
+      "bytes": 26995,
+      "sha256": "3258319c1ffba0837dc5c9248db6d4d5625194b429702df014d5904906d0bc57"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_NEW_CACHE_MANIFEST.json",
+      "bytes": 62303,
+      "sha256": "09ed6ba0768f0f6b46538f30b38cfd401bea641806e032bbf54f45e12bfa26b2"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_OUTPUT_COEFFICIENTS.csv",
+      "bytes": 113590,
+      "sha256": "5e8204c16afffa4b5c050380642f483e1f3f921efacac7d6862e78632ef611ce"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_PREFIX_CAPACITY_SLOPES.csv",
+      "bytes": 5809,
+      "sha256": "1f4174d4607b7320ff943b082bbe5914692efbaa6592fb66b2790fe7031d3154"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_REGISTRATION.json",
+      "bytes": 15749,
+      "sha256": "e7aa70280e6d268146c2aafdd055ad284c003b6585e6812ba4cceb60247a1f72"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_SOURCE_SNAPSHOT.json",
+      "bytes": 2287,
+      "sha256": "09f137626bb951a546aaced14effb5487147a4251216e2c7a1417e53a60914fc"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_SUBSPACE_OVERLAP.csv",
+      "bytes": 153333,
+      "sha256": "53fb57243393b9a7ff234b334e5eb2368a942ae5a089697d1d5f164461b9f1da"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed2026/D1_TRUE_GRADIENT_CAPTURE.csv",
+      "bytes": 4484059,
+      "sha256": "448dacb3c1e3241438779eb50bf75cac33d298699f6d59957d23ecef6ddfa8fa"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_COMPLETE.json",
+      "bytes": 1832,
+      "sha256": "a4db0ca56e3983ae8e8910a1a1826bae305f3c6496ab1a82798d89a48767b965"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_GRADIENT_PAIR_METRICS.csv",
+      "bytes": 1230290,
+      "sha256": "394cb86cbc7c46186e29f559ad3103419ba5f4b2c553d3780e7054cdefc99705"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_GRADIENT_REPLAY.json",
+      "bytes": 26995,
+      "sha256": "3258319c1ffba0837dc5c9248db6d4d5625194b429702df014d5904906d0bc57"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_NEW_CACHE_MANIFEST.json",
+      "bytes": 62287,
+      "sha256": "c897561504a3e5e71c93b5eb9a2e660b99f7151a0cdd39eeff952b5def08a6f2"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_OUTPUT_COEFFICIENTS.csv",
+      "bytes": 112623,
+      "sha256": "f0232d15812e6cb541e753b449ad28b10721427c4816f708e979f2266a25875b"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_PREFIX_CAPACITY_SLOPES.csv",
+      "bytes": 5809,
+      "sha256": "1f4174d4607b7320ff943b082bbe5914692efbaa6592fb66b2790fe7031d3154"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_REGISTRATION.json",
+      "bytes": 15743,
+      "sha256": "555b14c94cd177e071e19eee5fac0b08b3c411f5fa92b0182d2b81420185aa2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_SOURCE_SNAPSHOT.json",
+      "bytes": 2287,
+      "sha256": "09f137626bb951a546aaced14effb5487147a4251216e2c7a1417e53a60914fc"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_SUBSPACE_OVERLAP.csv",
+      "bytes": 151882,
+      "sha256": "2900022acf6c1927c7b768a54a3cc01707fc0b4c8844aa5e898f7b04481719bc"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D1_specificity/seed42/D1_TRUE_GRADIENT_CAPTURE.csv",
+      "bytes": 4417371,
+      "sha256": "23f6c2ca976eb70b4e3724a4281d75e41252c7675968bc7444f5942e494c4626"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_ACTIVATION_SUMMARY.csv",
+      "bytes": 394,
+      "sha256": "a01de20bb859fa7a450627dc1c0d259340a41db3aa88cda2bd0670110a3475d9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_ARTIFACT_MANIFEST.json",
+      "bytes": 3872,
+      "sha256": "ab838fca6405b1b43cdbe561a0992ee6b335e09ef840038d8912d5bb757cc3e4"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_CONFIG_BINDING.json",
+      "bytes": 3478,
+      "sha256": "6ea174ac18ae86b33c1d2c9b416d030fcf19d29dba9842a951c4d97f2cdfcafa"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_CORE_PREDICTION_EFFECT.csv",
+      "bytes": 47746,
+      "sha256": "da5e2d00472bc418f22c40ac609a340709e12adc11d7419a9067f8941c4846c5"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_CPU_REPLAY_COMPLETE.json",
+      "bytes": 4507,
+      "sha256": "b96095f1bf88ae7e483e4cc5c78aa58a1ba64cb3339cd4d4084e55c23315f20e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_EFFECT_SUMMARY.csv",
+      "bytes": 2045,
+      "sha256": "c3df09e80ed53d02b1d5caf1ef1056f6d6ede7edb8c069c1f5c1d4efc18d601a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_ERROR_SUMMARY.csv",
+      "bytes": 1775,
+      "sha256": "4c2774d62b08210d6974c08e1ba5c3345bc48a8cdbcb5dd6229f51c4d29bbf6a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_GEOMETRY_SUMMARY.csv",
+      "bytes": 946,
+      "sha256": "4c90940df9a6ceb400b5d76fe01c6d4a4db140cb63d72358b65933d5697b9424"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_GPU_EXECUTED_SOURCE.py.txt",
+      "bytes": 23172,
+      "sha256": "27d6c535ba68cfa07f12225380ce32e3722d79bb1488928f932af79294b1bc0d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_INDEPENDENT_REPLAY.json",
+      "bytes": 8675,
+      "sha256": "1cef41f5aecfb420f1a7801db7a35319deafad604d491c30b34c2afc64015fb2"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_JACOBIAN.csv",
+      "bytes": 455675,
+      "sha256": "927339e6d8614ece9a14a3f23b6db9fb53e08bbcfd5773d6c8ef36e651df2f7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_JACOBIAN_SUMMARY.csv",
+      "bytes": 1916,
+      "sha256": "527d58e9e71341484cc5883301762660ef4eec1500af7e23cead7c700c67a936"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_LAYER_ACTIVATIONS.csv",
+      "bytes": 107714,
+      "sha256": "248dc660cab31a081decd82abfd84488cb9445befc6fbb91fbfd1451e10d3589"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_MODEL_JACOBIAN.csv",
+      "bytes": 25587,
+      "sha256": "ab8484c1d82bacca8babe0c14a518f89915fb2e97bf6cdf7fc4905ef0de7290e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_MODEL_JACOBIAN_SUMMARY.csv",
+      "bytes": 874,
+      "sha256": "89532b4ff7626434a5122e8830753f7124dfc6e33ab3deccfa33395731d04890"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_PREVIOUS_COUNTEREXAMPLES.csv",
+      "bytes": 2581,
+      "sha256": "4e4235b2531699cdfbf97aaa72ecb2e62666b0c2c4deffb0983a6166bbe89b93"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_REGISTRATION.json",
+      "bytes": 6741,
+      "sha256": "3751b28b079189e322b1d8c4bb9a864b3ee64769d39e4699168d385bece8fdfd"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_SENSITIVITY_COMPLETE.json",
+      "bytes": 4507,
+      "sha256": "52e1158046d3c0a77727b78087f95e32ead4c93a02e58a8139db655d1105f518"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_SENSITIVITY_OBSERVATION_COVERAGE.csv",
+      "bytes": 3144,
+      "sha256": "a519e053e0b04de24ff788b93ac74a779036a25596b07c7883b1e41c45323ab3"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_SOURCE_WINDOW_ERRORS.csv",
+      "bytes": 210511,
+      "sha256": "8eb000b07ed439f85e03c616780482b2869b6c1e7442e663ceaa98a69eec5776"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_STRUCTURE_COMPLETE.json",
+      "bytes": 417,
+      "sha256": "23a209ce2172e1632da3d3956ab76316d5b2e6ec0bab75c9310232db643a31c7"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_UPDATE_GEOMETRY.csv",
+      "bytes": 65333,
+      "sha256": "cad41a88dac25b47ecb1b403b267b6131bb8860825646381379b7ff8e7b69eff"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D2_structure/D2_UPDATE_SPECTRA.csv",
+      "bytes": 794744,
+      "sha256": "64297541a205d2d14c3bee86a87b7033915e283fb5baf421bc056b7d963ffc7b"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_CELL_METRICS.csv",
+      "bytes": 405978,
+      "sha256": "bde22bbc5f21a8266df4b82c35cc02543a6fb14baeed4bb44a2d37b8e9a7686c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_COMPARISONS.json",
+      "bytes": 7056,
+      "sha256": "2c9391eb7699b67b40db9d7bc27967ddce848aeae295cd4f8b1066027bf8c56b"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_FEATURE_MANIFEST.json",
+      "bytes": 13372,
+      "sha256": "375e61cc73ab829d4a4c9f0a722cd6164713cd7cbab24bef0b942827ec2de10d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_GATE.json",
+      "bytes": 7205,
+      "sha256": "bd91e0066d3549e3498267296c0a7d58c1f74281f6f6edec2446479b6e7ef3ef"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_GATE_SUMMARY_AUDIT.csv",
+      "bytes": 150823,
+      "sha256": "6d947480a0c85182fb165c75906e4f19d8cb88aec4ab4fb2c897d3a26cd73cbd"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_GATE_VALUES_AUDIT.csv",
+      "bytes": 5903945,
+      "sha256": "7a1841951a0dc4c88d35db746757964812d8cc895470b82f263ab9db255e64b5"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_INDEPENDENT_AUDIT.json",
+      "bytes": 11390,
+      "sha256": "89be3c636b65dcbc107ec47ec79f2e0f96cd3132c289c12425b0b2dea68f4485"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_METRICS.csv",
+      "bytes": 2315,
+      "sha256": "dd3cbc1882e080c504087709429f23617022bf0efdb0943522db36db64f423fd"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/D3_PLAN.json",
+      "bytes": 1044,
+      "sha256": "c4fa96ad1a7e45f6752e4cc20cd9f43fe84350796ef5d77d4ce112c3139745c0"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/CHECKPOINT_SELECTION.json",
+      "bytes": 272,
+      "sha256": "fbe07b05f049d3fdcd6916899f8526f17bc1d2196e8502b0ba2f7d026408b5ad"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/RUN_CONFIG.json",
+      "bytes": 4967,
+      "sha256": "9429722deeaec2047815967f0d3ef21c0ead26ca3f56dce570fd785f2bfed515"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3841,
+      "sha256": "1abf5131856e023452b079b59b8c699bb58937112a4f8640821a255965abf842"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21456,
+      "sha256": "3d9da12decb3b0d053832e505ce8b57537a950dece065ef6e9c9c027022f876e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5720,
+      "sha256": "6bbd028c4d9e4260ef64d0b6701af601facef8e56998c7a8bb1019c056cf768c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/TRAIN_LOG.json",
+      "bytes": 37395,
+      "sha256": "86e358da1f37b093a4b7e96dd1cda8ac59380cf330d718659536f96ac1cd5187"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed123/TRAIN_LOG.jsonl",
+      "bytes": 29110,
+      "sha256": "7bc22b66f02969eaa8e5a887c8351a605b5f0fa6fb8f412e6972f7ccec208f2a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/CHECKPOINT_SELECTION.json",
+      "bytes": 272,
+      "sha256": "696935ab72cd4453b67934fca53c07fff89c97873a37d869b073d757f4b30483"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/RUN_CONFIG.json",
+      "bytes": 4968,
+      "sha256": "6b7a2f66b70d3f1bcd4c0ccaf46100bb97060a53938a9112dd3617aa589cfa9f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3844,
+      "sha256": "2b9c8f8984c63c7055ee25e50349c6a80e729196361facc3c1889d079e64a0da"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21465,
+      "sha256": "3b80d082de5fcf2fc4a43e21176fc533013e15103bf49fc8c29412878d43cc57"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5720,
+      "sha256": "6bbd028c4d9e4260ef64d0b6701af601facef8e56998c7a8bb1019c056cf768c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/TRAIN_LOG.json",
+      "bytes": 37410,
+      "sha256": "97ce07ea6407e7cc6afd879f6ff3c9275f58d5a0a6eb523641a2cfb8330120aa"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed2026/TRAIN_LOG.jsonl",
+      "bytes": 29125,
+      "sha256": "6997fd2fd656750c1f23759a71b3f27024dd379e522756a713b8401941397f9e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/CHECKPOINT_SELECTION.json",
+      "bytes": 270,
+      "sha256": "a21be0ab0ca262e4d39e42945ee8af6ef5b8e23046add6cd5fa1e5f80beb7fcf"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/RUN_CONFIG.json",
+      "bytes": 4966,
+      "sha256": "92252809d10f8b09443071068c1a3c97d1c6fa3023f4ab315605be86dee793b6"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3822,
+      "sha256": "20bcd47de4060e72faa3b479558d5b4598ea4809fe71a5f01551d57c327083b2"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21470,
+      "sha256": "eefea74e9076b0ed2751ea0b2b463c429e4fc84efc785782a5dcb149771b2608"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5720,
+      "sha256": "6bbd028c4d9e4260ef64d0b6701af601facef8e56998c7a8bb1019c056cf768c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/TRAIN_LOG.json",
+      "bytes": 37403,
+      "sha256": "72e00dcee5c010259dab2ac4e9e51562fe83f0052238d0512e2886821e1a1ddf"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/absolute/seed42/TRAIN_LOG.jsonl",
+      "bytes": 29118,
+      "sha256": "2244505dc00a0e287041df102ac19c80ea39fbf69dace5bfa4c7bb38b68e4d12"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/CHECKPOINT_SELECTION.json",
+      "bytes": 272,
+      "sha256": "5b76a42afbdccd21d3750b1e3efcffcaf402eb88035ec488d23def71ae35d261"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/RUN_CONFIG.json",
+      "bytes": 4967,
+      "sha256": "8a031c9b90a4fac0de91152e40e9d2669eec3288f834f00ae11332cc738a2487"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3841,
+      "sha256": "2b4bb4222a215de8863999e14bfe6c846d8741158f9eb153235bd7763ecb8208"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21436,
+      "sha256": "9e991b6a0194d418529981d6a452974d76dee94ddda21e5b28c2f93e0f44f714"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5720,
+      "sha256": "db686e0a6f3e7f786d877b67512e0341a6d4079e4b1e125529ecf760b26d8dd7"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/TRAIN_LOG.json",
+      "bytes": 37420,
+      "sha256": "89de02a2bce01f3ac1b3cc6f5bb4f9159a6ca2dad2a8ed042395ecd28124fbce"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed123/TRAIN_LOG.jsonl",
+      "bytes": 29135,
+      "sha256": "ba51eb6f08ec8dfed31e52538ed23f5ba519237b14b8034a020fc3b33d10d9b8"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/CHECKPOINT_SELECTION.json",
+      "bytes": 271,
+      "sha256": "9842eb83c07cb14b500429e110f30b79bd04666b85b45592128680b7485f164e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/RUN_CONFIG.json",
+      "bytes": 4968,
+      "sha256": "adbdc259b98da01f0981da704045841902d331c51d07aa8e8e57e8a1f926f361"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3843,
+      "sha256": "e61e915baf1dade16a6c03c82640ac097549ab4ded05fd5f7c197c974a3b5415"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21455,
+      "sha256": "3321d9fe1ad0a5c0bec0dc9769f23e033c77abc3a36e7cf0d19f9bf9f5818d8a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5720,
+      "sha256": "db686e0a6f3e7f786d877b67512e0341a6d4079e4b1e125529ecf760b26d8dd7"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/TRAIN_LOG.json",
+      "bytes": 37424,
+      "sha256": "89fc653e8b9962c35559ce5d1bde856e6c26d5e513f2c385cd5cb615b4d075c3"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed2026/TRAIN_LOG.jsonl",
+      "bytes": 29139,
+      "sha256": "9451bf2ab5bd86867f7daa6dead5f6519731d79205003a27c89b5eb2c3bbf5e0"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/CHECKPOINT_SELECTION.json",
+      "bytes": 272,
+      "sha256": "5c8e33a493e656184c7176f39e0da6b826399fc51ee8726d3112c0d284ca7c59"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/RUN_CONFIG.json",
+      "bytes": 4966,
+      "sha256": "caf88a152c97a8c1959ec2b67252725d3e980f7ce793d39581c347666edf004b"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3837,
+      "sha256": "37855c58c93f27cf943b1715cb4882b6ec0616f157729cf39767f898a328ea3b"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21432,
+      "sha256": "9d50e0c18fd22d113f5a90960cc7efe222a9b0569b1b48d3e5805beeebfa6afd"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5720,
+      "sha256": "db686e0a6f3e7f786d877b67512e0341a6d4079e4b1e125529ecf760b26d8dd7"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/TRAIN_LOG.json",
+      "bytes": 37405,
+      "sha256": "a61259c6bff973411b9de3da38668b1207fe394d582df05d08f57f78ac24f7fb"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/constant/seed42/TRAIN_LOG.jsonl",
+      "bytes": 29120,
+      "sha256": "23865e13fefbc07e90a083c9d43acfdcc5244f2fef545e592e4df4575582847e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/CHECKPOINT_SELECTION.json",
+      "bytes": 273,
+      "sha256": "61d6453e709f5c90b266a7c0b096b973c0987670c2517eee087d8ac98ce970cd"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/RUN_CONFIG.json",
+      "bytes": 4963,
+      "sha256": "7348e8f2cdb16facebf677f10e34c8fe9201a67731abff081839761e4ef0b5a0"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3829,
+      "sha256": "a918338974e8da6d10a485af6425b0772aca18a5e3b4e4dde2c36a787060648f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21447,
+      "sha256": "9c4ec1d2a1c111ce620f7b85af3d32d33766ef982739a9f82534928238c97896"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5716,
+      "sha256": "0f1e974b4dcf646b56d44580859108859d05a233715e793ccebce4cf7d5f4a9d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/TRAIN_LOG.json",
+      "bytes": 37375,
+      "sha256": "6c12161b2f001d9ca5ea438d20871375a549f0a3416301f15cbb66a78bf18ee8"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed123/TRAIN_LOG.jsonl",
+      "bytes": 29090,
+      "sha256": "6881c38c6ef0697b6a32db612992c8c2b7d3f7280a3844fd5125b743d2ee4a86"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/CHECKPOINT_SELECTION.json",
+      "bytes": 272,
+      "sha256": "21273381ab2e6fb0356b6a68eb66b65516789fa2278efe5794df6beea75de80b"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/RUN_CONFIG.json",
+      "bytes": 4964,
+      "sha256": "463b60b5d1fd6fba9d695499e1ba72b5dfed8242cd52a4d37f09d83a917a3fe9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3821,
+      "sha256": "e1fe403da915d257e18548cf1ac23b9d43d117a96539334f8544aaf9c645d9c0"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21419,
+      "sha256": "f1e4898718d44f73f9ec4047b92abedad23a65084470de9056e8959465224d7a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5716,
+      "sha256": "0f1e974b4dcf646b56d44580859108859d05a233715e793ccebce4cf7d5f4a9d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/TRAIN_LOG.json",
+      "bytes": 37385,
+      "sha256": "cbad19359173e1ce2e60fdadeb232abf006aaaa3a39026a8bd291caa0ee1ab66"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed2026/TRAIN_LOG.jsonl",
+      "bytes": 29100,
+      "sha256": "8e7ed4c8a8d0ad7562d0f879c9cfaca8cddedfd0dad87abe54828a1c6bea75fd"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/CHECKPOINT_SELECTION.json",
+      "bytes": 272,
+      "sha256": "87273a4b9e96d48175bd12c77df79f2844ba313f94df0590f0c13fcd0c5a9f4e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/RUN_CONFIG.json",
+      "bytes": 4962,
+      "sha256": "84bd60adfeba5f1a8d0cdfa567d340d9e6e600722e8d1400cdca2c13d70b6e69"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3826,
+      "sha256": "08897a5a12492781b886f09fba0f9f1b7ecd6435de3aba52a143033d42ed231e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21459,
+      "sha256": "05a27f03ec38a85763af3a00ff4e672a8120ec144099f58afdf20194b376eb5c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5716,
+      "sha256": "0f1e974b4dcf646b56d44580859108859d05a233715e793ccebce4cf7d5f4a9d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/TRAIN_LOG.json",
+      "bytes": 37365,
+      "sha256": "1fc7b27dc5bdd7293f3a0fbcda7283ac39d0744ea73364652623b59246165b5b"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/dual/seed42/TRAIN_LOG.jsonl",
+      "bytes": 29080,
+      "sha256": "56db3e34c3e611a94553387881503ac459c81f0461e9441e0e36197b644d466d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/CHECKPOINT_SELECTION.json",
+      "bytes": 271,
+      "sha256": "afef84dc8227c528c020512a95bab30118affe3c933964321ca859f579938b38"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/RUN_CONFIG.json",
+      "bytes": 4967,
+      "sha256": "1ec2ee410c865b18b3e74ba33b9f592bcebe1012f5a6404e51b028b69e5cc907"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3840,
+      "sha256": "d7aea4e91f3790d3f19714f6946ed78b336133a82a05f0c8dfc28e1e468da0db"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21449,
+      "sha256": "be427ce72128285e980d06d4f66485f0b08cb2f71a8a9fb7a0ff54fbd2da8b89"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5720,
+      "sha256": "866a97ef94b83f8063cc2907ad937ce130fd4b5b27b0d0f17ac8472fcf3727e0"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/TRAIN_LOG.json",
+      "bytes": 37414,
+      "sha256": "8017b096bfab63d44f1387a96ce57afc166cf7f48c6b4078b168b7d934ea541a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed123/TRAIN_LOG.jsonl",
+      "bytes": 29129,
+      "sha256": "e9801a00aef3805cbcc82dfab21012ad7275c72630da58b51b8b206d585e1b16"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/CHECKPOINT_SELECTION.json",
+      "bytes": 272,
+      "sha256": "a68d0f6aaf11b6c4327daaa2a1398c386902a86868b5ecf2dfabe4a3370280e0"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/RUN_CONFIG.json",
+      "bytes": 4968,
+      "sha256": "e8a2f4326af3a0c87c7ecad2081c0e55995ee706426eb8253f4f2cacaa406c33"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3844,
+      "sha256": "9eda9f1c4eb0c632cb373f27500b0f83373ddbcdfde23df64f5a1f558af6d281"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21434,
+      "sha256": "e4284952671ca00772bea937be4d2630035016d5a056d90089c7c4e5193fa233"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5720,
+      "sha256": "866a97ef94b83f8063cc2907ad937ce130fd4b5b27b0d0f17ac8472fcf3727e0"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/TRAIN_LOG.json",
+      "bytes": 37399,
+      "sha256": "0bdabca4c8b614487bc00d4a3e1ad691d951b4af4d5548f3d910431551076fe6"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed2026/TRAIN_LOG.jsonl",
+      "bytes": 29114,
+      "sha256": "c19e6d41d91870177e439fc042f55fc358280d7dc2cb0171867ec39a46e0856d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/CHECKPOINT_SELECTION.json",
+      "bytes": 271,
+      "sha256": "8fd818e07ba09677fcf9fea5bd13a644c057dfe693f8f699a6621a6dd3b8230e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/D3_SHUFFLE_DONORS.json",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/RUN_CONFIG.json",
+      "bytes": 4966,
+      "sha256": "737b1b11cbcca10f4396da0e91dcddfe55fffb5b446291ceb4c52734012212cc"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3837,
+      "sha256": "70c9d800b1a420ccbfaf661a50c0aaec873eb7e6b340b1ce22fc3a7e041824b6"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21454,
+      "sha256": "31a71396f1bbc56cda24f6718c021a265d65046af68fc80e329eaf33ee3c4b6a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5720,
+      "sha256": "866a97ef94b83f8063cc2907ad937ce130fd4b5b27b0d0f17ac8472fcf3727e0"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/TRAIN_LOG.json",
+      "bytes": 37398,
+      "sha256": "99a75022c95e8c7c980a66b9088a4d2a0fe74780c36de18eea6b075e43f56686"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/relative/seed42/TRAIN_LOG.jsonl",
+      "bytes": 29113,
+      "sha256": "1e329597b366e1c2dec6e2fb642e76ca3e386deec25c95e4eb3978bcb377ae6a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/CHECKPOINT_SELECTION.json",
+      "bytes": 270,
+      "sha256": "98189e7f3c273398ddc92d199bffcfc2e988ddc97e1067379cef768289357892"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/D3_SHUFFLE_DONORS.json",
+      "bytes": 3818,
+      "sha256": "15573a7d5d5cae80086d8f8e9eeedf7be0687c24ad7f1f5f06394f9aa49a325a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/RUN_CONFIG.json",
+      "bytes": 4972,
+      "sha256": "a8e13cfc99e32d11b11f41c828358ef9b92352aceed3a89efa725896efc95114"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3856,
+      "sha256": "be85edf3152438cf00861d67527a86eb5482b4f03747e164912083b9ba3ebdf0"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21437,
+      "sha256": "558a14c9347ab8c2ae98bf7d09e971196c7c18370f277bda95850469ff56fee2"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5725,
+      "sha256": "fb8e91dc85509f46899c46fb27571f61b84785d30e312ea4c760bd951a3047f9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/TRAIN_LOG.json",
+      "bytes": 37376,
+      "sha256": "2f2da110b177012ec800efd8b5aa20167fc738ad8cc8d8f440945cc6778f12a6"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed123/TRAIN_LOG.jsonl",
+      "bytes": 29091,
+      "sha256": "27aedebb9bc88d75e2fd107c915fbd25cafda52cec2d4c2711fccc7e72c49b99"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/CHECKPOINT_SELECTION.json",
+      "bytes": 273,
+      "sha256": "5bffd93c272f72c7acfb67c58dfcc185a9fd8c258e54ad0b4a819c5d6e204e14"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/D3_SHUFFLE_DONORS.json",
+      "bytes": 3818,
+      "sha256": "7c1a72c98fae4f91514bc24dfca9493f3f7ee1662aace6ce5f71f12dc9d8cb7a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/RUN_CONFIG.json",
+      "bytes": 4973,
+      "sha256": "72eede634fea2953d81044e81a6b833579254175d473f6b0194543b9c4eb8334"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3863,
+      "sha256": "8964e03d48ec1250745fa3344d7decc17476a20eb1a89a915d83bbf6ec38de44"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21426,
+      "sha256": "6d40788fe7a063c454e917091bd17cfe0b3be6bb6ba351982e3557220137773a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5725,
+      "sha256": "fb8e91dc85509f46899c46fb27571f61b84785d30e312ea4c760bd951a3047f9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/TRAIN_LOG.json",
+      "bytes": 37407,
+      "sha256": "a1571d53a7a994b914ccbb2638b2a62fee8cd5419a0d71f84c1a7c0212eb4c78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed2026/TRAIN_LOG.jsonl",
+      "bytes": 29122,
+      "sha256": "e298233f8e332a779bae1bc74c16d40818298fd1d803e9bde207f09441c62a6e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/BACKBONE_IDENTITY.json",
+      "bytes": 7653,
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/CHECKPOINT_SELECTION.json",
+      "bytes": 271,
+      "sha256": "6566f961cc57824ca6b3dceb3f11b0335e6c96fd04f3399b3e512c6100c32567"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/D3_INITIALIZATION_CHECK.json",
+      "bytes": 203,
+      "sha256": "a910976d1f146a660fac0f7497a078cf7ac9d2bb9875f063334e58177f5c4429"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/D3_SHUFFLE_DONORS.json",
+      "bytes": 3818,
+      "sha256": "817fdc5084c65e6617cdd8f9c047ee5aadf486711d44c8b09d3d9bc65cdcef2f"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/DATA_FINGERPRINT.json",
+      "bytes": 16232,
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/EPISODE_IDS.json",
+      "bytes": 2230,
+      "sha256": "8b61c7b912c70bcce83383c0985955cce81d9ffa22177f315e064b3f2e88ab7e"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/EXECUTION_ENVIRONMENT.json",
+      "bytes": 320,
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/RUN_CONFIG.json",
+      "bytes": 4971,
+      "sha256": "059ea278f22c7cf47d0bc2e953fee10e6b287fddbd9b95655a7bcafccde9868d"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/SOURCE_DEVELOPMENT_COMPLETE.json",
+      "bytes": 3854,
+      "sha256": "eef7f32b1b6e37a82ea0afb9a6107f79713bb99ff7a4cbb807a5e73f671cce63"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/SOURCE_SCALER.json",
+      "bytes": 9446,
+      "sha256": "a9f5e313501b7d69d5f8a6126ea86a72b0abaaaa2da17b7de60d302843c49f6c"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/SOURCE_SNAPSHOT.json",
+      "bytes": 1802,
+      "sha256": "b97e521c144d958bb1616a4c717434edbb7024e75b02e420be03f0336bf9d504"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/SOURCE_VALIDATION_CELL_METRICS.csv",
+      "bytes": 21464,
+      "sha256": "8c3e595ca89a9392e3197194aae9e90c56cea2e6f2dc7174b8dc6478439a4f86"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/TRAINABLE_PARAMETER_REPORT.json",
+      "bytes": 5725,
+      "sha256": "fb8e91dc85509f46899c46fb27571f61b84785d30e312ea4c760bd951a3047f9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/TRAIN_LOG.json",
+      "bytes": 37362,
+      "sha256": "4c04d12713789120c040e3cc34871d03eb53e5ffada22e3e50d97f80a1ae5d19"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/D3/units/shuffled_dual/seed42/TRAIN_LOG.jsonl",
+      "bytes": 29077,
+      "sha256": "7a41a8c5a457a49b6cfed6abbe5ee56a0d2be7a23274ee5e10ee7cf76426c414"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/TARGETED_DIAGNOSTICS_COMPLETE.json",
+      "bytes": 4319,
+      "sha256": "9719fe77489afd14c7ff9b268c4f16dd60a9e12b030029b37ada8bc85e9e0c32"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/D1_RUN.log",
+      "bytes": 16447,
+      "sha256": "bc520ecaf604872c83a76aa2723a3865fdafb707931651379957ec87af7873d8"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/D2_CPU_REPLAY.log",
+      "bytes": 2000,
+      "sha256": "4f7e8d38cfbdcdbd3a39c679bf4ac74ab0aae183e158a167c25b44b0171be147"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/D2_STRUCTURE_GPU.log",
+      "bytes": 1956,
+      "sha256": "abb95a26c8bd492574a4108a5649f9bf32f1eb07e2b9f48af112a9ff300dbc13"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/D3_SEED123.log",
+      "bytes": 15648,
+      "sha256": "58b9bc0c9205941231ccf3acd10b46c95a26189cf6a80b1990fc7b3b2e8ba9e9"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/D3_SEED2026.log",
+      "bytes": 15715,
+      "sha256": "4af9b6492b4967b1d1537c567200393889589617bd6779e5ecbd0f46af8072c5"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/D3_SEED42.log",
+      "bytes": 15576,
+      "sha256": "964a699ca1cc3b8bb026bddded46e301d530c7e9997fdecf33df96d1da92c8e5"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/D3_SUMMARY.log",
+      "bytes": 6285,
+      "sha256": "4de952ab0b21ea679c9b7234432231373647af5fa15c928ea67514b23e0503f1"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/DELIVERY_AUDIT.json",
+      "bytes": 273,
+      "sha256": "df70e31f2a3e9fc1e72368e6d3d39f34f6fe65c7d8caea59e97d83fcfbba30b5"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/FORMATTER_IDEMPOTENCE.json",
+      "bytes": 460,
+      "sha256": "e3f0832be130d0ada551e3c6d7bf69d02f6e261075e057f047de271b7d50e67a"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/PARENT_PRESERVATION.json",
+      "bytes": 263,
+      "sha256": "802018802f60b982c6bbdf49c3ef2017067000f9a8f3bbaf868d3f507ed1f2c7"
+    },
+    {
+      "path": "results/drs_peft/diagnostics_v1/validation/QA_FULL.log",
+      "bytes": 756,
+      "sha256": "3802575cf5f2fb38404fc625a355a8cf42ca7e0aef38c29edec240a719d7f81b"
+    },
+    {
+      "path": "scripts/drs_peft/audit_diagnostic_dualview.py",
+      "bytes": 29814,
+      "sha256": "4e59878eaf856f0c1cc8a09976e69fc6008325cee14dab44237a0403120782bb"
+    },
+    {
+      "path": "scripts/drs_peft/cross_cell_specificity.py",
+      "bytes": 7781,
+      "sha256": "bcb3b53946bcc814df3a610f0ae06bcbc9dd289fc5d378e0929b047e65da0d45"
+    },
+    {
+      "path": "scripts/drs_peft/diagnostic_dualview.py",
+      "bytes": 21191,
+      "sha256": "199d78f1b84c77e37b8a957c487878d84046a9cd025424fdd5961806adaa42f2"
+    },
+    {
+      "path": "scripts/drs_peft/diagnostic_specificity.py",
+      "bytes": 32062,
+      "sha256": "95cef5b462995959e3425b0be26a9a31d5039620d0b193822bed5942d8d56200"
+    },
+    {
+      "path": "scripts/drs_peft/diagnostic_structure.py",
+      "bytes": 28942,
+      "sha256": "9d75c4648f2b73cba326ee91db373b6bc513b84d3529d2323bfdf1d17d5eab34"
+    },
+    {
+      "path": "scripts/drs_peft/summarize_d1_specificity.py",
+      "bytes": 10848,
+      "sha256": "e6161784c38ff4c81a33f1ceeb0f1d8bd09150f966ed06305190d9ed36c77910"
+    },
+    {
+      "path": "scripts/drs_peft/summarize_targeted_diagnostics.py",
+      "bytes": 16924,
+      "sha256": "36f3b18b1153208cffc108a29bc38b47b2abf2a576a9a1938621ae5f915361f9"
+    },
+    {
+      "path": "scripts/drs_peft/verify_diagnostic_structure.py",
+      "bytes": 4831,
+      "sha256": "920c2f29c0f14eb460bfdef0c0f892fa5b5b2ab2d7ebea74855ecfc494768357"
+    },
+    {
+      "path": "tests/drs_peft/test_diagnostic_dualview.py",
+      "bytes": 7492,
+      "sha256": "47c30f1b2fa8d1b4e6cd0d2c894142dd9b7e0106fc9e4d8f6f4d384bbdc73709"
+    },
+    {
+      "path": "tests/drs_peft/test_diagnostic_specificity.py",
+      "bytes": 5184,
+      "sha256": "d7058db2590c90ffe57a24acc5040e0c8dc3f60045af797499515cf63d4d0494"
+    },
+    {
+      "path": "tests/drs_peft/test_diagnostic_structure.py",
+      "bytes": 2341,
+      "sha256": "0b642155984d16bf98f8338892cc7d71fdb2d492510517f7c9c3361d64ac84de"
+    }
+  ],
+  "file_count": 333,
+  "bytes": 29181995,
+  "parent_modified_tracked_files": 0,
+  "credential_pattern_candidates": 0,
+  "final_target_query_labels_used": 0
+}
