@@ -150,7 +150,9 @@ def normalize_receipts(records):
             "support_mae_before": details.get("support_mae_before"),
             "support_mae_after": details.get("support_mae_after"),
             "peak_gpu_bytes": record.get("peak_gpu_allocated_bytes"),
-            "trainable_parameters": parameters.get("adaptation_parameters"),
+            "trainable_parameters": parameters.get(
+                "adaptation_parameters", details.get("trainable_parameters")
+            ),
             "actual_q": details.get("dimension"),
         }
         for name, value in aliases.items():
@@ -749,6 +751,81 @@ def adaptation_costs(records):
     )
 
 
+def required_all_scope_tables(results_root, costs, seeds):
+    """Assemble contract deliverables from existing public artifacts only."""
+    budgets = costs.copy().rename(
+        columns={
+            "dictbytes": "frozen_dictionary_bytes",
+            "sourcecheckpoint_sha": "reference_checkpoint_sha256",
+            "logtime": "elapsed_seconds",
+        }
+    )
+    # These methods carry no additional frozen geometric dictionary. Their
+    # source-function storage is shared and accounted for by the references.
+    no_dictionary = budgets.method.isin(["ZERO", "CAL2", "LoRA", "LoRA_FA"])
+    budgets.loc[no_dictionary, "frozen_dictionary_bytes"] = budgets.loc[
+        no_dictionary, "frozen_dictionary_bytes"
+    ].fillna(0)
+    budgets.loc[budgets.method.eq("ZERO"), "actual_q"] = 0
+    budgets["frozen_A_bytes"] = budgets.frozen_A_bytes.where(
+        budgets.method.eq("LoRA_FA"), 0
+    )
+    budgets["additional_frozen_adapter_bytes"] = (
+        budgets.frozen_dictionary_bytes + budgets.frozen_A_bytes
+    )
+    budgets["compute_measurement_scope"] = (
+        "unique_adaptation_state_receipts;inner_search_and_shared_source_training_in_RUN_LEDGER"
+    )
+    reference_path = results_root / "references/REFERENCE_MODELS.csv"
+    references = (
+        pd.read_csv(reference_path)
+        if reference_path.exists()
+        else pd.DataFrame(columns=["fold_id", "seed", "reference_checkpoint_sha256"])
+    )
+    references = references[references.seed.isin(seeds)].copy()
+    if references.duplicated(["fold_id", "seed"]).any():
+        raise ValueError("The reference-model index repeats a fold and seed")
+    blocks = []
+    for path in sorted(
+        (results_root / "references").glob(
+            "*/seed*/geometry/SAME_POINT_GRADIENT_BLOCKS.csv"
+        )
+    ):
+        marker = path.parent.parent / "REFERENCE_COMPLETE.json"
+        reference = json.loads(marker.read_text(encoding="utf-8"))
+        if reference["seed"] not in seeds:
+            continue
+        table = pd.read_csv(path)
+        table.insert(
+            0, "reference_checkpoint_sha256", reference["reference_checkpoint_sha256"]
+        )
+        table.insert(0, "seed", reference["seed"])
+        table.insert(0, "fold_id", reference["fold_id"])
+        if table.duplicated(["cell_uid", "layer"]).any():
+            raise ValueError(
+                "A same-point gradient table repeats a physical cell and layer"
+            )
+        blocks.append(table)
+    gradients = (
+        pd.concat(blocks, ignore_index=True)
+        if blocks
+        else pd.DataFrame(
+            columns=[
+                "fold_id",
+                "seed",
+                "reference_checkpoint_sha256",
+                "cell_uid",
+                "layer",
+            ]
+        )
+    )
+    return {
+        "ADAPTER_BUDGETS.csv": budgets,
+        "REFERENCE_MODELS.csv": references,
+        "SAME_POINT_GRADIENT_BLOCKS.csv": gradients,
+    }
+
+
 def ledger(frame, coverage, records, episodes):
     pending = int(coverage.status.eq("PENDING").sum()) if len(coverage) else 0
     failures = (
@@ -1129,6 +1206,13 @@ def main():
         path = output / name
         write_latest(path, data.to_csv(index=False).encode("utf-8"), history)
         written.append(path)
+    if args.stage == "all":
+        for name, data in required_all_scope_tables(
+            args.results_root, costs, args.seeds
+        ).items():
+            path = output / name
+            write_latest(path, data.to_csv(index=False).encode("utf-8"), history)
+            written.append(path)
     path = output / (stem + "RUN_LEDGER.json")
     write_latest(
         path,

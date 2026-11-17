@@ -2,6 +2,7 @@
 
 import json
 import sys
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -342,6 +343,20 @@ def test_nested_runner_receipts_keep_actual_and_selected_steps_separate():
     assert costs.support_mae_after == 0.08
 
 
+def test_zero_budget_reads_direct_runner_details():
+    records = normalize_receipts(
+        [
+            {
+                "method": "ZERO",
+                "K": 0,
+                "adaptation_id": "zero",
+                "details": {"trainable_parameters": 0, "optimizer_updates": 0},
+            }
+        ]
+    )
+    assert adaptation_costs(records).iloc[0].trainable_parameters == 0
+
+
 def test_project_costs_sum_current_process_counters_once(tmp_path):
     engine_root = tmp_path / "ENGINE_COSTS"
     engine_root.mkdir()
@@ -429,3 +444,117 @@ def test_main_empty_increment_and_stage_does_not_load_arrays(
     assert run["scored_slots"] == 1
     assert (tmp_path / "summary_history").is_dir()
     assert not (tmp_path / "TARGET_FEWSHOT_RESULTS.csv").exists()
+    assert not (tmp_path / "ADAPTER_BUDGETS.csv").exists()
+    assert not (tmp_path / "REFERENCE_MODELS.csv").exists()
+    assert not (tmp_path / "SAME_POINT_GRADIENT_BLOCKS.csv").exists()
+
+
+def test_all_scope_reuses_public_contract_artifacts_in_separate_output_root(
+    episodes, tmp_path, monkeypatch
+):
+    def forbidden(*args, **kwargs):
+        raise AssertionError("Contract aggregation loaded a numeric archive")
+
+    monkeypatch.setattr(np, "load", forbidden)
+    inputs = tmp_path / "inputs"
+    output = tmp_path / "snapshots/all"
+    references = inputs / "references"
+    references.mkdir(parents=True)
+    frame = scored_slot(episodes)
+    frame.to_csv(inputs / "CELL_METRICS.csv", index=False)
+    record = {
+        "stage": "D2",
+        "task_id": frame.task_id.iloc[0],
+        "seed": 42,
+        "method": "OUT",
+        "K": 1,
+        "draw": 0,
+        "adaptation_id": frame.adaptation_id.iloc[0],
+        "status": "SCORED",
+        "source_checkpoint_sha256": "ref0",
+        "actual_optsteps": 0,
+        "trainable_parameters": 16,
+        "actual_q": 16,
+        "dictbytes": 1253376,
+        "logtime": 1.25,
+        "cache_solver": "FP64_Cholesky",
+    }
+    (inputs / "ADAPTATION_RECORDS.jsonl").write_text(
+        json.dumps(record) + "\n", encoding="utf-8"
+    )
+    reference_rows = []
+    for fold in (0, 1):
+        folder = references / f"fold{fold}/seed42"
+        geometry = folder / "geometry"
+        geometry.mkdir(parents=True)
+        metadata = {
+            "fold_id": fold,
+            "seed": 42,
+            "reference_checkpoint_sha256": f"ref{fold}",
+            "reference_training_updates": 15,
+        }
+        (folder / "REFERENCE_COMPLETE.json").write_text(
+            json.dumps(metadata), encoding="utf-8"
+        )
+        pd.DataFrame(
+            [
+                {
+                    "cell_uid": "shared-cell",
+                    "protocol_uid": "known-protocol",
+                    "layer": "layer0",
+                    "gradient_energy": fold + 1,
+                }
+            ]
+        ).to_csv(geometry / "SAME_POINT_GRADIENT_BLOCKS.csv", index=False)
+        reference_rows.append(metadata)
+    reference_rows.append(
+        {"fold_id": 0, "seed": 123, "reference_checkpoint_sha256": "other-seed"}
+    )
+    index = references / "REFERENCE_MODELS.csv"
+    pd.DataFrame(reference_rows).to_csv(index, index=False)
+    original_index = index.read_bytes()
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "summarize",
+            "--results-root",
+            str(inputs),
+            "--output-root",
+            str(output),
+            "--stage",
+            "all",
+            "--seeds",
+            "42",
+            "--report",
+            str(output / "REVIEW.md"),
+        ],
+    )
+    main()
+    budgets = pd.read_csv(output / "ADAPTER_BUDGETS.csv")
+    assert len(budgets) == 1
+    assert budgets.loc[0, "trainable_parameters"] == 16
+    assert budgets.loc[0, "actual_q"] == 16
+    assert budgets.loc[0, "frozen_dictionary_bytes"] == 1253376
+    assert budgets.loc[0, "additional_frozen_adapter_bytes"] == 1253376
+    assert budgets.loc[0, "elapsed_seconds"] == 1.25
+    assert budgets.loc[0, "actual_optsteps"] == 0
+    copied = pd.read_csv(output / "REFERENCE_MODELS.csv")
+    assert set(copied.seed) == {42}
+    assert len(copied) == 2
+    assert index.read_bytes() == original_index
+    gradients = pd.read_csv(output / "SAME_POINT_GRADIENT_BLOCKS.csv")
+    assert len(gradients) == 2
+    assert set(gradients.fold_id) == {0, 1}
+    assert set(gradients.reference_checkpoint_sha256) == {"ref0", "ref1"}
+    assert gradients.cell_uid.eq("shared-cell").all()
+    assert not (inputs / "ADAPTER_BUDGETS.csv").exists()
+    manifest = json.loads(
+        (output / "SUMMARY_MANIFEST.json").read_text(encoding="utf-8")
+    )
+    exported = {Path(item["path"]).name for item in manifest["files"]}
+    assert {
+        "ADAPTER_BUDGETS.csv",
+        "REFERENCE_MODELS.csv",
+        "SAME_POINT_GRADIENT_BLOCKS.csv",
+    } <= exported

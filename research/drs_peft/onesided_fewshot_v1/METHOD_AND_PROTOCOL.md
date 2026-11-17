@@ -6,7 +6,7 @@
 
 主比较名称为 **VIQ+earlySOH / no-policy**。模型从初始化采用零维 policy 接口，Bridge/Head 共 59585 个参数。绝对电流、容量和前缀相对容量响应使用声明的额定容量归一化。额定容量用于物理单位转换。其数值没有额外拼接到模型输入。
 
-native multivariate Bridge 每圈消费 12 维描述量。前 100 圈的 64 点 VIQ 和合法 earlySOH anchor 是可用信息。预测网格固定为原始圈号 101 至 5000。未来长度、未来观测掩码、EOL 与协议标识仅用于评分或分组。
+native multivariate Bridge 每圈消费 12 维描述量。前 100 圈的 64 点 VIQ 和合法 earlySOH anchor 是可用信息。预测网格固定为原始圈号 101 至 5000。Query 的未来长度、未来观测掩码和 EOL 用于评分。协议标识用于分组。Support 的真实观测掩码用于选取合法监督点。
 
 每个 fold 和 seed 从官方预训练 Moirai-small 重训 no-policy warmup，然后拟合 rank-4 静态核心。warmup 与 static 分别最多 120 epoch，各自仅依本 fold inner MAE 选取最早严格最优模型。旧 policy checkpoint 仅可用于工程检查。
 
@@ -16,7 +16,31 @@ native multivariate Bridge 每圈消费 12 维描述量。前 100 圈的 64 点 
 
 在最终静态参考函数上重新采集 fit 电池的逐电池梯度。固定秩空间的 CORE、OUT、IN 和 NORMAL 四块经全模型 Frobenius 正交分解，各使用最多 16 个跨层共享系数。OUT 保留输入侧 V 并扩展输出方向。若有效维数不足，报告实际维数并增加共同最小维度对照。
 
-支持集每颗电池最多使用 512 个确定性等间隔真实观测点，损失按物理电池等权。几何与 CAL2 使用 FP64 Cholesky Ridge，实际正则系数为登记倍率乘以 Gram 平均对角元，并以 1e-12 为下限。更新阻尼只在源 inner 上选择。本轮不追加重线性化。
+对于每层权重的输出、输入子空间 U 和 V，先通过 CPU FP64 reduced QR 获得相同列空间的正交基，令 P_U=UUᵀ、P_V=VVᵀ。逐电池梯度 G 的四块为
+
+$$
+G_{CORE}=P_U G P_V,\quad
+G_{OUT}=(I-P_U)G P_V,\quad
+G_{IN}=P_U G(I-P_V),\quad
+G_{NORMAL}=(I-P_U)G(I-P_V).
+$$
+
+协议等权的样本 Gram 分解给出跨层字典 D，满足全模型内积 ∑_l ⟨D_li,D_lj⟩_F=δ_ij。每次支持集适配只更新同一系数向量 a，层权重为 W_l=W_l,f0+∑_j a_j D_lj，初始 a=0。
+
+支持集每颗电池最多使用 512 个确定性等间隔真实观测点，损失按物理电池等权。几何与 CAL2 使用 FP64 Cholesky Ridge，Gram 平均对角元先以 1e-12 设定下限，再乘登记倍率得到实际正则系数。更新阻尼只在源 inner 上选择。本轮不追加重线性化。
+
+设第 i 颗 Support 的观测点数为 m_i，残差 e_i=y_i−f0_i，局部设计 J_i=∂f_i/∂a。登记的局部方程为
+
+$$
+H=\frac1K\sum_i\frac{J_i^\top J_i}{m_i},\qquad
+b=\frac1K\sum_i\frac{J_i^\top e_i}{m_i},\qquad
+\lambda_{actual}=\lambda_{grid}\max\{\operatorname{tr}(H)/q,10^{-12}\},\qquad
+(H+\lambda_{actual}I)a=\eta b.
+$$
+
+Jacobian 经官方模型的正常前向入口计算。本地 Uni2TS 的 torch.func.jvp 触发 FuncTorchGradWrapper 设备错误，执行采用 torch.autograd.functional.jvp 的双反向实现。官方零维 policy 模型的两方向小样例经 FP64 有限差分核验，相对误差为 1.97×10⁻⁸。工程核验与真实 Query 评分分开记录。
+
+CAL2 采用合法前缀 anchor s₁₀₀，并令 f_cal(t)=s₁₀₀+(1+δγ)(f0(t)−s₁₀₀)+β(t−100)/1000。δγ 和 β 均从零开始。
 
 标准 LoRA 使用 rank 1。LoRA-FA 使用 rank 2，固定随机行正交 A 并训练 B。两者各训练 9216 个参数，保留共同静态源核心，从零函数增量开始。两种低秩基线执行真实 Support AdamW 适配。几何 16 参数与低秩 9216 参数的竞争分别报告参数量。
 
