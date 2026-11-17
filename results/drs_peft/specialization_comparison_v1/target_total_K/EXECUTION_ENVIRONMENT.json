@@ -1,0 +1,281 @@
+{
+  "status": "COMPLETE_EXECUTION_ENVIRONMENT_AND_LOCAL_DELIVERY_RECORD",
+  "study_id": "BATTERY_SPECIALIZATION_DOMAIN_TOTAL_K_20261118_v1",
+  "generated_utc": "2026-11-17T18:48:49.762450+00:00",
+  "scope": "Existing execution and delivery artifacts only; this record creation performs no training, inference, or metric scoring.",
+  "source_training_commit": "421a3d81605d54456e50091564733dbab5821cba",
+  "target_execution_commit": "2e750fc11c8ce2128fdfef3daf22214525121ec0",
+  "server": {
+    "platform": "Linux-5.15.0-67-generic-x86_64-with-glibc2.29",
+    "logical_cpus": 128,
+    "initial_RAM_snapshot_MiB": {
+      "MemTotal_MiB": 483554.90234375,
+      "MemAvailable_MiB": 189179.890625
+    },
+    "physical_worker_gpu_indices": [
+      7,
+      6
+    ],
+    "gpu_name": "NVIDIA RTX A6000",
+    "gpu_memory_per_worker_MiB": 49140,
+    "concurrent_workers": 2,
+    "initial_worker_resource_samples": [
+      {
+        "utc": "2026-11-17T16:33:45.800996+00:00",
+        "workers": [
+          {
+            "index": 6,
+            "name": "NVIDIA RTX A6000",
+            "memory_total_MiB": 49140,
+            "memory_free_MiB": 18246,
+            "memory_used_MiB": 30295,
+            "utilization_percent": 42
+          },
+          {
+            "index": 7,
+            "name": "NVIDIA RTX A6000",
+            "memory_total_MiB": 49140,
+            "memory_free_MiB": 39959,
+            "memory_used_MiB": 8581,
+            "utilization_percent": 36
+          }
+        ]
+      },
+      {
+        "utc": "2026-11-17T16:33:48.756372+00:00",
+        "workers": [
+          {
+            "index": 6,
+            "name": "NVIDIA RTX A6000",
+            "memory_total_MiB": 49140,
+            "memory_free_MiB": 18246,
+            "memory_used_MiB": 30295,
+            "utilization_percent": 44
+          },
+          {
+            "index": 7,
+            "name": "NVIDIA RTX A6000",
+            "memory_total_MiB": 49140,
+            "memory_free_MiB": 39959,
+            "memory_used_MiB": 8581,
+            "utilization_percent": 36
+          }
+        ]
+      },
+      {
+        "utc": "2026-11-17T16:33:51.748031+00:00",
+        "workers": [
+          {
+            "index": 6,
+            "name": "NVIDIA RTX A6000",
+            "memory_total_MiB": 49140,
+            "memory_free_MiB": 18246,
+            "memory_used_MiB": 30295,
+            "utilization_percent": 44
+          },
+          {
+            "index": 7,
+            "name": "NVIDIA RTX A6000",
+            "memory_total_MiB": 49140,
+            "memory_free_MiB": 39959,
+            "memory_used_MiB": 8581,
+            "utilization_percent": 28
+          }
+        ]
+      }
+    ],
+    "resource_snapshot_scope": "Three short pre-launch samples of the two assigned GPUs; shared-host utilization can vary during execution.",
+    "python": "3.11.9",
+    "torch_cuda_build": "12.1",
+    "versions": {
+      "torch": "2.4.1+cu121",
+      "numpy": "1.26.4",
+      "scipy": "1.11.4",
+      "pandas": "2.1.4",
+      "uni2ts": "2.0.0",
+      "huggingface-hub": "0.36.0",
+      "lightning": "2.6.5",
+      "gluonts": "0.14.4",
+      "safetensors": "0.8.0"
+    },
+    "launch_environment": {
+      "PYTHONPATH": "",
+      "PYTHONNOUSERSITE": "1",
+      "OPENBLAS_NUM_THREADS": "2",
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+    },
+    "isolated_venv": true,
+    "inherited_torch_stack_reused": true,
+    "shared_environment_modified": false,
+    "local_version_comparison": {
+      "torch": {
+        "local": "2.4.1+cu121",
+        "server": "2.4.1+cu121",
+        "equal": true
+      },
+      "uni2ts": {
+        "local": "2.0.0",
+        "server": "2.0.0",
+        "equal": true
+      },
+      "huggingface-hub": {
+        "local": "1.20.1",
+        "server": "0.36.0",
+        "equal": false,
+        "reason": "Retained the existing supported version to preserve compatibility with inherited transformers4.51.3; official pinned constructor and source-state verification passed."
+      }
+    },
+    "official_pretrained_verification": {
+      "status": "OFFICIAL_SOURCE_PREFIX_ONLY_GPU_REPLAY_PASSED",
+      "official_weight_sha256": "cc46831272ea07e99d78fe05c09e730c7c76a1b272cddbdaf5173dae371cb238",
+      "Bridge_Head_bit_exact": true,
+      "Bridge_Head_parameters": 59585,
+      "Query_future_labels_read": 0,
+      "optimizer_updates": 0
+    }
+  },
+  "server_source_inner": {
+    "completed_jobs": 18,
+    "failed_jobs": 0,
+    "methods": [
+      "PRETRAINED_LORA",
+      "SPECIALIZED_XS"
+    ],
+    "seeds": [
+      42,
+      123,
+      2026
+    ],
+    "source_folds": [
+      0,
+      1,
+      2
+    ],
+    "completed_K_tables": 54,
+    "trial_score_slots": 3240,
+    "actual_new_optimizer_updates": 13680,
+    "actual_new_SVD_evaluations": 108,
+    "new_source_reference_fits": 0,
+    "scheduler_source_stage_complete": true,
+    "subsequent_old_target_stage_stop_reason": "USER_TARGET_TOTAL_K_CLARIFICATION",
+    "stop_reason_scope": "The source jobs finished. The previous target schedule was stopped at the boundary after the user clarified total-domain K; the new pooled target schedule below executed that clarified budget."
+  },
+  "server_pooled_target": {
+    "completed_jobs": 12,
+    "failed_jobs": 0,
+    "running_jobs_at_completion": 0,
+    "completed_job_ids": [
+      "target_s42_PRETRAINED_LORA",
+      "target_s42_SPECIALIZED_XS",
+      "target_s42_SPECIALIZED_OUT",
+      "target_s42_SPECIALIZED_LORA",
+      "target_s123_PRETRAINED_LORA",
+      "target_s123_SPECIALIZED_XS",
+      "target_s123_SPECIALIZED_OUT",
+      "target_s123_SPECIALIZED_LORA",
+      "target_s2026_PRETRAINED_LORA",
+      "target_s2026_SPECIALIZED_XS",
+      "target_s2026_SPECIALIZED_LORA",
+      "target_s2026_SPECIALIZED_OUT"
+    ],
+    "started_utc": "2026-11-17T18:05:27Z",
+    "ended_utc": "2026-11-17T18:19:04Z",
+    "prediction_slots": 279,
+    "nonzero_draw_slots": 270,
+    "unique_nonzero_states": 246,
+    "zero_family_references": 9,
+    "actual_new_optimizer_updates": 6210,
+    "actual_new_SVD_evaluations": 36,
+    "target_Query_scoring_on_server": false
+  },
+  "authenticated_HUST_parent_reuse": {
+    "execution_origin": "Previous local parent study on NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "python": "3.11.14",
+    "torch": "2.4.1+cu121",
+    "torch_cuda_build": "12.1",
+    "reused_units": 93,
+    "adapted_draw_slots": 90,
+    "SPECIALIZED_ZERO_units": 3,
+    "reused_methods": [
+      "SPECIALIZED_LORA",
+      "SPECIALIZED_OUT",
+      "SPECIALIZED_ZERO"
+    ],
+    "parent_STATE_and_prediction_hash_authentication": true,
+    "this_study_new_optimizer_updates": 0,
+    "this_study_new_SVD_evaluations": 0,
+    "this_study_new_model_forwards": 0,
+    "reuse_scope": "Same HUST support/query identities and selected choices; source state, predictions and existing cell metrics were authenticated and reused."
+  },
+  "local_results_delivery": {
+    "status": "FULL_SERVER_RESULTS_VERIFIED_AND_PAYLOADS_IMPORTED",
+    "archive_basename": "SPECIALIZATION_TOTAL_K_RESULTS_COMPLETE.zip",
+    "archive_sha256": "2ef5402ea6e848ecdae696887485e6a57e883311e3eb1701c336cce8d18f1350",
+    "archive_bytes": 806743891,
+    "uncompressed_bytes": 942470281,
+    "manifest_files_verified": 5772,
+    "full_entry_CRC_verification": true,
+    "per_file_SHA256_and_size_verification": true,
+    "created_files": 5621,
+    "identical_existing_files_preserved": 148,
+    "server_partial_collect_summaries_kept_in_archive": 3,
+    "raw_parent_data_or_reference_roots_in_result_archive": false,
+    "new_remote_prediction_slots_imported": 279,
+    "local_parent_reuse_slots": 93,
+    "final_local_prediction_slots": 372,
+    "final_local_scored_slots": 372,
+    "all_predictions_locked_before_local_scoring": true
+  },
+  "cost_totals_this_comparison": {
+    "source_plus_target_new_optimizer_updates": 19890,
+    "source_plus_target_new_SVD_evaluations": 144,
+    "new_source_reference_fits": 0
+  },
+  "interpretation": {
+    "shared_hardware_timing_scope": "The new source-inner and target jobs ran on shared A6000 GPUs. The exact reused HUST units originated from the local RTX 4060 parent study; end-to-end timings across these execution origins are not a controlled hardware speed comparison.",
+    "historical_target_Query_exposure": true,
+    "blind_confirmation": false
+  },
+  "evidence": [
+    {
+      "path": "runtime/drs_peft/onesided_fewshot_v1/server_comparison/engineering/ENVIRONMENT_READY.json",
+      "sha256": "4bcdd982e3f7854326f8e789ca714100e0a1720531d388cd9a60ea4065e0ab40"
+    },
+    {
+      "path": "runtime/drs_peft/onesided_fewshot_v1/server_comparison/engineering/GPU_QUICK_AUDIT.json",
+      "sha256": "915a787223e5a2432101c4cfeb691ffa4832330f2039ec8c4a1f293ba79a416f"
+    },
+    {
+      "path": "runtime/drs_peft/onesided_fewshot_v1/server_comparison/engineering/SERVER_RESOURCE_AUDIT.json",
+      "sha256": "8aac213a63cf3a947cf94e0e534b8766e2b4ef2b197248c88db3d721849a6e57"
+    },
+    {
+      "path": "runtime/drs_peft/onesided_fewshot_v1/server_comparison/engineering/RESULTS_LOCAL_IMPORT_VERIFIED.json",
+      "sha256": "4ef4ac9dcd592dccd8191a07e805688f643d00d4c421d6568e1fbd85d8ab61eb"
+    },
+    {
+      "path": "runtime/drs_peft/onesided_fewshot_v1/server_comparison/engineering/ARCHIVE_SERVER_SUMMARY.json",
+      "sha256": "15cc9007255a7b355d65c4048ce9ff416f146f786966bf43feee0beecb95273a"
+    },
+    {
+      "path": "runtime/drs_peft/specialization_comparison_v1/SERVER_MATRIX_STATUS.json",
+      "sha256": "5c95b53cc3a06322b2bf1768ad3ed38a89fe475c7f9ad2238834c5c6448742b0"
+    },
+    {
+      "path": "runtime/drs_peft/specialization_comparison_v1/target_total_K/SERVER_TOTAL_K_STATUS.json",
+      "sha256": "c68c3b5d8dbf9df917ec3cc049284dd9584091d3c96501370b2f242f9fbd1289"
+    },
+    {
+      "path": "results/drs_peft/specialization_comparison_v1/target_total_K/EXECUTION_LEDGER.json",
+      "sha256": "d638dda02030467a55f567e480d1619a2fff3dcf6717c753c2720559c176f9c6"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/INFERENCE_BENCHMARK.json",
+      "sha256": "dd1be348165547ff139ebe294c00081660844b667504a5fb87a2872a514a57a8"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "status": "PASSED",
+  "tests_passed": 57,
+  "seconds": 54.41,
+  "command": [
+    "D:\\Anaconda\\envs\\tslib\\python.exe",
+    "-m",
+    "pytest",
+    "tests/drs_peft/test_specialization.py",
+    "tests/drs_peft/test_run_specialization.py",
+    "tests/drs_peft/test_run_specialization_pooled.py",
+    "tests/drs_peft/test_specialization_protocol.py",
+    "tests/drs_peft/test_summarize_specialization.py",
+    "-q",
+    "--basetemp",
+    "runtime/sptfinal"
+  ],
+  "test_log_sha256": "560256beff1d912ccd07fa60e081137d3ac914eaf4e7bae88d0c834f564b000d",
+  "source_training_commit": "421a3d81605d54456e50091564733dbab5821cba",
+  "target_execution_commit": "2e750fc11c8ce2128fdfef3daf22214525121ec0",
+  "implementations": [
+    {
+      "path": "models/drs_peft/specialization.py",
+      "sha256": "c4f03ef3872fc2fd0742dde4592990bf5b30517654d3f4dc64d47667cabceb37"
+    },
+    {
+      "path": "scripts/drs_peft/specialization_engine.py",
+      "sha256": "bb76328f7bd9f57648c794212474f10faeeeb1699dd6bfaae70d215948b51b41"
+    },
+    {
+      "path": "scripts/drs_peft/run_specialization.py",
+      "sha256": "e261651152b1303f26dd6d8689978d3a80a779aeb0ce3bf24e198916a0e3c043"
+    },
+    {
+      "path": "scripts/drs_peft/run_specialization_pooled.py",
+      "sha256": "47c2c2d5e2b774e65aa9026c0bf0e3b0172847f235234d2b9e3248124d105ada"
+    },
+    {
+      "path": "scripts/drs_peft/specialization_protocol.py",
+      "sha256": "cf58989d75bd638e75c498bd1396fc6f2cbe2bb4993d9e2b52f0ba17c1d4dd93"
+    },
+    {
+      "path": "scripts/drs_peft/summarize_specialization.py",
+      "sha256": "6e3cb2734da9c2c1678129faff19caebd75b4819329d96a522d0b9818da1fdb7"
+    }
+  ],
+  "test_real_target_Query_scoring": 0,
+  "test_formal_training": 0
+}

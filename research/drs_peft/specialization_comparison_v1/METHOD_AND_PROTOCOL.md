@@ -1,5 +1,7 @@
 # 共同源域Bridge/Head下的主干专门化与目标少样本适配
 
+**当前执行采用用户确认的两域全域总K合同。** 目标配置为TARGET_TOTAL_K.json，抽样为EPISODES_TOTAL_K.json，当前评分结果与报告位于各自target_total_K子目录。MATR从24颗候选中总共取得K颗Support，统一适配后评价8颗固定Query。HUST从38颗候选中总共取得K颗Support，评价39颗固定Query。当前矩阵合计372个请求槽。本文末节保留完整生效规则，澄清前的900槽规划保留其源inner身份与变更沿革。
+
 ## 研究问题
 
 本轮比较官方预训练主干配合同一源域Bridge/Head，与增加源域静态核心后的参考函数，判断源域专门化怎样影响目标域预测及少样本校准。随后在同一专门化参考函数上比较标准LoRA、LoRA-XS零增量版本和OUT16。
@@ -57,7 +59,7 @@ $$
 
 本地models/drs_peft/peft.py中的LoRAXSLinear保留Σ，并使用Gaussian核心。新实现需要按上述零增量及W_s构基定义接入。实际冻结因子、奇异值buffer及新增核心的字节数在预算表中分别计量。
 
-## Support与Query身份
+## 澄清前的Support与Query目标规划记录
 
 复用configs/drs_peft/onesided_fewshot_v1/EPISODES.json，其合同hash为384e9251ab3522372d675d4c352a105688ebf851c8b0b19dc1e13e627d08472e。物理电芯身份、Support池、固定Query、K与draw逐项继承。
 

@@ -1,0 +1,271 @@
+{
+  "status": "COMPLETE_INDEPENDENT_SCORED_FACT_REVIEW",
+  "study_id": "BATTERY_SPECIALIZATION_DOMAIN_TOTAL_K_20261118_v1",
+  "review_date_local": "2026-11-18",
+  "scope": "Public scored facts, registered physical identities, stored costs and execution-environment metadata",
+  "numeric_verification": {
+    "MAE_and_own_family_delta_groups": 140,
+    "all_mean_groups_match": true,
+    "paired_method_difference_groups": 130,
+    "all_pair_and_delta_differences_match": true,
+    "own_family_ZERO_cell_seed_window_join_match": true,
+    "seed_and_draw_variability_groups_independently_matched": 140
+  },
+  "matrix": {
+    "requested_slots": 372,
+    "nonzero_slots": 360,
+    "family_ZERO_slots": 12,
+    "unique_nonzero_states": 336,
+    "new_unique_nonzero_states": 246,
+    "HUST_parent_reused_slots": 93,
+    "HUST_old_scored_fact_rows_matched": 18135,
+    "MATR_old4K_nonzero_reused_slots": 0,
+    "cell_window_rows": 43710,
+    "strict_domain_total_K_verified": true,
+    "Support_Query_disjoint_and_registered": true,
+    "one_common_adapted_state_for_all_Query_per_slot": true,
+    "MATR_Query_cells": 8,
+    "MATR_Support_pool_cells": 24,
+    "HUST_Query_cells": 39,
+    "HUST_Support_pool_cells": 38,
+    "MATR_K1_unique_draw_Support_sets": 3,
+    "MATR_K1_duplicate_draws": {
+      "3": 0,
+      "4": 0
+    }
+  },
+  "source_specialization_full_MAE_by_seed": [
+    {
+      "domain": "HUST",
+      "seed": 42,
+      "SPECIALIZED_ZERO_minus_WARMUP_ZERO_MAE": -0.0014479719011895667
+    },
+    {
+      "domain": "HUST",
+      "seed": 123,
+      "SPECIALIZED_ZERO_minus_WARMUP_ZERO_MAE": 0.0047216930535284585
+    },
+    {
+      "domain": "HUST",
+      "seed": 2026,
+      "SPECIALIZED_ZERO_minus_WARMUP_ZERO_MAE": -0.0013509334252168534
+    },
+    {
+      "domain": "MATR",
+      "seed": 42,
+      "SPECIALIZED_ZERO_minus_WARMUP_ZERO_MAE": 0.00060258550144476
+    },
+    {
+      "domain": "MATR",
+      "seed": 123,
+      "SPECIALIZED_ZERO_minus_WARMUP_ZERO_MAE": -0.0032858618094810874
+    },
+    {
+      "domain": "MATR",
+      "seed": 2026,
+      "SPECIALIZED_ZERO_minus_WARMUP_ZERO_MAE": 0.0008521788962853501
+    }
+  ],
+  "source_specialization_mean_interpretation": "MATR mean starting-point benefit is driven by seed123; only1of3 source seeds improves. HUST mean starting-point deterioration is driven by seed123;2of3 seeds improve.",
+  "HUST_gain_stability": [
+    {
+      "method": "SPECIALIZED_LORA",
+      "K": 3,
+      "window": "1001_plus",
+      "mean_delta_K": 0.005445498652277818,
+      "positive_seed_means_of3": 3,
+      "positive_seed_draw_Query_means_of15": 15
+    },
+    {
+      "method": "SPECIALIZED_LORA",
+      "K": 3,
+      "window": "all",
+      "mean_delta_K": 0.003056029398646009,
+      "positive_seed_means_of3": 3,
+      "positive_seed_draw_Query_means_of15": 15
+    },
+    {
+      "method": "SPECIALIZED_LORA",
+      "K": 5,
+      "window": "1001_plus",
+      "mean_delta_K": 0.006148690025810476,
+      "positive_seed_means_of3": 3,
+      "positive_seed_draw_Query_means_of15": 14
+    },
+    {
+      "method": "SPECIALIZED_LORA",
+      "K": 5,
+      "window": "all",
+      "mean_delta_K": 0.0036586381968262585,
+      "positive_seed_means_of3": 3,
+      "positive_seed_draw_Query_means_of15": 14
+    },
+    {
+      "method": "SPECIALIZED_OUT",
+      "K": 3,
+      "window": "1001_plus",
+      "mean_delta_K": 0.0023157966459591193,
+      "positive_seed_means_of3": 3,
+      "positive_seed_draw_Query_means_of15": 12
+    },
+    {
+      "method": "SPECIALIZED_OUT",
+      "K": 3,
+      "window": "all",
+      "mean_delta_K": 0.0014182728216683628,
+      "positive_seed_means_of3": 3,
+      "positive_seed_draw_Query_means_of15": 12
+    },
+    {
+      "method": "SPECIALIZED_OUT",
+      "K": 5,
+      "window": "1001_plus",
+      "mean_delta_K": 0.0025302808358632738,
+      "positive_seed_means_of3": 3,
+      "positive_seed_draw_Query_means_of15": 13
+    },
+    {
+      "method": "SPECIALIZED_OUT",
+      "K": 5,
+      "window": "all",
+      "mean_delta_K": 0.0016054769539854525,
+      "positive_seed_means_of3": 3,
+      "positive_seed_draw_Query_means_of15": 13
+    }
+  ],
+  "HUST_paired_seed_rank_stability": [
+    {
+      "K": 3,
+      "window": "1001_plus",
+      "OUT_better_than_SPECIALIZED_LORA_seed_means_of3": 0,
+      "SPECIALIZED_LORA_better_than_PRETRAINED_LORA_seed_means_of3": 2
+    },
+    {
+      "K": 3,
+      "window": "all",
+      "OUT_better_than_SPECIALIZED_LORA_seed_means_of3": 0,
+      "SPECIALIZED_LORA_better_than_PRETRAINED_LORA_seed_means_of3": 2
+    },
+    {
+      "K": 5,
+      "window": "1001_plus",
+      "OUT_better_than_SPECIALIZED_LORA_seed_means_of3": 0,
+      "SPECIALIZED_LORA_better_than_PRETRAINED_LORA_seed_means_of3": 2
+    },
+    {
+      "K": 5,
+      "window": "all",
+      "OUT_better_than_SPECIALIZED_LORA_seed_means_of3": 0,
+      "SPECIALIZED_LORA_better_than_PRETRAINED_LORA_seed_means_of3": 2
+    }
+  ],
+  "MATR_OUT_full_tail_direction": [
+    {
+      "K": 1,
+      "full_delta_K": -0.0006145595794986522,
+      "full_positive_seed_means_of3": 0,
+      "tail_delta_K": 0.00040128212443494654,
+      "tail_positive_seed_means_of3": 3,
+      "full_physical_Query_cells": 8,
+      "tail_physical_Query_cells": 4
+    },
+    {
+      "K": 3,
+      "full_delta_K": -0.0005287084984724993,
+      "full_positive_seed_means_of3": 0,
+      "tail_delta_K": 0.0003034066668135499,
+      "tail_positive_seed_means_of3": 1,
+      "full_physical_Query_cells": 8,
+      "tail_physical_Query_cells": 4
+    },
+    {
+      "K": 5,
+      "full_delta_K": -0.00034842492957788717,
+      "full_positive_seed_means_of3": 0,
+      "tail_delta_K": 0.000332610341486121,
+      "tail_positive_seed_means_of3": 2,
+      "full_physical_Query_cells": 8,
+      "tail_physical_Query_cells": 4
+    }
+  ],
+  "MATR_full_interpretation": "All12 method-by-K aggregate full-trajectory delta_K values are negative. OUT is better than specialized LoRA atK3/K5 but worse than its own SPECIALIZED_ZERO and XS at allK.",
+  "MATR_tail_interpretation": "OUT has positive mean1001plus gain at allK and lower tailMAE than the other three adapters, on4physical Query cells. The same tail-supported4cells still have negative full-trajectory OUT gains.",
+  "costs": {
+    "source_inner_trial_score_slots_reused": 3240,
+    "source_inner_actual_optimizer_updates": 13680,
+    "new_target_actual_optimizer_updates": 6210,
+    "total_comparison_new_optimizer_updates": 19890,
+    "source_SVD_matrices": 108,
+    "target_SVD_matrices": 36,
+    "target_SVD_cache_shared_across_domains": true,
+    "new_source_reference_fits": 0,
+    "HUST_parent_reuse_new_updates": 0,
+    "LoRA_trainable_parameters": 9216,
+    "XS_rank": 4,
+    "XS_trainable_parameters": 192,
+    "XS_frozen_factor_bytes": 147648,
+    "OUT_global_coordinates": 16,
+    "OUT_frozen_dictionary_bytes": 1253376
+  },
+  "hardware": {
+    "new_source_inner_and_new_target": "NVIDIA RTX A6000",
+    "assigned_GPU_indices": [
+      7,
+      6
+    ],
+    "completed_source_inner_jobs": 18,
+    "completed_new_target_jobs": 12,
+    "HUST_exact_reuse_origin": "NVIDIA GeForce RTX4060 Laptop GPU",
+    "torch_both_execution_origins": "2.4.1+cu121",
+    "raw_walltimes_are_cross_origin_not_controlled_hardware_speed_comparison": true,
+    "local_delivery_archive_verified_files_from_import_record": 5772,
+    "archive_CRC_and_per_file_SHA_size_verification_recorded": true
+  },
+  "limitations": [
+    "Same fixed8MATR and39HUST physical Query cells are repeated over seeds and draws; positive15draw counts are descriptive repeated evaluations.",
+    "HUST93exact-reuse slots repeat old evidence and provide zero additional computation in this phase; they are not new independent replications.",
+    "PRETRAINED_LORA has the best HUST mean in the four-arm comparison, but specializedLoRA has lowerMAE in2of3seeds atK3/K5 for both full and tail.",
+    "MATR full and tail directions differ; tail contains only4physical cells and OUT tail seed signs are mixed atK3/K5.",
+    "Both families include source-trained59585parameter Bridge/Head; the pretrained family uses an official frozen backbone with that learned source interface.",
+    "XS is the declared Sigma-retaining zero-increment variant; LoRA9216, XS192 and OUT16 target parameters are different budgets and solvers.",
+    "Targets were previously exposed. Evidence supports retrospective matched comparisons and does not establish a universal battery mechanism or fresh blind confirmation.",
+    "Pre-existing source reference training and old HUST execution costs are shared prior costs; zero new refits or reused updates do not imply zero total method cost."
+  ],
+  "delivery_verification_consistent_with_independent_checks": true,
+  "confidence": {
+    "recorded_numeric_and_identity_checks": "high",
+    "universal_domain_or_mechanism_claims": "low"
+  },
+  "review_activity": {
+    "raw_future_label_arrays_read": 0,
+    "new_model_runs": 0,
+    "new_training": 0,
+    "bootstrap_draws": 0
+  },
+  "source_artifacts": [
+    {
+      "path": "results/drs_peft/specialization_comparison_v1/target_total_K/CELL_METRICS.csv",
+      "sha256": "36a9aeef5741a39cda159cd80d1d0f6c8e8f67687dd8f58c5599f0b37bd1cd21"
+    },
+    {
+      "path": "results/drs_peft/specialization_comparison_v1/target_total_K/TARGET_FEWSHOT_RESULTS.csv",
+      "sha256": "7c741d73f862ea270811eb7d1aeb9396180a298f0d0d2c615e4c854e63e2bb45"
+    },
+    {
+      "path": "results/drs_peft/specialization_comparison_v1/target_total_K/PAIRED_METHOD_DIFFERENCES.csv",
+      "sha256": "78df333ceadb9cb6ba4cf2cd2d0e5d866c885dbc90ae3dfe68b2f6ca949f59ab"
+    },
+    {
+      "path": "results/drs_peft/specialization_comparison_v1/target_total_K/EXECUTION_LEDGER.json",
+      "sha256": "d638dda02030467a55f567e480d1619a2fff3dcf6717c753c2720559c176f9c6"
+    },
+    {
+      "path": "results/drs_peft/specialization_comparison_v1/target_total_K/EXECUTION_ENVIRONMENT.json",
+      "sha256": "e5c9d853a2571a9981e6a0a10d3cd96f96f677e26db115c800dc58d708fe3f79"
+    },
+    {
+      "path": "results/drs_peft/specialization_comparison_v1/target_total_K/DELIVERY_VERIFICATION.json",
+      "sha256": "1b7736c664f0819da5c41444d203b4a5ad3055ef5d7ba17fd9251745d7e0e7a6"
+    }
+  ]
+}
