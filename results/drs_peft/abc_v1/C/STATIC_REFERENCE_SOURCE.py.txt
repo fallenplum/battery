@@ -1,0 +1,359 @@
+"""Post-hoc C0 reference reanalysis of already published source predictions."""
+
+from __future__ import annotations
+
+import itertools
+import json
+from pathlib import Path
+
+import pandas as pd
+
+from models.drs_peft.abc_subspace import ARMS
+from scripts.drs_peft.data import ROOT, file_hash
+from scripts.drs_peft.e123_protocol import WINDOWS, load_protocol
+from scripts.drs_peft.run_e123 import unit_path
+from scripts.drs_peft.summarize_abc import (
+    aggregate,
+    paired_scores,
+    read,
+    require,
+    summarize_pair,
+    verify_files,
+    write_frozen_bytes,
+    write_frozen_json,
+)
+from scripts.drs_peft.summarize_e123 import (
+    load_source_reference,
+    recompute_unit_metrics,
+)
+
+
+def frozen_main_files():
+    path = ROOT / "results/drs_peft/abc_v1/ABC_ABC_SUMMARY_COMPLETE.json"
+    manifest = read(path)
+    require(manifest["status"] == "COMPLETE", "Main ABC study is incomplete")
+    records = [
+        {"path": str(path.relative_to(ROOT).as_posix()), "sha256": file_hash(path)}
+    ]
+    for record in manifest["files"]:
+        require(
+            file_hash(ROOT / record["path"]) == record["sha256"],
+            "An original ABC main output changed",
+        )
+        records.append(record)
+    return records
+
+
+def check_static_start(parent, private, protocol, fold, seed):
+    unit = {
+        "stage": "static",
+        "fold_id": fold["fold_id"],
+        "seed": seed,
+        "method": "grad_core",
+    }
+    folder = unit_path(parent, unit)
+    source = read(folder / "SOURCE_DEVELOPMENT_COMPLETE.json")
+    verify_files(folder, source)
+    checkpoint = folder / "CHECKPOINT_SELECTED.pt"
+    checkpoint_sha = file_hash(checkpoint)
+    run = read(folder / "RUN_CONFIG.json")
+    spec = read(folder / "E123_UNIT_SPEC.json")
+    require(
+        source["selected_checkpoint_sha256"] == checkpoint_sha
+        and source["target_query_labels_used"] == 0
+        and source["status"] == "SOURCE_DEVELOPMENT_COMPLETE",
+        "Original static checkpoint provenance changed",
+    )
+    require(
+        run["training_ids"] == fold["fit_ids"]
+        and run["validation_ids"] == fold["inner_validation_ids"]
+        and run["seed"] == seed
+        and run["config_sha256"] == file_hash(ROOT / "configs/drs_peft/e123_v1.json"),
+        "Original static source role or config changed",
+    )
+    require(
+        spec["unit"] == unit
+        and spec["fit_ids"] == fold["fit_ids"]
+        and spec["inner_validation_ids"] == fold["inner_validation_ids"]
+        and spec["outer_ids"] == fold["outer_test_ids"],
+        "Original static source specification changed",
+    )
+    linked = []
+    for arm in ARMS:
+        c_folder = private / f"fold{fold['fold_id']}" / f"seed{seed}" / arm
+        c_spec_path = c_folder / "ABC_C_UNIT_SPEC.json"
+        c_spec = read(c_spec_path)
+        require(
+            c_spec["unit"] == {"fold_id": fold["fold_id"], "seed": seed, "arm": arm}
+            and c_spec["source_C0_checkpoint_sha256"] == checkpoint_sha
+            and c_spec["fit_ids"] == fold["fit_ids"]
+            and c_spec["inner_validation_ids"] == fold["inner_validation_ids"]
+            and c_spec["outer_ids"] == fold["outer_test_ids"]
+            and c_spec["fold_payload_sha256"] == protocol["protocol_sha256"],
+            "A C arm did not begin at the verified original static C0",
+        )
+        linked.append({"arm": arm, "unit_spec_sha256": file_hash(c_spec_path)})
+    return (
+        unit,
+        checkpoint_sha,
+        {
+            "fold_id": fold["fold_id"],
+            "seed": seed,
+            "static_checkpoint_sha256": checkpoint_sha,
+            "static_source_receipt_sha256": file_hash(
+                folder / "SOURCE_DEVELOPMENT_COMPLETE.json"
+            ),
+            "linked_C_units": linked,
+        },
+    )
+
+
+def check_outer(
+    folder, expected_unit, fold, checkpoint_sha, registration_sha, evaluation
+):
+    receipt_path = folder / "OUTER_COMPLETE.json"
+    receipt = read(receipt_path)
+    require(
+        receipt["unit"] == expected_unit
+        and receipt["checkpoint_sha256"] == checkpoint_sha
+        and receipt["outer_ids"] == fold["outer_test_ids"]
+        and receipt["outer_groups"] == fold["outer_test_groups"]
+        and receipt["evaluation_mode"] == evaluation
+        and receipt["registration_sha256"] == registration_sha
+        and receipt["optimizer_updates"] == 0
+        and receipt["final_target_query_labels_used"] == 0,
+        "Static-reference outer identity changed",
+    )
+    verify_files(folder, receipt)
+    return file_hash(receipt_path)
+
+
+def main():
+    config_path = ROOT / "configs/drs_peft/abc_v1.json"
+    config = read(config_path)
+    protocol = load_protocol()
+    reference = load_source_reference(ROOT / "runtime/drs_peft/data_v1", protocol)
+    parent = ROOT / "runtime/drs_peft/e123_v1"
+    private = ROOT / "runtime/drs_peft/abc_v1/C"
+    public = ROOT / "results/drs_peft/abc_v1/C"
+    original_outputs = frozen_main_files()
+    static_tables, c_tables, static_sources, outer_records = [], [], [], []
+    maximum_difference = 0.0
+    for fold, seed in itertools.product(protocol["folds"], config["training_seeds"]):
+        unit, checkpoint_sha, source = check_static_start(
+            parent, private, protocol, fold, seed
+        )
+        folder = parent / "outer" / unit_path(Path("."), unit) / "static"
+        marker_sha = check_outer(
+            folder,
+            unit,
+            fold,
+            checkpoint_sha,
+            file_hash(ROOT / "configs/drs_peft/e123_v1.json"),
+            "static",
+        )
+        public_static = (
+            ROOT
+            / "results/drs_peft/e123_v1/outer"
+            / unit_path(Path("."), unit)
+            / "static/OUTER_COMPLETE.json"
+        )
+        require(
+            file_hash(public_static) == marker_sha,
+            "Published original static receipt differs from its private source",
+        )
+        record = {
+            "folder": folder,
+            "unit": dict(
+                unit, mode="static_C0", study="C_static_reference", regime="frozen"
+            ),
+            "evaluation_mode": "static",
+        }
+        frame, difference = recompute_unit_metrics(record, reference)
+        maximum_difference = max(maximum_difference, difference)
+        static_tables.append(frame)
+        static_sources.append(source)
+        outer_records.append(
+            {
+                "kind": "previously_published_static_reference",
+                "unit": unit,
+                "evaluation_mode": "static",
+                "receipt_sha256": marker_sha,
+            }
+        )
+        for arm, evaluation in itertools.product(ARMS, config["C"]["evaluation_modes"]):
+            c_unit = {"fold_id": fold["fold_id"], "seed": seed, "arm": arm}
+            c_training = private / f"fold{fold['fold_id']}" / f"seed{seed}" / arm
+            c_source = read(c_training / "SOURCE_DEVELOPMENT_COMPLETE.json")
+            verify_files(c_training, c_source)
+            c_checkpoint = c_training / "CHECKPOINT_SELECTED.pt"
+            require(
+                file_hash(c_checkpoint) == c_source["selected_checkpoint_sha256"],
+                "A continued C checkpoint changed",
+            )
+            c_folder = (
+                private
+                / "outer"
+                / f"fold{fold['fold_id']}"
+                / f"seed{seed}"
+                / arm
+                / evaluation
+            )
+            c_marker_sha = check_outer(
+                c_folder,
+                c_unit,
+                fold,
+                file_hash(c_checkpoint),
+                file_hash(config_path),
+                evaluation,
+            )
+            published = (
+                public
+                / "outer"
+                / f"fold{fold['fold_id']}"
+                / f"seed{seed}"
+                / arm
+                / evaluation
+                / "OUTER_COMPLETE.json"
+            )
+            require(
+                file_hash(published) == c_marker_sha, "A C public outer receipt changed"
+            )
+            c_record = {
+                "folder": c_folder,
+                "unit": dict(
+                    c_unit,
+                    stage="condition",
+                    method="grad_core",
+                    mode=arm,
+                    study="C_static_reference",
+                    regime="frozen",
+                    radius=1.0,
+                ),
+                "evaluation_mode": evaluation,
+            }
+            c_frame, c_difference = recompute_unit_metrics(c_record, reference)
+            maximum_difference = max(maximum_difference, c_difference)
+            c_tables.append(c_frame)
+            outer_records.append(
+                {
+                    "kind": "existing_registered_C_result",
+                    "unit": c_unit,
+                    "evaluation_mode": evaluation,
+                    "receipt_sha256": c_marker_sha,
+                }
+            )
+    static = pd.concat(static_tables, ignore_index=True)
+    continued = pd.concat(c_tables, ignore_index=True)
+    comparisons = []
+    for arm, evaluation, (window, _, _) in itertools.product(
+        ARMS, config["C"]["evaluation_modes"], WINDOWS
+    ):
+        paired_table = pd.concat(
+            (continued, static.assign(evaluation_mode=evaluation)), ignore_index=True
+        )
+        pair = paired_scores(
+            paired_table,
+            arm,
+            "static_C0",
+            {"evaluation_mode": evaluation, "window": window},
+        )
+        label = {
+            "study": "C_static_reference",
+            "comparison": "posthoc_already_exposed_source_C0_reference",
+            "candidate": arm,
+            "reference": "static_C0",
+            "regime": "frozen",
+            "evaluation_mode": evaluation,
+            "window": window,
+        }
+        comparisons.append(summarize_pair(pair, label, config["statistics"]))
+    table = pd.concat((static, continued), ignore_index=True)
+    summary = aggregate(table)
+    require(
+        len(static_sources) == 9
+        and len(outer_records) == 99
+        and len(comparisons) == 50,
+        "The C0 reference coverage is incomplete",
+    )
+    for record in original_outputs:
+        require(
+            file_hash(ROOT / record["path"]) == record["sha256"],
+            "The post-hoc reference changed a main ABC output",
+        )
+    source_snapshot = public / "STATIC_REFERENCE_SOURCE.py.txt"
+    write_frozen_bytes(source_snapshot, Path(__file__).read_bytes())
+    summary_path = public / "STATIC_REFERENCE_MODEL_SUMMARY.csv"
+    comparison_path = public / "STATIC_REFERENCE_COMPARISONS.json"
+    write_frozen_bytes(summary_path, summary.to_csv(index=False).encode("utf-8"))
+    write_frozen_json(
+        comparison_path,
+        {
+            "scope": "posthoc_descriptive_reference_on_already_exposed_source_predictions",
+            "comparisons": comparisons,
+            "main_registered_neural_training_units": 135,
+            "main_registered_outer_evaluations": 270,
+            "additional_preexisting_static_outer_references": 9,
+            "new_model_fits": 0,
+            "new_model_scoring_runs": 0,
+            "new_gradient_evaluations": 0,
+            "new_future_labels_acquired": 0,
+            "already_exposed_source_labels_reanalyzed": True,
+            "final_target_query_labels_used": 0,
+        },
+    )
+    audit = {
+        "status": "PASSED",
+        "scope": "posthoc_descriptive_reference",
+        "original_static_checkpoints_verified": 9,
+        "C_unit_start_bindings_verified": 45,
+        "previously_published_static_outer_references_recomputed": 9,
+        "existing_C_outer_results_recomputed": 90,
+        "independently_recomputed_static_cell_window_rows": len(static),
+        "independently_recomputed_C_cell_window_rows": len(continued),
+        "paired_comparisons": len(comparisons),
+        "maximum_metric_difference": maximum_difference,
+        "source_supervision_matches_frozen_cache": True,
+        "main_registered_neural_training_units": 135,
+        "main_registered_outer_evaluations": 270,
+        "main_outputs_unchanged": original_outputs,
+        "static_sources": static_sources,
+        "outer_records": outer_records,
+        "config_sha256": file_hash(config_path),
+        "fold_payload_sha256": protocol["protocol_sha256"],
+        "implementation_sha256": file_hash(__file__),
+        "helper_sources": [
+            {"path": name, "sha256": file_hash(ROOT / name)}
+            for name in (
+                "scripts/drs_peft/summarize_abc.py",
+                "scripts/drs_peft/summarize_e123.py",
+            )
+        ],
+        "outputs": [
+            {"path": path.relative_to(ROOT).as_posix(), "sha256": file_hash(path)}
+            for path in (comparison_path, summary_path, source_snapshot)
+        ],
+        "new_model_fits": 0,
+        "new_model_scoring_runs": 0,
+        "new_gradient_evaluations": 0,
+        "new_future_labels_acquired": 0,
+        "final_target_query_labels_used": 0,
+    }
+    write_frozen_json(public / "STATIC_REFERENCE_AUDIT.json", audit)
+    selected = [
+        value
+        for value in comparisons
+        if value["candidate"] == "matched_residual"
+        and value["window"] in ("all", "1001_plus")
+    ]
+    print(
+        json.dumps(
+            {"status": "PASSED", "selected_comparisons": selected},
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()

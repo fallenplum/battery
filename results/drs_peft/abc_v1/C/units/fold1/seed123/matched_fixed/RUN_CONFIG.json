@@ -1,0 +1,174 @@
+{
+  "stage": "ABC_C_FOLD_LOCAL_SOURCE",
+  "method": "ABC_C_matched_fixed",
+  "bridge": "native_multivariate",
+  "seed": 123,
+  "epochs": 120,
+  "batch_size": 8,
+  "rank": 4,
+  "learning_rate": 0.001,
+  "adapter_learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "head": "anchor_plus_0.2_query_MLP_difference_u1000",
+  "loss": "physical_cell_mean_observed_full_future_MAE",
+  "episode_sha256": "b229cfd89053dced2457f1a835662de3d91b3e65b9422dc8e44c17941a01f390",
+  "config_sha256": "fcf23e37e428ef9524feeb249f23f98cf040448104a09853ad126f2fc0246f34",
+  "data_cache_sha256": "c994d25d2dec9bf31f322400db2a927dfdcdb64d01fff3f79667dd69285a3bbc",
+  "source_snapshot": [
+    {
+      "path": "models/drs_peft/backbone.py",
+      "sha256": "540d22ff3471b77ad3dd518b20b576c2ede5bec663a9e3a1c00f71c492c7c871"
+    },
+    {
+      "path": "models/drs_peft/bridges.py",
+      "sha256": "e59a1e70896dd0cbe7172c4a79c37ea5c92a9465d4eb199339b4c1eac25cad4d"
+    },
+    {
+      "path": "models/drs_peft/trajectory.py",
+      "sha256": "9a6e44b459cc758e5a9956f128e0d4e1387c4dff6a99c8c61cddd1239a413ef4"
+    },
+    {
+      "path": "models/drs_peft/peft.py",
+      "sha256": "49272bc035b6fd0984eae08f1f4b5bb402b6b46c958fd9e8a0505c0c44ccdfa9"
+    },
+    {
+      "path": "scripts/drs_peft/train.py",
+      "sha256": "ebe562930e80697e01ffd103246a6a5263f6b1123c191e9e8efca8b9474aba70"
+    },
+    {
+      "path": "scripts/drs_peft/data.py",
+      "sha256": "4dc110c68ed99a28ef61dfeb0bad50951d4855a3fb17b29dabc86d4b9ed5f585"
+    },
+    {
+      "path": "scripts/drs_peft/episodes.py",
+      "sha256": "d8540a62a8aa5d932646315a863cff03f3e3d56e563a0e0caf4e96c006383a94"
+    },
+    {
+      "path": "models/drs_peft/abc_subspace.py",
+      "sha256": "5b9014abea110052fb2b0cb7c90ac87dde63e6e20035933837f9a8cd9e2eb515"
+    },
+    {
+      "path": "scripts/drs_peft/run_abc_c.py",
+      "sha256": "65f3bcd2b20b6e2379532cf50ced8c7eba0182702524ee4f19e9835310250f57"
+    },
+    {
+      "path": "scripts/drs_peft/run_e123.py",
+      "sha256": "5e30fd70377480459a4f79771160093ab3621b94b0af589c25ee23a8669e6fef"
+    },
+    {
+      "path": "scripts/drs_peft/e123_protocol.py",
+      "sha256": "8f4a3506cdfe722bdf9a739126df07a4dfa8a845a01dc152d70814874081dde3"
+    },
+    {
+      "path": "scripts/drs_peft/execute_e123.py",
+      "sha256": "8a2ef3e10317dc105b1a974a189a163bcd1e5d88d86532e30429713aa4d70133"
+    },
+    {
+      "path": "configs/drs_peft/e123_folds_v1.json",
+      "sha256": "bc24054839c1f3e32744380ce410621645f7d80a974988b91a643e576efd1c51"
+    },
+    {
+      "path": "configs/drs_peft/execution_v1.json",
+      "sha256": "868b55908c3bedefd53400f7e9ebb4491dcd8c405719cc84f27528fb2623e8df"
+    },
+    {
+      "path": "configs/drs_peft/abc_v1.json",
+      "sha256": "fcf23e37e428ef9524feeb249f23f98cf040448104a09853ad126f2fc0246f34"
+    },
+    {
+      "path": "configs/drs_peft/episodes_v1.json",
+      "sha256": "b9e6b41522055c1ba6b0b995f8bc23821e7878c89ff0de8950a6724eaa34942c"
+    }
+  ],
+  "training_ids": [
+    "MATR_b1c0",
+    "MATR_b1c1",
+    "MATR_b1c14",
+    "MATR_b1c15",
+    "MATR_b1c16",
+    "MATR_b1c17",
+    "MATR_b1c2",
+    "MATR_b1c23",
+    "MATR_b1c34",
+    "MATR_b1c35",
+    "MATR_b1c38",
+    "MATR_b1c39",
+    "MATR_b1c9",
+    "MATR_b2c1",
+    "MATR_b2c10",
+    "MATR_b2c14",
+    "MATR_b2c18",
+    "MATR_b2c2",
+    "MATR_b2c20",
+    "MATR_b2c23",
+    "MATR_b2c29",
+    "MATR_b2c3",
+    "MATR_b2c31",
+    "MATR_b2c34",
+    "MATR_b2c35",
+    "MATR_b2c36",
+    "MATR_b2c38",
+    "MATR_b2c39",
+    "MATR_b2c41",
+    "MATR_b2c42",
+    "MATR_b2c46",
+    "MATR_b2c5",
+    "MATR_b3c15",
+    "MATR_b3c21",
+    "MATR_b3c28",
+    "MATR_b3c29",
+    "MATR_b3c6",
+    "MATR_b4c0",
+    "MATR_b4c1",
+    "MATR_b4c10",
+    "MATR_b4c11",
+    "MATR_b4c12",
+    "MATR_b4c13",
+    "MATR_b4c14",
+    "MATR_b4c15",
+    "MATR_b4c18",
+    "MATR_b4c2",
+    "MATR_b4c20",
+    "MATR_b4c21",
+    "MATR_b4c23",
+    "MATR_b4c28",
+    "MATR_b4c29",
+    "MATR_b4c3",
+    "MATR_b4c30",
+    "MATR_b4c34",
+    "MATR_b4c35",
+    "MATR_b4c38",
+    "MATR_b4c39",
+    "MATR_b4c41",
+    "MATR_b4c42",
+    "MATR_b4c44",
+    "MATR_b4c6"
+  ],
+  "validation_ids": [
+    "MATR_b1c11",
+    "MATR_b1c42",
+    "MATR_b1c43",
+    "MATR_b1c44",
+    "MATR_b1c45",
+    "MATR_b2c21",
+    "MATR_b2c44",
+    "MATR_b2c6",
+    "MATR_b3c22",
+    "MATR_b3c31",
+    "MATR_b4c16",
+    "MATR_b4c17",
+    "MATR_b4c19",
+    "MATR_b4c32",
+    "MATR_b4c37"
+  ],
+  "query_grid": [
+    101,
+    5000
+  ],
+  "expected_updates": 960,
+  "target_query_labels_used": 0,
+  "initial_checkpoint_sha256": "50b75618d5bf94a22b0086351a622f9e6ebcfdd812ec40df513e4cf59bbda148",
+  "source_commit": "027719021e25bfec212b94afa1b9c6e929b518e7",
+  "trainable_parameters": 9204
+}

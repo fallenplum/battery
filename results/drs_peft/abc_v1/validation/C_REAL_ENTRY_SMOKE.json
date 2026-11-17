@@ -1,0 +1,504 @@
+{
+  "status": "PASSED_REAL_ENTRY_ENGINEERING_ONLY",
+  "fit_prefix_cells": 2,
+  "fold_id": 0,
+  "seed": 42,
+  "source_static_checkpoint_sha256": "f8f6be7809e914f4ad1360df9e2ddb7556c03792f7aff36443109e288b5701bd",
+  "arms": [
+    {
+      "arm": "fixed_rank4",
+      "start": {
+        "status": "PASSED",
+        "initial_prediction_max_difference": 0.0,
+        "query_cycles": [
+          100.0,
+          150.0,
+          500.0,
+          1500.0,
+          5000.0
+        ],
+        "fit_cells": 2,
+        "final_target_query_labels_used": 0
+      },
+      "trainable_parameters": 192,
+      "serialized_replay_max_error": 0.0,
+      "frozen_parameters_unchanged": true,
+      "norm_checks": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "actual_norm": 0.004000000194195937,
+          "radius": 0.059422180143728916
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "actual_norm": 0.004000000212474764,
+          "radius": 0.03692443844429084
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "actual_norm": 0.004000000211402108,
+          "radius": 0.05168411930635371
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "actual_norm": 0.004000000198296051,
+          "radius": 0.06708234816889658
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "actual_norm": 0.004000000178347664,
+          "radius": 0.06436718328292608
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "actual_norm": 0.004000000208381811,
+          "radius": 0.0814836917423826
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "actual_norm": 0.0040000002016738305,
+          "radius": 0.07531929943106604
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "actual_norm": 0.004000000181043428,
+          "radius": 0.08832017310628679
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "actual_norm": 0.004000000190246065,
+          "radius": 0.08226830870996192
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "actual_norm": 0.004000000196381486,
+          "radius": 0.08566310660130695
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "actual_norm": 0.004000000176779522,
+          "radius": 0.08008006673998802
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "actual_norm": 0.0040000001785620385,
+          "radius": 0.07955059222961014
+        }
+      ],
+      "parameter_report": {
+        "bridge": 56832,
+        "bridge_trainable": 0,
+        "backbone_total": 13827528,
+        "backbone_current_trainable": 192,
+        "total_current_trainable": 192,
+        "head": 6337,
+        "head_trainable": 0,
+        "total": 13891081,
+        "trainable": 192,
+        "subspace_probe": "fixed_rank4",
+        "source_continuation_trainable_parameters": 192,
+        "fixed_source_rank": 4,
+        "update_control": "physical_weight_Frobenius_increment_ball_around_frozen_rank4_C0",
+        "gauge_fixed_rank1": false
+      }
+    },
+    {
+      "arm": "rank4_plus_small",
+      "start": {
+        "status": "PASSED",
+        "initial_prediction_max_difference": 0.0,
+        "query_cycles": [
+          100.0,
+          150.0,
+          500.0,
+          1500.0,
+          5000.0
+        ],
+        "fit_cells": 2,
+        "final_target_query_labels_used": 0
+      },
+      "trainable_parameters": 300,
+      "serialized_replay_max_error": 0.0,
+      "frozen_parameters_unchanged": true,
+      "norm_checks": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "actual_norm": 0.007211102866718375,
+          "radius": 0.059422180143728916
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "actual_norm": 0.007211102954797397,
+          "radius": 0.03692443844429084
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "actual_norm": 0.007211102883914453,
+          "radius": 0.05168411930635371
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "actual_norm": 0.007211102913305382,
+          "radius": 0.06708234816889658
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "actual_norm": 0.0072111028492306715,
+          "radius": 0.06436718328292608
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "actual_norm": 0.0072111029012619675,
+          "radius": 0.0814836917423826
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "actual_norm": 0.0072111028819867515,
+          "radius": 0.07531929943106604
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "actual_norm": 0.007211102869583768,
+          "radius": 0.08832017310628679
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "actual_norm": 0.007211102863662795,
+          "radius": 0.08226830870996192
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "actual_norm": 0.007211102894804937,
+          "radius": 0.08566310660130695
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "actual_norm": 0.007211102910897075,
+          "radius": 0.08008006673998802
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "actual_norm": 0.007211102895720969,
+          "radius": 0.07955059222961014
+        }
+      ],
+      "parameter_report": {
+        "bridge": 56832,
+        "bridge_trainable": 0,
+        "backbone_total": 13827528,
+        "backbone_current_trainable": 300,
+        "total_current_trainable": 300,
+        "head": 6337,
+        "head_trainable": 0,
+        "total": 13891189,
+        "trainable": 300,
+        "subspace_probe": "rank4_plus_small",
+        "source_continuation_trainable_parameters": 300,
+        "fixed_source_rank": 4,
+        "update_control": "physical_weight_Frobenius_increment_ball_around_frozen_rank4_C0",
+        "gauge_fixed_rank1": false
+      }
+    },
+    {
+      "arm": "matched_fixed",
+      "start": {
+        "status": "PASSED",
+        "initial_prediction_max_difference": 0.0,
+        "query_cycles": [
+          100.0,
+          150.0,
+          500.0,
+          1500.0,
+          5000.0
+        ],
+        "fit_cells": 2,
+        "final_target_query_labels_used": 0
+      },
+      "trainable_parameters": 9204,
+      "serialized_replay_max_error": 0.0,
+      "frozen_parameters_unchanged": true,
+      "norm_checks": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "actual_norm": 0.025000001293329147,
+          "radius": 0.059422180143728916
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "actual_norm": 0.025000001166602705,
+          "radius": 0.03692443844429084
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "actual_norm": 0.02800000133402862,
+          "radius": 0.05168411930635371
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "actual_norm": 0.028000001441099764,
+          "radius": 0.06708234816889658
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "actual_norm": 0.028000001415582693,
+          "radius": 0.06436718328292608
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "actual_norm": 0.028000001392645114,
+          "radius": 0.0814836917423826
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "actual_norm": 0.028000001299434675,
+          "radius": 0.07531929943106604
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "actual_norm": 0.028000001197728788,
+          "radius": 0.08832017310628679
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "actual_norm": 0.028000001187439293,
+          "radius": 0.08226830870996192
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "actual_norm": 0.02800000135652882,
+          "radius": 0.08566310660130695
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "actual_norm": 0.029000001397883498,
+          "radius": 0.08008006673998802
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "actual_norm": 0.02900000142469319,
+          "radius": 0.07955059222961014
+        }
+      ],
+      "parameter_report": {
+        "bridge": 56832,
+        "bridge_trainable": 0,
+        "backbone_total": 13827528,
+        "backbone_current_trainable": 9204,
+        "total_current_trainable": 9204,
+        "head": 6337,
+        "head_trainable": 0,
+        "total": 13900093,
+        "trainable": 9204,
+        "subspace_probe": "matched_fixed",
+        "source_continuation_trainable_parameters": 9204,
+        "fixed_source_rank": 4,
+        "update_control": "physical_weight_Frobenius_increment_ball_around_frozen_rank4_C0",
+        "gauge_fixed_rank1": false
+      }
+    },
+    {
+      "arm": "matched_residual",
+      "start": {
+        "status": "PASSED",
+        "initial_prediction_max_difference": 0.0,
+        "query_cycles": [
+          100.0,
+          150.0,
+          500.0,
+          1500.0,
+          5000.0
+        ],
+        "fit_cells": 2,
+        "final_target_query_labels_used": 0
+      },
+      "trainable_parameters": 9204,
+      "serialized_replay_max_error": 0.0,
+      "frozen_parameters_unchanged": true,
+      "norm_checks": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "actual_norm": 0.04951767604307513,
+          "radius": 0.059422180143728916
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "actual_norm": 0.036924438444290775,
+          "radius": 0.03692443844429084
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "actual_norm": 0.051684119306353804,
+          "radius": 0.05168411930635371
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "actual_norm": 0.05556977857406507,
+          "radius": 0.06708234816889658
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "actual_norm": 0.055569778679647186,
+          "radius": 0.06436718328292608
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "actual_norm": 0.05556977869499643,
+          "radius": 0.0814836917423826
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "actual_norm": 0.05556977875818812,
+          "radius": 0.07531929943106604
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "actual_norm": 0.055569778545572865,
+          "radius": 0.08832017310628679
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "actual_norm": 0.05556977867280673,
+          "radius": 0.08226830870996192
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "actual_norm": 0.05556977884195615,
+          "radius": 0.08566310660130695
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "actual_norm": 0.057584722702954054,
+          "radius": 0.08008006673998802
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "actual_norm": 0.057584722675632825,
+          "radius": 0.07955059222961014
+        }
+      ],
+      "parameter_report": {
+        "bridge": 56832,
+        "bridge_trainable": 0,
+        "backbone_total": 13827528,
+        "backbone_current_trainable": 9204,
+        "total_current_trainable": 9204,
+        "head": 6337,
+        "head_trainable": 0,
+        "total": 13900093,
+        "trainable": 9204,
+        "subspace_probe": "matched_residual",
+        "source_continuation_trainable_parameters": 9204,
+        "fixed_source_rank": 4,
+        "update_control": "physical_weight_Frobenius_increment_ball_around_frozen_rank4_C0",
+        "gauge_fixed_rank1": false
+      }
+    },
+    {
+      "arm": "matched_lora",
+      "start": {
+        "status": "PASSED",
+        "initial_prediction_max_difference": 0.0,
+        "query_cycles": [
+          100.0,
+          150.0,
+          500.0,
+          1500.0,
+          5000.0
+        ],
+        "fit_cells": 2,
+        "final_target_query_labels_used": 0
+      },
+      "trainable_parameters": 9204,
+      "serialized_replay_max_error": 0.0,
+      "frozen_parameters_unchanged": true,
+      "norm_checks": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "actual_norm": 0.059422180143728305,
+          "radius": 0.059422180143728916
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "actual_norm": 0.036924438444290074,
+          "radius": 0.03692443844429084
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "actual_norm": 0.04967220359890616,
+          "radius": 0.05168411930635371
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "actual_norm": 0.04750266441082956,
+          "radius": 0.06708234816889658
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "actual_norm": 0.049884067707931544,
+          "radius": 0.06436718328292608
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "actual_norm": 0.049566194829569074,
+          "radius": 0.0814836917423826
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "actual_norm": 0.07531929943106513,
+          "radius": 0.07531929943106604
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "actual_norm": 0.08832017310628663,
+          "radius": 0.08832017310628679
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "actual_norm": 0.08226830870996053,
+          "radius": 0.08226830870996192
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "actual_norm": 0.06996178174804282,
+          "radius": 0.08566310660130695
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "actual_norm": 0.049732111524187814,
+          "radius": 0.08008006673998802
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "actual_norm": 0.05272889729425457,
+          "radius": 0.07955059222961014
+        }
+      ],
+      "parameter_report": {
+        "bridge": 56832,
+        "bridge_trainable": 0,
+        "backbone_total": 13827528,
+        "backbone_current_trainable": 9204,
+        "total_current_trainable": 9204,
+        "head": 6337,
+        "head_trainable": 0,
+        "total": 13900093,
+        "trainable": 9204,
+        "subspace_probe": "matched_lora",
+        "source_continuation_trainable_parameters": 9204,
+        "fixed_source_rank": 4,
+        "update_control": "physical_weight_Frobenius_increment_ball_around_frozen_rank4_C0",
+        "gauge_fixed_rank1": true,
+        "generic_rank1_weight_manifold_dimension": 9204,
+        "initial_zero_B_weight_jacobian_rank": 4608,
+        "initial_A_weight_jacobian_rank": 0,
+        "gauge_chart": "largest_fit_v1_coordinate_fixed_to_one",
+        "gauge_chart_scope": "rank1_factors_with_nonzero_anchor_coordinate"
+      }
+    }
+  ],
+  "optimizer_updates": 0,
+  "outer_outcomes_used": 0,
+  "final_target_query_labels_used": 0,
+  "implementation_sha256": "5b9014abea110052fb2b0cb7c90ac87dde63e6e20035933837f9a8cd9e2eb515",
+  "driver_sha256": "65f3bcd2b20b6e2379532cf50ced8c7eba0182702524ee4f19e9835310250f57"
+}

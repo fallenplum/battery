@@ -1,0 +1,169 @@
+"""Describe realized B complexity using authenticated completed-fit receipts."""
+
+import hashlib
+import itertools
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+
+root = Path(__file__).resolve().parents[4]
+public = root / "results/drs_peft/abc_v1/B"
+private = root / "runtime/drs_peft/abc_v1/B"
+config_path = root / "configs/drs_peft/abc_v1.json"
+folds_path = root / "configs/drs_peft/e123_folds_v1.json"
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def sha(path):
+    with Path(path).open("rb") as handle:
+        return hashlib.file_digest(handle, "sha256").hexdigest()
+
+
+def write_frozen(path, payload):
+    if path.exists():
+        assert path.read_bytes() == payload, str(path)
+    else:
+        path.write_bytes(payload)
+
+
+config, protocol = read(config_path), read(folds_path)
+settings = config["B"]
+records, receipts = [], []
+expected_paths = []
+for fold, seed, limits, model, arm in itertools.product(
+    protocol["folds"], settings["training_seeds"], settings["windows"], settings["models"], settings["arms"]
+):
+    window = "_".join(map(str, limits))
+    unit = {"fold_id": fold["fold_id"], "seed": seed, "window": window, "model": model, "arm": arm}
+    relative = Path("models") / f"fold{fold['fold_id']}" / f"seed{seed}" / window / model / arm
+    published_path = public / relative / "TRAIN_COMPLETE.json"
+    private_path = private / relative / "TRAIN_COMPLETE.json"
+    expected_paths.append(published_path.resolve())
+    receipt = read(published_path)
+    assert published_path.read_bytes() == private_path.read_bytes(), str(published_path)
+    identity = receipt["identity"]
+    assert identity["unit"] == unit
+    assert identity["registration_sha256"] == sha(config_path)
+    assert identity["protocol_file_sha256"] == sha(folds_path)
+    assert identity["protocol_payload_sha256"] == protocol["protocol_sha256"]
+    assert identity["implementation_sha256"] == sha(root / "scripts/drs_peft/run_abc_b.py")
+    assert identity["feature_implementation_sha256"] == sha(root / "models/drs_peft/diagnostic_dualview.py")
+    assert identity["data_adapter_implementation_sha256"] == sha(root / "scripts/drs_peft/data.py")
+    assert identity["formal_training_units"] == 180
+    assert identity["new_hyperparameter_search_trials"] == 0
+    assert identity["final_target_query_labels_used"] == 0
+    assert receipt["hyperparameter_search_trials"] == 0
+    assert receipt["outer_labels_used_for_training_or_selection"] == 0
+    assert receipt["final_target_query_labels_used"] == 0
+    manifest_path = public / f"fold{fold['fold_id']}" / f"seed{seed}" / window / "INPUT_MANIFEST.json"
+    assert identity["input_manifest_sha256"] == sha(manifest_path)
+    manifest = read(manifest_path)
+    assert set(manifest["training_ids"]).issubset(fold["fit_ids"])
+    files = {record["path"]: record["sha256"] for record in receipt["files"]}
+    assert set(files) == {"MODEL.joblib", "INNER_PREDICTIONS.npz"}
+    for name, expected in files.items():
+        assert sha(private / relative / name) == expected, str(private / relative / name)
+    complexity = receipt["complexity"]
+    assert complexity["input_columns"] == 30
+    assert 0 <= complexity["design_rank"] < len(manifest["training_ids"])
+    assert complexity["design_rank"] <= complexity["input_columns"]
+    if model == "ridge":
+        assert complexity["nominal_linear_parameters_including_intercept"] == 31
+        assert 1 <= complexity["ridge_effective_df_including_intercept"] <= complexity["design_rank"] + 1 + 1e-8
+    else:
+        assert complexity["fitted_trees"] == settings["gbr"]["n_estimators"] == 100
+        assert complexity["maximum_total_leaves"] == settings["gbr"]["n_estimators"] * 2 ** settings["gbr"]["max_depth"] == 400
+        assert 100 <= complexity["realized_total_leaves"] <= 400
+    records.append({**unit, "fit_cells": len(manifest["training_ids"]), **complexity})
+    receipts.append({
+        "unit": unit,
+        "public_receipt_path": published_path.relative_to(root).as_posix(),
+        "public_receipt_sha256": sha(published_path),
+        "private_receipt_path": private_path.relative_to(root).as_posix(),
+        "private_receipt_sha256": sha(private_path),
+        "private_model_sha256": files["MODEL.joblib"],
+        "private_inner_prediction_sha256": files["INNER_PREDICTIONS.npz"],
+        "scientific_source_commit": identity["scientific_source_commit"],
+        "input_manifest_path": manifest_path.relative_to(root).as_posix(),
+        "input_manifest_sha256": sha(manifest_path),
+    })
+
+actual_paths = [path.resolve() for path in (public / "models").rglob("TRAIN_COMPLETE.json")]
+assert len(records) == len(actual_paths) == 180
+assert set(actual_paths) == set(expected_paths)
+frame = pd.DataFrame(records)
+rows = []
+for (window, model, arm), group in frame.groupby(["window", "model", "arm"], sort=True):
+    assert len(group) == 9 and group.fold_id.nunique() == 3 and group.seed.nunique() == 3
+    row = {
+        "window": window, "model": model, "arm": arm,
+        "completed_fit_units": len(group),
+        "folds": group.fold_id.nunique(), "registered_seeds": group.seed.nunique(),
+        "fit_cells_min": int(group.fit_cells.min()), "fit_cells_max": int(group.fit_cells.max()),
+        "input_columns_min": int(group.input_columns.min()), "input_columns_max": int(group.input_columns.max()),
+        "design_rank_min": int(group.design_rank.min()), "design_rank_max": int(group.design_rank.max()),
+        "design_rank_mean": float(group.design_rank.mean()),
+    }
+    if model == "ridge":
+        row.update(
+            ridge_effective_df_min=float(group.ridge_effective_df_including_intercept.min()),
+            ridge_effective_df_max=float(group.ridge_effective_df_including_intercept.max()),
+            ridge_effective_df_mean=float(group.ridge_effective_df_including_intercept.mean()),
+            nominal_linear_parameters_min=int(group.nominal_linear_parameters_including_intercept.min()),
+            nominal_linear_parameters_max=int(group.nominal_linear_parameters_including_intercept.max()),
+        )
+    else:
+        row.update(
+            gbr_fitted_trees_min=int(group.fitted_trees.min()),
+            gbr_fitted_trees_max=int(group.fitted_trees.max()),
+            gbr_realized_total_leaves_min=int(group.realized_total_leaves.min()),
+            gbr_realized_total_leaves_max=int(group.realized_total_leaves.max()),
+            gbr_realized_total_leaves_mean=float(group.realized_total_leaves.mean()),
+            gbr_maximum_total_leaves_min=int(group.maximum_total_leaves.min()),
+            gbr_maximum_total_leaves_max=int(group.maximum_total_leaves.max()),
+        )
+    rows.append(row)
+summary = pd.DataFrame(rows)
+assert len(summary) == 20
+summary_path = public / "B_COMPLEXITY_SUMMARY.csv"
+payload = summary.to_csv(index=False, lineterminator="\n").encode("utf-8")
+write_frozen(summary_path, payload)
+audit = {
+    "status": "PASSED_AUTHENTICATED_COMPLETED_FIT_COMPLEXITY_SUMMARY",
+    "audit_kind": "posthoc_descriptive_receipt_aggregation",
+    "summary_groups": 20,
+    "authenticated_public_private_receipt_pairs": 180,
+    "authenticated_model_joblib_files": 180,
+    "authenticated_inner_prediction_files": 180,
+    "models_deserialized": 0,
+    "new_training_fits": 0,
+    "new_hyperparameter_search_trials": 0,
+    "optimizer_updates": 0,
+    "future_label_arrays_read": 0,
+    "final_target_query_labels_used": 0,
+    "registration_sha256": sha(config_path),
+    "protocol_file_sha256": sha(folds_path),
+    "summary_path": summary_path.relative_to(root).as_posix(),
+    "summary_sha256": sha(summary_path),
+    "audit_script_path": Path(__file__).relative_to(root).as_posix(),
+    "audit_script_sha256": sha(__file__),
+    "scientific_source_commits": sorted({record["scientific_source_commit"] for record in receipts}),
+    "interpretation": [
+        "All arms use thirty nominal input columns and the same registered learner hyperparameters.",
+        "Centered design rank and Ridge effective degrees of freedom differ across input arms.",
+        "Realized GBR leaf counts differ despite the common hundred-tree and four-hundred-leaf maximum.",
+        "Rows pool three protocol folds and three registered seeds with overlapping fit sets.",
+        "GBR leaf counts describe the fitted tree structures and carry their own complexity interpretation.",
+    ],
+    "source_receipts": receipts,
+}
+audit_path = public / "B_COMPLEXITY_AUDIT.json"
+write_frozen(audit_path, (json.dumps(audit, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode("utf-8"))
+print(json.dumps({key: value for key, value in audit.items() if key not in ("source_receipts", "interpretation")}))
+print(summary.to_string(index=False))

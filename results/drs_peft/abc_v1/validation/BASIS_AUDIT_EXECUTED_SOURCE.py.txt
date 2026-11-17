@@ -1,0 +1,129 @@
+"""Independent NumPy and byte-level audit of the nine fit-only C bases."""
+
+import hashlib
+import json
+import re
+import subprocess
+from pathlib import Path
+
+import numpy as np
+import torch
+
+
+root = Path(__file__).resolve().parents[4]
+source_commit = "027719021e25bfec212b94afa1b9c6e929b518e7"
+config_path = root / "configs/drs_peft/abc_v1.json"
+folds_path = root / "configs/drs_peft/e123_folds_v1.json"
+private = root / "runtime/drs_peft/abc_v1/C"
+public = root / "results/drs_peft/abc_v1/C"
+parent = root / "runtime/drs_peft/e123_v1"
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def sha(path):
+    with Path(path).open("rb") as handle:
+        return hashlib.file_digest(handle, "sha256").hexdigest()
+
+
+def verify_files(folder, receipt):
+    for record in receipt["files"]:
+        assert sha(folder / record["path"]) == record["sha256"], str(folder / record["path"])
+
+
+registration, protocol = read(config_path), read(folds_path)
+assert registration["C"]["matched_ranks"] == [25, 28, 28, 28, 28, 29]
+assert registration["C"]["matched_perp_shapes"] == [[21, 29], [24, 32], [24, 32], [24, 32], [24, 32], [25, 33]]
+source_records = []
+for name in ("models/drs_peft/abc_subspace.py", "scripts/drs_peft/run_abc_c.py", "configs/drs_peft/abc_v1.json"):
+    committed = subprocess.check_output(["git", "show", source_commit + ":" + name], cwd=root)
+    assert committed == (root / name).read_bytes(), name
+    source_records.append({"path": name, "sha256": sha(root / name)})
+
+records = []
+worst_gram = 0.0
+worst_perp_cross = 0.0
+raw_arrays = 0
+fit_cells = 0
+for fold in protocol["folds"]:
+    for seed in registration["training_seeds"]:
+        relative = Path(f"fold{fold['fold_id']}") / f"seed{seed}" / "bases"
+        folder = private / relative
+        receipt = read(folder / "BASES_COMPLETE.json")
+        assert receipt["status"] == "COMPLETE_FIT_ONLY_C_BASES"
+        assert receipt["source_commit"] == source_commit
+        assert receipt["optimizer_updates"] == receipt["new_gradient_evaluations"] == 0
+        identity = receipt["identity"]
+        assert identity["fit_ids"] == fold["fit_ids"]
+        assert identity["fold_id"] == fold["fold_id"] and identity["seed"] == seed
+        assert identity["config_sha256"] == sha(config_path)
+        assert identity["implementation_sha256"] == sha(root / "scripts/drs_peft/run_abc_c.py")
+        assert identity["outer_labels_used"] == identity["final_target_query_labels_used"] == 0
+        verify_files(folder, receipt)
+        probe = torch.load(folder / "BASES.pt", map_location="cpu", weights_only=False)
+        assert probe["identity"] == identity
+        parent_folder = parent / relative
+        parent_receipt = read(parent_folder / "BASES_COMPLETE.json")
+        verify_files(parent_folder, parent_receipt)
+        parent_bases = torch.load(parent_folder / "BASES.pt", map_location="cpu", weights_only=False)
+        assert identity["parent_basis_sha256"] == sha(parent_folder / "BASES.pt")
+        assert parent_bases["fit_ids"] == fold["fit_ids"]
+        static_path = parent / f"fold{fold['fold_id']}" / f"seed{seed}" / "static" / "grad_core" / "CHECKPOINT_SELECTED.pt"
+        assert identity["parent_static_checkpoint_sha256"] == sha(static_path)
+        gradient_path = parent_folder / "GRADIENT_CACHE_MANIFEST.json"
+        gradient = read(gradient_path)
+        assert receipt["parent_gradient_cache_receipt_sha256"] == sha(gradient_path)
+        assert gradient["identity"]["role"] == "E123_FIT"
+        assert gradient["identity"]["variant"] == "nominal"
+        assert gradient["identity"]["seed"] == seed
+        assert gradient["identity"]["ids"] == gradient["identity"]["outcome_donors"] == fold["fit_ids"]
+        assert gradient["identity"]["model_sha256"] == parent_bases["source_checkpoint_sha256"]
+        assert receipt["parent_gradient_model_sha256"] == parent_bases["source_checkpoint_sha256"]
+        verify_files(Path(gradient["folder"]), gradient)
+        raw_arrays += len(gradient["layer_files"])
+        fit_cells += len(fold["fit_ids"])
+        assert set(probe["bases"]) == set(parent_bases["bases"]) == set(gradient["layer_files"])
+        fixed_parameters = residual_parameters = 0
+        layers = []
+        for name, values in probe["bases"].items():
+            index = int(re.search(r"layers\.(\d+)\.", name).group(1))
+            rank = registration["C"]["matched_ranks"][index]
+            shape = registration["C"]["matched_perp_shapes"][index]
+            source_u, source_v = [value.numpy() for value in parent_bases["bases"][name]]
+            fixed_u, fixed_v = [values[key].numpy() for key in ("fixed_u", "fixed_v")]
+            perp_u, perp_v = [values[key].numpy() for key in ("perp_u", "perp_v")]
+            assert fixed_u.shape == fixed_v.shape == (384, rank)
+            assert perp_u.shape == (384, shape[0]) and perp_v.shape == (384, shape[1])
+            assert np.array_equal(fixed_u[:, :4], source_u)
+            assert np.array_equal(fixed_v[:, :4], source_v)
+            assert np.array_equal(values["lora_a"].numpy(), source_v[:, 0])
+            grams = []
+            for matrix in (source_u, source_v, fixed_u, fixed_v, perp_u, perp_v):
+                matrix = matrix.astype(np.float64)
+                error = float(np.abs(matrix.T @ matrix - np.eye(matrix.shape[1])).max())
+                assert error < 2e-5, (name, error)
+                grams.append(error)
+            cross_u = float(np.abs(source_u.astype(np.float64).T @ perp_u.astype(np.float64)).max())
+            cross_v = float(np.abs(source_v.astype(np.float64).T @ perp_v.astype(np.float64)).max())
+            assert max(cross_u, cross_v) < 2e-6
+            worst_gram = max(worst_gram, *grams)
+            worst_perp_cross = max(worst_perp_cross, cross_u, cross_v)
+            fixed_parameters += rank * rank
+            residual_parameters += 16 + shape[0] * shape[1]
+            layers.append({"layer": name, "fixed_rank": rank, "perp_shape": shape, "fixed_parameters": rank * rank, "core_plus_perp_parameters": 16 + shape[0] * shape[1], "worst_orthonormality_error": max(grams), "worst_source_perp_cross_gram": max(cross_u, cross_v)})
+        assert fixed_parameters == residual_parameters == 9204
+        assert len(layers) == 12
+        assert len(gradient["layer_files"]) == 12
+        records.append({"fold_id": fold["fold_id"], "seed": seed, "fit_cells": len(fold["fit_ids"]), "fixed_parameters": fixed_parameters, "residual_parameters": residual_parameters, "gauge_fixed_lora_parameters": 12 * (384 + 383), "basis_file_sha256": sha(folder / "BASES.pt"), "receipt_sha256": sha(folder / "BASES_COMPLETE.json"), "parent_gradient_receipt_sha256": sha(gradient_path), "layers": layers})
+
+assert len(records) == 9 and raw_arrays == 108 and fit_cells == 552
+output = {"status": "PASSED_INDEPENDENT_NUMPY_FIT_ONLY_BASIS_AUDIT", "source_commit": source_commit, "basis_units": len(records), "matrix_bases": 108, "verified_raw_gradient_arrays": raw_arrays, "parent_fit_gradient_evaluations_reused": fit_cells, "new_gradient_evaluations": 0, "optimizer_updates": 0, "outer_labels_used": 0, "final_target_query_labels_used": 0, "worst_orthonormality_error": worst_gram, "worst_source_perp_cross_gram": worst_perp_cross, "source_files": source_records, "units": records}
+public.mkdir(parents=True, exist_ok=True)
+target = public / "INDEPENDENT_BASIS_AUDIT.json"
+if target.exists():
+    assert read(target) == output
+else:
+    target.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+print(json.dumps({key: value for key, value in output.items() if key not in ("units", "source_files")}))

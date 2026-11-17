@@ -1,0 +1,139 @@
+...............................................................F........ [ 26%]
+........................................................................ [ 53%]
+........................................................................ [ 80%]
+.....................................................                    [100%]
+================================== FAILURES ===================================
+_________ test_full270_outer_matrix_and99_new36_reused_closure_schema _________
+
+tmp_path = WindowsPath('D:/develop/patchtst/battery_ai/_srsr_physics_early_precursor_v1/battery_repository/runtime/abc_full_qa_20261117/test_full270_outer_matrix_and90')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000145400D95D0>
+
+    def test_full270_outer_matrix_and99_new36_reused_closure_schema(tmp_path, monkeypatch):
+        config_path = ROOT / "configs/drs_peft/abc_v1.json"
+        config, protocol = summary.read(config_path), load_protocol()
+        args = SimpleNamespace(
+            studies=["A", "B", "C"],
+            private_root=tmp_path / "private",
+            public_root=tmp_path / "public",
+            e123_private_root=tmp_path / "parent",
+            config=config_path,
+        )
+        fake_sources, fake_reuse = {}, {}
+        for study in args.studies:
+            plan = summary.study_plan(config, protocol, study)
+            write_json(
+                args.public_root
+                / study
+                / ("C_PLAN.json" if study == "C" else f"ABC_{study}_PLAN.json"),
+                plan,
+            )
+            source_entries = []
+            fake_reuse[study] = []
+            for unit in plan["units"]:
+                key = summary.unit_key(unit)
+                checkpoint_sha = "fixture_checkpoint_" + key
+                fold = protocol["folds"][unit["fold_id"]]
+                reused = summary.is_reused(study, unit)
+                if reused:
+                    reuse = {
+                        "unit": unit,
+                        "selected_checkpoint_sha256": checkpoint_sha,
+                        "outer": [],
+                    }
+                    fake_reuse[study].append(reuse)
+                else:
+                    source = {
+                        "study": study,
+                        "unit": unit,
+                        "folder": str(summary.source_folder(args, study, unit)),
+                        "checkpoint_sha256": checkpoint_sha,
+                        "source_receipt_sha256": "fixture_source_receipt",
+                        "updates": 960,
+                    }
+                    fake_sources[(study, key)] = source
+                    source_entries.append(
+                        {
+                            "unit": unit,
+                            "checkpoint_sha256": checkpoint_sha,
+                            "source_receipt_sha256": "fixture_source_receipt",
+                        }
+                    )
+                for evaluation in config["evaluation_modes"]:
+                    if reused:
+                        actual_unit = {
+                            name: value for name, value in unit.items() if name != "regime"
+                        }
+                        folder = (
+                            args.e123_private_root
+                            / "outer"
+                            / summary.legacy_unit_path(Path("."), actual_unit)
+                            / evaluation
+                        )
+                    elif study == "C":
+                        actual_unit = unit
+                        folder = (
+                            args.private_root
+                            / study
+                            / "outer"
+                            / f"fold{unit['fold_id']}"
+                            / f"seed{unit['seed']}"
+                            / unit["arm"]
+                            / evaluation
+                        )
+                    else:
+                        actual_unit = unit
+                        folder = (
+                            args.private_root
+                            / study
+                            / unit["regime"]
+                            / "outer"
+                            / summary.legacy_unit_path(Path("."), unit)
+                            / evaluation
+                        )
+                    receipt = {
+                        "unit": actual_unit,
+                        "evaluation_mode": evaluation,
+                        "checkpoint_sha256": checkpoint_sha,
+                        "outer_ids": fold["outer_test_ids"],
+                        "outer_groups": fold["outer_test_groups"],
+                        "final_target_query_labels_used": 0,
+                        "optimizer_updates": 0,
+                        "registration_sha256": file_hash(config_path),
+                        "files": [],
+                    }
+>                   write_json(folder / "OUTER_COMPLETE.json", receipt)
+
+tests\drs_peft\test_abc_summary.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\drs_peft\data.py:49: in write_json
+    temporary.write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+D:\Anaconda\envs\tslib\Lib\pathlib.py:1078: in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/develop/patchtst/battery_ai/_srsr_physics_early_precursor_v1/battery_repository/runtime/abc_full_qa_20...rivate/B/frozen/outer/fold0/seed42/condition/grad_core/radius1/shuffled_dual/trained_ball/OUTER_COMPLETE.json.pending')
+mode = 'w', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\abc_full_qa_20261117\\test_full270_outer_matrix_and90\\private\\B\\frozen\\outer\\fold0\\seed42\\condition\\grad_core\\radius1\\shuffled_dual\\trained_ball\\OUTER_COMPLETE.json.pending'
+
+D:\Anaconda\envs\tslib\Lib\pathlib.py:1044: FileNotFoundError
+============================== warnings summary ===============================
+tests/drs_peft/test_bridges.py::test_cuda_cpu_agreement_and_gradient[1-native]
+  D:\Anaconda\envs\tslib\Lib\site-packages\uni2ts\module\attention.py:296: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:555.)
+    out = F.scaled_dot_product_attention(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/drs_peft/test_abc_summary.py::test_full270_outer_matrix_and99_new36_reused_closure_schema
+1 failed, 268 passed, 1 warning in 93.37s (0:01:33)

@@ -1,0 +1,1443 @@
+{
+  "status": "PASSED_INDEPENDENT_NUMPY_FIT_ONLY_BASIS_AUDIT",
+  "source_commit": "027719021e25bfec212b94afa1b9c6e929b518e7",
+  "basis_units": 9,
+  "matrix_bases": 108,
+  "verified_raw_gradient_arrays": 108,
+  "parent_fit_gradient_evaluations_reused": 552,
+  "new_gradient_evaluations": 0,
+  "optimizer_updates": 0,
+  "outer_labels_used": 0,
+  "final_target_query_labels_used": 0,
+  "worst_orthonormality_error": 5.4492617529433574e-08,
+  "worst_source_perp_cross_gram": 1.4711460008531851e-08,
+  "source_files": [
+    {
+      "path": "models/drs_peft/abc_subspace.py",
+      "sha256": "5b9014abea110052fb2b0cb7c90ac87dde63e6e20035933837f9a8cd9e2eb515"
+    },
+    {
+      "path": "scripts/drs_peft/run_abc_c.py",
+      "sha256": "65f3bcd2b20b6e2379532cf50ced8c7eba0182702524ee4f19e9835310250f57"
+    },
+    {
+      "path": "configs/drs_peft/abc_v1.json",
+      "sha256": "fcf23e37e428ef9524feeb249f23f98cf040448104a09853ad126f2fc0246f34"
+    }
+  ],
+  "units": [
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "fit_cells": 61,
+      "fixed_parameters": 9204,
+      "residual_parameters": 9204,
+      "gauge_fixed_lora_parameters": 9204,
+      "basis_file_sha256": "cb80e27d293f7f04fafcc5763fc030c7a5e4e2e249c361d1c0a1bc69e0a2dbb1",
+      "receipt_sha256": "2b60e613fdf2c4c0110c45a4254e35210cf4b8f19539ad30cdf9e9c030f27e5e",
+      "parent_gradient_receipt_sha256": "7cbd1be57afb1e495cfca922990429554a2ff67a6348482e7a328a58b9584276",
+      "layers": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 4.4264384824188596e-08,
+          "worst_source_perp_cross_gram": 8.147758967513852e-09
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.241691359789911e-08,
+          "worst_source_perp_cross_gram": 9.121324348604354e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.2843220648383067e-08,
+          "worst_source_perp_cross_gram": 9.958887520200577e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.3169991541772674e-08,
+          "worst_source_perp_cross_gram": 4.970671135112736e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.366318962998548e-08,
+          "worst_source_perp_cross_gram": 6.1172296533795745e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.3117163355502726e-08,
+          "worst_source_perp_cross_gram": 5.220314812370841e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.0788445631581e-08,
+          "worst_source_perp_cross_gram": 9.316245178081495e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.607944200010536e-08,
+          "worst_source_perp_cross_gram": 4.344327227817635e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.4375430179569548e-08,
+          "worst_source_perp_cross_gram": 6.384873768583432e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.8547010594005542e-08,
+          "worst_source_perp_cross_gram": 4.455242286205419e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 2.1808449601756763e-08,
+          "worst_source_perp_cross_gram": 4.017073940848492e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.7510600081038774e-08,
+          "worst_source_perp_cross_gram": 4.913339686496432e-09
+        }
+      ]
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "fit_cells": 61,
+      "fixed_parameters": 9204,
+      "residual_parameters": 9204,
+      "gauge_fixed_lora_parameters": 9204,
+      "basis_file_sha256": "4bf255a941b9bd3efdf0ebab7dcc9f2fe7b635768880177d4a85211ae7272a11",
+      "receipt_sha256": "45dd4725837f5129230e8af8b66ccbd1ca1f98341d742072c551f39e36c44110",
+      "parent_gradient_receipt_sha256": "f5444072d01a446ba9b02a7bf33c795a3ad08ef54296cc20f82eeb5198f7239e",
+      "layers": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 4.044055357255161e-08,
+          "worst_source_perp_cross_gram": 8.88274583055182e-09
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 5.4492617529433574e-08,
+          "worst_source_perp_cross_gram": 8.168013099218996e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.3377302205140893e-08,
+          "worst_source_perp_cross_gram": 6.15608318488281e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.4333822795364881e-08,
+          "worst_source_perp_cross_gram": 4.820842974817552e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.1683083328838393e-08,
+          "worst_source_perp_cross_gram": 1.1630913551718969e-08
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.3392103870302208e-08,
+          "worst_source_perp_cross_gram": 4.80434398167362e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.466343218543443e-08,
+          "worst_source_perp_cross_gram": 5.499035476974612e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.695327189743523e-08,
+          "worst_source_perp_cross_gram": 6.203683053374043e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.3424000577799688e-08,
+          "worst_source_perp_cross_gram": 6.3281732987433e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.4203451303984593e-08,
+          "worst_source_perp_cross_gram": 4.4251354872071325e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 2.0245374265925875e-08,
+          "worst_source_perp_cross_gram": 4.3730458143542705e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.8542970603441233e-08,
+          "worst_source_perp_cross_gram": 4.3363448318234354e-09
+        }
+      ]
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "fit_cells": 61,
+      "fixed_parameters": 9204,
+      "residual_parameters": 9204,
+      "gauge_fixed_lora_parameters": 9204,
+      "basis_file_sha256": "c9406e9a175ace27673e5165670057cc553d3f389827df484be66829083f6b96",
+      "receipt_sha256": "bd1ab1976a8e753e521b40d953f54d92403a674761d75b9b25afdc18f4116d2d",
+      "parent_gradient_receipt_sha256": "602fccc872ff7c0936b05fac486a515d7e8427fa8c93379d3d8a1758c5f8231f",
+      "layers": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.3302932855860945e-08,
+          "worst_source_perp_cross_gram": 1.0719019116756101e-08
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.8312191641409754e-08,
+          "worst_source_perp_cross_gram": 7.2098304930434676e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 3.5658741293076446e-08,
+          "worst_source_perp_cross_gram": 6.4476695371684656e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.372770158132198e-08,
+          "worst_source_perp_cross_gram": 6.234923924375302e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.7848070516256485e-08,
+          "worst_source_perp_cross_gram": 6.629590737494695e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.881046107765627e-08,
+          "worst_source_perp_cross_gram": 4.10692599372986e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.6195955626917566e-08,
+          "worst_source_perp_cross_gram": 7.535505178180024e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.506059743583421e-08,
+          "worst_source_perp_cross_gram": 5.517809563426734e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.420275230756829e-08,
+          "worst_source_perp_cross_gram": 7.166797155733207e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.6557070381395533e-08,
+          "worst_source_perp_cross_gram": 4.5576772390865106e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.978904617949695e-08,
+          "worst_source_perp_cross_gram": 4.9241618109430174e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.5492315763587783e-08,
+          "worst_source_perp_cross_gram": 4.60295009573064e-09
+        }
+      ]
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "fit_cells": 62,
+      "fixed_parameters": 9204,
+      "residual_parameters": 9204,
+      "gauge_fixed_lora_parameters": 9204,
+      "basis_file_sha256": "9e12a873b59a5255d40894dc41451c528d443f53e856f93ed56a20e79715561b",
+      "receipt_sha256": "1860c5c9d79b600892a4e3c219585bfbb1867155d44d4232027e8b5b18b971fd",
+      "parent_gradient_receipt_sha256": "6a3734bcbf1d2a7c3e58023ff2b384a6275f0fa4ad479092ae86ba28fc2b4daa",
+      "layers": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 4.245656204382442e-08,
+          "worst_source_perp_cross_gram": 7.612816710356185e-09
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 2.9614632079955072e-08,
+          "worst_source_perp_cross_gram": 8.839985812802986e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.8222992165538585e-08,
+          "worst_source_perp_cross_gram": 8.176826645465984e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.8130176360209305e-08,
+          "worst_source_perp_cross_gram": 5.557996299310197e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 3.6114327861547224e-08,
+          "worst_source_perp_cross_gram": 6.190381138249101e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.4463610822912365e-08,
+          "worst_source_perp_cross_gram": 4.1584938131888904e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.7163944871233525e-08,
+          "worst_source_perp_cross_gram": 8.509598331540857e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.559694595698602e-08,
+          "worst_source_perp_cross_gram": 3.494917931445851e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.209367377936644e-08,
+          "worst_source_perp_cross_gram": 5.320803457553591e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.250819980924689e-08,
+          "worst_source_perp_cross_gram": 4.802786526120206e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 2.1290532670192874e-08,
+          "worst_source_perp_cross_gram": 5.623209918537153e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.3121840503060866e-08,
+          "worst_source_perp_cross_gram": 4.171811628789213e-09
+        }
+      ]
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "fit_cells": 62,
+      "fixed_parameters": 9204,
+      "residual_parameters": 9204,
+      "gauge_fixed_lora_parameters": 9204,
+      "basis_file_sha256": "acd034a9bf58ff71bca2062b4b0c3370cdb9043bad39c032e08f39ed4387cecb",
+      "receipt_sha256": "f91cbab9782776af9556dffcac6345a9cd6a2daaf6163a4ddfa7756134de61d0",
+      "parent_gradient_receipt_sha256": "5511feaabb3ebb1ef7b1e09d94cf9506ecde648ca4215dca1931887176468248",
+      "layers": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.0690356478402236e-08,
+          "worst_source_perp_cross_gram": 1.4711460008531851e-08
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.1475058337449013e-08,
+          "worst_source_perp_cross_gram": 8.177294696411208e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 3.619005006783027e-08,
+          "worst_source_perp_cross_gram": 8.509352337343623e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.2177775010613345e-08,
+          "worst_source_perp_cross_gram": 4.3798820126284e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.081261207820262e-08,
+          "worst_source_perp_cross_gram": 6.548031464270743e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.4425805661133495e-08,
+          "worst_source_perp_cross_gram": 7.4455759578595515e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.4090932027043266e-08,
+          "worst_source_perp_cross_gram": 5.924142162938573e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.7090629134131063e-08,
+          "worst_source_perp_cross_gram": 4.419953181233893e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.3708801144550762e-08,
+          "worst_source_perp_cross_gram": 4.7482819898192474e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.7886552905466147e-08,
+          "worst_source_perp_cross_gram": 4.103325752097264e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 2.4633006301399973e-08,
+          "worst_source_perp_cross_gram": 5.842912070841422e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.5922631435572043e-08,
+          "worst_source_perp_cross_gram": 4.456299220693266e-09
+        }
+      ]
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "fit_cells": 62,
+      "fixed_parameters": 9204,
+      "residual_parameters": 9204,
+      "gauge_fixed_lora_parameters": 9204,
+      "basis_file_sha256": "16c49535ad34d53851ed80342b1524145b4790a979a8a05dbd588535a3899a0a",
+      "receipt_sha256": "7bd2e75622849aaaf19895c8e734edb1bf50fae01cc8fee8502ab8deeb5a7efc",
+      "parent_gradient_receipt_sha256": "c3d3e002d93bee93c006ef867511ed13d9fcfff76b206df7de2369d0ccc245ea",
+      "layers": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.901949763296386e-08,
+          "worst_source_perp_cross_gram": 8.461091494105233e-09
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 4.89484279775354e-08,
+          "worst_source_perp_cross_gram": 8.708218784958532e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 3.047251295740239e-08,
+          "worst_source_perp_cross_gram": 8.908831436449383e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.4634562894855208e-08,
+          "worst_source_perp_cross_gram": 4.904723651527609e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.05299873767828e-08,
+          "worst_source_perp_cross_gram": 5.710287548366111e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.581778041881421e-08,
+          "worst_source_perp_cross_gram": 4.917921882230392e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.4299038670072548e-08,
+          "worst_source_perp_cross_gram": 7.1302191512190305e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.5133577502268736e-08,
+          "worst_source_perp_cross_gram": 4.407097873269927e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.1882984535537275e-08,
+          "worst_source_perp_cross_gram": 5.407971112592058e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.4330136854923126e-08,
+          "worst_source_perp_cross_gram": 3.784579032106716e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 2.4742137005873133e-08,
+          "worst_source_perp_cross_gram": 4.430349444944914e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.5281734544458914e-08,
+          "worst_source_perp_cross_gram": 4.5355784891731865e-09
+        }
+      ]
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "fit_cells": 61,
+      "fixed_parameters": 9204,
+      "residual_parameters": 9204,
+      "gauge_fixed_lora_parameters": 9204,
+      "basis_file_sha256": "9768a170db50df79ba68c72b3fb92292a27ecfd239b220b4e26ea133e5f6e46a",
+      "receipt_sha256": "50c7439a9b4de0641bf71821f1b4f925926738a435356ac22a20fc5d2cde6d87",
+      "parent_gradient_receipt_sha256": "78ed8e491b41bc9c906b1421791a5e727456933c40601a9b6d771b44480c5188",
+      "layers": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.462664310838193e-08,
+          "worst_source_perp_cross_gram": 1.0595378727162874e-08
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 4.3508541658354716e-08,
+          "worst_source_perp_cross_gram": 9.931746522418017e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.855871406026722e-08,
+          "worst_source_perp_cross_gram": 8.77404940369253e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.7748414515850186e-08,
+          "worst_source_perp_cross_gram": 4.453669155690676e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.5215516119558856e-08,
+          "worst_source_perp_cross_gram": 6.293804033496997e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.6436434102651276e-08,
+          "worst_source_perp_cross_gram": 5.603868931391975e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.1160802998743122e-08,
+          "worst_source_perp_cross_gram": 7.430957613130396e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.9318032506987493e-08,
+          "worst_source_perp_cross_gram": 5.727568974656094e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.4554988820035817e-08,
+          "worst_source_perp_cross_gram": 7.381611863421789e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.237306235246649e-08,
+          "worst_source_perp_cross_gram": 4.640033749586658e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.769231694481732e-08,
+          "worst_source_perp_cross_gram": 5.887605375454186e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 2.30834615866371e-08,
+          "worst_source_perp_cross_gram": 4.6589530046381444e-09
+        }
+      ]
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "fit_cells": 61,
+      "fixed_parameters": 9204,
+      "residual_parameters": 9204,
+      "gauge_fixed_lora_parameters": 9204,
+      "basis_file_sha256": "0de0befa0fde16b6c8cb01531c48b8926a9356bc801d1df08406f45e8d13ec4a",
+      "receipt_sha256": "41abec0704ab1e6c4d7b88e42ea230a7a7698a15e59fdf8e5eb311111d77e99e",
+      "parent_gradient_receipt_sha256": "f5550f85d62e9a860a314499ab32b2660ff5c07ccfdc2c786769598494cfb6c8",
+      "layers": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.881792864923739e-08,
+          "worst_source_perp_cross_gram": 1.0922170542992937e-08
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.915876578552968e-08,
+          "worst_source_perp_cross_gram": 8.281184946112852e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 3.195193620797454e-08,
+          "worst_source_perp_cross_gram": 9.639056828755765e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.9059092082329698e-08,
+          "worst_source_perp_cross_gram": 5.0538468548966264e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.1870473432272775e-08,
+          "worst_source_perp_cross_gram": 6.160522826245685e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.378463032608579e-08,
+          "worst_source_perp_cross_gram": 4.239960826879496e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.8125260120859252e-08,
+          "worst_source_perp_cross_gram": 6.9745389168901495e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.3049609837167964e-08,
+          "worst_source_perp_cross_gram": 3.798700715096359e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.1334605082579117e-08,
+          "worst_source_perp_cross_gram": 6.5639558788355146e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.3280564425954822e-08,
+          "worst_source_perp_cross_gram": 4.270185195026643e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.8724917616452785e-08,
+          "worst_source_perp_cross_gram": 6.167349048125104e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 1.5204300707338803e-08,
+          "worst_source_perp_cross_gram": 5.420959941354608e-09
+        }
+      ]
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "fit_cells": 61,
+      "fixed_parameters": 9204,
+      "residual_parameters": 9204,
+      "gauge_fixed_lora_parameters": 9204,
+      "basis_file_sha256": "895a8ef06c9f266c92c06e1607f8ad1c33bd4c8f6e1208b7b77529ddd4c3c48e",
+      "receipt_sha256": "1fc92373343ab2d73915025a86dbf958beca52e902478271f1777206dbf1dda1",
+      "parent_gradient_receipt_sha256": "d7d3cf77f71ac115a6028f86a6c4265bf560e10b7b537a2c73db0748c50890a0",
+      "layers": [
+        {
+          "layer": "encoder.layers.0.self_attn.q_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.3517408515315594e-08,
+          "worst_source_perp_cross_gram": 1.1564343191383664e-08
+        },
+        {
+          "layer": "encoder.layers.0.self_attn.v_proj",
+          "fixed_rank": 25,
+          "perp_shape": [
+            21,
+            29
+          ],
+          "fixed_parameters": 625,
+          "core_plus_perp_parameters": 625,
+          "worst_orthonormality_error": 3.527713632323071e-08,
+          "worst_source_perp_cross_gram": 7.874646788808004e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 3.519840963139842e-08,
+          "worst_source_perp_cross_gram": 7.58107589204915e-09
+        },
+        {
+          "layer": "encoder.layers.1.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.2748930799943992e-08,
+          "worst_source_perp_cross_gram": 4.511473111756814e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.994951381867338e-08,
+          "worst_source_perp_cross_gram": 7.253711631349802e-09
+        },
+        {
+          "layer": "encoder.layers.2.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.4047867757938093e-08,
+          "worst_source_perp_cross_gram": 4.154056869321021e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 2.774363017099546e-08,
+          "worst_source_perp_cross_gram": 5.8157807736325395e-09
+        },
+        {
+          "layer": "encoder.layers.3.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.213194189553235e-08,
+          "worst_source_perp_cross_gram": 4.178416949246477e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.q_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.957025541621249e-08,
+          "worst_source_perp_cross_gram": 6.70281848774712e-09
+        },
+        {
+          "layer": "encoder.layers.4.self_attn.v_proj",
+          "fixed_rank": 28,
+          "perp_shape": [
+            24,
+            32
+          ],
+          "fixed_parameters": 784,
+          "core_plus_perp_parameters": 784,
+          "worst_orthonormality_error": 1.6773995525909413e-08,
+          "worst_source_perp_cross_gram": 4.226387982642077e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.q_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 2.280325794856708e-08,
+          "worst_source_perp_cross_gram": 4.432021256939311e-09
+        },
+        {
+          "layer": "encoder.layers.5.self_attn.v_proj",
+          "fixed_rank": 29,
+          "perp_shape": [
+            25,
+            33
+          ],
+          "fixed_parameters": 841,
+          "core_plus_perp_parameters": 841,
+          "worst_orthonormality_error": 2.3533751836168904e-08,
+          "worst_source_perp_cross_gram": 4.705976303087667e-09
+        }
+      ]
+    }
+  ]
+}

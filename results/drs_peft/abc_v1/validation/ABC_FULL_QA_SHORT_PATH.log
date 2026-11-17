@@ -1,0 +1,11 @@
+........................................................................ [ 26%]
+........................................................................ [ 53%]
+........................................................................ [ 80%]
+.....................................................                    [100%]
+============================== warnings summary ===============================
+tests/drs_peft/test_bridges.py::test_cuda_cpu_agreement_and_gradient[1-native]
+  D:\Anaconda\envs\tslib\Lib\site-packages\uni2ts\module\attention.py:296: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:555.)
+    out = F.scaled_dot_product_attention(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+269 passed, 1 warning in 86.47s (0:01:26)

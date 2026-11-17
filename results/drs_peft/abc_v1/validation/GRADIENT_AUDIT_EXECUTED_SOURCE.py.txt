@@ -1,0 +1,703 @@
+"""Independently replay completed C held-out-gradient decompositions in NumPy."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from collections import Counter
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import torch
+from threadpoolctl import threadpool_limits
+
+ROOT = Path(__file__).resolve().parents[4]
+PRIVATE = ROOT / "runtime/drs_peft/abc_v1/C"
+PUBLIC = ROOT / "results/drs_peft/abc_v1/C"
+PARENT = ROOT / "runtime/drs_peft/e123_v1"
+CONFIG = ROOT / "configs/drs_peft/abc_v1.json"
+FOLDS = ROOT / "configs/drs_peft/e123_folds_v1.json"
+BACKBONE = ROOT.parents[1] / ".cache_drs_peft/moirai_small"
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def sha(path):
+    with Path(path).open("rb") as handle:
+        return hashlib.file_digest(handle, "sha256").hexdigest()
+
+
+def verify_files(folder, receipt):
+    for record in receipt["files"]:
+        assert sha(folder / record["path"]) == record["sha256"], str(
+            folder / record["path"]
+        )
+
+
+def state_sha256(model):
+    """Match the stored complete tensor-state hash without a forward pass."""
+    digest = hashlib.sha256()
+    for name, tensor in model.state_dict().items():
+        value = tensor.detach().cpu().contiguous()
+        for payload in (
+            name.encode(),
+            str(value.dtype).encode(),
+            str(tuple(value.shape)).encode(),
+            value.reshape(-1).view(torch.uint8).numpy().tobytes(),
+        ):
+            digest.update(len(payload).to_bytes(8, "big"))
+            digest.update(payload)
+    return digest.hexdigest()
+
+
+def dense_blocks(gradient, u, v):
+    """Apply the independently materialized left and right projectors."""
+    pu, pv = u @ u.T, v @ v.T
+    iu = np.eye(len(pu)) - pu
+    iv = np.eye(len(pv)) - pv
+    return {
+        "fixed": pu @ gradient @ pv,
+        "left_only": pu @ gradient @ iv,
+        "right_only": iu @ gradient @ pv,
+        "double_perp": iu @ gradient @ iv,
+        "residual": gradient - pu @ gradient @ pv,
+    }
+
+
+def cosine(left, right):
+    denominator = np.linalg.norm(left) * np.linalg.norm(right)
+    return float(np.vdot(left, right).real / denominator) if denominator else None
+
+
+def source_compatible_cosine(left, right):
+    """Preserve the frozen operator's float64/float32 norm reductions."""
+    denominator = np.linalg.norm(left) * np.linalg.norm(right)
+    return float(np.sum(left * right) / denominator) if denominator else None
+
+
+def value_state(value):
+    if value is None or pd.isna(value):
+        return "none"
+    return "finite" if np.isfinite(value) else "nonfinite"
+
+
+def scalar_fields(gradient, blocks, fit_gradient, fit_blocks):
+    total = float(np.vdot(gradient, gradient).real)
+    energies = {
+        name: float(np.vdot(value, value).real) for name, value in blocks.items()
+    }
+    return {
+        "gradient_norm": float(np.sqrt(total)),
+        **{
+            name + "_energy_ratio": value / total if total else None
+            for name, value in energies.items()
+        },
+        "residual_to_fit_warmup_residual_cosine": cosine(
+            blocks["residual"], fit_blocks["residual"]
+        ),
+        "full_to_fit_warmup_mean_cosine": cosine(gradient, fit_gradient),
+        "block_energy_reconstruction_error": abs(
+            sum(
+                energies[name]
+                for name in ("fixed", "left_only", "right_only", "double_perp")
+            )
+            - total
+        )
+        / total
+        if total
+        else 0.0,
+    }
+
+
+def self_test():
+    u, v = np.eye(4)[:, :1], np.eye(4)[:, :1]
+    g = np.zeros((4, 4))
+    g[0, 0], g[0, 1], g[1, 0], g[1, 1] = 1, 2, 3, 4
+    parts = dense_blocks(g, u, v)
+    np.testing.assert_allclose(
+        sum(
+            parts[name] for name in ("fixed", "left_only", "right_only", "double_perp")
+        ),
+        g,
+        atol=1e-14,
+    )
+    np.testing.assert_allclose(
+        parts["left_only"] + parts["right_only"] + parts["double_perp"],
+        parts["residual"],
+        atol=1e-14,
+    )
+    fields = scalar_fields(g, parts, g, parts)
+    for name, numerator in (
+        ("fixed", 1),
+        ("left_only", 4),
+        ("right_only", 9),
+        ("double_perp", 16),
+        ("residual", 29),
+    ):
+        np.testing.assert_allclose(
+            fields[name + "_energy_ratio"], numerator / 30, atol=1e-14
+        )
+    assert fields["block_energy_reconstruction_error"] == 0
+    zero = np.zeros((4, 4))
+    empty = scalar_fields(
+        zero, dense_blocks(zero, u, v), zero, dense_blocks(zero, u, v)
+    )
+    assert empty["residual_energy_ratio"] is None
+    assert empty["gradient_norm"] == empty["block_energy_reconstruction_error"] == 0
+    rng = np.random.default_rng(20261117)
+    right = rng.normal(size=(384, 384)).astype(np.float32)
+    left = rng.normal(size=(384, 384)).astype(np.float64)
+    expected_mixed = float(
+        np.sum(left * right) / (np.linalg.norm(left) * np.linalg.norm(right))
+    )
+    actual_mixed = source_compatible_cosine(left, right)
+    assert np.float64(actual_mixed).tobytes() == np.float64(expected_mixed).tobytes()
+    double = cosine(left, right.astype(np.float64))
+    assert abs(actual_mixed - double) > 1e-12
+    assert source_compatible_cosine(np.zeros_like(left), right) is None
+    print(
+        json.dumps(
+            {
+                "status": "PASSED_SYNTHETIC_PROJECTOR_SELF_TEST",
+                "real_heldout_files_read": 0,
+                "optimizer_updates": 0,
+                "autograd_evaluations": 0,
+                "mixed_dtype_cosine_replay_bitwise_equal": True,
+                "mixed_vs_float64_cosine_difference": abs(actual_mixed - double),
+            }
+        )
+    )
+
+
+def verify_barrier(config, protocol):
+    barrier_path = PUBLIC / "OUTER_EVALUATION_OPENED.json"
+    barrier = read(barrier_path)
+    plan = read(PUBLIC / "C_PLAN.json")
+    assert barrier["plan_sha256"] == plan["plan_sha256"]
+    assert barrier["final_target_query_labels_used"] == 0
+    assert len(barrier["source_units"]) == len(plan["units"]) == 45
+    barrier_units = {
+        json.dumps(value["unit"], sort_keys=True): value
+        for value in barrier["source_units"]
+    }
+    assert len(barrier_units) == 45
+    for fold in protocol["folds"]:
+        for seed in config["training_seeds"]:
+            for arm in config["C"]["arms"]:
+                unit = {"fold_id": fold["fold_id"], "seed": seed, "arm": arm}
+                folder = PRIVATE / f"fold{fold['fold_id']}" / f"seed{seed}" / arm
+                receipt = read(folder / "SOURCE_DEVELOPMENT_COMPLETE.json")
+                spec = read(folder / "ABC_C_UNIT_SPEC.json")
+                assert receipt["status"] == "SOURCE_DEVELOPMENT_COMPLETE"
+                assert receipt["target_query_labels_used"] == 0
+                assert spec["unit"] == unit
+                assert spec["fit_ids"] == fold["fit_ids"]
+                assert spec["inner_validation_ids"] == fold["inner_validation_ids"]
+                assert spec["outer_ids"] == fold["outer_test_ids"]
+                assert spec["outer_labels_used_for_training_or_selection"] == 0
+                assert receipt["selected_checkpoint_sha256"] == sha(
+                    folder / "CHECKPOINT_SELECTED.pt"
+                )
+                assert (
+                    barrier_units[json.dumps(unit, sort_keys=True)][
+                        "selected_checkpoint_sha256"
+                    ]
+                    == receipt["selected_checkpoint_sha256"]
+                )
+    return sha(barrier_path)
+
+
+def static_state_identity(fold, seed, bundle):
+    """Reconstruct the shared C0 checkpoint on CPU without any input arrays."""
+    from scripts.drs_peft.train import load_selected, make_model
+
+    checkpoint_path = (
+        PARENT
+        / f"fold{fold['fold_id']}"
+        / f"seed{seed}"
+        / "static/grad_core/CHECKPOINT_SELECTED.pt"
+    )
+    receipt = read(checkpoint_path.parent / "SOURCE_DEVELOPMENT_COMPLETE.json")
+    assert sha(checkpoint_path) == receipt["selected_checkpoint_sha256"]
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+    assert checkpoint["identity"]["training_ids"] == fold["fit_ids"]
+    assert checkpoint["identity"]["validation_ids"] == fold["inner_validation_ids"]
+    assert checkpoint["identity"]["seed"] == seed
+    policy_dimension = int(checkpoint["model"]["bridge.policy_scale"].numel())
+    with torch.no_grad():
+        model = make_model(
+            BACKBONE,
+            policy_dimension,
+            "native_multivariate",
+            "grad_core",
+            seed,
+            rank=4,
+            bases=bundle["bases"],
+            alpha=4,
+        )
+        load_selected(model, checkpoint["model"])
+        identity = state_sha256(model)
+    del model, checkpoint
+    return identity, sha(checkpoint_path)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--self-test", action="store_true")
+    args = parser.parse_args()
+    if args.self_test:
+        self_test()
+        return
+    torch.set_num_threads(2)
+    config, protocol = read(CONFIG), read(FOLDS)
+    barrier_sha = verify_barrier(config, protocol)
+    source_pool = set(protocol["source_ids"])
+    assert len(source_pool) == 115
+    assert not source_pool.intersection(protocol["sealed_target_ids"])
+    numeric_max_errors = Counter()
+    seen_cells = Counter()
+    seen_rows = set()
+    units = []
+    zero_gradients = 0
+    raw_arrays = 0
+    maximum_reconstruction = 0.0
+    maximum_residual_reconstruction = 0.0
+    maximum_energy_closure = 0.0
+    precision_rows = []
+    precision_boundaries = Counter()
+    precision_max_absolute = 0.0
+    precision_max_relative = 0.0
+    precision_max_source_replay = 0.0
+    precision_relative_undefined = 0
+    with threadpool_limits(limits=2):
+        for fold in protocol["folds"]:
+            for seed in config["training_seeds"]:
+                relative = (
+                    Path("heldout_gradients") / f"fold{fold['fold_id']}" / f"seed{seed}"
+                )
+                folder, published = PRIVATE / relative, PUBLIC / relative
+                receipt = read(folder / "HELDOUT_GRADIENT_COMPLETE.json")
+                assert (folder / "HELDOUT_GRADIENT_COMPLETE.json").read_bytes() == (
+                    published / "HELDOUT_GRADIENT_COMPLETE.json"
+                ).read_bytes()
+                assert (
+                    receipt["status"]
+                    == "COMPLETE_POST_TRAIN_HELDOUT_GRADIENT_DIAGNOSTIC"
+                )
+                assert receipt["fold_id"] == fold["fold_id"] and receipt["seed"] == seed
+                assert receipt["outer_ids"] == fold["outer_test_ids"]
+                assert (
+                    receipt["optimizer_updates"]
+                    == receipt["final_target_query_labels_used"]
+                    == receipt["heldout_gradients_used_for_directions_or_selection"]
+                    == 0
+                )
+                assert receipt["new_outer_gradient_evaluations"] == len(
+                    fold["outer_test_ids"]
+                )
+                assert receipt["endpoint_replay_evaluations"] == 2
+                assert receipt["registration_sha256"] == sha(CONFIG)
+                assert receipt["implementation_sha256"] == sha(
+                    ROOT / "scripts/drs_peft/run_abc_c.py"
+                )
+                assert (
+                    receipt["diagnostic_checkpoint"] == "shared_parent_fold_static_C0"
+                )
+                assert (
+                    receipt["fit_reference_checkpoint"]
+                    == "parent_fold_warmup_at_which_U4_V4_were_constructed"
+                )
+                verify_files(folder, receipt)
+                verify_files(published, receipt)
+                gradient = read(folder / "GRADIENT_CACHE_MANIFEST.json")
+                identity = gradient["identity"]
+                assert gradient["status"] == "COMPLETE_SOURCE_GRADIENT_DIAGNOSTIC"
+                assert gradient["optimizer_updates"] == 0
+                assert identity["role"] == "ABC_C_OUTER_DIAGNOSTIC"
+                assert identity["variant"] == "nominal" and identity["seed"] == seed
+                assert (
+                    identity["ids"]
+                    == identity["outcome_donors"]
+                    == fold["outer_test_ids"]
+                )
+                cache = Path(gradient["folder"])
+                assert cache.resolve().is_relative_to((folder / "raw").resolve())
+                assert read(cache / "COMPLETE.json") == gradient
+                verify_files(cache, gradient)
+                parent_basis_path = (
+                    PARENT / f"fold{fold['fold_id']}" / f"seed{seed}" / "bases/BASES.pt"
+                )
+                parent_basis_receipt = read(
+                    parent_basis_path.parent / "BASES_COMPLETE.json"
+                )
+                verify_files(parent_basis_path.parent, parent_basis_receipt)
+                bundle = torch.load(
+                    parent_basis_path, map_location="cpu", weights_only=False
+                )
+                assert bundle["fit_ids"] == fold["fit_ids"]
+                state_hash, checkpoint_hash = static_state_identity(fold, seed, bundle)
+                assert (
+                    identity["model_sha256"]
+                    == receipt["checkpoint_state_sha256"]
+                    == state_hash
+                )
+                replay = read(folder / "GRADIENT_REPLAY.json")
+                assert replay["status"] == "PASSED"
+                assert (
+                    replay["compared_layer_gradients"] == 24
+                    and replay["replay_physical_cells"] == 2
+                )
+                assert len(replay["records"]) == 24 and all(
+                    row["passed"] for row in replay["records"]
+                )
+                assert {row["cell_uid"] for row in replay["records"]} == {
+                    fold["outer_test_ids"][0],
+                    fold["outer_test_ids"][-1],
+                }
+                assert all(
+                    row["role"] == "ABC_C_OUTER_DIAGNOSTIC"
+                    and row["variant"] == "nominal"
+                    for row in replay["records"]
+                )
+                base_folder = (
+                    PRIVATE / f"fold{fold['fold_id']}" / f"seed{seed}" / "bases"
+                )
+                base_receipt = read(base_folder / "BASES_COMPLETE.json")
+                verify_files(base_folder, base_receipt)
+                assert base_receipt["identity"]["fit_ids"] == fold["fit_ids"]
+                means = np.load(base_folder / "FIT_GRADIENT_MEANS.npz")
+                table = pd.read_csv(folder / "HELDOUT_GRADIENT_BLOCKS.csv")
+                assert len(table) == len(fold["outer_test_ids"]) * 12
+                assert not table.duplicated(["cell_uid", "layer"]).any()
+                assert set(table.cell_uid) == set(fold["outer_test_ids"])
+                assert (
+                    table.fold_id.eq(fold["fold_id"]).all()
+                    and table.seed.eq(seed).all()
+                )
+                indexed = table.set_index(["cell_uid", "layer"])
+                assert (
+                    set(gradient["layer_files"])
+                    == set(bundle["bases"])
+                    == set(table.layer)
+                )
+                assert len(gradient["layer_files"]) == 12
+                raw_arrays += len(gradient["layer_files"])
+                for name, record in gradient["layer_files"].items():
+                    values = np.load(cache / record["path"], mmap_mode="r")
+                    assert values.shape == (len(fold["outer_test_ids"]), 384, 384)
+                    assert values.dtype == np.float32
+                    u, v = [tensor.double().numpy() for tensor in bundle["bases"][name]]
+                    original_fit_gradient = means[name]
+                    fit_gradient = np.asarray(original_fit_gradient, dtype=np.float64)
+                    fit_parts = dense_blocks(fit_gradient, u, v)
+                    for index, uid in enumerate(fold["outer_test_ids"]):
+                        assert uid in source_pool
+                        row_key = (fold["fold_id"], seed, uid, name)
+                        assert row_key not in seen_rows
+                        seen_rows.add(row_key)
+                        g = np.asarray(values[index], dtype=np.float64)
+                        assert np.isfinite(g).all()
+                        parts = dense_blocks(g, u, v)
+                        fields = scalar_fields(g, parts, fit_gradient, fit_parts)
+                        saved = indexed.loc[(uid, name)]
+                        full_cosine_field = "full_to_fit_warmup_mean_cosine"
+                        independent_double = fields[full_cosine_field]
+                        mixed = source_compatible_cosine(g, original_fit_gradient)
+                        stored = saved[full_cosine_field]
+                        mixed_state, double_state, stored_state = (
+                            value_state(mixed),
+                            value_state(independent_double),
+                            value_state(stored),
+                        )
+                        assert mixed_state == stored_state, (
+                            row_key,
+                            "source_cosine_boundary",
+                            mixed_state,
+                            stored_state,
+                        )
+                        precision_boundaries["mixed_" + mixed_state] += 1
+                        precision_boundaries["float64_" + double_state] += 1
+                        precision_boundaries["stored_" + stored_state] += 1
+                        boundary_difference = double_state != stored_state
+                        precision_boundaries[
+                            "float64_vs_stored_boundary_differences"
+                        ] += boundary_difference
+                        source_difference = (
+                            abs(mixed - float(stored))
+                            if mixed_state == "finite"
+                            else None
+                        )
+                        if source_difference is not None:
+                            assert source_difference <= 1e-12, (
+                                row_key,
+                                "source_cosine_replay",
+                                mixed,
+                                stored,
+                            )
+                            precision_max_source_replay = max(
+                                precision_max_source_replay, source_difference
+                            )
+                        absolute_difference = (
+                            abs(independent_double - float(stored))
+                            if double_state == stored_state == "finite"
+                            else None
+                        )
+                        relative_difference = (
+                            absolute_difference / abs(independent_double)
+                            if absolute_difference is not None
+                            and independent_double != 0
+                            else None
+                        )
+                        precision_relative_undefined += relative_difference is None
+                        if absolute_difference is not None:
+                            precision_max_absolute = max(
+                                precision_max_absolute, absolute_difference
+                            )
+                        if relative_difference is not None:
+                            precision_max_relative = max(
+                                precision_max_relative, relative_difference
+                            )
+                        precision_rows.append(
+                            {
+                                "fold_id": fold["fold_id"],
+                                "seed": seed,
+                                "cell_uid": uid,
+                                "layer": name,
+                                "stored_mixed_dtype_cosine": float(stored)
+                                if stored_state == "finite"
+                                else None,
+                                "source_compatible_mixed_dtype_cosine": mixed,
+                                "independent_float64_cosine": independent_double,
+                                "source_replay_absolute_error": source_difference,
+                                "float64_vs_stored_absolute_difference": absolute_difference,
+                                "float64_vs_stored_relative_difference": relative_difference,
+                                "original_fit_reference_dtype": str(
+                                    original_fit_gradient.dtype
+                                ),
+                                "fit_reference_norm_float32": float(
+                                    np.linalg.norm(original_fit_gradient)
+                                ),
+                                "fit_reference_norm_float64": float(
+                                    np.linalg.norm(fit_gradient)
+                                ),
+                                "mixed_dtype_state": mixed_state,
+                                "float64_state": double_state,
+                                "stored_state": stored_state,
+                                "float64_vs_stored_boundary_difference": boundary_difference,
+                            }
+                        )
+                        fields[full_cosine_field] = mixed
+                        assert (
+                            str(saved.protocol_uid)
+                            == protocol["source_qualification"][uid]["protocol_uid"]
+                        )
+                        for field, actual in fields.items():
+                            expected = saved[field]
+                            if actual is None:
+                                assert pd.isna(expected), (row_key, field)
+                            else:
+                                assert np.isfinite(expected)
+                                difference = abs(actual - float(expected))
+                                numeric_max_errors[field] = max(
+                                    numeric_max_errors[field], difference
+                                )
+                                assert np.isclose(
+                                    actual, expected, atol=1e-10, rtol=1e-8
+                                ), (row_key, field, actual, expected)
+                        denominator = max(
+                            float(np.linalg.norm(g)), np.finfo(float).tiny
+                        )
+                        reconstruction = sum(
+                            parts[name]
+                            for name in (
+                                "fixed",
+                                "left_only",
+                                "right_only",
+                                "double_perp",
+                            )
+                        )
+                        residual_reconstruction = sum(
+                            parts[name]
+                            for name in ("left_only", "right_only", "double_perp")
+                        )
+                        relative_error = float(
+                            np.linalg.norm(reconstruction - g) / denominator
+                        )
+                        residual_error = float(
+                            np.linalg.norm(residual_reconstruction - parts["residual"])
+                            / denominator
+                        )
+                        assert relative_error < 1e-12 and residual_error < 1e-12
+                        assert fields["block_energy_reconstruction_error"] < 1e-5
+                        maximum_reconstruction = max(
+                            maximum_reconstruction, relative_error
+                        )
+                        maximum_residual_reconstruction = max(
+                            maximum_residual_reconstruction, residual_error
+                        )
+                        maximum_energy_closure = max(
+                            maximum_energy_closure,
+                            fields["block_energy_reconstruction_error"],
+                        )
+                        zero_gradients += fields["gradient_norm"] == 0
+                for uid in fold["outer_test_ids"]:
+                    seen_cells[(seed, uid)] += 1
+                units.append(
+                    {
+                        "fold_id": fold["fold_id"],
+                        "seed": seed,
+                        "physical_cells": len(fold["outer_test_ids"]),
+                        "matrix_records": len(table),
+                        "source_static_checkpoint_sha256": checkpoint_hash,
+                        "reconstructed_static_model_state_sha256": state_hash,
+                        "receipt_path": (published / "HELDOUT_GRADIENT_COMPLETE.json")
+                        .relative_to(ROOT)
+                        .as_posix(),
+                        "receipt_sha256": sha(
+                            published / "HELDOUT_GRADIENT_COMPLETE.json"
+                        ),
+                        "gradient_cache_manifest_sha256": sha(
+                            folder / "GRADIENT_CACHE_MANIFEST.json"
+                        ),
+                        "raw_cache_complete_sha256": sha(cache / "COMPLETE.json"),
+                        "raw_cache_files": gradient["files"],
+                        "cell_layer_csv_sha256": sha(
+                            folder / "HELDOUT_GRADIENT_BLOCKS.csv"
+                        ),
+                        "fit_gradient_means_sha256": sha(
+                            base_folder / "FIT_GRADIENT_MEANS.npz"
+                        ),
+                    }
+                )
+                print(
+                    json.dumps(
+                        {
+                            "event": "INDEPENDENT_C_GRADIENT_UNIT_VERIFIED",
+                            "fold_id": fold["fold_id"],
+                            "seed": seed,
+                            "matrix_records": len(table),
+                        }
+                    ),
+                    flush=True,
+                )
+    assert len(units) == 9 and raw_arrays == 108
+    assert len(seen_rows) == 4140
+    assert len(seen_cells) == 345 and all(count == 1 for count in seen_cells.values())
+    assert {uid for _, uid in seen_cells} == source_pool
+    for seed in config["training_seeds"]:
+        assert {
+            uid for actual_seed, uid in seen_cells if actual_seed == seed
+        } == source_pool
+    precision_path = PUBLIC / "PRECISION_AUDIT.csv"
+    precision_frame = pd.DataFrame(precision_rows)
+    assert len(precision_frame) == 4140
+    precision_payload = precision_frame.to_csv(index=False, lineterminator="\n").encode(
+        "utf-8"
+    )
+    if precision_path.exists():
+        assert precision_path.read_bytes() == precision_payload
+    else:
+        precision_path.write_bytes(precision_payload)
+    precision = {
+        "status": "PASSED_SOURCE_COMPATIBLE_REPLAY_AND_FLOAT64_DIFFERENCE_AUDIT",
+        "recomputed_rows": len(precision_rows),
+        "source_compatible_replay_absolute_tolerance": 1e-12,
+        "maximum_source_compatible_replay_absolute_error": precision_max_source_replay,
+        "maximum_independent_float64_vs_stored_absolute_difference": precision_max_absolute,
+        "maximum_independent_float64_vs_stored_relative_difference": precision_max_relative,
+        "boundary_counts": dict(precision_boundaries),
+        "relative_difference_undefined_rows": precision_relative_undefined,
+        "interpretation_review_absolute_difference_threshold": 1e-4,
+        "precision_review_required": bool(
+            precision_boundaries["float64_vs_stored_boundary_differences"]
+            or precision_max_absolute > 1e-4
+        ),
+        "precision_csv_path": precision_path.relative_to(ROOT).as_posix(),
+        "precision_csv_sha256": sha(precision_path),
+        "frozen_source_CSV_or_operator_modified": False,
+        "initial_failed_audit_script_sha256": sha(
+            PRIVATE / "audit_heldout_gradients_initial_b5256e45.py"
+        ),
+        "initial_failed_audit_log_sha256": sha(
+            ROOT
+            / "runtime/drs_peft/abc_v1/logs/C_HELDOUT_GRADIENT_AUDIT_INITIAL_FAILED.log"
+        ),
+        "audit_amendment": "separately_verify_frozen_mixed_dtype_cosine_and_independent_float64_reference_while_preserving_all_formal_values",
+    }
+    if precision["precision_review_required"]:
+        print(
+            json.dumps(
+                {"status": "PRECISION_INTERPRETATION_REVIEW_REQUIRED", **precision}
+            ),
+            flush=True,
+        )
+        raise RuntimeError(
+            "Independent cosine precision differences require interpretation review"
+        )
+    audit = {
+        "status": "PASSED_INDEPENDENT_NUMPY_HELDOUT_GRADIENT_AUDIT",
+        "gradient_units": len(units),
+        "raw_gradient_arrays": raw_arrays,
+        "independently_recomputed_cell_layer_records": len(seen_rows),
+        "physical_cell_seed_records": len(seen_cells),
+        "unique_physical_cells": len(source_pool),
+        "source_gradient_evaluations_authenticated": 345,
+        "source_endpoint_replay_evaluations_authenticated": 18,
+        "new_gradient_evaluations": 0,
+        "new_optimizer_updates": 0,
+        "new_training_fits": 0,
+        "future_label_arrays_loaded": 0,
+        "final_target_query_labels_used": 0,
+        "zero_gradient_cell_layer_records": zero_gradients,
+        "all_45_C_training_units_authenticated_before_diagnostic": True,
+        "outer_barrier_sha256": barrier_sha,
+        "raw_gradient_state_verified_at_shared_static_C0": True,
+        "source_checkpoint_reconstructions_without_forward_or_backward": 9,
+        "max_relative_full_block_reconstruction_error": maximum_reconstruction,
+        "max_relative_residual_block_reconstruction_error": maximum_residual_reconstruction,
+        "max_block_energy_closure_error": maximum_energy_closure,
+        "maximum_CSV_field_absolute_errors": dict(numeric_max_errors),
+        "full_cosine_precision_audit": precision,
+        "registration_sha256": sha(CONFIG),
+        "protocol_file_sha256": sha(FOLDS),
+        "audit_script_path": Path(__file__).relative_to(ROOT).as_posix(),
+        "audit_script_sha256": sha(__file__),
+        "operator_source_hashes": [
+            {"path": name, "sha256": sha(ROOT / name)}
+            for name in (
+                "scripts/drs_peft/run_abc_c.py",
+                "scripts/drs_peft/gradient_audit.py",
+                "models/drs_peft/abc_subspace.py",
+                "scripts/drs_peft/train.py",
+            )
+        ],
+        "projection_definition": "fixed=P_U_G_P_V;residual=G-fixed;cross_blocks_and_double_complement_separately_recomputed",
+        "fit_reference_scope": "fit_gradient_mean_at_parent_warmup;heldout_gradient_at_shared_static_C0",
+        "heldout_gradients_used_for_new_directions_training_or_selection": 0,
+        "units": units,
+    }
+    output = PUBLIC / "INDEPENDENT_HELDOUT_GRADIENT_AUDIT.json"
+    payload = (
+        json.dumps(audit, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
+    ).encode("utf-8")
+    if output.exists():
+        assert output.read_bytes() == payload
+    else:
+        output.write_bytes(payload)
+    print(
+        json.dumps(
+            {
+                key: value
+                for key, value in audit.items()
+                if key not in ("units", "operator_source_hashes")
+            }
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()
