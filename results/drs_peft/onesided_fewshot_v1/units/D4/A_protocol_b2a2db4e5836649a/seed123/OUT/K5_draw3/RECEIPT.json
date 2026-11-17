@@ -1,0 +1,132 @@
+{
+  "stage": "D4",
+  "task_id": "A_protocol_b2a2db4e5836649a",
+  "domain": "MATR",
+  "fold_id": "final",
+  "seed": 123,
+  "method": "OUT",
+  "K": 5,
+  "draw": 3,
+  "support_ids": [
+    "MATR_b3c12",
+    "MATR_b3c14",
+    "MATR_b3c27",
+    "MATR_b3c36",
+    "MATR_b3c41"
+  ],
+  "query_ids": [
+    "MATR_b3c19",
+    "MATR_b3c5"
+  ],
+  "hyperparameters": {
+    "lambda_multiplier": 1.0,
+    "eta": 0.25,
+    "epsilon": 1e-12
+  },
+  "source_checkpoint_sha256": "412843a1558f43f9036479e8cffb6bb62652c662c1f3031c4ad249ef97cc0093",
+  "dictionary_sha256": "a17ac55f8de3b76355eca48273b76c4286649ec85ab0e1e82e3b21c5a8cb21f0",
+  "execution_sha256": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1",
+  "engine_sha256": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+  "status": "SCORED",
+  "adaptation_id": "427cc06541bfa4e80b0d817dd1265bcf5a5bd58a1200f2d7cf8df06179046c99",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "prediction_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/427cc06541bfa4e80b0d817dd1265bcf5a5bd58a1200f2d7cf8df06179046c99/PREDICTIONS.npz",
+  "prediction_sha256": "4c7e90782c247d9f340a7c1c80c6f2ee5b43a6f39006ec2828b49abf1a7c605e",
+  "state_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/427cc06541bfa4e80b0d817dd1265bcf5a5bd58a1200f2d7cf8df06179046c99/STATE.pt",
+  "state_sha256": "977acfbbf30680598af3816211e834372496a520efe9ca160f66b782912f3e8a",
+  "cache_reused": false,
+  "details": {
+    "gram_mean_diagonal": 0.032434750080502034,
+    "lambda_actual": 0.032434750080502034,
+    "lambda_multiplier": 1.0,
+    "epsilon": 1e-12,
+    "eta": 0.25,
+    "physical_support_cells": 5,
+    "observations_per_cell": [
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "dimension": 16,
+    "solver": "FP64_Cholesky",
+    "adapted_coordinate_norm": 0.00903790953303211,
+    "elapsed_seconds": 0.3899999999557622,
+    "support_ids": [
+      "MATR_b3c12",
+      "MATR_b3c14",
+      "MATR_b3c27",
+      "MATR_b3c36",
+      "MATR_b3c41"
+    ],
+    "support_gap_MAE": 5.4422192621462897e-05,
+    "parameter_report": {
+      "bridge": 53248,
+      "bridge_trainable": 0,
+      "backbone_total": 13827528,
+      "backbone_current_trainable": 16,
+      "total_current_trainable": 16,
+      "head": 6337,
+      "head_trainable": 0,
+      "total": 13887321,
+      "trainable": 16,
+      "input_scope": "VIQ+earlySOH / no-policy",
+      "policy_values_forced_zero": true,
+      "policy_masks_forced_zero": true,
+      "early_SOH_anchor_retained": true,
+      "native_interface": "twelve_statistics_per_cycle",
+      "policy_dimension": 0,
+      "adaptation_method": "OUT",
+      "adaptation_parameters": 16,
+      "frozen_dictionary_bytes": 1253376
+    },
+    "new_optimizer_updates": 0,
+    "support_observations_per_cell": [
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "support_mae_before": 0.011597347352653742,
+    "support_mae_after": 0.011184259946458042,
+    "support_mse_before": 0.0004289339209757548,
+    "support_mse_after": 0.0003948632517055808,
+    "adaptation_scale": 1.0,
+    "evaluation": "actual_nonlinear_cell_mean",
+    "query_diagnostic_cells": [
+      "MATR_b3c19"
+    ],
+    "query_diagnostic_scope": "first_fixed_Query_cell_full_4900_grid_per_adaptation",
+    "query_gap_MAE": 0.001435191640140591
+  },
+  "serialized_replay_and_merge": {
+    "uid": "MATR_b3c19",
+    "serialized_state_replay_maximum_difference": 0.0,
+    "merged_prediction_maximum_difference": 3.5762786865234375e-07,
+    "merge_absolute_tolerance": 1e-06,
+    "source_checkpoint_sha256": "412843a1558f43f9036479e8cffb6bb62652c662c1f3031c4ad249ef97cc0093",
+    "serialized_adaptation_state_bytes": 5152
+  },
+  "elapsed_seconds": 1.6127158000017516,
+  "new_execution_counters": {
+    "jacobian_builds": 0,
+    "jacobian_cache_hits": 6,
+    "geometry_solves": 1,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 0,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 0,
+    "adapted_cell_forwards": 2
+  },
+  "peak_gpu_allocated_bytes": 243213312,
+  "peak_gpu_reserved_bytes": 281018368,
+  "final_target_query_labels_used_for_selection_or_adaptation": 0,
+  "source_commit": "c04bea3a8313b17df3676c3d3b9c00623bfd2f75",
+  "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "cell_metrics_sha256": "30b7e506116ee77d6cc0d6b193c714bec43f2937a0509456dc4322c80d8dce2b",
+  "query_cells": 2,
+  "metrics_rows": 10
+}

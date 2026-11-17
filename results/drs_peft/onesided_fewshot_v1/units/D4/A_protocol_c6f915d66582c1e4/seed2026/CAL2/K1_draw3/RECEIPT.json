@@ -1,0 +1,117 @@
+{
+  "stage": "D4",
+  "task_id": "A_protocol_c6f915d66582c1e4",
+  "domain": "MATR",
+  "fold_id": "final",
+  "seed": 2026,
+  "method": "CAL2",
+  "K": 1,
+  "draw": 3,
+  "support_ids": [
+    "MATR_b1c7"
+  ],
+  "query_ids": [
+    "MATR_b3c7",
+    "MATR_b2c26"
+  ],
+  "hyperparameters": {
+    "lambda_multiplier": 1.0,
+    "eta": 0.25,
+    "epsilon": 1e-12
+  },
+  "source_checkpoint_sha256": "7c944ba4b9a936efc27e27206841b3b3a15915428ec5bd1f0b60b2a39d10ab92",
+  "dictionary_sha256": "eb8413e7a867c7a874974fc89e1cc5f3489e32b9e914a5aefaac3edd035e36d7",
+  "execution_sha256": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1",
+  "engine_sha256": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+  "status": "SCORED",
+  "adaptation_id": "145802d4771e8fae0f23c827d4adfdba8d773e186cc6b28e56804ef4496e8824",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "prediction_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/145802d4771e8fae0f23c827d4adfdba8d773e186cc6b28e56804ef4496e8824/PREDICTIONS.npz",
+  "prediction_sha256": "bb1b9cab905f5e1f3a4db6f3eba749c14f9604fe4d59e916e14ce648b8e48c9b",
+  "state_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/145802d4771e8fae0f23c827d4adfdba8d773e186cc6b28e56804ef4496e8824/STATE.pt",
+  "state_sha256": "1b08c5f86b147516f1049afa70a140cf1123146b7b2a43a8cb4f794279834f27",
+  "cache_reused": false,
+  "details": {
+    "gram_mean_diagonal": 0.10042645709380527,
+    "lambda_actual": 0.10042645709380527,
+    "lambda_multiplier": 1.0,
+    "epsilon": 1e-12,
+    "eta": 0.25,
+    "physical_support_cells": 1,
+    "observations_per_cell": [
+      512
+    ],
+    "dimension": 2,
+    "solver": "FP64_Cholesky",
+    "adapted_coordinate_norm": 0.003424782893657661,
+    "elapsed_seconds": 0.14000000001396984,
+    "support_ids": [
+      "MATR_b1c7"
+    ],
+    "support_gap_MAE": 1.9292060456956028e-08,
+    "parameter_report": {
+      "bridge": 53248,
+      "bridge_trainable": 0,
+      "backbone_total": 13827528,
+      "backbone_current_trainable": 0,
+      "total_current_trainable": 0,
+      "head": 6337,
+      "head_trainable": 0,
+      "total": 13887307,
+      "trainable": 2,
+      "input_scope": "VIQ+earlySOH / no-policy",
+      "policy_values_forced_zero": true,
+      "policy_masks_forced_zero": true,
+      "early_SOH_anchor_retained": true,
+      "native_interface": "twelve_statistics_per_cycle",
+      "policy_dimension": 0,
+      "adaptation_method": "CAL2",
+      "adaptation_parameters": 2,
+      "gamma_initial": 1.0,
+      "beta_initial": 0.0
+    },
+    "new_optimizer_updates": 0,
+    "support_observations_per_cell": [
+      512
+    ],
+    "support_mae_before": 0.010442793020047247,
+    "support_mae_after": 0.010527289705350995,
+    "support_mse_before": 0.0003807554952952527,
+    "support_mse_after": 0.000355141578288129,
+    "adaptation_scale": 1.0,
+    "evaluation": "actual_nonlinear_cell_mean",
+    "query_diagnostic_cells": [
+      "MATR_b3c7"
+    ],
+    "query_diagnostic_scope": "first_fixed_Query_cell_full_4900_grid_per_adaptation",
+    "query_gap_MAE": 8.950060056553078e-08
+  },
+  "serialized_replay_and_merge": {
+    "uid": "MATR_b3c7",
+    "serialized_state_replay_maximum_difference": 0.0,
+    "merged_prediction_maximum_difference": null,
+    "merge_absolute_tolerance": 1e-06,
+    "source_checkpoint_sha256": "7c944ba4b9a936efc27e27206841b3b3a15915428ec5bd1f0b60b2a39d10ab92",
+    "serialized_adaptation_state_bytes": 1696
+  },
+  "elapsed_seconds": 0.7270094999694265,
+  "new_execution_counters": {
+    "jacobian_builds": 1,
+    "jacobian_cache_hits": 1,
+    "geometry_solves": 1,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 0,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 0,
+    "adapted_cell_forwards": 2
+  },
+  "peak_gpu_allocated_bytes": 184392704,
+  "peak_gpu_reserved_bytes": 207618048,
+  "final_target_query_labels_used_for_selection_or_adaptation": 0,
+  "source_commit": "c04bea3a8313b17df3676c3d3b9c00623bfd2f75",
+  "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "cell_metrics_sha256": "bef16ca44112f219db0d97e27f9dd1bc996e91d04d183dbcc7d4a2b6d738ce60",
+  "query_cells": 2,
+  "metrics_rows": 10
+}

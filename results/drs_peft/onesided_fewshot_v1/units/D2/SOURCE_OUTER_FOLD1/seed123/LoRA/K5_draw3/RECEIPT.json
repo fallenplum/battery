@@ -1,0 +1,196 @@
+{
+  "stage": "D2",
+  "task_id": "SOURCE_OUTER_FOLD1",
+  "domain": "MATR",
+  "fold_id": 1,
+  "seed": 123,
+  "method": "LoRA",
+  "K": 5,
+  "draw": 3,
+  "support_ids": [
+    "MATR_b1c30",
+    "MATR_b1c31",
+    "MATR_b2c4",
+    "MATR_b3c33",
+    "MATR_b4c25"
+  ],
+  "query_ids": [
+    "MATR_b1c40",
+    "MATR_b2c33",
+    "MATR_b2c11",
+    "MATR_b2c37",
+    "MATR_b1c25",
+    "MATR_b2c47",
+    "MATR_b2c30",
+    "MATR_b4c26",
+    "MATR_b3c0",
+    "MATR_b1c33",
+    "MATR_b4c9",
+    "MATR_b1c3",
+    "MATR_b2c13",
+    "MATR_b3c20",
+    "MATR_b3c24",
+    "MATR_b1c24",
+    "MATR_b2c45",
+    "MATR_b1c20",
+    "MATR_b3c38",
+    "MATR_b2c12"
+  ],
+  "hyperparameters": {
+    "learning_rate": 0.0001,
+    "steps": 10,
+    "eta": 0.25
+  },
+  "source_checkpoint_sha256": "dc52a93d6391b9c5bd1c138395a1dae04078fad456e540f60f94800339ef0916",
+  "dictionary_sha256": "36d950b712b044fcf3b40432ab4a3c296ddca43e2288f2df1080c045be7aaf79",
+  "execution_sha256": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1",
+  "engine_sha256": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+  "status": "SCORED",
+  "adaptation_id": "a5c59ff8a8b8d648cd9066dd940a82ad41da65963106757e6978e32e3b123a6b",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "prediction_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/a5c59ff8a8b8d648cd9066dd940a82ad41da65963106757e6978e32e3b123a6b/PREDICTIONS.npz",
+  "prediction_sha256": "ae09ea9927cace6074c4731ef791699cc39741ce9d91d0bd27adc8a9de8b22e4",
+  "state_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/a5c59ff8a8b8d648cd9066dd940a82ad41da65963106757e6978e32e3b123a6b/STATE.pt",
+  "state_sha256": "4fbe61004bd726090a0053ffe216d7006d6ed3f995715db066faf4d3bf0dbe24",
+  "cache_reused": false,
+  "details": {
+    "optimizer_updates": 10,
+    "elapsed_seconds": 6.51600000000326,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0,
+    "gradient_clip": 1.0,
+    "physical_support_cells": 5,
+    "observations_per_cell": [
+      512,
+      512,
+      371,
+      512,
+      469
+    ],
+    "support_ids": [
+      "MATR_b1c30",
+      "MATR_b1c31",
+      "MATR_b2c4",
+      "MATR_b3c33",
+      "MATR_b4c25"
+    ],
+    "history": [
+      {
+        "step": 1,
+        "cell_mean_MSE_before_update": 0.0039434293285012245,
+        "gradient_norm_before_clip": 0.002367619890719652
+      },
+      {
+        "step": 2,
+        "cell_mean_MSE_before_update": 0.003934538457542658,
+        "gradient_norm_before_clip": 0.002361213555559516
+      },
+      {
+        "step": 3,
+        "cell_mean_MSE_before_update": 0.0039251395501196384,
+        "gradient_norm_before_clip": 0.0024213369470089674
+      },
+      {
+        "step": 4,
+        "cell_mean_MSE_before_update": 0.0039151255041360855,
+        "gradient_norm_before_clip": 0.0024922743905335665
+      },
+      {
+        "step": 5,
+        "cell_mean_MSE_before_update": 0.0039044655859470367,
+        "gradient_norm_before_clip": 0.0025697131641209126
+      },
+      {
+        "step": 6,
+        "cell_mean_MSE_before_update": 0.0038931183516979218,
+        "gradient_norm_before_clip": 0.0026518835220485926
+      },
+      {
+        "step": 7,
+        "cell_mean_MSE_before_update": 0.0038810663390904665,
+        "gradient_norm_before_clip": 0.0027376229409128428
+      },
+      {
+        "step": 8,
+        "cell_mean_MSE_before_update": 0.003868286032229662,
+        "gradient_norm_before_clip": 0.0028259526006877422
+      },
+      {
+        "step": 9,
+        "cell_mean_MSE_before_update": 0.0038547588046640158,
+        "gradient_norm_before_clip": 0.002915975172072649
+      },
+      {
+        "step": 10,
+        "cell_mean_MSE_before_update": 0.0038404681254178286,
+        "gradient_norm_before_clip": 0.0030068254563957453
+      }
+    ],
+    "parameter_report": {
+      "bridge": 53248,
+      "bridge_trainable": 0,
+      "backbone_total": 13827528,
+      "backbone_current_trainable": 9216,
+      "total_current_trainable": 9216,
+      "head": 6337,
+      "head_trainable": 0,
+      "total": 13896521,
+      "trainable": 9216,
+      "input_scope": "VIQ+earlySOH / no-policy",
+      "policy_values_forced_zero": true,
+      "policy_masks_forced_zero": true,
+      "early_SOH_anchor_retained": true,
+      "native_interface": "twelve_statistics_per_cycle",
+      "policy_dimension": 0,
+      "adaptation_method": "LoRA",
+      "adaptation_parameters": 9216,
+      "rank": 1,
+      "alpha": 1,
+      "scale": 1.0,
+      "dropout": 0.0,
+      "frozen_A_bytes": 0
+    },
+    "eta": 0.25,
+    "support_observations_per_cell": [
+      512,
+      512,
+      371,
+      512,
+      469
+    ],
+    "support_mae_before": 0.0297790909318958,
+    "support_mae_after": 0.029774706230317548,
+    "support_mse_before": 0.003943429347684561,
+    "support_mse_after": 0.003913266861939614,
+    "adaptation_scale": 0.25,
+    "evaluation": "actual_nonlinear_cell_mean"
+  },
+  "serialized_replay_and_merge": {
+    "uid": "MATR_b1c40",
+    "serialized_state_replay_maximum_difference": 0.0,
+    "merged_prediction_maximum_difference": 2.384185791015625e-07,
+    "merge_absolute_tolerance": 1e-06,
+    "source_checkpoint_sha256": "dc52a93d6391b9c5bd1c138395a1dae04078fad456e540f60f94800339ef0916",
+    "serialized_adaptation_state_bytes": 455353
+  },
+  "elapsed_seconds": 20.662364099989645,
+  "new_execution_counters": {
+    "jacobian_builds": 0,
+    "jacobian_cache_hits": 0,
+    "geometry_solves": 0,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 30,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 0,
+    "adapted_cell_forwards": 20
+  },
+  "peak_gpu_allocated_bytes": 317113856,
+  "peak_gpu_reserved_bytes": 367001600,
+  "final_target_query_labels_used_for_selection_or_adaptation": 0,
+  "source_commit": "c04bea3a8313b17df3676c3d3b9c00623bfd2f75",
+  "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "cell_metrics_sha256": "5fac1730650a0a6017fd2cef63bc5c8ee131abb1509f5c913c4135a0e51b250f",
+  "query_cells": 20,
+  "metrics_rows": 100
+}

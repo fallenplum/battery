@@ -1,0 +1,133 @@
+{
+  "stage": "D4",
+  "task_id": "A_protocol_b2a2db4e5836649a",
+  "domain": "MATR",
+  "fold_id": "final",
+  "seed": 123,
+  "method": "CAL2",
+  "K": 5,
+  "draw": 3,
+  "support_ids": [
+    "MATR_b3c12",
+    "MATR_b3c14",
+    "MATR_b3c27",
+    "MATR_b3c36",
+    "MATR_b3c41"
+  ],
+  "query_ids": [
+    "MATR_b3c19",
+    "MATR_b3c5"
+  ],
+  "hyperparameters": {
+    "lambda_multiplier": 0.0001,
+    "eta": 0.25,
+    "epsilon": 1e-12
+  },
+  "source_checkpoint_sha256": "412843a1558f43f9036479e8cffb6bb62652c662c1f3031c4ad249ef97cc0093",
+  "dictionary_sha256": "a17ac55f8de3b76355eca48273b76c4286649ec85ab0e1e82e3b21c5a8cb21f0",
+  "execution_sha256": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1",
+  "engine_sha256": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+  "status": "SCORED",
+  "adaptation_id": "9aa887debf2e944242d7cf36dbecd344e433dc14aa4e310576550c842f6cba27",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "prediction_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/9aa887debf2e944242d7cf36dbecd344e433dc14aa4e310576550c842f6cba27/PREDICTIONS.npz",
+  "prediction_sha256": "45abfccca5a0c27a34eb7c883246b09063cd65f5b05da1fd785d56f56482baae",
+  "state_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/9aa887debf2e944242d7cf36dbecd344e433dc14aa4e310576550c842f6cba27/STATE.pt",
+  "state_sha256": "fd86b3722f4990adbd9bba96ed5ed7f49da591860433bfa2cd1e8544d2e6d797",
+  "cache_reused": false,
+  "details": {
+    "gram_mean_diagonal": 0.1004161265201337,
+    "lambda_actual": 1.004161265201337e-05,
+    "lambda_multiplier": 0.0001,
+    "epsilon": 1e-12,
+    "eta": 0.25,
+    "physical_support_cells": 5,
+    "observations_per_cell": [
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "dimension": 2,
+    "solver": "FP64_Cholesky",
+    "adapted_coordinate_norm": 0.03690921231453513,
+    "elapsed_seconds": 0.34399999998277053,
+    "support_ids": [
+      "MATR_b3c12",
+      "MATR_b3c14",
+      "MATR_b3c27",
+      "MATR_b3c36",
+      "MATR_b3c41"
+    ],
+    "support_gap_MAE": 2.003748121254603e-08,
+    "parameter_report": {
+      "bridge": 53248,
+      "bridge_trainable": 0,
+      "backbone_total": 13827528,
+      "backbone_current_trainable": 0,
+      "total_current_trainable": 0,
+      "head": 6337,
+      "head_trainable": 0,
+      "total": 13887307,
+      "trainable": 2,
+      "input_scope": "VIQ+earlySOH / no-policy",
+      "policy_values_forced_zero": true,
+      "policy_masks_forced_zero": true,
+      "early_SOH_anchor_retained": true,
+      "native_interface": "twelve_statistics_per_cycle",
+      "policy_dimension": 0,
+      "adaptation_method": "CAL2",
+      "adaptation_parameters": 2,
+      "gamma_initial": 1.0,
+      "beta_initial": 0.0
+    },
+    "new_optimizer_updates": 0,
+    "support_observations_per_cell": [
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "support_mae_before": 0.011597347352653742,
+    "support_mae_after": 0.011641742824576796,
+    "support_mse_before": 0.0004289339209757548,
+    "support_mse_after": 0.0004217355347116827,
+    "adaptation_scale": 1.0,
+    "evaluation": "actual_nonlinear_cell_mean",
+    "query_diagnostic_cells": [
+      "MATR_b3c19"
+    ],
+    "query_diagnostic_scope": "first_fixed_Query_cell_full_4900_grid_per_adaptation",
+    "query_gap_MAE": 6.227386916427699e-08
+  },
+  "serialized_replay_and_merge": {
+    "uid": "MATR_b3c19",
+    "serialized_state_replay_maximum_difference": 0.0,
+    "merged_prediction_maximum_difference": null,
+    "merge_absolute_tolerance": 1e-06,
+    "source_checkpoint_sha256": "412843a1558f43f9036479e8cffb6bb62652c662c1f3031c4ad249ef97cc0093",
+    "serialized_adaptation_state_bytes": 1696
+  },
+  "elapsed_seconds": 1.3573093000450172,
+  "new_execution_counters": {
+    "jacobian_builds": 0,
+    "jacobian_cache_hits": 6,
+    "geometry_solves": 1,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 0,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 0,
+    "adapted_cell_forwards": 2
+  },
+  "peak_gpu_allocated_bytes": 184841216,
+  "peak_gpu_reserved_bytes": 207618048,
+  "final_target_query_labels_used_for_selection_or_adaptation": 0,
+  "source_commit": "c04bea3a8313b17df3676c3d3b9c00623bfd2f75",
+  "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "cell_metrics_sha256": "68dad0eff3484a1a08b2508d9ae378e04d5fd6c99f059182e06afd07fcf18893",
+  "query_cells": 2,
+  "metrics_rows": 10
+}

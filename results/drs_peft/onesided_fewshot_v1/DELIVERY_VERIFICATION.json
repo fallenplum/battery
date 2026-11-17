@@ -1,0 +1,88 @@
+{
+  "status": "COMPLETE",
+  "requested_stages": [
+    "cv-references",
+    "final-references",
+    "basis",
+    "inner",
+    "D2",
+    "D3",
+    "target-lock",
+    "target"
+  ],
+  "errors": 0,
+  "pending_artifacts": 0,
+  "counts": {
+    "cv_references": {
+      "source_fits": 18,
+      "expected_source_fits": 18,
+      "references": 9,
+      "expected_references": 9
+    },
+    "final_references": {
+      "source_fits": 6,
+      "expected_source_fits": 6,
+      "references": 3,
+      "expected_references": 3
+    },
+    "geometry_artifact_groups": 15,
+    "verified_inner_selections": 216,
+    "D2": {
+      "slots": 954,
+      "unique_slot_keys": 954,
+      "zero_references": 9,
+      "nonzero_slots": 945,
+      "unique_nonzero_support_states": 861,
+      "delivered_slots": 954,
+      "delivered_unique_nonzero_states": 861,
+      "common_supplementary_slots": 0
+    },
+    "D3": {
+      "slots": 138,
+      "unique_slot_keys": 138,
+      "zero_references": 3,
+      "nonzero_slots": 135,
+      "unique_nonzero_support_states": 123,
+      "delivered_slots": 138,
+      "delivered_unique_nonzero_states": 123,
+      "common_supplementary_slots": 0
+    },
+    "target_choices_lock_present": true,
+    "D4": {
+      "slots": 690,
+      "unique_slot_keys": 690,
+      "zero_references": 15,
+      "nonzero_slots": 675,
+      "unique_nonzero_support_states": 549,
+      "delivered_slots": 690,
+      "scored_slots": 690,
+      "delivered_unique_nonzero_states": 549
+    }
+  },
+  "D3_not_estimable": [],
+  "actual_parameter_records": {
+    "warmup:59585": 12,
+    "static:192": 12,
+    "ZERO:0": 27,
+    "CAL2:2": 306,
+    "CORE:16": 123,
+    "OUT:16": 306,
+    "IN:16": 123,
+    "NORMAL:16": 123,
+    "LoRA:9216": 306,
+    "LoRA_FA:9216": 123,
+    "AUTO:7": 28,
+    "CROSS:7": 28,
+    "RANDOM:7": 28,
+    "AUTO:8": 13,
+    "CROSS:8": 13,
+    "RANDOM:8": 13
+  },
+  "issues": [],
+  "checked_distinct_file_hashes": 5543,
+  "dataset_loads": 0,
+  "Query_future_labels_read": 0,
+  "model_initializations": 0,
+  "scientific_performance_stopping_gates": 0,
+  "verification_scope": "artifact identity, completeness, stored parameter budgets and fixed prediction axes; no prediction rescoring or model replay"
+}

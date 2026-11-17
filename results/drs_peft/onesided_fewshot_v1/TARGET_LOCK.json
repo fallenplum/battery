@@ -1,0 +1,548 @@
+{
+  "status": "SOURCE_ONLY_TARGET_CHOICES_LOCKED",
+  "candidate": "OUT",
+  "best_generic": "LoRA",
+  "selected_hyperparameters": {
+    "CAL2": {
+      "1": {
+        "lambda_multiplier": 1.0,
+        "eta": 0.25,
+        "epsilon": 1e-12
+      },
+      "3": {
+        "lambda_multiplier": 0.0001,
+        "eta": 0.25,
+        "epsilon": 1e-12
+      },
+      "5": {
+        "lambda_multiplier": 0.0001,
+        "eta": 0.25,
+        "epsilon": 1e-12
+      }
+    },
+    "OUT": {
+      "1": {
+        "lambda_multiplier": 1.0,
+        "eta": 0.25,
+        "epsilon": 1e-12
+      },
+      "3": {
+        "lambda_multiplier": 1.0,
+        "eta": 0.25,
+        "epsilon": 1e-12
+      },
+      "5": {
+        "lambda_multiplier": 1.0,
+        "eta": 0.25,
+        "epsilon": 1e-12
+      }
+    },
+    "LoRA": {
+      "1": {
+        "learning_rate": 0.0001,
+        "steps": 10,
+        "eta": 0.25
+      },
+      "3": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.25
+      },
+      "5": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.25
+      }
+    },
+    "LoRA_FA": {
+      "1": {
+        "learning_rate": 0.0001,
+        "steps": 10,
+        "eta": 0.25
+      },
+      "3": {
+        "learning_rate": 0.0001,
+        "steps": 10,
+        "eta": 0.25
+      },
+      "5": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.25
+      }
+    }
+  },
+  "source_inner_selected_mae": {
+    "CAL2": {
+      "1": 0.021124507249216273,
+      "3": 0.020812476335810424,
+      "5": 0.020497768740242263
+    },
+    "OUT": {
+      "1": 0.021220932384032932,
+      "3": 0.021031867799189422,
+      "5": 0.020899320423676742
+    },
+    "LoRA": {
+      "1": 0.02087226612542336,
+      "3": 0.02081998414574082,
+      "5": 0.020556573037896927
+    },
+    "LoRA_FA": {
+      "1": 0.02092052844119566,
+      "3": 0.02092522862481659,
+      "5": 0.02071351756847258
+    }
+  },
+  "source_inner_files": [
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/CAL2/K1/TRIALS.csv",
+      "sha256": "a42b2f94d1b7d0b84d721ec030646895a218e8f4114c67e87ddf35fb205e7178"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/CAL2/K1/TRIALS.csv",
+      "sha256": "e4f276aae243998dba7863dc9e452eb5f61719f2ceb3eefd619249c566311018"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/CAL2/K1/TRIALS.csv",
+      "sha256": "48ecc4b7368bfb78c557e23c785fa6614a0907c420aa0729d40e83cc29a2f6f9"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/CAL2/K1/TRIALS.csv",
+      "sha256": "fa8913a01d70770732cf94ade197506d1d2566ec2f432e35eb8548cfdeffabc6"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/CAL2/K1/TRIALS.csv",
+      "sha256": "57d8b1954a3ec85acde93ddaf9502ded6a27b41f03c0a36ed1dd60f5e82b59fa"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/CAL2/K1/TRIALS.csv",
+      "sha256": "3deb1427a7cc737c33a0e0380ebd6a6e28455be8a83619091747d3444cc68669"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/CAL2/K1/TRIALS.csv",
+      "sha256": "b1219a581644410d13fdf6f80536ce7f5083f3f2826a0201b7d6fe2406e9eed3"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/CAL2/K1/TRIALS.csv",
+      "sha256": "3da892702473851194df007eff9944580d7dde5be7b89d19cce31cd260dad8df"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/CAL2/K1/TRIALS.csv",
+      "sha256": "425f90519451464f59df90e85d31361343cdb874ea5311597c497e009bec222d"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/CAL2/K3/TRIALS.csv",
+      "sha256": "6ea7563277abc15815d3d5090a1a47aefd58c097c19bb05f9b5705d90f45693d"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/CAL2/K3/TRIALS.csv",
+      "sha256": "73dfa62713a547826ac14be69fd399cdeebe05c54064393302f2dc93dbfa3081"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/CAL2/K3/TRIALS.csv",
+      "sha256": "4d20ad6ead882ca36bd2e16f8dbdb91b04e0e67bd5448dfcb3d1308b8ed498b5"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/CAL2/K3/TRIALS.csv",
+      "sha256": "575632c7e64352f275e7807fcf180bbc2de2bb4f0125166d83100851cb50f96b"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/CAL2/K3/TRIALS.csv",
+      "sha256": "0bf711e53c75d2450fa067db8ed74b6cb535b61b29d11b0575a44aad64d3ecff"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/CAL2/K3/TRIALS.csv",
+      "sha256": "5dd1efe2eb6a5bba55715c3c80e470b8d579c49028a6d4668f29c592f105f532"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/CAL2/K3/TRIALS.csv",
+      "sha256": "204338e643483cb91d9b0aa710446ddd0b19b12b8accb65dbee73000f941440a"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/CAL2/K3/TRIALS.csv",
+      "sha256": "1eaa452c353b0f2269c0ecc3eee49528a3b92387c1a4ab1eb30310c2b0cf0768"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/CAL2/K3/TRIALS.csv",
+      "sha256": "4f88a1b8253056c1f28131704dbc2d0ec0b89b35e3e187b20b3568de2a806aef"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/CAL2/K5/TRIALS.csv",
+      "sha256": "9cd8dd14fbb5e9d8b3448900ddac42373d8bb0d7658f07f14f0adf8f9747a035"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/CAL2/K5/TRIALS.csv",
+      "sha256": "e25ae11ae9602cfc11650e21fe9fbfa2290143570940287c20dd2dd3135c1cb0"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/CAL2/K5/TRIALS.csv",
+      "sha256": "4ea1e9e25150c8ea7f927d15772bbc915d8b404f87d884af72ecfe6885379b06"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/CAL2/K5/TRIALS.csv",
+      "sha256": "e631f87064158db7e1bc699b1124ca6bda697009c6e4e315aac87f8016a90597"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/CAL2/K5/TRIALS.csv",
+      "sha256": "4e42fe6337ca9f3ba53e5fa95988290e50757fd1724aa812de45222a0b20c79b"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/CAL2/K5/TRIALS.csv",
+      "sha256": "d80797f7d8bd1d2abc3b370294d99dba47a7ec905575a32b2e55e6cf904f51ce"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/CAL2/K5/TRIALS.csv",
+      "sha256": "8e8e0c95dad127746beed8520afbc9addd51d61c32edaf80c998906adc3cbeab"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/CAL2/K5/TRIALS.csv",
+      "sha256": "797c7124d209b29141a21c19443c5ac60d8064e22091a0b6eeb5dc0c0d7890a3"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/CAL2/K5/TRIALS.csv",
+      "sha256": "f9922ca6f797846fc8d275124d6a7be3e3d6da51caaa3a28735f78001fc86758"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/OUT/K1/TRIALS.csv",
+      "sha256": "1cc88d2087c4fba245ffd2db65eab7a140df99568e785615dd9884245f4cbe14"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/OUT/K1/TRIALS.csv",
+      "sha256": "5e9a7b11c83a6c6960497add570d7a0ccba0b0a4c0cf1000324242eae72ab862"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/OUT/K1/TRIALS.csv",
+      "sha256": "cb91aca6e145bc7fa6b80d826734b6388de0ee778c7b9834d481741afe148c33"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/OUT/K1/TRIALS.csv",
+      "sha256": "c8229972c1741aec874019ee558e45c0ad4d13f62c80012a3e18cba3f0eed3f3"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/OUT/K1/TRIALS.csv",
+      "sha256": "e80b2d32315de688a66197246d326e23febf367713000cfd0f7e5ccbe912367a"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/OUT/K1/TRIALS.csv",
+      "sha256": "555839fba2c9b8091c9c23dbf56f093879bbcf6ea770fb9f030caa20df3356f1"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/OUT/K1/TRIALS.csv",
+      "sha256": "96d7e110238c098af61a2f1e0091a737818ce66a81dda6610ba7d9cd7b33a5f0"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/OUT/K1/TRIALS.csv",
+      "sha256": "67549054ae0a5b7824c67f11d048a6ef6e2b67cd768cf2a17ca1f845596ab835"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/OUT/K1/TRIALS.csv",
+      "sha256": "b7d1a4d7005be541007fee9c1bccf3e86b60f6651b3f68c7ec1121978b8e6ad6"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/OUT/K3/TRIALS.csv",
+      "sha256": "9b65670dc1db678e23427793ffee7c017aeb4996c726191ad81f82b0b7f841c1"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/OUT/K3/TRIALS.csv",
+      "sha256": "562b5a507c8830c12a513dcf84d7f062ca46f8a468e903029cd58077d594c2a4"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/OUT/K3/TRIALS.csv",
+      "sha256": "3dadada5d1f82c17ad0a6219868742992339599a268e18ce690ddb0a76101bbf"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/OUT/K3/TRIALS.csv",
+      "sha256": "90527c34dc2e78eaf1c5fa6a8f5e61fc14187d455802a0b64ae764f6a4e8b344"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/OUT/K3/TRIALS.csv",
+      "sha256": "ac1e1089faf8d8fcb7faf49719c624d688ceb65e51e80f59ff07c9b977bb44e5"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/OUT/K3/TRIALS.csv",
+      "sha256": "257746c06729a0658cb56f9c49fc290941d2fc8c6ba312c24f4acfc0b53ee1fa"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/OUT/K3/TRIALS.csv",
+      "sha256": "e7cda79a69317cfccdb4c902601d712c1a4c7646331ca7cf57cddea67ccbf484"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/OUT/K3/TRIALS.csv",
+      "sha256": "bbc6368c4a897441420dfbbdce63fa155cb5911a2f140925104779ec64894fd9"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/OUT/K3/TRIALS.csv",
+      "sha256": "6cfa88aed6c896663b9a5e779bf050a44aa28371a4f5e5aa0ace47a12d52bb39"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/OUT/K5/TRIALS.csv",
+      "sha256": "7ef7a92fede35a6039ef8481e0502e93a016defc708a29421071a91f032409f9"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/OUT/K5/TRIALS.csv",
+      "sha256": "6b2907a32bff3921346ece970cb5a2b0b863f4c83527d320f7506e5288a5b181"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/OUT/K5/TRIALS.csv",
+      "sha256": "692220699444fec9c081500701165209a3b57776e6c126a042dd272a2cd8ec70"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/OUT/K5/TRIALS.csv",
+      "sha256": "d5b843b71913b01bf708f5623876f54d794b1d6ff05b60f88358ae96ceb42e35"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/OUT/K5/TRIALS.csv",
+      "sha256": "023bb0c4fc3ebb2a71cce28f875e6ab2e0ddd64d2d0a411e446c885e6e010879"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/OUT/K5/TRIALS.csv",
+      "sha256": "2a58135ae5c5a5289db1ceb0c8a81f63783ae4bbbafd7eddc27a16e907add479"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/OUT/K5/TRIALS.csv",
+      "sha256": "73c8ac958528a4bd76d33b951c06874168a2355b600d71a1a544ddad77b269bf"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/OUT/K5/TRIALS.csv",
+      "sha256": "e599ea2d7fb577e53bec35080a29c43f629634dd298ffe82215dfcc15ca9f889"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/OUT/K5/TRIALS.csv",
+      "sha256": "23269b56d46da71869a018d86326d6015dc914b1991e5e343b48e6b9e5c025bb"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/LoRA/K1/TRIALS.csv",
+      "sha256": "0ee67b4e3d02eb85e28c7f9671f436d9b12d47e94187dc0811b047b9e95e8681"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/LoRA/K1/TRIALS.csv",
+      "sha256": "a1c6a39ec8c6e3ad33a39b7ec43196d8816c3479d22fb9f7b1f60c728c66306f"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/LoRA/K1/TRIALS.csv",
+      "sha256": "3c11343ba27222d8640799b931c32a5b41fd73c2008127f2fdfcc8c551064464"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/LoRA/K1/TRIALS.csv",
+      "sha256": "91056581cfc5dbc900ad91a8ea7e3be3f15fbf5ca2e9113f66be95d58569029a"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/LoRA/K1/TRIALS.csv",
+      "sha256": "6ca09b5bd0f3b88906879a1b10e2e134e689f45d83ac27f3aec0f0728fe37fe4"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/LoRA/K1/TRIALS.csv",
+      "sha256": "083343acbdb1bc4123240bfe8cf2a3a234765995cbd769dd08275fb2630230fb"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/LoRA/K1/TRIALS.csv",
+      "sha256": "6621871f889b5ea44fc29fb43052d512cf90d11cd26a8128078b1d0c96cdd7ab"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/LoRA/K1/TRIALS.csv",
+      "sha256": "4b337bb9d7966313afffcd14909fe4b36575087dc8c98ce28d5dc209431155a2"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/LoRA/K1/TRIALS.csv",
+      "sha256": "9c9fece0909690a0c11a30a444dc8a0774a1c696b9e0fd0b2218ed6545477d94"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/LoRA/K3/TRIALS.csv",
+      "sha256": "6a00d2309997cfae40fd9ec33fd10a29715b460dfcc3ebef75e04ed6a3bdb272"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/LoRA/K3/TRIALS.csv",
+      "sha256": "717c8fc333e4640da8895e6056c33df197c570fb14ddabf57f10d6b2beadf1ad"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/LoRA/K3/TRIALS.csv",
+      "sha256": "0e6c88ecfee722fb564f4497b1b9cff108f6ebe34fab50af10b865a4c2d1db36"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/LoRA/K3/TRIALS.csv",
+      "sha256": "25fe4f71e50ee7a28fbe3822409fb71c0c417a6e1d4355f6f2c9bffe5017082c"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/LoRA/K3/TRIALS.csv",
+      "sha256": "e7ad296f87f8cccf7f928e83e5457a4afc5dc8536588555a54b9506fc7389b17"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/LoRA/K3/TRIALS.csv",
+      "sha256": "a4e6b3aa7dfe98f143610eb250de05a588b52693e3f8f16ca76c9af8644a246d"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/LoRA/K3/TRIALS.csv",
+      "sha256": "c8ea1447684d49c373792ea53dac6b549d463a2fa8a9e1529bb78747d22dc7c6"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/LoRA/K3/TRIALS.csv",
+      "sha256": "32bfcd68e7ecc614feccb727b2ca953d879952a4c28c0965fb9e7d74e3ca2aab"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/LoRA/K3/TRIALS.csv",
+      "sha256": "6935ea7818c9f37b18ba6ee736fc4d071c8909bb73c8c6cf37bb144ca633923c"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/LoRA/K5/TRIALS.csv",
+      "sha256": "81f4b6b0d2010aa95c817b3737eea6c09efad23bf3875874f0d15c67a3b144dd"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/LoRA/K5/TRIALS.csv",
+      "sha256": "ef6cd3c50fb3c58f4e6e0c218a70ca592a4a6fbd5c278b16f6599a6cb2167683"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/LoRA/K5/TRIALS.csv",
+      "sha256": "4a9672f908fdb71833a4772a6dfa7a8328ed4a68e20dc84ee6fbcfbf7c5e2792"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/LoRA/K5/TRIALS.csv",
+      "sha256": "0062dce1de224b4e9158f2350b49bc224a5d7bd2a14310b017b5847646a8cd4e"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/LoRA/K5/TRIALS.csv",
+      "sha256": "a3c741410d9b357df0d6883dfedb0de6331b42ff2892281370ec76ee07a210a2"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/LoRA/K5/TRIALS.csv",
+      "sha256": "9c2d5f9e49fb5588ffd862b23bf9bebd9e6144cc957d066590b892d3f0f96eac"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/LoRA/K5/TRIALS.csv",
+      "sha256": "0a124d97a287b1e0ff8791af7ca5b42b35fba6303b0086d35415a907efcefb8c"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/LoRA/K5/TRIALS.csv",
+      "sha256": "70812dc0a41d820c1f3bd62f82bd5b2d7463570c25499c9657b68775fcdb9fed"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/LoRA/K5/TRIALS.csv",
+      "sha256": "e7f45ef12e2fbda36f4539bc9eaff754e117f61c57d093aa6cd015a101523138"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/LoRA_FA/K1/TRIALS.csv",
+      "sha256": "f9626cea093797eca10c5600e8d30a8bc8cebc3d785194551ccc908075a79a31"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/LoRA_FA/K1/TRIALS.csv",
+      "sha256": "9f2932264e41b2b8507d8b5ae507dcb8227206279e08c9b27e9ea54475bd0c5b"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/LoRA_FA/K1/TRIALS.csv",
+      "sha256": "70a31f33d5d492ac4afdedbf032a1bcee2df486916cdfddc9fc83a7482544da6"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/LoRA_FA/K1/TRIALS.csv",
+      "sha256": "7346c701f3b66198fd88d9f6e8d00146216ee85a748a405a26cddef597e3a9a3"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/LoRA_FA/K1/TRIALS.csv",
+      "sha256": "3e754b325db8326de1538c7008bea584f70e261ade1e1f412ccb944e05b5cdfe"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/LoRA_FA/K1/TRIALS.csv",
+      "sha256": "2052e76adddcd64d9825d7e09ab9c3b0d3eb43c6ed2854a8a92cfcdde788cb1f"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/LoRA_FA/K1/TRIALS.csv",
+      "sha256": "b80a2c66a7eb2e73ee828ce0a15b5259ffd1586065d7924e363618d17d8f3e60"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/LoRA_FA/K1/TRIALS.csv",
+      "sha256": "d80b200ff419f4a8fc863a2b0f4f69cc36d435e113da529fa86c2734862c5002"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/LoRA_FA/K1/TRIALS.csv",
+      "sha256": "283b3108dd8e66fa40d59df690b7d4741df17d11b6326dc5612620a11b17cfe2"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/LoRA_FA/K3/TRIALS.csv",
+      "sha256": "fc7a5d5e06e1fdd3978cf4e46a837fce3fe5884f1bdd27af3fd01643a735d0d6"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/LoRA_FA/K3/TRIALS.csv",
+      "sha256": "dade36dbe098499362e4f22d2139c7ac33117d475edf43a89ac6274156a5df67"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/LoRA_FA/K3/TRIALS.csv",
+      "sha256": "7061428352a1d16498da0e3cfafc9d145e8081a054895329d31e1a8a397340cf"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/LoRA_FA/K3/TRIALS.csv",
+      "sha256": "76b5f38a3f17cf84adeea279784876cab16b4f23ac2e7c268c1f65cf4949b8df"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/LoRA_FA/K3/TRIALS.csv",
+      "sha256": "23766910ba88b0f2b3d8aabb274e7640720c3d92563b7f42674cb5c3ce62e44f"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/LoRA_FA/K3/TRIALS.csv",
+      "sha256": "75c5da90763b46a9a421bf6b6d61b60111e65676c3cf943d48d31e8284a79a4d"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/LoRA_FA/K3/TRIALS.csv",
+      "sha256": "1bce96db51104bbab80919bc8cfb44c095c0c68a8ba6be8a89aba26d311fdeb7"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/LoRA_FA/K3/TRIALS.csv",
+      "sha256": "fdfd2fdbc74f51ffb613b424469a9e559ec48a985b39c0c8a927c29b6e0e7680"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/LoRA_FA/K3/TRIALS.csv",
+      "sha256": "86f134166b7f991143a949b8f45c9c0fb18ff2b0ba4ba6f448711c71dcbe8383"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed42/LoRA_FA/K5/TRIALS.csv",
+      "sha256": "d9fe2270f4d3a93ec0f4be4b15b32173c8ad87cb39bcf3489b0015072677485e"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed123/LoRA_FA/K5/TRIALS.csv",
+      "sha256": "0a1514c322dbe106393047f97a64684e9d8cb6f052f7d73f57230cb7e45f7c25"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold0/seed2026/LoRA_FA/K5/TRIALS.csv",
+      "sha256": "5195efdea0e392f691cbfcc9f48b52aa4b963af5534c724d1fffd101874c3e52"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed42/LoRA_FA/K5/TRIALS.csv",
+      "sha256": "bf5cddb46d11aaa9ad2a5a60dde1b9df7383e323bfd4be613bd445313f7c848d"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed123/LoRA_FA/K5/TRIALS.csv",
+      "sha256": "ba3e8ba5d419f66e5166af4316eaeef31dab94392a04dd94cb07acd1299a302c"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold1/seed2026/LoRA_FA/K5/TRIALS.csv",
+      "sha256": "ae60c582d926368eb84424ca815d3adb26e466c01bbaba0184176a7a70d033b6"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed42/LoRA_FA/K5/TRIALS.csv",
+      "sha256": "1b11db6d0055789282a43ecb0d5c99d46d4a7e0f314249d2744b13a5f5c7a875"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed123/LoRA_FA/K5/TRIALS.csv",
+      "sha256": "a99987b1227bc85a8f3da4622d6a66ea11189cfbafb065eee3a5a0ef010c5e3d"
+    },
+    {
+      "path": "results/drs_peft/onesided_fewshot_v1/inner/D2/fold2/seed2026/LoRA_FA/K5/TRIALS.csv",
+      "sha256": "2e8689f7a6213bca19ab5b380cee45bf9207c644a8b1e2af1f1d461bc05a693a"
+    }
+  ],
+  "training_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "episodes_sha256": "384e9251ab3522372d675d4c352a105688ebf851c8b0b19dc1e13e627d08472e",
+  "target_query_label_uses_for_selection": 0,
+  "method_selection_source": "source_inner_only_equal_folds_seeds_draws_and_K",
+  "target_methods": [
+    "ZERO",
+    "CAL2",
+    "OUT",
+    "LoRA"
+  ],
+  "MATR_support_budget": "K_per_task;4K_across_four_tasks",
+  "target_exposure_after_scoring": "fixed_Query_exposed_do_not_reuse_as_blind_selection"
+}

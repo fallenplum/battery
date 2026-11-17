@@ -1,0 +1,124 @@
+{
+  "stage": "D4",
+  "task_id": "A_protocol_3c10562808e2b40f",
+  "domain": "MATR",
+  "fold_id": "final",
+  "seed": 42,
+  "method": "OUT",
+  "K": 3,
+  "draw": 1,
+  "support_ids": [
+    "MATR_b3c17",
+    "MATR_b3c25",
+    "MATR_b3c34"
+  ],
+  "query_ids": [
+    "MATR_b3c9",
+    "MATR_b3c30"
+  ],
+  "hyperparameters": {
+    "lambda_multiplier": 1.0,
+    "eta": 0.25,
+    "epsilon": 1e-12
+  },
+  "source_checkpoint_sha256": "5e9785481c600aa32bd5639c52877ce286f2aa3a4e173aed8555f5430dc01c0f",
+  "dictionary_sha256": "9b624e887e1822f9f0cad4ce166e18f99c34636181747d40405e5dfc8e2f15d2",
+  "execution_sha256": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1",
+  "engine_sha256": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+  "status": "SCORED",
+  "adaptation_id": "fd32e2e368bfd99cafffc60d39ed73975869a8da493a6366d8f7c1865a79bc16",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "prediction_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/fd32e2e368bfd99cafffc60d39ed73975869a8da493a6366d8f7c1865a79bc16/PREDICTIONS.npz",
+  "prediction_sha256": "a22eadb01d4b43aff8fd46d063758fb6c3be51d84a964c405f69ac6e1fc06c51",
+  "state_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/fd32e2e368bfd99cafffc60d39ed73975869a8da493a6366d8f7c1865a79bc16/STATE.pt",
+  "state_sha256": "7f98da52b031b005385eda2b317b61aacb52b58981dddd2e522b97995e1eec9a",
+  "cache_reused": false,
+  "details": {
+    "gram_mean_diagonal": 0.012461730966464286,
+    "lambda_actual": 0.012461730966464286,
+    "lambda_multiplier": 1.0,
+    "epsilon": 1e-12,
+    "eta": 0.25,
+    "physical_support_cells": 3,
+    "observations_per_cell": [
+      512,
+      512,
+      512
+    ],
+    "dimension": 16,
+    "solver": "FP64_Cholesky",
+    "adapted_coordinate_norm": 0.005222457115781639,
+    "elapsed_seconds": 0.15600000001722947,
+    "support_ids": [
+      "MATR_b3c17",
+      "MATR_b3c25",
+      "MATR_b3c34"
+    ],
+    "support_gap_MAE": 9.05062170787611e-06,
+    "parameter_report": {
+      "bridge": 53248,
+      "bridge_trainable": 0,
+      "backbone_total": 13827528,
+      "backbone_current_trainable": 16,
+      "total_current_trainable": 16,
+      "head": 6337,
+      "head_trainable": 0,
+      "total": 13887321,
+      "trainable": 16,
+      "input_scope": "VIQ+earlySOH / no-policy",
+      "policy_values_forced_zero": true,
+      "policy_masks_forced_zero": true,
+      "early_SOH_anchor_retained": true,
+      "native_interface": "twelve_statistics_per_cycle",
+      "policy_dimension": 0,
+      "adaptation_method": "OUT",
+      "adaptation_parameters": 16,
+      "frozen_dictionary_bytes": 1253376
+    },
+    "new_optimizer_updates": 0,
+    "support_observations_per_cell": [
+      512,
+      512,
+      512
+    ],
+    "support_mae_before": 0.00919314039250215,
+    "support_mae_after": 0.008977621444500983,
+    "support_mse_before": 0.00017173214565178543,
+    "support_mse_after": 0.0001641645946443305,
+    "adaptation_scale": 1.0,
+    "evaluation": "actual_nonlinear_cell_mean",
+    "query_diagnostic_cells": [
+      "MATR_b3c9"
+    ],
+    "query_diagnostic_scope": "first_fixed_Query_cell_full_4900_grid_per_adaptation",
+    "query_gap_MAE": 3.685565475540816e-05
+  },
+  "serialized_replay_and_merge": {
+    "uid": "MATR_b3c9",
+    "serialized_state_replay_maximum_difference": 0.0,
+    "merged_prediction_maximum_difference": 4.76837158203125e-07,
+    "merge_absolute_tolerance": 1e-06,
+    "source_checkpoint_sha256": "5e9785481c600aa32bd5639c52877ce286f2aa3a4e173aed8555f5430dc01c0f",
+    "serialized_adaptation_state_bytes": 5216
+  },
+  "elapsed_seconds": 0.747313900035806,
+  "new_execution_counters": {
+    "jacobian_builds": 0,
+    "jacobian_cache_hits": 4,
+    "geometry_solves": 1,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 0,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 0,
+    "adapted_cell_forwards": 2
+  },
+  "peak_gpu_allocated_bytes": 242989056,
+  "peak_gpu_reserved_bytes": 281018368,
+  "final_target_query_labels_used_for_selection_or_adaptation": 0,
+  "source_commit": "c04bea3a8313b17df3676c3d3b9c00623bfd2f75",
+  "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "cell_metrics_sha256": "f8fbbb7d15bddc4c980160d9ce0a0c9fdb8d853f9a8dfccde0e4dc219aeab269",
+  "query_cells": 2,
+  "metrics_rows": 10
+}

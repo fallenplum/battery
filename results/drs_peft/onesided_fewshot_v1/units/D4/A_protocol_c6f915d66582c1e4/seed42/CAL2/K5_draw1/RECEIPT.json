@@ -1,0 +1,133 @@
+{
+  "stage": "D4",
+  "task_id": "A_protocol_c6f915d66582c1e4",
+  "domain": "MATR",
+  "fold_id": "final",
+  "seed": 42,
+  "method": "CAL2",
+  "K": 5,
+  "draw": 1,
+  "support_ids": [
+    "MATR_b1c7",
+    "MATR_b2c24",
+    "MATR_b2c25",
+    "MATR_b3c10",
+    "MATR_b3c45"
+  ],
+  "query_ids": [
+    "MATR_b3c7",
+    "MATR_b2c26"
+  ],
+  "hyperparameters": {
+    "lambda_multiplier": 0.0001,
+    "eta": 0.25,
+    "epsilon": 1e-12
+  },
+  "source_checkpoint_sha256": "5e9785481c600aa32bd5639c52877ce286f2aa3a4e173aed8555f5430dc01c0f",
+  "dictionary_sha256": "9b624e887e1822f9f0cad4ce166e18f99c34636181747d40405e5dfc8e2f15d2",
+  "execution_sha256": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1",
+  "engine_sha256": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+  "status": "SCORED",
+  "adaptation_id": "a3649112b0e22b3b75243be7dd50da4d887cc596cc0cf71403ad8256a0f983d4",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "prediction_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/a3649112b0e22b3b75243be7dd50da4d887cc596cc0cf71403ad8256a0f983d4/PREDICTIONS.npz",
+  "prediction_sha256": "a8559a89898e58124cad189666c67967527b9289a5f7005b6389c1d8172d992b",
+  "state_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/a3649112b0e22b3b75243be7dd50da4d887cc596cc0cf71403ad8256a0f983d4/STATE.pt",
+  "state_sha256": "d8a31bd38f8c8c53a7605916a5715d8f8f71be4bf8e21c745532c5a34f53d670",
+  "cache_reused": false,
+  "details": {
+    "gram_mean_diagonal": 0.16241960560848498,
+    "lambda_actual": 1.62419605608485e-05,
+    "lambda_multiplier": 0.0001,
+    "epsilon": 1e-12,
+    "eta": 0.25,
+    "physical_support_cells": 5,
+    "observations_per_cell": [
+      512,
+      425,
+      388,
+      512,
+      512
+    ],
+    "dimension": 2,
+    "solver": "FP64_Cholesky",
+    "adapted_coordinate_norm": 0.015178065053895531,
+    "elapsed_seconds": 0.3600000000442378,
+    "support_ids": [
+      "MATR_b1c7",
+      "MATR_b2c24",
+      "MATR_b2c25",
+      "MATR_b3c10",
+      "MATR_b3c45"
+    ],
+    "support_gap_MAE": 1.9855152078184003e-08,
+    "parameter_report": {
+      "bridge": 53248,
+      "bridge_trainable": 0,
+      "backbone_total": 13827528,
+      "backbone_current_trainable": 0,
+      "total_current_trainable": 0,
+      "head": 6337,
+      "head_trainable": 0,
+      "total": 13887307,
+      "trainable": 2,
+      "input_scope": "VIQ+earlySOH / no-policy",
+      "policy_values_forced_zero": true,
+      "policy_masks_forced_zero": true,
+      "early_SOH_anchor_retained": true,
+      "native_interface": "twelve_statistics_per_cycle",
+      "policy_dimension": 0,
+      "adaptation_method": "CAL2",
+      "adaptation_parameters": 2,
+      "gamma_initial": 1.0,
+      "beta_initial": 0.0
+    },
+    "new_optimizer_updates": 0,
+    "support_observations_per_cell": [
+      512,
+      425,
+      388,
+      512,
+      512
+    ],
+    "support_mae_before": 0.022891684971862176,
+    "support_mae_after": 0.021052905062932507,
+    "support_mse_before": 0.0015976139678547587,
+    "support_mse_after": 0.0013986741542898653,
+    "adaptation_scale": 1.0,
+    "evaluation": "actual_nonlinear_cell_mean",
+    "query_diagnostic_cells": [
+      "MATR_b3c7"
+    ],
+    "query_diagnostic_scope": "first_fixed_Query_cell_full_4900_grid_per_adaptation",
+    "query_gap_MAE": 1.8180552919011606e-07
+  },
+  "serialized_replay_and_merge": {
+    "uid": "MATR_b3c7",
+    "serialized_state_replay_maximum_difference": 0.0,
+    "merged_prediction_maximum_difference": null,
+    "merge_absolute_tolerance": 1e-06,
+    "source_checkpoint_sha256": "5e9785481c600aa32bd5639c52877ce286f2aa3a4e173aed8555f5430dc01c0f",
+    "serialized_adaptation_state_bytes": 1696
+  },
+  "elapsed_seconds": 1.3617797000333667,
+  "new_execution_counters": {
+    "jacobian_builds": 0,
+    "jacobian_cache_hits": 6,
+    "geometry_solves": 1,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 0,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 0,
+    "adapted_cell_forwards": 2
+  },
+  "peak_gpu_allocated_bytes": 184841216,
+  "peak_gpu_reserved_bytes": 207618048,
+  "final_target_query_labels_used_for_selection_or_adaptation": 0,
+  "source_commit": "c04bea3a8313b17df3676c3d3b9c00623bfd2f75",
+  "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "cell_metrics_sha256": "e5048182f8581f1d2af0fee0b0fa82d8d98bcfd06da0a0da6a2a681d9de5673a",
+  "query_cells": 2,
+  "metrics_rows": 10
+}

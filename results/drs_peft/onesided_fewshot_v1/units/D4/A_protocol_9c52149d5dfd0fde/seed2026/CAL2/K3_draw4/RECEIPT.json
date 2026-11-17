@@ -1,0 +1,125 @@
+{
+  "stage": "D4",
+  "task_id": "A_protocol_9c52149d5dfd0fde",
+  "domain": "MATR",
+  "fold_id": "final",
+  "seed": 2026,
+  "method": "CAL2",
+  "K": 3,
+  "draw": 4,
+  "support_ids": [
+    "MATR_b3c11",
+    "MATR_b3c26",
+    "MATR_b3c40"
+  ],
+  "query_ids": [
+    "MATR_b3c4",
+    "MATR_b3c13"
+  ],
+  "hyperparameters": {
+    "lambda_multiplier": 0.0001,
+    "eta": 0.25,
+    "epsilon": 1e-12
+  },
+  "source_checkpoint_sha256": "7c944ba4b9a936efc27e27206841b3b3a15915428ec5bd1f0b60b2a39d10ab92",
+  "dictionary_sha256": "eb8413e7a867c7a874974fc89e1cc5f3489e32b9e914a5aefaac3edd035e36d7",
+  "execution_sha256": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1",
+  "engine_sha256": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+  "status": "SCORED",
+  "adaptation_id": "4c2127b91e8c51704cc3ce230888d5057dfc9d3a42548269cf638ba295d70c44",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "prediction_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/4c2127b91e8c51704cc3ce230888d5057dfc9d3a42548269cf638ba295d70c44/PREDICTIONS.npz",
+  "prediction_sha256": "1fd15986c1f38558c0f2ba7ee8afac421167966e93911c2c3e6d2a96b4ce78ce",
+  "state_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/4c2127b91e8c51704cc3ce230888d5057dfc9d3a42548269cf638ba295d70c44/STATE.pt",
+  "state_sha256": "70c708fe652b8bef5af8964c4d11079c4d3cadc3adf043d617bce3de9ae1eb85",
+  "cache_reused": false,
+  "details": {
+    "gram_mean_diagonal": 0.10420954253736298,
+    "lambda_actual": 1.0420954253736298e-05,
+    "lambda_multiplier": 0.0001,
+    "epsilon": 1e-12,
+    "eta": 0.25,
+    "physical_support_cells": 3,
+    "observations_per_cell": [
+      512,
+      512,
+      512
+    ],
+    "dimension": 2,
+    "solver": "FP64_Cholesky",
+    "adapted_coordinate_norm": 0.10611861828972473,
+    "elapsed_seconds": 0.14000000001396984,
+    "support_ids": [
+      "MATR_b3c11",
+      "MATR_b3c26",
+      "MATR_b3c40"
+    ],
+    "support_gap_MAE": 1.982339500030429e-08,
+    "parameter_report": {
+      "bridge": 53248,
+      "bridge_trainable": 0,
+      "backbone_total": 13827528,
+      "backbone_current_trainable": 0,
+      "total_current_trainable": 0,
+      "head": 6337,
+      "head_trainable": 0,
+      "total": 13887307,
+      "trainable": 2,
+      "input_scope": "VIQ+earlySOH / no-policy",
+      "policy_values_forced_zero": true,
+      "policy_masks_forced_zero": true,
+      "early_SOH_anchor_retained": true,
+      "native_interface": "twelve_statistics_per_cycle",
+      "policy_dimension": 0,
+      "adaptation_method": "CAL2",
+      "adaptation_parameters": 2,
+      "gamma_initial": 1.0,
+      "beta_initial": 0.0
+    },
+    "new_optimizer_updates": 0,
+    "support_observations_per_cell": [
+      512,
+      512,
+      512
+    ],
+    "support_mae_before": 0.011943338516478738,
+    "support_mae_after": 0.010702863063973686,
+    "support_mse_before": 0.0005532184915577101,
+    "support_mse_after": 0.0004296661335294119,
+    "adaptation_scale": 1.0,
+    "evaluation": "actual_nonlinear_cell_mean",
+    "query_diagnostic_cells": [
+      "MATR_b3c4"
+    ],
+    "query_diagnostic_scope": "first_fixed_Query_cell_full_4900_grid_per_adaptation",
+    "query_gap_MAE": 1.0608242188195621e-07
+  },
+  "serialized_replay_and_merge": {
+    "uid": "MATR_b3c4",
+    "serialized_state_replay_maximum_difference": 0.0,
+    "merged_prediction_maximum_difference": null,
+    "merge_absolute_tolerance": 1e-06,
+    "source_checkpoint_sha256": "7c944ba4b9a936efc27e27206841b3b3a15915428ec5bd1f0b60b2a39d10ab92",
+    "serialized_adaptation_state_bytes": 1696
+  },
+  "elapsed_seconds": 0.7747186000342481,
+  "new_execution_counters": {
+    "jacobian_builds": 0,
+    "jacobian_cache_hits": 4,
+    "geometry_solves": 1,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 0,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 0,
+    "adapted_cell_forwards": 2
+  },
+  "peak_gpu_allocated_bytes": 184616960,
+  "peak_gpu_reserved_bytes": 207618048,
+  "final_target_query_labels_used_for_selection_or_adaptation": 0,
+  "source_commit": "c04bea3a8313b17df3676c3d3b9c00623bfd2f75",
+  "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "cell_metrics_sha256": "35b23095141a7157707288d9a2e885e8b4a7fa9d6999ba1daa6f984e2cd2d3b2",
+  "query_cells": 2,
+  "metrics_rows": 10
+}

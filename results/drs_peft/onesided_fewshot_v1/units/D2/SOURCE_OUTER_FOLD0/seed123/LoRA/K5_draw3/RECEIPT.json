@@ -1,0 +1,296 @@
+{
+  "stage": "D2",
+  "task_id": "SOURCE_OUTER_FOLD0",
+  "domain": "MATR",
+  "fold_id": 0,
+  "seed": 123,
+  "method": "LoRA",
+  "K": 5,
+  "draw": 3,
+  "support_ids": [
+    "MATR_b1c14",
+    "MATR_b1c45",
+    "MATR_b1c9",
+    "MATR_b2c10",
+    "MATR_b4c13"
+  ],
+  "query_ids": [
+    "MATR_b4c12",
+    "MATR_b4c28",
+    "MATR_b4c35",
+    "MATR_b4c44",
+    "MATR_b2c34",
+    "MATR_b2c1",
+    "MATR_b1c44",
+    "MATR_b1c15",
+    "MATR_b4c1",
+    "MATR_b2c35",
+    "MATR_b2c36",
+    "MATR_b2c5",
+    "MATR_b2c39",
+    "MATR_b4c21",
+    "MATR_b4c0",
+    "MATR_b3c28",
+    "MATR_b3c31",
+    "MATR_b3c22",
+    "MATR_b4c10",
+    "MATR_b4c30"
+  ],
+  "hyperparameters": {
+    "learning_rate": 0.0001,
+    "steps": 30,
+    "eta": 0.5
+  },
+  "source_checkpoint_sha256": "d1799f6192878fc89314f418cce4257760b89bf0d8034d8692333d07571b996b",
+  "dictionary_sha256": "c9e362223a06ea40c5790bb8d0b2d6f18a5d5679c1a23b23862f0c935e7dc866",
+  "execution_sha256": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1",
+  "engine_sha256": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+  "status": "SCORED",
+  "adaptation_id": "992fa845cb62393051e17b2a703c2188a8f0785782eaa5bd525bae0001118be6",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "prediction_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/992fa845cb62393051e17b2a703c2188a8f0785782eaa5bd525bae0001118be6/PREDICTIONS.npz",
+  "prediction_sha256": "c884fcb1f4cf31edea8eb4e1ca684fa283649ddfaf312e51d5e6b4d585e7a274",
+  "state_path": "runtime/drs_peft/onesided_fewshot_v1/adaptations/992fa845cb62393051e17b2a703c2188a8f0785782eaa5bd525bae0001118be6/STATE.pt",
+  "state_sha256": "06530d98d3a111fe1870e346de518779fbf9104bb29ecbbd8271bdb3c95fb2ed",
+  "cache_reused": false,
+  "details": {
+    "optimizer_updates": 30,
+    "elapsed_seconds": 17.625,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0,
+    "gradient_clip": 1.0,
+    "physical_support_cells": 5,
+    "observations_per_cell": [
+      512,
+      499,
+      512,
+      496,
+      512
+    ],
+    "support_ids": [
+      "MATR_b1c14",
+      "MATR_b1c45",
+      "MATR_b1c9",
+      "MATR_b2c10",
+      "MATR_b4c13"
+    ],
+    "history": [
+      {
+        "step": 1,
+        "cell_mean_MSE_before_update": 0.0019927872344851494,
+        "gradient_norm_before_clip": 0.0012527863727882504
+      },
+      {
+        "step": 2,
+        "cell_mean_MSE_before_update": 0.0019885790534317493,
+        "gradient_norm_before_clip": 0.0012451708316802979
+      },
+      {
+        "step": 3,
+        "cell_mean_MSE_before_update": 0.001984136877581477,
+        "gradient_norm_before_clip": 0.0012672186130657792
+      },
+      {
+        "step": 4,
+        "cell_mean_MSE_before_update": 0.0019794092513620853,
+        "gradient_norm_before_clip": 0.0012939420994371176
+      },
+      {
+        "step": 5,
+        "cell_mean_MSE_before_update": 0.0019743801094591618,
+        "gradient_norm_before_clip": 0.0013231843477115035
+      },
+      {
+        "step": 6,
+        "cell_mean_MSE_before_update": 0.001969048986211419,
+        "gradient_norm_before_clip": 0.0013540128711611032
+      },
+      {
+        "step": 7,
+        "cell_mean_MSE_before_update": 0.0019634035415947437,
+        "gradient_norm_before_clip": 0.0013857452431693673
+      },
+      {
+        "step": 8,
+        "cell_mean_MSE_before_update": 0.0019574491307139397,
+        "gradient_norm_before_clip": 0.001417835708707571
+      },
+      {
+        "step": 9,
+        "cell_mean_MSE_before_update": 0.0019511800492182374,
+        "gradient_norm_before_clip": 0.0014497447991743684
+      },
+      {
+        "step": 10,
+        "cell_mean_MSE_before_update": 0.0019446049118414521,
+        "gradient_norm_before_clip": 0.0014809968415647745
+      },
+      {
+        "step": 11,
+        "cell_mean_MSE_before_update": 0.001937727676704526,
+        "gradient_norm_before_clip": 0.001511082868091762
+      },
+      {
+        "step": 12,
+        "cell_mean_MSE_before_update": 0.0019305514870211482,
+        "gradient_norm_before_clip": 0.0015395217342302203
+      },
+      {
+        "step": 13,
+        "cell_mean_MSE_before_update": 0.0019230967154726386,
+        "gradient_norm_before_clip": 0.0015658227493986487
+      },
+      {
+        "step": 14,
+        "cell_mean_MSE_before_update": 0.0019153757020831108,
+        "gradient_norm_before_clip": 0.0015895088436082006
+      },
+      {
+        "step": 15,
+        "cell_mean_MSE_before_update": 0.0019074032315984368,
+        "gradient_norm_before_clip": 0.0016101277433335781
+      },
+      {
+        "step": 16,
+        "cell_mean_MSE_before_update": 0.001899205381050706,
+        "gradient_norm_before_clip": 0.0016271915519610047
+      },
+      {
+        "step": 17,
+        "cell_mean_MSE_before_update": 0.0018908102065324783,
+        "gradient_norm_before_clip": 0.0016402945620939136
+      },
+      {
+        "step": 18,
+        "cell_mean_MSE_before_update": 0.0018822428537532687,
+        "gradient_norm_before_clip": 0.0016490202397108078
+      },
+      {
+        "step": 19,
+        "cell_mean_MSE_before_update": 0.0018735399935394526,
+        "gradient_norm_before_clip": 0.0016530234133824706
+      },
+      {
+        "step": 20,
+        "cell_mean_MSE_before_update": 0.0018647363176569343,
+        "gradient_norm_before_clip": 0.0016520079225301743
+      },
+      {
+        "step": 21,
+        "cell_mean_MSE_before_update": 0.0018558696610853076,
+        "gradient_norm_before_clip": 0.0016457600286230445
+      },
+      {
+        "step": 22,
+        "cell_mean_MSE_before_update": 0.0018469842616468668,
+        "gradient_norm_before_clip": 0.0016341678565368056
+      },
+      {
+        "step": 23,
+        "cell_mean_MSE_before_update": 0.0018381228437647223,
+        "gradient_norm_before_clip": 0.0016172603936865926
+      },
+      {
+        "step": 24,
+        "cell_mean_MSE_before_update": 0.0018293230095878243,
+        "gradient_norm_before_clip": 0.0015952230896800756
+      },
+      {
+        "step": 25,
+        "cell_mean_MSE_before_update": 0.001820630975998938,
+        "gradient_norm_before_clip": 0.0015684328973293304
+      },
+      {
+        "step": 26,
+        "cell_mean_MSE_before_update": 0.0018120857421308756,
+        "gradient_norm_before_clip": 0.0015374746872112155
+      },
+      {
+        "step": 27,
+        "cell_mean_MSE_before_update": 0.0018037231639027596,
+        "gradient_norm_before_clip": 0.0015031896764412522
+      },
+      {
+        "step": 28,
+        "cell_mean_MSE_before_update": 0.0017955690855160356,
+        "gradient_norm_before_clip": 0.0014666616916656494
+      },
+      {
+        "step": 29,
+        "cell_mean_MSE_before_update": 0.0017876465572044253,
+        "gradient_norm_before_clip": 0.0014292014529928565
+      },
+      {
+        "step": 30,
+        "cell_mean_MSE_before_update": 0.0017799694323912263,
+        "gradient_norm_before_clip": 0.0013922862708568573
+      }
+    ],
+    "parameter_report": {
+      "bridge": 53248,
+      "bridge_trainable": 0,
+      "backbone_total": 13827528,
+      "backbone_current_trainable": 9216,
+      "total_current_trainable": 9216,
+      "head": 6337,
+      "head_trainable": 0,
+      "total": 13896521,
+      "trainable": 9216,
+      "input_scope": "VIQ+earlySOH / no-policy",
+      "policy_values_forced_zero": true,
+      "policy_masks_forced_zero": true,
+      "early_SOH_anchor_retained": true,
+      "native_interface": "twelve_statistics_per_cycle",
+      "policy_dimension": 0,
+      "adaptation_method": "LoRA",
+      "adaptation_parameters": 9216,
+      "rank": 1,
+      "alpha": 1,
+      "scale": 1.0,
+      "dropout": 0.0,
+      "frozen_A_bytes": 0
+    },
+    "eta": 0.5,
+    "support_observations_per_cell": [
+      512,
+      499,
+      512,
+      496,
+      512
+    ],
+    "support_mae_before": 0.021633298141628114,
+    "support_mae_after": 0.022282457954785024,
+    "support_mse_before": 0.0019927872632938114,
+    "support_mse_after": 0.0018576996148527154,
+    "adaptation_scale": 0.5,
+    "evaluation": "actual_nonlinear_cell_mean"
+  },
+  "serialized_replay_and_merge": {
+    "uid": "MATR_b4c12",
+    "serialized_state_replay_maximum_difference": 0.0,
+    "merged_prediction_maximum_difference": 4.172325134277344e-07,
+    "merge_absolute_tolerance": 1e-06,
+    "source_checkpoint_sha256": "d1799f6192878fc89314f418cce4257760b89bf0d8034d8692333d07571b996b",
+    "serialized_adaptation_state_bytes": 455353
+  },
+  "elapsed_seconds": 19.19455450004898,
+  "new_execution_counters": {
+    "jacobian_builds": 0,
+    "jacobian_cache_hits": 0,
+    "geometry_solves": 0,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 30,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 0,
+    "adapted_cell_forwards": 20
+  },
+  "peak_gpu_allocated_bytes": 317157888,
+  "peak_gpu_reserved_bytes": 367001600,
+  "final_target_query_labels_used_for_selection_or_adaptation": 0,
+  "source_commit": "c04bea3a8313b17df3676c3d3b9c00623bfd2f75",
+  "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "cell_metrics_sha256": "0150e82ab2aef7ef20edf05a73d532a52fdbb32f7622170e7cdd51d187594bd8",
+  "query_cells": 20,
+  "metrics_rows": 100
+}

@@ -1,0 +1,128 @@
+{
+  "status": "COMPLETE",
+  "requested_nonzero_slots": 315,
+  "requested_zero_reference_slots": 3,
+  "scored_slots": 318,
+  "pending_slots": 0,
+  "terminal_failed_or_not_estimable_slots": 0,
+  "scored_cell_window_rows": 31800,
+  "unique_scored_adaptation_ids": 287,
+  "unique_recorded_nonzero_adaptations": 287,
+  "scored_adaptation_ids_missing_receipts": [],
+  "scored_adaptation_receipts_missing_sourcecheckpoint_sha": [],
+  "nonlinear_adapter_fits": 82,
+  "regularized_local_solver_states": 205,
+  "actual_adapter_optimizer_steps": 2460,
+  "reported_unit_execution_counters": {
+    "jacobian_builds": 235,
+    "jacobian_cache_hits": 625,
+    "geometry_solves": 205,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 2460,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 0,
+    "adapted_cell_forwards": 5740
+  },
+  "adapter_compute_cost_scope": "selected_stage_adaptation_unit_receipts;inner_hyperparameter_search_and_source_reference_training_accounted_separately",
+  "source_reference_fits": "recorded_separately_in_REFERENCE_MODELS.csv;never_inferred_from_adaptation_states",
+  "source_D2_requested_all_seed_slots": 945,
+  "source_D3_requested_seed42_slots": 135,
+  "target_primary_requested_slots": 675,
+  "target_primary_zero_references": 15,
+  "target_generic_methods_by_K": {},
+  "supplementary_target_cell_window_rows": 0,
+  "source_common_dimension_supplement_cell_window_rows": 0,
+  "requested_slot_coverage_scope": "all_registered_D2_D3_source_slots_and_D4_primary_target_slots;Stanford_supplementary_separate",
+  "MATR_primary_support_budget": "K_per_exact_protocol_task;four_tasks_aggregate_4K_for_eight_fixed_Query_cells",
+  "HUST_support_budget": "K_from_fixed_pooled_support_set_for39_fixed_Query_cells",
+  "target_Query_exposure_in_this_table": "NOT_SCORED_HERE",
+  "new_model_forwards_in_summarizer": 0,
+  "new_gradient_evaluations_in_summarizer": 0,
+  "target_future_label_arrays_loaded_by_summarizer": 0,
+  "bootstrap_draws": 0,
+  "historical_source_exposure": true,
+  "project_costs": {
+    "engine_counter_scope": "one_current_cumulative_ENGINE_COSTS_file_per_process;D2_D3_D4_selected_scope_includes_inner_and_evaluation;unit_counters_overlap_and_are_separate",
+    "engine_receipts": [
+      {
+        "path": "ENGINE_COSTS/D2_inner_fold0_seed42_pid68912.json",
+        "sha256": "f54a6e9df6795dc9d12e1520fe6b060dd64807839823b296bde43c8730880e11",
+        "role": "D2_inner",
+        "fold_id": 0,
+        "seed": 42
+      },
+      {
+        "path": "ENGINE_COSTS/D2_inner_fold1_seed42_pid48624.json",
+        "sha256": "087e46f597a3cadce43ef95846439449f27033d3b642eadd1c60759b10c39c1d",
+        "role": "D2_inner",
+        "fold_id": 1,
+        "seed": 42
+      },
+      {
+        "path": "ENGINE_COSTS/D2_inner_fold2_seed42_pid70924.json",
+        "sha256": "0ee472f0e452c293d1ef82548f916e4bd1cee99f6c2d385adf52ddf7fede7f7a",
+        "role": "D2_inner",
+        "fold_id": 2,
+        "seed": 42
+      },
+      {
+        "path": "ENGINE_COSTS/D2_MATR_evaluation_fold0_seed42_pid52496.json",
+        "sha256": "fef2e4d599ab12c36ed79508444e50e0e91e2a66a1d519df00044ad919980a2d",
+        "role": "D2_MATR_evaluation",
+        "fold_id": 0,
+        "seed": 42
+      },
+      {
+        "path": "ENGINE_COSTS/D2_MATR_evaluation_fold1_seed42_pid23060.json",
+        "sha256": "be8d6c53f2a27ead47b85c2d5d75268039682d1f7909560d29e9e043097dd53d",
+        "role": "D2_MATR_evaluation",
+        "fold_id": 1,
+        "seed": 42
+      },
+      {
+        "path": "ENGINE_COSTS/D2_MATR_evaluation_fold2_seed42_pid69816.json",
+        "sha256": "e0bd0f369e3663bf5cc4dee79eb93117e39f229f511654cf89f4ede1203c91b5",
+        "role": "D2_MATR_evaluation",
+        "fold_id": 2,
+        "seed": 42
+      }
+    ],
+    "actual_inner_and_evaluation_counters": {
+      "jacobian_builds": 345,
+      "jacobian_cache_hits": 9065,
+      "geometry_solves": 3055,
+      "geometry_cache_hits": 525,
+      "nonlinear_optimizer_updates": 7020,
+      "nonlinear_cache_hits": 928,
+      "baseline_cell_forwards": 60,
+      "adapted_cell_forwards": 41380
+    },
+    "completed_source_reference_models": 3,
+    "completed_source_training_fits": 6,
+    "completed_source_reference_optimizer_updates": 5760,
+    "source_reference_costs": [
+      {
+        "fold_id": 0,
+        "seed": 42,
+        "reference_checkpoint_sha256": "7f85595169c2ea6bb3fc7398ef8460b7c0d1200e3cec50b06e5731be918bcf64",
+        "optimizer_updates": 1920,
+        "source_fits": 2
+      },
+      {
+        "fold_id": 1,
+        "seed": 42,
+        "reference_checkpoint_sha256": "c795c68475b36e54e7bbb77aa2f3bf7f144516e5f7f10a81bd0c5a03ae897b67",
+        "optimizer_updates": 1920,
+        "source_fits": 2
+      },
+      {
+        "fold_id": 2,
+        "seed": 42,
+        "reference_checkpoint_sha256": "0111932ba97e0df8452c29f597807a682fa0eac8001dbfb2e6aebc4d5426a853",
+        "optimizer_updates": 1920,
+        "source_fits": 2
+      }
+    ],
+    "shared_reference_counting": "each_reference_once_in_current_scope;separate_stage_ledgers_share_CV_references_and_must_not_be_added"
+  }
+}

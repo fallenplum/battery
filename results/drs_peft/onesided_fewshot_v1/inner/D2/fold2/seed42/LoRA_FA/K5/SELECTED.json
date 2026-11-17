@@ -1,0 +1,96 @@
+{
+  "identity": {
+    "config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+    "reference_checkpoint_sha256": "0111932ba97e0df8452c29f597807a682fa0eac8001dbfb2e6aebc4d5426a853",
+    "dictionary_sha256": "64c92be3bd69ee0e2209e075d498b6cd3d28d9d459bfeb2089a078ca93abe5c4",
+    "execution_sha256": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1",
+    "engine_sha256": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+    "episode_sha256": "384e9251ab3522372d675d4c352a105688ebf851c8b0b19dc1e13e627d08472e",
+    "fold_id": 2,
+    "seed": 42,
+    "method": "LoRA_FA",
+    "K": 5,
+    "role": "own_fold_inner_only",
+    "query_ids": [
+      "MATR_b2c0",
+      "MATR_b3c20",
+      "MATR_b3c0",
+      "MATR_b3c6",
+      "MATR_b2c36",
+      "MATR_b3c8",
+      "MATR_b3c28",
+      "MATR_b3c21"
+    ]
+  },
+  "selected_trial": 10,
+  "hyperparameters": {
+    "learning_rate": 0.001,
+    "steps": 30,
+    "eta": 0.5
+  },
+  "inner_mae": 0.01836889238118982,
+  "trial_grid": [
+    {
+      "learning_rate": 0.0001,
+      "steps": 10,
+      "eta": 0.25
+    },
+    {
+      "learning_rate": 0.0001,
+      "steps": 10,
+      "eta": 0.5
+    },
+    {
+      "learning_rate": 0.0001,
+      "steps": 10,
+      "eta": 1.0
+    },
+    {
+      "learning_rate": 0.0001,
+      "steps": 30,
+      "eta": 0.25
+    },
+    {
+      "learning_rate": 0.0001,
+      "steps": 30,
+      "eta": 0.5
+    },
+    {
+      "learning_rate": 0.0001,
+      "steps": 30,
+      "eta": 1.0
+    },
+    {
+      "learning_rate": 0.001,
+      "steps": 10,
+      "eta": 0.25
+    },
+    {
+      "learning_rate": 0.001,
+      "steps": 10,
+      "eta": 0.5
+    },
+    {
+      "learning_rate": 0.001,
+      "steps": 10,
+      "eta": 1.0
+    },
+    {
+      "learning_rate": 0.001,
+      "steps": 30,
+      "eta": 0.25
+    },
+    {
+      "learning_rate": 0.001,
+      "steps": 30,
+      "eta": 0.5
+    },
+    {
+      "learning_rate": 0.001,
+      "steps": 30,
+      "eta": 1.0
+    }
+  ],
+  "target_query_label_uses": 0,
+  "trials_csv_sha256": "1b11db6d0055789282a43ecb0d5c99d46d4a7e0f314249d2744b13a5f5c7a875"
+}
