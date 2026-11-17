@@ -1,0 +1,55 @@
+{
+  "domain": "MATR",
+  "task_id": "MATR_POOLED",
+  "fold_id": "final",
+  "seed": 123,
+  "support_ids": [
+    "MATR_b3c17",
+    "MATR_b3c25",
+    "MATR_b3c35"
+  ],
+  "query_ids": [
+    "MATR_b3c9",
+    "MATR_b3c30",
+    "MATR_b3c4",
+    "MATR_b3c13",
+    "MATR_b3c19",
+    "MATR_b3c5",
+    "MATR_b3c7",
+    "MATR_b2c26"
+  ],
+  "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+  "K": 3,
+  "draw": 4,
+  "hyperparameters": {
+    "learning_rate": 0.001,
+    "steps": 30,
+    "eta": 0.1
+  },
+  "source_checkpoint_sha256": "412843a1558f43f9036479e8cffb6bb62652c662c1f3031c4ad249ef97cc0093",
+  "stage": "TRANSFER_SCOPE_V2",
+  "reference_family": "SPECIALIZED",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "target_lock_sha256": "daf44063890678fb4edc8de3faaf59044b47133dec4f577a0f274bf1919b04f4",
+  "target_Query_labels_used_for_adaptation_or_selection": 0,
+  "state_path": "runtime/drs_peft/transfer_scope_v2/e0/states/448957a01ef5da9f914830b1/STATE.pt",
+  "state_sha256": "2f68c7c9f034bc1dd950adde924a7664f1947ecaa827d50aab5ffe749cdcc2d2",
+  "prediction_path": "runtime/drs_peft/transfer_scope_v2/e0/states/448957a01ef5da9f914830b1/PREDICTIONS.npz",
+  "prediction_sha256": "d23cb95712f4c4cfc74172dfc662347e3c75c3b03002d00089fe66f8559dbe3d",
+  "status": "SCORED",
+  "adaptation_id": "c147852e944e38c5a0109a10201e24bbe1f7972b09a98b3c1a25555268e84477",
+  "reused_state_sha256": "05b091358863a16f95aa83cdc29a780a6d9d8f111a59e95a7dfe4401daeb90f5",
+  "origin": "NEW_NONLINEAR_FORWARD_SAVED_LORA_FACTORS",
+  "details": {
+    "trainable_parameters": 9216
+  },
+  "new_execution_counters": {
+    "new_optimizer_updates": 0,
+    "new_model_forwards": 8
+  },
+  "historical_target_Query_exposure": true,
+  "cell_metrics_sha256": "b724cb2a754a9216d14b798f23c803fd9eba256fe7a3b4bf0f62e6c5a1330fea",
+  "query_cells": 8,
+  "metrics_rows": 40
+}

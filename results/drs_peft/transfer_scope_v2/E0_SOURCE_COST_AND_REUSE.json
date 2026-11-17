@@ -1,0 +1,166 @@
+{
+  "status": "COMPLETE_READ_ONLY_E0_SOURCE_AND_REUSE_VERIFICATION",
+  "source_selection_sha256": "e94695e2a1978b3e3d287edf3fa3065562d2de76e55c456c6f0fedf6f817e792",
+  "formal_source_blocks": 18,
+  "formal_source_score_slots": 1350,
+  "formal_source_supervision_UIDs": 38,
+  "formal_source_selection_axes": {
+    "folds": 3,
+    "seeds": 3,
+    "draws": 5
+  },
+  "formal_target_future_rows_decoded": 0,
+  "formal_reused_old_eta_scored_slots": 810,
+  "formal_unique_old_eta01_state_replays": 228,
+  "formal_new_engine_counters": {
+    "jacobian_builds": 0,
+    "jacobian_cache_hits": 0,
+    "geometry_solves": 0,
+    "geometry_cache_hits": 0,
+    "nonlinear_optimizer_updates": 0,
+    "nonlinear_cache_hits": 0,
+    "baseline_cell_forwards": 144,
+    "adapted_cell_forwards": 1824
+  },
+  "initial_engineering_smoke_scope": {
+    "blocks": 2,
+    "engine_counters": {
+      "jacobian_builds": 0,
+      "jacobian_cache_hits": 0,
+      "geometry_solves": 0,
+      "geometry_cache_hits": 0,
+      "nonlinear_optimizer_updates": 0,
+      "nonlinear_cache_hits": 0,
+      "baseline_cell_forwards": 16,
+      "adapted_cell_forwards": 176
+    }
+  },
+  "superseded_full_cache_engineering_replay_scope": {
+    "blocks": 18,
+    "engine_counters": {
+      "jacobian_builds": 0,
+      "jacobian_cache_hits": 0,
+      "geometry_solves": 0,
+      "geometry_cache_hits": 0,
+      "nonlinear_optimizer_updates": 0,
+      "nonlinear_cache_hits": 0,
+      "baseline_cell_forwards": 144,
+      "adapted_cell_forwards": 1824
+    }
+  },
+  "source_eta_curve_by_family_and_K": [
+    {
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "source_lock": {
+        "learning_rate": 0.0001,
+        "steps": 10,
+        "eta": 0.0
+      },
+      "candidate_mae": {
+        "0.0": 0.020971445497871784,
+        "0.1": 0.020974825117339498,
+        "0.25": 0.020982645216048035,
+        "0.5": 0.021002913820743107,
+        "1.0": 0.02106909255796702
+      },
+      "source_mean_MAE_gain_over_eta025": 1.1199718176251039e-05
+    },
+    {
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "source_lock": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.1
+      },
+      "candidate_mae": {
+        "0.0": 0.020971445497871784,
+        "0.1": 0.020859480401181477,
+        "0.25": 0.02086343069175076,
+        "0.5": 0.021500475761294244,
+        "1.0": 0.02400905501261663
+      },
+      "source_mean_MAE_gain_over_eta025": 3.950290569283005e-06
+    },
+    {
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "source_lock": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.25
+      },
+      "candidate_mae": {
+        "0.0": 0.020971445497871784,
+        "0.1": 0.02079985514827369,
+        "0.25": 0.020678680051357756,
+        "0.5": 0.021142065291396304,
+        "1.0": 0.023375612980302513
+      },
+      "source_mean_MAE_gain_over_eta025": 0.0
+    },
+    {
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "source_lock": {
+        "learning_rate": 0.0001,
+        "steps": 10,
+        "eta": 0.0
+      },
+      "candidate_mae": {
+        "0.0": 0.02085719175173774,
+        "0.1": 0.02086163317484264,
+        "0.25": 0.02087226612542336,
+        "0.5": 0.020898730911796514,
+        "1.0": 0.020975477076896138
+      },
+      "source_mean_MAE_gain_over_eta025": 1.5074373685620979e-05
+    },
+    {
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "source_lock": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.1
+      },
+      "candidate_mae": {
+        "0.0": 0.02085719175173774,
+        "0.1": 0.020715792295943027,
+        "0.25": 0.02081998414574082,
+        "0.5": 0.021536633394500813,
+        "1.0": 0.02397911298842302
+      },
+      "source_mean_MAE_gain_over_eta025": 0.00010419184979779117
+    },
+    {
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "source_lock": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.25
+      },
+      "candidate_mae": {
+        "0.0": 0.02085719175173774,
+        "0.1": 0.0206005891939033,
+        "0.25": 0.020556573037896927,
+        "0.5": 0.02118777698260332,
+        "1.0": 0.023276639362450238
+      },
+      "source_mean_MAE_gain_over_eta025": 0.0
+    }
+  ],
+  "reuse_preflight": {
+    "old_LoRA_verified_slots": 180,
+    "old_LoRA_unique_state_files": 168,
+    "old_HUST_CAL2_anchor_verified_slots": 45,
+    "old_HUST_CAL2_anchor_only": true,
+    "incompatible_or_missing_old_payloads": 0,
+    "new_models_in_preflight": 0
+  },
+  "limits": "Engineering replays are counted separately and excluded from formal choice. Model-cell forward counts are not optimizer updates or independent shot counts.",
+  "new_optimizer_updates": 0,
+  "additional_model_forwards_in_this_audit": 0
+}

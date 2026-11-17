@@ -1,0 +1,3062 @@
+{
+  "status": "COMPLETE_E0_INDEPENDENT_PREDICTION_AND_SCORED_FACT_REVIEW",
+  "target_lock_sha256": "daf44063890678fb4edc8de3faaf59044b47133dec4f577a0f274bf1919b04f4",
+  "source_selection_sha256": "e94695e2a1978b3e3d287edf3fa3065562d2de76e55c456c6f0fedf6f817e792",
+  "target_prediction_barrier_sha256": "85ceb9bc32ee3a986b0610895f23194103cfdf7c181be37110de423879636aef",
+  "audited_scored_slots": 192,
+  "audited_cell_window_rows": 22560,
+  "origin_counts": {
+    "AUTHENTICATED_OWN_FAMILY_ZERO": 72,
+    "NEW_NONLINEAR_FORWARD_SAVED_LORA_FACTORS": 60,
+    "AUTHENTICATED_LEGACY_LORA_PREDICTION": 60
+  },
+  "new_model_cell_forwards": 1422,
+  "new_optimizer_updates": 0,
+  "new_nonzero_K3_states": 60,
+  "unique_effective_state_file_hashes": 132,
+  "raw_future_label_arrays_read_by_this_verifier": 0,
+  "new_model_training_or_prediction_by_this_verifier": 0,
+  "audit_scope": "All 192 Prediction/STATE axes and SHA checks. K3 new tensor factors equal the previous unit-scale snapshots and only top-level eta changed. K1 matches own-family ZERO. K5 matches prior LoRA predictions and scores. Target comparisons use paired previously scored cell/window facts.",
+  "contrasts": [
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "1001_plus",
+      "eta": null,
+      "mean_new_MAE": 0.059923052904186334,
+      "mean_legacy_MAE": 0.059923052904186334,
+      "own_family_K0": 0.059923052904186334,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "101_200",
+      "eta": null,
+      "mean_new_MAE": 0.003875419859193278,
+      "mean_legacy_MAE": 0.003875419859193278,
+      "own_family_K0": 0.003875419859193278,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "201_500",
+      "eta": null,
+      "mean_new_MAE": 0.012268432884814006,
+      "mean_legacy_MAE": 0.012268432884814006,
+      "own_family_K0": 0.012268432884814006,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "501_1000",
+      "eta": null,
+      "mean_new_MAE": 0.021589091660629937,
+      "mean_legacy_MAE": 0.021589091660629937,
+      "own_family_K0": 0.021589091660629937,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "all",
+      "eta": null,
+      "mean_new_MAE": 0.035917304535415154,
+      "mean_legacy_MAE": 0.035917304535415154,
+      "own_family_K0": 0.035917304535415154,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "1001_plus",
+      "eta": 0.0,
+      "mean_new_MAE": 0.05992305290418634,
+      "mean_legacy_MAE": 0.05993295912272286,
+      "own_family_K0": 0.05992305290418634,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": -9.906218536515908e-06,
+      "mean_new_minus_legacy_MAE": -9.906218536509633e-06,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.4341880341880342,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 5,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 1,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 2026,
+          "draw": 0,
+          "new_minus_old": -0.004381627331637605
+        },
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 42,
+          "draw": 0,
+          "new_minus_old": 0.004346724386436102
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "101_200",
+      "eta": 0.0,
+      "mean_new_MAE": 0.003875419859193277,
+      "mean_legacy_MAE": 0.003867763718988092,
+      "own_family_K0": 0.003875419859193277,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 7.656140205187669e-06,
+      "mean_new_minus_legacy_MAE": 7.656140205185994e-06,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.26666666666666666,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 4,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 42,
+          "draw": 0,
+          "new_minus_old": -6.393432617190012e-05
+        },
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": 6.544351577759998e-05
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "201_500",
+      "eta": 0.0,
+      "mean_new_MAE": 0.012268432884814008,
+      "mean_legacy_MAE": 0.012216102034278016,
+      "own_family_K0": 0.012268432884814008,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 5.233085053597818e-05,
+      "mean_new_minus_legacy_MAE": 5.233085053598992e-05,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.26666666666666666,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 4,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 4,
+          "new_minus_old": -0.00036861419677740054
+        },
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 0,
+          "new_minus_old": 0.0003965103626251002
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "501_1000",
+      "eta": 0.0,
+      "mean_new_MAE": 0.02158909166062994,
+      "mean_legacy_MAE": 0.02145431108454349,
+      "own_family_K0": 0.02158909166062994,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.00013478057608643274,
+      "mean_new_minus_legacy_MAE": 0.00013478057608645055,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.31794871794871793,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 4,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.001445788860321099
+        },
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 42,
+          "draw": 0,
+          "new_minus_old": 0.0014434447288513008
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "all",
+      "eta": 0.0,
+      "mean_new_MAE": 0.03591730453541515,
+      "mean_legacy_MAE": 0.035904352023654384,
+      "own_family_K0": 0.03591730453541515,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 1.295251176075264e-05,
+      "mean_new_minus_legacy_MAE": 1.2952511760762835e-05,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.4307692307692308,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 5,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 1,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.0027795056434901932
+        },
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 42,
+          "draw": 0,
+          "new_minus_old": 0.0027916664761064025
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "1001_plus",
+      "eta": 0.1,
+      "mean_new_MAE": 0.05651566285616033,
+      "mean_legacy_MAE": 0.053613197364282765,
+      "own_family_K0": 0.05992305290418634,
+      "delta_K_new": 0.0034073900480259896,
+      "delta_K_legacy": 0.00630985553990356,
+      "mean_new_minus_legacy_MAE": 0.002902465491877571,
+      "relative_gain_over_own_K0_percent": 5.686275786839864,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.35213675213675216,
+      "negative_transfer_ratio_legacy": 0.35555555555555557,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 2,
+      "improving_seed_draw_count_over_K0": 14,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_3-7",
+          "seed": 123,
+          "draw": 3,
+          "new_minus_old": -0.0409083334153532
+        },
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.0536506584051194
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "101_200",
+      "eta": 0.1,
+      "mean_new_MAE": 0.0038405333339658074,
+      "mean_legacy_MAE": 0.0037221223126109354,
+      "own_family_K0": 0.003875419859193277,
+      "delta_K_new": 3.488652522746616e-05,
+      "delta_K_legacy": 0.0001532975465823245,
+      "mean_new_minus_legacy_MAE": 0.00011841102135487212,
+      "relative_gain_over_own_K0_percent": 0.9001998878833294,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.26666666666666666,
+      "negative_transfer_ratio_legacy": 0.23076923076923078,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 2,
+      "improving_seed_draw_count_over_K0": 10,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 2,
+          "new_minus_old": -0.0004390895366669003
+        },
+        {
+          "cell_uid": "HUST_3-4",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.0010456371307372998
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "201_500",
+      "eta": 0.1,
+      "mean_new_MAE": 0.012140096756128116,
+      "mean_legacy_MAE": 0.011569310163160963,
+      "own_family_K0": 0.012268432884814008,
+      "delta_K_new": 0.00012833612868587353,
+      "delta_K_legacy": 0.000699122721653019,
+      "mean_new_minus_legacy_MAE": 0.0005707865929671511,
+      "relative_gain_over_own_K0_percent": 1.0460678221154822,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.3418803418803419,
+      "negative_transfer_ratio_legacy": 0.3111111111111111,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 4,
+      "improving_seed_draw_count_over_K0": 9,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 2,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 2,
+          "new_minus_old": -0.0031260267893473016
+        },
+        {
+          "cell_uid": "HUST_3-4",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.0057917022705078
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "501_1000",
+      "eta": 0.1,
+      "mean_new_MAE": 0.021019235532915445,
+      "mean_legacy_MAE": 0.019837415828256478,
+      "own_family_K0": 0.02158909166062994,
+      "delta_K_new": 0.0005698561277144862,
+      "delta_K_legacy": 0.0017516758323734526,
+      "mean_new_minus_legacy_MAE": 0.0011818197046589627,
+      "relative_gain_over_own_K0_percent": 2.6395558306590585,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.3623931623931624,
+      "negative_transfer_ratio_legacy": 0.37094017094017095,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 3,
+      "improving_seed_draw_count_over_K0": 12,
+      "winning_seed_count_against_legacy": 1,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 123,
+          "draw": 1,
+          "new_minus_old": -0.013221395850181599
+        },
+        {
+          "cell_uid": "HUST_10-8",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.016530923128128
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "all",
+      "eta": 0.1,
+      "mean_new_MAE": 0.03402315639886359,
+      "mean_legacy_MAE": 0.0322512379322325,
+      "own_family_K0": 0.03591730453541515,
+      "delta_K_new": 0.0018941481365515372,
+      "delta_K_legacy": 0.0036660666031826236,
+      "mean_new_minus_legacy_MAE": 0.0017719184666310863,
+      "relative_gain_over_own_K0_percent": 5.273636652449437,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.3418803418803419,
+      "negative_transfer_ratio_legacy": 0.347008547008547,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 1,
+      "improving_seed_draw_count_over_K0": 15,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_3-7",
+          "seed": 123,
+          "draw": 3,
+          "new_minus_old": -0.0242116522418195
+        },
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.0321121765804049
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "1001_plus",
+      "eta": 0.25,
+      "mean_new_MAE": 0.05365409722076296,
+      "mean_legacy_MAE": 0.05365409722076296,
+      "own_family_K0": 0.05992305290418634,
+      "delta_K_new": 0.006268955683423361,
+      "delta_K_legacy": 0.006268955683423361,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 10.46167606554872,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.3213675213675214,
+      "negative_transfer_ratio_legacy": 0.3213675213675214,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 15,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "101_200",
+      "eta": 0.25,
+      "mean_new_MAE": 0.0036492194538442022,
+      "mean_legacy_MAE": 0.0036492194538442022,
+      "own_family_K0": 0.003875419859193277,
+      "delta_K_new": 0.00022620040534904645,
+      "delta_K_legacy": 0.00022620040534904645,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 5.83679739402825,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.15384615384615385,
+      "negative_transfer_ratio_legacy": 0.15384615384615385,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 12,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "201_500",
+      "eta": 0.25,
+      "mean_new_MAE": 0.011202956937317106,
+      "mean_legacy_MAE": 0.011202956937317106,
+      "own_family_K0": 0.012268432884814008,
+      "delta_K_new": 0.0010654759474968652,
+      "delta_K_legacy": 0.0010654759474968652,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 8.68469475686436,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.18974358974358974,
+      "negative_transfer_ratio_legacy": 0.18974358974358974,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 12,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "501_1000",
+      "eta": 0.25,
+      "mean_new_MAE": 0.019282104938050573,
+      "mean_legacy_MAE": 0.019282104938050573,
+      "own_family_K0": 0.02158909166062994,
+      "delta_K_new": 0.0023069867225793458,
+      "delta_K_legacy": 0.0023069867225793458,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 10.685890628675162,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.26495726495726496,
+      "negative_transfer_ratio_legacy": 0.26495726495726496,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 13,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "all",
+      "eta": 0.25,
+      "mean_new_MAE": 0.0320475639862274,
+      "mean_legacy_MAE": 0.0320475639862274,
+      "own_family_K0": 0.03591730453541515,
+      "delta_K_new": 0.003869740549187724,
+      "delta_K_legacy": 0.003869740549187724,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 10.774028283141588,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.29743589743589743,
+      "negative_transfer_ratio_legacy": 0.29743589743589743,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 15,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "1001_plus",
+      "eta": null,
+      "mean_new_MAE": 0.04358680595669689,
+      "mean_legacy_MAE": 0.04358680595669689,
+      "own_family_K0": 0.04358680595669689,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 4,
+      "scored_cell_seed_draw_rows": 12,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "101_200",
+      "eta": null,
+      "mean_new_MAE": 0.0014527289321024624,
+      "mean_legacy_MAE": 0.0014527289321024624,
+      "own_family_K0": 0.0014527289321024624,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 24,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "201_500",
+      "eta": null,
+      "mean_new_MAE": 0.005674590530800383,
+      "mean_legacy_MAE": 0.005674590530800383,
+      "own_family_K0": 0.005674590530800383,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 24,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "501_1000",
+      "eta": null,
+      "mean_new_MAE": 0.01670788269744757,
+      "mean_legacy_MAE": 0.01670788269744757,
+      "own_family_K0": 0.01670788269744757,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 7,
+      "scored_cell_seed_draw_rows": 21,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "all",
+      "eta": null,
+      "mean_new_MAE": 0.016023391549260784,
+      "mean_legacy_MAE": 0.016023391549260784,
+      "own_family_K0": 0.016023391549260784,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 24,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "1001_plus",
+      "eta": 0.0,
+      "mean_new_MAE": 0.0435868059566969,
+      "mean_legacy_MAE": 0.04337971513769422,
+      "own_family_K0": 0.0435868059566969,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0002070908190026737,
+      "mean_new_minus_legacy_MAE": 0.0002070908190026748,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 4,
+      "scored_cell_seed_draw_rows": 60,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.4166666666666667,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 6,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 1,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.002127101974624193
+        },
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.002076921280491306
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "101_200",
+      "eta": 0.0,
+      "mean_new_MAE": 0.0014527289321024622,
+      "mean_legacy_MAE": 0.001451320682962685,
+      "own_family_K0": 0.0014527289321024622,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 1.4082491397884741e-06,
+      "mean_new_minus_legacy_MAE": 1.408249139777492e-06,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.4,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 3,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b2c26",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.00015346467494970015
+        },
+        {
+          "cell_uid": "MATR_b2c26",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.00014501452445979997
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "201_500",
+      "eta": 0.0,
+      "mean_new_MAE": 0.005674590530800383,
+      "mean_legacy_MAE": 0.005655973057452141,
+      "own_family_K0": 0.005674590530800383,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 1.8617473348228613e-05,
+      "mean_new_minus_legacy_MAE": 1.8617473348240912e-05,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.4083333333333333,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 7,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 1,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.0003008319934208999
+        },
+        {
+          "cell_uid": "MATR_b3c13",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": 0.00031293888886769995
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "501_1000",
+      "eta": 0.0,
+      "mean_new_MAE": 0.01670788269744757,
+      "mean_legacy_MAE": 0.016747954844110603,
+      "own_family_K0": 0.01670788269744757,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": -4.007214666304123e-05,
+      "mean_new_minus_legacy_MAE": -4.0072146663036925e-05,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 7,
+      "scored_cell_seed_draw_rows": 105,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.45714285714285713,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 9,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.000983742952346798
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 2,
+          "new_minus_old": 0.0009539870023727998
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "all",
+      "eta": 0.0,
+      "mean_new_MAE": 0.01602339154926078,
+      "mean_legacy_MAE": 0.016068685324020282,
+      "own_family_K0": 0.01602339154926078,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": -4.5293774759502974e-05,
+      "mean_new_minus_legacy_MAE": -4.529377475949905e-05,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.45,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 9,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.001193934936688297
+        },
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0011631888340117025
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "1001_plus",
+      "eta": 0.1,
+      "mean_new_MAE": 0.04357794710861044,
+      "mean_legacy_MAE": 0.043787051582728005,
+      "own_family_K0": 0.0435868059566969,
+      "delta_K_new": 8.8588480864379e-06,
+      "delta_K_legacy": -0.00020024562603111428,
+      "mean_new_minus_legacy_MAE": -0.00020910447411756386,
+      "relative_gain_over_own_K0_percent": 0.020324609459199845,
+      "physical_Query_cells": 4,
+      "scored_cell_seed_draw_rows": 60,
+      "negative_transfer_ratio_new": 0.4,
+      "negative_transfer_ratio_legacy": 0.43333333333333335,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 7,
+      "improving_seed_draw_count_over_K0": 9,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 123,
+          "draw": 3,
+          "new_minus_old": -0.014775342490684504
+        },
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.017348920899715098
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "101_200",
+      "eta": 0.1,
+      "mean_new_MAE": 0.0014423044423261815,
+      "mean_legacy_MAE": 0.0014378665884335277,
+      "own_family_K0": 0.0014527289321024622,
+      "delta_K_new": 1.0424489776296775e-05,
+      "delta_K_legacy": 1.4862343668934542e-05,
+      "mean_new_minus_legacy_MAE": 4.437853892653864e-06,
+      "relative_gain_over_own_K0_percent": 0.717579828276011,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.44166666666666665,
+      "negative_transfer_ratio_legacy": 0.5,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 7,
+      "improving_seed_draw_count_over_K0": 11,
+      "winning_seed_count_against_legacy": 1,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b2c26",
+          "seed": 42,
+          "draw": 3,
+          "new_minus_old": -0.0004028177261353001
+        },
+        {
+          "cell_uid": "MATR_b2c26",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0017394822835922995
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "201_500",
+      "eta": 0.1,
+      "mean_new_MAE": 0.005604282686529851,
+      "mean_legacy_MAE": 0.005585118374701798,
+      "own_family_K0": 0.005674590530800383,
+      "delta_K_new": 7.030784427051596e-05,
+      "delta_K_legacy": 8.947215609857332e-05,
+      "mean_new_minus_legacy_MAE": 1.9164311828051663e-05,
+      "relative_gain_over_own_K0_percent": 1.238994142201116,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.4083333333333333,
+      "negative_transfer_ratio_legacy": 0.49166666666666664,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 7,
+      "improving_seed_draw_count_over_K0": 10,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c13",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": -0.0021927328904470006
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0018220416704814
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "501_1000",
+      "eta": 0.1,
+      "mean_new_MAE": 0.01669894258753451,
+      "mean_legacy_MAE": 0.016942218002194726,
+      "own_family_K0": 0.01670788269744757,
+      "delta_K_new": 8.940109913050008e-06,
+      "delta_K_legacy": -0.00023433530474716103,
+      "mean_new_minus_legacy_MAE": -0.0002432754146602154,
+      "relative_gain_over_own_K0_percent": 0.053508335406351464,
+      "physical_Query_cells": 7,
+      "scored_cell_seed_draw_rows": 105,
+      "negative_transfer_ratio_new": 0.42857142857142855,
+      "negative_transfer_ratio_legacy": 0.4666666666666667,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 9,
+      "improving_seed_draw_count_over_K0": 6,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c13",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": -0.006820478771306301
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.005645627617836
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "all",
+      "eta": 0.1,
+      "mean_new_MAE": 0.016058532652128636,
+      "mean_legacy_MAE": 0.016289708544652767,
+      "own_family_K0": 0.01602339154926078,
+      "delta_K_new": -3.514110286785719e-05,
+      "delta_K_legacy": -0.0002663169953919962,
+      "mean_new_minus_legacy_MAE": -0.00023117589252413418,
+      "relative_gain_over_own_K0_percent": -0.2193112660314313,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.4666666666666667,
+      "negative_transfer_ratio_legacy": 0.475,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 10,
+      "improving_seed_draw_count_over_K0": 6,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 123,
+          "draw": 3,
+          "new_minus_old": -0.008502954433562096
+        },
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.009324534928764401
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "1001_plus",
+      "eta": 0.25,
+      "mean_new_MAE": 0.04291569062172796,
+      "mean_legacy_MAE": 0.04291569062172796,
+      "own_family_K0": 0.0435868059566969,
+      "delta_K_new": 0.0006711153349688983,
+      "delta_K_legacy": 0.0006711153349688983,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 1.5397212992290497,
+      "physical_Query_cells": 4,
+      "scored_cell_seed_draw_rows": 60,
+      "negative_transfer_ratio_new": 0.35,
+      "negative_transfer_ratio_legacy": 0.35,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 10,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 2,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "101_200",
+      "eta": 0.25,
+      "mean_new_MAE": 0.0014393370201189817,
+      "mean_legacy_MAE": 0.0014393370201189817,
+      "own_family_K0": 0.0014527289321024622,
+      "delta_K_new": 1.3391911983487343e-05,
+      "delta_K_legacy": 1.3391911983487343e-05,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.9218452037095384,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.4,
+      "negative_transfer_ratio_legacy": 0.4,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 8,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "201_500",
+      "eta": 0.25,
+      "mean_new_MAE": 0.005619753202280339,
+      "mean_legacy_MAE": 0.005619753202280339,
+      "own_family_K0": 0.005674590530800383,
+      "delta_K_new": 5.483732852003349e-05,
+      "delta_K_legacy": 5.483732852003349e-05,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.9663662641804546,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.4166666666666667,
+      "negative_transfer_ratio_legacy": 0.4166666666666667,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 9,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 2,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "501_1000",
+      "eta": 0.25,
+      "mean_new_MAE": 0.017034900614165474,
+      "mean_legacy_MAE": 0.017034900614165474,
+      "own_family_K0": 0.01670788269744757,
+      "delta_K_new": -0.00032701791671791276,
+      "delta_K_legacy": -0.00032701791671791276,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": -1.957267253066546,
+      "physical_Query_cells": 7,
+      "scored_cell_seed_draw_rows": 105,
+      "negative_transfer_ratio_new": 0.49523809523809526,
+      "negative_transfer_ratio_legacy": 0.49523809523809526,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 6,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "PRETRAINED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "all",
+      "eta": 0.25,
+      "mean_new_MAE": 0.016440637264354418,
+      "mean_legacy_MAE": 0.016440637264354418,
+      "own_family_K0": 0.01602339154926078,
+      "delta_K_new": -0.0004172457150936346,
+      "delta_K_legacy": -0.0004172457150936346,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": -2.60397877572232,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.5166666666666667,
+      "negative_transfer_ratio_legacy": 0.5166666666666667,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 6,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "1001_plus",
+      "eta": null,
+      "mean_new_MAE": 0.060131179634039036,
+      "mean_legacy_MAE": 0.060131179634039036,
+      "own_family_K0": 0.060131179634039036,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "101_200",
+      "eta": null,
+      "mean_new_MAE": 0.004014866820767343,
+      "mean_legacy_MAE": 0.004014866820767343,
+      "own_family_K0": 0.004014866820767343,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "201_500",
+      "eta": null,
+      "mean_new_MAE": 0.01288007671676805,
+      "mean_legacy_MAE": 0.01288007671676805,
+      "own_family_K0": 0.01288007671676805,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "501_1000",
+      "eta": null,
+      "mean_new_MAE": 0.022272475972134793,
+      "mean_legacy_MAE": 0.022272475972134793,
+      "own_family_K0": 0.022272475972134793,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "all",
+      "eta": null,
+      "mean_new_MAE": 0.03655823377778917,
+      "mean_legacy_MAE": 0.03655823377778917,
+      "own_family_K0": 0.03655823377778917,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 117,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "1001_plus",
+      "eta": 0.0,
+      "mean_new_MAE": 0.06013117963403906,
+      "mean_legacy_MAE": 0.060138545017409055,
+      "own_family_K0": 0.06013117963403906,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": -7.365383370022303e-06,
+      "mean_new_minus_legacy_MAE": -7.365383370015672e-06,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.4564102564102564,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 7,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 2026,
+          "draw": 1,
+          "new_minus_old": -0.004185533044448714
+        },
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 2026,
+          "draw": 4,
+          "new_minus_old": 0.004158830285397097
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "101_200",
+      "eta": 0.0,
+      "mean_new_MAE": 0.004014866820767344,
+      "mean_legacy_MAE": 0.004006863681679048,
+      "own_family_K0": 0.004014866820767344,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 8.003139088296449e-06,
+      "mean_new_minus_legacy_MAE": 8.003139088294878e-06,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.26666666666666666,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 4,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 42,
+          "draw": 0,
+          "new_minus_old": -5.444884300229982e-05
+        },
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 5.681157112129992e-05
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "201_500",
+      "eta": 0.0,
+      "mean_new_MAE": 0.01288007671676805,
+      "mean_legacy_MAE": 0.012826111705894098,
+      "own_family_K0": 0.01288007671676805,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 5.39650108739386e-05,
+      "mean_new_minus_legacy_MAE": 5.3965010873953447e-05,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.26666666666666666,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 4,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 4,
+          "new_minus_old": -0.0003490646680196002
+        },
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 1,
+          "new_minus_old": 0.00036004980405169966
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "501_1000",
+      "eta": 0.0,
+      "mean_new_MAE": 0.022272475972134796,
+      "mean_legacy_MAE": 0.022131399251864456,
+      "own_family_K0": 0.022272475972134796,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.00014107672027031818,
+      "mean_new_minus_legacy_MAE": 0.00014107672027033664,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.3299145299145299,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 4,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 1,
+          "new_minus_old": -0.001326124787330702
+        },
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 4,
+          "new_minus_old": 0.0012749277353285987
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "all",
+      "eta": 0.0,
+      "mean_new_MAE": 0.03655823377778916,
+      "mean_legacy_MAE": 0.03654848592691378,
+      "own_family_K0": 0.03655823377778916,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 9.747850875373e-06,
+      "mean_new_minus_legacy_MAE": 9.747850875383354e-06,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.4495726495726496,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 7,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 2026,
+          "draw": 1,
+          "new_minus_old": -0.0026365729753632106
+        },
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 2026,
+          "draw": 4,
+          "new_minus_old": 0.002612182895678189
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "1001_plus",
+      "eta": 0.1,
+      "mean_new_MAE": 0.05728806416997268,
+      "mean_legacy_MAE": 0.05468568098176122,
+      "own_family_K0": 0.06013117963403906,
+      "delta_K_new": 0.0028431154640663524,
+      "delta_K_legacy": 0.005445498652277818,
+      "mean_new_minus_legacy_MAE": 0.002602383188211465,
+      "relative_gain_over_own_K0_percent": 4.728188406363679,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.38290598290598293,
+      "negative_transfer_ratio_legacy": 0.39829059829059826,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 15,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-6",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": -0.0375031844510898
+        },
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.0676429807246543
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "101_200",
+      "eta": 0.1,
+      "mean_new_MAE": 0.00398685278240427,
+      "mean_legacy_MAE": 0.003898146046532474,
+      "own_family_K0": 0.004014866820767344,
+      "delta_K_new": 2.8014038363069387e-05,
+      "delta_K_legacy": 0.00011672077423485137,
+      "mean_new_minus_legacy_MAE": 8.870673587179608e-05,
+      "relative_gain_over_own_K0_percent": 0.6977575997829784,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.26324786324786326,
+      "negative_transfer_ratio_legacy": 0.2222222222222222,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 3,
+      "improving_seed_draw_count_over_K0": 9,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 2,
+          "new_minus_old": -0.0004508435726165998
+        },
+        {
+          "cell_uid": "HUST_3-4",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.0008127212524414
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "201_500",
+      "eta": 0.1,
+      "mean_new_MAE": 0.012795722847310858,
+      "mean_legacy_MAE": 0.012383253197384644,
+      "own_family_K0": 0.01288007671676805,
+      "delta_K_new": 8.435386945717485e-05,
+      "delta_K_legacy": 0.0004968235193833832,
+      "mean_new_minus_legacy_MAE": 0.0004124696499262114,
+      "relative_gain_over_own_K0_percent": 0.6549174458515294,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.35213675213675216,
+      "negative_transfer_ratio_legacy": 0.3128205128205128,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 4,
+      "improving_seed_draw_count_over_K0": 8,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 2,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_2-3",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": -0.0033701427777608
+        },
+        {
+          "cell_uid": "HUST_3-4",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.004564465681711799
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "501_1000",
+      "eta": 0.1,
+      "mean_new_MAE": 0.021831411352320564,
+      "mean_legacy_MAE": 0.021071508876686375,
+      "own_family_K0": 0.022272475972134796,
+      "delta_K_new": 0.0004410646198142217,
+      "delta_K_legacy": 0.0012009670954484107,
+      "mean_new_minus_legacy_MAE": 0.0007599024756341904,
+      "relative_gain_over_own_K0_percent": 1.9803124734135524,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.4170940170940171,
+      "negative_transfer_ratio_legacy": 0.4,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 4,
+      "improving_seed_draw_count_over_K0": 11,
+      "winning_seed_count_against_legacy": 1,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_10-4",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": -0.0101713461875915
+        },
+        {
+          "cell_uid": "HUST_10-8",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.013473848104477
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "all",
+      "eta": 0.1,
+      "mean_new_MAE": 0.035002070180512365,
+      "mean_legacy_MAE": 0.033502204379143134,
+      "own_family_K0": 0.03655823377778916,
+      "delta_K_new": 0.001556163597276778,
+      "delta_K_legacy": 0.003056029398646009,
+      "mean_new_minus_legacy_MAE": 0.0014998658013692318,
+      "relative_gain_over_own_K0_percent": 4.256670622370767,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.37606837606837606,
+      "negative_transfer_ratio_legacy": 0.38461538461538464,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 15,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_3-7",
+          "seed": 123,
+          "draw": 3,
+          "new_minus_old": -0.0209930423128851
+        },
+        {
+          "cell_uid": "HUST_6-6",
+          "seed": 2026,
+          "draw": 3,
+          "new_minus_old": 0.0400710181156928
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "1001_plus",
+      "eta": 0.25,
+      "mean_new_MAE": 0.05398248960822855,
+      "mean_legacy_MAE": 0.05398248960822855,
+      "own_family_K0": 0.06013117963403906,
+      "delta_K_new": 0.006148690025810477,
+      "delta_K_legacy": 0.006148690025810477,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 10.225460506897868,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.3487179487179487,
+      "negative_transfer_ratio_legacy": 0.3487179487179487,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 14,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "101_200",
+      "eta": 0.25,
+      "mean_new_MAE": 0.0038149619999094412,
+      "mean_legacy_MAE": 0.0038149619999094412,
+      "own_family_K0": 0.004014866820767344,
+      "delta_K_new": 0.0001999048208578711,
+      "delta_K_legacy": 0.0001999048208578711,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 4.979114620286811,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.14871794871794872,
+      "negative_transfer_ratio_legacy": 0.14871794871794872,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 13,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "201_500",
+      "eta": 0.25,
+      "mean_new_MAE": 0.011946541721664554,
+      "mean_legacy_MAE": 0.011946541721664554,
+      "own_family_K0": 0.01288007671676805,
+      "delta_K_new": 0.0009335349951034631,
+      "delta_K_legacy": 0.0009335349951034631,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 7.247899338115989,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.18803418803418803,
+      "negative_transfer_ratio_legacy": 0.18803418803418803,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 13,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "501_1000",
+      "eta": 0.25,
+      "mean_new_MAE": 0.02029070754438379,
+      "mean_legacy_MAE": 0.02029070754438379,
+      "own_family_K0": 0.022272475972134796,
+      "delta_K_new": 0.0019817684277509823,
+      "delta_K_legacy": 0.0019817684277509823,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 8.897836191316953,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.28547008547008546,
+      "negative_transfer_ratio_legacy": 0.28547008547008546,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 13,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "HUST",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "all",
+      "eta": 0.25,
+      "mean_new_MAE": 0.03289959558096288,
+      "mean_legacy_MAE": 0.03289959558096288,
+      "own_family_K0": 0.03655823377778916,
+      "delta_K_new": 0.0036586381968262585,
+      "delta_K_legacy": 0.0036586381968262585,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 10.007699548792349,
+      "physical_Query_cells": 39,
+      "scored_cell_seed_draw_rows": 585,
+      "negative_transfer_ratio_new": 0.3230769230769231,
+      "negative_transfer_ratio_legacy": 0.3230769230769231,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 14,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "HUST_8-1",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "1001_plus",
+      "eta": null,
+      "mean_new_MAE": 0.042671297958780434,
+      "mean_legacy_MAE": 0.042671297958780434,
+      "own_family_K0": 0.042671297958780434,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 4,
+      "scored_cell_seed_draw_rows": 12,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "101_200",
+      "eta": null,
+      "mean_new_MAE": 0.0011767053852478236,
+      "mean_legacy_MAE": 0.0011767053852478236,
+      "own_family_K0": 0.0011767053852478236,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 24,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "201_500",
+      "eta": null,
+      "mean_new_MAE": 0.0052911818035274215,
+      "mean_legacy_MAE": 0.0052911818035274215,
+      "own_family_K0": 0.0052911818035274215,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 24,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "501_1000",
+      "eta": null,
+      "mean_new_MAE": 0.015797887827610463,
+      "mean_legacy_MAE": 0.015797887827610463,
+      "own_family_K0": 0.015797887827610463,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 7,
+      "scored_cell_seed_draw_rows": 21,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 0,
+      "window": "all",
+      "eta": null,
+      "mean_new_MAE": 0.01541302574534379,
+      "mean_legacy_MAE": 0.01541302574534379,
+      "own_family_K0": 0.01541302574534379,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.0,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 24,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.0,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 3,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "1001_plus",
+      "eta": 0.0,
+      "mean_new_MAE": 0.04267129795878043,
+      "mean_legacy_MAE": 0.04248072402370748,
+      "own_family_K0": 0.04267129795878043,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 0.000190573935072935,
+      "mean_new_minus_legacy_MAE": 0.00019057393507294998,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 4,
+      "scored_cell_seed_draw_rows": 60,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.35,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 3,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.0020462696632130017
+        },
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0020681882731651974
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "101_200",
+      "eta": 0.0,
+      "mean_new_MAE": 0.0011767053852478238,
+      "mean_legacy_MAE": 0.0011736267358064168,
+      "own_family_K0": 0.0011767053852478238,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": 3.0786494414013824e-06,
+      "mean_new_minus_legacy_MAE": 3.0786494414067987e-06,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.35833333333333334,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 3,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b2c26",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.00011967360973360024
+        },
+        {
+          "cell_uid": "MATR_b2c26",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0001175951957703
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "201_500",
+      "eta": 0.0,
+      "mean_new_MAE": 0.005291181803527419,
+      "mean_legacy_MAE": 0.005303091338250147,
+      "own_family_K0": 0.005291181803527419,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": -1.1909534722724574e-05,
+      "mean_new_minus_legacy_MAE": -1.190953472272683e-05,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.5,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 9,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c13",
+          "seed": 123,
+          "draw": 1,
+          "new_minus_old": -0.0002817195653915996
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.00027310907840729943
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "501_1000",
+      "eta": 0.0,
+      "mean_new_MAE": 0.015797887827610463,
+      "mean_legacy_MAE": 0.01595715642946681,
+      "own_family_K0": 0.015797887827610463,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": -0.00015926860185632612,
+      "mean_new_minus_legacy_MAE": -0.00015926860185634876,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 7,
+      "scored_cell_seed_draw_rows": 105,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.6285714285714286,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 12,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 3,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.0009805586338043001
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0009694664478301987
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 1,
+      "window": "all",
+      "eta": 0.0,
+      "mean_new_MAE": 0.015413025745343792,
+      "mean_legacy_MAE": 0.01554049722557126,
+      "own_family_K0": 0.015413025745343792,
+      "delta_K_new": 0.0,
+      "delta_K_legacy": -0.00012747148022746761,
+      "mean_new_minus_legacy_MAE": -0.00012747148022746778,
+      "relative_gain_over_own_K0_percent": 0.0,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.0,
+      "negative_transfer_ratio_legacy": 0.65,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 12,
+      "improving_seed_draw_count_over_K0": 0,
+      "winning_seed_count_against_legacy": 3,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 1,
+          "new_minus_old": -0.001150622697659802
+        },
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0011612038103922945
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "1001_plus",
+      "eta": 0.1,
+      "mean_new_MAE": 0.042925473243567346,
+      "mean_legacy_MAE": 0.0435243488074825,
+      "own_family_K0": 0.04267129795878043,
+      "delta_K_new": -0.000254175284786933,
+      "delta_K_legacy": -0.0008530508487020882,
+      "mean_new_minus_legacy_MAE": -0.0005988755639151568,
+      "relative_gain_over_own_K0_percent": -0.5956586674079166,
+      "physical_Query_cells": 4,
+      "scored_cell_seed_draw_rows": 60,
+      "negative_transfer_ratio_new": 0.4,
+      "negative_transfer_ratio_legacy": 0.4,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 10,
+      "improving_seed_draw_count_over_K0": 7,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 123,
+          "draw": 3,
+          "new_minus_old": -0.018984449038094903
+        },
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.019559614182089
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "101_200",
+      "eta": 0.1,
+      "mean_new_MAE": 0.0011605885575214547,
+      "mean_legacy_MAE": 0.0011380147586265742,
+      "own_family_K0": 0.0011767053852478238,
+      "delta_K_new": 1.611682772636625e-05,
+      "delta_K_legacy": 3.86906266212421e-05,
+      "mean_new_minus_legacy_MAE": 2.2573798894880915e-05,
+      "relative_gain_over_own_K0_percent": 1.3696570040742966,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.375,
+      "negative_transfer_ratio_legacy": 0.38333333333333336,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 3,
+      "improving_seed_draw_count_over_K0": 12,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b2c26",
+          "seed": 123,
+          "draw": 2,
+          "new_minus_old": -0.000607698559761
+        },
+        {
+          "cell_uid": "MATR_b2c26",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0015250223875046
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "201_500",
+      "eta": 0.1,
+      "mean_new_MAE": 0.005311910064750639,
+      "mean_legacy_MAE": 0.0054454323157034235,
+      "own_family_K0": 0.005291181803527419,
+      "delta_K_new": -2.072826122321806e-05,
+      "delta_K_legacy": -0.000154250512175996,
+      "mean_new_minus_legacy_MAE": -0.0001335222509527834,
+      "relative_gain_over_own_K0_percent": -0.39175106796367043,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.5666666666666667,
+      "negative_transfer_ratio_legacy": 0.6166666666666667,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 11,
+      "improving_seed_draw_count_over_K0": 5,
+      "winning_seed_count_against_legacy": 2,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c13",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": -0.0025516905387243
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0022283297777175998
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "501_1000",
+      "eta": 0.1,
+      "mean_new_MAE": 0.015968989237966323,
+      "mean_legacy_MAE": 0.016538992140861093,
+      "own_family_K0": 0.015797887827610463,
+      "delta_K_new": -0.00017110141035584094,
+      "delta_K_legacy": -0.0007411043132506175,
+      "mean_new_minus_legacy_MAE": -0.0005700029028947694,
+      "relative_gain_over_own_K0_percent": -1.0830651047971214,
+      "physical_Query_cells": 7,
+      "scored_cell_seed_draw_rows": 105,
+      "negative_transfer_ratio_new": 0.5714285714285714,
+      "negative_transfer_ratio_legacy": 0.6,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 14,
+      "improving_seed_draw_count_over_K0": 5,
+      "winning_seed_count_against_legacy": 3,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c13",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": -0.007708362763441001
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.007296571493148798
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 3,
+      "window": "all",
+      "eta": 0.1,
+      "mean_new_MAE": 0.015626075743846436,
+      "mean_legacy_MAE": 0.01615516968647682,
+      "own_family_K0": 0.015413025745343792,
+      "delta_K_new": -0.00021304999850263473,
+      "delta_K_legacy": -0.00074214394113301,
+      "mean_new_minus_legacy_MAE": -0.0005290939426303835,
+      "relative_gain_over_own_K0_percent": -1.3822723845575628,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.625,
+      "negative_transfer_ratio_legacy": 0.6666666666666666,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 11,
+      "improving_seed_draw_count_over_K0": 4,
+      "winning_seed_count_against_legacy": 3,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 123,
+          "draw": 3,
+          "new_minus_old": -0.0105118275375806
+        },
+        {
+          "cell_uid": "MATR_b3c7",
+          "seed": 42,
+          "draw": 2,
+          "new_minus_old": 0.0105435696733788
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "1001_plus",
+      "eta": 0.25,
+      "mean_new_MAE": 0.04286802925654265,
+      "mean_legacy_MAE": 0.04286802925654265,
+      "own_family_K0": 0.04267129795878043,
+      "delta_K_new": -0.0001967312977622297,
+      "delta_K_legacy": -0.0001967312977622297,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": -0.4610389352399545,
+      "physical_Query_cells": 4,
+      "scored_cell_seed_draw_rows": 60,
+      "negative_transfer_ratio_new": 0.3,
+      "negative_transfer_ratio_legacy": 0.3,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 9,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "101_200",
+      "eta": 0.25,
+      "mean_new_MAE": 0.0011459037810563509,
+      "mean_legacy_MAE": 0.0011459037810563509,
+      "own_family_K0": 0.0011767053852478238,
+      "delta_K_new": 3.080160419145762e-05,
+      "delta_K_legacy": 3.080160419145762e-05,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": 2.6176139395308837,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.4,
+      "negative_transfer_ratio_legacy": 0.4,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 9,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 3,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "201_500",
+      "eta": 0.25,
+      "mean_new_MAE": 0.005353939842591033,
+      "mean_legacy_MAE": 0.005353939842591033,
+      "own_family_K0": 0.005291181803527419,
+      "delta_K_new": -6.275803906360398e-05,
+      "delta_K_legacy": -6.275803906360398e-05,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": -1.1860873693995113,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.5583333333333333,
+      "negative_transfer_ratio_legacy": 0.5583333333333333,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 6,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 1,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "501_1000",
+      "eta": 0.25,
+      "mean_new_MAE": 0.016426114250348785,
+      "mean_legacy_MAE": 0.016426114250348785,
+      "own_family_K0": 0.015797887827610463,
+      "delta_K_new": -0.0006282264227383058,
+      "delta_K_legacy": -0.0006282264227383058,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": -3.9766482050868524,
+      "physical_Query_cells": 7,
+      "scored_cell_seed_draw_rows": 105,
+      "negative_transfer_ratio_new": 0.6,
+      "negative_transfer_ratio_legacy": 0.6,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 3,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    },
+    {
+      "domain": "MATR",
+      "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+      "K": 5,
+      "window": "all",
+      "eta": 0.25,
+      "mean_new_MAE": 0.01613897956726571,
+      "mean_legacy_MAE": 0.01613897956726571,
+      "own_family_K0": 0.015413025745343792,
+      "delta_K_new": -0.0007259538219219081,
+      "delta_K_legacy": -0.0007259538219219081,
+      "mean_new_minus_legacy_MAE": 0.0,
+      "relative_gain_over_own_K0_percent": -4.710002006849406,
+      "physical_Query_cells": 8,
+      "scored_cell_seed_draw_rows": 120,
+      "negative_transfer_ratio_new": 0.6,
+      "negative_transfer_ratio_legacy": 0.6,
+      "paired_seed_count": 3,
+      "paired_seed_draw_count": 15,
+      "winning_seed_draw_count_against_legacy": 0,
+      "improving_seed_draw_count_over_K0": 4,
+      "winning_seed_count_against_legacy": 0,
+      "improving_seed_count_over_K0": 0,
+      "best_and_worst_paired_cell_slots": [
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        },
+        {
+          "cell_uid": "MATR_b3c9",
+          "seed": 123,
+          "draw": 0,
+          "new_minus_old": 0.0
+        }
+      ]
+    }
+  ]
+}

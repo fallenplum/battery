@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "pytest_passed": 40,
+  "pytest_result_sha256": "c7f4a161cb665873d4985172d66d510611516c1c9dde6bf441089579968b2476",
+  "pytest_suites": [
+    "test_transfer_scope_data",
+    "test_transfer_scope_geometry",
+    "test_run_specialization_pooled",
+    "test_onesided_engine"
+  ],
+  "batched_jvp_audit_sha256": "3231d1d65d1f4a28b7c5ff2bd7fa9da401fd2225a506da388c608dc01ddc6b0b",
+  "batched_jvp_audit": {
+    "status": "PASS_REAL_CPU",
+    "checkpoint": "7f85595169c2ea6bb3fc7398ef8460b7c0d1200e3cec50b06e5731be918bcf64",
+    "rows": [
+      {
+        "uid": "MATR_b2c4",
+        "observations": 371,
+        "prefix_and_jacobian_identity_matches": true,
+        "batch_vs_legacy_single_cpu_f0": {
+          "max_abs": 1.7881393432617188e-07,
+          "relative_norm": 5.7550581219095546e-08
+        },
+        "batch_vs_legacy_single_cpu_jacobian": {
+          "max_abs": 5.811452865600586e-07,
+          "relative_norm": 8.118983522653957e-07
+        },
+        "batch_vs_parent_cuda_cache_f0": {
+          "max_abs": 1.7881393432617188e-07,
+          "relative_norm": 6.118080712844017e-08
+        },
+        "batch_vs_parent_cuda_cache_jacobian": {
+          "max_abs": 1.3780605513602495e-05,
+          "relative_norm": 3.25170621200411e-05
+        }
+      },
+      {
+        "uid": "MATR_b4c16",
+        "observations": 512,
+        "prefix_and_jacobian_identity_matches": true,
+        "batch_vs_legacy_single_cpu_f0": {
+          "max_abs": 1.7881393432617188e-07,
+          "relative_norm": 6.687288915265193e-08
+        },
+        "batch_vs_legacy_single_cpu_jacobian": {
+          "max_abs": 2.8312206268310547e-07,
+          "relative_norm": 8.883146151126502e-07
+        },
+        "batch_vs_parent_cuda_cache_f0": {
+          "max_abs": 2.384185791015625e-07,
+          "relative_norm": 9.692844153319864e-08
+        },
+        "batch_vs_parent_cuda_cache_jacobian": {
+          "max_abs": 1.1406838893890381e-05,
+          "relative_norm": 3.12854833317949e-05
+        }
+      }
+    ],
+    "batch_seconds": 9.408355800027493,
+    "singleton_seconds": 10.638698199996725,
+    "global_vs_repeated_local_non_linear": {
+      "max_abs": 2.384185791015625e-07,
+      "relative_norm": 1.0732798373096435e-07
+    },
+    "first_query_invariant_to_second_coefficients": true,
+    "eta_zero_exact": true,
+    "actual_18_coordinate_output_shape": [
+      2,
+      4900
+    ],
+    "new_training": 0,
+    "target_rows_read": 0
+  },
+  "formal_new_gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "reused_cache_execution_origins": "Authenticated original artifact lineage; recorded in REUSE_MANIFEST and parent receipts",
+  "platform": "Windows",
+  "python": "3.11.14",
+  "torch": "2.4.1+cu121",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "pandas": "2.1.4",
+  "cuda_build": "12.1",
+  "new_training_in_audits": 0,
+  "target_query_rows_read_in_audits": 0
+}

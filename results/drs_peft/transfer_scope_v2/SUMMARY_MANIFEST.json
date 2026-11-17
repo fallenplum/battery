@@ -1,0 +1,906 @@
+{
+  "status": "COMPLETE",
+  "scored_slots": 867,
+  "requested_slots": 867,
+  "missing_slots": 0,
+  "new_method_scored_slots": 540,
+  "scored_cell_window_rows": 105360,
+  "new_model_forwards": 0,
+  "new_Query_label_array_reads": 0,
+  "new_training": 0,
+  "new_bootstrap_draws": 0,
+  "summarizer_sha256": "70752d273d75843cc386fd429d1db1da94fbca5f351cfce9eaf265210bb2243d",
+  "inputs": [
+    {
+      "path": "configs/drs_peft/specialization_comparison_v1/EPISODES_TOTAL_K.json",
+      "sha256": "2649104bada66d0120f0fdf9dc3e0f57af60afe947af80b7086c8ba072bbde68"
+    },
+    {
+      "path": "results/drs_peft/specialization_comparison_v1/target_total_K/CELL_METRICS.csv",
+      "sha256": "36a9aeef5741a39cda159cd80d1d0f6c8e8f67687dd8f58c5599f0b37bd1cd21"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/HUST/s123/METRICS.csv",
+      "sha256": "7322538fc0aab2c61a7367fa407c1585f700d8b7f9f888f1912cf073f078f32a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/HUST/s2026/METRICS.csv",
+      "sha256": "4c1760273f1b36183858ead6d6da1858775fd2b814c5bea7710daae3f452c7d9"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/HUST/s42/METRICS.csv",
+      "sha256": "5375e939e7572bff1f494bc6c568fad7c96b384ebf3c9a15d6bfd86a7e098fbd"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/MATR/s123/METRICS.csv",
+      "sha256": "7e3f78281beefc5eaa79527eeec48fe0b59f5b88b2379d423c116801b0683e3a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/MATR/s2026/METRICS.csv",
+      "sha256": "68dab27ffd21c94ae4cfc57e0a1351c3b221771b9c5e88b3257ae33783ed921e"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/MATR/s42/METRICS.csv",
+      "sha256": "7ed92fa12c08824a03ac314550a825debaeb406da64e9dc1cffef2435c1e1338"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "0dd4676a49ca770622eea618671349a96c490f2406b187282704b3eae296fb41"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "c606977eea4b8cb9b8deca47fe5a3bfafbc2b87fd96b898e88e069296f3514d2"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "19fdfef3c503b47d9c1bc35063a076d9a190ebe70bea3536f497d14efc40b309"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "993a81ad6508a4dec88d19ad60530937eb4cedf9dce913e477aa4399f1476c7b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "f474465e604bcb8d8b59fb5097512ee6f6b00f624341fbfa7dc8f16fcc4a8178"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "8dfd74670ec971eabf6e383eb0e6c13281218883bb8165dc3a542474b18e2840"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "32e234e32424e43e8df53c60d352e549f9fe30900c56e17bde33511940fa8cdb"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "2f300a136e3dc1bb51a3bdc77bae439523ad73581c903858d7d67f8e6a70d282"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "aeaa1adf34846b207fa3efb500ecb9f8ab23f35919b694e2a66786752b9cba43"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "f93426242a4b0dcbcd5b9579cac96c6047a93ef1d930c3744cba68529cc26979"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "687ec65af9c1a83053e005a54995e1f3af2f99886ef6005a9ee084d4324b4aed"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "4bf9738f9735a3339a6cb9523e96b812bd86a4d33058db7f1a505eed134337c1"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "476ae655f2eb519fe4cedd65b983f8e312b58fd8b452a7b34489e8ebfcadcb77"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "90ab8eb8c43bdf54a1386674d5e43f11d1a8bfeaaf48f6e92461c3644be78adb"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "8d920b88cede7d7ca56d207bf75cc40f919c4b304454b84ee537802750d11d3f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "04533a4dfb34a54e3fee0a76b255e6e5d18396147a691012cb832ae01b980d8a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "ce26e2018f33cb8440da42fe883a4aa83a9ab2154e249f188d61a8d7fb544199"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "52de29f2cc49e5b7eb63c91a8af85bbfc4638bcca0f9833b9f9e5613d15e2b0a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "d2d5b15de13c864ca21732e5372ad3c59fddd69b4d656f7bd9f4ecdd0fb96fd6"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "698b407944b9f57ec2597d3ea42f5a64f22b111a98a53fbd58cc0783a9a6dd8e"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "87fe07c722fde7b2e08d305cb04d41fe2713b24e611e33160bb72b01c5c0e49b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "61f369ded9f6ab47fc62e9998d4c10f87052f2e1637c3cc7f66ba0b09f137ee7"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "6f8d122019ba321019a873cd8c668e256d863e043fe7747d42462d3832cb733d"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "2e86c68b08d678b397072ab7f638ca88267c59dd4ffa51905c8412006d7bdab1"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "fb0cf15bb69f2d0f5065fbffaa503d7ca82b06a8036a3ea5dc60ba19c0163ad5"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "d6a68e97f87f1b3eece49656366ab0a1d24b9fb2d0ac14b2d915084b3431ac87"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "1b6f51f9a7c5ef09a1b2d0d4b48b985f406c8b4ca3ec344a24312019484f24d9"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "27e78c2300f6d6021015c1272602af887039cf31a5872957af8f684845de992b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "2282518e88cce381930b6f5c89b2a34ac07dd9cf9394b19c97a23ee063ebdeb3"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "71a5027bb76bee0945d7c7868ee192294e66d9131e3d5f158c88d504247652cb"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "9598123c6e600358416d45e8d537eaa896d42e0ff30a16ca24a45d6957cb9b33"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "ac7f07bce2d981b0160ef8a0db8c8ed5376fa868e71ba05b4bfa61c9880b51c4"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "cc6185c50017989470e32871cf0ac0581f799642c2e923a8615e3cf6c86df2d4"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "2af423333acb86b2157c198ed69a4b15d999edefcc3c2c2904fee2789838e914"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "43f8662c2f2d13fa1c7c917ab0c5bbd634387807138660b7f172570dc6020f86"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "42ffcc748d71b75cb2c8d56ce4aa9ebe3d4e3445a3cdb32e84fd5ab943cf9f21"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "b5df6e416bd588f6e5f19d814608042753202cc515ecc4d4fc98be92e6487274"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "34ba2c9e08a5ec505c715b0b4f839b1f4f22bb312b9e2b3365c4627cf0c05604"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "42559e2164ad2584f2efe404e898c10365983b3b3a4e2b1d7f68e8d25345aa3b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "defb8c98946be3de29f8b664e02d371187be2605a550d1407836bb87ad8e678a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "10531a639a231c17104d1fee4efb3fe2b9bd1a006e659e622f5b21b623e159a4"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "6dfbb4b6d5bad858432b81fd79b1adf9fb371895d435c9a4973d29f48e2104b0"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "dbbccc79add48216a48e56949ffaadeeac27c42cd2e0f14cc2f2ae7dd082d739"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "963fa044628c4c924efb176223c04c4cdbf12d046cda6c8245830e4b91bcc103"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "cff429ea11ff95d228155cf6bb8539b7d21f3e506ec9c18325d756d4b8718dc0"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "4cb93971bdbae310d4ee9cced235c37d5fa3fc0ba2fb13dd4a46a74502a6b562"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "3a3f608d938fdd655178018d7ff3687647874036d5fe44d777ecfc0944a91873"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "84153a6bab54ac50ad0f8722fba5a1ca976aeba2a0934a8bb0978e9a3532980d"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "96e39c91c16ece2560f09578f05e007a700451f9aa0061f7c5d8daa934b9d879"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "fd0dcd69bc760371e55f55c829c9aa970a62473a5ec0524fbec31bc0b278a9ae"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "a1cc5bcd46a1025c055482debe08418456676552bbde94c2f52c38ef2c809ca3"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "388a6a4ac04773855220ca0b16bd7fad3153e32f5d2529b9c948dc9b23a11cb9"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "f3d4cc90ab2797e754d7700245f07489d8782be015aed4fc6a2e49553352c96c"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "917355e56baa80e54d6371bf8ddbb4205cc532dded3a637dff1484f3e80d17b6"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "5ed94e19030ead7050aa711ec4d72b6d304e4524d949a87e8814990037db6707"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "8316f2035f2f1ddbd2ece1a941cb015d30b1efc3fbc268f0ff21b982932b099a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "af34c614e69e86bd58231cc8b6dedcee19bef8672db08959b64675ef91b93a28"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "e7b3b48c3f800baaf697cb348380dd423224dfaf8179d57d7f18d3fd35f728ba"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "4d4f59a7a1fe93a8c00883ef6b43cf826b84dae7d34cac71522437b3f040e3ed"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "2204db0d03cb06647854713b9fcbd6f132e54618cff00e115ed5dcaf5bbf3a85"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "5da84522489135922c083f66f6a3dabc039afe46db0c1dd22c89c3a85e72959c"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "379fc168b22d27098dce1b2d7ada870b80292286dce6cc109540b475a693461a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "c15eb0b43ddcbfdd896e73ad5ffde7dc1064e0d8cb8e4fd2636a44d4c920fbba"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "121b5cd1dd0532c42630b0f27b98b23721d020f85ee24a98fcbd1ebf97f6cd9f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "cb28902b31162a1084663aa5918f7c27b306464496fc650794b9cbcadbd0c1d8"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "92689c3c62a254e172593068afad1b5e7aef8451da4ca9476820be7ff8986d23"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "c0ec5707bc0fa7f54d30f399e9bb943ad67e11b2f03a184d16fe20ec30096920"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "5b2196fab338b45f5f52b83b8bfe068df8c817812fa360eff01e8e65a32911ce"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "92edee95011ddf17078d58bf96419b42f117d047b534eeb29373ceaab3424fdd"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "3f2d11cf6f0c5ca35cb5487be5531a6e97f29b6743778b6531b5ccab6e82daa5"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "2a30807de5d508d045e2d41bd90a4a21690aeb4d4ffb005fa5cf0fa99d978420"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "6b12409798ec05cf554b3f4bbd3a1e6857f83344fc7d48b71e4dd83a67007891"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "5633a065d0835148f5d3b8bdcc04e417262f17b378b3bdb19eb0bf37807f8743"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "f449bbaf4f7f791b0d6963966bd2651b4c7887186fd4b4bf6b006e218ce210f6"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "b043e051bffd588c489b9ebc8cc7953c3acb443d4117d9262de1934ec1ebe351"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "9aff414fe879f5033398ce00e815d8e4bd9dfe8d98e7f2b5c99c87594a6cbd37"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "6886126909d2de9748dd5b64be3da932c438873ebca4a8a9ab332d6780c6cc30"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "e84e15e4a9a1d0c754197e61ccea928ed8ae92c46355217dd5f3a4388dd2cb2f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "a54ee23e35d513fbad3c0b76f08379d4ad9e8c922197fa6b74aa913eb59035c7"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "8b465ab14861ffe06cfaf91f8ef99ccda510a7d585dfcea36c26a36ff356bd31"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "457dda84a86926c4874bfde0e9d8f4295e26290b6778152103fe3f7ca37407dd"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "cdf59dfd912789da91f7d29750a71a9a833f9c99406d4ddca06b2d61caa227df"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "a0538432223d5b364549022d41c63103e1f09b5c5b9790411d0524871035d03f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "2c24fe307d56f2cde0619c9cddfc36b2c19f0c447f2683b792d1c62edb07fad4"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "1fd8429d9f7f16bcb63a5d2f457206f387d1b6666b894e25298f2d13fe438b9f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "8a05e6419f7658d72bf4135a46ca4b98f9c9c363d66430320c21504c83fdb268"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "17382113dcc1a39953e946d68ee16858caab369992b78b6c2f68d678aee2da33"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "e1fe738d6a1ef0a1eba7ea3454ef412dc80300d4e10d1ab3b13c271b58f02ffe"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "934fc94a24b5cba6de1f3ee0b151b442b1b42a18581811ba82128e7c1705e4e2"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "be6e354fdc4e66e81537c1f3372e685f73bfde1300c7547ad742a3d38f9a9ce7"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "1e39fdb6dc9da68f75b7f3737259c4df7ec8238bd9fcd5cd03abd1f2493a7ba0"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "8e13249e51194d4453b9642320fb95312e10981a6e74fee4bd8ec1b715610ea3"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "55672cd07b8a1898141af11a17bb0c873fcf81162168e28fcd3c35dd6b291230"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "11231f769f5f315b1848d366141e7f062e8fd1ca77d96f427429aabc382bbfb1"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "36ebedbf3310a171ee5687dfde136ed52e5cc35807aae7fa3e02b7b763e189bf"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/C_HUST/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "76d03f0f4a74f1ea982fbc6a8db8cf33f67be5c9c99cb3ce33a6234d1be93fb8"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "cc2c58939c3257afed15080ce390aa0b65df30c7a9a1ecb371b472ecd8ebd66c"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "6bc98cb282428b6d549cacc22175c3190e405b08438b1a8bbbfad7482c2cf1c6"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "dc0cda471feb167894fab0990e97ba9a880107619bd96121453cd557ea047a1c"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "09e58c6c7d5ce8cec83f113a6d611947c5cbccca54e5cd23d2e53f734b2316f1"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "81acaa17e7aa1d7fcaf47ccca9973959319c852be8b922c2476eceb1ed7e5556"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "5dcbdc0b495b377ad21a013ee1d02a4e181a18c7fa7a4538387633bc0f177cbc"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "401aca1b55a0cbee1fc67d604c2add8bdc14ca8b77d44e7a0ecac12c79a2608c"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "0d6251c1b6cc44323da1490e4d1038259be1bb1072d99658dec30afa6632782b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "5f492ffb427a31521ccc12b3128ec79bd99ca276b13a7719f1cb4be4663803e8"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "4a98584e4e7e1ed25920a2d3dae8de4bd27d17689d90eef2362f22804f3616b8"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "27619e30a35a819c6624fac80f12a0c0cb3315fc7ae7263ddd749b762b8d7e24"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "7f3ee88133ca221f1e43d568608be3862891aff15e9f605b6fd0d2149edd63f9"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "0997b13268b2416fe2098e220c59cb04f2919c4aeb8e79f7ad5519597ebb4cb0"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "8c8b7ca5728c801d9423e71356f51ae2229ed65f3385beea67b251cb5afa446f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "b8c82c936c0ab193fe687876ceecec118190a4826dbec3290070984f642f786a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/PRETRAINED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "975f7552e899a004e6ed2fe473a9c78a9f87033294008223fe9318d18470dbf3"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "a7b79179cf6d4fab2d7718be442aba870a998283d5f6fda76df4ff3d7e3c63f9"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "096b09e61403a8d1ee167b5ef7ef5ab8812f7c99101b33981cf393211ad43a2d"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "f9bebf3ef6bec6a9c0c657645e1e4a0c0bf300fc7c7ef1f910e6652d8d22a266"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "a7a7ec2896f89a99b396b119368a00ca17db24ef48b89cdb3214414f3521a48b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "9dfc9ed682a2da29afa2a8e394695ba2928dac5ac29316223fe62b36f63d4904"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "363be92e5edfc85243b0448a2d05039bb5080b7d678426c64ceb033a6a3293ec"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "a4f1b1509cda25a9ec6f6df9cf082e5af945c0c81aa5774ab54ce061092d6011"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "2d464f0b32a56be8291ede1f9af80f1665a285a14d30b196eb8fcf868740de0f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "172a5b6697cd2fa9040c1c10c42932281de239b3a0b9a8512f0ea3097d5e38b8"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "3ea045a910f99c5743ab9f6d9c767f393273d117087c38ec9550359a2bc07131"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "b724cb2a754a9216d14b798f23c803fd9eba256fe7a3b4bf0f62e6c5a1330fea"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "1b54ae80456ff323bf53303862da24407433baabc612675a7344edee0f69cc35"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "cbbefdf1f683223279f8c33a61a7b110c51ced545b91e379d247ce1348ab0250"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "45a97bbfbc9a709d6cc067050ef7a3c46009968c55b37752fcd944fa48a724bb"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "0783da0685e3db5c477d2a490ca4c92e2ef3cabfbdbb7e35e5751d318a8799bc"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed123/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "92cfe41ea194a52644ddf3d9557d355aafc0a9ca2e138c67a5a532356451f664"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "f31c8bffa84b4ad6b59151a788ddc8c1ffa6c165a9fe37e9128b2c32d1510260"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "334d109cb7ee5442f5a4ba46860f41f103ddc7e25c9da6791cac716cf8727bab"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "fe0ccdd7c96802d490cabbd8a86b150f9eaa919b199de6bcb85ecc31d15ed702"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "dc73ac8db3ae8079f1c5d5f1913742a9bd079e1f90ff976eefe81a8bf97a5d5f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "3538368a5c98a1e47f46ba963f2e8bd31d404e8b33d9017b7d5889b6566cce6c"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "b3d33f62811f0034044cf2d1f433426838798b84ae66e8e012b9526d54a78be3"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "df32a3861dc61ae5627de1eefaef86041436afa72acae9577cefc622a7448b08"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "9ef7556004498da5c904cfbc44d3660653163963430831cb0a07805053fe07ca"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "345fa49800507522c88e51216860c7d1ba88ad70d40a2f1ba8bba141f4b25d99"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "93786288c8b0c668d3c72405406f7bdf7150a9036dd5c250137d20638e502d1f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "6c1eb1e182dd475bb0bfdb8b1af82eddb46a709ca6a792e8f45236ccd4c786e4"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "b5de1c031dc62eb29935802b6415b64174d6733db855b6f346738242a5a087f1"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "786ec7e258699b96e04062f684b0036267ba2b37d40e2177f025330a2da91490"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "bdd7a7a763a566bfabc1d85fd34d63267cee14a3b1694eeeecd469c3a1f800d9"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "477966e0d358ddbe6167e44a6451bcd545c724908d77da303e0ddfc970652bd7"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/PRETRAINED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "817b54e63bda48eef68cd873d6e6d74faf9e654eed8a40cd9841e35d1ea8ad3b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "5896d9bce4e7959bb3b7e3e689f6e1d0438dcc4f974b1317785731eeaa569a08"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "82e254546a63ba144b762a50ec88607df5b2de12a6b9d6a486a8c2b32a8ebe76"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "f710c98b54f1ccd5568029302b9fd4ff4de47eb7f2abb400996dc1a0eb966e69"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "362c838487b03ed5bc71be635970cb0bbf531c17258a56a49bb9108355e1cf1b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "c2b19b9d28e89c3c8a237c400571ee90332a795cb13076980378af0da609c6be"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "e8cab162199e1c74d1df5ac9d3a5610a4e9ab40b51c5c84a00ad6a274dff4be5"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "f6b6adf934ccc8b3aeb83d5d1dbed40057bb9cefaea3f70b9f6a31ef36bba92a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "186b63af4dd254c41f69512dca97617ae7371719aded773de6fef425115e889b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "3d9ceba787eb563839a7aca9ce71f8a6afcab294d59af034e82d692a2c2f8e59"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "799b19356e4becbe774616e912c06f786f8c4af65de81f95c84b96faebb58adf"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "8fa732e6757e8c59210d62c2abc64537e3f160c8bcc2f29e43ed5038356f31ec"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "aaed1752d3ad9ea84d4e40177c6b5ed1c51cdb1f888ae7b3bc8f8356ba1e96ae"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "0022df2488aa3653c7358e44fcba70d127d01c693600cbe44e8646ee8a3066ab"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "fbde82f8f65220e1ff4a7bda364dd3359e83c73bb46edcf195653b20889e95c4"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "78609bf03fd2d3e9766674c7ec3eea0e7f436ea58cf6a59c6feac6db50554440"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed2026/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "407830339cf83685ba80f7efdd7e2e1c648ae398530c45721aa769ce09a572ce"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "f08d5b778d5a13ad6e7efb8c41efdf2400de0f2d0ab645d787f36105374f2d81"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "89adeed6a6a13707338f7f26600775fa1d9e9e5573699874f7a9c9e90bbfa747"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "6cc1618c13b95769810c3861ba34d736a7364004df7d89d8eb51679ed1be705c"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "549cdbe534da7aa1e1fa89173c390ed493bf5dc56f94c257dc5de247f79449eb"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "e07517bdf914af21aa9040fce35258f3766150da200fce99fb2d9e94820b6cb3"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "4ee156a71a686e98f7eefddae229071c3cc55d618abd247a8a6b867b65546fb3"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "5a540355ca75b47da5d7b36a5ce2b19d7ce774cbfdaeccc7a359082a2d6cc9f8"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "a5057969bf3c0a81721e84bf34740afbdd8a2511c89c52262ce66ad97a1c196b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "cb85844685deb816067fd06393a0cb0e723fc870e8b7a937d2d5cc24c3a45ffd"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "27628b631977eaa249307a06380404ed1693319412944ef07fecff19a1c41be8"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "a8fa44b6be084094c04f86e21180f17defb0ad10146618ca04b0bffccfceb14c"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "8afdde3302ad3c64f4f15ebe1fa8592afb2da5bfcf69633beb5c228b0d763057"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "8d967e97278431d35b4790a30ca3ced08828dbb29251e879ee0cd08d3d6cbc09"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "31842b6d4a55971cf9a0c655f547b934973cb678fd422a4e83a0d36235a660ef"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "ff6506a58c119588e5a9beb8be5c8305df2901a88f3c300bd7ec2addd7e8d4f3"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/PRETRAINED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "ea706450ecad48c16fc32fede4db27423201ca30dc2d5edd9021f4aa6a8bc949"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K0_draw0/CELL_METRICS.csv",
+      "sha256": "4908223cd3a1c3ffb0a2e6fc517739e46e221e4b95e10e91a5648bbbd72358e6"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw0/CELL_METRICS.csv",
+      "sha256": "7f093ff7ccfccf0b7e467fff8c481958878521eaf5828d883ad0747b6b9bd079"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw1/CELL_METRICS.csv",
+      "sha256": "3eb98f3f57db1505cbb12f2cb1afb390a21b4debab86ee661a1b405150d0ed24"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw2/CELL_METRICS.csv",
+      "sha256": "5b48d82565d21b3ee72a1ef92c08e9a9b2784d9c9fe51c61e83d98aec2cf39d5"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw3/CELL_METRICS.csv",
+      "sha256": "f1aea18fcfabdcf7c3373eaf306d81fb8151cf087b66d6511f0683f77de5359a"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K1_draw4/CELL_METRICS.csv",
+      "sha256": "19ab1c7ef134fb95d79d43c254e11a95acac4703796b7cd5a6117399befab806"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw0/CELL_METRICS.csv",
+      "sha256": "046c8c69df884539fc3e82910e9dba15f6961f880174c1f7d5bd5d6ba32ef2a5"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw1/CELL_METRICS.csv",
+      "sha256": "532bd9fc34eb2db921c9b8c82d5170798fa049a49fc5c171e89e072d0c660d58"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw2/CELL_METRICS.csv",
+      "sha256": "5f6ee5c5babcce73d5a30053c5973fd62391fa0612db222a88c0f46268c0ae76"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw3/CELL_METRICS.csv",
+      "sha256": "184eb2aa5da027aa7919c11e7a9a2fc49750199a16ed899f167423d5c5601379"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K3_draw4/CELL_METRICS.csv",
+      "sha256": "d100a030b174c748f31cfe87b744adb814a334a3ff39e666e8dbbb890ddeeb93"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw0/CELL_METRICS.csv",
+      "sha256": "b0150920e7f2507e492fe6ce64e6389f3675ebb11b35032de1dd1595210cf4b1"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw1/CELL_METRICS.csv",
+      "sha256": "6ab98277dd97a4c4b3774763ecc52acff826ea04230e841ddd6799ba649e1262"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw2/CELL_METRICS.csv",
+      "sha256": "702580943b2d05b770b3a3066a460ddd81e9f813c6a900b7f72077e6b20ee7e0"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw3/CELL_METRICS.csv",
+      "sha256": "f88c019c807416bbb02ddfdbb35be6e57c9fd9d93897dd6c88401775ac400d7b"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/e0/units/MATR_POOLED/seed42/SPECIALIZED_LORA_ZERO_RETAINING/K5_draw4/CELL_METRICS.csv",
+      "sha256": "a81767f56c5646623cef95d707de3c65adff7e9d82e572028e8e6dbec8d112d3"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/HUST/s123/TRANSFER_DIAGNOSTICS.csv",
+      "sha256": "bd93fb5b2f2f4b00ad3517f8d68ca873f5f29912d3571777b1786ca704e197f5"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/HUST/s2026/TRANSFER_DIAGNOSTICS.csv",
+      "sha256": "879bd0347f8b802462892023d036eb9e0d33150683c60f3ff8c2cfa142575e54"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/HUST/s42/TRANSFER_DIAGNOSTICS.csv",
+      "sha256": "9610919833c0775974f61e2f5d6295814171bfc52b0e8c9186f64e6d534f1937"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/MATR/s123/TRANSFER_DIAGNOSTICS.csv",
+      "sha256": "d37c22766773700d50ae63e08a137c9459e3a3d9f092f0713897fe9405d24531"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/MATR/s2026/TRANSFER_DIAGNOSTICS.csv",
+      "sha256": "1b9e7117fec5097f7c5c70e593e4ecdd29901ee692840a8c67b656bbb3344a71"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/target/MATR/s42/TRANSFER_DIAGNOSTICS.csv",
+      "sha256": "63c148f20edc78c6af4f828aa9684df0ae9542e02998e7375d8c45b86a1a017e"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/TARGET_TOTAL_K_LOCK.json",
+      "sha256": "daf44063890678fb4edc8de3faaf59044b47133dec4f577a0f274bf1919b04f4"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/EXECUTION_LEDGER.json",
+      "sha256": "e629c5cdaf2c99eab6dd2549fc814d0db5b48e8f34495c48eadf2869898b37a3"
+    }
+  ],
+  "files": [
+    {
+      "path": "results/drs_peft/transfer_scope_v2/METRICS.csv",
+      "sha256": "09b3ffb977ba6b1cccdaf6a61d0bfe299eb472d10cf45bad8837122ae8a82646"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/CAL2_INCREMENTAL.csv",
+      "sha256": "24d4d835adeafd52364949faec30dde9bbc02d5c209530ca3fc79237dcb72115"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/TRANSFER_DIAGNOSTICS.csv",
+      "sha256": "b3eccb95c040c60fbc0baf50986b25740a28e7262a0e01a2f65b542dff264566"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/TARGET_SLOT_COVERAGE.csv",
+      "sha256": "9245e2444f1d1a9a1c412731374d1a29cc35b3780ca7f36abc293c2718ba3638"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/HISTORICAL_ANCHORS.json",
+      "sha256": "15b18b78dffb27581f9a46a0afef91153a0515356323e20e529900e50f5f62a4"
+    },
+    {
+      "path": "report/drs_peft/transfer_scope_v2/FINAL_REVIEW_ZH.md",
+      "sha256": "f39fbad373924b2f572f2e770d0e56498b669ca7856006071c0aca47546a52a7"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/MATR_EXTENSION_IDENTITY.json",
+      "sha256": "6d70c578f14d7ce371462c23f4d54f074888e41de4ae98837e5620e8c3ddf731"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/REUSE_MANIFEST.json",
+      "sha256": "adef1cd928ed26b189d948b290e85fbd43f7fac039941c9b211e6fbc23fc6a35"
+    }
+  ],
+  "post_summary_review": {
+    "status": "COMPLETE",
+    "base_report_sha256": "8d70e8f398c30dcaef5203fc405686e4af362b1ea5a005b48daa85b3ec8e3cb6",
+    "reviewed_report_sha256": "f39fbad373924b2f572f2e770d0e56498b669ca7856006071c0aca47546a52a7",
+    "model_runs": 0,
+    "raw_label_reads": 0
+  },
+  "review_artifacts": [
+    {
+      "path": "results/drs_peft/transfer_scope_v2/REGRESSION_AND_NUMERICAL_AUDIT.json",
+      "sha256": "fa316876c798c02c5a1bd3998a82dd116dccd2f1523804a365667808a25e4b5d"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/E0_TARGET_INDEPENDENT_REVIEW.json",
+      "sha256": "00cae06eafb56b6c43b6043fc9f206684dc658e2a2a5f8cf231598e1c49d7362"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/E0_SOURCE_COST_AND_REUSE.json",
+      "sha256": "dea3985eb3e1ca93856a0f514e8d064c8a222792ca6833746968e8ed6281276f"
+    },
+    {
+      "path": "results/drs_peft/transfer_scope_v2/TARGET_PREDICTION_BARRIER.json",
+      "sha256": "85ceb9bc32ee3a986b0610895f23194103cfdf7c181be37110de423879636aef"
+    }
+  ]
+}

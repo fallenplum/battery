@@ -1,0 +1,57 @@
+{
+  "domain": "MATR",
+  "task_id": "MATR_POOLED",
+  "fold_id": "final",
+  "seed": 2026,
+  "support_ids": [
+    "MATR_b3c14",
+    "MATR_b3c34",
+    "MATR_b3c39",
+    "MATR_b3c44",
+    "MATR_b3c45"
+  ],
+  "query_ids": [
+    "MATR_b3c9",
+    "MATR_b3c30",
+    "MATR_b3c4",
+    "MATR_b3c13",
+    "MATR_b3c19",
+    "MATR_b3c5",
+    "MATR_b3c7",
+    "MATR_b2c26"
+  ],
+  "method": "SPECIALIZED_LORA_ZERO_RETAINING",
+  "K": 5,
+  "draw": 2,
+  "hyperparameters": {
+    "learning_rate": 0.001,
+    "steps": 30,
+    "eta": 0.25
+  },
+  "source_checkpoint_sha256": "7c944ba4b9a936efc27e27206841b3b3a15915428ec5bd1f0b60b2a39d10ab92",
+  "stage": "TRANSFER_SCOPE_V2",
+  "reference_family": "SPECIALIZED",
+  "is_duplicate": false,
+  "duplicate_of_draw": null,
+  "target_lock_sha256": "daf44063890678fb4edc8de3faaf59044b47133dec4f577a0f274bf1919b04f4",
+  "target_Query_labels_used_for_adaptation_or_selection": 0,
+  "state_path": "runtime/drs_peft/specialization_comparison_v1/target_total_K/a/1c1bfeb8786a44255b80c6593f88013027429e7533929a1e19fb736d7801baa7/STATE.pt",
+  "state_sha256": "41dba0919ac82251777c06f62951fc8c1bae57bd87a1591bb86137017b5f64c0",
+  "prediction_path": "runtime/drs_peft/specialization_comparison_v1/target_total_K/a/1c1bfeb8786a44255b80c6593f88013027429e7533929a1e19fb736d7801baa7/PREDICTIONS.npz",
+  "prediction_sha256": "5b3d5ff924c43b34db1e2745a62db7b7d01a81b2f36ba716e999e6cc0b8b0083",
+  "status": "SCORED",
+  "adaptation_id": "0012a23cb42c3e60cf2215dc92b559f0e54fd568bf87fcfc73f29998ecfad032",
+  "reused_state_sha256": "41dba0919ac82251777c06f62951fc8c1bae57bd87a1591bb86137017b5f64c0",
+  "origin": "AUTHENTICATED_LEGACY_LORA_PREDICTION",
+  "details": {
+    "trainable_parameters": 9216
+  },
+  "new_execution_counters": {
+    "new_optimizer_updates": 0,
+    "new_model_forwards": 0
+  },
+  "historical_target_Query_exposure": true,
+  "cell_metrics_sha256": "fbde82f8f65220e1ff4a7bda364dd3359e83c73bb46edcf195653b20889e95c4",
+  "query_cells": 8,
+  "metrics_rows": 40
+}
