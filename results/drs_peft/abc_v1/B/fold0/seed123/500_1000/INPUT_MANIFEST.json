@@ -1,0 +1,332 @@
+{
+  "training_ids": [
+    "MATR_b1c0",
+    "MATR_b1c1",
+    "MATR_b1c2",
+    "MATR_b1c24",
+    "MATR_b1c3",
+    "MATR_b1c4",
+    "MATR_b1c41",
+    "MATR_b3c0",
+    "MATR_b3c33",
+    "MATR_b3c38",
+    "MATR_b4c34",
+    "MATR_b4c38",
+    "MATR_b4c41"
+  ],
+  "baseline_feature_names": [
+    "mean_prefix_Qmax_SOH_cycles1_10",
+    "mean_prefix_Qmax_SOH_cycles81_100",
+    "late_minus_early_prefix_Qmax_SOH",
+    "prefix_Qmax_SOH_slope_per100cycles",
+    "prefix_Qmax_SOH_std",
+    "registered_prefix_anchor_SOH"
+  ],
+  "baseline_capacity_recipe": "maximum_supported_prefix_discharge_Q(V)/nominal_capacity_per_cycle; never_zero_filled_endpoint",
+  "baseline_scaler_mean": [
+    0.9085252126057944,
+    0.8977319887051215,
+    -0.010793223900672748,
+    -0.01427797150963629,
+    0.00443474162531407,
+    0.9749524730902451
+  ],
+  "baseline_scaler_scale": [
+    0.006211188821342888,
+    0.007390802316565279,
+    0.004848129794165656,
+    0.006114431237621199,
+    0.0016022647823058919,
+    0.009803760147839393
+  ],
+  "view_scaler": {
+    "source_ids": [
+      "MATR_b1c0",
+      "MATR_b1c1",
+      "MATR_b1c2",
+      "MATR_b1c24",
+      "MATR_b1c3",
+      "MATR_b1c4",
+      "MATR_b1c41",
+      "MATR_b3c0",
+      "MATR_b3c33",
+      "MATR_b3c38",
+      "MATR_b4c34",
+      "MATR_b4c38",
+      "MATR_b4c41"
+    ],
+    "feature_names": {
+      "absolute": [
+        "mean_voltage_V",
+        "mean_signed_current_C",
+        "mean_capacity_SOH",
+        "std_voltage_V",
+        "std_signed_current_C",
+        "std_capacity_SOH",
+        "min_voltage_V",
+        "min_signed_current_C",
+        "min_capacity_SOH",
+        "max_voltage_V",
+        "max_signed_current_C",
+        "max_capacity_SOH"
+      ],
+      "relative": [
+        "mean_delta_voltage_V",
+        "mean_delta_signed_current_C",
+        "mean_delta_capacity_SOH",
+        "std_delta_voltage_V",
+        "std_delta_signed_current_C",
+        "std_delta_capacity_SOH",
+        "late_minus_early_voltage_V",
+        "late_minus_early_signed_current_C",
+        "late_minus_early_capacity_SOH",
+        "slope_per_100_cycles_voltage_V",
+        "slope_per_100_cycles_signed_current_C",
+        "slope_per_100_cycles_capacity_SOH"
+      ]
+    },
+    "feature_units": {
+      "absolute": [
+        "V",
+        "C-rate",
+        "Q/Qnom",
+        "V",
+        "C-rate",
+        "Q/Qnom",
+        "V",
+        "C-rate",
+        "Q/Qnom",
+        "V",
+        "C-rate",
+        "Q/Qnom"
+      ],
+      "relative": [
+        "V",
+        "C-rate",
+        "Q/Qnom",
+        "V",
+        "C-rate",
+        "Q/Qnom",
+        "V",
+        "C-rate",
+        "Q/Qnom",
+        "V",
+        "C-rate",
+        "Q/Qnom"
+      ]
+    },
+    "statistics": {
+      "absolute": {
+        "mean": [
+          3.049999952316284,
+          -4.000007189237154,
+          0.5211385901157672,
+          0.14661075174808502,
+          0.0002173991043281813,
+          0.34677571287521947,
+          2.799999952316284,
+          -4.002046621762789,
+          0.01090332966011304,
+          3.299999952316284,
+          -3.9986497255472035,
+          0.9106523302885202
+        ],
+        "scale": [
+          0.001,
+          0.001,
+          0.003974392819651119,
+          0.001,
+          0.001,
+          0.002791817867839584,
+          0.001,
+          0.0016742130487973407,
+          0.001,
+          0.001,
+          0.001,
+          0.006445061892746063
+        ],
+        "empirical_std": [
+          0.0,
+          1.5656746537691993e-05,
+          0.003974392819651119,
+          0.0,
+          6.294862888511156e-05,
+          0.002791817867839584,
+          0.0,
+          0.0016742130487973407,
+          0.0004846415448921691,
+          0.0,
+          0.0006357990971495869,
+          0.006445061892746063
+        ],
+        "supported_cells": [
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13
+        ],
+        "physical_std_floor": 0.001
+      },
+      "relative": {
+        "mean": [
+          0.0,
+          4.832995662477165e-06,
+          -0.0016186207582135326,
+          0.0,
+          0.0002229469772338724,
+          0.006018815132287832,
+          0.0,
+          5.894901781890492e-06,
+          -0.006074523974138384,
+          0.0,
+          7.144444330501406e-06,
+          -0.00806569754002759
+        ],
+        "scale": [
+          0.0001,
+          0.0001,
+          0.002767633361447437,
+          0.0001,
+          0.0001,
+          0.001678777082408583,
+          0.0001,
+          0.0001,
+          0.004629696987627969,
+          0.0001,
+          0.0001,
+          0.005650923208939309
+        ],
+        "empirical_std": [
+          0.0,
+          2.8281897723549187e-05,
+          0.002767633361447437,
+          0.0,
+          6.496246485132614e-05,
+          0.001678777082408583,
+          0.0,
+          2.039138824018653e-05,
+          0.004629696987627969,
+          0.0,
+          1.7912172696288863e-05,
+          0.005650923208939309
+        ],
+        "supported_cells": [
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13
+        ],
+        "physical_std_floor": 0.0001
+      }
+    }
+  },
+  "nominal_design_columns": 30,
+  "zero_padding": "absolute_only_or_relative_only_to24; baseline_only_to30",
+  "shuffle": {
+    "fit": {
+      "recipient_ids": [
+        "MATR_b1c0",
+        "MATR_b1c1",
+        "MATR_b1c2",
+        "MATR_b1c24",
+        "MATR_b1c3",
+        "MATR_b1c4",
+        "MATR_b1c41",
+        "MATR_b3c0",
+        "MATR_b3c33",
+        "MATR_b3c38",
+        "MATR_b4c34",
+        "MATR_b4c38",
+        "MATR_b4c41"
+      ],
+      "donor_ids": [
+        "MATR_b3c33",
+        "MATR_b4c34",
+        "MATR_b1c4",
+        "MATR_b3c38",
+        "MATR_b1c2",
+        "MATR_b3c0",
+        "MATR_b1c24",
+        "MATR_b1c1",
+        "MATR_b4c41",
+        "MATR_b1c0",
+        "MATR_b1c41",
+        "MATR_b1c3",
+        "MATR_b4c38"
+      ]
+    },
+    "inner_validation": {
+      "recipient_ids": [
+        "MATR_b1c23",
+        "MATR_b4c19",
+        "MATR_b4c37"
+      ],
+      "donor_ids": [
+        "MATR_b4c37",
+        "MATR_b1c23",
+        "MATR_b4c19"
+      ]
+    },
+    "outer_test": {
+      "recipient_ids": [
+        "MATR_b1c9",
+        "MATR_b3c22",
+        "MATR_b4c10",
+        "MATR_b4c18",
+        "MATR_b4c23",
+        "MATR_b4c35",
+        "MATR_b4c44"
+      ],
+      "donor_ids": [
+        "MATR_b4c18",
+        "MATR_b4c10",
+        "MATR_b1c9",
+        "MATR_b4c23",
+        "MATR_b4c35",
+        "MATR_b4c44",
+        "MATR_b3c22"
+      ]
+    }
+  },
+  "shuffle_mapping_sha256": "f866e87ebfd540159e6063d985f333dda240e334bae01bb3215faa115a5a6c17",
+  "input_sha256": {
+    "fit": {
+      "baseline": "a80b47126f839383ba85f37359eb25c235d3d7594d08af1fa4f090954f04e456",
+      "absolute": "abf39cb9a9ad407efe3a9f949151de26ca88be71970b14fa5ed69ef4ead393f4",
+      "relative": "d7dfa1443457d01cb742657a2795acee7363e3875d6471dd356b02bdbb46229f",
+      "dual": "43ed9c83d92763b4997464f4b44bbd0985b67abad8dc33e5c506ddc3d6f69a51",
+      "shuffled_dual": "95585f858e4307cd967495e625e31d14fb4ffe0094b128adee86560966aefb8c"
+    },
+    "inner_validation": {
+      "baseline": "762edcb5041c2dac9924100a487c8ca0d5058a3392e6fd0c6cbbe541534166ae",
+      "absolute": "d6d0f215f826220f8384be5ddc1f7b8ebbab27a1f881fd8a5703541f6fa23707",
+      "relative": "09b9be0c19203d4d3016d77ffba02d72786c6bf6378a685421a4898726c453fa",
+      "dual": "3951184bf7ed7d5611150d5ee4bf2fb2944bb695fcbbd5a2bb3e65955b7c3152",
+      "shuffled_dual": "20597b8868538185935114424459b5cf7441404f07bb698ee6ee17d2d75bb77f"
+    },
+    "outer_test": {
+      "baseline": "9737d68546cf0caeb367b5bbace5c9d8418d35b895d1528972627b9ae50193e5",
+      "absolute": "676f131a12f4d2e649fbd38b173813d037c600541fe82f49398ac250108509c7",
+      "relative": "1a3d04f7ba396b84ddf163a398c7b68102f3c85f379a0c6d87424e21f096cb1c",
+      "dual": "b4cbc911b5e8388ef723db9908b8858828d6b57347a8d1d4c9dca272ae7e902a",
+      "shuffled_dual": "fec8ff901fd36ad4a3d715c2f1d0aaad61ed2c35e5be2221dbd9d6c61a2c8a17"
+    }
+  },
+  "final_target_descriptors_computed": 0
+}

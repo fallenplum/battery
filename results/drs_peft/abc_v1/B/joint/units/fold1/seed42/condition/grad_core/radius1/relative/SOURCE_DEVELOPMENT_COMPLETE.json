@@ -1,0 +1,110 @@
+{
+  "status": "SOURCE_DEVELOPMENT_COMPLETE",
+  "stage": "ABC_B_FOLD_LOCAL_SOURCE",
+  "method": "ABC_B_joint",
+  "bridge": "native_multivariate",
+  "seed": 42,
+  "epochs": 120,
+  "updates": 960,
+  "validation": {
+    "cells": 15,
+    "observations": 10017,
+    "mae": 0.019353970681316036,
+    "rmse": 0.031927210706797396,
+    "protocol_macro_mae": 0.018585879008578353
+  },
+  "best_epoch": 88,
+  "trainable_parameters": 64609,
+  "elapsed_seconds": 159.7029999999795,
+  "peak_gpu_memory_bytes": {
+    "allocated": 353949696,
+    "reserved": 400556032
+  },
+  "verification_peak_gpu_memory_bytes": {
+    "allocated": 353949696,
+    "reserved": 423624704
+  },
+  "selected_checkpoint_sha256": "25d745621d593a506720fedcce1cc8ad4dfa76f6a7e43992366c07511eda1da5",
+  "prediction_replay_max_absolute_error": 0.0,
+  "target_query_labels_used": 0,
+  "frozen_parameter_sha256": "478c892232d039da794801047cc06a0917106fec4040fe74addb26f1f73f42cb",
+  "frozen_parameters_unchanged": true,
+  "final_target_test_status": "SEALED_NOT_EVALUATED",
+  "private_training_folder": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\abc_v1\\B\\joint\\fold1\\seed42\\condition\\grad_core\\radius1\\relative",
+  "public_files": [
+    {
+      "path": "ABC_B_UNIT_SPEC.json",
+      "sha256": "0265e691984ec132874b31a0c469d97033413516aacf696cd4967debfa32769a",
+      "bytes": 5347
+    },
+    {
+      "path": "BACKBONE_IDENTITY.json",
+      "sha256": "32c85463e0d954d13fd9d16f0fccf1fe9683dce1d6508dcbbbcd2dc2faee16e9",
+      "bytes": 7653
+    },
+    {
+      "path": "CHECKPOINT_SELECTION.json",
+      "sha256": "1b8139fdbd3fc1f7d34704dcd9a5fa892f459fe9dc063a3d347fcc8da61953f8",
+      "bytes": 272
+    },
+    {
+      "path": "DATA_FINGERPRINT.json",
+      "sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d",
+      "bytes": 16232
+    },
+    {
+      "path": "EPISODE_IDS.json",
+      "sha256": "badcb8216131ea970f507498462d478d34d2ef4f60e0e57ebcd523d36baf65f4",
+      "bytes": 1515
+    },
+    {
+      "path": "EXECUTION_ENVIRONMENT.json",
+      "sha256": "59858671248dfd61c4f3eb0c12ce656cad305c8310657dc9c4de2891b1491d78",
+      "bytes": 320
+    },
+    {
+      "path": "FIXED_ADAPTER_START_CHECK.json",
+      "sha256": "968c5c0ad51db89a3995ea5ae61672e3087d8180665fd37838315d80f9af2a66",
+      "bytes": 220
+    },
+    {
+      "path": "RUN_CONFIG.json",
+      "sha256": "a9544c571b2d89e50fc58aa48425e1ccffa58891958556d02b21ec191176b948",
+      "bytes": 5172
+    },
+    {
+      "path": "SOURCE_SCALER.json",
+      "sha256": "eef9fea00d79c3aa173c491ee30643f3adcbf7358d3dc880a2a61831a8bad302",
+      "bytes": 9000
+    },
+    {
+      "path": "SOURCE_SNAPSHOT.json",
+      "sha256": "15bc0723db5943196fb4f2148285954a95811bba2cfde26766f0784cbda950e2",
+      "bytes": 2688
+    },
+    {
+      "path": "SOURCE_VALIDATION_CELL_METRICS.csv",
+      "sha256": "de6f459fb4ff5e815ea23b4db14c21e7b749c85fd617074b77c0289c96423bf2",
+      "bytes": 10783
+    },
+    {
+      "path": "TRAIN_LOG.json",
+      "sha256": "8b511058cc8275e6bb53395307d1a7e984bb3d2da9bd014dda27192ce65c3d34",
+      "bytes": 37381
+    },
+    {
+      "path": "TRAIN_LOG.jsonl",
+      "sha256": "c29bb6a50d3de89471c81744ca1c6e8460eabdb17ee788055b196652a779697f",
+      "bytes": 29096
+    },
+    {
+      "path": "TRAINABLE_PARAMETER_REPORT.json",
+      "sha256": "5cf1b612cda12c27bed00ab03ec270ad275d86280bfef1e310ac6b3a4b4db5fd",
+      "bytes": 5929
+    }
+  ],
+  "private_selected_checkpoint": {
+    "path": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\abc_v1\\B\\joint\\fold1\\seed42\\condition\\grad_core\\radius1\\relative\\CHECKPOINT_SELECTED.pt",
+    "sha256": "25d745621d593a506720fedcce1cc8ad4dfa76f6a7e43992366c07511eda1da5"
+  }
+}

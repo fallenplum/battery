@@ -1,0 +1,51 @@
+{
+  "identity": {
+    "registration_sha256": "fcf23e37e428ef9524feeb249f23f98cf040448104a09853ad126f2fc0246f34",
+    "protocol_file_sha256": "bc24054839c1f3e32744380ce410621645f7d80a974988b91a643e576efd1c51",
+    "protocol_payload_sha256": "81f55a599c87bbb29343f2f316bc60a394169d20bc2fb03179e34da80c3b9d99",
+    "implementation_sha256": "f6d1c2cbec2a7cf5d25f1cf27ffb41309b03b196919cda807de29d5639b966f3",
+    "feature_implementation_sha256": "d40d72b561b258cca1d385cad97ab524554aa73495e96290727e8685bfce0da6",
+    "data_adapter_implementation_sha256": "4dc110c68ed99a28ef61dfeb0bad50951d4855a3fb17b29dabc86d4b9ed5f585",
+    "sklearn_version": "1.7.2",
+    "numpy_version": "1.26.4",
+    "scientific_source_commit": "ac198121df3e6902c158cc5b8614dfeb93d72021",
+    "data_complete_sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d",
+    "formal_training_units": 180,
+    "new_hyperparameter_search_trials": 0,
+    "final_target_query_labels_used": 0,
+    "unit": {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    "input_manifest_sha256": "08491c88e90d98fa64a6c3fcba77b1e3777f0d4bb1b05882bd01822a77eb0b87"
+  },
+  "metrics_inner": {
+    "cells": 3,
+    "MAE": 0.0003632193158498932,
+    "RMSE": 0.0003770578606088863,
+    "bias": 0.0003632193158498932
+  },
+  "complexity": {
+    "input_columns": 30,
+    "design_rank": 5,
+    "fitted_trees": 100,
+    "realized_total_leaves": 300,
+    "maximum_total_leaves": 400
+  },
+  "hyperparameter_search_trials": 0,
+  "outer_labels_used_for_training_or_selection": 0,
+  "final_target_query_labels_used": 0,
+  "files": [
+    {
+      "path": "MODEL.joblib",
+      "sha256": "85597f386a812ed2916cbec26381178f5d6efe8236b45a240c6b3ebeaee322bf"
+    },
+    {
+      "path": "INNER_PREDICTIONS.npz",
+      "sha256": "0570791f5e26feb547d4238490fae76ae07449e1c0f2676ebd6147b33c24c2b3"
+    }
+  ]
+}

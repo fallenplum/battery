@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETE",
+  "identity": {
+    "registration_sha256": "fcf23e37e428ef9524feeb249f23f98cf040448104a09853ad126f2fc0246f34",
+    "protocol_file_sha256": "bc24054839c1f3e32744380ce410621645f7d80a974988b91a643e576efd1c51",
+    "protocol_payload_sha256": "81f55a599c87bbb29343f2f316bc60a394169d20bc2fb03179e34da80c3b9d99",
+    "implementation_sha256": "f6d1c2cbec2a7cf5d25f1cf27ffb41309b03b196919cda807de29d5639b966f3",
+    "feature_implementation_sha256": "d40d72b561b258cca1d385cad97ab524554aa73495e96290727e8685bfce0da6",
+    "data_adapter_implementation_sha256": "4dc110c68ed99a28ef61dfeb0bad50951d4855a3fb17b29dabc86d4b9ed5f585",
+    "sklearn_version": "1.7.2",
+    "numpy_version": "1.26.4",
+    "scientific_source_commit": "ac198121df3e6902c158cc5b8614dfeb93d72021",
+    "data_complete_sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d",
+    "formal_training_units": 180,
+    "new_hyperparameter_search_trials": 0,
+    "final_target_query_labels_used": 0
+  },
+  "gate": {
+    "B_dual_incremental_information_consistent": false,
+    "definition": "dual_beats_baseline_and_shuffled_in_each_fold_and_each_seed_with_positive_group_equal_weight_gain_for_both_windows_and_both_models",
+    "evidence_scope": "diagnostic_retrospective_source_group_cv",
+    "n_models": 180,
+    "final_target_query_labels_used": 0
+  },
+  "files": [
+    {
+      "path": "B_CELL_ERRORS.csv",
+      "sha256": "3fc7306f88df8649f441810ad3e6f2f69f412d3f401006e072cb98c5df204e66"
+    },
+    {
+      "path": "B_FOLD_SEED_SUMMARY.csv",
+      "sha256": "6bb0d42cadaaf6ccc90ae1b316f94a265ae001259260098fdc31e0623c3f0a3b"
+    },
+    {
+      "path": "B_MODEL_SUMMARY.csv",
+      "sha256": "2bc4883730d52ef617b57dc4d64a6ebdf6d878d652cef64031a16c2a429552b9"
+    },
+    {
+      "path": "B_CONTRASTS.json",
+      "sha256": "186b59cbfb9b8d0b8a54e321cade0cd4a038bc3e62a5d5b2249849bcc2939796"
+    },
+    {
+      "path": "B_GATE.json",
+      "sha256": "8864ddda96c129e878d78ba82e4928ded5cb01b2f4ff46d076434029b1e1e2ee"
+    },
+    {
+      "path": "B_INDEPENDENT_METRIC_AUDIT.json",
+      "sha256": "795aeedf068962837b0f87e1c7bba6bafc02d0b766094ab3b78a96360c61928b"
+    }
+  ],
+  "final_target_query_labels_used": 0
+}

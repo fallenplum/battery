@@ -1,0 +1,1329 @@
+{
+  "identity": {
+    "registration_sha256": "fcf23e37e428ef9524feeb249f23f98cf040448104a09853ad126f2fc0246f34",
+    "protocol_file_sha256": "bc24054839c1f3e32744380ce410621645f7d80a974988b91a643e576efd1c51",
+    "protocol_payload_sha256": "81f55a599c87bbb29343f2f316bc60a394169d20bc2fb03179e34da80c3b9d99",
+    "implementation_sha256": "f6d1c2cbec2a7cf5d25f1cf27ffb41309b03b196919cda807de29d5639b966f3",
+    "feature_implementation_sha256": "d40d72b561b258cca1d385cad97ab524554aa73495e96290727e8685bfce0da6",
+    "data_adapter_implementation_sha256": "4dc110c68ed99a28ef61dfeb0bad50951d4855a3fb17b29dabc86d4b9ed5f585",
+    "sklearn_version": "1.7.2",
+    "numpy_version": "1.26.4",
+    "scientific_source_commit": "ac198121df3e6902c158cc5b8614dfeb93d72021",
+    "data_complete_sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d",
+    "formal_training_units": 180,
+    "new_hyperparameter_search_trials": 0,
+    "final_target_query_labels_used": 0
+  },
+  "settings": {
+    "windows": [
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1000
+      ]
+    ],
+    "minimum_observation_fraction": 0.8,
+    "edge_width": 20,
+    "minimum_edge_observations": 10,
+    "arms": [
+      "baseline",
+      "absolute",
+      "relative",
+      "dual",
+      "shuffled_dual"
+    ],
+    "models": [
+      "ridge",
+      "gbr"
+    ],
+    "training_seeds": [
+      42,
+      123,
+      2026
+    ],
+    "ridge": {
+      "alpha": 1.0
+    },
+    "gbr": {
+      "n_estimators": 100,
+      "learning_rate": 0.05,
+      "max_depth": 2,
+      "min_samples_leaf": 3,
+      "subsample": 1.0,
+      "loss": "squared_error"
+    },
+    "rate_definition": "mean_SOH_first_20_cycles_minus_mean_SOH_last_20_cycles_divided_by_difference_of_mean_observed_cycle_coordinates;positive_is_degradation;no_interpolation",
+    "baseline": "six_prefix_capacity_anchor_features_common_to_all_arms",
+    "added_feature_dimensions": 24,
+    "single_view_control": "absolute_or_relative_12_dimensions_in_common_24_dimensional_slots_with_remaining_slots_zero;effective_rank_and_Ridge_df_reported",
+    "paired_data_rule": "all_five_arms_within_window_fold_use_identical_eligible_fit_inner_outer_cells",
+    "preprocessing": "fit_only_medians_and_standardization;no_future_labels_in_features_or_shuffle",
+    "neural_comparison": "absolute_relative_dual_shuffled_dual_in_both_frozen_and_joint_regimes;A_shared_arms_reused;27_new_extra_units_and9_verified_reused_relative_frozen_units",
+    "outer_rule": "all_180_simple_regressor_fits_complete_before_any_B_outer_rate_scoring"
+  },
+  "plan": [
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "200_500",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "ridge",
+      "arm": "shuffled_dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "baseline"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "absolute"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "relative"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "dual"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "window": "500_1000",
+      "model": "gbr",
+      "arm": "shuffled_dual"
+    }
+  ]
+}
