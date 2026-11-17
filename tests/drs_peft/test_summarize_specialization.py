@@ -9,6 +9,10 @@ import pytest
 
 from scripts.drs_peft.e123_protocol import WINDOWS
 from scripts.drs_peft.onesided_protocol import load_registration
+from scripts.drs_peft.specialization_protocol import (
+    DEFAULT_TARGET_CONTRACT,
+    load_target_contract,
+)
 from scripts.drs_peft.summarize_specialization import (
     DEFAULT_CONFIG,
     adapter_budgets,
@@ -223,6 +227,10 @@ def test_receipt_support_draw_and_unique_identity_are_checked(contract):
         validate_receipts(
             [record, record | {"method": "SPECIALIZED_XS"}], frame, config, episodes
         )
+    record |= {"SIDs": draws[0]["support_ids"]}
+    changed_support = record | {"draw": other["draw"], "SIDs": other["support_ids"]}
+    with pytest.raises(ValueError, match="different roles"):
+        validate_receipts([record, changed_support], frame.iloc[:0], config, episodes)
 
 
 def test_main_partial_summary_never_loads_numeric_archives(
@@ -258,3 +266,80 @@ def test_main_partial_summary_never_loads_numeric_archives(
     assert ledger["future_label_arrays_loaded"] == 0
     assert ledger["execution_ledger"] == execution
     assert ledger["execution_ledger_sha256"] is not None
+
+
+def test_total_k_override_coverage_and_parent_reuse_scope():
+    parent, override, episodes = load_target_contract(DEFAULT_TARGET_CONTRACT)
+    config = parent | {"target": parent["target"] | override["target"]}
+    frame = validate_cells(cells((config, episodes)), config, episodes)
+    coverage = slot_coverage(frame, [], config, episodes, [42, 123, 2026])
+    assert len(coverage) == 372
+    assert coverage.K.gt(0).sum() == 360
+    assert coverage.K.eq(0).sum() == 12
+    assert coverage.status.eq("SCORED").sum() == 1
+    receipt = {
+        "task_id": "MATR_POOLED",
+        "seed": 42,
+        "method": "SPECIALIZED_OUT",
+        "K": 1,
+        "parent_reused": True,
+    }
+    with pytest.raises(ValueError, match="registered domain budget"):
+        validate_receipts([receipt], frame, config, episodes)
+    receipt["task_id"] = "C_HUST"
+    validate_receipts([receipt], frame, config, episodes)
+    receipt |= {
+        "trainable_parameters": 16,
+        "actual_optsteps": 30,
+        "adaptation_id": "hust-reused",
+        "domain": "HUST",
+    }
+    matr = receipt | {
+        "task_id": "MATR_POOLED",
+        "parent_reused": False,
+        "adaptation_id": "matr-new",
+        "domain": "MATR",
+    }
+    budgets = adapter_budgets([receipt, matr], config)
+    assert budgets.loc[~budgets.parent_reused, "actual_optsteps"].sum() == 30
+
+
+def test_total_k_cli_keeps_source_config_frozen_and_reports_total_k(
+    tmp_path, monkeypatch
+):
+    def forbidden(*args, **kwargs):
+        raise AssertionError("Total-K summary loaded a numeric archive")
+
+    monkeypatch.setattr(np, "load", forbidden)
+    source_bytes = DEFAULT_CONFIG.read_bytes()
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "summary",
+            "--target-contract",
+            str(DEFAULT_TARGET_CONTRACT),
+            "--results-root",
+            str(tmp_path),
+            "--seeds",
+            "42",
+            "123",
+            "2026",
+            "--report",
+            str(tmp_path / "REVIEW.md"),
+        ],
+    )
+    main()
+    ledger = json.loads((tmp_path / "RUN_LEDGER.json").read_text(encoding="utf-8"))
+    assert ledger["requested_nonzero_slots"] == 360
+    assert ledger["requested_family_zero_slots"] == 12
+    assert ledger["pending_slots"] == 372
+    assert ledger["support_budget_mode"] == "domain_total_K"
+    assert DEFAULT_CONFIG.read_bytes() == source_bytes
+    review = (tmp_path / "REVIEW.md").read_text(encoding="utf-8")
+    assert "全域总共K颗" in review
+    assert "聚合预算为4K" not in review
+    manifest = json.loads(
+        (tmp_path / "SUMMARY_MANIFEST.json").read_text(encoding="utf-8")
+    )
+    assert manifest["target_contract_sha256"] is not None

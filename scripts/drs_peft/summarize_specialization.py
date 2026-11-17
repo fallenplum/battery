@@ -11,6 +11,7 @@ import pandas as pd
 
 from scripts.drs_peft.e123_protocol import WINDOWS
 from scripts.drs_peft.onesided_protocol import ROOT, load_registration
+from scripts.drs_peft.specialization_protocol import load_target_contract
 from scripts.drs_peft.summarize_onesided import (
     METRIC_COLUMNS,
     aggregate,
@@ -327,7 +328,10 @@ def validate_receipts(records, frame, config, episodes):
             )
         family = families[method]
         identity = record.get("adaptation_id")
-        role = tuple(record.get(name) for name in ("task_id", "seed", "method", "K"))
+        support_identity = tuple(sorted(record["SIDs"])) if "SIDs" in record else None
+        role = tuple(
+            record.get(name) for name in ("task_id", "seed", "method", "K")
+        ) + (support_identity,)
         if identity and identities.get(identity, role) != role:
             raise ValueError(
                 "One adapted-state identity was reused across different roles"
@@ -345,6 +349,14 @@ def validate_receipts(records, frame, config, episodes):
         if checkpoint:
             checkpoints[key] = checkpoint
         task = tasks[record["task_id"]]
+        if parse_boolean(
+            record.get("parent_reused", False)
+        ) and not parent_reuse_allowed(
+            config, task["domain"], method, int(record["K"])
+        ):
+            raise ValueError(
+                "A target prediction was reused outside its registered domain budget"
+            )
         if "QIDs" in record and set(record["QIDs"]) != set(task["query_ids"]):
             raise ValueError("A receipt changed fixed Query identities")
         if "SIDs" in record:
@@ -373,6 +385,16 @@ def validate_receipts(records, frame, config, episodes):
             raise ValueError("A scored state disagrees with its receipt identity")
 
 
+def parent_reuse_allowed(config, domain, method, k):
+    target = config["target"]
+    if domain == "MATR" and "MATR_POOLED" in target["task_ids"]:
+        return k == 0 and target.get("MATR_ZERO_parent_prediction_union_allowed", False)
+    domains = target.get("parent_exact_reuse_domains")
+    return method in target["parent_exact_reuse_methods"] and (
+        domains is None or domain in domains
+    )
+
+
 def adapter_budgets(records, config):
     unique = {}
     for record in records:
@@ -399,6 +421,10 @@ def adapter_budgets(records, config):
                 "Measured target parameter count differs from the registered budget"
             )
         parameters = record.get("details", {}).get("parameter_report", {})
+        domain = record.get(
+            "domain",
+            config["target"].get("task_domain_by_id", {}).get(record["task_id"]),
+        )
         frozen_bytes = record.get(
             "dictbytes",
             parameters.get(
@@ -415,6 +441,7 @@ def adapter_budgets(records, config):
         output.append(
             {
                 "method": method,
+                "domain": domain,
                 "reference_family": families[method],
                 "task_id": record["task_id"],
                 "seed": record["seed"],
@@ -432,8 +459,10 @@ def adapter_budgets(records, config):
                 "elapsed_seconds": record.get("logtime"),
                 "peak_gpu_bytes": record.get("peak_gpu_bytes"),
                 "cache_solver": record.get("cache_solver"),
-                "registered_parent_reuse": method
-                in config["target"]["parent_exact_reuse_methods"],
+                "registered_parent_reuse": parent_reuse_allowed(
+                    config, domain, method, int(record["K"])
+                ),
+                "parent_reused": parse_boolean(record.get("parent_reused", False)),
                 "parent_reuse_receipt": record.get(
                     "parent_receipt_path", record.get("parent_reused")
                 ),
@@ -446,6 +475,7 @@ def adapter_budgets(records, config):
         output,
         columns=[
             "method",
+            "domain",
             "reference_family",
             "task_id",
             "seed",
@@ -462,6 +492,7 @@ def adapter_budgets(records, config):
             "peak_gpu_bytes",
             "cache_solver",
             "registered_parent_reuse",
+            "parent_reused",
             "parent_reuse_receipt",
             "reference_checkpoint_sha256",
         ],
@@ -489,6 +520,11 @@ def review(summary, differences, run):
         if len(differences)
         else differences
     )
+    budget_text = (
+        "MATR从24颗候选Support中取全域总共K颗，为固定8颗Query使用同一适配状态。HUST从38颗候选池取全域总K颗，固定39颗Query。"
+        if run["support_budget_mode"] == "domain_total_K"
+        else "MATR四个任务分别使用K颗Support，聚合预算为4K，固定8颗Query。HUST从既有池取K颗Support，固定39颗Query。"
+    )
     return (
         "\n\n".join(
             [
@@ -498,7 +534,8 @@ def review(summary, differences, run):
                 "输入为VIQ+earlySOH / no-policy。两类参考共享源训练的59585参数Bridge/Head，SPECIALIZED额外包含192参数冻结源核心。warmup参考使用官方预训练主干。目标Query属于已有历史暴露的固定池。",
                 "## 同Query的K曲线",
                 markdown(main[display] if len(main) else main),
-                "delta_K为各方法自己的family ZERO MAE减去适配MAE，正值表示改善。MATR四个任务分别使用K颗Support，聚合预算为4K，固定8颗Query。HUST从既有池取K颗Support，固定39颗Query。",
+                "delta_K为各方法自己的family ZERO MAE减去适配MAE，正值表示改善。"
+                + budget_text,
                 "## 配对方法差异",
                 markdown(paired),
                 "difference_mae为left减去right，负值支持left。delta_K_difference为两方法各自family内增益之差。配对使用相同task、seed、K、draw和物理电芯，远期无观测保留NA。",
@@ -519,17 +556,29 @@ def review(summary, differences, run):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    parser.add_argument("--target-contract", type=Path)
     parser.add_argument("--results-root", type=Path)
     parser.add_argument("--output-root", type=Path)
     parser.add_argument("--report", type=Path)
     parser.add_argument("--seeds", nargs="+", type=int, default=[42, 123, 2026])
     args = parser.parse_args()
     config = json.loads(args.config.read_text(encoding="utf-8"))
+    if args.target_contract:
+        parent, override, episodes = load_target_contract(
+            args.target_contract, args.config
+        )
+        config = parent | {
+            "target": parent["target"] | override["target"],
+            "outputs": parent["outputs"] | override["outputs"],
+            "episodes_file": override["episodes_file"],
+            "episode_contract_sha256": override["episode_contract_sha256"],
+        }
     if len(set(args.seeds)) != len(args.seeds) or not set(args.seeds).issubset(
         config["training_seeds"]
     ):
         raise ValueError("Summary seeds must be a distinct registered subset")
-    episodes = load_registration(ROOT / config["episodes_file"])
+    if not args.target_contract:
+        episodes = load_registration(ROOT / config["episodes_file"])
     if episodes["episode_contract_sha256"] != config["episode_contract_sha256"]:
         raise ValueError("The specialization episode contract changed")
     inputs = args.results_root or ROOT / config["outputs"]["public_root"]
@@ -573,6 +622,7 @@ def main():
     failed = int((~coverage.status.isin(["PENDING", "SCORED"])).sum())
     new = budgets[
         budgets.method.isin(config["target"]["new_methods_requiring_target_adaptation"])
+        & ~budgets.parent_reused
     ]
     run = {
         "status": "PARTIAL"
@@ -588,6 +638,11 @@ def main():
         "unique_scored_nonzero_states": int(
             frame.loc[frame.K.gt(0), "adaptation_id"].nunique()
         ),
+        "expected_unique_nonzero_states_in_seed_scope": config["target"][
+            "expected_unique_nonzero_states"
+        ]
+        * len(args.seeds)
+        // len(config["training_seeds"]),
         "missing_nonzero_receipts": missing,
         "scored_adaptations_missing_reference_checkpoint": missing_checkpoints,
         "new_method_unique_recorded_states": len(new),
@@ -597,10 +652,16 @@ def main():
         "new_method_states_missing_optimizer_measurement": int(
             new.actual_optsteps.isna().sum()
         ),
-        "new_target_cost_scope": "PRETRAINED_LORA_and_SPECIALIZED_XS;registered_parent_reuse_costs_retained_separately",
+        "new_target_cost_scope": config["target"].get(
+            "new_target_computation_scope",
+            "PRETRAINED_LORA_and_SPECIALIZED_XS;registered_parent_reuse_costs_retained_separately",
+        ),
         "target_Query_exposure": "REUSED_HISTORICALLY_EXPOSED_QUERY_POOL",
-        "MATR_support_budget": "K_per_task;aggregate4K_for8fixedQuery",
-        "HUST_support_budget": "pooledK_for39fixedQuery",
+        "support_budget_mode": "domain_total_K"
+        if "MATR_POOLED" in config["target"]["task_ids"]
+        else "MATR_per_protocol_K",
+        "MATR_support_budget": config["target"]["MATR_support_budget"],
+        "HUST_support_budget": config["target"]["HUST_support_budget"],
         "new_model_forwards": 0,
         "future_label_arrays_loaded": 0,
         "bootstrap_draws": 0,
@@ -655,6 +716,9 @@ def main():
         "status": run["status"],
         "seeds": args.seeds,
         "config_sha256": digest(args.config.read_bytes()),
+        "target_contract_sha256": digest(args.target_contract.read_bytes())
+        if args.target_contract
+        else None,
         "episode_contract_sha256": episodes["episode_contract_sha256"],
         "selected_scored_rows_sha256": digest(
             frame.to_csv(index=False).encode("utf-8")

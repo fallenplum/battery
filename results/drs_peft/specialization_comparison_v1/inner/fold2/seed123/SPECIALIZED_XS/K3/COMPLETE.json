@@ -1,0 +1,37 @@
+{
+  "identity": {
+    "study_id": "BATTERY_SPECIALIZATION_COMPARISON_20261118_v1",
+    "config_sha256": "ad49fe5b56fd1f240b87208ae071821b83d9f0de893f08372e37edf61c7f6dbb",
+    "parent_config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+    "episodes_file_sha256": "53be006e5708f45aa39b6e6435e654a5a4b1675d502e5fc8d46b53a3555830cf",
+    "episode_contract_sha256": "384e9251ab3522372d675d4c352a105688ebf851c8b0b19dc1e13e627d08472e",
+    "implementation_sha256": {
+      "scripts/drs_peft/run_specialization.py": "e261651152b1303f26dd6d8689978d3a80a779aeb0ce3bf24e198916a0e3c043",
+      "scripts/drs_peft/specialization_engine.py": "bb76328f7bd9f57648c794212474f10faeeeb1699dd6bfaae70d215948b51b41",
+      "models/drs_peft/specialization.py": "c4f03ef3872fc2fd0742dde4592990bf5b30517654d3f4dc64d47667cabceb37",
+      "scripts/drs_peft/onesided_engine.py": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+      "scripts/drs_peft/onesided_calibration.py": "2e05b75eb887dc7e272fa77ae11232a7e339086240e59f9f548786161565ce8a",
+      "models/drs_peft/onesided.py": "83fc44474e42a757d9b6d1bd8b3e60c1e432cd8d1c7705903f9b21eef5f208db",
+      "scripts/drs_peft/run_onesided.py": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1"
+    },
+    "source_checkpoint_sha256": "68c34eca9f66e1d8610076b34f68a4e4d2bbbfac80b9c505403ac064686699b1",
+    "reference_family": "SPECIALIZED",
+    "fold_id": 2,
+    "seed": 123,
+    "method": "SPECIALIZED_XS",
+    "K": 3,
+    "role": "inner",
+    "query_ids": [
+      "MATR_b2c0",
+      "MATR_b3c20",
+      "MATR_b3c0",
+      "MATR_b3c6",
+      "MATR_b2c36",
+      "MATR_b3c8",
+      "MATR_b3c28",
+      "MATR_b3c21"
+    ]
+  },
+  "trials_csv_sha256": "c3600174bebfdd7e1f1337937361e7effeb640ad790e70b6853e2fa79eb0e2fb",
+  "rows": 60
+}

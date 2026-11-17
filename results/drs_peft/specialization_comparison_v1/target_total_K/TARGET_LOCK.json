@@ -1,0 +1,112 @@
+{
+  "study_id": "BATTERY_SPECIALIZATION_COMPARISON_20261118_v1",
+  "config_sha256": "ad49fe5b56fd1f240b87208ae071821b83d9f0de893f08372e37edf61c7f6dbb",
+  "parent_config_sha256": "6c3674510a91542bcdb41f65e956456605b8e46855d564f2a870df6b044b42fb",
+  "episodes_file_sha256": "53be006e5708f45aa39b6e6435e654a5a4b1675d502e5fc8d46b53a3555830cf",
+  "episode_contract_sha256": "384e9251ab3522372d675d4c352a105688ebf851c8b0b19dc1e13e627d08472e",
+  "implementation_sha256": {
+    "scripts/drs_peft/run_specialization.py": "e261651152b1303f26dd6d8689978d3a80a779aeb0ce3bf24e198916a0e3c043",
+    "scripts/drs_peft/specialization_engine.py": "bb76328f7bd9f57648c794212474f10faeeeb1699dd6bfaae70d215948b51b41",
+    "models/drs_peft/specialization.py": "c4f03ef3872fc2fd0742dde4592990bf5b30517654d3f4dc64d47667cabceb37",
+    "scripts/drs_peft/onesided_engine.py": "0bcc5ada2e213abcfee87e4faa663e71db109b8e62d46caa45e23c2faa4f7abb",
+    "scripts/drs_peft/onesided_calibration.py": "2e05b75eb887dc7e272fa77ae11232a7e339086240e59f9f548786161565ce8a",
+    "models/drs_peft/onesided.py": "83fc44474e42a757d9b6d1bd8b3e60c1e432cd8d1c7705903f9b21eef5f208db",
+    "scripts/drs_peft/run_onesided.py": "3679bfa6625b5fd3ca3fbaa711cb59570455d14a3cbed94aa617eff08eb56cc1"
+  },
+  "source_training_commit": "421a3d81605d54456e50091564733dbab5821cba",
+  "target_study_id": "BATTERY_SPECIALIZATION_DOMAIN_TOTAL_K_20261118_v1",
+  "target_override_file": "configs/drs_peft/specialization_comparison_v1/TARGET_TOTAL_K.json",
+  "target_override_sha256": "23f00f7a9bbf0f4cfd65fc32aac3f727428d7c6fd8cfea39dbd5938d7c500188",
+  "target_episode_file_sha256": "2649104bada66d0120f0fdf9dc3e0f57af60afe947af80b7086c8ba072bbde68",
+  "target_episode_contract_sha256": "cfc7de0f0df255ba1fdc46f956317b7d50467591a055daebec44229fd5b332d2",
+  "target_execution_sha256": "47c2c2d5e2b774e65aa9026c0bf0e3b0172847f235234d2b9e3248124d105ada",
+  "target_protocol_code_sha256": "cf58989d75bd638e75c498bd1396fc6f2cbe2bb4993d9e2b52f0ba17c1d4dd93",
+  "support_budget_scope": "total_domain_K_one_shared_adapter",
+  "status": "SOURCE_CHOICES_REUSED_FOR_TOTAL_DOMAIN_K_TARGET",
+  "source_choice_file": "results/drs_peft/specialization_comparison_v1/TARGET_LOCK.json",
+  "source_choice_sha256": "5d237e482ff2f32fc38b217efe56e73f92e701157342c7c3c37cc491e151e1c0",
+  "selected_hyperparameters": {
+    "PRETRAINED_LORA": {
+      "1": {
+        "learning_rate": 0.0001,
+        "steps": 10,
+        "eta": 0.25
+      },
+      "3": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.25
+      },
+      "5": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.25
+      }
+    },
+    "SPECIALIZED_XS": {
+      "1": {
+        "learning_rate": 0.0001,
+        "steps": 10,
+        "eta": 0.25
+      },
+      "3": {
+        "learning_rate": 0.0001,
+        "steps": 10,
+        "eta": 0.25
+      },
+      "5": {
+        "learning_rate": 0.0001,
+        "steps": 30,
+        "eta": 0.25
+      }
+    },
+    "SPECIALIZED_LORA": {
+      "1": {
+        "learning_rate": 0.0001,
+        "steps": 10,
+        "eta": 0.25
+      },
+      "3": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.25
+      },
+      "5": {
+        "learning_rate": 0.001,
+        "steps": 30,
+        "eta": 0.25
+      }
+    },
+    "SPECIALIZED_OUT": {
+      "1": {
+        "lambda_multiplier": 1.0,
+        "eta": 0.25,
+        "epsilon": 1e-12
+      },
+      "3": {
+        "lambda_multiplier": 1.0,
+        "eta": 0.25,
+        "epsilon": 1e-12
+      },
+      "5": {
+        "lambda_multiplier": 1.0,
+        "eta": 0.25,
+        "epsilon": 1e-12
+      }
+    }
+  },
+  "source_inner_trial_slots_reused": 3240,
+  "new_source_reference_fits": 0,
+  "new_source_inner_trials": 0,
+  "target_Query_selection_uses": 0,
+  "MATR_support_budget": "one_shared_adapter_K_total_over_24_candidates",
+  "HUST_support_budget": "unchanged_one_shared_adapter_K_total_over_38_candidates",
+  "old_MATR_protocol_specific_nonzero_predictions_reused": false,
+  "final_OUT_dictionary_sha256": {
+    "42": "9b624e887e1822f9f0cad4ce166e18f99c34636181747d40405e5dfc8e2f15d2",
+    "123": "a17ac55f8de3b76355eca48273b76c4286649ec85ab0e1e82e3b21c5a8cb21f0",
+    "2026": "eb8413e7a867c7a874974fc89e1cc5f3489e32b9e914a5aefaac3edd035e36d7"
+  },
+  "historical_target_Query_exposure": true,
+  "blind_confirmation": false
+}
