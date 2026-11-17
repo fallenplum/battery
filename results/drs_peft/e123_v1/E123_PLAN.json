@@ -1,0 +1,1667 @@
+{
+  "study_id": "DRS_PEFT_E1_E2_E3_SOURCE_GROUP_CV_20261117_v1",
+  "warmup": [
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "warmup"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "warmup"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "warmup"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "warmup"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "warmup"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "warmup"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "warmup"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "warmup"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "warmup"
+    }
+  ],
+  "static": [
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "static",
+      "method": "grad_core"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "static",
+      "method": "lora_xs"
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "static",
+      "method": "weight_svd_core"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "static",
+      "method": "grad_core"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "static",
+      "method": "lora_xs"
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "static",
+      "method": "weight_svd_core"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "static",
+      "method": "grad_core"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "static",
+      "method": "lora_xs"
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "static",
+      "method": "weight_svd_core"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "static",
+      "method": "grad_core"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "static",
+      "method": "lora_xs"
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "static",
+      "method": "weight_svd_core"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "static",
+      "method": "grad_core"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "static",
+      "method": "lora_xs"
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "static",
+      "method": "weight_svd_core"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "static",
+      "method": "grad_core"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "static",
+      "method": "lora_xs"
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "static",
+      "method": "weight_svd_core"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "static",
+      "method": "grad_core"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "static",
+      "method": "lora_xs"
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "static",
+      "method": "weight_svd_core"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "static",
+      "method": "grad_core"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "static",
+      "method": "lora_xs"
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "static",
+      "method": "weight_svd_core"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "static",
+      "method": "grad_core"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "static",
+      "method": "lora_xs"
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "static",
+      "method": "weight_svd_core"
+    }
+  ],
+  "condition": [
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 0,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 1,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 42,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 123,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 0.25
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "constant",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "absolute",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "relative",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "grad_core",
+      "mode": "dual",
+      "radius": 4.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "lora_xs",
+      "mode": "dual",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "constant",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "absolute",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "relative",
+      "radius": 1.0
+    },
+    {
+      "fold_id": 2,
+      "seed": 2026,
+      "stage": "condition",
+      "method": "weight_svd_core",
+      "mode": "dual",
+      "radius": 1.0
+    }
+  ],
+  "outer_evaluation_modes": [
+    "trained_ball",
+    "matched_norm"
+  ],
+  "total_training_units": 216,
+  "final_target_query_labels_used": 0,
+  "outer_score_policy": "all registered source units must complete before outer scoring",
+  "protocol_sha256": "81f55a599c87bbb29343f2f316bc60a394169d20bc2fb03179e34da80c3b9d99",
+  "plan_sha256": "a5d022324ac33f96b0c116c3d4062dbd9d3245dfd64dc0a9d8b9bae1054e93cc",
+  "registration_sha256": "c1ef174848fb9a235e05ca08daf174ccfdecfecab345d220b46438cc274f1b72",
+  "folds_file_sha256": "bc24054839c1f3e32744380ce410621645f7d80a974988b91a643e576efd1c51"
+}

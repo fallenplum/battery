@@ -1,0 +1,4601 @@
+{
+  "status": "PASSED",
+  "recomputed_outer_results": 387,
+  "recomputed_cell_window_rows": 74175,
+  "maximum_metric_difference": 9.999054535747565e-17,
+  "supervision_matches_frozen_source": true,
+  "optimizer_updates": 0,
+  "final_target_query_labels_used": 0,
+  "outer_receipts": [
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "ac0b96def00bba4cbde37d926eb4e939b3807047c4663c6459b586cb92af5997"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "ca6ed933956494bf029b794bc317eb4a41bd18ceb5513e03ad6b0caafad6438d"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "cd779b846e3aed974a2167799754c1f3b53ad68723528c3e326c24f1eb42f3e8"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "2b5ae22cdc53b286d33eccab5ab7abea27727e72a69c48ab5a3dc468f3c6eef2"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "eef24e0d5d2871274fb0bc9f57de23a0afb379fb9a026571c7c8c96457836178"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8131ceeec16aeccc9fc006cf5c96ce322c5e313d808c7b93ff8999a5ef964c6c"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "784d0b77a1f2b1c2ae3410527a6c65abe908b027c3d865b0cbbb3a5dc82bd79d"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "3a919c36544e66f21ea8ec00f6364b1f38f199f015f6c96bbe414784904efa7e"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "c81d2c340e89e03a5160ba68bd033a02e828b6be3cecbadb12eb9184ac7b9aa4"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "c6cdf66313d4f2d06062d694697d45e22f6ce50a8efbe96662c2e65a4c186160"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "5e2d4d29a02b19df05e885c0fa4bcebd235172f77f5f8cbbba866cf4c867418c"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "2fcd8ab3817b361323b6851f9755dbb0d4d0d5fde3a6f873f3c481dc637754f4"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "9ff6ce8acc783ab417cdd6977ec0fc67a218a0ba5a9f433512b444d3b6432cee"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "66d3fa90475c78b554235db03d258c46a00a35c50f54895ec4b317c542705002"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "aed5b466d5266a55e64e185bea640f16c218beeb8541e65215f12eeaa79ef952"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "0742e9fa37f36e180af85ec2dbf4b99a31e913bac873c127934988c6618d394c"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "4046efe68b68ae9d0dbeb53b1fb0ab42fa947813e112fcf5a8aa203ef71de788"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "4a6a13f260d6fc1e8bdd9564bd8bd065850876c4f495c0e6ed8dff3b3b1c1176"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "52c72850f20b28b9de20f82e6dbfb92b148e379c707a0e485fad03147a549263"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "0ce239d608c97aee78f1174d876b882d93e84a042adfd57fbd8d56d40179d338"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "4fce4c8e80dc64be4fa579391a2157061cc19651a40f876ed746a13db15cc9be"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "2dc4ad89b7efe596c1e0beeba71b56072b25b90680c5aadbe756274cdeec2ac6"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a205d76352318df4fd5dd9055a64e6d88620f0c37c83e74d7e625d5b64ada3e4"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "5e825582efb5b00a302ea3d54be451dc1006e343b38d7dd9a248e03252fd8c1c"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "ad91a17194f48c97c7d814f2057c9eb9eb73e666d9c67f6ef992103563dec4b3"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "b3a1f8e390edd9e5c1a2e4b58ef6d3c6078d3e8b79641e210d3989f5ff98837c"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "12647333f4afba4ef47b9a4bee2fffae3e70868b0401d1fc6283856306b02dbb"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "dcd3a1646673e87853ee8f66a26f100269317c603173e22c60a2965c3f511d1a"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "d54c47a342c4568d1ea3817355f28562e4ec3ce273bf1583a8dfc44ead9ef027"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a6776960e9d9a93126dc5a493bef0fb57b9ca27448b1f3966865bf30f1892ec8"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "9d2b2df71e346c90d29bcc431f510f12db4c19c99703b75c2aecd284e53311ad"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0d9e77c465c5688d11b533d3c2c14ce3c83f475d29cd2a0d529a12e7233f2019"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "2cba5fb6f0d9bbcd51fe862d92b5a50633fa105a2dc1edd90d80830d962eafc3"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "4c9d98baf486ce1e21d32ee69afe3008b7d2bc924286718b4021bf2fb6d77637"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "8401a90e32806f807fd1b0396980f7598a47ddc04fc388985d98514773c793ce"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "b81bb8cdca0031001fc375adfd2e57a08a267511104b01d41ad8dbcacf738caa"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "49a3db58ec18b649f3aa768f07ce6573a7fe5d8c8b44748699c5e1bc5936a40c"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "e6ce8e3fd865b81091f7dd654795fb78cdc522a59c5d693cad5e52e4998e7ef5"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "3e6466291c61a0611741f8e5524c534f49b3e9e07e26a95d3fe9ec95800114dd"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "7a5de4c0e9f268638c2929b74b100be15952fa041e9a74e47e7a76cb7636637f"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "e89805c56dcabf49357656ddcadfad3967a22cdaf9929f5539106e8f126955e8"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "04f7bb6d72225acf9930749de7a179986baa47a2b61e2f58b6d4c0d2e38b5ea1"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "cac8304c6ee61665720ee217acc67dea7586bbe6a7538aa120a3a91a7312cc98"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "fd8273bfd3a62df2f1e81302f8b8f1f05965fa08af9bb96018d05638d92c8727"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "e43abd5227125f28905cce8e36c32215f172c9abf86e340ee9f168048a0edcf0"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "218aa2aba41e4a98b273a763bf16f08e27a7e405e5356b8a9b798f434153c00c"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "970669fea45b6b84929a0012087785970e990f07da6b19430994b66735e8ce30"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "6a0ac2f968730f25b0a95fa489b5d6783a1ed1fe63a2b1c29f141a3828c70f2e"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "b3d43b40f5b64d3b579ddadb705c3e9b8067bc0cd85b07ce16a6a18252f219ef"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "cd6f07be02b504d947ee91bb913b1ba519dd8b2ec43a3a75f6327d5a61d85391"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "9388921e64c3a27aca7aae0d30ab7a7cc3141e746a865e51b373b6250e1bcb27"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "1dcf46b3a614bc7e0338571476b20f5e0937510f8968e796ccfe8511fe54b3e9"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "bfb48408ed4ba2523fcfe8f58b5072c5f3cadfea03cb77cccba8a8733716bb56"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a794c27b7d4827b2540915f3d4efd262380c0963852f38b940576245db99c813"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "4cf720aba67083e40231ad7f0bc6352a2d052b6dd1124fb82e1b2380bac10e0e"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "150eb43be8304ef8b5de119e40a615043c88e63ae4fbb8f879867021db2c0a1a"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "0ec472c97d4bc4ec4b5b8bb0ffd10f5b4854375b4904f9ef8e57ebbfcd53e8d6"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "d81846d40f40a98f8eb2752e6aad6d85dda02ba7a7473d0d6c8d67591237dfa8"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "65de6b1a947feb7d2fe5963e1784e0579810f0552420f0bfaeb75b7dd9129f53"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "9f0ef3c5c33bf2c89740d61c52e056636a89391992b5f9af92931fa56a1805b4"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "9156c3c576b2cdbf8980c888810bc6817b0edc903564e17db9b6368c3bb69b6a"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "f35ab9390ccd7199435cd8e176adbd93152cff7507c34d8969076c13ca586ae2"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8565b675cb151e19fa5ce7b8e11a692413e386f222c2f33a9df72f45f55150dc"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "958e469793d7aef8ffec3cd6ee11136e4c61d9459b99a4d2b085aa724afa0394"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "be06df840707a08035d232efdce6fa240214020d3ca0b4c223dff088c92ebcb4"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "770f860d8bbc10fca13192685455e6329bdd4b4fabcb8fd8b756fe64d23346f4"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "425847a63709f5e647fe1b426a0e7997fcfe47381cc3cd60ebad49753fab21f2"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "8bc5e00d07b1164d457916714b86b87d6276563d033cf8d23dfe3a5f678380f3"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "3c7979cd5fa88d040adcb125fb051176348db011007ad817c8f3a26a70a07811"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "3c0a78a72f9d715834ff31c8de76fcb418161078ad26421654d1b88a4715ebb0"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "bfaf586e5abcde7a882b8432e416b614709a9a3e2a7f3fac37e0276d6fb931b4"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "524969d5343ec799aa2d0482b9360b987862235ddcf41a40075b7351bcc99b35"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0246961561b0baf0667ae0cec2af49e737bc8a6f9997e7487bad4706c35c7348"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "bf2c3420dfe7271b2bf9addb9d6acddf52a9b5257116337616a3fa37aca8ade6"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "1aac424706d00dccd4dc18cfcfb8db921b166bf5615b67368892c5c8d37bceb4"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "5924247db0a20c41acbd6819dcbc4fbd2a16d4904cedfe0dc631e66aaeb570f1"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "f6ec189fd9c6860758e6fdbcf0d0bf9fbbac892767e50a60c0d15d3d92541239"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "c2503bd5eb6d13f0ce171f9243106ba6089ba53a4706d30a0cb360740b9a9612"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "5c406982939a1e22db16bce73f370cfe10be5f72ba8926459fabbab2e2932ccd"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "8b3c441b4f70f306c8bf9f118fc2c7c0a1f6ae57e0336f86fbbcabc0bd7eb003"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "79220a0493b9696c769c4a03bd0d031fcdd62a7a39646669ca74f01242c5b69e"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "1f942d7bbcba5cc088be81b23e453c38174118bac0d312f49e016e007fb24d32"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "5cdf2e2e35710eedf00548722ff1dd4c178b3c2baad1034215e2a567a2c8511d"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "fa4c1415e6ca32b4249cc203fea4057168fb33af24f6b4bc60cf6a0fc3fcdd89"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "a3f79aa00978ed70615ab5c3937ca20e22eaf93781a1c15015c757c4b5962a95"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "5d8c628499cf0ba20668714aa7c5768606aa6d7787bcb591cfcb0f9c6c1f9752"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "46998e2e9c4bda1323ba72159cc52234f58ad4def093a89e1cfbf62e62ccc93f"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "9faf778c85aac987f7285bd5a79e5c91023515dc08d4adcf6bde9c0a39955f67"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "ccaf3816819a9817633b4b60c8d275222ef1386fd968b624e90756ce6483f24b"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "2b430dec3220340c6b13fff36dd614f7c3f69da93d8c05e6ce96a3b1805bd6fd"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "e29a5c7c98536276d6e184593bac421852809271842694614de24a6f461adb91"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "db3ff2628c07f61cb40010c85b4d20c173a829b5f4957e503245b02c6c7be5b0"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "7d2c6ab7b41a4dbfcbe00e3a8dfa85b5bf11cfaf94cd38491d923f6ea55cf082"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "cf188578c6d3ee72328abeb20ed4008e308cfcf22fb5578d231f0f50eab122bd"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "2f2255b36da36e5f1d575352bb446d8513883f1b6e8b1f965ee4eb54141fc0bd"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "13ba7be97be4f2d74aab9f84c6ffa1142efe587f24de5f435775f8bcb9b1b814"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a39400496a02836496ddbdc725b4dcda7219b0cc3ccd195a501f7e851a9eb95f"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "92a69ee32eed6bd5dc2ac6fd72a0b8747032827ca4478c617f349420949f7b05"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "20c96e02f89636620ae8ccabf1d9a03e7d727cc1175b576c547940bfada59069"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "046f57e2cefd19b75b94ff0bb27273588685d8092109058953486aa500150f60"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "f58d262906164acc6c3451ba83521bdbf201c68e120fc84e6b55e08c0aee2e8f"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "137d493c679edf08d4c91d3fa92d8d74116f0debac0d9a7fa62abd14eb1a11bf"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "2afcf8070143883ab72a6bb2c7e9560477acc8e937c4073a5fd64edb625888fe"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "82a03f0e43e3979d3cfc8b8660f1ecaffca8270aa49aba58a82af8826bbc8c36"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "3505bb7f6d96674782a3d46505dd4b26a9f84429c181eb21c8fcda0bbc0227a9"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "e318b60e6cdc8035d03c837a7f8f7df4a113b7a43b2e98721c9aa1cf1baa43d2"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "4f159b497e4dc5e216d930b764008a9ce93942bee8dfc48a5966b97b8a049a7c"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "944d0d991b5853cd7b989e9469b852c2e88929459a8feeb746c04cf4d4aca65d"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "b92bf8054863a6dd4d263ec2f96cc7f356036777804a4e18a408795fda172dd7"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "9da0e713aea4087d72f3b2dead1c12b8c8257550ea3e293969898c45af0e9114"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "b3328039a9963f7d02ff841520ceaaabd83eac821ee12386a26bad4ec98a0fd5"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "f730d18a83b1e266a9d5fec93784dbda7a2adeb63000505fd331bd2ec3d1941a"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8203a94a2a8849eb3ab69d203d60ab5b2ec9bc8023b043fc3266e3150360d2d2"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "b0388fe843f0c0c53ff192df1846b550e83a1d0a3dfc2e28532b6b18a81d7304"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "5380a19896b4e4320b403fa2d5d303e9b7188e178be027f446d3b11171ee76ae"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "128c53ecc3db9c1bc92c298f2206409694b697be91c2a0f1ffc825be689a044a"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "a04b848e9cbe92a5c3e7787549ad617d55a7154e15b2018de8b82faf0f5a7705"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "5a13b215e2ef43b9d8c4c651fa5f186832bf4782497352c46ae49e974f31add1"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "b8f243798f83e4873e1e61a1b0910605712e9d84e8bce79c13fcd6547eea3684"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "be5904c479c07200a95235713b0766548e7b3d5c25c2464a7c7acef7fdfad220"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "421c8d1b4d80540453592b0af705fbe82dc4d20b6382334791eeea175e78a94d"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "2772bf33d84196da2989013be57398dec9324f21c27752eb2499e301920c2746"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "c2973430728c051d64f9d7fb809eeda3419d25a1adccec33fa87dc7341ba8f2c"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "063b0eee9083f9cba62489c0dd0608cd53febb8682b2ce3a4bd28582c35daa00"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "57efacf85c53859a2bd07a3eb0c29a7760b99e3cbbb3ca455393c0567e339d2a"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "053308d1e5509a76d4c227e37a57f9655a303ff8bf70b9eda91d90e2a6d57afd"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "17b3dab7a04265d3f35c49e49ccd7c91bb6ac069d83385c3d367570740ac2669"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "c9a9a19e6dfaca5b8b84ccd37b0af763862942dfc8443e81f4464404ab772d69"
+    },
+    {
+      "unit": {
+        "fold_id": 0,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0e0ae2a2d7c1a263eee010d46d7645b05f7ae21951745e577ee57092e9ae2a43"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "15116078de4fe4c356d1228991bc3abd3f0f6458999921b95ee21fea4428e961"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "3e953db19447daddae07eaa9d57da33bbf854f073b15534bb690c5334899b52b"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a798a16b235839634bb5206be1489f522516d0285046ca413927073fb793f5d2"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "47630aff425af6239ed197fa30c06f6dbbb97e2fc6bb133425b84d47a5510022"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "1b8892e168bc6ae6bd59656cb9da33f3caf05446d0c77280866493a8dbac9a86"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "e8c5bed35e221a2b411c7576cfde85187a7e2b955e42396ca8fa3a6a7f3f14cd"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "eb0b076239f4258ab09fdec3f2c45213e59a854b8f88ce310d8ed3a2f44539be"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "9b995ea45a8d441310f0beca269cd4fbdf809f7eb8cc6f0f6b6a5899464b7b69"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "44c1d4d12a61a6e5cbe8b5872a14ed3512249e0303a646de52d1d27d4f1c4b46"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "db44ba3b05fb2a4a79177b910f4fb1df4beb16bbef8efe905ac4a75704962f4d"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "3bd31ac2461ba95335b9ffa3424da0b88a7832f77433631779b59339ad0830d4"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8a74f6ebdef207df089f9cd33a733faa7efa8ec25ea700ce6b90b4eac0cbddc2"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "09ce1208e55217b52f2f66ab5489471169ce9a2b062b4ff81fb72922299f5661"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "cae56ba459616745ccb89cb203d2abf92a276df872aa95ca18fff06e06e4fe90"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "705bd7294be5ad2695f7006af7894c63f7e2e562ab2287260736448d37b366ec"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "34f53a83f160590726c7ff5da4fc026d0083b210dc9bd1452e8a930e99c2daad"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "efbf2fad0ad1a315dc0749dcd6e5fde4a073f6648746e02d4fe14d7324a378d0"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "4afeb9311550ebd361d0b2623496f4e9c20186b7a53cca84a20f5a05f8bc4d54"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "00f55cc0bf5df2abf2c704434a2e02973e1e3475e89d4e6f79f7c5d958ed014b"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "e5e2ae6efb8b50f89f41888cb60f2b305b504e7f6c5f49a009b94f492cba2e72"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "fb6f588265f28f1ac77c443ef38e03be68351be78c760b583292cf220b209bd2"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "4bf8824902d443527e451a754fc640a938314bcd8d5c3b79a3a279e4bf4a835b"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "6821950b2852fe0abdc762bf3d8db20636928461056d5840e1908b8859a933d6"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "4d27a326b1731d8c827ef6fd88e1c388023a2e139e98873cc8d16840be2ad929"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "3e168675ab2251656fe0e3532bcd0da463cec2bfc11e75a50fa3cfe5c6ea1821"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "9b022a0602eb274fdf09eb867400c6e058d8707b6a33842a0cc0879f6545e031"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8caad77e470a868c3a03b96360f1564af8184fe1bded56838769f2cfff7ce518"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "f498d4dba78c39db51fb48ff6525df86003922e1b59829d281a5db5609075e6e"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "382ff832aa3d4d112e54c4e64f62f05a8598f616dc8a1e086ae58f2d5e518653"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "7ad6c5eb3580fdeb93463f8c731d0fe98634b8f6a4316e5f2152db621d416751"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "803bad6f84938e600a20c56ca85fd3d0d07fbd52c4c1613cf4d37b10ebced23b"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "8b39e3841a816f03260f05bc29f329468efa6e0f64a78b980f8a5889a5a7553b"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "a325706494e3bd5de3547118eb1dd06a5c0dc7f7623817b74ed978576fb001bd"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a0e7788d978b5d9ce3205157c47067eb180f29264ef06475c838966037eb6aaa"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "cd4238b003dfdcd8abcd5db743ae46e47b20be006c573a003a80503f9dd31b0d"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "cd128ae0a8b6568736931b2c225b8d931d85039b97152e23ceb8c9d55eecd871"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "778eaeee3febf891bc7b2fe54b743a431fd56f0c19163cbe1a147f9472c8dcf5"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "4855276d77dd64fffd303041242cb9175670b005f0137bb400be83509ca86e26"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "c46e3ac01929c3e452d4313d9e17eb8643b63ee3a6c7a5f0bf46743ee93a7906"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "03fa8aa2cadf94b4b2ab11c3ce05cc6803362a626c6db69f47326972d12fc2cb"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "9f4a67068a1fcc25ed4af8adfb9056b4735b38cebb914d853d03a5abbf9e052d"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "4639e167ae7fa8352cd7b28ecb5c822bdfe7976cbcaba2eb398acaf43e06a3ef"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "5c3d0c8619937703d46401edbfca50b4fece66c20f6dc8f8d72cc12313d1209e"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "d229b609a2c406e1f42262cc020d237e0310b446b914eb5b1f91d51884e35bc5"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "7018dbcc8176cee275e7b31f35f4da80a40d74b3d39692e6a0fb5660bdfd15f4"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "c4056df973509d04b65c071d80ac19f9cca728460bb070c1d32ab26d0b469ab5"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "7b49ed68dfe71bcc271f260f10bfe2f3a49d11fe9297525f5827920d05635eed"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "f6207d85c4db0ebfcde89a0b7dc0956e94cedcc337b73e67aeff7aad6fd60c6b"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "295c7ca7fc709da9302f6e1ae40e9694259f6aa2f711221e229270eeb15f2f5f"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "4a79a541ec70a4b0ccdbbccf56d7b9a57a2a64f1850f0637519951778d9e78d8"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "0cd9819468cce0766dbfdbfac6c7c147fdf81c044548d6cd89652f0e34eb8e26"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "09196b7925fd2915632be1e9191601996a172125a574ee9f4596b17504b60d63"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "fd6da7e4bcc48fa69ec7bd476fbd38e4e904f0aae212e00e7ab9221b07614183"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "697444ad634524bb6e239d772c2a23709649f55a35c91ecaf0e4b6135dd25b64"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "d0136225dce8bd322556f5c41f7fc64623209231e6ce6b4a9fa3e32f679b26f8"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "754ef7b03912206bd0b9b10abb6c01d772ebaa653e5e934c2f3366c18e78586f"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "952df88b40ff2201b26df2110f92540bd7b033c06bd88b0b4f215b640b66b32c"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "fd1c33abdebc4c3bf4323f169d0452bdb19b2ae897937e8b2626393838a2da40"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "a0a1cded2ef8baa7cc46cf23fce5426797aa59d609fbb3d22946df4ee93f46b5"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "f22ba5b0fe8403cbd26dd46969c165a9588dc32ecbe8cbd21cb4c757e9eb4897"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "11d72ea010781b2116c83e88dd4b855f7520b24e6b1ecff978722e312cc0d124"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "19a2cdad2d745447bf2a959ff3192232e172d078bf1acf6174685fe1312f1bca"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "6addc15dd2ef29c6ef4edeb94c8cc461f3e058b4745d44ad0415cf26ae8eef43"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0422a0861e0a6b75ad86d6cc4c9b9e45d1c0cc4264b38910cf6493cf956eeaff"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "6412cabc6e2fa593e98d2d60c4c0d724c15048fa934289c4a4d735dd92e997d4"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "eedf5d52b105b1fc4d2455d776cca073860b0dfaa32fb2e291631fbe82f000c5"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "6ff98577496f8305adc68ee70abc61f624551e7e7bb5962f6e9430831ab084fb"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a1ed19e03c79f604d0966d8e8a4ca2210311b8c367322c5c60f354513209a612"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "cf210d50c4abd41a0a4f6f73e1cea576fbb0683afa17a2224765d0cbe5b3bcba"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "b74f19d7981cf124a40e2c117d87d6a605a37b428ea73db558ef6bc4ae553d13"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "3a6da256dc4de1d37caf254f1cd57548dba3f3f62cdbe9990aa0c11675e2681a"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "431c0e7d8f990e0fc86aec4c74ad76e062eb49791aba8b29e548ba6c6a6dfb88"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "530534e1497961ef3b1bbe00762c65128f486d8b0292143dfe5a105e3131e3ec"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "96394610cfdf869c7b0a652d18c8d4e9aaaf0667ba37785b0287dd26245c6910"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "1d6416f37a0456bb5b363fc91823fe62d76fa42f1815ba87a5b6e77d71eddaa5"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "91757e9f208d37d1353f3acdeaa2de8ab9dd798448aeeb1342fbee2153a31089"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0094ad439a90df08b51ad5c94af74a8d37459966d18286b723e2030930a3d0bd"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "7e6bd7d048f7fdf9ce0a2024d5886e1a1e1b30dba1c7242589f4f9aed0f1e426"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "20c3525ad80fb6d630af2c61165e9dc72c630b743324a63960782d5367ab990b"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "e1defcda2b3d021991a88bab377dea689bf6e14dd89209ad020a5b6acd04437c"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "66ac5977875137daff1014622e31c51f08500d01d5be15dda37a3630f2de8dd5"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "c69fb274be18a0214e0de35e82950c721b1b953eb7b8c63829ae7a66004256e4"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "a089cd8b6a1190f7ddd51d928e685ae92f755b8b14f1485912f19015264cb501"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "ef57763a283ef8cdf8bc13d929d8c94ac267ec2ad6bbb1e21f37e4a7ac50079b"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "bdbcb7bd7dd3f27c98840feb37a860fa6f05ff8fff27fd2e9010907736761053"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "8a6be6b3d3a3965b3240c961946a86448da26c0dfb9871f3860df1ef1aac8b00"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "a66258f771693a30c91bf35ade3d2cd5ed6b9dbf6a166042cf294848c2c6dd04"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "5e98d10a5ba97872ca218c54bc03aa5aaebe3b07eb7b4fe05085d17e74c6c18f"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "89b6bc136276ee715bd296321401ac30e3d62bcc785f96c5cbe9d521581dc4ff"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "c94ff446ea7e50d64d76f243ebdf1f8024174fdd2639e79ef5f928d4b2548353"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "bce43ffd47798c06889fad223b298533d52b43317bb4d19769df622a171517be"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "41a0a4a4ce299950ca5ec2084147d58b22416b5b0212c4ab43347c2819bb7ba8"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "fb27c0e3396baa80de7345a84aa86651129f589e814dc7d808fe2e3e45fffbb5"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "242fb5676b644b99305f367db7b3e80580f723cc8c88cb65c572de55f1941b56"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "1f3f65bee4479c3f782cff3b239e5fb062ceee9b5a98e858290c5456ea853d70"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "e3f83a0730f31bfd15f3adfaae8a5ac1e43de5e2cb19141f8a28776524489678"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "ab81c07a4c0cff43dfcea1cabbd892617f55c2010e9b52cbf123fd7bca250d4e"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "f04924dc95edd88db3e6ecd21c33ab6062fee63b2f20fb0e9b7e4169eec689ef"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "8fefe06762b54a1947899c40ebe82f13ffcde52639fd0ec5bf84646667772323"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "9970c706d0368d642a3f132c183b1f6bc4dae5d14f9d24cadbc15187f962877c"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "f0255264aad04e3a0480a6619b288bc5f06572c57e6607aa0c2fc8459d5a2691"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "9c190081b90161574eccdc88b6ebb7090f68adcaf12726cba2691940793f9e5a"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "941811d28e07382cf40c260c46b40d7260934f7adf669e10d336ff5b5557e47d"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "1a0ce3e16cc926a2928c3269b39e6cffe90476bf474e062884eff814fab5045d"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "310f268f6e236a8cd1f021a23c36eb31c75a531ff00b23071cb3c217ff6bff02"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "bd4e0f3d59c1ed98d8d89c4c6f984c938aa66de10c171da32d2cba362f392f99"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "039928ff36a54cbe898bec9a896b454b38c1feafbd85e33118c8ed5adb1de0cf"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "4228e94852627b186e0fa81925dc1fdeeaa368fd2f99d232e6fcbd02059c8944"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "b5e040c7a314bcb77067b721586194eb4d8a6a0d8abbbc504675137d348979e1"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "33699c0f42e8f40243036057b3104b55b2058865a4ee333b41614b87ec4dcc22"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "2985605f4ca9e6a0727025db4211411f4aaf744f629e1537b9a54d12b76e4698"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "08c1eb2381dfe821b3ec35312c785aa6bb96ba6bd176475107aa0198e38529e6"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8bcec2c06dc0e01149c029d296f35dad51a8cd0c0f5af8f15a2ff0fd375d4092"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "e5c3d2cfb86cb604ae995e677ac8002d7bfbf5977b495631a935766d3dfc588d"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "85055000e374662ec043b6965ced0db27a4df5ff1b8072b4fe8ab73ad2ad55f5"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "2bfb10bb0d31e575a3005d9b8fc7be1a60701f13f2150c7601f2e7e4b900082c"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "2631a069045cd5a6b1810878060ed45d3c46becb7357918c764c1307410df813"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "5bff41b8b1684b5301448c57f81ff048efd5e98f855168326108164a02f12e19"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "1ca9f457d53fc5b67ec3e37cfe81fbe3a834f98ada8013ab1741c1276e767225"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "6fcb98fc25ca99501f8426e181c1aaa19a8bb46563bd15c805e0bc0b34d7e014"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "ca0813a6c3d9322f8cb51e8547986d7974cf5c59b793c03b099e3995c3c65c74"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "caa29d4da3fa3dbf359dbd93b7a549712d482f151d1aa381a722430c9f6a61ac"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "991a6abcd497371ee0f349071110407933f91d7b9c31be311250e5588723101b"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "13563a85ee617e342fe84cb2f59764347167d9b1869da948aef5c5d6b545187d"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "c1e825f6f6dd99bbf2f1551945f8dce5558819f7a9eebf27bef7e783b173428f"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "ce7db242eaefbd0bcff71d9013427d3c0e210ae60440ff3577c842abe218c20e"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "ede22eddfb508c78dc5256570b8c357fc6a652427b7521a2abb995f3c5d3235e"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "6d503c2c2e7b96725acf3d15685871b3709a52b3d7e5891dacb7cdb5cbda8141"
+    },
+    {
+      "unit": {
+        "fold_id": 1,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "38c0b1ae52adb46160c094d83af5a27a8cd9e3c301915e63a0a5a5b7fea72268"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "1dd7f5ce4fbd1b584ae571f25f94f561bc4873543778e5dbf17e7a749ce11193"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "d25fcee3eea8708b536e49e9665d48746d535916e79822e8207cdd63b5e90947"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "f09a8dd5ccb190f72177d87362de36ad47b9bb529e8463306e020f6d3976c414"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "ec2a41f57a7ee4f4b9019ed07660f9d9da3e064c906029d56948c05617f86204"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "28c9af5fe762a4d6ea60439549cba21cd6a52f2fb8675219d5b56fbc48b07ba1"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "39d2e1ccd8148e4142ad75173d874bde5505a97e7bc375e5696e530a548dce74"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "6e04422720c278d4e82d0ff25e1f32a45daf6a20383d5715ba31133ed3244827"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "6a592eae85582799798ed6eee8695495561e4238685b582156a341defe6b57f6"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "b1f18a447cc74e4ec90d642601e3fb794da93ef7af86b2b684728a0040a0789b"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "60aa83e6418df939960c70d9f066b7d614afd762b6268975f105042bcbe5c271"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "bfb6b49ea8f23dbf11579707d9f4a31b6c4d36528ee63089ee4a95ad0a324ece"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "46e8195f0f22035d0e282a1ee33aa056236e72325d8e18d7595fd21acc853b1f"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "774d5107cf632fcc2e8e3cd94811f3e1fd74262a8fa0dcb7adf71a848cfd354c"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "25345883b0a71d78d03a6473dcdc9b40c81b625c23c742f6d73e4dd4ecf52ce4"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "cbc7ce43961d7d0a5bf06caad33729c1d7c5e2cebebdcef027a094ddc040dbe9"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "ee336fe96e8692da665aa87e38e26b4e5540ca99443852f089a9aedf5d2444bc"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "87dfcd59c0f6e41097b0a3dbc3700563784fa15fa3b171f846fbba650bcf13e2"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "91f816e680950b4e813c402f1834a511016d6976abc278fb68aa20cf37cac71b"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a4e90fc52b73e5affc7686a7cb36480a4278cff58fd7dee0f6268ad87103a0d2"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "de60ff92e60e356c6dc88e4a4881113ea587687ff2e9e40af67ad739e76dd6d5"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "95720573dec13d1f5eeab55dbb02d18efdebb0ef92a137038a99e2512303540d"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "882644c7816ba446bd38cba625ecc42a2be233c7ddb1d97935f4182643d1e23b"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "8ffe3c90001a3196ed5e9c15379d06a2e570b1e1e98cb438ab3439988729b8ae"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "00184384eafd07fec1fb075d3300b9a0820689e7cd7af292afd79d7590e7f8df"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "b086d9b1be7dd2e6880c875b0e38f95fd4f02feb47eeb13bed5a58e6da00fe0d"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "6d255c5819a56ca63f8b9bbdb7b4798d1976483618e245f1e47cccb4f03252c8"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "41ae6791b2f1f0b56cd9f56f8b200503ac120dd16a6405a426b3c9acc300767e"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "6ffdbcb981d2749aab41145771697e9e847bae4b9313939e4a71e7ecc9f6f1a5"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "d6e4da81e75189138e0837e7b3d79a295aab75786511456b1a1aad295760ead1"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0c3047acd381a23d8f90d33c08c4c6027acc1d9dff697d7b297b7f2bdc705ac9"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "264ca237c549d97e44f0c9a7f0f3b2e14ab72a254ebbb8de6f9c9047ca3f55b2"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "c4e8f3a63e9d71a96673e854e51695cf9e813ceeb79287799a63494c6762cde9"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8abc3e044b23cb8ee20e94c9369481db9b566649dc22a1f7bc6a0726cccb7d81"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0975b2a2a9471d53c28d186ceb4303476261a97961892a714c415fb2c3411f4b"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "117d07d16bc805e8a83f65367c4be05b9d4d3a1ca053fc88aafda592a19fc587"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "5fcaee452850d2a562c7454a8ae42f9d03aca7cf77188137e71722c69f59fa1d"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a0f91cca8d66e602037ac73af7f80187f0bb8ee6270e32e5a127729650243c2e"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "529e26ca9111d705ae765b550022520713967cbb222273624617736420318b64"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "ca0fe29f6b0e4477783b4c22bd8f24ef508843f25f3e2807ddbea15127fab93a"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "84fe0b915fc0122b7fa3b1ca4a39f94ffb245246c08b9e8c8e91458e92ed8d85"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "b721d4f8fdecc2ea6bd0ead8f9bab75346da4213d3931c2d52b454c3cbb570b7"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8e3bc1a648379ace0225a56052f1f4d27740bf4f77da41020bddda1f0c890391"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 42,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "ddec3cd062272db4b827807ecc49e5013e275e1d114c72900dd4486af2653c50"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "32645a981c8773d355d08456cfc49ef22e52f9c7642f59dd6c2680fa4ebea85a"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "7257007d148a23406f2ebb0db11524b6b65b386bce3e211abf1094ed87609449"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "33c00e06fb95a4bc4b7a8fe84fd5e6154b79184b48a2dba1b79a1a67a018e586"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "89b941f57deb8b6fc1e1cfa7355780fa87fed54dc75242ffc28edc271c27ee56"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "5780bc41cb419922227f036212ff0f1da1c9abf0c11c50bd3ab4eadaa9aa3362"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "aaca9646386f55d71b7286f888ce03c03009e3d8799ed4d8856554f1f2e80389"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "ca347c62000d55519cde13c3a2f2d5a94cce9974e798107eb7070aa1f2b38e41"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "2ef202ed35da063558c81bcce38e4e6e030faf346ab9a10b828481003c484787"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "2a85b570860aceb2976ea8e9785020ddd67036c79e74ec33c4e14d1f7228e24c"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "e8ad96ff80e4cddbdc017bbf6d8a198643abfa11dd7e1eccc42f74dc245e8386"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "7951f40da267428221425024a8cb5910e04eede06cb45c932f6c5aa2c939b486"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "524405a1e73d2370ef41179559ca425e3c9ebfdd5bbd790994266973d12e5d67"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "fd597aaf5e3a030b3b3febc414579de903d125bb20ed6bb81cf489732742412c"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "712b4dd8aa92ab7f8a4262757857869668c1946f737a035d238ba7a1e4553caf"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "f1aa69163996799da1d6ec3b6372b1a6175bcab91fc60daccf7b1d36336ce342"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "d0b9e8f4c46ad558d0328b6533d009373f48573358d97b463d08155c5df7bf68"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "30a7b2f298817dc1c8ce1734d4388532c8d51edb0840b4403fbceacb89cda645"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "0ff6507585ef51a5d057de27ad16af51582e576e2c94417a465bb769770077d0"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "bf3b7760a7922a0de9910e3abaa8ec220f436c190d827c87494dcaf22706e16a"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "ef9fd2c636db4ffc4f90688bdec03b107fac3a5e488c193f9e7c3b6f74f6fa8d"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0223838dadd2e0ca2c91665164273fe3ae659d6bd26d9c5584c646550d0c7b8f"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "6afdaff3834dd24ff11fc29018f2101a2af195621f2b8d1db73a460e6c3fd1e9"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0abfb246a8784e013f7f5cc318ba2a4418a42aa35ca6face6891ea7de7c9041e"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "9777b659df58f5cb1649ca45d1ad8501e4579989931cd94a3d16b1a76fbe669c"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "83f3be86a449aa00a89700f430c1e34d3dbc11d42b769fadf3c280903ccef4e5"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "82d95b563f0aedcea6dfd8cc49809a45204e4fae97ce68afe6f4c0ae5adcdeb4"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "64d7ebd4c01375ebb9b7978ae3e7e4cb30fd81157917da15f88c20e086061d6b"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "b8ed34250169a6327dc9d84d9b3259e040a7bef0c4c36daaf17879dea7a17b88"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "c62881554e1ba261d6500f00b89ee6d0c75af042789c29eb67b7fc0198bdd1c9"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "94032cafb9f9beb4ae88a6bf480e5d07fb441dd70a970aca70b6a6a6b9469c6b"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "0a6d97deb235b233494995a35595281b2036309bd8045ccab428f0a3d0ea540a"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "c02b306224f38fc8146958f6bff01bdb10942974bb0d91a0a61fafc5c781dffd"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "dfb793d769a8efe270bff45b9bedf36a2537aae36e3939704248ef5a7e8fad57"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a70e25f233ac488b2bf1fd9501c515759c70ee2377cce4d2f0e0442372a5a936"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "e6524a756f316f88b81437e81346759666696eff69b00316da7f9906bb225f82"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "684dc275b61c3a10adc9ee7dba190969d090498bf117a7e54ca9b3807fb48a99"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "16a9a7ae71b70c0b6df66cd615fe821d026c8e6d67fd33071a4fb739c3afbae1"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8fede983f585d920fafdf96af3f47fdfd1a9a4783ccb363502deee618fa00f61"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0f49ed3fae488ff7e5d1b9d7b6f4c48b5bd932b5bd17979e05486d78321301d9"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "09200762237ed2c60e110790cb215b4617a1d5d1dd39b47bc28ee944585f323a"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "04411d8ad4a042e815dc93c7a0d11c1e27d6a2ca0fc5fc9af17f15b7bcaa36a4"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "91792ba598fe7d999ea1408c381daf5c66468b6b62a82bfda3773fd604cbc0a4"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 123,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "d35365bc575ae49cf27841bf8ec025a991918310d64d0b20b22eddcb90e87414"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "351ab877b083f900894bdccc00a1035858badb955a85f0a4a30d3d1dc13c85f1"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "a8367f697f7880e4008debce587f353d897c8e7fe279873205c33be689637273"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "ff745d3ae97e5e27764872738569929e2b8718acdb4a46806547039306b64072"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "3fe9c131ed907ebcfe90b0bdcbc3b4c2c1f58512d59e271cccbd13f889d3f3f1"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "2aba8a1543206ca9b30e73d645cf5cdcfe8aa338b32a0c904077fe07fa8aa470"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "33107357251086ab25c28fe4138e17b7996a0e17d208a69346461d2f06c7f6c8"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "dc1519c2992d7fadfbc5b10006644b9ce14d4d234c6f3643e2f7259e9ea5ed97"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "1556a3390014f8d867fb950c128c43acb7a32f02e07f018bd96db1fc4a98f381"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "48e3bdc476e946754ca97d888a276e05486f0a84ea76d3bd5dce737479d4dad0"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "a0786dbd9c01337042b1e073070f99a79fdfc5f7103df0fedf61ad7fdc562920"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "b25edc5a3e22b113f4cb28ce895bfdb5abb6a96c2ea88f30c336b43ff3a7cb88"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "ed8bd669c08820330932b7d8ccbd4299b2af646a101cfe8f8350ec123006fbbd"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "90baacbf67f6d899b31dc03647375563629d3b9e5ad5f8d5f62047e7eaa93d9a"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "fa2b9d10abcdf99ae837d34b0ca7677e5d5cf44c2eb1a56711d3f18535771f2a"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "cc41488a15c7221865926257aa2d62452d10fe5e53deef7caa3cb426230ceba5"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "7ced23fe0149810333c6ec43e32c2c8502f7d232a03942ddd872a3e40671c85b"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 0.25,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "e051e726ce5327e1c2b39a9744b26af4d9fd32aeae256792eb4c1a58f6859ecd"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "2e5f0e0ccf89603d7909419956fefdbaf5e8775d9e938b755f0b2987019456d4"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "7feed0e2335a228af1f9a06a612cbd0ed04edbd0bfc81c1917e3f742ec29790e"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8fe857331a0a8efb4daf938fb733326d141bb0d3931ff8a80b02f426210b604e"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a858e9d75cfb6eb94fd6b6bfdc8d834b480ca6885e9c2dbaee12d544d7ba3509"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "b2c6ace7391c3cc97a7357bfd1001328c9b6df1c95e4d3791b45758059fc44f8"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "68f87c85c9a4bb00360edb75dbde79b3b14ca893afd750fb97a30529b641a53e"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "de22e69f8008df32a0abc450d5ba373529b6119ae511e8541ccba1bef93d9a48"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "grad_core",
+        "stage": "condition",
+        "radius": 4.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "17184ea9231b85e9414ab51d566d72f9202fe0035fe3a86df98869eebbe955e9"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "93d0af7c6f8b13dbf68508068290652aa7f066d3a77da792b828fdf70b66c118"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "eb5a918439d4d6139e6d975091ee37b113a66313304cf04dc1aafe7380658625"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "63a08882ba702827a386d45734e240385e32ab977b5b2c59f15431519fd7dc4e"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "8d79e9df55c02266e40e6f0c3c69b1fcb2aba53731abfc11f6db8964ae5bfb49"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "a6a80c9bc16152f3a8685ba4160e1ec8bfcbd4dc8519e3c1676bd12806458123"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "013610a8ceb4f0216ba86eecf67901c89a7cbc51859672244dd1f6fcffe98e7c"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "78a099edcc7e33e8ae530bbc2f191b720989d6feeee315d043a67e621ffcd51c"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "4ac3f02d9f17ca01518726f22a4beb4d81de0f4767f8c803e7f36cbad7de0121"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "lora_xs",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "c70174d8209f231dc6d0d20f6da4684cf2e43c948146683f3af30395888adcf3"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "static"
+      },
+      "evaluation_mode": "static",
+      "sha256": "3f6eddadae700977bb31a32891d422f0e455a1629d826546e15435e75c4c3a0f"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "94061ab70613b2563ec45bd29c65879d6c2791d7b39047cb2e726a820e9f6894"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "constant"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "0375c7335e75a974efda908ef55f9d6b7f46a00f91a70508265518ac16766a9f"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "567083d98291331eac9667fc95cf399c8f013223ba8ce00adf2ff7bf485a6751"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "absolute"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "d987dd74e3cee70f4cfb2d7d2f1d50f38f4417151c627610fcdac0202dd61cf6"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "e53618e222c394057518d2d85a4bec4aee047a1ac41c248fe743ab96ed92e0ed"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "relative"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "28150fc5a9d6d52c9ba220d91d09a06380696ff2ce2a1ffa21b58546f6ff080a"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "trained_ball",
+      "sha256": "b36f3861ab4460f3f491fdcb3359065d395a6cd44707f95d1a9d2662b37f5dca"
+    },
+    {
+      "unit": {
+        "fold_id": 2,
+        "seed": 2026,
+        "method": "weight_svd_core",
+        "stage": "condition",
+        "radius": 1.0,
+        "mode": "dual"
+      },
+      "evaluation_mode": "matched_norm",
+      "sha256": "e4862c06185d1229b4d90bbd101f1b07a9419b1e50f7beac708e1c00597aa8a4"
+    }
+  ]
+}

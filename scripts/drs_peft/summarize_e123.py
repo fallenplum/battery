@@ -723,6 +723,83 @@ def markdown_table(frame):
     return "\n".join(lines)
 
 
+def report_detail_tables(config, protocol, contrasts):
+    """Render registered point estimates without recomputing statistical results."""
+    primary = float(config["primary_radius"])
+    candidates = config["primary_candidate_modes"]
+    lookup = {
+        (
+            item["method"],
+            float(item["radius"]),
+            item["evaluation_mode"],
+            item["candidate"],
+            item["window"],
+        ): item
+        for item in contrasts
+    }
+    amplitude = []
+    gains = []
+    folds = {evaluation: [] for evaluation in config["evaluation_modes"]}
+    for evaluation in config["evaluation_modes"]:
+        for candidate in candidates:
+            for radius in sorted(
+                [primary, *map(float, config["grad_radius_sensitivity"])]
+            ):
+                item = lookup[("grad_core", radius, evaluation, candidate, "all")]
+                row = {
+                    "候选": candidate,
+                    "幅度评价": evaluation,
+                    "R": radius,
+                    "完整未来改善%": 100 * item["relative_MAE_improvement"],
+                }
+                row.update(
+                    {
+                        f"折{fold['fold_id']}改善%": 100
+                        * item["per_fold_relative_MAE_improvement"][
+                            str(fold["fold_id"])
+                        ]
+                        for fold in protocol["folds"]
+                    }
+                )
+                amplitude.append(row)
+            for method in config["methods"]:
+                item = lookup[(method, primary, evaluation, candidate, "all")]
+                gains.append(
+                    {
+                        "候选": candidate,
+                        "方向参数化": method,
+                        "幅度评价": evaluation,
+                        "常数门MAE": item["constant_mae"],
+                        "候选MAE": item["candidate_mae"],
+                        "完整未来改善%": 100 * item["relative_MAE_improvement"],
+                    }
+                )
+            for method in ("grad_core", "weight_svd_core"):
+                full = lookup[(method, primary, evaluation, candidate, "all")]
+                tail = lookup[(method, primary, evaluation, candidate, "1001_plus")]
+                for fold in protocol["folds"]:
+                    index = str(fold["fold_id"])
+                    support = fold["outer_test_support"]["windows"]
+                    folds[evaluation].append(
+                        {
+                            "方向来源": method,
+                            "候选": candidate,
+                            "折": fold["fold_id"],
+                            "完整未来改善%": 100
+                            * full["per_fold_relative_MAE_improvement"][index],
+                            "1001+改善%": 100
+                            * tail["per_fold_relative_MAE_improvement"][index],
+                            "完整/远期电芯": f"{support['all']['physical_cells']}/{support['1001_plus']['physical_cells']}",
+                            "完整/远期工况": f"{support['all']['protocol_groups']}/{support['1001_plus']['protocol_groups']}",
+                        }
+                    )
+    return (
+        pd.DataFrame(amplitude),
+        pd.DataFrame(gains),
+        {name: pd.DataFrame(rows) for name, rows in folds.items()},
+    )
+
+
 def write_report(
     path,
     config,
@@ -733,6 +810,7 @@ def write_report(
     gate,
     metric_audit,
     norm_audit,
+    historical_d3=None,
 ):
     primary = float(config["primary_radius"])
     outer_sizes = "、".join(
@@ -818,6 +896,75 @@ def write_report(
             if item["candidate"] in config["primary_candidate_modes"]
         ]
     )
+    amplitude_table, source_gain_table, outer_fold_tables = report_detail_tables(
+        config, protocol, contrasts
+    )
+    ball_gains = source_gain_table[source_gain_table["幅度评价"].eq("trained_ball")][
+        "完整未来改善%"
+    ]
+    equivalent_ball = [
+        item["candidate"]
+        for item in equivalence
+        if item["candidate"] in config["primary_candidate_modes"]
+        and item["evaluation_mode"] == "trained_ball"
+        and item["equivalent"]
+    ]
+    failed_matched = [
+        item["candidate"]
+        for item in equivalence
+        if item["candidate"] in config["primary_candidate_modes"]
+        and item["evaluation_mode"] == "matched_norm"
+        and not item["equivalent"]
+    ]
+    source_gain_note = (
+        f"trained_ball下主要候选与三种参数化的完整未来改善范围为{ball_gains.min():.4f}%至{ball_gains.max():.4f}%。"
+        f"该幅度评价中满足收益差等效的候选为{'、'.join(equivalent_ball) if equivalent_ball else '无'}。"
+        "等效判据描述两类来源的增量收益差范围，机制有效性需要同时结合收益幅度、工况方向与E1/E3证据。"
+    )
+    if (
+        ball_gains.abs().max()
+        < 100 * config["success"]["minimum_relative_full_MAE_improvement"]
+    ):
+        source_gain_note += "这些trained_ball增量收益均未达到登记的1%平均改善幅度，当前等效结果发生在接近零的收益上，状态条件化机制的有效性尚未建立。"
+    if failed_matched:
+        source_gain_note += (
+            f"matched_norm下未满足收益等效的主要候选为{'、'.join(failed_matched)}。"
+        )
+    else:
+        source_gain_note += (
+            "matched_norm下主要候选均满足收益差等效，E2仍需结合全部来源的正向收益判据。"
+        )
+    legacy_note = ""
+    if historical_d3 is not None:
+        static = summary[
+            (summary.stage == "static")
+            & summary.method.eq("grad_core")
+            & summary.window.eq("all")
+        ]
+        current = summary[
+            (summary.stage == "condition")
+            & summary.method.eq("grad_core")
+            & summary["mode"].eq("dual")
+            & summary.radius.eq(primary)
+            & summary.evaluation_mode.eq("trained_ball")
+            & summary.window.eq("all")
+        ]
+        if len(static) != 1 or len(current) != 1:
+            raise RuntimeError(
+                "Historical D3 interpretation requires the registered static and dual summaries"
+            )
+        delta = 100 * (float(current.iloc[0].mae) / float(static.iloc[0].mae) - 1)
+        change = "增加" if delta >= 0 else "降低"
+        legacy_note = (
+            f"此前D3双视角相对静态模型的完整未来平均改善为{100 * historical_d3['relative_mae_improvement']:.2f}%。"
+            f"本轮Gradient-Core主半径trained_ball的dual相对本轮静态C0，完整未来MAE{change}{abs(delta):.3f}%。"
+            "本轮同时改变了Bridge/Head冻结方式、fit电芯规模、工况留出与幅度控制条件。"
+        )
+        if -delta < 100 * historical_d3["relative_mae_improvement"]:
+            legacy_note += "原D3的改善幅度没有在这些联合条件下复现。"
+        legacy_note += (
+            "当前设计尚未分别隔离这些变化的贡献，单一因素的因果解释仍需对应对照。"
+        )
     lines = [
         "# E1–E3 工况组交叉验证结果",
         "",
@@ -853,6 +1000,14 @@ def write_report(
         "",
         "E1要求同一候选在Gradient-Core主幅度、两种评价方式均改善至少1%，三个fold及三个seed边际方向均正，两类区间下界均正，额外两个幅度的完整未来方向均正。九个fold×seed的逐项方向保留在E123_CONTRASTS.json。",
         "",
+        "### 三个更新半径的完整未来方向",
+        "",
+        markdown_table(amplitude_table),
+        "",
+        "表中改善均以对应半径、方向来源和幅度评价的constant为参照。正值为候选MAE下降，负值完整保留。三个半径均预先登记，评价结果没有用于重新选择幅度。",
+        "",
+        legacy_note,
+        "",
         "## E2 子空间来源与收益等效",
         "",
         markdown_table(equivalence_table),
@@ -861,9 +1016,25 @@ def write_report(
         "",
         "LoRA-XS与orthogonal weight-SVD拥有相同的权重SVD U/V空间，XS吸收Σ作为坐标缩放。三分支覆盖梯度与权重两类方向来源，并包含XS参数化对照。相关收益不能解释为三个独立方向空间的验证。",
         "",
+        markdown_table(source_gain_table),
+        "",
+        source_gain_note,
+        "",
         "## E3 独立工况方向一致性",
         "",
         "E3分别检查Gradient-Core与orthogonal weight-SVD，两种幅度评价下每个外层fold的完整未来与1001+方向均需为正。合并1001+改善与两类区间下界也均需为正。每fold×seed、每组和全部分段结果保存于CSV和逐项gate JSON，负方向保留。",
+        "",
+        f"合并OOF支持{len(protocol['source_ids'])}颗完整未来电芯与{len(tail_ids)}颗1001+电芯，下表各折数值先跨本折电芯与三个seed平均。物理支持数按唯一电芯计数。",
+        "",
+        "### 主半径 trained_ball",
+        "",
+        markdown_table(outer_fold_tables["trained_ball"]),
+        "",
+        "### 主半径 matched_norm",
+        "",
+        markdown_table(outer_fold_tables["matched_norm"]),
+        "",
+        "两种幅度评价分别保留每折完整未来与1001+的正负方向，任何一个预登记方向为负都会体现于原E3判据。该呈现只展开既有逐折收益字段。",
         "",
         "## 独立核验",
         "",
@@ -890,6 +1061,95 @@ def write_report(
     Path(path).write_text("\n".join(lines), encoding="utf-8")
 
 
+def render_report_only(args, config, protocol, historical_d3_path=None):
+    """Re-render the report while preserving the executed numerical artifacts."""
+    manifest_path = args.public_root / "E123_SUMMARY_MANIFEST.json"
+    manifest_before = file_hash(manifest_path)
+    manifest = read_json(manifest_path)
+    if (
+        manifest["config_sha256"] != file_hash(args.config)
+        or manifest["protocol_sha256"] != protocol["protocol_sha256"]
+    ):
+        raise RuntimeError(
+            "Report rendering inputs differ from the executed statistics"
+        )
+    for item in manifest["outputs"]:
+        if file_hash(item["path"]) != item["sha256"]:
+            raise RuntimeError(
+                "A sealed numerical or report input changed before rendering"
+            )
+    report_path = args.report.resolve()
+    report_entries = [
+        item
+        for item in manifest["outputs"]
+        if Path(item["path"]).resolve() == report_path
+    ]
+    if len(report_entries) != 1:
+        raise RuntimeError("The requested report path differs from the sealed report")
+    numeric = [
+        item.copy()
+        for item in manifest["outputs"]
+        if Path(item["path"]).resolve() != report_path
+    ]
+    historical = None
+    historical_bindings = []
+    if historical_d3_path is not None:
+        records = read_json(historical_d3_path)
+        historical = next(
+            item
+            for item in records
+            if item["candidate"] == "dual"
+            and item["reference"] == "static"
+            and item["window"] == "all"
+        )
+        historical_bindings.append(
+            {
+                "path": str(Path(historical_d3_path).resolve()),
+                "sha256": file_hash(historical_d3_path),
+            }
+        )
+    write_report(
+        args.report,
+        config,
+        protocol,
+        pd.read_csv(
+            args.public_root / "E123_MODEL_SUMMARY.csv", float_precision="round_trip"
+        ),
+        read_json(args.public_root / "E123_CONTRASTS.json"),
+        read_json(args.public_root / "E123_EQUIVALENCE.json"),
+        read_json(args.public_root / "E123_GATE.json"),
+        read_json(args.public_root / "E123_INDEPENDENT_METRIC_AUDIT.json"),
+        read_json(args.public_root / "E123_UPDATE_NORM_AUDIT.json"),
+        historical,
+    )
+    for item in numeric:
+        if file_hash(item["path"]) != item["sha256"]:
+            raise RuntimeError("Report-only rendering changed a numerical artifact")
+    report_entries[0].update(
+        sha256=file_hash(args.report), bytes=args.report.stat().st_size
+    )
+    original_manifest = manifest.get("report_rendering", {}).get(
+        "statistics_manifest_sha256", manifest_before
+    )
+    manifest["report_rendering"] = {
+        "source_sha256": file_hash(__file__),
+        "statistics_source_sha256": manifest["implementation_sha256"],
+        "statistics_manifest_sha256": original_manifest,
+        "numeric_inputs": [
+            {"path": item["path"], "sha256": item["sha256"]} for item in numeric
+        ],
+        "historical_context_inputs": historical_bindings,
+        "numerical_artifacts_unchanged": len(numeric),
+    }
+    save_json(manifest_path, manifest)
+    return {
+        "status": "REPORT_ONLY_RENDERED",
+        "unchanged_numeric_outputs": len(numeric),
+        "report_sha256": file_hash(args.report),
+        "manifest_sha256": file_hash(manifest_path),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -910,8 +1170,18 @@ def main():
     parser.add_argument(
         "--report", type=Path, default=ROOT / "report/drs_peft/e123/E123_RESULTS_ZH.md"
     )
+    parser.add_argument("--render-report-only", action="store_true")
     args = parser.parse_args()
     config, protocol = read_json(args.config), load_protocol(args.folds_file)
+    if args.render_report_only:
+        result = render_report_only(
+            args,
+            config,
+            protocol,
+            ROOT / "results/drs_peft/diagnostics_v1/D3/D3_COMPARISONS.json",
+        )
+        print(json.dumps(result))
+        return
     records = check_complete_outer(args, config, protocol)
     reference = load_source_reference(args.data_root, protocol)
     metrics, norm_records, max_difference = [], [], 0.0

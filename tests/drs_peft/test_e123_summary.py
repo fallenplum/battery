@@ -3,6 +3,7 @@
 import copy
 import json
 from hashlib import sha256
+from pathlib import Path
 from types import SimpleNamespace
 
 import numpy as np
@@ -20,6 +21,8 @@ from scripts.drs_peft.summarize_e123 import (
     expected_outer_units,
     paired_rows,
     relative_gain,
+    render_report_only,
+    report_detail_tables,
     scoped_norm_controls,
     summarize_contrast,
     summarize_equivalence,
@@ -352,3 +355,200 @@ def test_outer_checkpoint_sha_tamper(tmp_path):
         marker.write_text(json.dumps(receipt), encoding="utf-8")
     with pytest.raises(RuntimeError, match="frozen source selection"):
         check_complete_outer(args, config, protocol)
+
+
+@pytest.fixture(scope="module")
+def report_fixture(observations, config):
+    contrasts = []
+    for method in config["methods"]:
+        for radius in [1, 0.25, 4] if method == "grad_core" else [1]:
+            for evaluation in config["evaluation_modes"]:
+                for candidate in config["primary_candidate_modes"]:
+                    for window in ("all", "1001_plus"):
+                        contrasts.append(
+                            summarize_contrast(
+                                observations,
+                                method,
+                                radius,
+                                evaluation,
+                                candidate,
+                                window,
+                                config["statistics"],
+                            )
+                        )
+    protocol = {
+        "protocol_sha256": "engineering_report",
+        "source_ids": [f"cell{i}" for i in range(6)],
+        "source_groups": [f"p{i}" for i in range(3)],
+        "source_qualification": {
+            f"cell{i}": {
+                "protocol_uid": f"p{i % 3}",
+                "window_observations": {"1001_plus": 100},
+            }
+            for i in range(6)
+        },
+        "folds": [],
+    }
+    for fold in range(3):
+        protocol["folds"].append(
+            {
+                "fold_id": fold,
+                "outer_test_ids": [f"cell{i}" for i in range(6) if i % 3 == fold],
+                "outer_test_support": {
+                    "windows": {
+                        "all": {"physical_cells": 2, "protocol_groups": 1},
+                        "1001_plus": {"physical_cells": 2, "protocol_groups": 1},
+                    }
+                },
+            }
+        )
+    return contrasts, protocol
+
+
+def test_report_tables_bind_registered_radius_and_fold_metrics(report_fixture, config):
+    contrasts, protocol = copy.deepcopy(report_fixture)
+    selected = next(
+        item
+        for item in contrasts
+        if item["method"] == "weight_svd_core"
+        and item["candidate"] == "dual"
+        and item["evaluation_mode"] == "trained_ball"
+        and item["window"] == "1001_plus"
+    )
+    selected["per_fold_relative_MAE_improvement"]["1"] = -0.031
+    amplitudes, gains, folds = report_detail_tables(config, protocol, contrasts)
+    assert len(amplitudes) == 12 and len(gains) == 12
+    assert len(folds["trained_ball"]) == 12 and len(folds["matched_norm"]) == 12
+    radius_record = next(
+        item
+        for item in contrasts
+        if item["method"] == "grad_core"
+        and item["radius"] == 4
+        and item["candidate"] == "absolute"
+        and item["evaluation_mode"] == "matched_norm"
+        and item["window"] == "all"
+    )
+    row = amplitudes[
+        amplitudes["候选"].eq("absolute")
+        & amplitudes.R.eq(4)
+        & amplitudes["幅度评价"].eq("matched_norm")
+    ].iloc[0]
+    assert row["完整未来改善%"] == pytest.approx(
+        100 * radius_record["relative_MAE_improvement"]
+    )
+    negative = folds["trained_ball"]
+    row = negative[
+        negative["方向来源"].eq("weight_svd_core")
+        & negative["候选"].eq("dual")
+        & negative["折"].eq(1)
+    ].iloc[0]
+    assert row["1001+改善%"] == pytest.approx(-3.1)
+    assert row["完整/远期电芯"] == "2/2"
+
+
+def test_report_only_preserves_numerical_artifacts_and_is_idempotent(
+    tmp_path, config, observations, report_fixture
+):
+    contrasts, protocol = report_fixture
+    root = tmp_path / "render"
+    root.mkdir()
+    config_path = root / "config.json"
+    config_path.write_text(json.dumps(config), encoding="utf-8")
+    static = observations[
+        (observations["mode"] == "constant")
+        & observations.radius.eq(1)
+        & observations.evaluation_mode.eq("trained_ball")
+    ].copy()
+    static["stage"], static["mode"], static["radius"], static["evaluation_mode"] = (
+        "static",
+        "static",
+        0.0,
+        "static",
+    )
+    static["mae"] *= 0.99
+    summary = aggregate_metrics(pd.concat([observations, static], ignore_index=True))
+    summary.to_csv(root / "E123_MODEL_SUMMARY.csv", index=False)
+    equivalence = [
+        summarize_equivalence(
+            observations, evaluation, candidate, 1, config["statistics"], 0.02
+        )
+        for evaluation in config["evaluation_modes"]
+        for candidate in config["primary_candidate_modes"]
+    ]
+    gate = {
+        "status": "ENGINEERING_ONLY",
+        "TARGET_ADVANCE_ALLOWED": False,
+        "candidates": [
+            candidate_gates(config, candidate, contrasts, equivalence)
+            for candidate in config["primary_candidate_modes"]
+        ],
+    }
+    values = {
+        "E123_CONTRASTS.json": contrasts,
+        "E123_EQUIVALENCE.json": equivalence,
+        "E123_GATE.json": gate,
+        "E123_INDEPENDENT_METRIC_AUDIT.json": {
+            "recomputed_cell_window_rows": len(observations),
+            "maximum_metric_difference": 0,
+        },
+        "E123_UPDATE_NORM_AUDIT.json": {
+            "all_norm_controls_passed": True,
+            "matched_norm_unattainable_cell_layers": 0,
+        },
+    }
+    paths = [root / "E123_MODEL_SUMMARY.csv"]
+    for name, value in values.items():
+        path = root / name
+        path.write_text(json.dumps(value), encoding="utf-8")
+        paths.append(path)
+    report = root / "REPORT.md"
+    report.write_text("engineering original report", encoding="utf-8")
+    numeric_hashes = {
+        str(path): sha256(path.read_bytes()).hexdigest() for path in paths
+    }
+    manifest_path = root / "E123_SUMMARY_MANIFEST.json"
+    manifest = {
+        "implementation_sha256": "a" * 64,
+        "config_sha256": sha256(config_path.read_bytes()).hexdigest(),
+        "protocol_sha256": protocol["protocol_sha256"],
+        "outputs": [
+            {
+                "path": str(path.resolve()),
+                "sha256": sha256(path.read_bytes()).hexdigest(),
+                "bytes": path.stat().st_size,
+            }
+            for path in [*paths, report]
+        ],
+    }
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    history = root / "history.json"
+    history.write_text(
+        json.dumps(
+            [
+                {
+                    "candidate": "dual",
+                    "reference": "static",
+                    "window": "all",
+                    "relative_mae_improvement": 0.08188735,
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    args = SimpleNamespace(public_root=root, config=config_path, report=report)
+    render_report_only(args, config, protocol, history)
+    first_report, first_manifest = report.read_bytes(), manifest_path.read_bytes()
+    assert "8.19%" in report.read_text(encoding="utf-8")
+    assert "### 主半径 matched_norm" in report.read_text(encoding="utf-8")
+    assert all(
+        sha256(Path(path).read_bytes()).hexdigest() == digest
+        for path, digest in numeric_hashes.items()
+    )
+    after = json.loads(first_manifest)
+    assert after["implementation_sha256"] == "a" * 64
+    assert after["report_rendering"]["statistics_source_sha256"] == "a" * 64
+    render_report_only(args, config, protocol, history)
+    assert (
+        report.read_bytes() == first_report
+        and manifest_path.read_bytes() == first_manifest
+    )

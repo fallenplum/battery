@@ -1,0 +1,41 @@
+Loading weights from local directory
+D:\Anaconda\envs\tslib\Lib\site-packages\uni2ts\module\attention.py:296: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:555.)
+  out = F.scaled_dot_product_attention(
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 1, "updates": 8, "validation_mae": 0.049710601407232456}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 10, "updates": 80, "validation_mae": 0.034261400797416956}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 20, "updates": 160, "validation_mae": 0.02950338773452416}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 30, "updates": 240, "validation_mae": 0.025395615284507244}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 40, "updates": 320, "validation_mae": 0.02415504911709697}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 50, "updates": 400, "validation_mae": 0.02332653679839009}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 60, "updates": 480, "validation_mae": 0.02284521060093758}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 70, "updates": 560, "validation_mae": 0.023177690571022647}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 80, "updates": 640, "validation_mae": 0.022550987670255113}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 90, "updates": 720, "validation_mae": 0.022397672013160137}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 100, "updates": 800, "validation_mae": 0.02238646352421318}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 110, "updates": 880, "validation_mae": 0.02267233387762317}
+{"event": "SOURCE_TRAINING", "stage": "E123_FOLD_LOCAL_SOURCE", "method": "E123_warmup", "bridge": "native_multivariate", "seed": 42, "epoch": 120, "updates": 960, "validation_mae": 0.022583994653140708}
+Loading weights from local directory
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\develop\patchtst\battery_ai\_srsr_physics_early_precursor_v1\battery_repository\scripts\drs_peft\run_e123.py", line 932, in <module>
+    main()
+  File "D:\develop\patchtst\battery_ai\_srsr_physics_early_precursor_v1\battery_repository\scripts\drs_peft\run_e123.py", line 804, in main
+    if args.phase in ("warmup", "all") and not train_unit(
+                                               ^^^^^^^^^^^
+  File "D:\develop\patchtst\battery_ai\_srsr_physics_early_precursor_v1\battery_repository\scripts\drs_peft\run_e123.py", line 349, in train_unit
+    receipt = train_source_unit(
+              ^^^^^^^^^^^^^^^^^^
+  File "D:\develop\patchtst\battery_ai\_srsr_physics_early_precursor_v1\battery_repository\scripts\drs_peft\train.py", line 361, in train_source_unit
+    files=[dict(path=p.name,sha256=file_hash(p)) for p in sorted(out.iterdir()) if p.is_file() and p.name!='SOURCE_DEVELOPMENT_COMPLETE.json'])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\develop\patchtst\battery_ai\_srsr_physics_early_precursor_v1\battery_repository\scripts\drs_peft\train.py", line 361, in <listcomp>
+    files=[dict(path=p.name,sha256=file_hash(p)) for p in sorted(out.iterdir()) if p.is_file() and p.name!='SOURCE_DEVELOPMENT_COMPLETE.json'])
+                                   ^^^^^^^^^^^^
+  File "D:\develop\patchtst\battery_ai\_srsr_physics_early_precursor_v1\battery_repository\scripts\drs_peft\data.py", line 42, in file_hash
+    return hashlib.file_digest(handle,'sha256').hexdigest()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\tslib\Lib\hashlib.py", line 295, in file_digest
+    size = fileobj.readinto(buf)
+           ^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied

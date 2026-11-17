@@ -1,0 +1,1413 @@
+{
+  "status": "COMPLETE",
+  "amendment_sha256": "a578f8d91743a5cb78537ae96da3995dcf22d1c0b5683b4cde66ddd3546d9300",
+  "arguments": [
+    "--phase",
+    "all",
+    "--fold-ids",
+    "2",
+    "--backbone-dir",
+    "D:\\develop\\patchtst\\battery_ai\\.cache_drs_peft\\moirai_small",
+    "--device",
+    "cuda"
+  ],
+  "before_states": {},
+  "requested_lock_mappings": [
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\results\\drs_peft\\e123_v1\\E123_PLAN.json.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\edf3146e841689f85d3479afd1049691a5fbfe0bdf452360567c985815cd7be7.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\results\\drs_peft\\e123_v1\\DATA_PROTOCOL_VALIDATION.json.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\a5e437862c4deef6e80b9d34bd42f31db307a67b9d4f62df43d015eea66c5e5d.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\results\\drs_peft\\e123_v1\\fold2\\FOLD_VIEW_MANIFEST.json.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\32348a907e97ef16416d23f6e92fb408cc030ab586cc05315215e8757b75203a.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\warmup\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\cfc50ca5c820b12b68817d10aec7d2d79dbb8c4d79347b8a78503d1e50f66c3b.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\bases\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\06b85229632d06034c73e17b5d71d436a4f2e270f817939ceea92e7183b7db5e.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\static\\grad_core\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\5a07a6f31b8046049e97eb51732d366cc4bdc331e70900ad1d7c8d54ac4780d4.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius1\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\e7745a163038702fd92e46677d4352a0aeaa46332578bd42810fa01bb57e55bf.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius1\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\749141a5551d5c553644d5bae426b00920e725d55e6a5a638cf13044b1ccb77c.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius1\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\9fadfbea4cc01bb0bcc5fad6131a7adf62330e0d5032aea29b8b8cc79518035a.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius1\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\0dd674d99eb955de3c8f9e0219ffbb7c52b436f5229900926476d036e0dbcbbd.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius0p25\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\2b5339c3b273d09330bde00eec1ee68fed6abd309bd5eae70221c2a30aed7046.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius0p25\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\4e3d8426d81cdc10c2351a014cd181216b80054a70764b0d95061f05e247be19.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius0p25\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\d0856f6a4cf6c90bf76b0eaff4d3299f0f2b504e5ec119113d193359117a676b.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius0p25\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\08442b67bbc04cc94440223d732da0f3ac2e3d1b5898968dc3de8d7e1b5e0aef.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius4\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\8c96ccbedde7d3c17e180b8f479cbb4976c7744c7f23aee99ade0757764061d1.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius4\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\425c7fbb34eac14f1f031a3a87e3225cbf256b7adc384492d0fcdcf93b4ac96d.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius4\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\6dc144f8773b4fa957e3dc782b8e4e312df40c885532acaea29b41dae7190557.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius4\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\ff269fec3e4a0e396f16d1c353df3b48af6bb64c89d68f0df2cc62220f4aed7f.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\static\\lora_xs\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\d24817d0bf072a3c6a31cb6b34a330c66471b3a5e363ccd4edc5c2a8d6e5eadc.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\lora_xs\\radius1\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\841a8817cfb638379e5aed3c0801cea6659754da975878bc4849f8643cf2ccdc.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\lora_xs\\radius1\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\3d7d943f294503df1ea8257ddb8de0ce56da97b1958dff11da99ed9783753cbf.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\lora_xs\\radius1\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\1c16a965a62bc0ffbc1014fa31e5d02b5809ef1819ad195ab885353a4d587cdc.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\lora_xs\\radius1\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\eeb5361ba5ea20c9f24c3b63192c62f60b61235d807d99bc1a1803b9a2094510.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\static\\weight_svd_core\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\f14878172de5fa55a167d80335803835e70e7a5ba17f94da165bb8f988c87184.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\weight_svd_core\\radius1\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\8ccc9299a25604433d515894e500ce1bd1a172b8a03d397956fc6769d5d11c19.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\weight_svd_core\\radius1\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\51dba730233cbdf95ab696a2218f93c109833e1679e30dbfd694a9a01582a7d7.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\weight_svd_core\\radius1\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\04409a56f297b56c2d146d5b36ec27ff02beaa2745fbddedeec5dea749b16e55.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\weight_svd_core\\radius1\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\a64c4132192d53083af54061eaa872cd3011a016987c9e87b9ae73154578d55f.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\warmup\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\26589588379c7f98809ef74c874924257b90750303d231edbd120492290b41c8.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\bases\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\fc48fbc5ae4e4844c36c0c2712bd5d0e15de487bbc328c23cdc6c0802cb13da2.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\static\\grad_core\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\c38b66c2a1d42e0af09f0085dfd0ef2f756d4255c96071ab4106d91f7a68f20b.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius1\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\008e532f264206acac8167d1847ae22831aa40bafd54929145685d856b04ce24.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius1\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\e3b0a6f0c4baf7dfd26f2b830f28fe4fcefc0c4f3ebb0e404b822c6e81dc9500.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius1\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\61d53000ab139b9f1c3d03b62f1bdad2f87211b0386c7eb4962961175bbe4c53.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius1\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\15e64b0e1c35e9ec42327be5280d737f236fa18c628bca6281a99f5a37f474b7.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius0p25\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\199b5cc96e5a056e288dc3f229c337781b7328069915e9cc2c6eff37dccf329c.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius0p25\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\a12a7dbf2ad01560b9ccb1e4080c21507c38fc29371d4ba19ac983f0a7e2d01a.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius0p25\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\6b556751252c6a791e9dba39ce6c353afd5175c74b24500acedbc45d407c27bc.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius0p25\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\87ed5abb80077dd40c4ad8874fcac3885155a4e0c9fd03430b4705f16dbd3306.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius4\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\9c25c8f75536d66aaa5df838dce4bdcdfb1b13ded90171b63746debd899b2a6d.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius4\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\038363749db862deda478cb1bcf0c0929db2eb3c726682ca4a3dab6158c67837.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius4\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\10d7c56886bb7a10731f112b1fc8a25ac19d90c9bce541ff5736ba2f525424bd.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius4\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\f03c51cb1aa2fa58f19b59e6f65f58c25d07c125936dbecac1aadece4ce21f26.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\static\\lora_xs\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\9f0cda2414afaef9630ce3baffea301aafa1658e6ebc1f8bb20f836c77e16a1e.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\lora_xs\\radius1\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\77f91c2c4ed92ff8ff1774ea407f8ca651edc8eefaf7342f636ad548782dd0d4.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\lora_xs\\radius1\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\30374a2605c6423d36acab66a463023a123b9e2d877b27f4ec30adc7fa002caf.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\lora_xs\\radius1\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\64533b6a5927470de5c399b9d1fa43fd2e4cc61f459be397faf4c803d79e47c4.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\lora_xs\\radius1\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\e6020ecb67281d82a2cc9fadbafa18103aa2444f86b52709af72c59ead4aa152.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\static\\weight_svd_core\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\1e233f2f5f90a445df4b3bd0def114815414236d86be63f323240bb5644517b5.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\weight_svd_core\\radius1\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\428be6c0664de96596bab1e97b1fb45fb68802d05d1981a73fff6257503d7cf7.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\weight_svd_core\\radius1\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\674a2ffb3a6ac2b18a236af84256b7fa4016ade128ac9ca9e9fed17ff78233de.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\weight_svd_core\\radius1\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\e6307a52d2593c464500475ec34951ebd7bb51eaffc0a2fa3f26ac915444393d.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\weight_svd_core\\radius1\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\4e5fc0e9e64178e930486ae5f2e9fb555df708d6997f649eff47c92e6eac40e7.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\warmup\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\8509a74e79b114c44394787cc1c3d33fa2b6a1d4dfa22a4e20f11ecc0e3e4759.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\bases\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\1f82ee7ffcbd4dd5d7430a9a3f32b9db68f1ad20c9cc9b6280974ed00f563497.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\static\\grad_core\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\77b0802229437407cb05f8144e5313b6368dbd440e01b0167b5f6638bae3a776.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius1\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\0327e3d1d59bf3bc8010f092362843649708a64807da9d8101f656a472c2253d.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius1\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\fa085039085a519bb0b3f46f01022c91fd4c7082f9a2c87edb5e4f0c74fc5b58.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius1\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\579bcc44ad99323d8c8500fb8e650153e5c76ea01b22bdf824b68e267a41d309.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius1\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\3880f797b7e2c2fcdc93b8fb884942e2cd0cc4a0f6d476cfa3a80be7fb75c16f.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius0p25\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\21c72a77ed5033aaf752b6cfda3a19521922128e9991a35659b0bd8e251cee4a.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius0p25\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\f685f322bc785c7a31f606e9288374927546337bb7944f94ee69d7348bf685d0.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius0p25\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\4741863873be20c3ac0774897cbe3c5972fea23227da1aa3aa1a60f828fce454.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius0p25\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\115e0df841d02bc325c6f5488e0a676a337cfbf5b690ec9c41c2b912f1123b99.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius4\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\ae2d0fcbe68cdb883a87e220ee72c5859dd8348fef2a3520363bea3498a1ba78.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius4\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\4ebeb5090585489da31472ed421fac48cf4d704af8655c6ce8be9b74b9a36a1c.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius4\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\ed7a607ce99ea3e34ac8aba10fa3c8af85ce96970c7027e46cc23cc6e51d4452.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius4\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\c3a5bb1389733b556dfb78cca122d2b4b98913f9ed311a0d3db7171d8d24f427.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\static\\lora_xs\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\bb063aad029005594206134441f3a90d32c1e6d3e37b08752396cfbdbcf7a350.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\lora_xs\\radius1\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\57e09b0d18f4bd4c138995815e700622cfff01ff119c9ecc5b2597070873a3de.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\lora_xs\\radius1\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\8421b82a16e5f8cd74f298c9613c10de629743408a8d2eddfc23a5913cca0aca.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\lora_xs\\radius1\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\ababc77752d0f52e4decf63628632ff30179ba608456ae761291a2d7135901cf.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\lora_xs\\radius1\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\ce0ceae5baf62117d8349aac086f3533a4c174f1308ccbae62c2873bc3f0c8d8.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\static\\weight_svd_core\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\4aa10562f7993291c05f7aace52b8df8e23f05521044cbd7139dac300e345161.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\weight_svd_core\\radius1\\constant\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\94f7ee6a05a8e11672a763aee510cb8ba63bf38df43d393445e86e5af99ddb3c.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\weight_svd_core\\radius1\\absolute\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\994d718f1dc02dbb86b6f9a1ca6d535ba2484c5b4e2944d7e487b59ead8c6093.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\weight_svd_core\\radius1\\relative\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\defe78a42f685d939cd8714996486885ea6ef559a947e7919b1ce73581a84fba.lock"
+    },
+    {
+      "requested": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\weight_svd_core\\radius1\\dual\\RUN.lock",
+      "actual": "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\_locks\\9f58126a1a53e6c8d29158e66f5cdc57e1b8574b1e3fb86efabc1c8877062b76.lock"
+    }
+  ],
+  "after_states": {
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius0p25\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "93906d53413a10a300a9dcee3baf4e8e77d1d09f4dec5fb82bb36252cac71dfd"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius0p25\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "26a7a6ea4fdf97f0baf34643bce57be7c270be1b6750d3d6b313af824ae19630"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius0p25\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "30497e52fa1dba1976319739f19e43db22a7b7025bfc6cd3b2d252ec980d44b7"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius0p25\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "d7d17d8090cced2da293fd0afac5a3f46b946ca7a5cba77772dc1a7f522e04bc"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius1\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "6a97cf27a18f4297bced389dd285b9dca73c17032871271394cf7f8c6be8e80d"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius1\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "7840eeeaa810b16c4784352e95cfd0319812c46a8bc402278eaf7b8c8ffa2e67"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius1\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "51a945bf816829ae009559e55251391af7c3aca7d3782cf90e6de774d59a70b2"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius1\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "73ff042140e00002a92976f71bdb2af4a9b4d27d2dde42675841a4af2e5bea10"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius4\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "87f76b3c52a38f5fa6fa336a9a47dc88e8445413affa1483412a9f3cf7d97c10"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius4\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "23b1104be542ef16596a12d3441b4b8e0f48593dcaa997c3fcd93521577907a3"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius4\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "a432df294eac9da357e3ab2db7ab2a42c8a451b9bb25be48be62159b18940b30"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\grad_core\\radius4\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5aa4498427713d6ef793e6d2fe01a4e1b195a6ac2b76c6e90057bca1b036dd3f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "e1cc30a7585fb7959863da167a7b4073aa27176265befff5f2b896439f47bf29"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\lora_xs\\radius1\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "9f637c099449e785fd6d313a320395b887571684f2f84b90b15ad53e8d893be6",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "04e80dbff2556584e39de32a1da7929af80774d747ab0418349b9e5ac28f844a"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\lora_xs\\radius1\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "9f637c099449e785fd6d313a320395b887571684f2f84b90b15ad53e8d893be6",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "ff8a1d5de2ab19be2785c7eaa323a968f3758e1843f7e18082079b30969aa3e0"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\lora_xs\\radius1\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "9f637c099449e785fd6d313a320395b887571684f2f84b90b15ad53e8d893be6",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "1eb7b7db0182fdf66d8b04b2955b0bf1b70a235ab6d5353f7c4f0bb6d1deb83e"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\lora_xs\\radius1\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "9f637c099449e785fd6d313a320395b887571684f2f84b90b15ad53e8d893be6",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "ec3fe72796e4002b29d729445e07d77d02856076647facf4ee76e04670821c27"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\weight_svd_core\\radius1\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "7d0df5c43909f7fac1929a1c86950818c989074cf0f4f18adcf76b9fc3f05b1c",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "99001491eadc3e7bcea7be7390f626d58d9307cd7cc632929b1826d43665532b"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\weight_svd_core\\radius1\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "7d0df5c43909f7fac1929a1c86950818c989074cf0f4f18adcf76b9fc3f05b1c",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "9e290f06deade79cd2a7947dd08542fab22eca36b45b5f66bffac830f0364b86"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\weight_svd_core\\radius1\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "7d0df5c43909f7fac1929a1c86950818c989074cf0f4f18adcf76b9fc3f05b1c",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "2ba4ca791651b6e34be34b6795f6a8b15fba3bc505ce0ce1e1fab88b40a08a58"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\condition\\weight_svd_core\\radius1\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "7d0df5c43909f7fac1929a1c86950818c989074cf0f4f18adcf76b9fc3f05b1c",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "1ff0a38df2edacb83c09aadf5dfac25270ca9c07cac26649e0e2a6dbb4832650"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\static\\grad_core": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "47b8f9ecfb5cfff11f7d2b9cba8cfc1ff7f59cd2736dd0be65ea71cc81ceaf53",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "4415aa4e67a2f89dd278e85ced4fa7214850917115f6e9142cac735aa1009ad4"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\static\\lora_xs": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "47b8f9ecfb5cfff11f7d2b9cba8cfc1ff7f59cd2736dd0be65ea71cc81ceaf53",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "69b45fc6d7a2e0767ae21759b5383b1976ee1b9b2d37d73d79a834572f467107"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\static\\weight_svd_core": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "47b8f9ecfb5cfff11f7d2b9cba8cfc1ff7f59cd2736dd0be65ea71cc81ceaf53",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "2759a3e93a9a80de585668b72203001bd668a5f2cecb38e645bdd0ac47ec8bb9"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed42\\warmup": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "6ca6a70802ca4003fd564b0e2b706c5ed4d1d4661a42ae86b7de2dbefba985a0",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "00a2c82a0e1f7c4b413d492507abc7273e4770a337de8b6736875121fc0e7b73"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius0p25\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "5790427cc23f1639dc698e4ef38e3897c380f39fbf8fccc220fb949555e6f51f"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius0p25\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "b6ab0443f8ae931aa343516f206930b5b2661870fa1de2503ccd56adaeed4c5d"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius0p25\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "1c88a1071dcfed53c1cf0a8ec81a346b3f21aba535c96a70c7b3209555f49f87"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius0p25\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "77d45154513c03b63779daf60ac726203914d160ecf54d078dd9ac0dfd470c2d"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius1\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "e9303af3109e3384a9ff798b61b5e8a4a0f46d8e913a1a6de88716a8e903de6a"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius1\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "c1b2355fd7289838c9393714b6f0b3dcf11c9bf9ebc61d742b2a1d9a3265df77"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius1\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "055c82837e10d7f079e56be7d7dceff0c83011ccced559d14569da486f0817c2"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius1\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "06cb8a945e2431ee0bc6e780b5090bdbd467ebb3a098b2d19b7ce24561ac6c8a"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius4\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "6c99189a43c9014740cb8025b46a6456a1d6146e0f8a0edcd3a20cac85f606c6"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius4\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "6dd7a5a01f283e1c0c58c5d6db191cc787228d62b86e395bf1673063afa54b8c"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius4\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "068cb7e9078fca32502286831dff0bef6a8c373006909b215404dd1b091478bc"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\grad_core\\radius4\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "3c7d7224cf5d55e900f665a88d62838a45c2a0ebb50580a1311c880f1bef01d9",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "9fde421fd4852a9bf593258299218a825814e8c7cf715d0e1fbdc3d4c27d1dce"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\lora_xs\\radius1\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "ce53c1d54ac7616b95e50a2f3bd2b2933e23359d25a49988eadd4e37c21d981f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "cdac9a6dee152bc57cb97f85f49eef1e0cbe397d4865e498fb48e755d666a43f"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\lora_xs\\radius1\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "ce53c1d54ac7616b95e50a2f3bd2b2933e23359d25a49988eadd4e37c21d981f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "dd251fbd5c7e4c229964b8e144b277ad6412c2e8b2a4a10094ff16af3c760ff3"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\lora_xs\\radius1\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "ce53c1d54ac7616b95e50a2f3bd2b2933e23359d25a49988eadd4e37c21d981f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "46f3950570c8e03b6626015a4c5072d71b436b6f327e2aa1c3c1e540dcfaf92e"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\lora_xs\\radius1\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "ce53c1d54ac7616b95e50a2f3bd2b2933e23359d25a49988eadd4e37c21d981f",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "16116e2f71c89c816ebbb8e8cbd68574fd232b25ad470e1bfdbb2a770f9ef334"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\weight_svd_core\\radius1\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "44eaeed06aaaebbbaece3afc0d7f4ca7eb168f1a1e34379b449e0449e3eb326d",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "bcaf89da7889403d1af85a94f2e7cccf82c5f609b74186c404af5df0c478bfc6"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\weight_svd_core\\radius1\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "44eaeed06aaaebbbaece3afc0d7f4ca7eb168f1a1e34379b449e0449e3eb326d",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "37c1127f23451bb3fcf4997848ffe5f1190746740ca8439cdf6b5529c49e81c1"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\weight_svd_core\\radius1\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "44eaeed06aaaebbbaece3afc0d7f4ca7eb168f1a1e34379b449e0449e3eb326d",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "f9c0428c6667e14c1e74342fa330be58efab974f84a5fd1e46059ccf455e7c6d"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\condition\\weight_svd_core\\radius1\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "44eaeed06aaaebbbaece3afc0d7f4ca7eb168f1a1e34379b449e0449e3eb326d",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "4ba04a72a168056362476c61101b9d4eb63a718cec7339008b711d71eb6f4d95"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\static\\grad_core": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "946dbf1b31219f78afb6cc63ef4de7b2a88903dbcd9dae6954daed4a6df56e76",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "074f41f6cc60adfca612b54790a6b903097633036f1902376378fe65fce3261c"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\static\\lora_xs": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "946dbf1b31219f78afb6cc63ef4de7b2a88903dbcd9dae6954daed4a6df56e76",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "2c97255e2b3e7f47a1417f21e191e6c8fcb7423141f86b84cf1c5ae28c2af774"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\static\\weight_svd_core": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "946dbf1b31219f78afb6cc63ef4de7b2a88903dbcd9dae6954daed4a6df56e76",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "ab4f132e5ef74dbfe206b1bf235fc70b5d27e131a5cb93fe294a962297d3d1dc"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed123\\warmup": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "48fdf2de7856118b9d5e726c983a61209071fa73d842846216b641800c92f7ce",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "a1fe2534782603fd09d44c47204f3b621092a186952b0274242df1b1a64f7d31"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius0p25\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "c1530ae2349a5a18db40791109f0534c2e423cbaead1ebf85e8c70cdcd36915c"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius0p25\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "d22856ea41a191bbdd610cbb63793a275d555a1ae287bb47dc6212f77359bbe6"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius0p25\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "0f51486de80b10fc0047e6063ee5458a07fd96f677175d9e2c9fdb0735c75401"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius0p25\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "3b6b1231576a8778fe866ef43d84791150eec2d81f6a9edf6995a5da8d8ea2ee"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius1\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "490cc4bacc087791833f1b703de4aa045a63f6134062b558f118ab23bd7d1497"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius1\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "749d55e118e6bdf08f17f34c0eb20bd4510186bdd0d46ab25c7ddecec4ac9cf7"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius1\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "a4ef7292e10a39ac8f33c7e28d940009cba062e2732abf9e55efb946dd029540"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius1\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "ff3b765e841bcd73770e4ae2a088edf350a286b53d5cec0500459739aaa1d0ff"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius4\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "a6b04fddf2dbd7334b69e9ec83e9c66097c2ccb04e205c80d04781231238b130"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius4\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "6695044df60916f3929896b3fd975593fa594de0ae29d4bfa6a78619752d61b3"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius4\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "d1b04194a84e5cb9dde17129c2b26f368fd25703ed31f7f496510967258f410e"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\grad_core\\radius4\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "27e82294d359c0361e6c3b24892b18898b46704906d3f18943d977f5e351b270",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "da380418fc6e662d209cc23fd8e0c365d3a73e7522e8f0bf1be4613f9ba2f033"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\lora_xs\\radius1\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "ea6edec10533d8558c24021faf14f962f4a0ac0ab1787670da371b80b0dbb838",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "d453e6836a690d39d66e16223696d7743299cea2b53e65f2ee92ab48b6bc55c3"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\lora_xs\\radius1\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "ea6edec10533d8558c24021faf14f962f4a0ac0ab1787670da371b80b0dbb838",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "73da471594009d49b52b3c79093970ea52382a199f8fa9d44711b28fbdc82d78"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\lora_xs\\radius1\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "ea6edec10533d8558c24021faf14f962f4a0ac0ab1787670da371b80b0dbb838",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "c7959a595599b389286690d96fcd53ed011d6c4f1180a2d988e3399272b5491e"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\lora_xs\\radius1\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "ea6edec10533d8558c24021faf14f962f4a0ac0ab1787670da371b80b0dbb838",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "7748f4d6bd717dc87a932b03290db061b544693b02585077c2ede044890d429e"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\weight_svd_core\\radius1\\absolute": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "bd34c538e4a816c3bae16737b9b4ed9c535cb20360c947a62e618b78d8fc2206",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "2ce1460fbda0fcababb5187611692994cb0060a44209adf514abdaa3014573ad"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\weight_svd_core\\radius1\\constant": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "bd34c538e4a816c3bae16737b9b4ed9c535cb20360c947a62e618b78d8fc2206",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "5ac51ba6124a3ffe7dd3252f1d190872792181bd31e83b82d2463c3e16038e68"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\weight_svd_core\\radius1\\dual": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "bd34c538e4a816c3bae16737b9b4ed9c535cb20360c947a62e618b78d8fc2206",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "e67473263911fe3b1e2513a64856d14c7c05f7bf601aeff0919a3d02dcc54d15"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\condition\\weight_svd_core\\radius1\\relative": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "bd34c538e4a816c3bae16737b9b4ed9c535cb20360c947a62e618b78d8fc2206",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "488ed81da03f57474dff574f4139221d358800ded844822add84958b41bc58f4"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\static\\grad_core": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5b04f2b0a560a5fceb099aa478fd2ce252e125c40a1ea90f08ce0fb544a65f81",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "a6243d2ffd961632c00f229507b7591e84647430d43f58cb8f82ad1d2817e4e4"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\static\\lora_xs": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5b04f2b0a560a5fceb099aa478fd2ce252e125c40a1ea90f08ce0fb544a65f81",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "0959df2a0c1cdf4490cd23eb9fa15a3e23e1443e0550aa631afb52e3f6cb9d8e"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\static\\weight_svd_core": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "5b04f2b0a560a5fceb099aa478fd2ce252e125c40a1ea90f08ce0fb544a65f81",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "4770cceac4d3c4f19d8c7d87e792a9b9739f0bcd0219e2c83fd877e77c39eb05"
+      }
+    },
+    "D:\\develop\\patchtst\\battery_ai\\_srsr_physics_early_precursor_v1\\battery_repository\\runtime\\drs_peft\\e123_v1\\fold2\\seed2026\\warmup": {
+      "updates": 960,
+      "next_epoch": 120,
+      "history_rows": 120,
+      "epochs": 120,
+      "optimizer_step_min": 960.0,
+      "optimizer_step_max": 960.0,
+      "source_commit": "114ee32d2abf3a649cc10ed4e67b0d54b49d4300",
+      "was_epoch_complete": true,
+      "original_files": {
+        "RUN_CONFIG.json": "a79895d64bc9c988d62c26f97c097b626a425be3bdc54d36e85515961f984bc6",
+        "SOURCE_SNAPSHOT.json": "149074ecc9aae547afa8f612b9362ff5c970c5bdc8a725484d0b2bfc80f97387",
+        "TRAIN_STATE.pt": "5fc46acfb9e9eaf00077181fb8d992dbbfc5d9f7f4e99167c8bb29f573d54d46"
+      }
+    }
+  },
+  "resumed_state_checks": [],
+  "new_optimizer_updates": 69120
+}

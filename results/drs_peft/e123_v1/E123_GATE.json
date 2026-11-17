@@ -1,0 +1,290 @@
+{
+  "study_id": "DRS_PEFT_E1_E2_E3_SOURCE_GROUP_CV_20261117_v1",
+  "status": "NOT_SUPPORTED_SOURCE_E123",
+  "candidates": [
+    {
+      "candidate": "absolute",
+      "norm_controls": {
+        "E1": {
+          "valid": true,
+          "evaluated_outer_units": 108,
+          "physical_cell_layers": 49680,
+          "valid_norm_control_cell_layers": 49680,
+          "valid_norm_control_coverage": 1.0,
+          "matched_norm_control_coverage": 1.0,
+          "matched_norm_unattainable_cell_layers": 0,
+          "failed_units": []
+        },
+        "E2": {
+          "valid": true,
+          "evaluated_outer_units": 108,
+          "physical_cell_layers": 49680,
+          "valid_norm_control_cell_layers": 49680,
+          "valid_norm_control_coverage": 1.0,
+          "matched_norm_control_coverage": 1.0,
+          "matched_norm_unattainable_cell_layers": 0,
+          "failed_units": []
+        },
+        "E3": {
+          "valid": true,
+          "evaluated_outer_units": 72,
+          "physical_cell_layers": 33120,
+          "valid_norm_control_cell_layers": 33120,
+          "valid_norm_control_coverage": 1.0,
+          "matched_norm_control_coverage": 1.0,
+          "matched_norm_unattainable_cell_layers": 0,
+          "failed_units": []
+        }
+      },
+      "E1_supported": false,
+      "E2_supported": false,
+      "E3_supported": false,
+      "E1_criteria": [
+        {
+          "evaluation_mode": "trained_ball",
+          "minimum_relative_gain": false,
+          "all_fold_full_positive": false,
+          "all_seed_full_positive": false,
+          "cell_interval_positive": false,
+          "protocol_interval_positive": false,
+          "extra_radii_full_positive": false
+        },
+        {
+          "evaluation_mode": "matched_norm",
+          "minimum_relative_gain": true,
+          "all_fold_full_positive": false,
+          "all_seed_full_positive": false,
+          "cell_interval_positive": false,
+          "protocol_interval_positive": false,
+          "extra_radii_full_positive": false
+        }
+      ],
+      "E2_criteria": [
+        {
+          "method": "grad_core",
+          "evaluation_mode": "trained_ball",
+          "full_gain_positive": true
+        },
+        {
+          "method": "lora_xs",
+          "evaluation_mode": "trained_ball",
+          "full_gain_positive": true
+        },
+        {
+          "method": "weight_svd_core",
+          "evaluation_mode": "trained_ball",
+          "full_gain_positive": true
+        },
+        {
+          "evaluation_mode": "trained_ball",
+          "gradient_weight_gain_equivalence": true
+        },
+        {
+          "method": "grad_core",
+          "evaluation_mode": "matched_norm",
+          "full_gain_positive": true
+        },
+        {
+          "method": "lora_xs",
+          "evaluation_mode": "matched_norm",
+          "full_gain_positive": true
+        },
+        {
+          "method": "weight_svd_core",
+          "evaluation_mode": "matched_norm",
+          "full_gain_positive": true
+        },
+        {
+          "evaluation_mode": "matched_norm",
+          "gradient_weight_gain_equivalence": false
+        }
+      ],
+      "E3_criteria": [
+        {
+          "method": "grad_core",
+          "evaluation_mode": "trained_ball",
+          "all_fold_full_positive": false,
+          "all_fold_tail_positive": false,
+          "pooled_tail_positive": true,
+          "tail_cell_interval_positive": false,
+          "tail_protocol_interval_positive": false
+        },
+        {
+          "method": "weight_svd_core",
+          "evaluation_mode": "trained_ball",
+          "all_fold_full_positive": false,
+          "all_fold_tail_positive": false,
+          "pooled_tail_positive": false,
+          "tail_cell_interval_positive": false,
+          "tail_protocol_interval_positive": false
+        },
+        {
+          "method": "grad_core",
+          "evaluation_mode": "matched_norm",
+          "all_fold_full_positive": false,
+          "all_fold_tail_positive": true,
+          "pooled_tail_positive": true,
+          "tail_cell_interval_positive": false,
+          "tail_protocol_interval_positive": false
+        },
+        {
+          "method": "weight_svd_core",
+          "evaluation_mode": "matched_norm",
+          "all_fold_full_positive": false,
+          "all_fold_tail_positive": false,
+          "pooled_tail_positive": false,
+          "tail_cell_interval_positive": false,
+          "tail_protocol_interval_positive": false
+        }
+      ],
+      "TARGET_ADVANCE_ALLOWED": false
+    },
+    {
+      "candidate": "dual",
+      "norm_controls": {
+        "E1": {
+          "valid": true,
+          "evaluated_outer_units": 108,
+          "physical_cell_layers": 49680,
+          "valid_norm_control_cell_layers": 49680,
+          "valid_norm_control_coverage": 1.0,
+          "matched_norm_control_coverage": 1.0,
+          "matched_norm_unattainable_cell_layers": 0,
+          "failed_units": []
+        },
+        "E2": {
+          "valid": true,
+          "evaluated_outer_units": 108,
+          "physical_cell_layers": 49680,
+          "valid_norm_control_cell_layers": 49680,
+          "valid_norm_control_coverage": 1.0,
+          "matched_norm_control_coverage": 1.0,
+          "matched_norm_unattainable_cell_layers": 0,
+          "failed_units": []
+        },
+        "E3": {
+          "valid": true,
+          "evaluated_outer_units": 72,
+          "physical_cell_layers": 33120,
+          "valid_norm_control_cell_layers": 33120,
+          "valid_norm_control_coverage": 1.0,
+          "matched_norm_control_coverage": 1.0,
+          "matched_norm_unattainable_cell_layers": 0,
+          "failed_units": []
+        }
+      },
+      "E1_supported": false,
+      "E2_supported": false,
+      "E3_supported": false,
+      "E1_criteria": [
+        {
+          "evaluation_mode": "trained_ball",
+          "minimum_relative_gain": false,
+          "all_fold_full_positive": false,
+          "all_seed_full_positive": false,
+          "cell_interval_positive": false,
+          "protocol_interval_positive": false,
+          "extra_radii_full_positive": false
+        },
+        {
+          "evaluation_mode": "matched_norm",
+          "minimum_relative_gain": true,
+          "all_fold_full_positive": false,
+          "all_seed_full_positive": true,
+          "cell_interval_positive": false,
+          "protocol_interval_positive": false,
+          "extra_radii_full_positive": false
+        }
+      ],
+      "E2_criteria": [
+        {
+          "method": "grad_core",
+          "evaluation_mode": "trained_ball",
+          "full_gain_positive": true
+        },
+        {
+          "method": "lora_xs",
+          "evaluation_mode": "trained_ball",
+          "full_gain_positive": true
+        },
+        {
+          "method": "weight_svd_core",
+          "evaluation_mode": "trained_ball",
+          "full_gain_positive": false
+        },
+        {
+          "evaluation_mode": "trained_ball",
+          "gradient_weight_gain_equivalence": true
+        },
+        {
+          "method": "grad_core",
+          "evaluation_mode": "matched_norm",
+          "full_gain_positive": true
+        },
+        {
+          "method": "lora_xs",
+          "evaluation_mode": "matched_norm",
+          "full_gain_positive": true
+        },
+        {
+          "method": "weight_svd_core",
+          "evaluation_mode": "matched_norm",
+          "full_gain_positive": false
+        },
+        {
+          "evaluation_mode": "matched_norm",
+          "gradient_weight_gain_equivalence": false
+        }
+      ],
+      "E3_criteria": [
+        {
+          "method": "grad_core",
+          "evaluation_mode": "trained_ball",
+          "all_fold_full_positive": false,
+          "all_fold_tail_positive": false,
+          "pooled_tail_positive": true,
+          "tail_cell_interval_positive": false,
+          "tail_protocol_interval_positive": false
+        },
+        {
+          "method": "weight_svd_core",
+          "evaluation_mode": "trained_ball",
+          "all_fold_full_positive": false,
+          "all_fold_tail_positive": false,
+          "pooled_tail_positive": false,
+          "tail_cell_interval_positive": false,
+          "tail_protocol_interval_positive": false
+        },
+        {
+          "method": "grad_core",
+          "evaluation_mode": "matched_norm",
+          "all_fold_full_positive": false,
+          "all_fold_tail_positive": false,
+          "pooled_tail_positive": false,
+          "tail_cell_interval_positive": false,
+          "tail_protocol_interval_positive": false
+        },
+        {
+          "method": "weight_svd_core",
+          "evaluation_mode": "matched_norm",
+          "all_fold_full_positive": false,
+          "all_fold_tail_positive": false,
+          "pooled_tail_positive": false,
+          "tail_cell_interval_positive": false,
+          "tail_protocol_interval_positive": false
+        }
+      ],
+      "TARGET_ADVANCE_ALLOWED": false
+    }
+  ],
+  "TARGET_ADVANCE_ALLOWED": false,
+  "source_outer_cells": 115,
+  "source_outer_groups": 62,
+  "completed_training_units": 216,
+  "completed_outer_results": 387,
+  "optimizer_updates_in_summarizer": 0,
+  "final_target_query_labels_used": 0,
+  "config_sha256": "c1ef174848fb9a235e05ca08daf174ccfdecfecab345d220b46438cc274f1b72",
+  "protocol_file_sha256": "bc24054839c1f3e32744380ce410621645f7d80a974988b91a643e576efd1c51",
+  "summary_source_sha256": "c8305d8f3b7d1d35d7c15bc806315f34a69d46eeb74b232188334176248a89f9"
+}
