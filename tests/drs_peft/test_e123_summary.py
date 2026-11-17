@@ -2,6 +2,7 @@
 
 import copy
 import json
+from hashlib import sha256
 from types import SimpleNamespace
 
 import numpy as np
@@ -22,6 +23,7 @@ from scripts.drs_peft.summarize_e123 import (
     scoped_norm_controls,
     summarize_contrast,
     summarize_equivalence,
+    unit_relative_path,
 )
 
 
@@ -224,3 +226,129 @@ def test_outer_guard_stops_before_partial_statistics(tmp_path, config):
     with pytest.raises(RuntimeError, match="training closure"):
         check_complete_outer(args, config, load_protocol(DEFAULT_PATH))
     assert not (root / "E123_GATE.json").exists()
+
+
+def source_binding_fixture(root):
+    """Minimal complete closure for testing provenance guards without model data."""
+    root.mkdir()
+    public, private = root / "p", root / "r"
+    public.mkdir()
+    config = {
+        "fold_payload_sha256": "engineering_fold",
+        "training_seeds": [42],
+        "methods": ["grad_core"],
+        "modes": ["constant"],
+        "primary_radius": 1.0,
+        "grad_radius_sensitivity": [],
+        "evaluation_modes": ["trained_ball", "matched_norm"],
+        "epochs": {"warmup": 1, "static": 1, "condition": 1},
+        "batch_size": 8,
+        "expected_optimizer_updates": 3,
+        "expected_training_units": {"total": 3, "static": 1, "condition": 1},
+    }
+    fold = {
+        "fold_id": 0,
+        "fit_ids": ["fit"],
+        "inner_validation_ids": ["inner"],
+        "outer_test_ids": ["outer"],
+        "outer_test_groups": ["outer_group"],
+    }
+    protocol = {"protocol_sha256": "engineering_fold", "folds": [fold]}
+    config_path = root / "config.json"
+    config_path.write_text(json.dumps(config), encoding="utf-8")
+    config_sha = sha256(config_path.read_bytes()).hexdigest()
+    expected = expected_outer_units(config, protocol)
+    training = {json.dumps(unit, sort_keys=True): unit for unit, _ in expected}
+    warmup = {"stage": "warmup", "fold_id": 0, "seed": 42}
+    training[json.dumps(warmup, sort_keys=True)] = warmup
+    closures = []
+    for unit in training.values():
+        folder = private / unit_relative_path(unit)
+        folder.mkdir(parents=True)
+        checkpoint = folder / "CHECKPOINT_SELECTED.pt"
+        checkpoint.write_text("ENGINEERING_ONLY_" + unit["stage"], encoding="utf-8")
+        run = {
+            "training_ids": fold["fit_ids"],
+            "validation_ids": fold["inner_validation_ids"],
+            "config_sha256": config_sha,
+        }
+        (folder / "RUN_CONFIG.json").write_text(json.dumps(run), encoding="utf-8")
+        marker = folder / "SOURCE_DEVELOPMENT_COMPLETE.json"
+        marker.write_text(
+            json.dumps(
+                {
+                    "status": "SOURCE_DEVELOPMENT_COMPLETE",
+                    "epochs": 1,
+                    "updates": 1,
+                    "target_query_labels_used": 0,
+                }
+            ),
+            encoding="utf-8",
+        )
+        closures.append(
+            {
+                "unit": unit,
+                "source_receipt_sha256": sha256(marker.read_bytes()).hexdigest(),
+                "checkpoint_sha256": sha256(checkpoint.read_bytes()).hexdigest(),
+            }
+        )
+    (public / "OUTER_EVALUATION_OPENED.json").write_text(
+        json.dumps({"source_units": closures, "final_target_query_labels_used": 0}),
+        encoding="utf-8",
+    )
+    for unit, evaluation in expected:
+        folder = private / "outer" / unit_relative_path(unit) / evaluation
+        folder.mkdir(parents=True)
+        selected = next(entry for entry in closures if entry["unit"] == unit)
+        receipt = {
+            "unit": unit,
+            "evaluation_mode": evaluation,
+            "optimizer_updates": 0,
+            "final_target_query_labels_used": 0,
+            "registration_sha256": config_sha,
+            "checkpoint_sha256": selected["checkpoint_sha256"],
+            "outer_ids": fold["outer_test_ids"],
+            "outer_groups": fold["outer_test_groups"],
+            "files": [],
+        }
+        for target in (
+            folder,
+            public / "outer" / unit_relative_path(unit) / evaluation,
+        ):
+            target.mkdir(parents=True, exist_ok=True)
+            (target / "OUTER_COMPLETE.json").write_text(
+                json.dumps(receipt), encoding="utf-8"
+            )
+    args = SimpleNamespace(public_root=public, private_root=private, config=config_path)
+    return args, config, protocol, expected
+
+
+def test_source_config_sha_tamper(tmp_path):
+    args, config, protocol, expected = source_binding_fixture(tmp_path.parent / "sha_a")
+    assert len(check_complete_outer(args, config, protocol)) == 3
+    unit = expected[0][0]
+    run_path = args.private_root / unit_relative_path(unit) / "RUN_CONFIG.json"
+    run = json.loads(run_path.read_text())
+    run["config_sha256"] = "another_registration"
+    run_path.write_text(json.dumps(run), encoding="utf-8")
+    with pytest.raises(RuntimeError, match="source registration config changed"):
+        check_complete_outer(args, config, protocol)
+
+
+def test_outer_checkpoint_sha_tamper(tmp_path):
+    args, config, protocol, expected = source_binding_fixture(tmp_path.parent / "sha_b")
+    assert len(check_complete_outer(args, config, protocol)) == 3
+    unit, evaluation = expected[0]
+    for target in (args.private_root, args.public_root):
+        marker = (
+            target
+            / "outer"
+            / unit_relative_path(unit)
+            / evaluation
+            / "OUTER_COMPLETE.json"
+        )
+        receipt = json.loads(marker.read_text())
+        receipt["checkpoint_sha256"] = "another_checkpoint"
+        marker.write_text(json.dumps(receipt), encoding="utf-8")
+    with pytest.raises(RuntimeError, match="frozen source selection"):
+        check_complete_outer(args, config, protocol)

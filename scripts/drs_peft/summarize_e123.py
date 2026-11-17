@@ -95,6 +95,7 @@ def check_complete_outer(args, config, protocol):
     }
     if set(expected_source_units) != set(actual_source_units):
         raise RuntimeError("The outer barrier omits registered source unit identities")
+    config_sha = file_hash(args.config)
     actual_updates = 0
     for key, unit in expected_source_units.items():
         folder = args.private_root / unit_relative_path(unit)
@@ -102,6 +103,8 @@ def check_complete_outer(args, config, protocol):
         entry = actual_source_units[key]
         receipt = read_json(marker)
         run_config = read_json(folder / "RUN_CONFIG.json")
+        if run_config.get("config_sha256") != config_sha:
+            raise RuntimeError("Fold-local source registration config changed")
         fold = protocol["folds"][unit["fold_id"]]
         expected_epochs = config["epochs"][unit["stage"]]
         expected_updates = expected_epochs * math.ceil(
@@ -130,7 +133,6 @@ def check_complete_outer(args, config, protocol):
     )
     if len(expected) != expected_count:
         raise RuntimeError("Outer matrix differs from the frozen source experiment")
-    config_sha = file_hash(args.config)
     records = []
     for unit, evaluation in expected:
         folder = args.private_root / "outer" / unit_relative_path(unit) / evaluation
@@ -138,6 +140,11 @@ def check_complete_outer(args, config, protocol):
         if not marker.is_file():
             raise RuntimeError("Outer matrix remains incomplete at " + str(folder))
         receipt = read_json(marker)
+        selected = actual_source_units[json.dumps(unit, sort_keys=True)]
+        if receipt.get("checkpoint_sha256") != selected["checkpoint_sha256"]:
+            raise RuntimeError(
+                "Outer checkpoint differs from its frozen source selection"
+            )
         if (
             receipt["unit"] != unit
             or receipt["evaluation_mode"] != evaluation
