@@ -1,0 +1,43 @@
+{
+  "identity": {
+    "config_sha256": "636bf1e16a5405a84b1302cfbcd33769a242c6baf3ac16746d034511c0d39ee7",
+    "code": {
+      "models/drs_peft/abba_adapters.py": "b2a71b038ed4ed9988c1e91f2200bfaa0158d09e58031ab945d9f3ffec531432",
+      "models/drs_peft/abba_adalora.py": "5bf43bee7b22135af14f5f8448ffa98704d810f5ba2853e705e8c4f45166b66d",
+      "scripts/drs_peft/abba_engine.py": "1e63be028174ab362e8210b48b778e796758007497bef8155b6a7717481348a9",
+      "scripts/drs_peft/run_abba_moirai.py": "454913828c15652dd33ff7f765235876649ef0cd210b97a40199da791a86327d",
+      "scripts/drs_peft/transfer_scope_data.py": "54e6c00f55172ad0a0b324e9c471f88331b3f76edef44317add7e861ab45dc59"
+    },
+    "method": "LORA_R8",
+    "fold": 2,
+    "seed": 42,
+    "query_ids": [
+      "MATR_b2c0",
+      "MATR_b3c20",
+      "MATR_b3c0",
+      "MATR_b3c6",
+      "MATR_b2c36",
+      "MATR_b3c8",
+      "MATR_b3c28",
+      "MATR_b3c21"
+    ],
+    "reference_sha256": "0111932ba97e0df8452c29f597807a682fa0eac8001dbfb2e6aebc4d5426a853",
+    "data_manifest_sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d",
+    "support_ids": [
+      "MATR_b2c45",
+      "MATR_b3c24",
+      "MATR_b3c33"
+    ],
+    "learning_rate": 0.0001
+  },
+  "mae": 0.019066917437472367,
+  "support_mse_before": 0.0008086292073130608,
+  "support_mse_after": 0.0006853123195469379,
+  "trainable_parameters": 73728,
+  "optimizer_steps": 30,
+  "actual_optimizer_steps": 30,
+  "fit_seconds": 1.6464165999786928,
+  "allocated_rank_by_module": {},
+  "adalora_budget_history": [],
+  "final_gradient_norm_before_clip": 4.4427764805732295e-05
+}

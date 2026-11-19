@@ -1,0 +1,121 @@
+{
+  "reference": "https://github.com/QingruZhang/AdaLoRA/tree/d10f5ebee16c478fa2f41a44a237b38e8c9b0338/loralib/loralib",
+  "upstream_blobs": {
+    "adalora.py": "a8a2b557eae63a2f0ce6247dcec5689ca96b856d",
+    "layers.py": "e4bdff3df18011e886e74cea309e23bdd87c5934"
+  },
+  "tensor_fixture": "synthetic CPU, 12 layers, initial average rank 12, target average rank 8, seed 42",
+  "torch_version": "2.4.1+cu121",
+  "optimization": {
+    "alpha": 12,
+    "adamw_lr": 0.001,
+    "weight_decay": 0,
+    "gradient_clip": 1.0
+  },
+  "checks": [
+    "forward",
+    "orthogonality regularization",
+    "AdamW factor tensors",
+    "global schedule",
+    "mask threshold",
+    "final rank pattern"
+  ],
+  "cases": [
+    {
+      "dtype": "torch.float32",
+      "steps": 30,
+      "tinit": 3,
+      "tfinal": 6,
+      "mask_interval": 1,
+      "max_threshold_difference": 0.0,
+      "achieved_total_rank": 96,
+      "final_pattern": {
+        "layers.0": 7,
+        "layers.1": 8,
+        "layers.2": 11,
+        "layers.3": 7,
+        "layers.4": 7,
+        "layers.5": 7,
+        "layers.6": 6,
+        "layers.7": 8,
+        "layers.8": 7,
+        "layers.9": 10,
+        "layers.10": 8,
+        "layers.11": 10
+      },
+      "bitwise_equal": true
+    },
+    {
+      "dtype": "torch.float64",
+      "steps": 30,
+      "tinit": 3,
+      "tfinal": 6,
+      "mask_interval": 1,
+      "max_threshold_difference": 0.0,
+      "achieved_total_rank": 96,
+      "final_pattern": {
+        "layers.0": 7,
+        "layers.1": 9,
+        "layers.2": 4,
+        "layers.3": 7,
+        "layers.4": 10,
+        "layers.5": 9,
+        "layers.6": 7,
+        "layers.7": 8,
+        "layers.8": 7,
+        "layers.9": 7,
+        "layers.10": 10,
+        "layers.11": 11
+      },
+      "bitwise_equal": true
+    },
+    {
+      "dtype": "torch.float32",
+      "steps": 60,
+      "tinit": 6,
+      "tfinal": 12,
+      "mask_interval": 2,
+      "max_threshold_difference": 0.0,
+      "achieved_total_rank": 96,
+      "final_pattern": {
+        "layers.0": 8,
+        "layers.1": 8,
+        "layers.2": 12,
+        "layers.3": 8,
+        "layers.4": 7,
+        "layers.5": 7,
+        "layers.6": 6,
+        "layers.7": 6,
+        "layers.8": 7,
+        "layers.9": 10,
+        "layers.10": 8,
+        "layers.11": 9
+      },
+      "bitwise_equal": true
+    },
+    {
+      "dtype": "torch.float64",
+      "steps": 60,
+      "tinit": 6,
+      "tfinal": 12,
+      "mask_interval": 2,
+      "max_threshold_difference": 0.0,
+      "achieved_total_rank": 96,
+      "final_pattern": {
+        "layers.0": 8,
+        "layers.1": 9,
+        "layers.2": 7,
+        "layers.3": 7,
+        "layers.4": 9,
+        "layers.5": 8,
+        "layers.6": 8,
+        "layers.7": 8,
+        "layers.8": 7,
+        "layers.9": 7,
+        "layers.10": 9,
+        "layers.11": 9
+      },
+      "bitwise_equal": true
+    }
+  ]
+}

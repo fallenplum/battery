@@ -1,0 +1,189 @@
+{
+  "status": "PASS_REAL_MOIRAI",
+  "implementation": {
+    "config_sha256": "636bf1e16a5405a84b1302cfbcd33769a242c6baf3ac16746d034511c0d39ee7",
+    "code": {
+      "models/drs_peft/abba_adapters.py": "b2a71b038ed4ed9988c1e91f2200bfaa0158d09e58031ab945d9f3ffec531432",
+      "models/drs_peft/abba_adalora.py": "5bf43bee7b22135af14f5f8448ffa98704d810f5ba2853e705e8c4f45166b66d",
+      "scripts/drs_peft/abba_engine.py": "1e63be028174ab362e8210b48b778e796758007497bef8155b6a7717481348a9",
+      "scripts/drs_peft/run_abba_moirai.py": "454913828c15652dd33ff7f765235876649ef0cd210b97a40199da791a86327d",
+      "scripts/drs_peft/transfer_scope_data.py": "54e6c00f55172ad0a0b324e9c471f88331b3f76edef44317add7e861ab45dc59"
+    }
+  },
+  "source_checkpoint_sha256": "7f85595169c2ea6bb3fc7398ef8460b7c0d1200e3cec50b06e5731be918bcf64",
+  "upstream": {
+    "abba": {
+      "paper": "https://openreview.net/forum?id=NvSRYp0oaX",
+      "revision": "6a3c9fcae791101043136a5e31136131291004ec",
+      "source": "https://github.com/CERT-Lab/abba/blob/6a3c9fcae791101043136a5e31136131291004ec/abba.py",
+      "blob_sha": "2c0da07693e2625db44294574afd7df83acb470b"
+    },
+    "hira": {
+      "paper": "https://openreview.net/forum?id=TwJrTz9cRS",
+      "revision": "f75f0cfe73e6729f9e1aa5402c5ca5ae36a8c0e8",
+      "source": "https://github.com/hqsiswiliam/hira/blob/f75f0cfe73e6729f9e1aa5402c5ca5ae36a8c0e8/hira/tuners/lora.py",
+      "blob_sha": "662ff27f788daface421e6f7a0f63994d1d00992"
+    },
+    "lora": {
+      "paper": "https://openreview.net/forum?id=nZeVKeeFYf9",
+      "revision": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+      "source": "https://github.com/microsoft/LoRA/blob/c4593f060e6a368d7bb5af5273b8e42810cdef90/loralib/layers.py",
+      "blob_sha": "637865600fc9afbf76831e99e3d71eaca6871bda"
+    },
+    "adalora": {
+      "paper": "https://openreview.net/forum?id=lq62uWRJjiY",
+      "revision": "d10f5ebee16c478fa2f41a44a237b38e8c9b0338",
+      "source": "https://github.com/QingruZhang/AdaLoRA/blob/d10f5ebee16c478fa2f41a44a237b38e8c9b0338/loralib/loralib/adalora.py",
+      "blob_sha": "a8a2b557eae63a2f0ce6247dcec5689ca96b856d"
+    }
+  },
+  "merged_reference_max_abs": 7.152557373046875e-07,
+  "source_support_ids": [
+    "MATR_b1c21",
+    "MATR_b1c23",
+    "MATR_b4c16"
+  ],
+  "source_prefix_query_ids": [
+    "MATR_b1c34",
+    "MATR_b1c20"
+  ],
+  "target_label_rows_loaded": 0,
+  "new_reference_fits": 0,
+  "real_optimizer_updates": 180,
+  "methods": {
+    "ABBA_R4X4": {
+      "support_mse_before": 0.0011904379352927208,
+      "support_mse_after": 0.0008551789214834571,
+      "trainable_parameters": 73728,
+      "optimizer_steps": 30,
+      "actual_optimizer_steps": 30,
+      "fit_seconds": 1.8870078000472859,
+      "allocated_rank_by_module": {},
+      "adalora_budget_history": [],
+      "final_gradient_norm_before_clip": 0.00017189989739563316,
+      "active_parameters": 73728,
+      "maximum_update_rank": 16,
+      "initial_prediction_max_abs": 0.0,
+      "restored_prediction_max_abs": 0.0
+    },
+    "LORA_R8": {
+      "support_mse_before": 0.0011904379352927208,
+      "support_mse_after": 0.0006795022636651993,
+      "trainable_parameters": 73728,
+      "optimizer_steps": 30,
+      "actual_optimizer_steps": 30,
+      "fit_seconds": 1.4416482000378892,
+      "allocated_rank_by_module": {},
+      "adalora_budget_history": [],
+      "final_gradient_norm_before_clip": 0.0003838013799395412,
+      "active_parameters": 73728,
+      "maximum_update_rank": 8,
+      "initial_prediction_max_abs": 0.0,
+      "restored_prediction_max_abs": 0.0
+    },
+    "HIRA_R8": {
+      "support_mse_before": 0.0011904379352927208,
+      "support_mse_after": 0.000870793592184782,
+      "trainable_parameters": 73728,
+      "optimizer_steps": 30,
+      "actual_optimizer_steps": 30,
+      "fit_seconds": 1.401419600006193,
+      "allocated_rank_by_module": {},
+      "adalora_budget_history": [],
+      "final_gradient_norm_before_clip": 7.559031655546278e-05,
+      "active_parameters": 73728,
+      "maximum_update_rank": 384,
+      "initial_prediction_max_abs": 0.0,
+      "restored_prediction_max_abs": 0.0
+    },
+    "ADALORA_R12_TO_R8": {
+      "support_mse_before": 0.0011904379352927208,
+      "support_mse_after": 0.001150981872342527,
+      "trainable_parameters": 110736,
+      "optimizer_steps": 30,
+      "actual_optimizer_steps": 30,
+      "fit_seconds": 1.8608301000203937,
+      "allocated_rank_by_module": {
+        "encoder.layers.0.self_attn.q_proj": 10,
+        "encoder.layers.0.self_attn.v_proj": 9,
+        "encoder.layers.1.self_attn.q_proj": 3,
+        "encoder.layers.1.self_attn.v_proj": 10,
+        "encoder.layers.2.self_attn.q_proj": 8,
+        "encoder.layers.2.self_attn.v_proj": 8,
+        "encoder.layers.3.self_attn.q_proj": 8,
+        "encoder.layers.3.self_attn.v_proj": 10,
+        "encoder.layers.4.self_attn.q_proj": 6,
+        "encoder.layers.4.self_attn.v_proj": 8,
+        "encoder.layers.5.self_attn.q_proj": 8,
+        "encoder.layers.5.self_attn.v_proj": 8
+      },
+      "adalora_budget_history": [
+        144,
+        144,
+        144,
+        144,
+        137,
+        131,
+        126,
+        121,
+        117,
+        113,
+        110,
+        107,
+        104,
+        102,
+        101,
+        99,
+        98,
+        97,
+        97,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "final_gradient_norm_before_clip": 0.03611377999186516,
+      "active_parameters": 73824,
+      "maximum_update_rank": 10,
+      "initial_prediction_max_abs": 0.0,
+      "restored_prediction_max_abs": 0.0
+    },
+    "LORA_R2": {
+      "support_mse_before": 0.0011904379352927208,
+      "support_mse_after": 0.0006827120669186115,
+      "trainable_parameters": 18432,
+      "optimizer_steps": 30,
+      "actual_optimizer_steps": 30,
+      "fit_seconds": 1.4725970000727102,
+      "allocated_rank_by_module": {},
+      "adalora_budget_history": [],
+      "final_gradient_norm_before_clip": 0.00045122584560886025,
+      "active_parameters": 18432,
+      "maximum_update_rank": 2,
+      "initial_prediction_max_abs": 0.0,
+      "restored_prediction_max_abs": 0.0
+    },
+    "LORA_R16": {
+      "support_mse_before": 0.0011904379352927208,
+      "support_mse_after": 0.0006763800047338009,
+      "trainable_parameters": 147456,
+      "optimizer_steps": 30,
+      "actual_optimizer_steps": 30,
+      "fit_seconds": 1.5305333000142127,
+      "allocated_rank_by_module": {},
+      "adalora_budget_history": [],
+      "final_gradient_norm_before_clip": 0.00028079820913262665,
+      "active_parameters": 147456,
+      "maximum_update_rank": 16,
+      "initial_prediction_max_abs": 0.0,
+      "restored_prediction_max_abs": 0.0
+    }
+  }
+}

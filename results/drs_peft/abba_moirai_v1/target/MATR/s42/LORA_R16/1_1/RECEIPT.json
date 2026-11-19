@@ -1,0 +1,73 @@
+{
+  "lock_sha256": "e506450c491bec1d623b7f1184066381faafe3e023324473f27d5bae4c2fbc38",
+  "domain": "MATR",
+  "task_id": "MATR_POOLED",
+  "seed": 42,
+  "method": "LORA_R16",
+  "K": 1,
+  "draw": 1,
+  "support_ids": [
+    "MATR_b3c36"
+  ],
+  "query_ids": [
+    "MATR_b3c9",
+    "MATR_b3c30",
+    "MATR_b3c4",
+    "MATR_b3c13",
+    "MATR_b3c19",
+    "MATR_b3c5",
+    "MATR_b3c7",
+    "MATR_b2c26"
+  ],
+  "reference_family": "SPECIALIZED",
+  "reference_sha256": "5e9785481c600aa32bd5639c52877ce286f2aa3a4e173aed8555f5430dc01c0f",
+  "learning_rate": 0.0001,
+  "is_duplicate": false,
+  "support_mse_before": 0.00016907742246985435,
+  "support_mse_after": 0.00013546195987146348,
+  "trainable_parameters": 147456,
+  "optimizer_steps": 30,
+  "actual_optimizer_steps": 30,
+  "fit_seconds": 2.5615254000294954,
+  "allocated_rank_by_module": {},
+  "adalora_budget_history": [],
+  "final_gradient_norm_before_clip": 0.0002437091461615637,
+  "active_parameters": 147456,
+  "canonical_identity": {
+    "lock_sha256": "e506450c491bec1d623b7f1184066381faafe3e023324473f27d5bae4c2fbc38",
+    "domain": "MATR",
+    "task_id": "MATR_POOLED",
+    "seed": 42,
+    "method": "LORA_R16",
+    "K": 1,
+    "support_ids": [
+      "MATR_b3c36"
+    ],
+    "query_ids": [
+      "MATR_b3c9",
+      "MATR_b3c30",
+      "MATR_b3c4",
+      "MATR_b3c13",
+      "MATR_b3c19",
+      "MATR_b3c5",
+      "MATR_b3c7",
+      "MATR_b2c26"
+    ],
+    "reference_family": "SPECIALIZED",
+    "reference_sha256": "5e9785481c600aa32bd5639c52877ce286f2aa3a4e173aed8555f5430dc01c0f",
+    "learning_rate": 0.0001
+  },
+  "adaptation_id": "a12ffbc1a3f1b5d129863b073bf83070d7fbcf6c23679c0cb1ef93f382a79b04",
+  "prediction_path": "adaptations/a12ffbc1a3f1b5d129863b07/PREDICTIONS.npz",
+  "prediction_sha256": "4b0d866d7afd9eb1d1deadfcc9243bbaf36ea47ebce46c89374554b67882cb6c",
+  "state_path": "adaptations/a12ffbc1a3f1b5d129863b07/ADAPTER.pt",
+  "state_sha256": "466c8c0c70dd7514a5aba4a3a6151cd33aadb3e40629a7c09deaa3991b43cba8",
+  "update_spectrum_sha256": "35bbccbacbac5a4940b891d09793d3a551bb393fe86efb60ad4d4c75c18be807",
+  "runtime_seconds": 3.2887936000479385,
+  "hardware": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "target_query_future_rows_loaded": 0,
+  "status": "SCORED",
+  "prediction_from_existing_cache": false,
+  "metrics_sha256": "b7480c7130273fe13062ffe8a2b46b6780faf001d50f5ebe5c7ec65f2a938295",
+  "scored_cell_window_rows": 40
+}

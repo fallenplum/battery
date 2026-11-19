@@ -1,0 +1,243 @@
+{
+  "status": "P0_AND_PROTOCOL_AUDIT_PASS",
+  "scope": "Real source-fold-0 P0, AdaLoRA upstream CPU parity, physical registries, and a synthetic interruption/scoring integration test",
+  "p0": {
+    "receipt": "results/drs_peft/abba_moirai_v1/P0_MOIRAI_REPRODUCTION.json",
+    "receipt_sha256": "938b01aef047db4d8a99b63e8c028f3fda14b8b36732000ee5eedd346c4cdf77",
+    "config_and_operator_hashes_verified": true,
+    "merged_reference_max_abs": 7.152557373046875e-7,
+    "new_reference_fits": 0,
+    "target_query_label_rows_loaded": 0,
+    "real_optimizer_updates": 180,
+    "source_checkpoint_sha256": "7f85595169c2ea6bb3fc7398ef8460b7c0d1200e3cec50b06e5731be918bcf64",
+    "rank_relative_threshold": 0.00001,
+    "layers_reconstructed_from_checkpoint": [
+      {
+        "module": "encoder.layers.0.self_attn.q_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.0.self_attn.v_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.1.self_attn.q_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.1.self_attn.v_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.2.self_attn.q_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.2.self_attn.v_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.3.self_attn.q_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.3.self_attn.v_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.4.self_attn.q_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.4.self_attn.v_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.5.self_attn.q_proj",
+        "rows": 384,
+        "cols": 384
+      },
+      {
+        "module": "encoder.layers.5.self_attn.v_proj",
+        "rows": 384,
+        "cols": 384
+      }
+    ],
+    "methods": {
+      "ABBA_R4X4": {
+        "trainable_parameters": 73728,
+        "physical_or_allocated_parameters_at_endpoint": 73728,
+        "per_layer_theoretical_rank_ceiling": 16,
+        "p0_max_numerical_rank": 16,
+        "optimizer_steps": 30,
+        "initial_prediction_max_abs": 0,
+        "restored_prediction_max_abs": 0
+      },
+      "LORA_R8": {
+        "trainable_parameters": 73728,
+        "physical_or_allocated_parameters_at_endpoint": 73728,
+        "per_layer_theoretical_rank_ceiling": 8,
+        "p0_max_numerical_rank": 8,
+        "optimizer_steps": 30,
+        "initial_prediction_max_abs": 0,
+        "restored_prediction_max_abs": 0
+      },
+      "HIRA_R8": {
+        "trainable_parameters": 73728,
+        "physical_or_allocated_parameters_at_endpoint": 73728,
+        "per_layer_theoretical_rank_ceiling": 384,
+        "p0_max_numerical_rank": 384,
+        "optimizer_steps": 30,
+        "initial_prediction_max_abs": 0,
+        "restored_prediction_max_abs": 0
+      },
+      "ADALORA_R12_TO_R8": {
+        "trainable_parameters": 110736,
+        "physical_or_allocated_parameters_at_endpoint": 73824,
+        "per_layer_theoretical_rank_ceiling": 12,
+        "p0_max_numerical_rank": 10,
+        "optimizer_steps": 30,
+        "initial_prediction_max_abs": 0,
+        "restored_prediction_max_abs": 0,
+        "p0_allocated_total_rank": 96,
+        "p0_max_allocated_module_rank": 10,
+        "endpoint_layerwise_rank_ceiling": "the per-layer allocated triplet count"
+      },
+      "LORA_R2": {
+        "trainable_parameters": 18432,
+        "physical_or_allocated_parameters_at_endpoint": 18432,
+        "per_layer_theoretical_rank_ceiling": 2,
+        "p0_max_numerical_rank": 2,
+        "optimizer_steps": 30,
+        "initial_prediction_max_abs": 0,
+        "restored_prediction_max_abs": 0
+      },
+      "LORA_R16": {
+        "trainable_parameters": 147456,
+        "physical_or_allocated_parameters_at_endpoint": 147456,
+        "per_layer_theoretical_rank_ceiling": 16,
+        "p0_max_numerical_rank": 16,
+        "optimizer_steps": 30,
+        "initial_prediction_max_abs": 0,
+        "restored_prediction_max_abs": 0
+      }
+    }
+  },
+  "code_tests": {
+    "passed": 12,
+    "files": [
+      "tests/drs_peft/test_abba_adalora.py",
+      "tests/drs_peft/test_abba_adapters.py"
+    ]
+  },
+  "upstream_pinned_sources": {
+    "abba": {
+      "paper": "https://openreview.net/forum?id=NvSRYp0oaX",
+      "revision": "6a3c9fcae791101043136a5e31136131291004ec",
+      "source": "https://github.com/CERT-Lab/abba/blob/6a3c9fcae791101043136a5e31136131291004ec/abba.py",
+      "blob_sha": "2c0da07693e2625db44294574afd7df83acb470b"
+    },
+    "hira": {
+      "paper": "https://openreview.net/forum?id=TwJrTz9cRS",
+      "revision": "f75f0cfe73e6729f9e1aa5402c5ca5ae36a8c0e8",
+      "source": "https://github.com/hqsiswiliam/hira/blob/f75f0cfe73e6729f9e1aa5402c5ca5ae36a8c0e8/hira/tuners/lora.py",
+      "blob_sha": "662ff27f788daface421e6f7a0f63994d1d00992"
+    },
+    "lora": {
+      "paper": "https://openreview.net/forum?id=nZeVKeeFYf9",
+      "revision": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+      "source": "https://github.com/microsoft/LoRA/blob/c4593f060e6a368d7bb5af5273b8e42810cdef90/loralib/layers.py",
+      "blob_sha": "637865600fc9afbf76831e99e3d71eaca6871bda"
+    },
+    "adalora": {
+      "paper": "https://openreview.net/forum?id=lq62uWRJjiY",
+      "revision": "d10f5ebee16c478fa2f41a44a237b38e8c9b0338",
+      "source": "https://github.com/QingruZhang/AdaLoRA/blob/d10f5ebee16c478fa2f41a44a237b38e8c9b0338/loralib/loralib/adalora.py",
+      "blob_sha": "a8a2b557eae63a2f0ce6247dcec5689ca96b856d"
+    }
+  },
+  "adalora_cpu_parity": {
+    "receipt": "research/drs_peft/abba_moirai_v1/ADALORA_UPSTREAM_PARITY.json",
+    "receipt_sha256": "6f2f0ec6b5a260e0e0a5d1fbcf659c1e4ba1f8c3be9a5d1ec3c9948b4ebeb0d9",
+    "cases": 4,
+    "bitwise_equal_cases": 4,
+    "threshold_max_abs_difference": 0,
+    "final_total_rank_each_case": 96,
+    "deterministic_cuda_adjustment": "Concatenate rank scores, compute kthvalue on CPU, compare with the same scalar cutoff and retain upstream cutoff ties.",
+    "real_gpu_forward_after_adjustment_validated_by_p0": true
+  },
+  "source_registration": {
+    "score_slots": 360,
+    "different_fits": 304,
+    "planned_optimizer_updates": 9120,
+    "group_folds": [
+      0,
+      1,
+      2
+    ],
+    "different_support_sets_per_fold": [
+      11,
+      12,
+      15
+    ]
+  },
+  "target_registration": {
+    "physical_K": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "fixed_query_cells": {
+      "MATR": 8,
+      "HUST": 39
+    },
+    "support_candidates": {
+      "MATR": 24,
+      "HUST": 38
+    },
+    "distinct_positive_K_support_sets": {
+      "MATR": [
+        3,
+        5,
+        5
+      ],
+      "HUST": [
+        5,
+        5,
+        5
+      ]
+    },
+    "score_slots": 546,
+    "different_adaptations": 504,
+    "planned_optimizer_updates": 15120,
+    "query_cohort_already_exposed_in_prior_studies": true
+  },
+  "synthetic_integration": {
+    "domain": "MATR",
+    "seed": 42,
+    "method": "ADALORA_R12_TO_R8",
+    "physical_registration_reused": true,
+    "target_prediction_and_labels_synthetic": true,
+    "registered_scored_slots": 16,
+    "different_fits": 13,
+    "repeated_slots": 2,
+    "synthetic_optimizer_update_counting": 390,
+    "incomplete_scoring_rejected_before_suffix_read": true,
+    "synthetic_suffix_reader_calls": 1,
+    "scoring_resume_added_suffix_reads": 0,
+    "verified_public_prediction_barrier": true,
+    "verified_public_score_spectrum_and_duplicate_audit": true
+  },
+  "scope_limits": "P0 establishes mathematical and engineering fidelity on the registered source example. Registration and synthetic pathway checks do not supply target MAE or a P3 result."
+}

@@ -1,0 +1,24 @@
+{
+  "study_id": "BATTERY_MOIRAI_ABBA_FEWSHOT_V1",
+  "parent_commit": "f090ce4a7f70a29b2f957a118cc4bb313b6f224c",
+  "input": {"protocol": "VIQ+earlySOH/no-policy", "prefix_last_cycle": 100, "prediction_grid": [101, 5000], "maximum_observations_per_support_cell": 512},
+  "reference": "SPECIALIZED",
+  "reference_change": "12 static source increments folded into the identical linear weights before inserting PEFT; Bridge and Head frozen",
+  "target_contract": "configs/drs_peft/specialization_comparison_v1/TARGET_TOTAL_K.json",
+  "source_episodes": "configs/drs_peft/onesided_fewshot_v1/EPISODES.json",
+  "target": {"domains": ["MATR", "HUST"], "seeds": [42, 123, 2026], "shots": [0, 1, 3, 5], "draws": 5, "physical_support_budget": "domain_total_K", "expected_scored_slots": 546, "expected_unique_adaptations": 504, "query_historical_exposure": true},
+  "source": {"folds": [0, 1, 2], "seeds": [42], "draws": 5, "metric": "cell_macro_full_observed_MAE", "tie_order": "lower_learning_rate", "learning_rates": [0.0001, 0.001], "expected_score_slots": 360, "capacity_control_learning_rate": "matched_LORA_R8_for_same_K"},
+  "methods": {
+    "ABBA_R4X4": {"type": "ABBA", "rank": 8, "alpha": 2.0, "alpha_per_pair_in_upstream": [1.0, 1.0]},
+    "LORA_R8": {"type": "LoRA", "rank": 8, "alpha": 8.0},
+    "HIRA_R8": {"type": "HiRA", "rank": 8, "alpha": 1.0},
+    "ADALORA_R12_TO_R8": {"type": "AdaLoRA", "rank": 12, "alpha": 12.0, "target_rank": 8, "initial_warmup": 3, "final_warmup": 6, "mask_interval": 1, "orthogonality_weight": 0.1, "beta1": 0.85, "beta2": 0.85},
+    "LORA_R2": {"type": "LoRA", "rank": 2, "alpha": 2.0, "diagnostic_only": true},
+    "LORA_R16": {"type": "LoRA", "rank": 16, "alpha": 16.0, "diagnostic_only": true}
+  },
+  "optimization": {"optimizer": "AdamW", "steps": 30, "weight_decay": 0.0, "clip_norm": 1.0, "dropout": 0.0, "loss": "equal_physical_cell_sampled_observed_MSE", "extra_update_shrinkage": 1.0, "precision": "FP32"},
+  "rank_statistics": {"reference": "effective_frozen_module_weight", "numerical_relative_tolerance": 0.00001, "energy_fraction": 0.99, "entropy_probabilities": "singular_value_over_sum"},
+  "lock_target_before_scoring": true,
+  "new_frozen_reference_fits": 0,
+  "bootstrap_draws": 0
+}

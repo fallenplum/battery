@@ -1,0 +1,73 @@
+{
+  "lock_sha256": "e506450c491bec1d623b7f1184066381faafe3e023324473f27d5bae4c2fbc38",
+  "domain": "MATR",
+  "task_id": "MATR_POOLED",
+  "seed": 123,
+  "method": "LORA_R16",
+  "K": 1,
+  "draw": 1,
+  "support_ids": [
+    "MATR_b3c36"
+  ],
+  "query_ids": [
+    "MATR_b3c9",
+    "MATR_b3c30",
+    "MATR_b3c4",
+    "MATR_b3c13",
+    "MATR_b3c19",
+    "MATR_b3c5",
+    "MATR_b3c7",
+    "MATR_b2c26"
+  ],
+  "reference_family": "SPECIALIZED",
+  "reference_sha256": "412843a1558f43f9036479e8cffb6bb62652c662c1f3031c4ad249ef97cc0093",
+  "learning_rate": 0.0001,
+  "is_duplicate": false,
+  "support_mse_before": 0.00022825505584478378,
+  "support_mse_after": 0.00014320816262625158,
+  "trainable_parameters": 147456,
+  "optimizer_steps": 30,
+  "actual_optimizer_steps": 30,
+  "fit_seconds": 2.481511421035975,
+  "allocated_rank_by_module": {},
+  "adalora_budget_history": [],
+  "final_gradient_norm_before_clip": 4.894402081845328e-05,
+  "active_parameters": 147456,
+  "canonical_identity": {
+    "lock_sha256": "e506450c491bec1d623b7f1184066381faafe3e023324473f27d5bae4c2fbc38",
+    "domain": "MATR",
+    "task_id": "MATR_POOLED",
+    "seed": 123,
+    "method": "LORA_R16",
+    "K": 1,
+    "support_ids": [
+      "MATR_b3c36"
+    ],
+    "query_ids": [
+      "MATR_b3c9",
+      "MATR_b3c30",
+      "MATR_b3c4",
+      "MATR_b3c13",
+      "MATR_b3c19",
+      "MATR_b3c5",
+      "MATR_b3c7",
+      "MATR_b2c26"
+    ],
+    "reference_family": "SPECIALIZED",
+    "reference_sha256": "412843a1558f43f9036479e8cffb6bb62652c662c1f3031c4ad249ef97cc0093",
+    "learning_rate": 0.0001
+  },
+  "adaptation_id": "fe0621740212151cb57d35bcb3193c4c81f36212e318baba97d1b96c3781bbb6",
+  "prediction_path": "adaptations/fe0621740212151cb57d35bc/PREDICTIONS.npz",
+  "prediction_sha256": "c713e8fb694ecb887f5e49f10cd31db0e79059035c97db71a50d7276eb72d382",
+  "state_path": "adaptations/fe0621740212151cb57d35bc/ADAPTER.pt",
+  "state_sha256": "4c66a3de2a1b258f8b609b5fff8ad62938b908f51e8d943e5a7a8509a97bf594",
+  "update_spectrum_sha256": "85d665b5190cf505d05f3f1fec1a5e353385a7127d36703b669d7f6f0a5364a5",
+  "runtime_seconds": 2.870256677037105,
+  "hardware": "NVIDIA RTX A6000",
+  "target_query_future_rows_loaded": 0,
+  "status": "SCORED",
+  "prediction_from_existing_cache": false,
+  "metrics_sha256": "a65eabd3c083af82b85063b08be054f56ae06032b7c773b603be7c69c0d04824",
+  "scored_cell_window_rows": 40
+}
