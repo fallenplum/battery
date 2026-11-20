@@ -1,0 +1,230 @@
+{
+  "status": "COMPLETE_SOURCE_DEVELOPMENT_FOLD",
+  "run_identity": {
+    "plan_sha256": "86734edfb84d2673abb4a446f3d38d59fb3958a3f01eee81a2cadf312e287954",
+    "lora_config_sha256": "636bf1e16a5405a84b1302cfbcd33769a242c6baf3ac16746d034511c0d39ee7",
+    "feature_receipt_sha256": "91ff40a61ad87f42e7ec7dc7a25b58fe4435da29da2d2c858e794112611f9378",
+    "prefix_cache_manifest_sha256": "53e5dee47919bd7ad96035e7058c256d233bb5dde73b56c2bb61bf3df4d75c6d",
+    "code_sha256": {
+      "spectral_rotation.py": "7193dd059c4a5e2863ec513fd887f07d3bb6219e62e3bf4c84ed38589540b661",
+      "spectral_rotation_engine.py": "c188cc811871902b063f43eae4262f62c2148b99953e00f8de4e4276dc905027",
+      "spectral_rotation_features.py": "ca4a6b180e7fc4a3d534b4e29bb35a7f731dc8859ecb2e99a8cedccf7bb42120",
+      "spectral_rotation_protocol.py": "c8e5607e2da979f65b8aabc5e87daef2ca73651676484f439051339e65ff4051",
+      "run_spectral_rotation.py": "5e1031b2e28e8ecf4703f489a467a5d261c16828928caf2f5bb00d9da65af3a6",
+      "summarize_spectral_rotation.py": "36d7ee6fa8ffbf38a6c23215647d0a7c00f24dae66ebbd20fdb29cf6c2336861"
+    },
+    "hardware": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch_version": "2.4.1+cu121"
+  },
+  "fold": 1,
+  "validation_draws": 1,
+  "fit_label_ids": [
+    "MATR_b1c0",
+    "MATR_b1c1",
+    "MATR_b1c14",
+    "MATR_b1c15",
+    "MATR_b1c16",
+    "MATR_b1c17",
+    "MATR_b1c2",
+    "MATR_b1c23",
+    "MATR_b1c34",
+    "MATR_b1c35",
+    "MATR_b1c38",
+    "MATR_b1c39",
+    "MATR_b1c9",
+    "MATR_b2c1",
+    "MATR_b2c10",
+    "MATR_b2c14",
+    "MATR_b2c18",
+    "MATR_b2c2",
+    "MATR_b2c20",
+    "MATR_b2c23",
+    "MATR_b2c29",
+    "MATR_b2c3",
+    "MATR_b2c31",
+    "MATR_b2c34",
+    "MATR_b2c35",
+    "MATR_b2c36",
+    "MATR_b2c38",
+    "MATR_b2c39",
+    "MATR_b2c41",
+    "MATR_b2c42",
+    "MATR_b2c46",
+    "MATR_b2c5",
+    "MATR_b3c15",
+    "MATR_b3c21",
+    "MATR_b3c28",
+    "MATR_b3c29",
+    "MATR_b3c6",
+    "MATR_b4c0",
+    "MATR_b4c1",
+    "MATR_b4c10",
+    "MATR_b4c11",
+    "MATR_b4c12",
+    "MATR_b4c13",
+    "MATR_b4c14",
+    "MATR_b4c15",
+    "MATR_b4c18",
+    "MATR_b4c2",
+    "MATR_b4c20",
+    "MATR_b4c21",
+    "MATR_b4c23",
+    "MATR_b4c28",
+    "MATR_b4c29",
+    "MATR_b4c3",
+    "MATR_b4c30",
+    "MATR_b4c34",
+    "MATR_b4c35",
+    "MATR_b4c38",
+    "MATR_b4c39",
+    "MATR_b4c41",
+    "MATR_b4c42",
+    "MATR_b4c44",
+    "MATR_b4c6"
+  ],
+  "validation_label_ids": [
+    "MATR_b1c11",
+    "MATR_b1c42",
+    "MATR_b1c44",
+    "MATR_b1c45",
+    "MATR_b2c21",
+    "MATR_b2c44",
+    "MATR_b2c6",
+    "MATR_b3c22",
+    "MATR_b3c31",
+    "MATR_b4c17",
+    "MATR_b4c37"
+  ],
+  "outer_role_label_rows_loaded": 0,
+  "target_label_rows_loaded": 0,
+  "selection": {
+    "CAL2": {
+      "eta": 0.1,
+      "rate": 0.0001,
+      "validation_query_mae": 0.022147576443779494
+    },
+    "LORA_SMALL": {
+      "steps": 1,
+      "rate": 1e-06,
+      "validation_query_mae": 0.02205108077887879
+    },
+    "STATIC_CORE": {
+      "rate": 0.1,
+      "validation_query_mae": 0.024922170542020623
+    },
+    "DRS": {
+      "rate": 0.1,
+      "validation_query_mae": 0.028155819144938064
+    },
+    "GAIN": {
+      "rate": 0.1,
+      "validation_query_mae": 0.025526258942187116
+    },
+    "JOINT2R": {
+      "rate": 0.1,
+      "validation_query_mae": 0.02492149225418496
+    },
+    "ROTATION_CONST": {
+      "rate": 0.1,
+      "validation_query_mae": 0.024918195493787078
+    },
+    "ROTATION_TRUE": {
+      "rate": 0.1,
+      "validation_query_mae": 0.024941499318747055
+    },
+    "ROTATION_SHUFFLED": {
+      "rate": 0.1,
+      "validation_query_mae": 0.024901511537134345
+    }
+  },
+  "costs": {
+    "STATIC_CORE": {
+      "target_parameters": 192,
+      "source_mapper_parameters": 0,
+      "source_mapper_effective_constant_parameters": null,
+      "basis_storage_bytes": 147456,
+      "matrix_rank_cap": 4
+    },
+    "DRS": {
+      "target_parameters": 192,
+      "source_mapper_parameters": 5280,
+      "source_mapper_effective_constant_parameters": null,
+      "basis_storage_bytes": 147456,
+      "matrix_rank_cap": 4,
+      "source_mapping_updates": 32,
+      "source_inner_updates": 96,
+      "source_fit_seconds": 12.26084240002092,
+      "source_peak_allocated_bytes": 880116224,
+      "source_nonzero_meta_gradient_steps": 32
+    },
+    "GAIN": {
+      "target_parameters": 192,
+      "source_mapper_parameters": 2640,
+      "source_mapper_effective_constant_parameters": null,
+      "basis_storage_bytes": 147456,
+      "matrix_rank_cap": 4,
+      "source_mapping_updates": 32,
+      "source_inner_updates": 96,
+      "source_fit_seconds": 11.899000899982639,
+      "source_peak_allocated_bytes": 879434240,
+      "source_nonzero_meta_gradient_steps": 32
+    },
+    "JOINT2R": {
+      "target_parameters": 192,
+      "source_mapper_parameters": 0,
+      "source_mapper_effective_constant_parameters": null,
+      "basis_storage_bytes": 184320,
+      "matrix_rank_cap": 2
+    },
+    "ROTATION_CONST": {
+      "target_parameters": 192,
+      "source_mapper_parameters": 2640,
+      "source_mapper_effective_constant_parameters": 48,
+      "basis_storage_bytes": 221184,
+      "matrix_rank_cap": 4,
+      "source_mapping_updates": 32,
+      "source_inner_updates": 96,
+      "source_fit_seconds": 12.612301499932073,
+      "source_peak_allocated_bytes": 879837696,
+      "source_nonzero_meta_gradient_steps": 32
+    },
+    "ROTATION_TRUE": {
+      "target_parameters": 192,
+      "source_mapper_parameters": 2640,
+      "source_mapper_effective_constant_parameters": null,
+      "basis_storage_bytes": 221184,
+      "matrix_rank_cap": 4,
+      "source_mapping_updates": 32,
+      "source_inner_updates": 96,
+      "source_fit_seconds": 12.756424199906178,
+      "source_peak_allocated_bytes": 879833600,
+      "source_nonzero_meta_gradient_steps": 32
+    },
+    "ROTATION_SHUFFLED": {
+      "target_parameters": 192,
+      "source_mapper_parameters": 2640,
+      "source_mapper_effective_constant_parameters": null,
+      "basis_storage_bytes": 221184,
+      "matrix_rank_cap": 4,
+      "source_mapping_updates": 32,
+      "source_inner_updates": 96,
+      "source_fit_seconds": 12.85575530002825,
+      "source_peak_allocated_bytes": 879833600,
+      "source_nonzero_meta_gradient_steps": 32
+    }
+  },
+  "state_sha256": {
+    "DRS": "5fe0b6bdfbcadd33a334f948eb509396da9dbdeb80da1728b47713d122a56b42",
+    "GAIN": "773ce4937513a8619f91a2504579f6cd2f337b51828f48333914c7b509ddd3da",
+    "ROTATION_CONST": "78e1eebff0a39ac62a9d3c8c08dad8ff2411970c435a63176156aa7983919780",
+    "ROTATION_TRUE": "cfd4ddeefd845acb8de83efab06963f4d2600e92a929054dac479586d91834f7",
+    "ROTATION_SHUFFLED": "7d680049a0b66e48f94fbce28454c453ed0bb62aaf6e6412f00f418fbfe8a7a1"
+  },
+  "wall_seconds": 71.57587189995684,
+  "files": {
+    "VALIDATION_TRIALS.csv": "75f33742f55046d8122374273aeabe1a58e1006da8bff370ee725d5b69c1fb3c",
+    "META_TRACE.csv": "2fdc96d4b7902f27468ee38079482899e11e7720ed5254a1f3ae5c3be28a7c13",
+    "BASIS_AUDIT.json": "8394f209087e3b346ddde3936319eb53f5f891203fad4a417a39e5677d83290d",
+    "DESCRIPTOR_SCALER.json": "955f170a966f908e7e982caf650490fc8d631f8d9f97e06f5446a7226bbd5f4f"
+  }
+}

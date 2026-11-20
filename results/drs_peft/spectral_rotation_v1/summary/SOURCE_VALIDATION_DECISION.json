@@ -1,0 +1,479 @@
+{
+  "direction": "STOP_SIMPLE_BASELINE",
+  "reason_zh": "候选未通过未适配参考、CAL2 或小步 LoRA 的全窗 MAE 要求。",
+  "raw_mae_margin": 1e-05,
+  "minimum_winning_folds": 2,
+  "near_zero_anchor_radius": 1e-05,
+  "all_candidate_episodes_near_zero": false,
+  "raw_mae_gates": [
+    {
+      "reference_method": "K0",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": 0.0018508646711820227,
+      "winning_folds": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": 0.0007906839491012811
+        },
+        {
+          "fold": 1,
+          "delta_mae": 0.004138106405495541
+        },
+        {
+          "fold": 2,
+          "delta_mae": 0.0006238036589492452
+        }
+      ]
+    },
+    {
+      "reference_method": "CAL2",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": 0.0006378046140573236,
+      "winning_folds": 2,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -0.0015796219580414216
+        },
+        {
+          "fold": 1,
+          "delta_mae": 0.004263793746227239
+        },
+        {
+          "fold": 2,
+          "delta_mae": -0.0007707579460138459
+        }
+      ]
+    },
+    {
+      "reference_method": "LORA_SMALL",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": 0.0018096837440391247,
+      "winning_folds": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": 0.0007489653993804797
+        },
+        {
+          "fold": 1,
+          "delta_mae": 0.004138765744057816
+        },
+        {
+          "fold": 2,
+          "delta_mae": 0.0005413200886790776
+        }
+      ]
+    },
+    {
+      "reference_method": "STATIC_CORE",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -0.00025144002565895306,
+      "winning_folds": 3,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -9.381956593925034e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.0005538024737301951
+        },
+        {
+          "fold": 2,
+          "delta_mae": -0.00010669803730741371
+        }
+      ]
+    },
+    {
+      "reference_method": "DRS",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": 0.0005166326890896378,
+      "winning_folds": 1,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -0.0015002586396034591
+        },
+        {
+          "fold": 1,
+          "delta_mae": 0.0025191013958570352
+        },
+        {
+          "fold": 2,
+          "delta_mae": 0.0005310553110153377
+        }
+      ]
+    },
+    {
+      "reference_method": "GAIN",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": 0.0008829511729722201,
+      "winning_folds": 2,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -1.0924532924847744e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": 0.003181526756705533
+        },
+        {
+          "fold": 2,
+          "delta_mae": -0.0005217487048640242
+        }
+      ]
+    },
+    {
+      "reference_method": "JOINT2R",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -0.0002354381444559311,
+      "winning_folds": 3,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -9.366575063791457e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.0005152079420481705
+        },
+        {
+          "fold": 2,
+          "delta_mae": -9.744074068170818e-05
+        }
+      ]
+    },
+    {
+      "reference_method": "ROTATION_CONST",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -0.0002458749469298812,
+      "winning_folds": 3,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -9.178572721499565e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.0005414616413126123
+        },
+        {
+          "fold": 2,
+          "delta_mae": -0.00010437747226203566
+        }
+      ]
+    },
+    {
+      "reference_method": "ROTATION_SHUFFLED",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": -0.00010734994707585092,
+      "winning_folds": 1,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": 4.7401203925917686e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.00043802714056528783
+        },
+        {
+          "fold": 2,
+          "delta_mae": 6.857609541181739e-05
+        }
+      ]
+    },
+    {
+      "reference_method": "ROTATION_SAME_CORE_SHUFFLED",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -8.532960419912393e-05,
+      "winning_folds": 2,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": 1.4529774139199897e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.0002651699532553556
+        },
+        {
+          "fold": 2,
+          "delta_mae": -5.3486334812160795e-06
+        }
+      ]
+    }
+  ],
+  "parameter_match_gates": [
+    {
+      "reference_method": "ROTATION_CONST",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -0.0002844698573777257,
+      "winning_folds": 3,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -0.000153908644192498
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.0005929219089972002
+        },
+        {
+          "fold": 2,
+          "delta_mae": -0.00010657901894347889
+        }
+      ]
+    },
+    {
+      "reference_method": "ROTATION_SHUFFLED",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": -0.00011960321343542804,
+      "winning_folds": 1,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": 1.767602694011684e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.000387106159118093
+        },
+        {
+          "fold": 2,
+          "delta_mae": 1.0620491871692062e-05
+        }
+      ]
+    }
+  ],
+  "output_match_direction_diagnostics": [
+    {
+      "reference_method": "K0",
+      "complete": false,
+      "passed": false,
+      "mean_delta_mae": null,
+      "winning_folds": 0,
+      "fold_deltas": []
+    },
+    {
+      "reference_method": "CAL2",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": 0.000827026181058421,
+      "winning_folds": 1,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": 0.0001241422069653171
+        },
+        {
+          "fold": 1,
+          "delta_mae": 0.0026642847891289547
+        },
+        {
+          "fold": 2,
+          "delta_mae": -0.00030734845291900914
+        }
+      ]
+    },
+    {
+      "reference_method": "LORA_SMALL",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": 5.495115140201808e-06,
+      "winning_folds": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": 2.848262460551874e-06
+        },
+        {
+          "fold": 1,
+          "delta_mae": 4.2489644547112165e-07
+        },
+        {
+          "fold": 2,
+          "delta_mae": 1.3212186514582428e-05
+        }
+      ]
+    },
+    {
+      "reference_method": "STATIC_CORE",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -0.0001412881154199477,
+      "winning_folds": 3,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -7.2954856106475135e-06
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.00037593168040488237
+        },
+        {
+          "fold": 2,
+          "delta_mae": -4.063718024431331e-05
+        }
+      ]
+    },
+    {
+      "reference_method": "DRS",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": 0.0008451923710379454,
+      "winning_folds": 1,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -8.517945411945504e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": 0.0024821846371742874
+        },
+        {
+          "fold": 2,
+          "delta_mae": 0.00013857193005900373
+        }
+      ]
+    },
+    {
+      "reference_method": "GAIN",
+      "complete": true,
+      "passed": false,
+      "mean_delta_mae": 0.0005745549909808867,
+      "winning_folds": 2,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -0.00022085234562594971
+        },
+        {
+          "fold": 1,
+          "delta_mae": 0.0022390889452679947
+        },
+        {
+          "fold": 2,
+          "delta_mae": -0.0002945716266993849
+        }
+      ]
+    },
+    {
+      "reference_method": "JOINT2R",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -0.00014152365855758643,
+      "winning_folds": 3,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -6.419379069101903e-06
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.00037598226820419076
+        },
+        {
+          "fold": 2,
+          "delta_mae": -4.216932839946665e-05
+        }
+      ]
+    },
+    {
+      "reference_method": "ROTATION_CONST",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -0.0001396667414365947,
+      "winning_folds": 3,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": -7.099303410380148e-06
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.00037118252313514746
+        },
+        {
+          "fold": 2,
+          "delta_mae": -4.071839776425649e-05
+        }
+      ]
+    },
+    {
+      "reference_method": "ROTATION_SHUFFLED",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -0.00011267721090145608,
+      "winning_folds": 2,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": 4.026273573450728e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.0003664278365280507
+        },
+        {
+          "fold": 2,
+          "delta_mae": -1.1866531910824837e-05
+        }
+      ]
+    },
+    {
+      "reference_method": "ROTATION_SAME_CORE_SHUFFLED",
+      "complete": true,
+      "passed": true,
+      "mean_delta_mae": -0.00011087756728829924,
+      "winning_folds": 2,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_mae": 2.13096829855391e-05
+        },
+        {
+          "fold": 1,
+          "delta_mae": -0.0003365922223125123
+        },
+        {
+          "fold": 2,
+          "delta_mae": -1.7350162537924558e-05
+        }
+      ]
+    }
+  ],
+  "fold_count": 3,
+  "draw_count_per_fold": 3,
+  "physical_query_cells": 60,
+  "target_future_rows_loaded": 0,
+  "evidence_scope": "source_development_screen_only",
+  "status": "COMPLETE",
+  "files_sha256": {
+    "CELL_SCORES.csv": "b2152c0dee80715cbb6594dd4114bc1b1d6bc96c2cff467cca4fb573ea54bec0",
+    "EPISODE_SCORES.csv": "35d99347f2158cf526d62381f8d4ec2ad7f0a076203fa09ba35f61562abd6b8f",
+    "PAIRED_EPISODE_SCORES.csv": "d384bda06aa3021a5ae1372cc3358f8b0101aec5a7c04492a923dd5aa31a938c",
+    "FOLD_SCORES.csv": "6336a7473bd4a19e410d3b09ef4c4667a72d775da06e051ed9bc4a6acd0f4f41",
+    "METHOD_SCORES.csv": "fde9e1ca6421bc0ad43f2783333d3882cdb4e175cc31b4fd428d99849b549cfc",
+    "PAIR_SCORES.csv": "4cc36d54e2672dc172691446e7bc9f806576f98c397eaa5234779ab7d31b15c6",
+    "COSTS.csv": "308aace27d4a3df7cf749285b89796f36721cff80dc79ba44e1f691d2cb0f196",
+    "CELL_DRAW_MEANS.csv": "dd47f7e04fb385938edb364225edd21ea526ae831c4ed7ea5f886dcab06ddf29"
+  }
+}

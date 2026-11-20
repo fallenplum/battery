@@ -6,12 +6,16 @@
 $rotationPython = 'D:/Anaconda/envs/tslib/python.exe'
 & $rotationPython -m scripts.drs_peft.run_spectral_rotation --phase register
 & $rotationPython -m scripts.drs_peft.run_spectral_rotation --phase features
+Copy-Item -LiteralPath 'runtime/drs_peft/spectral_rotation_v1/FEATURES_RECEIPT.json' -Destination 'results/drs_peft/spectral_rotation_v1/FEATURES_RECEIPT.json'
 & $rotationPython -m scripts.drs_peft.run_spectral_rotation --phase dev
 & $rotationPython -m scripts.drs_peft.run_spectral_rotation --phase outer
+& $rotationPython -m scripts.drs_peft.verify_spectral_rotation --replay
 & $rotationPython -m pytest -q tests/drs_peft/test_spectral_rotation.py tests/drs_peft/test_spectral_rotation_features.py tests/drs_peft/test_spectral_rotation_summary.py tests/drs_peft/test_correction_decomposition.py
 ```
 
 `--phase run` 连续执行开发、锁定、外层评分。每个完成折经过 SHA-256 校验后复用。新运行可指定 `--public`、`--private` 和 `--features` 三个空目录。
+
+`--replay` 验证三个折的开发锁，读取已封存的本地预测并独立复算 MAE。标签读取仅覆盖已锁定的 60 颗源外层 Query 电芯。重放不进行模型优化。
 
 `development/fold*/VALIDATION_TRIALS.csv` 保存三折全部源选参格。 `META_TRACE.csv` 保存 Support 与训练 Query 名单、观测损失及映射梯度。 `BASIS_AUDIT.json` 记录基底构建时耗、正交性和同一参考函数核验。 `DESCRIPTOR_SCALER.json` 记录折内拟合描述的特征维度、有效率和标准化参数。
 
