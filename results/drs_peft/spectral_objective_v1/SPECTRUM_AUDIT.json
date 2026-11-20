@@ -1,0 +1,2418 @@
+{
+  "status": "VERIFIED_LOCKED_TRUE_MA_FIXED_CORE_SPECTRUM",
+  "method": "ROTATION_TRUE_MA",
+  "development_lock_sha256": "751e84d5934af573a6db611d762066fd5fbcc28bfaeef1c4d900f7115d0146c5",
+  "run_identity_sha256": "77d476e2a06b64a5e7688c62e4215d0e4999555d669f45612e04837314907822",
+  "registered_episodes_sha256": "94e617c065d005f63396ffd7fc4bff173f960e3d74628e87684235720ce75438",
+  "feature_receipt_sha256": "91ff40a61ad87f42e7ec7dc7a25b58fe4435da29da2d2c858e794112611f9378",
+  "audit_implementation_sha256": "5ff21a559d1a92c085ded6474cef72bc15f005e3580142af5e672f11487e7492",
+  "device": "cpu",
+  "torch_version": "2.4.1+cu121",
+  "future_label_rows_read": 0,
+  "trajectory_prediction_forwards": 0,
+  "registered_mapper_fits_checked": 9,
+  "per_cell_left_frames_checked_both_views": 18144,
+  "gram_max_abs_tolerance": 2e-05,
+  "max_u_theta_gram_abs_error": 1.2615793043568857e-07,
+  "max_v_gram_abs_error": 2.0470944939177116e-08,
+  "right_frame_is_shared_across_views": true,
+  "fixed_core_max_relative_singular_value_error_bound": 2.801606109326116e-07,
+  "fixed_core_true_vs_deranged_singular_value_difference_bound_relative_to_core": 5.603212218652232e-07,
+  "scope": "Nonzero singular values of s * U_theta * C * V^T at fixed per-layer C and s",
+  "fold_seed_records": [
+    {
+      "fold": 0,
+      "reference_sha256": "7f85595169c2ea6bb3fc7398ef8460b7c0d1200e3cec50b06e5731be918bcf64",
+      "scaler_sha256": "dcf500e02391d5d3e69b6c618d4ab8a9304b6ce7b9ce8eb258fb18cdb2e94481",
+      "training_seed": 42,
+      "mapper": {
+        "folder": "mapper_trials/fold0/seed42/ROTATION_TRUE_MA/alpha0.01",
+        "receipt_sha256": "f525960361665be431fec7a2083149ddcff985e6e217fc3e8e4ac97b463005c0",
+        "mapper_sha256": "4e63499aceaa49b56bea579843100cd9d0ded848a91667eac71d643b1575338e",
+        "alpha": 0.01
+      },
+      "layers": {
+        "encoder.layers.0.self_attn.q_proj": {
+          "v_gram_max_abs": 8.063089085297293e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047190546989441,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.823079073432382e-08,
+              "anchor": 7.677900470959287e-08
+            },
+            "deranged": {
+              "query": 7.823079073432382e-08,
+              "anchor": 7.677900470959287e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7258776952022714e-07
+        },
+        "encoder.layers.0.self_attn.v_proj": {
+          "v_gram_max_abs": 1.3342184912445987e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471949577331543,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.826082253943213e-08,
+              "anchor": 1.1301571445354597e-07
+            },
+            "deranged": {
+              "query": 8.826082253943213e-08,
+              "anchor": 1.1301571445354597e-07
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.5271581860497605e-07
+        },
+        "encoder.layers.1.self_attn.q_proj": {
+          "v_gram_max_abs": 5.7955603580128745e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471936464309692,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.787046956726385e-08,
+              "anchor": 6.959921938776148e-08
+            },
+            "deranged": {
+              "query": 8.787046956726385e-08,
+              "anchor": 8.081556168715309e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.8733207340915214e-07
+        },
+        "encoder.layers.1.self_attn.v_proj": {
+          "v_gram_max_abs": 1.597325627322732e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471943616867065,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.278394470982107e-08,
+              "anchor": 6.866588719844913e-08
+            },
+            "deranged": {
+              "query": 6.278394470982107e-08,
+              "anchor": 6.866588719844913e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6927829249446802e-07
+        },
+        "encoder.layers.2.self_attn.q_proj": {
+          "v_gram_max_abs": 8.465303347193753e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471875667572021,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.238037558199295e-08,
+              "anchor": 6.367581617539031e-08
+            },
+            "deranged": {
+              "query": 7.238037558199295e-08,
+              "anchor": 7.638288157529871e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6969637905983603e-07
+        },
+        "encoder.layers.2.self_attn.v_proj": {
+          "v_gram_max_abs": 1.056071829985683e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047191858291626,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.30687523819995e-08,
+              "anchor": 7.065483120793914e-08
+            },
+            "deranged": {
+              "query": 7.30687523819995e-08,
+              "anchor": 6.533157681509749e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6725894913527384e-07
+        },
+        "encoder.layers.3.self_attn.q_proj": {
+          "v_gram_max_abs": 8.733356704482276e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047191858291626,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.57652859842517e-08,
+              "anchor": 7.528414158741725e-08
+            },
+            "deranged": {
+              "query": 7.725184114626416e-08,
+              "anchor": 7.528414158741725e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.8899729725685432e-07
+        },
+        "encoder.layers.3.self_attn.v_proj": {
+          "v_gram_max_abs": 5.834720262498649e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471935272216797,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.450581002681588e-08,
+              "anchor": 6.162143351140514e-08
+            },
+            "deranged": {
+              "query": 6.450581002681588e-08,
+              "anchor": 6.162143351140514e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.406810674620118e-07
+        },
+        "encoder.layers.4.self_attn.q_proj": {
+          "v_gram_max_abs": 8.051244004825264e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471903085708618,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.011274837433803e-08,
+              "anchor": 6.974150723593198e-08
+            },
+            "deranged": {
+              "query": 9.011274837433803e-08,
+              "anchor": 6.974150723593198e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.9632799819202518e-07
+        },
+        "encoder.layers.4.self_attn.v_proj": {
+          "v_gram_max_abs": 3.648856004671852e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471909046173096,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.916408046286904e-08,
+              "anchor": 6.987131107027977e-08
+            },
+            "deranged": {
+              "query": 6.916408046286904e-08,
+              "anchor": 6.987131107027977e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.470403429015832e-07
+        },
+        "encoder.layers.5.self_attn.q_proj": {
+          "v_gram_max_abs": 1.5955331500450143e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471875667572021,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.420647979954452e-08,
+              "anchor": 6.644940508948594e-08
+            },
+            "deranged": {
+              "query": 6.511390582275567e-08,
+              "anchor": 6.644940508948594e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6480947828689807e-07
+        },
+        "encoder.layers.5.self_attn.v_proj": {
+          "v_gram_max_abs": 1.154742546027876e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471911430358887,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.953608444604242e-08,
+              "anchor": 6.621646653215407e-08
+            },
+            "deranged": {
+              "query": 6.953608444604242e-08,
+              "anchor": 6.621646653215407e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6216702647398051e-07
+        }
+      }
+    },
+    {
+      "fold": 0,
+      "reference_sha256": "7f85595169c2ea6bb3fc7398ef8460b7c0d1200e3cec50b06e5731be918bcf64",
+      "scaler_sha256": "dcf500e02391d5d3e69b6c618d4ab8a9304b6ce7b9ce8eb258fb18cdb2e94481",
+      "training_seed": 43,
+      "mapper": {
+        "folder": "mapper_trials/fold0/seed43/ROTATION_TRUE_MA/alpha0.01",
+        "receipt_sha256": "da977fd37d95ee54df60ce68ae21e5b6152ba5ba157bf6dca91bc14d22603b82",
+        "mapper_sha256": "b9383072467060be3ef739e24d01483995613f7c068bc5f8be883de522d874c4",
+        "alpha": 0.01
+      },
+      "layers": {
+        "encoder.layers.0.self_attn.q_proj": {
+          "v_gram_max_abs": 8.063089085297293e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471867322921753,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.762966080018032e-08,
+              "anchor": 8.604893386721102e-08
+            },
+            "deranged": {
+              "query": 9.762966080018032e-08,
+              "anchor": 8.604893386721102e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.1138551586918908e-07
+        },
+        "encoder.layers.0.self_attn.v_proj": {
+          "v_gram_max_abs": 1.3342184912445987e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471971035003662,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 1.0572503805761357e-07,
+              "anchor": 1.096947074286092e-07
+            },
+            "deranged": {
+              "query": 1.0572503805761357e-07,
+              "anchor": 9.356263008797328e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.460738032228349e-07
+        },
+        "encoder.layers.1.self_attn.q_proj": {
+          "v_gram_max_abs": 5.7955603580128745e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471879243850708,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.16824857249776e-08,
+              "anchor": 8.392003780777202e-08
+            },
+            "deranged": {
+              "query": 7.16824857249776e-08,
+              "anchor": 8.392003780777202e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7943120855790085e-07
+        },
+        "encoder.layers.1.self_attn.v_proj": {
+          "v_gram_max_abs": 1.597325627322732e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047194004058838,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 5.952028747646665e-08,
+              "anchor": 7.670945556537134e-08
+            },
+            "deranged": {
+              "query": 5.952028747646665e-08,
+              "anchor": 7.670945556537134e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.853654310046693e-07
+        },
+        "encoder.layers.2.self_attn.q_proj": {
+          "v_gram_max_abs": 8.465303347193753e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047194242477417,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.239298627226276e-08,
+              "anchor": 6.570534516470161e-08
+            },
+            "deranged": {
+              "query": 7.239298627226276e-08,
+              "anchor": 7.603170693037953e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6899402965897536e-07
+        },
+        "encoder.layers.2.self_attn.v_proj": {
+          "v_gram_max_abs": 1.056071829985683e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471926927566528,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.414590430521173e-08,
+              "anchor": 6.95674040596117e-08
+            },
+            "deranged": {
+              "query": 7.414590430521173e-08,
+              "anchor": 6.95674040596117e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.694132533147652e-07
+        },
+        "encoder.layers.3.self_attn.q_proj": {
+          "v_gram_max_abs": 8.733356704482276e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047196626663208,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 1.0099856018186415e-07,
+              "anchor": 8.377667715109283e-08
+            },
+            "deranged": {
+              "query": 1.0099856018186415e-07,
+              "anchor": 8.377667715109283e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.1946385075910513e-07
+        },
+        "encoder.layers.3.self_attn.v_proj": {
+          "v_gram_max_abs": 5.834720262498649e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471971035003662,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.302557342685589e-08,
+              "anchor": 7.478261565552202e-08
+            },
+            "deranged": {
+              "query": 6.302557342685589e-08,
+              "anchor": 7.478261565552202e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6123468138395936e-07
+        },
+        "encoder.layers.4.self_attn.q_proj": {
+          "v_gram_max_abs": 8.051244004825264e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471959114074707,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.048217154359548e-08,
+              "anchor": 7.48720045962159e-08
+            },
+            "deranged": {
+              "query": 7.048217154359548e-08,
+              "anchor": 7.779483590653058e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.716921695926743e-07
+        },
+        "encoder.layers.4.self_attn.v_proj": {
+          "v_gram_max_abs": 3.648856004671852e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047196865081787,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.758256548306974e-08,
+              "anchor": 5.93534711379462e-08
+            },
+            "deranged": {
+              "query": 7.758256548306974e-08,
+              "anchor": 6.54478284900506e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6246285383658687e-07
+        },
+        "encoder.layers.5.self_attn.q_proj": {
+          "v_gram_max_abs": 1.5955331500450143e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471974611282349,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.091349285559545e-08,
+              "anchor": 6.801267438127923e-08
+            },
+            "deranged": {
+              "query": 7.091349285559545e-08,
+              "anchor": 6.801267438127923e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7373765470729552e-07
+        },
+        "encoder.layers.5.self_attn.v_proj": {
+          "v_gram_max_abs": 1.154742546027876e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471974611282349,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.784194322457694e-08,
+              "anchor": 5.934736169166399e-08
+            },
+            "deranged": {
+              "query": 7.784194322457694e-08,
+              "anchor": 6.429959620302128e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.787787461404733e-07
+        }
+      }
+    },
+    {
+      "fold": 0,
+      "reference_sha256": "7f85595169c2ea6bb3fc7398ef8460b7c0d1200e3cec50b06e5731be918bcf64",
+      "scaler_sha256": "dcf500e02391d5d3e69b6c618d4ab8a9304b6ce7b9ce8eb258fb18cdb2e94481",
+      "training_seed": 44,
+      "mapper": {
+        "folder": "mapper_trials/fold0/seed44/ROTATION_TRUE_MA/alpha0.01",
+        "receipt_sha256": "83e39a5f96cd583bd514efa2e0e8a09feb683375ee521d4e47e37378f65d3d5a",
+        "mapper_sha256": "26d84cc78aadd5202cb5129e9a37ffc80de6badb350292e37e0a0864b1bc9d30",
+        "alpha": 0.01
+      },
+      "layers": {
+        "encoder.layers.0.self_attn.q_proj": {
+          "v_gram_max_abs": 8.063089085297293e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047196388244629,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.394313938924313e-08,
+              "anchor": 7.946727242913454e-08
+            },
+            "deranged": {
+              "query": 7.394313938924313e-08,
+              "anchor": 8.008496599209991e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7629612047986853e-07
+        },
+        "encoder.layers.0.self_attn.v_proj": {
+          "v_gram_max_abs": 1.3342184912445987e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471973419189453,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.854013893750846e-08,
+              "anchor": 9.049231941560265e-08
+            },
+            "deranged": {
+              "query": 9.854013893750846e-08,
+              "anchor": 9.049231941560265e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.2376466224383051e-07
+        },
+        "encoder.layers.1.self_attn.q_proj": {
+          "v_gram_max_abs": 5.7955603580128745e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047196626663208,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.975171283953642e-08,
+              "anchor": 5.6323915753608844e-08
+            },
+            "deranged": {
+              "query": 8.975171283953642e-08,
+              "anchor": 7.941607305106402e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.910945605088088e-07
+        },
+        "encoder.layers.1.self_attn.v_proj": {
+          "v_gram_max_abs": 1.597325627322732e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471974611282349,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.177534122604357e-08,
+              "anchor": 5.713780049099171e-08
+            },
+            "deranged": {
+              "query": 7.177534122604357e-08,
+              "anchor": 5.713780049099171e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.754972012157907e-07
+        },
+        "encoder.layers.2.self_attn.q_proj": {
+          "v_gram_max_abs": 8.465303347193753e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471822023391724,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.173142790861675e-08,
+              "anchor": 6.036762090211312e-08
+            },
+            "deranged": {
+              "query": 7.173142790861675e-08,
+              "anchor": 7.169798044159847e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.603934705052268e-07
+        },
+        "encoder.layers.2.self_attn.v_proj": {
+          "v_gram_max_abs": 1.056071829985683e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471973419189453,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.28061373411748e-08,
+              "anchor": 7.684409619734822e-08
+            },
+            "deranged": {
+              "query": 7.28061373411748e-08,
+              "anchor": 7.684409619734822e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.74809637765172e-07
+        },
+        "encoder.layers.3.self_attn.q_proj": {
+          "v_gram_max_abs": 8.733356704482276e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471971035003662,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 1.2225519796515982e-07,
+              "anchor": 1.0347647028119411e-07
+            },
+            "deranged": {
+              "query": 1.2225519796515982e-07,
+              "anchor": 1.0347647028119411e-07
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.6197713509645837e-07
+        },
+        "encoder.layers.3.self_attn.v_proj": {
+          "v_gram_max_abs": 5.834720262498649e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471973419189453,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.009591406261563e-08,
+              "anchor": 6.343154890231517e-08
+            },
+            "deranged": {
+              "query": 9.009591406261563e-08,
+              "anchor": 6.343154890231517e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.9186128286108328e-07
+        },
+        "encoder.layers.4.self_attn.q_proj": {
+          "v_gram_max_abs": 8.051244004825264e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.047196865081787,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.621119185203696e-08,
+              "anchor": 7.28984890230322e-08
+            },
+            "deranged": {
+              "query": 8.621119185203696e-08,
+              "anchor": 6.633682603229829e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.8852488392617772e-07
+        },
+        "encoder.layers.4.self_attn.v_proj": {
+          "v_gram_max_abs": 3.648856004671852e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471974611282349,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 5.943804959329668e-08,
+              "anchor": 6.661771334570687e-08
+            },
+            "deranged": {
+              "query": 5.943804959329668e-08,
+              "anchor": 6.661771334570687e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.4053314656425897e-07
+        },
+        "encoder.layers.5.self_attn.q_proj": {
+          "v_gram_max_abs": 1.5955331500450143e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471972227096558,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.891840520495407e-08,
+              "anchor": 6.087071757754359e-08
+            },
+            "deranged": {
+              "query": 6.891840520495407e-08,
+              "anchor": 6.087071757754359e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6974747907294585e-07
+        },
+        "encoder.layers.5.self_attn.v_proj": {
+          "v_gram_max_abs": 1.154742546027876e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0471973419189453,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.920445017044585e-08,
+              "anchor": 5.7509772499741985e-08
+            },
+            "deranged": {
+              "query": 6.920445017044585e-08,
+              "anchor": 7.414707825503797e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7138901531321693e-07
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "reference_sha256": "c795c68475b36e54e7bbb77aa2f3bf7f144516e5f7f10a81bd0c5a03ae897b67",
+      "scaler_sha256": "955f170a966f908e7e982caf650490fc8d631f8d9f97e06f5446a7226bbd5f4f",
+      "training_seed": 42,
+      "mapper": {
+        "folder": "mapper_trials/fold1/seed42/ROTATION_TRUE_MA/alpha0.0001",
+        "receipt_sha256": "bb2143787b97cf9b2db4b7de3e4a935179e4112be11e320e2938f126b3f68d8c",
+        "mapper_sha256": "d5271021e2ad4a68b6124571bc9e2e5421da258685cbbfc49e2668ba289201ff",
+        "alpha": 0.0001
+      },
+      "layers": {
+        "encoder.layers.0.self_attn.q_proj": {
+          "v_gram_max_abs": 9.328658290286285e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.2765471339225769,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.77997020035204e-08,
+              "anchor": 8.785038119185629e-08
+            },
+            "deranged": {
+              "query": 9.77997020035204e-08,
+              "anchor": 8.794027328562493e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.14256736241758e-07
+        },
+        "encoder.layers.0.self_attn.v_proj": {
+          "v_gram_max_abs": 1.4761655897643777e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.6207869052886963,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.880912516495698e-08,
+              "anchor": 7.729926632116246e-08
+            },
+            "deranged": {
+              "query": 8.880912516495698e-08,
+              "anchor": 7.867478024614627e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.0714157311640946e-07
+        },
+        "encoder.layers.1.self_attn.q_proj": {
+          "v_gram_max_abs": 1.556228701460327e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.09982731193304062,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.147081675957679e-08,
+              "anchor": 6.953028797163086e-08
+            },
+            "deranged": {
+              "query": 8.147081675957679e-08,
+              "anchor": 7.061586049239565e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.9406621620809972e-07
+        },
+        "encoder.layers.1.self_attn.v_proj": {
+          "v_gram_max_abs": 8.022159825316066e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.8589152097702026,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.242517452432651e-08,
+              "anchor": 7.630803877667347e-08
+            },
+            "deranged": {
+              "query": 7.242517452432651e-08,
+              "anchor": 7.843416272024228e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7291265497210162e-07
+        },
+        "encoder.layers.2.self_attn.q_proj": {
+          "v_gram_max_abs": 1.522001902287684e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.22922062873840332,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.434435860849021e-08,
+              "anchor": 9.883207163774443e-08
+            },
+            "deranged": {
+              "query": 8.434435860849021e-08,
+              "anchor": 9.883207163774443e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.2810419531005266e-07
+        },
+        "encoder.layers.2.self_attn.v_proj": {
+          "v_gram_max_abs": 1.2902362067634954e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.7944731116294861,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.458481892681391e-08,
+              "anchor": 7.301507176649125e-08
+            },
+            "deranged": {
+              "query": 8.458481892681391e-08,
+              "anchor": 7.301507176649125e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.9497437231397186e-07
+        },
+        "encoder.layers.3.self_attn.q_proj": {
+          "v_gram_max_abs": 6.236241634205442e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.36828720569610596,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.814702212589509e-08,
+              "anchor": 7.914820310261916e-08
+            },
+            "deranged": {
+              "query": 8.814702212589509e-08,
+              "anchor": 7.914820310261916e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.8876654095389966e-07
+        },
+        "encoder.layers.3.self_attn.v_proj": {
+          "v_gram_max_abs": 8.231518799917126e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.7001357078552246,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.910284194334594e-08,
+              "anchor": 7.997293449690801e-08
+            },
+            "deranged": {
+              "query": 7.910284194334594e-08,
+              "anchor": 7.997293449690801e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.764089169187244e-07
+        },
+        "encoder.layers.4.self_attn.q_proj": {
+          "v_gram_max_abs": 7.374458821374219e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.2464633285999298,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.290238356385316e-08,
+              "anchor": 7.847249738901496e-08
+            },
+            "deranged": {
+              "query": 9.290238356385316e-08,
+              "anchor": 7.847249738901496e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.005536994253987e-07
+        },
+        "encoder.layers.4.self_attn.v_proj": {
+          "v_gram_max_abs": 9.98283118756188e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.3688119053840637,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.954983827218598e-08,
+              "anchor": 7.251075573311283e-08
+            },
+            "deranged": {
+              "query": 7.954983827218598e-08,
+              "anchor": 7.251075573311283e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7906534865996804e-07
+        },
+        "encoder.layers.5.self_attn.q_proj": {
+          "v_gram_max_abs": 1.6060022867137036e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.5042839646339417,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.37133451447869e-08,
+              "anchor": 6.828374299328033e-08
+            },
+            "deranged": {
+              "query": 8.373335036448992e-08,
+              "anchor": 6.828374299328033e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.9958675556708272e-07
+        },
+        "encoder.layers.5.self_attn.v_proj": {
+          "v_gram_max_abs": 7.077206598538055e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.5296835899353027,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.444182092974927e-08,
+              "anchor": 7.475892349617652e-08
+            },
+            "deranged": {
+              "query": 7.320578954139734e-08,
+              "anchor": 7.475892349617652e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6367226940428026e-07
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "reference_sha256": "c795c68475b36e54e7bbb77aa2f3bf7f144516e5f7f10a81bd0c5a03ae897b67",
+      "scaler_sha256": "955f170a966f908e7e982caf650490fc8d631f8d9f97e06f5446a7226bbd5f4f",
+      "training_seed": 43,
+      "mapper": {
+        "folder": "mapper_trials/fold1/seed43/ROTATION_TRUE_MA/alpha0.0001",
+        "receipt_sha256": "789e08d7b0a28ae461babdcbc7d6e20183f0f27e6d5d366ad76a3386f44593cf",
+        "mapper_sha256": "eb80294c4e366fc17a98cfded161f5f0722b6890b81335576e7d6e9a146a3145",
+        "alpha": 0.0001
+      },
+      "layers": {
+        "encoder.layers.0.self_attn.q_proj": {
+          "v_gram_max_abs": 9.328658290286285e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.3809332549571991,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 1.0735194588828989e-07,
+              "anchor": 7.515045885586602e-08
+            },
+            "deranged": {
+              "query": 1.0735194588828989e-07,
+              "anchor": 7.515045885586602e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.3336122756401068e-07
+        },
+        "encoder.layers.0.self_attn.v_proj": {
+          "v_gram_max_abs": 1.4761655897643777e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.7909226417541504,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.73001160753384e-08,
+              "anchor": 6.777123351398018e-08
+            },
+            "deranged": {
+              "query": 9.73001160753384e-08,
+              "anchor": 6.82956533548662e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.2412355760170755e-07
+        },
+        "encoder.layers.1.self_attn.q_proj": {
+          "v_gram_max_abs": 1.556228701460327e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.10200302302837372,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.246675913843205e-08,
+              "anchor": 1.2451800657231615e-07
+            },
+            "deranged": {
+              "query": 9.246675913843205e-08,
+              "anchor": 1.2451800657231615e-07
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.801606109326116e-07
+        },
+        "encoder.layers.1.self_attn.v_proj": {
+          "v_gram_max_abs": 8.022159825316066e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.7796506881713867,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.507702943192584e-08,
+              "anchor": 6.431469423695546e-08
+            },
+            "deranged": {
+              "query": 7.054129780303953e-08,
+              "anchor": 6.431469423695546e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.5712692302827236e-07
+        },
+        "encoder.layers.2.self_attn.q_proj": {
+          "v_gram_max_abs": 1.522001902287684e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.19531485438346863,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.622305847083567e-08,
+              "anchor": 8.343043877978573e-08
+            },
+            "deranged": {
+              "query": 8.622305847083567e-08,
+              "anchor": 8.334027512546527e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.0288616509045454e-07
+        },
+        "encoder.layers.2.self_attn.v_proj": {
+          "v_gram_max_abs": 1.2902362067634954e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.9643120765686035,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.857443051761948e-08,
+              "anchor": 7.460336060027828e-08
+            },
+            "deranged": {
+              "query": 7.857443051761948e-08,
+              "anchor": 7.460336060027828e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.8295359383024845e-07
+        },
+        "encoder.layers.3.self_attn.q_proj": {
+          "v_gram_max_abs": 6.236241634205442e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.5387539863586426,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.841815241604877e-08,
+              "anchor": 8.560373387922482e-08
+            },
+            "deranged": {
+              "query": 7.949148383978866e-08,
+              "anchor": 8.560373387922482e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.836799635723807e-07
+        },
+        "encoder.layers.3.self_attn.v_proj": {
+          "v_gram_max_abs": 8.231518799917126e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.8735378384590149,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.669606000819783e-08,
+              "anchor": 7.260433854128223e-08
+            },
+            "deranged": {
+              "query": 6.669606000819783e-08,
+              "anchor": 5.6205412768406404e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.616717230090714e-07
+        },
+        "encoder.layers.4.self_attn.q_proj": {
+          "v_gram_max_abs": 7.374458821374219e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.2897951304912567,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 1.024921671977097e-07,
+              "anchor": 8.407959473100135e-08
+            },
+            "deranged": {
+              "query": 1.024921671977097e-07,
+              "anchor": 8.747902058292567e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.1973327013480315e-07
+        },
+        "encoder.layers.4.self_attn.v_proj": {
+          "v_gram_max_abs": 9.98283118756188e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.4950697422027588,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.876409402474138e-08,
+              "anchor": 7.038819838101062e-08
+            },
+            "deranged": {
+              "query": 7.876409402474138e-08,
+              "anchor": 7.276317404159016e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7749385994303424e-07
+        },
+        "encoder.layers.5.self_attn.q_proj": {
+          "v_gram_max_abs": 1.6060022867137036e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.6029298901557922,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.085756315028391e-08,
+              "anchor": 7.365546228488284e-08
+            },
+            "deranged": {
+              "query": 7.085756315028391e-08,
+              "anchor": 7.365546228488284e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.794309769653779e-07
+        },
+        "encoder.layers.5.self_attn.v_proj": {
+          "v_gram_max_abs": 7.077206598538055e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.4846736788749695,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.826211940147431e-08,
+              "anchor": 6.362421434147336e-08
+            },
+            "deranged": {
+              "query": 7.377726696233822e-08,
+              "anchor": 6.362421434147336e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6170895600353674e-07
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "reference_sha256": "c795c68475b36e54e7bbb77aa2f3bf7f144516e5f7f10a81bd0c5a03ae897b67",
+      "scaler_sha256": "955f170a966f908e7e982caf650490fc8d631f8d9f97e06f5446a7226bbd5f4f",
+      "training_seed": 44,
+      "mapper": {
+        "folder": "mapper_trials/fold1/seed44/ROTATION_TRUE_MA/alpha0.0001",
+        "receipt_sha256": "c8ad87a24f61f36e886e0724c87c1e70981ad2dbb1f74707b86866081c3fba4a",
+        "mapper_sha256": "d6695bbab2984d80b8e9bf6c1801fed16c6c23b74e4932bc80977cd9791c6db5",
+        "alpha": 0.0001
+      },
+      "layers": {
+        "encoder.layers.0.self_attn.q_proj": {
+          "v_gram_max_abs": 9.328658290286285e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.1727639138698578,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.153708468989663e-08,
+              "anchor": 8.771351589498266e-08
+            },
+            "deranged": {
+              "query": 1.1275970768220844e-07,
+              "anchor": 8.986677935141074e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.4417675337229383e-07
+        },
+        "encoder.layers.0.self_attn.v_proj": {
+          "v_gram_max_abs": 1.4761655897643777e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.5653936266899109,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.661737943034154e-08,
+              "anchor": 8.898469827656186e-08
+            },
+            "deranged": {
+              "query": 9.661737943034154e-08,
+              "anchor": 9.028065783844852e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.2275808397864694e-07
+        },
+        "encoder.layers.1.self_attn.q_proj": {
+          "v_gram_max_abs": 1.556228701460327e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.11053285002708435,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.523138905758287e-08,
+              "anchor": 1.0951148299298552e-07
+            },
+            "deranged": {
+              "query": 8.523138905758287e-08,
+              "anchor": 1.0951148299298552e-07
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.501475576677237e-07
+        },
+        "encoder.layers.1.self_attn.v_proj": {
+          "v_gram_max_abs": 8.022159825316066e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.7889506816864014,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.942270680543317e-08,
+              "anchor": 7.224376474823657e-08
+            },
+            "deranged": {
+              "query": 7.419995340374186e-08,
+              "anchor": 7.224376474823657e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6444423522887774e-07
+        },
+        "encoder.layers.2.self_attn.q_proj": {
+          "v_gram_max_abs": 1.522001902287684e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.1630905568599701,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.071875251009942e-08,
+              "anchor": 7.712244110003041e-08
+            },
+            "deranged": {
+              "query": 9.071875251009942e-08,
+              "anchor": 7.712244110003041e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.1187755450124968e-07
+        },
+        "encoder.layers.2.self_attn.v_proj": {
+          "v_gram_max_abs": 1.2902362067634954e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.9247277975082397,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.817782148895503e-08,
+              "anchor": 6.279421771449023e-08
+            },
+            "deranged": {
+              "query": 8.519890526414997e-08,
+              "anchor": 6.493705106969117e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.0216037843745482e-07
+        },
+        "encoder.layers.3.self_attn.q_proj": {
+          "v_gram_max_abs": 6.236241634205442e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.3068005442619324,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.230544650851158e-08,
+              "anchor": 7.230261833690577e-08
+            },
+            "deranged": {
+              "query": 9.230544650851158e-08,
+              "anchor": 7.408365210181955e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.9708339105140027e-07
+        },
+        "encoder.layers.3.self_attn.v_proj": {
+          "v_gram_max_abs": 8.231518799917126e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.8732750415802002,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.511148047978367e-08,
+              "anchor": 7.068675267341007e-08
+            },
+            "deranged": {
+              "query": 7.511148047978367e-08,
+              "anchor": 7.068675267341007e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6668600755220808e-07
+        },
+        "encoder.layers.4.self_attn.q_proj": {
+          "v_gram_max_abs": 7.374458821374219e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.12034007161855698,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.641874577579699e-08,
+              "anchor": 6.167839261550512e-08
+            },
+            "deranged": {
+              "query": 7.641874577579699e-08,
+              "anchor": 6.167839261550512e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6758641874226043e-07
+        },
+        "encoder.layers.4.self_attn.v_proj": {
+          "v_gram_max_abs": 9.98283118756188e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.1948852241039276,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.263462786788466e-08,
+              "anchor": 6.542896702210754e-08
+            },
+            "deranged": {
+              "query": 7.27506649367271e-08,
+              "anchor": 6.542896702210754e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6546700010167115e-07
+        },
+        "encoder.layers.5.self_attn.q_proj": {
+          "v_gram_max_abs": 1.6060022867137036e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.2852123975753784,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.136733226609238e-08,
+              "anchor": 7.044117289467522e-08
+            },
+            "deranged": {
+              "query": 7.136733226609238e-08,
+              "anchor": 7.044117289467522e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7485471637268546e-07
+        },
+        "encoder.layers.5.self_attn.v_proj": {
+          "v_gram_max_abs": 7.077206598538055e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 0.09390778839588165,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.619086216439143e-08,
+              "anchor": 5.440287498270635e-08
+            },
+            "deranged": {
+              "query": 9.619086216439143e-08,
+              "anchor": 5.440287498270635e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.0653615340204823e-07
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "reference_sha256": "0111932ba97e0df8452c29f597807a682fa0eac8001dbfb2e6aebc4d5426a853",
+      "scaler_sha256": "6e398188357117fb756e39063ba9567ab95b80fc1a6b9a6fc80c191153d47ea5",
+      "training_seed": 42,
+      "mapper": {
+        "folder": "mapper_trials/fold2/seed42/ROTATION_TRUE_MA/alpha0.01",
+        "receipt_sha256": "ce05466d93cc490265d931b8988a98730bc3adce2b6527c90b03de150ddb56c2",
+        "mapper_sha256": "f80a44b2d973b38f47bcc5ee92c04eea5f7f359259ec5d96ab8d2ccfd211f673",
+        "alpha": 0.01
+      },
+      "layers": {
+        "encoder.layers.0.self_attn.q_proj": {
+          "v_gram_max_abs": 9.975377857074363e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0258526802062988,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.461845507097166e-08,
+              "anchor": 5.4946154293133986e-08
+            },
+            "deranged": {
+              "query": 9.461845507097166e-08,
+              "anchor": 5.4946154293133986e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.0918768017796907e-07
+        },
+        "encoder.layers.0.self_attn.v_proj": {
+          "v_gram_max_abs": 6.058658227892089e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0414156913757324,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.356177350066218e-08,
+              "anchor": 1.0892039226106931e-07
+            },
+            "deranged": {
+              "query": 8.356177350066218e-08,
+              "anchor": 1.0892039226106931e-07
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.2995812221093814e-07
+        },
+        "encoder.layers.1.self_attn.q_proj": {
+          "v_gram_max_abs": 7.446603333960411e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0366811752319336,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.067879326250193e-08,
+              "anchor": 6.514912209709678e-08
+            },
+            "deranged": {
+              "query": 7.532390045028592e-08,
+              "anchor": 6.514912209709678e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6554101678334376e-07
+        },
+        "encoder.layers.1.self_attn.v_proj": {
+          "v_gram_max_abs": 8.990262534425142e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0403214693069458,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.734228435474222e-08,
+              "anchor": 7.196898366146343e-08
+            },
+            "deranged": {
+              "query": 7.734228435474222e-08,
+              "anchor": 7.917350586250649e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7632754667484818e-07
+        },
+        "encoder.layers.2.self_attn.q_proj": {
+          "v_gram_max_abs": 2.0113959386947045e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.041015625,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.938625739585149e-08,
+              "anchor": 7.244228228397986e-08
+            },
+            "deranged": {
+              "query": 8.938625739585149e-08,
+              "anchor": 8.831306064216449e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.1900044311351508e-07
+        },
+        "encoder.layers.2.self_attn.v_proj": {
+          "v_gram_max_abs": 2.0470944939177116e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0430753231048584,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.600922008992427e-08,
+              "anchor": 8.53780377507718e-08
+            },
+            "deranged": {
+              "query": 6.831112453475896e-08,
+              "anchor": 8.53780377507718e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.116979738175928e-07
+        },
+        "encoder.layers.3.self_attn.q_proj": {
+          "v_gram_max_abs": 6.812334890637928e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0435926914215088,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.380079935006336e-08,
+              "anchor": 6.278486042177178e-08
+            },
+            "deranged": {
+              "query": 9.380079935006336e-08,
+              "anchor": 6.278486042177178e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.0122628363594686e-07
+        },
+        "encoder.layers.3.self_attn.v_proj": {
+          "v_gram_max_abs": 8.663820549870138e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0454211235046387,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.327173479065863e-08,
+              "anchor": 7.874812801844655e-08
+            },
+            "deranged": {
+              "query": 7.327173479065863e-08,
+              "anchor": 7.874812801844655e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.748239070176183e-07
+        },
+        "encoder.layers.4.self_attn.q_proj": {
+          "v_gram_max_abs": 1.1244831732426519e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0446069240570068,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.359916931459765e-08,
+              "anchor": 8.291042008501393e-08
+            },
+            "deranged": {
+              "query": 7.359916931459765e-08,
+              "anchor": 8.291042008501393e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.8831051395995502e-07
+        },
+        "encoder.layers.4.self_attn.v_proj": {
+          "v_gram_max_abs": 9.33056565344259e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0433374643325806,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.588244943512734e-08,
+              "anchor": 5.72774280227506e-08
+            },
+            "deranged": {
+              "query": 7.588244943512734e-08,
+              "anchor": 5.838581584871605e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7042603905892406e-07
+        },
+        "encoder.layers.5.self_attn.q_proj": {
+          "v_gram_max_abs": 1.4063030295830004e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0422852039337158,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.076673501695609e-08,
+              "anchor": 7.510043409375555e-08
+            },
+            "deranged": {
+              "query": 9.076673501695609e-08,
+              "anchor": 6.923089101995572e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.0965954239393625e-07
+        },
+        "encoder.layers.5.self_attn.v_proj": {
+          "v_gram_max_abs": 1.3404902299285482e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.045811653137207,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.808898755927828e-08,
+              "anchor": 5.236211042536354e-08
+            },
+            "deranged": {
+              "query": 6.808898755927828e-08,
+              "anchor": 5.236211042536354e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6298778571233186e-07
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "reference_sha256": "0111932ba97e0df8452c29f597807a682fa0eac8001dbfb2e6aebc4d5426a853",
+      "scaler_sha256": "6e398188357117fb756e39063ba9567ab95b80fc1a6b9a6fc80c191153d47ea5",
+      "training_seed": 43,
+      "mapper": {
+        "folder": "mapper_trials/fold2/seed43/ROTATION_TRUE_MA/alpha0.01",
+        "receipt_sha256": "eb41c6663d01cd9409d4ed53faed125c782aa21336e7cf30daff00a2e8ecfbcb",
+        "mapper_sha256": "571441047343e472c2a9b561bf5dfadcaf7fc52e0b11881b8b77d1a742412021",
+        "alpha": 0.01
+      },
+      "layers": {
+        "encoder.layers.0.self_attn.q_proj": {
+          "v_gram_max_abs": 9.975377857074363e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0457737445831299,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 9.8522932034939e-08,
+              "anchor": 9.026790803723372e-08
+            },
+            "deranged": {
+              "query": 9.8522932034939e-08,
+              "anchor": 9.026790803723372e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.1699663543817138e-07
+        },
+        "encoder.layers.0.self_attn.v_proj": {
+          "v_gram_max_abs": 6.058658227892089e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0459885597229004,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.900805181788485e-08,
+              "anchor": 8.68647532792366e-08
+            },
+            "deranged": {
+              "query": 8.900805181788485e-08,
+              "anchor": 8.68647532792366e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.9013343388607495e-07
+        },
+        "encoder.layers.1.self_attn.q_proj": {
+          "v_gram_max_abs": 7.446603333960411e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0421409606933594,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.315933037155276e-08,
+              "anchor": 6.97859707798898e-08
+            },
+            "deranged": {
+              "query": 7.315933037155276e-08,
+              "anchor": 7.171869853550561e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6121187607076592e-07
+        },
+        "encoder.layers.1.self_attn.v_proj": {
+          "v_gram_max_abs": 8.990262534425142e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0465316772460938,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.584602539940533e-08,
+              "anchor": 6.376685734998944e-08
+            },
+            "deranged": {
+              "query": 8.584602539940533e-08,
+              "anchor": 6.656789430792287e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.8967258774704732e-07
+        },
+        "encoder.layers.2.self_attn.q_proj": {
+          "v_gram_max_abs": 2.0113959386947045e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0457981824874878,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 1.0729167998491107e-07,
+              "anchor": 8.617713520564507e-08
+            },
+            "deranged": {
+              "query": 1.0729167998491107e-07,
+              "anchor": 8.617713520564507e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.5481129395377167e-07
+        },
+        "encoder.layers.2.self_attn.v_proj": {
+          "v_gram_max_abs": 2.0470944939177116e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.046527624130249,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.830231363303852e-08,
+              "anchor": 6.377703654081301e-08
+            },
+            "deranged": {
+              "query": 7.830231363303852e-08,
+              "anchor": 6.377703654081301e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.9754652380576943e-07
+        },
+        "encoder.layers.3.self_attn.q_proj": {
+          "v_gram_max_abs": 6.812334890637928e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0454519987106323,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.26311317148054e-08,
+              "anchor": 6.161854892994256e-08
+            },
+            "deranged": {
+              "query": 8.26311317148054e-08,
+              "anchor": 5.8174165928903676e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7888694470169497e-07
+        },
+        "encoder.layers.3.self_attn.v_proj": {
+          "v_gram_max_abs": 8.663820549870138e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0464589595794678,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.410890989767438e-08,
+              "anchor": 7.207341101711506e-08
+            },
+            "deranged": {
+              "query": 7.410890989767438e-08,
+              "anchor": 7.207341101711506e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6554546944380633e-07
+        },
+        "encoder.layers.4.self_attn.q_proj": {
+          "v_gram_max_abs": 1.1244831732426519e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0457537174224854,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.664824914182077e-08,
+              "anchor": 6.042097400182911e-08
+            },
+            "deranged": {
+              "query": 6.664824914182077e-08,
+              "anchor": 6.115266981687739e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.5578616785472121e-07
+        },
+        "encoder.layers.4.self_attn.v_proj": {
+          "v_gram_max_abs": 9.33056565344259e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0465656518936157,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.219439912553582e-08,
+              "anchor": 7.254577760740233e-08
+            },
+            "deranged": {
+              "query": 7.219439912553582e-08,
+              "anchor": 7.254577760740233e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6375269451529562e-07
+        },
+        "encoder.layers.5.self_attn.q_proj": {
+          "v_gram_max_abs": 1.4063030295830004e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.046612024307251,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.247042033142748e-08,
+              "anchor": 1.073092958936428e-07
+            },
+            "deranged": {
+              "query": 7.247042033142748e-08,
+              "anchor": 1.073092958936428e-07
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.427446698094471e-07
+        },
+        "encoder.layers.5.self_attn.v_proj": {
+          "v_gram_max_abs": 1.3404902299285482e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.045649766921997,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.35997353062956e-08,
+              "anchor": 7.509989385923177e-08
+            },
+            "deranged": {
+              "query": 7.35997353062956e-08,
+              "anchor": 7.331899920526297e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7700959997757337e-07
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "reference_sha256": "0111932ba97e0df8452c29f597807a682fa0eac8001dbfb2e6aebc4d5426a853",
+      "scaler_sha256": "6e398188357117fb756e39063ba9567ab95b80fc1a6b9a6fc80c191153d47ea5",
+      "training_seed": 44,
+      "mapper": {
+        "folder": "mapper_trials/fold2/seed44/ROTATION_TRUE_MA/alpha0.01",
+        "receipt_sha256": "59f1055c47b1924ea43dbe53a84988bd9c6d022dde6bbf32a6840ac670cfa979",
+        "mapper_sha256": "e42796f0e2a38e100b68b5e0caff44c5fc891626d3c50b90cafabe23acfa1a5c",
+        "alpha": 0.01
+      },
+      "layers": {
+        "encoder.layers.0.self_attn.q_proj": {
+          "v_gram_max_abs": 9.975377857074363e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0450208187103271,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.907163568354747e-08,
+              "anchor": 6.156102272392161e-08
+            },
+            "deranged": {
+              "query": 7.907163568354747e-08,
+              "anchor": 7.167228543991655e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7809403662916168e-07
+        },
+        "encoder.layers.0.self_attn.v_proj": {
+          "v_gram_max_abs": 6.058658227892089e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0452449321746826,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 1.0319920162871199e-07,
+              "anchor": 1.2615793043568857e-07
+            },
+            "deranged": {
+              "query": 1.0319920162871199e-07,
+              "anchor": 1.225409721472559e-07
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.6443320622071553e-07
+        },
+        "encoder.layers.1.self_attn.q_proj": {
+          "v_gram_max_abs": 7.446603333960411e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0380232334136963,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.918172384435707e-08,
+              "anchor": 7.243139688029032e-08
+            },
+            "deranged": {
+              "query": 8.220361535915544e-08,
+              "anchor": 7.269825030853383e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.7930044859948424e-07
+        },
+        "encoder.layers.1.self_attn.v_proj": {
+          "v_gram_max_abs": 8.990262534425142e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0454444885253906,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.440553972948294e-08,
+              "anchor": 7.17542611994304e-08
+            },
+            "deranged": {
+              "query": 7.440553972948294e-08,
+              "anchor": 7.17542611994304e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.6679161307653345e-07
+        },
+        "encoder.layers.2.self_attn.q_proj": {
+          "v_gram_max_abs": 2.0113959386947045e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0435590744018555,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.488603442380338e-08,
+              "anchor": 8.050607935849996e-08
+            },
+            "deranged": {
+              "query": 8.488603442380338e-08,
+              "anchor": 7.190204576179582e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.0999999605919584e-07
+        },
+        "encoder.layers.2.self_attn.v_proj": {
+          "v_gram_max_abs": 2.0470944939177116e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0453678369522095,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.25244013732862e-08,
+              "anchor": 7.507495702885336e-08
+            },
+            "deranged": {
+              "query": 7.25244013732862e-08,
+              "anchor": 7.507495702885336e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.910918099312653e-07
+        },
+        "encoder.layers.3.self_attn.q_proj": {
+          "v_gram_max_abs": 6.812334890637928e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0455114841461182,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.001804736006534e-08,
+              "anchor": 7.040928262647128e-08
+            },
+            "deranged": {
+              "query": 7.001804736006534e-08,
+              "anchor": 6.982629452423339e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.5444324308333535e-07
+        },
+        "encoder.layers.3.self_attn.v_proj": {
+          "v_gram_max_abs": 8.663820549870138e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.045685887336731,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.758288622650156e-08,
+              "anchor": 6.372382566066648e-08
+            },
+            "deranged": {
+              "query": 7.758288622650156e-08,
+              "anchor": 5.879741005188066e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.724934231006614e-07
+        },
+        "encoder.layers.4.self_attn.q_proj": {
+          "v_gram_max_abs": 1.1244831732426519e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0455031394958496,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.757169939726083e-08,
+              "anchor": 7.902389254077491e-08
+            },
+            "deranged": {
+              "query": 7.757169939726083e-08,
+              "anchor": 7.902389254077491e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.8053745776125396e-07
+        },
+        "encoder.layers.4.self_attn.v_proj": {
+          "v_gram_max_abs": 9.33056565344259e-09,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0446958541870117,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 6.514914607791411e-08,
+              "anchor": 6.467837554424705e-08
+            },
+            "deranged": {
+              "query": 6.514914607791411e-08,
+              "anchor": 6.467837554424705e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 1.4895942967996234e-07
+        },
+        "encoder.layers.5.self_attn.q_proj": {
+          "v_gram_max_abs": 1.4063030295830004e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0467309951782227,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 7.527075251978488e-08,
+              "anchor": 1.0391141846977092e-07
+            },
+            "deranged": {
+              "query": 7.527075251978488e-08,
+              "anchor": 1.0391141846977092e-07
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.359489136294357e-07
+        },
+        "encoder.layers.5.self_attn.v_proj": {
+          "v_gram_max_abs": 1.3404902299285482e-08,
+          "scale": 1.0,
+          "max_angle_difference_rad": 1.0456304550170898,
+          "cells_by_role": {
+            "query": 60,
+            "anchor": 24
+          },
+          "cells_with_different_angles": 84,
+          "u_theta_gram_max_abs": {
+            "true": {
+              "query": 8.219597602554529e-08,
+              "anchor": 7.188395745316711e-08
+            },
+            "deranged": {
+              "query": 8.219597602554529e-08,
+              "anchor": 8.672806339760086e-08
+            }
+          },
+          "fixed_core_relative_singular_value_error_bound": 2.0026594216293603e-07
+        }
+      }
+    }
+  ]
+}
