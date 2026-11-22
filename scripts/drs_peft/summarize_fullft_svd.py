@@ -81,4 +81,3 @@ def main():
     (a.public/'SVD_COMPLETE.json').write_text(json.dumps({"status":"COMPLETE_FULL_FT_SVD_RECONSTRUCTION","folds":list(FOLDS),"epoch":EPOCH,"ranks":list(RANKS),"source_only":True,"target_future_labels_read":0,"outer_labels_read":0,"files":{n:sha(a.public/n) for n in ('UPDATE_SVD_RECONSTRUCTION.csv','UPDATE_SVD_GROUP_SUMMARY.csv')}},indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='')
     print(sf[sf.scope.eq('all_2d')].to_string(index=False))
 if __name__=='__main__': main()
-

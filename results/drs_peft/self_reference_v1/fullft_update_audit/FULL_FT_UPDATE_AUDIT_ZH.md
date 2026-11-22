@@ -85,4 +85,3 @@ FFN 三组合计约 **65.1%** 的更新能量。Attention 投影合计约 **29.2
 - `SVD_COMPLETE.json`、`COMPLETE.json` 与 `STABILITY_COMPLETE.json` 保存标签隔离和文件哈希收据。
 
 运行中曾存在一份旧的嵌套私有快照目录，其 backbone 更新为零。核对后确认它来自修正前的审计路径，已移除且未用于当前公开结果。当前公开 CSV 与顶层 corrected 快照对应，q_proj 三折更新范数分别为 0.417892、0.438489、0.425062。
-
