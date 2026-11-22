@@ -46,6 +46,23 @@ epoch 8 的三折参数更新按组汇总如下。组内 Frobenius 范数先平�
 
 FFN 三组合计约 **65.1%** 的更新能量。Attention 投影合计约 **29.2%**。在编码器层中，索引 5 的层总更新范数最高，为 1.203824，其次是索引 4 和索引 3，分别为 1.143794 与 1.139116。这里的层汇总只统计 TSFM encoder 层，不包含 Head 和 Bridge。
 
+## SVD 重构审计
+
+对 159 个非零二维参数更新做 epoch 8 的奇异值分解，并按更新能量加权汇总。全体二维更新的相对残差如下。
+
+| 固定矩阵秩 | 保留更新能量 | 相对残差能量 |
+|---:|---:|---:|
+| 1 | 47.54% | 52.46% |
+| 2 | 59.91% | 40.09% |
+| 4 | 72.61% | 27.39% |
+| 8 | 83.01% | 16.99% |
+| 16 | 89.68% | 10.32% |
+| 32 | 93.65% | 6.35% |
+| 64 | 96.33% | 3.67% |
+| 128 | 98.37% | 1.63% |
+
+因此，在当前 source Full FT 更新上，统一 rank-4 只能重构约 72.61% 的更新能量，不能把它当作 Full FT 的近似充分条件。各组差异明显。v、out 和 head 的低秩残差下降更快，q、k 和 FFN 的残差更慢。这个结果只描述参数更新的重构误差，不等同于预测误差。下一轮应同时比较固定更新子空间的预测性能和函数扰动，不能只按 SVD 能量选层。
+
 ## 跨折稳定性
 
 公开收据不包含完整更新向量，因此没有把参数方向余弦误称为已测量结果。当前稳定性文件比较的是每个参数的 Frobenius 范数 profile。各主要参数组的 profile cosine 为 0.9923 到 1.000，绝对夹角多数低于 5°，最大约 7.1°。这说明不同 source fold 的更新**幅度分配模式**较稳定，但不能推出更新方向本身稳定。
@@ -64,6 +81,8 @@ FFN 三组合计约 **65.1%** 的更新能量。Attention 投影合计约 **29.2
 - `UPDATE_LAYER_GEOMETRY.csv` 与 `UPDATE_LAYER_SUMMARY.csv` 保存层级汇总。
 - `UPDATE_STABILITY.csv` 保存跨折范数 profile 稳定性。
 - `CHECKPOINT_HASHES.csv` 保存 12 个 source checkpoint 的 SHA-256。
-- `COMPLETE.json` 与 `STABILITY_COMPLETE.json` 保存标签隔离和文件哈希收据。
+- `UPDATE_SVD_RECONSTRUCTION.csv` 与 `UPDATE_SVD_GROUP_SUMMARY.csv` 保存 rank-1 到 rank-128 的重构残差。
+- `SVD_COMPLETE.json`、`COMPLETE.json` 与 `STABILITY_COMPLETE.json` 保存标签隔离和文件哈希收据。
 
 运行中曾存在一份旧的嵌套私有快照目录，其 backbone 更新为零。核对后确认它来自修正前的审计路径，已移除且未用于当前公开结果。当前公开 CSV 与顶层 corrected 快照对应，q_proj 三折更新范数分别为 0.417892、0.438489、0.425062。
+
