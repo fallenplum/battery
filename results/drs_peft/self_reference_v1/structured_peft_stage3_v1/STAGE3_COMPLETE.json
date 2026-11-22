@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE_SOURCE_STAGE3_FIXED_BASIS",
+  "domain": "MATR",
+  "folds": [
+    0,
+    1,
+    2
+  ],
+  "methods": [
+    "FIXED_SVD_BASIS",
+    "RANDOM_BASIS"
+  ],
+  "rank": 30,
+  "targets": "qkvo_ffn all 42 matrices",
+  "basis_source": "source fit FullFT epoch8 private snapshots for SVD, deterministic random orthogonal control",
+  "input_channels": 12,
+  "epochs": 8,
+  "learning_rates": [
+    0.0001,
+    0.001
+  ],
+  "target_future_labels_read": 0,
+  "outer_labels_read": 0,
+  "seed": 42,
+  "files": {
+    "STAGE3_SCORES.csv": "4659b23d3bf1455cff3877610a31b5da165b053b85b641c899557087abee4e3a",
+    "STAGE3_TRACE.csv": "9ffc869d0c8ad6926cb30da4f2654f0f81a696c547dfdd6a1123429b7d53e017",
+    "STAGE3_CELL.csv": "81cfd94b867e9ab71b0072ae8ca9db4f8e5119ae88fb1bae51a36384271930b3",
+    "STAGE3_BUDGETS.csv": "c3332720dfaa34810d07fb0da53de47646e3d99a4afcb53640df76b62d53ee20",
+    "STAGE3_SUMMARY.csv": "6c53dba079049f0224967489fc4b3ab7b94a90131f9012007719baa154282a46"
+  }
+}
