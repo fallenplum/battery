@@ -1,0 +1,75 @@
+{
+  "status": "COMPLETE_SOURCE_FULLFT_FUNCTIONAL_ABLATION",
+  "domain": "MATR",
+  "folds": [
+    0,
+    1,
+    2
+  ],
+  "methods": [
+    "WARMUP_ONLY_12",
+    "FULL_FT_12",
+    "FFN_ONLY",
+    "ATTN_ONLY",
+    "FFN_ATTN",
+    "LATE3",
+    "EARLY3",
+    "HEAD_BRIDGE",
+    "NO_FFN",
+    "NO_ATTN",
+    "NO_QK",
+    "NO_VO",
+    "NO_LAST_LAYER",
+    "NO_HEAD",
+    "NO_BRIDGE"
+  ],
+  "input_channels": 12,
+  "epoch": 8,
+  "source_roles": "fit-generated teacher updates, tune/screen evaluation",
+  "target_future_labels_read": 0,
+  "outer_labels_read": 0,
+  "seed": 42,
+  "private_checkpoint_hashes": [
+    {
+      "fold": 0,
+      "epoch": 0,
+      "file": "FULL_FT_EPOCH0.pt",
+      "sha256": "52a90b3625083daf7d9a6d95a167123c88ccfdbb049cf963619209ef551ed1e2"
+    },
+    {
+      "fold": 0,
+      "epoch": 8,
+      "file": "FULL_FT_EPOCH8.pt",
+      "sha256": "d195d99fd4c9a5d8979ca6e80a6b29e2a83ddf93862e2dba2af4f17ac013ad9b"
+    },
+    {
+      "fold": 1,
+      "epoch": 0,
+      "file": "FULL_FT_EPOCH0.pt",
+      "sha256": "dee0de49228d1c54b7682ff0402c94fe71d9d07bb212f9fe4446323db78df0cf"
+    },
+    {
+      "fold": 1,
+      "epoch": 8,
+      "file": "FULL_FT_EPOCH8.pt",
+      "sha256": "95b0b07433094e8fd6abbd8e632657ff636b57f726a9ee42423eed7e1ea17fa3"
+    },
+    {
+      "fold": 2,
+      "epoch": 0,
+      "file": "FULL_FT_EPOCH0.pt",
+      "sha256": "e891bdc9b400bd3241735676bc3a16d25faec22d185c76c432299fcfb530f626"
+    },
+    {
+      "fold": 2,
+      "epoch": 8,
+      "file": "FULL_FT_EPOCH8.pt",
+      "sha256": "4594341b544cf466f65d919fb95303fc2ff6c646f314232de412776d0a48c95f"
+    }
+  ],
+  "files": {
+    "FUNCTIONAL_ABLATION_SCORES.csv": "95163c1e2bc9389a3f120be68885c1dd9b5b2b6891577504f94c8c8e67dd8efe",
+    "FUNCTIONAL_ABLATION_CELL.csv": "ae2cc7f9782522061d3507718c7c43eefe85c150115790f4b8d246b5c7cc427b",
+    "FUNCTIONAL_ABLATION_SUMMARY.csv": "aa8a8500e1c1bddec6d0a28f0c48f82ba4a9a83b1f55f1b64424a7bcee276541"
+  }
+}

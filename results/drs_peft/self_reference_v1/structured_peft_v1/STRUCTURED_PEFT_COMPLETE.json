@@ -1,0 +1,40 @@
+{
+  "status": "COMPLETE_SOURCE_STRUCTURED_PEFT_STAGE2",
+  "domain": "MATR",
+  "folds": [
+    0,
+    1,
+    2
+  ],
+  "methods": [
+    "LORA_12",
+    "FFN_ONLY",
+    "ATTN_ONLY",
+    "FFN_ATTN_ALL",
+    "LATE_LAYER_GROUP",
+    "GROUPWISE_RANK"
+  ],
+  "input_channels": 12,
+  "optimizer": "AdamW",
+  "epochs": 8,
+  "checkpoint_epochs": [
+    2,
+    4,
+    8
+  ],
+  "learning_rates": [
+    0.0001,
+    0.001
+  ],
+  "expected_parameters": 36864,
+  "target_future_labels_read": 0,
+  "outer_labels_read": 0,
+  "seed": 42,
+  "files": {
+    "STRUCTURED_PEFT_SCORES.csv": "c21ada6d1f68bf3c2faf48c92d80ddf8e19e6edf7313f59349c2dca477984e69",
+    "STRUCTURED_PEFT_TRACE.csv": "c7319a744d00e8eb4531333cd9302ff0cc92f8e288b1c9f2d2aea0483e68aee4",
+    "STRUCTURED_PEFT_CELL.csv": "1a7402bf04534da7822bb0d5ab33645621507973d6a695473c5793745d7b21f6",
+    "STRUCTURED_PEFT_BUDGETS.csv": "8c8f0b8b4754e594008ffb70df4c282535570787f6f0a26450c15ae8c85b88af",
+    "STRUCTURED_PEFT_SUMMARY.csv": "4eb58d5599b836aab9bf1df636e8c2a3bba8b0fa71beee759e2856e8ed234a5f"
+  }
+}

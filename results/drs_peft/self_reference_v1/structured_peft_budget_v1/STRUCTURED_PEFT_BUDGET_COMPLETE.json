@@ -1,0 +1,37 @@
+{
+  "status": "COMPLETE_SOURCE_STRUCTURED_PEFT_STAGE2B",
+  "domain": "MATR",
+  "folds": [
+    0,
+    1,
+    2
+  ],
+  "budgets": {
+    "BUDGET_36K": 36864,
+    "BUDGET_140K": 131328,
+    "BUDGET_500K": 503424
+  },
+  "selected_structure": "LATE_LAYER_GROUP",
+  "input_channels": 12,
+  "optimizer": "AdamW",
+  "epochs": 8,
+  "checkpoint_epochs": [
+    2,
+    4,
+    8
+  ],
+  "learning_rates": [
+    0.0001,
+    0.001
+  ],
+  "target_future_labels_read": 0,
+  "outer_labels_read": 0,
+  "seed": 42,
+  "files": {
+    "STRUCTURED_PEFT_BUDGET_SCORES.csv": "2754b9eb691b3975c46bdf86d70c2894763a55a7ae6d2840447ebaa31af3347c",
+    "STRUCTURED_PEFT_BUDGET_TRACE.csv": "821a6c84c24c3356e666b75f71b3a95ab771905410c633ce237948c627d9b7c4",
+    "STRUCTURED_PEFT_BUDGET_CELL.csv": "2f265267b69549631221b42d954120d4035bb00e37e47cce118de17d82463be8",
+    "STRUCTURED_PEFT_BUDGETS.csv": "4a34e8472fce31bf0ad064a0e14fb400930b0aa6f23f3c5d291c114a8e765331",
+    "STRUCTURED_PEFT_BUDGET_SUMMARY.csv": "15a672992f641eb505c2ef4e986cecd41945e101cdf1ebf05924703818417ec1"
+  }
+}
