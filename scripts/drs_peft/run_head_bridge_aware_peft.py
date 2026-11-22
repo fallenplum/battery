@@ -25,7 +25,11 @@ def digest(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 def late_rank_map(targets, mode):
     ranks={n:0 for n in targets}
-    if mode=="BACKBONE_ONLY":
+    if mode=="LORA_12":
+        for n in targets:
+            if n.endswith("self_attn.q_proj") or n.endswith("self_attn.v_proj"):
+                ranks[n]=4
+    elif mode=="BACKBONE_ONLY":
         # Registered Stage-2 late-layer budget, with exact 36k matching.
         for n in targets:
             if any(f"encoder.layers.{i}." in n for i in (3,4,5)): ranks[n]=1
