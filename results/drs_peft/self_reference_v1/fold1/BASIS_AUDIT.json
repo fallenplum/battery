@@ -1,0 +1,3215 @@
+{
+  "0.01": {
+    "cells": 52,
+    "valid_tokens": 20280,
+    "minimum_valid_tokens_per_cell": 390,
+    "maximum_valid_tokens_per_cell": 390,
+    "moment_weighting": "one unit per physical cell, divided over its valid native tokens",
+    "center_factual_and_reference_at_weighted_corpus_mean": true,
+    "center_paired_difference": false,
+    "rank": 8,
+    "ridge_multiplier": 0.01,
+    "basis_seed": 42,
+    "target_values_used": 0,
+    "layers": {
+      "encoder.layers.0.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": -8.304406878257442e-17,
+          "max_eigenvalue": 0.6683445166351542,
+          "psd_absolute_tolerance": 1.9247453572007224e-11,
+          "positive_directions": 9,
+          "trace": 1.1044676482588354
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": -1.4903552300517757e-16,
+          "max_eigenvalue": 1.0408541706346746,
+          "psd_absolute_tolerance": 1.997945676988246e-11,
+          "positive_directions": 9,
+          "trace": 1.2130535374171634
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": -3.290783528015314e-16,
+          "max_eigenvalue": 1.4935115585522412,
+          "psd_absolute_tolerance": 1.0049468309939698e-11,
+          "positive_directions": 9,
+          "trace": 1.8415845432908542
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": -6.020850853570936e-13,
+          "max_eigenvalue": 1099.6145047420791,
+          "psd_absolute_tolerance": 1.2002752214021273e-08,
+          "positive_directions": 9,
+          "trace": 2199.527604105086
+        },
+        "regularized_reference_min_eigenvalue": 3.1589935870089594e-05,
+        "ridge_trace_scale": 0.003158993587023863,
+        "ridge_absolute": 3.158993587023863e-05,
+        "selected_total_eigenvalues": [
+          0.6683445166351542,
+          0.22514758356914003,
+          0.07281073983972043,
+          0.051549445300549536,
+          0.03851760871617884,
+          0.017874137730591884,
+          0.015419732126498789,
+          0.009494491355734946
+        ],
+        "selected_generalized_eigenvalues": [
+          1099.6145047420791,
+          525.914742145803,
+          378.5290841113758,
+          178.8747876345971,
+          10.017734336315767,
+          4.323845691656461,
+          1.3129967433198786,
+          0.5799924261013117
+        ],
+        "generalized_equation_relative_residual": 1.1589632389121714e-12,
+        "total_covariance_equation_relative_residual": 5.219851494813004e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.8207657603852567e-13,
+        "factual_token_rms": 0.0958396714559439,
+        "paired_change_token_rms": 0.06925166482826675,
+        "paired_change_relative_rms": 0.722578278663035,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.016495603643927208,
+            "factual_centered_projected_fraction": 0.014935343438924716,
+            "reference_centered_projected_energy": 0.020703988145155908,
+            "reference_centered_projected_fraction": 0.017067662313766375,
+            "paired_difference_uncentered_projected_energy": 0.03259482934842788,
+            "paired_difference_uncentered_projected_fraction": 0.01769933911922498,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 1.099158255273568,
+            "factual_centered_projected_fraction": 0.9951928035251756,
+            "reference_centered_projected_energy": 1.212886394614493,
+            "reference_centered_projected_fraction": 0.999862213169069,
+            "paired_difference_uncentered_projected_energy": 1.8363978879494032,
+            "paired_difference_uncentered_projected_fraction": 0.9971835909677095,
+            "euclidean_orthogonality_max_abs": 1.1102230246251565e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 0.7498150954349164,
+            "factual_centered_projected_fraction": 0.6788927648691028,
+            "reference_centered_projected_energy": 0.660010210459912,
+            "reference_centered_projected_fraction": 0.5440899268677023,
+            "paired_difference_uncentered_projected_energy": 1.1203399942617887,
+            "paired_difference_uncentered_projected_fraction": 0.6083565364095509,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.0.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": -8.304406878257442e-17,
+          "max_eigenvalue": 0.6683445166351542,
+          "psd_absolute_tolerance": 1.9247453572007224e-11,
+          "positive_directions": 9,
+          "trace": 1.1044676482588354
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": -1.4903552300517757e-16,
+          "max_eigenvalue": 1.0408541706346746,
+          "psd_absolute_tolerance": 1.997945676988246e-11,
+          "positive_directions": 9,
+          "trace": 1.2130535374171634
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": -3.290783528015314e-16,
+          "max_eigenvalue": 1.4935115585522412,
+          "psd_absolute_tolerance": 1.0049468309939698e-11,
+          "positive_directions": 9,
+          "trace": 1.8415845432908542
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": -6.020850853570936e-13,
+          "max_eigenvalue": 1099.6145047420791,
+          "psd_absolute_tolerance": 1.2002752214021273e-08,
+          "positive_directions": 9,
+          "trace": 2199.527604105086
+        },
+        "regularized_reference_min_eigenvalue": 3.1589935870089594e-05,
+        "ridge_trace_scale": 0.003158993587023863,
+        "ridge_absolute": 3.158993587023863e-05,
+        "selected_total_eigenvalues": [
+          0.6683445166351542,
+          0.22514758356914003,
+          0.07281073983972043,
+          0.051549445300549536,
+          0.03851760871617884,
+          0.017874137730591884,
+          0.015419732126498789,
+          0.009494491355734946
+        ],
+        "selected_generalized_eigenvalues": [
+          1099.6145047420791,
+          525.914742145803,
+          378.5290841113758,
+          178.8747876345971,
+          10.017734336315767,
+          4.323845691656461,
+          1.3129967433198786,
+          0.5799924261013117
+        ],
+        "generalized_equation_relative_residual": 1.1589632389121714e-12,
+        "total_covariance_equation_relative_residual": 5.219851494813004e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.8207657603852567e-13,
+        "factual_token_rms": 0.0958396714559439,
+        "paired_change_token_rms": 0.06925166482826675,
+        "paired_change_relative_rms": 0.722578278663035,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.02608333469524244,
+            "factual_centered_projected_fraction": 0.023616205269898254,
+            "reference_centered_projected_energy": 0.029034477957383308,
+            "reference_centered_projected_fraction": 0.023935034243586305,
+            "paired_difference_uncentered_projected_energy": 0.043646421467300384,
+            "paired_difference_uncentered_projected_fraction": 0.023700471219912384,
+            "euclidean_orthogonality_max_abs": 8.881784197001252e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 1.099158255273568,
+            "factual_centered_projected_fraction": 0.9951928035251756,
+            "reference_centered_projected_energy": 1.212886394614493,
+            "reference_centered_projected_fraction": 0.999862213169069,
+            "paired_difference_uncentered_projected_energy": 1.8363978879494032,
+            "paired_difference_uncentered_projected_fraction": 0.9971835909677095,
+            "euclidean_orthogonality_max_abs": 1.1102230246251565e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 0.7498150954349164,
+            "factual_centered_projected_fraction": 0.6788927648691028,
+            "reference_centered_projected_energy": 0.660010210459912,
+            "reference_centered_projected_fraction": 0.5440899268677023,
+            "paired_difference_uncentered_projected_energy": 1.1203399942617887,
+            "paired_difference_uncentered_projected_fraction": 0.6083565364095509,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.1.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 1.099326733613769e-09,
+          "max_eigenvalue": 14.172881961627304,
+          "psd_absolute_tolerance": 3.921090400526338e-10,
+          "positive_directions": 384,
+          "trace": 33.62672988231955
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 2.1513985887576734e-13,
+          "max_eigenvalue": 21.26149492598443,
+          "psd_absolute_tolerance": 3.9048670181214303e-10,
+          "positive_directions": 225,
+          "trace": 35.88144545613627
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 1.38674708963121e-09,
+          "max_eigenvalue": 32.381091720954615,
+          "psd_absolute_tolerance": 2.883434629398282e-10,
+          "positive_directions": 384,
+          "trace": 52.839498382589866
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 1.483996292161078e-06,
+          "max_eigenvalue": 1494.254272283511,
+          "psd_absolute_tolerance": 2.0063306776246176e-08,
+          "positive_directions": 384,
+          "trace": 3676.639848686614
+        },
+        "regularized_reference_min_eigenvalue": 0.0009344126423020219,
+        "ridge_trace_scale": 0.0934412642086882,
+        "ridge_absolute": 0.0009344126420868821,
+        "selected_total_eigenvalues": [
+          14.172881961627304,
+          7.831680903201009,
+          3.9036300703894034,
+          2.0469445609972845,
+          1.410573773404191,
+          0.8983728474495236,
+          0.6509358784062779,
+          0.3939301391193115
+        ],
+        "selected_generalized_eigenvalues": [
+          1494.254272283511,
+          564.6719660678426,
+          422.9056964090158,
+          231.32195893229058,
+          170.47352729954514,
+          132.32905511905028,
+          106.01375255178334,
+          70.84644158357442
+        ],
+        "generalized_equation_relative_residual": 4.1153507123733075e-13,
+        "total_covariance_equation_relative_residual": 9.253205531463724e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 7.192857420790233e-14,
+        "factual_token_rms": 0.432575684256783,
+        "paired_change_token_rms": 0.3709485953219499,
+        "paired_change_relative_rms": 0.8575345513451228,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.30843712138579754,
+            "factual_centered_projected_fraction": 0.00917237930852055,
+            "reference_centered_projected_energy": 0.3137270922479567,
+            "reference_centered_projected_fraction": 0.008743435172684902,
+            "paired_difference_uncentered_projected_energy": 0.4759461343314685,
+            "paired_difference_uncentered_projected_fraction": 0.009007393122571513,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 31.308950134594333,
+            "factual_centered_projected_fraction": 0.9310732933045662,
+            "reference_centered_projected_energy": 34.645926089737344,
+            "reference_centered_projected_fraction": 0.9655666222279339,
+            "paired_difference_uncentered_projected_energy": 50.17183175891947,
+            "paired_difference_uncentered_projected_fraction": 0.9495137784171439,
+            "euclidean_orthogonality_max_abs": 1.3322676295501878e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 3.4995308079002294,
+            "factual_centered_projected_fraction": 0.10406991164907273,
+            "reference_centered_projected_energy": 0.0012805830944966237,
+            "reference_centered_projected_fraction": 3.5689283924252405e-05,
+            "paired_difference_uncentered_projected_energy": 3.601174410379453,
+            "paired_difference_uncentered_projected_fraction": 0.06815307716028597,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.1.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 1.099326733613769e-09,
+          "max_eigenvalue": 14.172881961627304,
+          "psd_absolute_tolerance": 3.921090400526338e-10,
+          "positive_directions": 384,
+          "trace": 33.62672988231955
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 2.1513985887576734e-13,
+          "max_eigenvalue": 21.26149492598443,
+          "psd_absolute_tolerance": 3.9048670181214303e-10,
+          "positive_directions": 225,
+          "trace": 35.88144545613627
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 1.38674708963121e-09,
+          "max_eigenvalue": 32.381091720954615,
+          "psd_absolute_tolerance": 2.883434629398282e-10,
+          "positive_directions": 384,
+          "trace": 52.839498382589866
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 1.483996292161078e-06,
+          "max_eigenvalue": 1494.254272283511,
+          "psd_absolute_tolerance": 2.0063306776246176e-08,
+          "positive_directions": 384,
+          "trace": 3676.639848686614
+        },
+        "regularized_reference_min_eigenvalue": 0.0009344126423020219,
+        "ridge_trace_scale": 0.0934412642086882,
+        "ridge_absolute": 0.0009344126420868821,
+        "selected_total_eigenvalues": [
+          14.172881961627304,
+          7.831680903201009,
+          3.9036300703894034,
+          2.0469445609972845,
+          1.410573773404191,
+          0.8983728474495236,
+          0.6509358784062779,
+          0.3939301391193115
+        ],
+        "selected_generalized_eigenvalues": [
+          1494.254272283511,
+          564.6719660678426,
+          422.9056964090158,
+          231.32195893229058,
+          170.47352729954514,
+          132.32905511905028,
+          106.01375255178334,
+          70.84644158357442
+        ],
+        "generalized_equation_relative_residual": 4.1153507123733075e-13,
+        "total_covariance_equation_relative_residual": 9.253205531463724e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 7.192857420790233e-14,
+        "factual_token_rms": 0.432575684256783,
+        "paired_change_token_rms": 0.3709485953219499,
+        "paired_change_relative_rms": 0.8575345513451228,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.6028109789777825,
+            "factual_centered_projected_fraction": 0.017926541804314185,
+            "reference_centered_projected_energy": 0.7040893371016501,
+            "reference_centered_projected_fraction": 0.01962265812179649,
+            "paired_difference_uncentered_projected_energy": 0.8860038260655578,
+            "paired_difference_uncentered_projected_fraction": 0.01676783189065035,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 31.308950134594333,
+            "factual_centered_projected_fraction": 0.9310732933045662,
+            "reference_centered_projected_energy": 34.645926089737344,
+            "reference_centered_projected_fraction": 0.9655666222279339,
+            "paired_difference_uncentered_projected_energy": 50.17183175891947,
+            "paired_difference_uncentered_projected_fraction": 0.9495137784171439,
+            "euclidean_orthogonality_max_abs": 1.3322676295501878e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 3.4995308079002294,
+            "factual_centered_projected_fraction": 0.10406991164907273,
+            "reference_centered_projected_energy": 0.0012805830944966237,
+            "reference_centered_projected_fraction": 3.5689283924252405e-05,
+            "paired_difference_uncentered_projected_energy": 3.601174410379453,
+            "paired_difference_uncentered_projected_fraction": 0.06815307716028597,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.2.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 5.374493179439321e-06,
+          "max_eigenvalue": 65.918394771102,
+          "psd_absolute_tolerance": 1.539009333486681e-09,
+          "positive_directions": 384,
+          "trace": 135.90655553386316
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 5.381156003234516e-09,
+          "max_eigenvalue": 85.82746213155848,
+          "psd_absolute_tolerance": 1.4486820042447776e-09,
+          "positive_directions": 384,
+          "trace": 128.29291879722436
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 5.844518565885324e-06,
+          "max_eigenvalue": 127.29708558759201,
+          "psd_absolute_tolerance": 1.1363086341295175e-09,
+          "positive_directions": 384,
+          "trace": 208.23075932794484
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0003112064620910867,
+          "max_eigenvalue": 1409.752973024304,
+          "psd_absolute_tolerance": 3.0121628735616434e-08,
+          "positive_directions": 384,
+          "trace": 5519.84684039366
+        },
+        "regularized_reference_min_eigenvalue": 0.0033409668081670544,
+        "ridge_trace_scale": 0.3340961427011051,
+        "ridge_absolute": 0.003340961427011051,
+        "selected_total_eigenvalues": [
+          65.918394771102,
+          26.61098923395913,
+          10.091291172856778,
+          6.885520508375964,
+          5.207189669613395,
+          4.205666872705652,
+          2.1797704824454955,
+          1.9428790147980002
+        ],
+        "selected_generalized_eigenvalues": [
+          1409.752973024304,
+          920.1071686722223,
+          654.0021259889385,
+          378.0938955363502,
+          289.2031479064349,
+          210.3236534498249,
+          177.43482161562716,
+          157.16889410239742
+        ],
+        "generalized_equation_relative_residual": 3.026257657468508e-13,
+        "total_covariance_equation_relative_residual": 1.116709509367907e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 2.220446049250313e-13,
+        "factual_token_rms": 0.8569970021705672,
+        "paired_change_token_rms": 0.7363882144742154,
+        "paired_change_relative_rms": 0.8592657997742364,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 2.7024861744444335,
+            "factual_centered_projected_fraction": 0.019884884609345194,
+            "reference_centered_projected_energy": 2.250194560159053,
+            "reference_centered_projected_fraction": 0.01753950710027603,
+            "paired_difference_uncentered_projected_energy": 2.7567032689042494,
+            "paired_difference_uncentered_projected_fraction": 0.01323869383083163,
+            "euclidean_orthogonality_max_abs": 8.881784197001252e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 123.04170172585629,
+            "factual_centered_projected_fraction": 0.9053404469161063,
+            "reference_centered_projected_energy": 104.42672327588622,
+            "reference_centered_projected_fraction": 0.8139710613408034,
+            "paired_difference_uncentered_projected_energy": 168.94628313864112,
+            "paired_difference_uncentered_projected_fraction": 0.8113416273556676,
+            "euclidean_orthogonality_max_abs": 3.4416913763379853e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 16.25131422769841,
+            "factual_centered_projected_fraction": 0.11957711799744015,
+            "reference_centered_projected_energy": 0.00777146638607216,
+            "reference_centered_projected_fraction": 6.0575957417848515e-05,
+            "paired_difference_uncentered_projected_energy": 18.27318649454996,
+            "paired_difference_uncentered_projected_fraction": 0.08775450156127666,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.2.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 5.374493179439321e-06,
+          "max_eigenvalue": 65.918394771102,
+          "psd_absolute_tolerance": 1.539009333486681e-09,
+          "positive_directions": 384,
+          "trace": 135.90655553386316
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 5.381156003234516e-09,
+          "max_eigenvalue": 85.82746213155848,
+          "psd_absolute_tolerance": 1.4486820042447776e-09,
+          "positive_directions": 384,
+          "trace": 128.29291879722436
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 5.844518565885324e-06,
+          "max_eigenvalue": 127.29708558759201,
+          "psd_absolute_tolerance": 1.1363086341295175e-09,
+          "positive_directions": 384,
+          "trace": 208.23075932794484
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0003112064620910867,
+          "max_eigenvalue": 1409.752973024304,
+          "psd_absolute_tolerance": 3.0121628735616434e-08,
+          "positive_directions": 384,
+          "trace": 5519.84684039366
+        },
+        "regularized_reference_min_eigenvalue": 0.0033409668081670544,
+        "ridge_trace_scale": 0.3340961427011051,
+        "ridge_absolute": 0.003340961427011051,
+        "selected_total_eigenvalues": [
+          65.918394771102,
+          26.61098923395913,
+          10.091291172856778,
+          6.885520508375964,
+          5.207189669613395,
+          4.205666872705652,
+          2.1797704824454955,
+          1.9428790147980002
+        ],
+        "selected_generalized_eigenvalues": [
+          1409.752973024304,
+          920.1071686722223,
+          654.0021259889385,
+          378.0938955363502,
+          289.2031479064349,
+          210.3236534498249,
+          177.43482161562716,
+          157.16889410239742
+        ],
+        "generalized_equation_relative_residual": 3.026257657468508e-13,
+        "total_covariance_equation_relative_residual": 1.116709509367907e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 2.220446049250313e-13,
+        "factual_token_rms": 0.8569970021705672,
+        "paired_change_token_rms": 0.7363882144742154,
+        "paired_change_relative_rms": 0.8592657997742364,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 3.4169002246956675,
+            "factual_centered_projected_fraction": 0.025141540901198807,
+            "reference_centered_projected_energy": 3.357834833662917,
+            "reference_centered_projected_fraction": 0.026173189176327043,
+            "paired_difference_uncentered_projected_energy": 5.75279801232923,
+            "paired_difference_uncentered_projected_fraction": 0.0276270327731413,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 123.04170172585629,
+            "factual_centered_projected_fraction": 0.9053404469161063,
+            "reference_centered_projected_energy": 104.42672327588622,
+            "reference_centered_projected_fraction": 0.8139710613408034,
+            "paired_difference_uncentered_projected_energy": 168.94628313864112,
+            "paired_difference_uncentered_projected_fraction": 0.8113416273556676,
+            "euclidean_orthogonality_max_abs": 3.4416913763379853e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 16.25131422769841,
+            "factual_centered_projected_fraction": 0.11957711799744015,
+            "reference_centered_projected_energy": 0.00777146638607216,
+            "reference_centered_projected_fraction": 6.0575957417848515e-05,
+            "paired_difference_uncentered_projected_energy": 18.27318649454996,
+            "paired_difference_uncentered_projected_fraction": 0.08775450156127666,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.3.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 2.8725178221299166e-05,
+          "max_eigenvalue": 36.474887665562484,
+          "psd_absolute_tolerance": 1.2640833641082253e-09,
+          "positive_directions": 384,
+          "trace": 129.5329804111361
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 7.5080582114234e-08,
+          "max_eigenvalue": 51.236807183683354,
+          "psd_absolute_tolerance": 1.2070566618199078e-09,
+          "positive_directions": 384,
+          "trace": 103.55729075847763
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 3.270966648693567e-05,
+          "max_eigenvalue": 72.60675657537605,
+          "psd_absolute_tolerance": 1.1192385293362819e-09,
+          "positive_directions": 384,
+          "trace": 205.1026295433586
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0011568665777660439,
+          "max_eigenvalue": 2816.909824829131,
+          "psd_absolute_tolerance": 7.305637868836149e-08,
+          "positive_directions": 384,
+          "trace": 13387.722975176703
+        },
+        "regularized_reference_min_eigenvalue": 0.0026968795274174696,
+        "ridge_trace_scale": 0.2696804446835355,
+        "ridge_absolute": 0.0026968044468353553,
+        "selected_total_eigenvalues": [
+          36.474887665562484,
+          26.825477736990557,
+          11.141726395022635,
+          8.496566861368835,
+          5.805077784289418,
+          4.862962696780076,
+          3.5620481288497774,
+          3.330010545726597
+        ],
+        "selected_generalized_eigenvalues": [
+          2816.909824829131,
+          2080.4457109080327,
+          1223.5764654808538,
+          830.593843611778,
+          695.9852475054098,
+          579.9839103617826,
+          440.7690223981424,
+          340.11054469607734
+        ],
+        "generalized_equation_relative_residual": 2.5326512154040817e-13,
+        "total_covariance_equation_relative_residual": 5.658960826522078e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 9.325873406851315e-14,
+        "factual_token_rms": 0.7766878901436741,
+        "paired_change_token_rms": 0.7308361178147235,
+        "paired_change_relative_rms": 0.940964996479514,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 2.750431676040911,
+            "factual_centered_projected_fraction": 0.021233447013348065,
+            "reference_centered_projected_energy": 2.021846235514977,
+            "reference_centered_projected_fraction": 0.019523939074752784,
+            "paired_difference_uncentered_projected_energy": 4.172525004456766,
+            "paired_difference_uncentered_projected_fraction": 0.020343595856116004,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 100.49875781459042,
+            "factual_centered_projected_fraction": 0.7758545931361156,
+            "reference_centered_projected_energy": 44.18284370935465,
+            "reference_centered_projected_fraction": 0.42665121292522473,
+            "paired_difference_uncentered_projected_energy": 99.50099337670602,
+            "paired_difference_uncentered_projected_fraction": 0.48512782892269823,
+            "euclidean_orthogonality_max_abs": 2.1094237467877974e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 25.410402282363822,
+            "factual_centered_projected_fraction": 0.19616936321322584,
+            "reference_centered_projected_energy": 0.006605423741609622,
+            "reference_centered_projected_fraction": 6.378521196556964e-05,
+            "paired_difference_uncentered_projected_energy": 32.61386493468758,
+            "paired_difference_uncentered_projected_fraction": 0.15901241738001717,
+            "euclidean_orthogonality_max_abs": 7.771561172376096e-16
+          }
+        }
+      },
+      "encoder.layers.3.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 2.8725178221299166e-05,
+          "max_eigenvalue": 36.474887665562484,
+          "psd_absolute_tolerance": 1.2640833641082253e-09,
+          "positive_directions": 384,
+          "trace": 129.5329804111361
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 7.5080582114234e-08,
+          "max_eigenvalue": 51.236807183683354,
+          "psd_absolute_tolerance": 1.2070566618199078e-09,
+          "positive_directions": 384,
+          "trace": 103.55729075847763
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 3.270966648693567e-05,
+          "max_eigenvalue": 72.60675657537605,
+          "psd_absolute_tolerance": 1.1192385293362819e-09,
+          "positive_directions": 384,
+          "trace": 205.1026295433586
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0011568665777660439,
+          "max_eigenvalue": 2816.909824829131,
+          "psd_absolute_tolerance": 7.305637868836149e-08,
+          "positive_directions": 384,
+          "trace": 13387.722975176703
+        },
+        "regularized_reference_min_eigenvalue": 0.0026968795274174696,
+        "ridge_trace_scale": 0.2696804446835355,
+        "ridge_absolute": 0.0026968044468353553,
+        "selected_total_eigenvalues": [
+          36.474887665562484,
+          26.825477736990557,
+          11.141726395022635,
+          8.496566861368835,
+          5.805077784289418,
+          4.862962696780076,
+          3.5620481288497774,
+          3.330010545726597
+        ],
+        "selected_generalized_eigenvalues": [
+          2816.909824829131,
+          2080.4457109080327,
+          1223.5764654808538,
+          830.593843611778,
+          695.9852475054098,
+          579.9839103617826,
+          440.7690223981424,
+          340.11054469607734
+        ],
+        "generalized_equation_relative_residual": 2.5326512154040817e-13,
+        "total_covariance_equation_relative_residual": 5.658960826522078e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 9.325873406851315e-14,
+        "factual_token_rms": 0.7766878901436741,
+        "paired_change_token_rms": 0.7308361178147235,
+        "paired_change_relative_rms": 0.940964996479514,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 2.685118958365406,
+            "factual_centered_projected_fraction": 0.020729230114545895,
+            "reference_centered_projected_energy": 1.9135662054079168,
+            "reference_centered_projected_fraction": 0.018478333986844515,
+            "paired_difference_uncentered_projected_energy": 3.626822936096692,
+            "paired_difference_uncentered_projected_fraction": 0.01768296654300077,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 100.49875781459042,
+            "factual_centered_projected_fraction": 0.7758545931361156,
+            "reference_centered_projected_energy": 44.18284370935465,
+            "reference_centered_projected_fraction": 0.42665121292522473,
+            "paired_difference_uncentered_projected_energy": 99.50099337670602,
+            "paired_difference_uncentered_projected_fraction": 0.48512782892269823,
+            "euclidean_orthogonality_max_abs": 2.1094237467877974e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 25.410402282363822,
+            "factual_centered_projected_fraction": 0.19616936321322584,
+            "reference_centered_projected_energy": 0.006605423741609622,
+            "reference_centered_projected_fraction": 6.378521196556964e-05,
+            "paired_difference_uncentered_projected_energy": 32.61386493468758,
+            "paired_difference_uncentered_projected_fraction": 0.15901241738001717,
+            "euclidean_orthogonality_max_abs": 7.771561172376096e-16
+          }
+        }
+      },
+      "encoder.layers.4.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.00026568027118034534,
+          "max_eigenvalue": 52.12610597804436,
+          "psd_absolute_tolerance": 2.0446135767008892e-09,
+          "positive_directions": 384,
+          "trace": 226.74987047079642
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 1.7890083998114108e-06,
+          "max_eigenvalue": 89.31035917791513,
+          "psd_absolute_tolerance": 1.966329233380475e-09,
+          "positive_directions": 384,
+          "trace": 191.70763664158588
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.00030349018529491457,
+          "max_eigenvalue": 144.1436900597473,
+          "psd_absolute_tolerance": 2.201989364140188e-09,
+          "positive_directions": 384,
+          "trace": 403.5188183518696
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0025910517491838704,
+          "max_eigenvalue": 3373.7727222661574,
+          "psd_absolute_tolerance": 8.000208526142161e-08,
+          "positive_directions": 384,
+          "trace": 14660.537165210002
+        },
+        "regularized_reference_min_eigenvalue": 0.004994175379274444,
+        "ridge_trace_scale": 0.49923863708746324,
+        "ridge_absolute": 0.004992386370874633,
+        "selected_total_eigenvalues": [
+          52.12610597804436,
+          42.374917307324125,
+          18.48799797610091,
+          11.907884964921642,
+          11.085072771737643,
+          9.067122155095866,
+          7.791428502735826,
+          6.7440477093286395
+        ],
+        "selected_generalized_eigenvalues": [
+          3373.7727222661574,
+          2050.3944042346125,
+          1055.6172707987355,
+          852.0240817582517,
+          654.0300208860524,
+          503.74752750171655,
+          465.83516071477476,
+          414.3531834130179
+        ],
+        "generalized_equation_relative_residual": 2.0222267732818273e-13,
+        "total_covariance_equation_relative_residual": 1.1418318444557875e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 5.551115123125783e-14,
+        "factual_token_rms": 0.9877892513018883,
+        "paired_change_token_rms": 1.0251001200490908,
+        "paired_change_relative_rms": 1.0377720942984827,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 4.092832871506808,
+            "factual_centered_projected_fraction": 0.018049989898600325,
+            "reference_centered_projected_energy": 3.066235594359591,
+            "reference_centered_projected_fraction": 0.015994332036402836,
+            "paired_difference_uncentered_projected_energy": 5.675307046468128,
+            "paired_difference_uncentered_projected_fraction": 0.014064541201940287,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 159.58457736528896,
+            "factual_centered_projected_fraction": 0.7037912614192307,
+            "reference_centered_projected_energy": 72.31545811411097,
+            "reference_centered_projected_fraction": 0.37721740970241585,
+            "paired_difference_uncentered_projected_energy": 171.75435886982385,
+            "paired_difference_uncentered_projected_fraction": 0.42564150928905015,
+            "euclidean_orthogonality_max_abs": 1.6653345369377348e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 43.5675345536387,
+            "factual_centered_projected_fraction": 0.19213918165942173,
+            "reference_centered_projected_energy": 0.011496158916511711,
+            "reference_centered_projected_fraction": 5.996714120473344e-05,
+            "paired_difference_uncentered_projected_energy": 59.942924822818334,
+            "paired_difference_uncentered_projected_fraction": 0.14855050643647535,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.4.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.00026568027118034534,
+          "max_eigenvalue": 52.12610597804436,
+          "psd_absolute_tolerance": 2.0446135767008892e-09,
+          "positive_directions": 384,
+          "trace": 226.74987047079642
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 1.7890083998114108e-06,
+          "max_eigenvalue": 89.31035917791513,
+          "psd_absolute_tolerance": 1.966329233380475e-09,
+          "positive_directions": 384,
+          "trace": 191.70763664158588
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.00030349018529491457,
+          "max_eigenvalue": 144.1436900597473,
+          "psd_absolute_tolerance": 2.201989364140188e-09,
+          "positive_directions": 384,
+          "trace": 403.5188183518696
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0025910517491838704,
+          "max_eigenvalue": 3373.7727222661574,
+          "psd_absolute_tolerance": 8.000208526142161e-08,
+          "positive_directions": 384,
+          "trace": 14660.537165210002
+        },
+        "regularized_reference_min_eigenvalue": 0.004994175379274444,
+        "ridge_trace_scale": 0.49923863708746324,
+        "ridge_absolute": 0.004992386370874633,
+        "selected_total_eigenvalues": [
+          52.12610597804436,
+          42.374917307324125,
+          18.48799797610091,
+          11.907884964921642,
+          11.085072771737643,
+          9.067122155095866,
+          7.791428502735826,
+          6.7440477093286395
+        ],
+        "selected_generalized_eigenvalues": [
+          3373.7727222661574,
+          2050.3944042346125,
+          1055.6172707987355,
+          852.0240817582517,
+          654.0300208860524,
+          503.74752750171655,
+          465.83516071477476,
+          414.3531834130179
+        ],
+        "generalized_equation_relative_residual": 2.0222267732818273e-13,
+        "total_covariance_equation_relative_residual": 1.1418318444557875e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 5.551115123125783e-14,
+        "factual_token_rms": 0.9877892513018883,
+        "paired_change_token_rms": 1.0251001200490908,
+        "paired_change_relative_rms": 1.0377720942984827,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 4.1186894000292895,
+            "factual_centered_projected_fraction": 0.018164020960531237,
+            "reference_centered_projected_energy": 7.1072065738807195,
+            "reference_centered_projected_fraction": 0.037073153153352266,
+            "paired_difference_uncentered_projected_energy": 10.556422871812327,
+            "paired_difference_uncentered_projected_fraction": 0.026160918380285045,
+            "euclidean_orthogonality_max_abs": 7.771561172376096e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 159.58457736528896,
+            "factual_centered_projected_fraction": 0.7037912614192307,
+            "reference_centered_projected_energy": 72.31545811411097,
+            "reference_centered_projected_fraction": 0.37721740970241585,
+            "paired_difference_uncentered_projected_energy": 171.75435886982385,
+            "paired_difference_uncentered_projected_fraction": 0.42564150928905015,
+            "euclidean_orthogonality_max_abs": 1.6653345369377348e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 43.5675345536387,
+            "factual_centered_projected_fraction": 0.19213918165942173,
+            "reference_centered_projected_energy": 0.011496158916511711,
+            "reference_centered_projected_fraction": 5.996714120473344e-05,
+            "paired_difference_uncentered_projected_energy": 59.942924822818334,
+            "paired_difference_uncentered_projected_fraction": 0.14855050643647535,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.5.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.0004128627094855641,
+          "max_eigenvalue": 38.82001896425946,
+          "psd_absolute_tolerance": 1.3445085504370097e-09,
+          "positive_directions": 384,
+          "trace": 152.58279310662485
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 3.8030315106335663e-06,
+          "max_eigenvalue": 59.80979510083612,
+          "psd_absolute_tolerance": 1.2873893733701364e-09,
+          "positive_directions": 384,
+          "trace": 133.9305215542019
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.0005188159094719346,
+          "max_eigenvalue": 94.65307721003829,
+          "psd_absolute_tolerance": 1.4838320264509377e-09,
+          "positive_directions": 384,
+          "trace": 271.9150944582052
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.004203535828083865,
+          "max_eigenvalue": 2879.808321724188,
+          "psd_absolute_tolerance": 7.618375017815355e-08,
+          "positive_directions": 384,
+          "trace": 13960.81986141029
+        },
+        "regularized_reference_min_eigenvalue": 0.003491577030317975,
+        "ridge_trace_scale": 0.34877739988073414,
+        "ridge_absolute": 0.0034877739988073415,
+        "selected_total_eigenvalues": [
+          38.82001896425946,
+          24.485876791839345,
+          12.213126509785724,
+          7.30215190403549,
+          7.000697408968813,
+          5.815250902766957,
+          5.051880281053446,
+          4.512199521965335
+        ],
+        "selected_generalized_eigenvalues": [
+          2879.808321724188,
+          1964.9003684663764,
+          920.5789677272951,
+          761.6835101231164,
+          642.7672446543563,
+          580.4655582726338,
+          459.94833055851177,
+          390.0476150727989
+        ],
+        "generalized_equation_relative_residual": 2.1160259640102262e-13,
+        "total_covariance_equation_relative_residual": 9.32918015884408e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 7.066916496434317e-14,
+        "factual_token_rms": 0.8010146519203228,
+        "paired_change_token_rms": 0.841494043443907,
+        "paired_change_relative_rms": 1.050535144927175,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 3.1087295171439786,
+            "factual_centered_projected_fraction": 0.020374050401421075,
+            "reference_centered_projected_energy": 2.1727838228412315,
+            "reference_centered_projected_fraction": 0.016223216318633556,
+            "paired_difference_uncentered_projected_energy": 4.873962691901279,
+            "paired_difference_uncentered_projected_fraction": 0.017924575690116507,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 105.20120228467462,
+            "factual_centered_projected_fraction": 0.6894696324713365,
+            "reference_centered_projected_energy": 48.3620373866717,
+            "reference_centered_projected_fraction": 0.3610979545622056,
+            "paired_difference_uncentered_projected_energy": 116.34648588845504,
+            "paired_difference_uncentered_projected_fraction": 0.4278779966970098,
+            "euclidean_orthogonality_max_abs": 1.9984014443252818e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 29.850637081655233,
+            "factual_centered_projected_fraction": 0.19563567079805394,
+            "reference_centered_projected_energy": 0.009161256503096116,
+            "reference_centered_projected_fraction": 6.84030525438411e-05,
+            "paired_difference_uncentered_projected_energy": 40.00411493146722,
+            "paired_difference_uncentered_projected_fraction": 0.14711987582438557,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.5.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.0004128627094855641,
+          "max_eigenvalue": 38.82001896425946,
+          "psd_absolute_tolerance": 1.3445085504370097e-09,
+          "positive_directions": 384,
+          "trace": 152.58279310662485
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 3.8030315106335663e-06,
+          "max_eigenvalue": 59.80979510083612,
+          "psd_absolute_tolerance": 1.2873893733701364e-09,
+          "positive_directions": 384,
+          "trace": 133.9305215542019
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.0005188159094719346,
+          "max_eigenvalue": 94.65307721003829,
+          "psd_absolute_tolerance": 1.4838320264509377e-09,
+          "positive_directions": 384,
+          "trace": 271.9150944582052
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.004203535828083865,
+          "max_eigenvalue": 2879.808321724188,
+          "psd_absolute_tolerance": 7.618375017815355e-08,
+          "positive_directions": 384,
+          "trace": 13960.81986141029
+        },
+        "regularized_reference_min_eigenvalue": 0.003491577030317975,
+        "ridge_trace_scale": 0.34877739988073414,
+        "ridge_absolute": 0.0034877739988073415,
+        "selected_total_eigenvalues": [
+          38.82001896425946,
+          24.485876791839345,
+          12.213126509785724,
+          7.30215190403549,
+          7.000697408968813,
+          5.815250902766957,
+          5.051880281053446,
+          4.512199521965335
+        ],
+        "selected_generalized_eigenvalues": [
+          2879.808321724188,
+          1964.9003684663764,
+          920.5789677272951,
+          761.6835101231164,
+          642.7672446543563,
+          580.4655582726338,
+          459.94833055851177,
+          390.0476150727989
+        ],
+        "generalized_equation_relative_residual": 2.1160259640102262e-13,
+        "total_covariance_equation_relative_residual": 9.32918015884408e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 7.066916496434317e-14,
+        "factual_token_rms": 0.8010146519203228,
+        "paired_change_token_rms": 0.841494043443907,
+        "paired_change_relative_rms": 1.050535144927175,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 3.316452978260833,
+            "factual_centered_projected_fraction": 0.021735432356014717,
+            "reference_centered_projected_energy": 2.2821695744388775,
+            "reference_centered_projected_fraction": 0.01703995137146748,
+            "paired_difference_uncentered_projected_energy": 5.237722058986789,
+            "paired_difference_uncentered_projected_fraction": 0.019262343892394156,
+            "euclidean_orthogonality_max_abs": 7.771561172376096e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 105.20120228467462,
+            "factual_centered_projected_fraction": 0.6894696324713365,
+            "reference_centered_projected_energy": 48.3620373866717,
+            "reference_centered_projected_fraction": 0.3610979545622056,
+            "paired_difference_uncentered_projected_energy": 116.34648588845504,
+            "paired_difference_uncentered_projected_fraction": 0.4278779966970098,
+            "euclidean_orthogonality_max_abs": 1.9984014443252818e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 29.850637081655233,
+            "factual_centered_projected_fraction": 0.19563567079805394,
+            "reference_centered_projected_energy": 0.009161256503096116,
+            "reference_centered_projected_fraction": 6.84030525438411e-05,
+            "paired_difference_uncentered_projected_energy": 40.00411493146722,
+            "paired_difference_uncentered_projected_fraction": 0.14711987582438557,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      }
+    }
+  },
+  "0.1": {
+    "cells": 52,
+    "valid_tokens": 20280,
+    "minimum_valid_tokens_per_cell": 390,
+    "maximum_valid_tokens_per_cell": 390,
+    "moment_weighting": "one unit per physical cell, divided over its valid native tokens",
+    "center_factual_and_reference_at_weighted_corpus_mean": true,
+    "center_paired_difference": false,
+    "rank": 8,
+    "ridge_multiplier": 0.1,
+    "basis_seed": 42,
+    "target_values_used": 0,
+    "layers": {
+      "encoder.layers.0.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": -8.304406878257442e-17,
+          "max_eigenvalue": 0.6683445166351542,
+          "psd_absolute_tolerance": 1.9247453572007224e-11,
+          "positive_directions": 9,
+          "trace": 1.1044676482588354
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": -1.4903552300517757e-16,
+          "max_eigenvalue": 1.0408541706346746,
+          "psd_absolute_tolerance": 1.997945676988246e-11,
+          "positive_directions": 9,
+          "trace": 1.2130535374171634
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": -3.290783528015314e-16,
+          "max_eigenvalue": 1.4935115585522412,
+          "psd_absolute_tolerance": 1.0049468309939698e-11,
+          "positive_directions": 9,
+          "trace": 1.8415845432908542
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": -6.653401457113404e-14,
+          "max_eigenvalue": 114.13589737486868,
+          "psd_absolute_tolerance": 1.3057301847778527e-09,
+          "positive_directions": 9,
+          "trace": 239.27758681689235
+        },
+        "regularized_reference_min_eigenvalue": 0.00031589935870223726,
+        "ridge_trace_scale": 0.003158993587023863,
+        "ridge_absolute": 0.0003158993587023863,
+        "selected_total_eigenvalues": [
+          0.6683445166351542,
+          0.22514758356914003,
+          0.07281073983972043,
+          0.051549445300549536,
+          0.03851760871617884,
+          0.017874137730591884,
+          0.015419732126498789,
+          0.009494491355734946
+        ],
+        "selected_generalized_eigenvalues": [
+          114.13589737486868,
+          53.32345847394787,
+          38.71741949736966,
+          18.30673501639238,
+          8.317402940286323,
+          4.234986721077948,
+          1.3087760354819469,
+          0.5778016591768371
+        ],
+        "generalized_equation_relative_residual": 7.546976769747417e-14,
+        "total_covariance_equation_relative_residual": 5.219851494813004e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.587618925213974e-14,
+        "factual_token_rms": 0.0958396714559439,
+        "paired_change_token_rms": 0.06925166482826675,
+        "paired_change_relative_rms": 0.722578278663035,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.016495603643927208,
+            "factual_centered_projected_fraction": 0.014935343438924716,
+            "reference_centered_projected_energy": 0.020703988145155908,
+            "reference_centered_projected_fraction": 0.017067662313766375,
+            "paired_difference_uncentered_projected_energy": 0.03259482934842788,
+            "paired_difference_uncentered_projected_fraction": 0.01769933911922498,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 1.099158255273568,
+            "factual_centered_projected_fraction": 0.9951928035251756,
+            "reference_centered_projected_energy": 1.212886394614493,
+            "reference_centered_projected_fraction": 0.999862213169069,
+            "paired_difference_uncentered_projected_energy": 1.8363978879494032,
+            "paired_difference_uncentered_projected_fraction": 0.9971835909677095,
+            "euclidean_orthogonality_max_abs": 1.1102230246251565e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 0.755307971891745,
+            "factual_centered_projected_fraction": 0.6838660897695541,
+            "reference_centered_projected_energy": 0.6687658409175284,
+            "reference_centered_projected_fraction": 0.5513077702584062,
+            "paired_difference_uncentered_projected_energy": 1.1324301297611294,
+            "paired_difference_uncentered_projected_fraction": 0.6149216086151071,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.0.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": -8.304406878257442e-17,
+          "max_eigenvalue": 0.6683445166351542,
+          "psd_absolute_tolerance": 1.9247453572007224e-11,
+          "positive_directions": 9,
+          "trace": 1.1044676482588354
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": -1.4903552300517757e-16,
+          "max_eigenvalue": 1.0408541706346746,
+          "psd_absolute_tolerance": 1.997945676988246e-11,
+          "positive_directions": 9,
+          "trace": 1.2130535374171634
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": -3.290783528015314e-16,
+          "max_eigenvalue": 1.4935115585522412,
+          "psd_absolute_tolerance": 1.0049468309939698e-11,
+          "positive_directions": 9,
+          "trace": 1.8415845432908542
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": -6.653401457113404e-14,
+          "max_eigenvalue": 114.13589737486868,
+          "psd_absolute_tolerance": 1.3057301847778527e-09,
+          "positive_directions": 9,
+          "trace": 239.27758681689235
+        },
+        "regularized_reference_min_eigenvalue": 0.00031589935870223726,
+        "ridge_trace_scale": 0.003158993587023863,
+        "ridge_absolute": 0.0003158993587023863,
+        "selected_total_eigenvalues": [
+          0.6683445166351542,
+          0.22514758356914003,
+          0.07281073983972043,
+          0.051549445300549536,
+          0.03851760871617884,
+          0.017874137730591884,
+          0.015419732126498789,
+          0.009494491355734946
+        ],
+        "selected_generalized_eigenvalues": [
+          114.13589737486868,
+          53.32345847394787,
+          38.71741949736966,
+          18.30673501639238,
+          8.317402940286323,
+          4.234986721077948,
+          1.3087760354819469,
+          0.5778016591768371
+        ],
+        "generalized_equation_relative_residual": 7.546976769747417e-14,
+        "total_covariance_equation_relative_residual": 5.219851494813004e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.587618925213974e-14,
+        "factual_token_rms": 0.0958396714559439,
+        "paired_change_token_rms": 0.06925166482826675,
+        "paired_change_relative_rms": 0.722578278663035,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.02608333469524244,
+            "factual_centered_projected_fraction": 0.023616205269898254,
+            "reference_centered_projected_energy": 0.029034477957383308,
+            "reference_centered_projected_fraction": 0.023935034243586305,
+            "paired_difference_uncentered_projected_energy": 0.043646421467300384,
+            "paired_difference_uncentered_projected_fraction": 0.023700471219912384,
+            "euclidean_orthogonality_max_abs": 8.881784197001252e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 1.099158255273568,
+            "factual_centered_projected_fraction": 0.9951928035251756,
+            "reference_centered_projected_energy": 1.212886394614493,
+            "reference_centered_projected_fraction": 0.999862213169069,
+            "paired_difference_uncentered_projected_energy": 1.8363978879494032,
+            "paired_difference_uncentered_projected_fraction": 0.9971835909677095,
+            "euclidean_orthogonality_max_abs": 1.1102230246251565e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 0.755307971891745,
+            "factual_centered_projected_fraction": 0.6838660897695541,
+            "reference_centered_projected_energy": 0.6687658409175284,
+            "reference_centered_projected_fraction": 0.5513077702584062,
+            "paired_difference_uncentered_projected_energy": 1.1324301297611294,
+            "paired_difference_uncentered_projected_fraction": 0.6149216086151071,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.1.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 1.099326733613769e-09,
+          "max_eigenvalue": 14.172881961627304,
+          "psd_absolute_tolerance": 3.921090400526338e-10,
+          "positive_directions": 384,
+          "trace": 33.62672988231955
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 2.1513985887576734e-13,
+          "max_eigenvalue": 21.26149492598443,
+          "psd_absolute_tolerance": 3.9048670181214303e-10,
+          "positive_directions": 225,
+          "trace": 35.88144545613627
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 1.38674708963121e-09,
+          "max_eigenvalue": 32.381091720954615,
+          "psd_absolute_tolerance": 2.883434629398282e-10,
+          "positive_directions": 384,
+          "trace": 52.839498382589866
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 1.4840757108200716e-07,
+          "max_eigenvalue": 230.64546229526596,
+          "psd_absolute_tolerance": 3.0057563787552472e-09,
+          "positive_directions": 384,
+          "trace": 550.8106814505462
+        },
+        "regularized_reference_min_eigenvalue": 0.00934412642108396,
+        "ridge_trace_scale": 0.0934412642086882,
+        "ridge_absolute": 0.00934412642086882,
+        "selected_total_eigenvalues": [
+          14.172881961627304,
+          7.831680903201009,
+          3.9036300703894034,
+          2.0469445609972845,
+          1.410573773404191,
+          0.8983728474495236,
+          0.6509358784062779,
+          0.3939301391193115
+        ],
+        "selected_generalized_eigenvalues": [
+          230.64546229526596,
+          88.63464640895049,
+          58.7058148682535,
+          29.259299523829256,
+          25.474973798311837,
+          18.704431615081266,
+          13.499367268664372,
+          10.069822038827361
+        ],
+        "generalized_equation_relative_residual": 5.170815524427382e-14,
+        "total_covariance_equation_relative_residual": 9.253205531463724e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 5.755812493291046e-15,
+        "factual_token_rms": 0.432575684256783,
+        "paired_change_token_rms": 0.3709485953219499,
+        "paired_change_relative_rms": 0.8575345513451228,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.30843712138579754,
+            "factual_centered_projected_fraction": 0.00917237930852055,
+            "reference_centered_projected_energy": 0.3137270922479567,
+            "reference_centered_projected_fraction": 0.008743435172684902,
+            "paired_difference_uncentered_projected_energy": 0.4759461343314685,
+            "paired_difference_uncentered_projected_fraction": 0.009007393122571513,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 31.308950134594333,
+            "factual_centered_projected_fraction": 0.9310732933045662,
+            "reference_centered_projected_energy": 34.645926089737344,
+            "reference_centered_projected_fraction": 0.9655666222279339,
+            "paired_difference_uncentered_projected_energy": 50.17183175891947,
+            "paired_difference_uncentered_projected_fraction": 0.9495137784171439,
+            "euclidean_orthogonality_max_abs": 1.3322676295501878e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 5.319619971152927,
+            "factual_centered_projected_fraction": 0.15819617279971987,
+            "reference_centered_projected_energy": 0.015056939975972045,
+            "reference_centered_projected_fraction": 0.00041963025136148967,
+            "paired_difference_uncentered_projected_energy": 5.509922930397511,
+            "paired_difference_uncentered_projected_fraction": 0.1042765941966811,
+            "euclidean_orthogonality_max_abs": 5.551115123125783e-16
+          }
+        }
+      },
+      "encoder.layers.1.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 1.099326733613769e-09,
+          "max_eigenvalue": 14.172881961627304,
+          "psd_absolute_tolerance": 3.921090400526338e-10,
+          "positive_directions": 384,
+          "trace": 33.62672988231955
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 2.1513985887576734e-13,
+          "max_eigenvalue": 21.26149492598443,
+          "psd_absolute_tolerance": 3.9048670181214303e-10,
+          "positive_directions": 225,
+          "trace": 35.88144545613627
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 1.38674708963121e-09,
+          "max_eigenvalue": 32.381091720954615,
+          "psd_absolute_tolerance": 2.883434629398282e-10,
+          "positive_directions": 384,
+          "trace": 52.839498382589866
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 1.4840757108200716e-07,
+          "max_eigenvalue": 230.64546229526596,
+          "psd_absolute_tolerance": 3.0057563787552472e-09,
+          "positive_directions": 384,
+          "trace": 550.8106814505462
+        },
+        "regularized_reference_min_eigenvalue": 0.00934412642108396,
+        "ridge_trace_scale": 0.0934412642086882,
+        "ridge_absolute": 0.00934412642086882,
+        "selected_total_eigenvalues": [
+          14.172881961627304,
+          7.831680903201009,
+          3.9036300703894034,
+          2.0469445609972845,
+          1.410573773404191,
+          0.8983728474495236,
+          0.6509358784062779,
+          0.3939301391193115
+        ],
+        "selected_generalized_eigenvalues": [
+          230.64546229526596,
+          88.63464640895049,
+          58.7058148682535,
+          29.259299523829256,
+          25.474973798311837,
+          18.704431615081266,
+          13.499367268664372,
+          10.069822038827361
+        ],
+        "generalized_equation_relative_residual": 5.170815524427382e-14,
+        "total_covariance_equation_relative_residual": 9.253205531463724e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 5.755812493291046e-15,
+        "factual_token_rms": 0.432575684256783,
+        "paired_change_token_rms": 0.3709485953219499,
+        "paired_change_relative_rms": 0.8575345513451228,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.6028109789777825,
+            "factual_centered_projected_fraction": 0.017926541804314185,
+            "reference_centered_projected_energy": 0.7040893371016501,
+            "reference_centered_projected_fraction": 0.01962265812179649,
+            "paired_difference_uncentered_projected_energy": 0.8860038260655578,
+            "paired_difference_uncentered_projected_fraction": 0.01676783189065035,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 31.308950134594333,
+            "factual_centered_projected_fraction": 0.9310732933045662,
+            "reference_centered_projected_energy": 34.645926089737344,
+            "reference_centered_projected_fraction": 0.9655666222279339,
+            "paired_difference_uncentered_projected_energy": 50.17183175891947,
+            "paired_difference_uncentered_projected_fraction": 0.9495137784171439,
+            "euclidean_orthogonality_max_abs": 1.3322676295501878e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 5.319619971152927,
+            "factual_centered_projected_fraction": 0.15819617279971987,
+            "reference_centered_projected_energy": 0.015056939975972045,
+            "reference_centered_projected_fraction": 0.00041963025136148967,
+            "paired_difference_uncentered_projected_energy": 5.509922930397511,
+            "paired_difference_uncentered_projected_fraction": 0.1042765941966811,
+            "euclidean_orthogonality_max_abs": 5.551115123125783e-16
+          }
+        }
+      },
+      "encoder.layers.2.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 5.374493179439321e-06,
+          "max_eigenvalue": 65.918394771102,
+          "psd_absolute_tolerance": 1.539009333486681e-09,
+          "positive_directions": 384,
+          "trace": 135.90655553386316
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 5.381156003234516e-09,
+          "max_eigenvalue": 85.82746213155848,
+          "psd_absolute_tolerance": 1.4486820042447776e-09,
+          "positive_directions": 384,
+          "trace": 128.29291879722436
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 5.844518565885324e-06,
+          "max_eigenvalue": 127.29708558759201,
+          "psd_absolute_tolerance": 1.1363086341295175e-09,
+          "positive_directions": 384,
+          "trace": 208.23075932794484
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.00016932570450300239,
+          "max_eigenvalue": 217.7098815459778,
+          "psd_absolute_tolerance": 4.731629243345199e-09,
+          "positive_directions": 384,
+          "trace": 867.0802285638338
+        },
+        "regularized_reference_min_eigenvalue": 0.033409619651266514,
+        "ridge_trace_scale": 0.3340961427011051,
+        "ridge_absolute": 0.033409614270110514,
+        "selected_total_eigenvalues": [
+          65.918394771102,
+          26.61098923395913,
+          10.091291172856778,
+          6.885520508375964,
+          5.207189669613395,
+          4.205666872705652,
+          2.1797704824454955,
+          1.9428790147980002
+        ],
+        "selected_generalized_eigenvalues": [
+          217.7098815459778,
+          159.61958531502296,
+          113.56303008478595,
+          58.2516060678052,
+          39.853857759419824,
+          35.26257293896926,
+          28.562992268039103,
+          23.167265273916875
+        ],
+        "generalized_equation_relative_residual": 4.7478446511717174e-14,
+        "total_covariance_equation_relative_residual": 1.116709509367907e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.050201592356359e-14,
+        "factual_token_rms": 0.8569970021705672,
+        "paired_change_token_rms": 0.7363882144742154,
+        "paired_change_relative_rms": 0.8592657997742364,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 2.7024861744444335,
+            "factual_centered_projected_fraction": 0.019884884609345194,
+            "reference_centered_projected_energy": 2.250194560159053,
+            "reference_centered_projected_fraction": 0.01753950710027603,
+            "paired_difference_uncentered_projected_energy": 2.7567032689042494,
+            "paired_difference_uncentered_projected_fraction": 0.01323869383083163,
+            "euclidean_orthogonality_max_abs": 8.881784197001252e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 123.04170172585629,
+            "factual_centered_projected_fraction": 0.9053404469161063,
+            "reference_centered_projected_energy": 104.42672327588622,
+            "reference_centered_projected_fraction": 0.8139710613408034,
+            "paired_difference_uncentered_projected_energy": 168.94628313864112,
+            "paired_difference_uncentered_projected_fraction": 0.8113416273556676,
+            "euclidean_orthogonality_max_abs": 3.4416913763379853e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 25.296844013240662,
+            "factual_centered_projected_fraction": 0.1861340971660309,
+            "reference_centered_projected_energy": 0.07013539444255967,
+            "reference_centered_projected_fraction": 0.0005466817272542798,
+            "paired_difference_uncentered_projected_energy": 28.733741793662233,
+            "paired_difference_uncentered_projected_fraction": 0.1379899006582844,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.2.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 5.374493179439321e-06,
+          "max_eigenvalue": 65.918394771102,
+          "psd_absolute_tolerance": 1.539009333486681e-09,
+          "positive_directions": 384,
+          "trace": 135.90655553386316
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 5.381156003234516e-09,
+          "max_eigenvalue": 85.82746213155848,
+          "psd_absolute_tolerance": 1.4486820042447776e-09,
+          "positive_directions": 384,
+          "trace": 128.29291879722436
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 5.844518565885324e-06,
+          "max_eigenvalue": 127.29708558759201,
+          "psd_absolute_tolerance": 1.1363086341295175e-09,
+          "positive_directions": 384,
+          "trace": 208.23075932794484
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.00016932570450300239,
+          "max_eigenvalue": 217.7098815459778,
+          "psd_absolute_tolerance": 4.731629243345199e-09,
+          "positive_directions": 384,
+          "trace": 867.0802285638338
+        },
+        "regularized_reference_min_eigenvalue": 0.033409619651266514,
+        "ridge_trace_scale": 0.3340961427011051,
+        "ridge_absolute": 0.033409614270110514,
+        "selected_total_eigenvalues": [
+          65.918394771102,
+          26.61098923395913,
+          10.091291172856778,
+          6.885520508375964,
+          5.207189669613395,
+          4.205666872705652,
+          2.1797704824454955,
+          1.9428790147980002
+        ],
+        "selected_generalized_eigenvalues": [
+          217.7098815459778,
+          159.61958531502296,
+          113.56303008478595,
+          58.2516060678052,
+          39.853857759419824,
+          35.26257293896926,
+          28.562992268039103,
+          23.167265273916875
+        ],
+        "generalized_equation_relative_residual": 4.7478446511717174e-14,
+        "total_covariance_equation_relative_residual": 1.116709509367907e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.050201592356359e-14,
+        "factual_token_rms": 0.8569970021705672,
+        "paired_change_token_rms": 0.7363882144742154,
+        "paired_change_relative_rms": 0.8592657997742364,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 3.4169002246956675,
+            "factual_centered_projected_fraction": 0.025141540901198807,
+            "reference_centered_projected_energy": 3.357834833662917,
+            "reference_centered_projected_fraction": 0.026173189176327043,
+            "paired_difference_uncentered_projected_energy": 5.75279801232923,
+            "paired_difference_uncentered_projected_fraction": 0.0276270327731413,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 123.04170172585629,
+            "factual_centered_projected_fraction": 0.9053404469161063,
+            "reference_centered_projected_energy": 104.42672327588622,
+            "reference_centered_projected_fraction": 0.8139710613408034,
+            "paired_difference_uncentered_projected_energy": 168.94628313864112,
+            "paired_difference_uncentered_projected_fraction": 0.8113416273556676,
+            "euclidean_orthogonality_max_abs": 3.4416913763379853e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 25.296844013240662,
+            "factual_centered_projected_fraction": 0.1861340971660309,
+            "reference_centered_projected_energy": 0.07013539444255967,
+            "reference_centered_projected_fraction": 0.0005466817272542798,
+            "paired_difference_uncentered_projected_energy": 28.733741793662233,
+            "paired_difference_uncentered_projected_fraction": 0.1379899006582844,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.3.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 2.8725178221299166e-05,
+          "max_eigenvalue": 36.474887665562484,
+          "psd_absolute_tolerance": 1.2640833641082253e-09,
+          "positive_directions": 384,
+          "trace": 129.5329804111361
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 7.5080582114234e-08,
+          "max_eigenvalue": 51.236807183683354,
+          "psd_absolute_tolerance": 1.2070566618199078e-09,
+          "positive_directions": 384,
+          "trace": 103.55729075847763
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 3.270966648693567e-05,
+          "max_eigenvalue": 72.60675657537605,
+          "psd_absolute_tolerance": 1.1192385293362819e-09,
+          "positive_directions": 384,
+          "trace": 205.1026295433586
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0010569622507550299,
+          "max_eigenvalue": 453.18922228495217,
+          "psd_absolute_tolerance": 1.139531219928487e-08,
+          "positive_directions": 384,
+          "trace": 2088.2130442085695
+        },
+        "regularized_reference_min_eigenvalue": 0.026968119548935666,
+        "ridge_trace_scale": 0.2696804446835355,
+        "ridge_absolute": 0.026968044468353554,
+        "selected_total_eigenvalues": [
+          36.474887665562484,
+          26.825477736990557,
+          11.141726395022635,
+          8.496566861368835,
+          5.805077784289418,
+          4.862962696780076,
+          3.5620481288497774,
+          3.330010545726597
+        ],
+        "selected_generalized_eigenvalues": [
+          453.18922228495217,
+          378.8904464725314,
+          192.70294111912864,
+          133.4230502608627,
+          104.26396645344586,
+          80.69283729218381,
+          68.38023670744224,
+          57.13715393430662
+        ],
+        "generalized_equation_relative_residual": 4.0876507477901733e-14,
+        "total_covariance_equation_relative_residual": 5.658960826522078e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 7.73686670285656e-15,
+        "factual_token_rms": 0.7766878901436741,
+        "paired_change_token_rms": 0.7308361178147235,
+        "paired_change_relative_rms": 0.940964996479514,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 2.750431676040911,
+            "factual_centered_projected_fraction": 0.021233447013348065,
+            "reference_centered_projected_energy": 2.021846235514977,
+            "reference_centered_projected_fraction": 0.019523939074752784,
+            "paired_difference_uncentered_projected_energy": 4.172525004456766,
+            "paired_difference_uncentered_projected_fraction": 0.020343595856116004,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 100.49875781459042,
+            "factual_centered_projected_fraction": 0.7758545931361156,
+            "reference_centered_projected_energy": 44.18284370935465,
+            "reference_centered_projected_fraction": 0.42665121292522473,
+            "paired_difference_uncentered_projected_energy": 99.50099337670602,
+            "paired_difference_uncentered_projected_fraction": 0.48512782892269823,
+            "euclidean_orthogonality_max_abs": 2.1094237467877974e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 38.50253853849781,
+            "factual_centered_projected_fraction": 0.29724120001169757,
+            "reference_centered_projected_energy": 0.04543933894901803,
+            "reference_centered_projected_fraction": 0.00043878454733809434,
+            "paired_difference_uncentered_projected_energy": 48.41120785352553,
+            "paired_difference_uncentered_projected_fraction": 0.2360340672438401,
+            "euclidean_orthogonality_max_abs": 2.220446049250313e-16
+          }
+        }
+      },
+      "encoder.layers.3.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 2.8725178221299166e-05,
+          "max_eigenvalue": 36.474887665562484,
+          "psd_absolute_tolerance": 1.2640833641082253e-09,
+          "positive_directions": 384,
+          "trace": 129.5329804111361
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 7.5080582114234e-08,
+          "max_eigenvalue": 51.236807183683354,
+          "psd_absolute_tolerance": 1.2070566618199078e-09,
+          "positive_directions": 384,
+          "trace": 103.55729075847763
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 3.270966648693567e-05,
+          "max_eigenvalue": 72.60675657537605,
+          "psd_absolute_tolerance": 1.1192385293362819e-09,
+          "positive_directions": 384,
+          "trace": 205.1026295433586
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0010569622507550299,
+          "max_eigenvalue": 453.18922228495217,
+          "psd_absolute_tolerance": 1.139531219928487e-08,
+          "positive_directions": 384,
+          "trace": 2088.2130442085695
+        },
+        "regularized_reference_min_eigenvalue": 0.026968119548935666,
+        "ridge_trace_scale": 0.2696804446835355,
+        "ridge_absolute": 0.026968044468353554,
+        "selected_total_eigenvalues": [
+          36.474887665562484,
+          26.825477736990557,
+          11.141726395022635,
+          8.496566861368835,
+          5.805077784289418,
+          4.862962696780076,
+          3.5620481288497774,
+          3.330010545726597
+        ],
+        "selected_generalized_eigenvalues": [
+          453.18922228495217,
+          378.8904464725314,
+          192.70294111912864,
+          133.4230502608627,
+          104.26396645344586,
+          80.69283729218381,
+          68.38023670744224,
+          57.13715393430662
+        ],
+        "generalized_equation_relative_residual": 4.0876507477901733e-14,
+        "total_covariance_equation_relative_residual": 5.658960826522078e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 7.73686670285656e-15,
+        "factual_token_rms": 0.7766878901436741,
+        "paired_change_token_rms": 0.7308361178147235,
+        "paired_change_relative_rms": 0.940964996479514,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 2.685118958365406,
+            "factual_centered_projected_fraction": 0.020729230114545895,
+            "reference_centered_projected_energy": 1.9135662054079168,
+            "reference_centered_projected_fraction": 0.018478333986844515,
+            "paired_difference_uncentered_projected_energy": 3.626822936096692,
+            "paired_difference_uncentered_projected_fraction": 0.01768296654300077,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 100.49875781459042,
+            "factual_centered_projected_fraction": 0.7758545931361156,
+            "reference_centered_projected_energy": 44.18284370935465,
+            "reference_centered_projected_fraction": 0.42665121292522473,
+            "paired_difference_uncentered_projected_energy": 99.50099337670602,
+            "paired_difference_uncentered_projected_fraction": 0.48512782892269823,
+            "euclidean_orthogonality_max_abs": 2.1094237467877974e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 38.50253853849781,
+            "factual_centered_projected_fraction": 0.29724120001169757,
+            "reference_centered_projected_energy": 0.04543933894901803,
+            "reference_centered_projected_fraction": 0.00043878454733809434,
+            "paired_difference_uncentered_projected_energy": 48.41120785352553,
+            "paired_difference_uncentered_projected_fraction": 0.2360340672438401,
+            "euclidean_orthogonality_max_abs": 2.220446049250313e-16
+          }
+        }
+      },
+      "encoder.layers.4.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.00026568027118034534,
+          "max_eigenvalue": 52.12610597804436,
+          "psd_absolute_tolerance": 2.0446135767008892e-09,
+          "positive_directions": 384,
+          "trace": 226.74987047079642
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 1.7890083998114108e-06,
+          "max_eigenvalue": 89.31035917791513,
+          "psd_absolute_tolerance": 1.966329233380475e-09,
+          "positive_directions": 384,
+          "trace": 191.70763664158588
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.00030349018529491457,
+          "max_eigenvalue": 144.1436900597473,
+          "psd_absolute_tolerance": 2.201989364140188e-09,
+          "positive_directions": 384,
+          "trace": 403.5188183518696
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0024821709242824497,
+          "max_eigenvalue": 498.84195741600865,
+          "psd_absolute_tolerance": 1.2025565314096905e-08,
+          "positive_directions": 384,
+          "trace": 2203.708148904882
+        },
+        "regularized_reference_min_eigenvalue": 0.049925652717146135,
+        "ridge_trace_scale": 0.49923863708746324,
+        "ridge_absolute": 0.049923863708746324,
+        "selected_total_eigenvalues": [
+          52.12610597804436,
+          42.374917307324125,
+          18.48799797610091,
+          11.907884964921642,
+          11.085072771737643,
+          9.067122155095866,
+          7.791428502735826,
+          6.7440477093286395
+        ],
+        "selected_generalized_eigenvalues": [
+          498.84195741600865,
+          323.20902291825723,
+          156.3628602955301,
+          138.3864402802413,
+          99.39447447416238,
+          82.75326784377388,
+          71.31007228653561,
+          61.08453230094034
+        ],
+        "generalized_equation_relative_residual": 2.676291036362839e-14,
+        "total_covariance_equation_relative_residual": 1.1418318444557875e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 4.6629367034256575e-15,
+        "factual_token_rms": 0.9877892513018883,
+        "paired_change_token_rms": 1.0251001200490908,
+        "paired_change_relative_rms": 1.0377720942984827,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 4.092832871506808,
+            "factual_centered_projected_fraction": 0.018049989898600325,
+            "reference_centered_projected_energy": 3.066235594359591,
+            "reference_centered_projected_fraction": 0.015994332036402836,
+            "paired_difference_uncentered_projected_energy": 5.675307046468128,
+            "paired_difference_uncentered_projected_fraction": 0.014064541201940287,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 159.58457736528896,
+            "factual_centered_projected_fraction": 0.7037912614192307,
+            "reference_centered_projected_energy": 72.31545811411097,
+            "reference_centered_projected_fraction": 0.37721740970241585,
+            "paired_difference_uncentered_projected_energy": 171.75435886982385,
+            "paired_difference_uncentered_projected_fraction": 0.42564150928905015,
+            "euclidean_orthogonality_max_abs": 1.6653345369377348e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 61.957286247375826,
+            "factual_centered_projected_fraction": 0.2732406687542317,
+            "reference_centered_projected_energy": 0.07706235598418991,
+            "reference_centered_projected_fraction": 0.00040197854052243464,
+            "paired_difference_uncentered_projected_energy": 85.0874590308618,
+            "paired_difference_uncentered_projected_fraction": 0.2108636701960831,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.4.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.00026568027118034534,
+          "max_eigenvalue": 52.12610597804436,
+          "psd_absolute_tolerance": 2.0446135767008892e-09,
+          "positive_directions": 384,
+          "trace": 226.74987047079642
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 1.7890083998114108e-06,
+          "max_eigenvalue": 89.31035917791513,
+          "psd_absolute_tolerance": 1.966329233380475e-09,
+          "positive_directions": 384,
+          "trace": 191.70763664158588
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.00030349018529491457,
+          "max_eigenvalue": 144.1436900597473,
+          "psd_absolute_tolerance": 2.201989364140188e-09,
+          "positive_directions": 384,
+          "trace": 403.5188183518696
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0024821709242824497,
+          "max_eigenvalue": 498.84195741600865,
+          "psd_absolute_tolerance": 1.2025565314096905e-08,
+          "positive_directions": 384,
+          "trace": 2203.708148904882
+        },
+        "regularized_reference_min_eigenvalue": 0.049925652717146135,
+        "ridge_trace_scale": 0.49923863708746324,
+        "ridge_absolute": 0.049923863708746324,
+        "selected_total_eigenvalues": [
+          52.12610597804436,
+          42.374917307324125,
+          18.48799797610091,
+          11.907884964921642,
+          11.085072771737643,
+          9.067122155095866,
+          7.791428502735826,
+          6.7440477093286395
+        ],
+        "selected_generalized_eigenvalues": [
+          498.84195741600865,
+          323.20902291825723,
+          156.3628602955301,
+          138.3864402802413,
+          99.39447447416238,
+          82.75326784377388,
+          71.31007228653561,
+          61.08453230094034
+        ],
+        "generalized_equation_relative_residual": 2.676291036362839e-14,
+        "total_covariance_equation_relative_residual": 1.1418318444557875e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 4.6629367034256575e-15,
+        "factual_token_rms": 0.9877892513018883,
+        "paired_change_token_rms": 1.0251001200490908,
+        "paired_change_relative_rms": 1.0377720942984827,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 4.1186894000292895,
+            "factual_centered_projected_fraction": 0.018164020960531237,
+            "reference_centered_projected_energy": 7.1072065738807195,
+            "reference_centered_projected_fraction": 0.037073153153352266,
+            "paired_difference_uncentered_projected_energy": 10.556422871812327,
+            "paired_difference_uncentered_projected_fraction": 0.026160918380285045,
+            "euclidean_orthogonality_max_abs": 7.771561172376096e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 159.58457736528896,
+            "factual_centered_projected_fraction": 0.7037912614192307,
+            "reference_centered_projected_energy": 72.31545811411097,
+            "reference_centered_projected_fraction": 0.37721740970241585,
+            "paired_difference_uncentered_projected_energy": 171.75435886982385,
+            "paired_difference_uncentered_projected_fraction": 0.42564150928905015,
+            "euclidean_orthogonality_max_abs": 1.6653345369377348e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 61.957286247375826,
+            "factual_centered_projected_fraction": 0.2732406687542317,
+            "reference_centered_projected_energy": 0.07706235598418991,
+            "reference_centered_projected_fraction": 0.00040197854052243464,
+            "paired_difference_uncentered_projected_energy": 85.0874590308618,
+            "paired_difference_uncentered_projected_fraction": 0.2108636701960831,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          }
+        }
+      },
+      "encoder.layers.5.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.0004128627094855641,
+          "max_eigenvalue": 38.82001896425946,
+          "psd_absolute_tolerance": 1.3445085504370097e-09,
+          "positive_directions": 384,
+          "trace": 152.58279310662485
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 3.8030315106335663e-06,
+          "max_eigenvalue": 59.80979510083612,
+          "psd_absolute_tolerance": 1.2873893733701364e-09,
+          "positive_directions": 384,
+          "trace": 133.9305215542019
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.0005188159094719346,
+          "max_eigenvalue": 94.65307721003829,
+          "psd_absolute_tolerance": 1.4838320264509377e-09,
+          "positive_directions": 384,
+          "trace": 271.9150944582052
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.004063387389278713,
+          "max_eigenvalue": 465.53163417447485,
+          "psd_absolute_tolerance": 1.2026998589935626e-08,
+          "positive_directions": 384,
+          "trace": 2203.970799479963
+        },
+        "regularized_reference_min_eigenvalue": 0.034881543019584044,
+        "ridge_trace_scale": 0.34877739988073414,
+        "ridge_absolute": 0.03487773998807341,
+        "selected_total_eigenvalues": [
+          38.82001896425946,
+          24.485876791839345,
+          12.213126509785724,
+          7.30215190403549,
+          7.000697408968813,
+          5.815250902766957,
+          5.051880281053446,
+          4.512199521965335
+        ],
+        "selected_generalized_eigenvalues": [
+          465.53163417447485,
+          341.2409270228935,
+          138.8693275464462,
+          121.90406142100355,
+          104.12629000799339,
+          93.4068051797573,
+          70.51384648031893,
+          60.531156684384165
+        ],
+        "generalized_equation_relative_residual": 3.276423082760991e-14,
+        "total_covariance_equation_relative_residual": 9.32918015884408e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.0880185641326534e-14,
+        "factual_token_rms": 0.8010146519203228,
+        "paired_change_token_rms": 0.841494043443907,
+        "paired_change_relative_rms": 1.050535144927175,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 3.1087295171439786,
+            "factual_centered_projected_fraction": 0.020374050401421075,
+            "reference_centered_projected_energy": 2.1727838228412315,
+            "reference_centered_projected_fraction": 0.016223216318633556,
+            "paired_difference_uncentered_projected_energy": 4.873962691901279,
+            "paired_difference_uncentered_projected_fraction": 0.017924575690116507,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 105.20120228467462,
+            "factual_centered_projected_fraction": 0.6894696324713365,
+            "reference_centered_projected_energy": 48.3620373866717,
+            "reference_centered_projected_fraction": 0.3610979545622056,
+            "paired_difference_uncentered_projected_energy": 116.34648588845504,
+            "paired_difference_uncentered_projected_fraction": 0.4278779966970098,
+            "euclidean_orthogonality_max_abs": 1.9984014443252818e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 43.593803040448606,
+            "factual_centered_projected_fraction": 0.2857058922101738,
+            "reference_centered_projected_energy": 0.05687254870544099,
+            "reference_centered_projected_fraction": 0.00042464218047881324,
+            "paired_difference_uncentered_projected_energy": 59.35691317032674,
+            "paired_difference_uncentered_projected_fraction": 0.21829208594909472,
+            "euclidean_orthogonality_max_abs": 5.551115123125783e-16
+          }
+        }
+      },
+      "encoder.layers.5.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.0004128627094855641,
+          "max_eigenvalue": 38.82001896425946,
+          "psd_absolute_tolerance": 1.3445085504370097e-09,
+          "positive_directions": 384,
+          "trace": 152.58279310662485
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 3.8030315106335663e-06,
+          "max_eigenvalue": 59.80979510083612,
+          "psd_absolute_tolerance": 1.2873893733701364e-09,
+          "positive_directions": 384,
+          "trace": 133.9305215542019
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.0005188159094719346,
+          "max_eigenvalue": 94.65307721003829,
+          "psd_absolute_tolerance": 1.4838320264509377e-09,
+          "positive_directions": 384,
+          "trace": 271.9150944582052
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.004063387389278713,
+          "max_eigenvalue": 465.53163417447485,
+          "psd_absolute_tolerance": 1.2026998589935626e-08,
+          "positive_directions": 384,
+          "trace": 2203.970799479963
+        },
+        "regularized_reference_min_eigenvalue": 0.034881543019584044,
+        "ridge_trace_scale": 0.34877739988073414,
+        "ridge_absolute": 0.03487773998807341,
+        "selected_total_eigenvalues": [
+          38.82001896425946,
+          24.485876791839345,
+          12.213126509785724,
+          7.30215190403549,
+          7.000697408968813,
+          5.815250902766957,
+          5.051880281053446,
+          4.512199521965335
+        ],
+        "selected_generalized_eigenvalues": [
+          465.53163417447485,
+          341.2409270228935,
+          138.8693275464462,
+          121.90406142100355,
+          104.12629000799339,
+          93.4068051797573,
+          70.51384648031893,
+          60.531156684384165
+        ],
+        "generalized_equation_relative_residual": 3.276423082760991e-14,
+        "total_covariance_equation_relative_residual": 9.32918015884408e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.0880185641326534e-14,
+        "factual_token_rms": 0.8010146519203228,
+        "paired_change_token_rms": 0.841494043443907,
+        "paired_change_relative_rms": 1.050535144927175,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 3.316452978260833,
+            "factual_centered_projected_fraction": 0.021735432356014717,
+            "reference_centered_projected_energy": 2.2821695744388775,
+            "reference_centered_projected_fraction": 0.01703995137146748,
+            "paired_difference_uncentered_projected_energy": 5.237722058986789,
+            "paired_difference_uncentered_projected_fraction": 0.019262343892394156,
+            "euclidean_orthogonality_max_abs": 7.771561172376096e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 105.20120228467462,
+            "factual_centered_projected_fraction": 0.6894696324713365,
+            "reference_centered_projected_energy": 48.3620373866717,
+            "reference_centered_projected_fraction": 0.3610979545622056,
+            "paired_difference_uncentered_projected_energy": 116.34648588845504,
+            "paired_difference_uncentered_projected_fraction": 0.4278779966970098,
+            "euclidean_orthogonality_max_abs": 1.9984014443252818e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 43.593803040448606,
+            "factual_centered_projected_fraction": 0.2857058922101738,
+            "reference_centered_projected_energy": 0.05687254870544099,
+            "reference_centered_projected_fraction": 0.00042464218047881324,
+            "paired_difference_uncentered_projected_energy": 59.35691317032674,
+            "paired_difference_uncentered_projected_fraction": 0.21829208594909472,
+            "euclidean_orthogonality_max_abs": 5.551115123125783e-16
+          }
+        }
+      }
+    }
+  },
+  "1.0": {
+    "cells": 52,
+    "valid_tokens": 20280,
+    "minimum_valid_tokens_per_cell": 390,
+    "maximum_valid_tokens_per_cell": 390,
+    "moment_weighting": "one unit per physical cell, divided over its valid native tokens",
+    "center_factual_and_reference_at_weighted_corpus_mean": true,
+    "center_paired_difference": false,
+    "rank": 8,
+    "ridge_multiplier": 1.0,
+    "basis_seed": 42,
+    "target_values_used": 0,
+    "layers": {
+      "encoder.layers.0.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": -8.304406878257442e-17,
+          "max_eigenvalue": 0.6683445166351542,
+          "psd_absolute_tolerance": 1.9247453572007224e-11,
+          "positive_directions": 9,
+          "trace": 1.1044676482588354
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": -1.4903552300517757e-16,
+          "max_eigenvalue": 1.0408541706346746,
+          "psd_absolute_tolerance": 1.997945676988246e-11,
+          "positive_directions": 9,
+          "trace": 1.2130535374171634
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": -3.290783528015314e-16,
+          "max_eigenvalue": 1.4935115585522412,
+          "psd_absolute_tolerance": 1.0049468309939698e-11,
+          "positive_directions": 9,
+          "trace": 1.8415845432908542
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": -6.05491669477721e-15,
+          "max_eigenvalue": 11.98201419393975,
+          "psd_absolute_tolerance": 1.8042477326873973e-10,
+          "positive_directions": 9,
+          "trace": 33.06318935797129
+        },
+        "regularized_reference_min_eigenvalue": 0.0031589935870237136,
+        "ridge_trace_scale": 0.003158993587023863,
+        "ridge_absolute": 0.003158993587023863,
+        "selected_total_eigenvalues": [
+          0.6683445166351542,
+          0.22514758356914003,
+          0.07281073983972043,
+          0.051549445300549536,
+          0.03851760871617884,
+          0.017874137730591884,
+          0.015419732126498789,
+          0.009494491355734946
+        ],
+        "selected_generalized_eigenvalues": [
+          11.98201419393975,
+          5.9417142365476225,
+          4.389830325829386,
+          3.922852819349747,
+          3.0137668080503506,
+          1.6857127271477124,
+          1.2587798612714018,
+          0.5575189513914742
+        ],
+        "generalized_equation_relative_residual": 4.709819547853681e-15,
+        "total_covariance_equation_relative_residual": 5.219851494813004e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 2.220446049250313e-15,
+        "factual_token_rms": 0.0958396714559439,
+        "paired_change_token_rms": 0.06925166482826675,
+        "paired_change_relative_rms": 0.722578278663035,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.016495603643927208,
+            "factual_centered_projected_fraction": 0.014935343438924716,
+            "reference_centered_projected_energy": 0.020703988145155908,
+            "reference_centered_projected_fraction": 0.017067662313766375,
+            "paired_difference_uncentered_projected_energy": 0.03259482934842788,
+            "paired_difference_uncentered_projected_fraction": 0.01769933911922498,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 1.099158255273568,
+            "factual_centered_projected_fraction": 0.9951928035251756,
+            "reference_centered_projected_energy": 1.212886394614493,
+            "reference_centered_projected_fraction": 0.999862213169069,
+            "paired_difference_uncentered_projected_energy": 1.8363978879494032,
+            "paired_difference_uncentered_projected_fraction": 0.9971835909677095,
+            "euclidean_orthogonality_max_abs": 1.1102230246251565e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 0.807650332436555,
+            "factual_centered_projected_fraction": 0.7312575734651847,
+            "reference_centered_projected_energy": 0.7530346982977779,
+            "reference_centered_projected_fraction": 0.6207761447208185,
+            "paired_difference_uncentered_projected_energy": 1.2490523968402845,
+            "paired_difference_uncentered_projected_fraction": 0.6782487404071424,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.0.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": -8.304406878257442e-17,
+          "max_eigenvalue": 0.6683445166351542,
+          "psd_absolute_tolerance": 1.9247453572007224e-11,
+          "positive_directions": 9,
+          "trace": 1.1044676482588354
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": -1.4903552300517757e-16,
+          "max_eigenvalue": 1.0408541706346746,
+          "psd_absolute_tolerance": 1.997945676988246e-11,
+          "positive_directions": 9,
+          "trace": 1.2130535374171634
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": -3.290783528015314e-16,
+          "max_eigenvalue": 1.4935115585522412,
+          "psd_absolute_tolerance": 1.0049468309939698e-11,
+          "positive_directions": 9,
+          "trace": 1.8415845432908542
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": -6.05491669477721e-15,
+          "max_eigenvalue": 11.98201419393975,
+          "psd_absolute_tolerance": 1.8042477326873973e-10,
+          "positive_directions": 9,
+          "trace": 33.06318935797129
+        },
+        "regularized_reference_min_eigenvalue": 0.0031589935870237136,
+        "ridge_trace_scale": 0.003158993587023863,
+        "ridge_absolute": 0.003158993587023863,
+        "selected_total_eigenvalues": [
+          0.6683445166351542,
+          0.22514758356914003,
+          0.07281073983972043,
+          0.051549445300549536,
+          0.03851760871617884,
+          0.017874137730591884,
+          0.015419732126498789,
+          0.009494491355734946
+        ],
+        "selected_generalized_eigenvalues": [
+          11.98201419393975,
+          5.9417142365476225,
+          4.389830325829386,
+          3.922852819349747,
+          3.0137668080503506,
+          1.6857127271477124,
+          1.2587798612714018,
+          0.5575189513914742
+        ],
+        "generalized_equation_relative_residual": 4.709819547853681e-15,
+        "total_covariance_equation_relative_residual": 5.219851494813004e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 2.220446049250313e-15,
+        "factual_token_rms": 0.0958396714559439,
+        "paired_change_token_rms": 0.06925166482826675,
+        "paired_change_relative_rms": 0.722578278663035,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.02608333469524244,
+            "factual_centered_projected_fraction": 0.023616205269898254,
+            "reference_centered_projected_energy": 0.029034477957383308,
+            "reference_centered_projected_fraction": 0.023935034243586305,
+            "paired_difference_uncentered_projected_energy": 0.043646421467300384,
+            "paired_difference_uncentered_projected_fraction": 0.023700471219912384,
+            "euclidean_orthogonality_max_abs": 8.881784197001252e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 1.099158255273568,
+            "factual_centered_projected_fraction": 0.9951928035251756,
+            "reference_centered_projected_energy": 1.212886394614493,
+            "reference_centered_projected_fraction": 0.999862213169069,
+            "paired_difference_uncentered_projected_energy": 1.8363978879494032,
+            "paired_difference_uncentered_projected_fraction": 0.9971835909677095,
+            "euclidean_orthogonality_max_abs": 1.1102230246251565e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 0.807650332436555,
+            "factual_centered_projected_fraction": 0.7312575734651847,
+            "reference_centered_projected_energy": 0.7530346982977779,
+            "reference_centered_projected_fraction": 0.6207761447208185,
+            "paired_difference_uncentered_projected_energy": 1.2490523968402845,
+            "paired_difference_uncentered_projected_fraction": 0.6782487404071424,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.1.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 1.099326733613769e-09,
+          "max_eigenvalue": 14.172881961627304,
+          "psd_absolute_tolerance": 3.921090400526338e-10,
+          "positive_directions": 384,
+          "trace": 33.62672988231955
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 2.1513985887576734e-13,
+          "max_eigenvalue": 21.26149492598443,
+          "psd_absolute_tolerance": 3.9048670181214303e-10,
+          "positive_directions": 225,
+          "trace": 35.88144545613627
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 1.38674708963121e-09,
+          "max_eigenvalue": 32.381091720954615,
+          "psd_absolute_tolerance": 2.883434629398282e-10,
+          "positive_directions": 384,
+          "trace": 52.839498382589866
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 1.4840834678232045e-08,
+          "max_eigenvalue": 33.8126312485312,
+          "psd_absolute_tolerance": 4.5069788536419386e-10,
+          "positive_directions": 384,
+          "trace": 82.59126092866431
+        },
+        "regularized_reference_min_eigenvalue": 0.09344126420890334,
+        "ridge_trace_scale": 0.0934412642086882,
+        "ridge_absolute": 0.0934412642086882,
+        "selected_total_eigenvalues": [
+          14.172881961627304,
+          7.831680903201009,
+          3.9036300703894034,
+          2.0469445609972845,
+          1.410573773404191,
+          0.8983728474495236,
+          0.6509358784062779,
+          0.3939301391193115
+        ],
+        "selected_generalized_eigenvalues": [
+          33.8126312485312,
+          13.541844294028461,
+          7.541296607637021,
+          3.761226402513867,
+          3.3105116119040083,
+          2.744583180434135,
+          2.0239759936175723,
+          1.9556704627658752
+        ],
+        "generalized_equation_relative_residual": 5.664073446088984e-15,
+        "total_covariance_equation_relative_residual": 9.253205531463724e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.6653345369377348e-15,
+        "factual_token_rms": 0.432575684256783,
+        "paired_change_token_rms": 0.3709485953219499,
+        "paired_change_relative_rms": 0.8575345513451228,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.30843712138579754,
+            "factual_centered_projected_fraction": 0.00917237930852055,
+            "reference_centered_projected_energy": 0.3137270922479567,
+            "reference_centered_projected_fraction": 0.008743435172684902,
+            "paired_difference_uncentered_projected_energy": 0.4759461343314685,
+            "paired_difference_uncentered_projected_fraction": 0.009007393122571513,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 31.308950134594333,
+            "factual_centered_projected_fraction": 0.9310732933045662,
+            "reference_centered_projected_energy": 34.645926089737344,
+            "reference_centered_projected_fraction": 0.9655666222279339,
+            "paired_difference_uncentered_projected_energy": 50.17183175891947,
+            "paired_difference_uncentered_projected_fraction": 0.9495137784171439,
+            "euclidean_orthogonality_max_abs": 1.3322676295501878e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 7.685437032042531,
+            "factual_centered_projected_fraction": 0.22855142498062003,
+            "reference_centered_projected_energy": 0.6596138190404717,
+            "reference_centered_projected_fraction": 0.01838314512292502,
+            "paired_difference_uncentered_projected_energy": 8.680529567192913,
+            "paired_difference_uncentered_projected_fraction": 0.16428107444057546,
+            "euclidean_orthogonality_max_abs": 1.1102230246251565e-15
+          }
+        }
+      },
+      "encoder.layers.1.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 1.099326733613769e-09,
+          "max_eigenvalue": 14.172881961627304,
+          "psd_absolute_tolerance": 3.921090400526338e-10,
+          "positive_directions": 384,
+          "trace": 33.62672988231955
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 2.1513985887576734e-13,
+          "max_eigenvalue": 21.26149492598443,
+          "psd_absolute_tolerance": 3.9048670181214303e-10,
+          "positive_directions": 225,
+          "trace": 35.88144545613627
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 1.38674708963121e-09,
+          "max_eigenvalue": 32.381091720954615,
+          "psd_absolute_tolerance": 2.883434629398282e-10,
+          "positive_directions": 384,
+          "trace": 52.839498382589866
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 1.4840834678232045e-08,
+          "max_eigenvalue": 33.8126312485312,
+          "psd_absolute_tolerance": 4.5069788536419386e-10,
+          "positive_directions": 384,
+          "trace": 82.59126092866431
+        },
+        "regularized_reference_min_eigenvalue": 0.09344126420890334,
+        "ridge_trace_scale": 0.0934412642086882,
+        "ridge_absolute": 0.0934412642086882,
+        "selected_total_eigenvalues": [
+          14.172881961627304,
+          7.831680903201009,
+          3.9036300703894034,
+          2.0469445609972845,
+          1.410573773404191,
+          0.8983728474495236,
+          0.6509358784062779,
+          0.3939301391193115
+        ],
+        "selected_generalized_eigenvalues": [
+          33.8126312485312,
+          13.541844294028461,
+          7.541296607637021,
+          3.761226402513867,
+          3.3105116119040083,
+          2.744583180434135,
+          2.0239759936175723,
+          1.9556704627658752
+        ],
+        "generalized_equation_relative_residual": 5.664073446088984e-15,
+        "total_covariance_equation_relative_residual": 9.253205531463724e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.6653345369377348e-15,
+        "factual_token_rms": 0.432575684256783,
+        "paired_change_token_rms": 0.3709485953219499,
+        "paired_change_relative_rms": 0.8575345513451228,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 0.6028109789777825,
+            "factual_centered_projected_fraction": 0.017926541804314185,
+            "reference_centered_projected_energy": 0.7040893371016501,
+            "reference_centered_projected_fraction": 0.01962265812179649,
+            "paired_difference_uncentered_projected_energy": 0.8860038260655578,
+            "paired_difference_uncentered_projected_fraction": 0.01676783189065035,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 31.308950134594333,
+            "factual_centered_projected_fraction": 0.9310732933045662,
+            "reference_centered_projected_energy": 34.645926089737344,
+            "reference_centered_projected_fraction": 0.9655666222279339,
+            "paired_difference_uncentered_projected_energy": 50.17183175891947,
+            "paired_difference_uncentered_projected_fraction": 0.9495137784171439,
+            "euclidean_orthogonality_max_abs": 1.3322676295501878e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 7.685437032042531,
+            "factual_centered_projected_fraction": 0.22855142498062003,
+            "reference_centered_projected_energy": 0.6596138190404717,
+            "reference_centered_projected_fraction": 0.01838314512292502,
+            "paired_difference_uncentered_projected_energy": 8.680529567192913,
+            "paired_difference_uncentered_projected_fraction": 0.16428107444057546,
+            "euclidean_orthogonality_max_abs": 1.1102230246251565e-15
+          }
+        }
+      },
+      "encoder.layers.2.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 5.374493179439321e-06,
+          "max_eigenvalue": 65.918394771102,
+          "psd_absolute_tolerance": 1.539009333486681e-09,
+          "positive_directions": 384,
+          "trace": 135.90655553386316
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 5.381156003234516e-09,
+          "max_eigenvalue": 85.82746213155848,
+          "psd_absolute_tolerance": 1.4486820042447776e-09,
+          "positive_directions": 384,
+          "trace": 128.29291879722436
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 5.844518565885324e-06,
+          "max_eigenvalue": 127.29708558759201,
+          "psd_absolute_tolerance": 1.1363086341295175e-09,
+          "positive_directions": 384,
+          "trace": 208.23075932794484
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 1.747884080528047e-05,
+          "max_eigenvalue": 34.68281790095798,
+          "psd_absolute_tolerance": 7.257524094213235e-10,
+          "positive_directions": 384,
+          "trace": 132.99553550753222
+        },
+        "regularized_reference_min_eigenvalue": 0.3340961480822611,
+        "ridge_trace_scale": 0.3340961427011051,
+        "ridge_absolute": 0.3340961427011051,
+        "selected_total_eigenvalues": [
+          65.918394771102,
+          26.61098923395913,
+          10.091291172856778,
+          6.885520508375964,
+          5.207189669613395,
+          4.205666872705652,
+          2.1797704824454955,
+          1.9428790147980002
+        ],
+        "selected_generalized_eigenvalues": [
+          34.68281790095798,
+          22.190568866343334,
+          18.711281404816415,
+          9.499486414867611,
+          7.365426122189148,
+          5.062258442328855,
+          4.162582560346344,
+          3.221552719385326
+        ],
+        "generalized_equation_relative_residual": 4.738911846327943e-15,
+        "total_covariance_equation_relative_residual": 1.116709509367907e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.1102230246251565e-15,
+        "factual_token_rms": 0.8569970021705672,
+        "paired_change_token_rms": 0.7363882144742154,
+        "paired_change_relative_rms": 0.8592657997742364,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 2.7024861744444335,
+            "factual_centered_projected_fraction": 0.019884884609345194,
+            "reference_centered_projected_energy": 2.250194560159053,
+            "reference_centered_projected_fraction": 0.01753950710027603,
+            "paired_difference_uncentered_projected_energy": 2.7567032689042494,
+            "paired_difference_uncentered_projected_fraction": 0.01323869383083163,
+            "euclidean_orthogonality_max_abs": 8.881784197001252e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 123.04170172585629,
+            "factual_centered_projected_fraction": 0.9053404469161063,
+            "reference_centered_projected_energy": 104.42672327588622,
+            "reference_centered_projected_fraction": 0.8139710613408034,
+            "paired_difference_uncentered_projected_energy": 168.94628313864112,
+            "paired_difference_uncentered_projected_fraction": 0.8113416273556676,
+            "euclidean_orthogonality_max_abs": 3.4416913763379853e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 36.92370051247737,
+            "factual_centered_projected_fraction": 0.27168447002011814,
+            "reference_centered_projected_energy": 0.6898245566647896,
+            "reference_centered_projected_fraction": 0.005376949586400041,
+            "paired_difference_uncentered_projected_energy": 43.340591598181504,
+            "paired_difference_uncentered_projected_fraction": 0.2081373171670759,
+            "euclidean_orthogonality_max_abs": 8.881784197001252e-16
+          }
+        }
+      },
+      "encoder.layers.2.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 5.374493179439321e-06,
+          "max_eigenvalue": 65.918394771102,
+          "psd_absolute_tolerance": 1.539009333486681e-09,
+          "positive_directions": 384,
+          "trace": 135.90655553386316
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 5.381156003234516e-09,
+          "max_eigenvalue": 85.82746213155848,
+          "psd_absolute_tolerance": 1.4486820042447776e-09,
+          "positive_directions": 384,
+          "trace": 128.29291879722436
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 5.844518565885324e-06,
+          "max_eigenvalue": 127.29708558759201,
+          "psd_absolute_tolerance": 1.1363086341295175e-09,
+          "positive_directions": 384,
+          "trace": 208.23075932794484
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 1.747884080528047e-05,
+          "max_eigenvalue": 34.68281790095798,
+          "psd_absolute_tolerance": 7.257524094213235e-10,
+          "positive_directions": 384,
+          "trace": 132.99553550753222
+        },
+        "regularized_reference_min_eigenvalue": 0.3340961480822611,
+        "ridge_trace_scale": 0.3340961427011051,
+        "ridge_absolute": 0.3340961427011051,
+        "selected_total_eigenvalues": [
+          65.918394771102,
+          26.61098923395913,
+          10.091291172856778,
+          6.885520508375964,
+          5.207189669613395,
+          4.205666872705652,
+          2.1797704824454955,
+          1.9428790147980002
+        ],
+        "selected_generalized_eigenvalues": [
+          34.68281790095798,
+          22.190568866343334,
+          18.711281404816415,
+          9.499486414867611,
+          7.365426122189148,
+          5.062258442328855,
+          4.162582560346344,
+          3.221552719385326
+        ],
+        "generalized_equation_relative_residual": 4.738911846327943e-15,
+        "total_covariance_equation_relative_residual": 1.116709509367907e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.1102230246251565e-15,
+        "factual_token_rms": 0.8569970021705672,
+        "paired_change_token_rms": 0.7363882144742154,
+        "paired_change_relative_rms": 0.8592657997742364,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 3.4169002246956675,
+            "factual_centered_projected_fraction": 0.025141540901198807,
+            "reference_centered_projected_energy": 3.357834833662917,
+            "reference_centered_projected_fraction": 0.026173189176327043,
+            "paired_difference_uncentered_projected_energy": 5.75279801232923,
+            "paired_difference_uncentered_projected_fraction": 0.0276270327731413,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 123.04170172585629,
+            "factual_centered_projected_fraction": 0.9053404469161063,
+            "reference_centered_projected_energy": 104.42672327588622,
+            "reference_centered_projected_fraction": 0.8139710613408034,
+            "paired_difference_uncentered_projected_energy": 168.94628313864112,
+            "paired_difference_uncentered_projected_fraction": 0.8113416273556676,
+            "euclidean_orthogonality_max_abs": 3.4416913763379853e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 36.92370051247737,
+            "factual_centered_projected_fraction": 0.27168447002011814,
+            "reference_centered_projected_energy": 0.6898245566647896,
+            "reference_centered_projected_fraction": 0.005376949586400041,
+            "paired_difference_uncentered_projected_energy": 43.340591598181504,
+            "paired_difference_uncentered_projected_fraction": 0.2081373171670759,
+            "euclidean_orthogonality_max_abs": 8.881784197001252e-16
+          }
+        }
+      },
+      "encoder.layers.3.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 2.8725178221299166e-05,
+          "max_eigenvalue": 36.474887665562484,
+          "psd_absolute_tolerance": 1.2640833641082253e-09,
+          "positive_directions": 384,
+          "trace": 129.5329804111361
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 7.5080582114234e-08,
+          "max_eigenvalue": 51.236807183683354,
+          "psd_absolute_tolerance": 1.2070566618199078e-09,
+          "positive_directions": 384,
+          "trace": 103.55729075847763
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 3.270966648693567e-05,
+          "max_eigenvalue": 72.60675657537605,
+          "psd_absolute_tolerance": 1.1192385293362819e-09,
+          "positive_directions": 384,
+          "trace": 205.1026295433586
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.00012123006290771717,
+          "max_eigenvalue": 62.8054479383641,
+          "psd_absolute_tolerance": 1.606072121120331e-09,
+          "positive_directions": 384,
+          "trace": 294.3158287031114
+        },
+        "regularized_reference_min_eigenvalue": 0.26968051976411767,
+        "ridge_trace_scale": 0.2696804446835355,
+        "ridge_absolute": 0.2696804446835355,
+        "selected_total_eigenvalues": [
+          36.474887665562484,
+          26.825477736990557,
+          11.141726395022635,
+          8.496566861368835,
+          5.805077784289418,
+          4.862962696780076,
+          3.5620481288497774,
+          3.330010545726597
+        ],
+        "selected_generalized_eigenvalues": [
+          62.8054479383641,
+          59.404865907289164,
+          26.78015998258187,
+          19.473611800198416,
+          14.807480131797881,
+          10.749565593820611,
+          9.502635293075675,
+          8.258983925985332
+        ],
+        "generalized_equation_relative_residual": 7.030124667627259e-15,
+        "total_covariance_equation_relative_residual": 5.658960826522078e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.6132928326584306e-15,
+        "factual_token_rms": 0.7766878901436741,
+        "paired_change_token_rms": 0.7308361178147235,
+        "paired_change_relative_rms": 0.940964996479514,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 2.750431676040911,
+            "factual_centered_projected_fraction": 0.021233447013348065,
+            "reference_centered_projected_energy": 2.021846235514977,
+            "reference_centered_projected_fraction": 0.019523939074752784,
+            "paired_difference_uncentered_projected_energy": 4.172525004456766,
+            "paired_difference_uncentered_projected_fraction": 0.020343595856116004,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 100.49875781459042,
+            "factual_centered_projected_fraction": 0.7758545931361156,
+            "reference_centered_projected_energy": 44.18284370935465,
+            "reference_centered_projected_fraction": 0.42665121292522473,
+            "paired_difference_uncentered_projected_energy": 99.50099337670602,
+            "paired_difference_uncentered_projected_fraction": 0.48512782892269823,
+            "euclidean_orthogonality_max_abs": 2.1094237467877974e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 52.67604216136762,
+            "factual_centered_projected_fraction": 0.40666123788840886,
+            "reference_centered_projected_energy": 0.41036368864167283,
+            "reference_centered_projected_fraction": 0.003962673083044892,
+            "paired_difference_uncentered_projected_energy": 68.3818015059993,
+            "paired_difference_uncentered_projected_fraction": 0.3334028513346945,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.3.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 2.8725178221299166e-05,
+          "max_eigenvalue": 36.474887665562484,
+          "psd_absolute_tolerance": 1.2640833641082253e-09,
+          "positive_directions": 384,
+          "trace": 129.5329804111361
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 7.5080582114234e-08,
+          "max_eigenvalue": 51.236807183683354,
+          "psd_absolute_tolerance": 1.2070566618199078e-09,
+          "positive_directions": 384,
+          "trace": 103.55729075847763
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 3.270966648693567e-05,
+          "max_eigenvalue": 72.60675657537605,
+          "psd_absolute_tolerance": 1.1192385293362819e-09,
+          "positive_directions": 384,
+          "trace": 205.1026295433586
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.00012123006290771717,
+          "max_eigenvalue": 62.8054479383641,
+          "psd_absolute_tolerance": 1.606072121120331e-09,
+          "positive_directions": 384,
+          "trace": 294.3158287031114
+        },
+        "regularized_reference_min_eigenvalue": 0.26968051976411767,
+        "ridge_trace_scale": 0.2696804446835355,
+        "ridge_absolute": 0.2696804446835355,
+        "selected_total_eigenvalues": [
+          36.474887665562484,
+          26.825477736990557,
+          11.141726395022635,
+          8.496566861368835,
+          5.805077784289418,
+          4.862962696780076,
+          3.5620481288497774,
+          3.330010545726597
+        ],
+        "selected_generalized_eigenvalues": [
+          62.8054479383641,
+          59.404865907289164,
+          26.78015998258187,
+          19.473611800198416,
+          14.807480131797881,
+          10.749565593820611,
+          9.502635293075675,
+          8.258983925985332
+        ],
+        "generalized_equation_relative_residual": 7.030124667627259e-15,
+        "total_covariance_equation_relative_residual": 5.658960826522078e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.6132928326584306e-15,
+        "factual_token_rms": 0.7766878901436741,
+        "paired_change_token_rms": 0.7308361178147235,
+        "paired_change_relative_rms": 0.940964996479514,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 2.685118958365406,
+            "factual_centered_projected_fraction": 0.020729230114545895,
+            "reference_centered_projected_energy": 1.9135662054079168,
+            "reference_centered_projected_fraction": 0.018478333986844515,
+            "paired_difference_uncentered_projected_energy": 3.626822936096692,
+            "paired_difference_uncentered_projected_fraction": 0.01768296654300077,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 100.49875781459042,
+            "factual_centered_projected_fraction": 0.7758545931361156,
+            "reference_centered_projected_energy": 44.18284370935465,
+            "reference_centered_projected_fraction": 0.42665121292522473,
+            "paired_difference_uncentered_projected_energy": 99.50099337670602,
+            "paired_difference_uncentered_projected_fraction": 0.48512782892269823,
+            "euclidean_orthogonality_max_abs": 2.1094237467877974e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 52.67604216136762,
+            "factual_centered_projected_fraction": 0.40666123788840886,
+            "reference_centered_projected_energy": 0.41036368864167283,
+            "reference_centered_projected_fraction": 0.003962673083044892,
+            "paired_difference_uncentered_projected_energy": 68.3818015059993,
+            "paired_difference_uncentered_projected_fraction": 0.3334028513346945,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.4.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.00026568027118034534,
+          "max_eigenvalue": 52.12610597804436,
+          "psd_absolute_tolerance": 2.0446135767008892e-09,
+          "positive_directions": 384,
+          "trace": 226.74987047079642
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 1.7890083998114108e-06,
+          "max_eigenvalue": 89.31035917791513,
+          "psd_absolute_tolerance": 1.966329233380475e-09,
+          "positive_directions": 384,
+          "trace": 191.70763664158588
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.00030349018529491457,
+          "max_eigenvalue": 144.1436900597473,
+          "psd_absolute_tolerance": 2.201989364140188e-09,
+          "positive_directions": 384,
+          "trace": 403.5188183518696
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0006065263092214587,
+          "max_eigenvalue": 73.98184447577931,
+          "psd_absolute_tolerance": 1.687468545649904e-09,
+          "positive_directions": 384,
+          "trace": 309.23188124138755
+        },
+        "regularized_reference_min_eigenvalue": 0.49924042609586305,
+        "ridge_trace_scale": 0.49923863708746324,
+        "ridge_absolute": 0.49923863708746324,
+        "selected_total_eigenvalues": [
+          52.12610597804436,
+          42.374917307324125,
+          18.48799797610091,
+          11.907884964921642,
+          11.085072771737643,
+          9.067122155095866,
+          7.791428502735826,
+          6.7440477093286395
+        ],
+        "selected_generalized_eigenvalues": [
+          73.98184447577931,
+          45.504297917020516,
+          20.620670110980875,
+          19.241781054096236,
+          14.614582130671515,
+          12.748863361315145,
+          9.392586606659924,
+          8.684506696487478
+        ],
+        "generalized_equation_relative_residual": 3.928847727699954e-15,
+        "total_covariance_equation_relative_residual": 1.1418318444557875e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.9984014443252818e-15,
+        "factual_token_rms": 0.9877892513018883,
+        "paired_change_token_rms": 1.0251001200490908,
+        "paired_change_relative_rms": 1.0377720942984827,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 4.092832871506808,
+            "factual_centered_projected_fraction": 0.018049989898600325,
+            "reference_centered_projected_energy": 3.066235594359591,
+            "reference_centered_projected_fraction": 0.015994332036402836,
+            "paired_difference_uncentered_projected_energy": 5.675307046468128,
+            "paired_difference_uncentered_projected_fraction": 0.014064541201940287,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 159.58457736528896,
+            "factual_centered_projected_fraction": 0.7037912614192307,
+            "reference_centered_projected_energy": 72.31545811411097,
+            "reference_centered_projected_fraction": 0.37721740970241585,
+            "paired_difference_uncentered_projected_energy": 171.75435886982385,
+            "paired_difference_uncentered_projected_fraction": 0.42564150928905015,
+            "euclidean_orthogonality_max_abs": 1.6653345369377348e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 83.8902229271179,
+            "factual_centered_projected_fraction": 0.36996811840702815,
+            "reference_centered_projected_energy": 0.7483320371304504,
+            "reference_centered_projected_fraction": 0.0039035066637930667,
+            "paired_difference_uncentered_projected_energy": 123.29847146731247,
+            "paired_difference_uncentered_projected_fraction": 0.305558169432871,
+            "euclidean_orthogonality_max_abs": 5.551115123125783e-16
+          }
+        }
+      },
+      "encoder.layers.4.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.00026568027118034534,
+          "max_eigenvalue": 52.12610597804436,
+          "psd_absolute_tolerance": 2.0446135767008892e-09,
+          "positive_directions": 384,
+          "trace": 226.74987047079642
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 1.7890083998114108e-06,
+          "max_eigenvalue": 89.31035917791513,
+          "psd_absolute_tolerance": 1.966329233380475e-09,
+          "positive_directions": 384,
+          "trace": 191.70763664158588
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.00030349018529491457,
+          "max_eigenvalue": 144.1436900597473,
+          "psd_absolute_tolerance": 2.201989364140188e-09,
+          "positive_directions": 384,
+          "trace": 403.5188183518696
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.0006065263092214587,
+          "max_eigenvalue": 73.98184447577931,
+          "psd_absolute_tolerance": 1.687468545649904e-09,
+          "positive_directions": 384,
+          "trace": 309.23188124138755
+        },
+        "regularized_reference_min_eigenvalue": 0.49924042609586305,
+        "ridge_trace_scale": 0.49923863708746324,
+        "ridge_absolute": 0.49923863708746324,
+        "selected_total_eigenvalues": [
+          52.12610597804436,
+          42.374917307324125,
+          18.48799797610091,
+          11.907884964921642,
+          11.085072771737643,
+          9.067122155095866,
+          7.791428502735826,
+          6.7440477093286395
+        ],
+        "selected_generalized_eigenvalues": [
+          73.98184447577931,
+          45.504297917020516,
+          20.620670110980875,
+          19.241781054096236,
+          14.614582130671515,
+          12.748863361315145,
+          9.392586606659924,
+          8.684506696487478
+        ],
+        "generalized_equation_relative_residual": 3.928847727699954e-15,
+        "total_covariance_equation_relative_residual": 1.1418318444557875e-15,
+        "pre_qr_reference_metric_orthogonality_max_abs": 1.9984014443252818e-15,
+        "factual_token_rms": 0.9877892513018883,
+        "paired_change_token_rms": 1.0251001200490908,
+        "paired_change_relative_rms": 1.0377720942984827,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 4.1186894000292895,
+            "factual_centered_projected_fraction": 0.018164020960531237,
+            "reference_centered_projected_energy": 7.1072065738807195,
+            "reference_centered_projected_fraction": 0.037073153153352266,
+            "paired_difference_uncentered_projected_energy": 10.556422871812327,
+            "paired_difference_uncentered_projected_fraction": 0.026160918380285045,
+            "euclidean_orthogonality_max_abs": 7.771561172376096e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 159.58457736528896,
+            "factual_centered_projected_fraction": 0.7037912614192307,
+            "reference_centered_projected_energy": 72.31545811411097,
+            "reference_centered_projected_fraction": 0.37721740970241585,
+            "paired_difference_uncentered_projected_energy": 171.75435886982385,
+            "paired_difference_uncentered_projected_fraction": 0.42564150928905015,
+            "euclidean_orthogonality_max_abs": 1.6653345369377348e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 83.8902229271179,
+            "factual_centered_projected_fraction": 0.36996811840702815,
+            "reference_centered_projected_energy": 0.7483320371304504,
+            "reference_centered_projected_fraction": 0.0039035066637930667,
+            "paired_difference_uncentered_projected_energy": 123.29847146731247,
+            "paired_difference_uncentered_projected_fraction": 0.305558169432871,
+            "euclidean_orthogonality_max_abs": 5.551115123125783e-16
+          }
+        }
+      },
+      "encoder.layers.5.self_attn.q_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.0004128627094855641,
+          "max_eigenvalue": 38.82001896425946,
+          "psd_absolute_tolerance": 1.3445085504370097e-09,
+          "positive_directions": 384,
+          "trace": 152.58279310662485
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 3.8030315106335663e-06,
+          "max_eigenvalue": 59.80979510083612,
+          "psd_absolute_tolerance": 1.2873893733701364e-09,
+          "positive_directions": 384,
+          "trace": 133.9305215542019
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.0005188159094719346,
+          "max_eigenvalue": 94.65307721003829,
+          "psd_absolute_tolerance": 1.4838320264509377e-09,
+          "positive_directions": 384,
+          "trace": 271.9150944582052
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.001483850489104302,
+          "max_eigenvalue": 71.15708000805809,
+          "psd_absolute_tolerance": 1.696192280035459e-09,
+          "positive_directions": 384,
+          "trace": 310.8305224738121
+        },
+        "regularized_reference_min_eigenvalue": 0.3487812029122448,
+        "ridge_trace_scale": 0.34877739988073414,
+        "ridge_absolute": 0.34877739988073414,
+        "selected_total_eigenvalues": [
+          38.82001896425946,
+          24.485876791839345,
+          12.213126509785724,
+          7.30215190403549,
+          7.000697408968813,
+          5.815250902766957,
+          5.051880281053446,
+          4.512199521965335
+        ],
+        "selected_generalized_eigenvalues": [
+          71.15708000805809,
+          48.38917994573721,
+          18.0978111912477,
+          17.28948939432915,
+          16.146654659118305,
+          12.218514715720467,
+          9.129613116851353,
+          8.146239277882989
+        ],
+        "generalized_equation_relative_residual": 4.931054864067152e-15,
+        "total_covariance_equation_relative_residual": 9.32918015884408e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 2.6645352591003757e-15,
+        "factual_token_rms": 0.8010146519203228,
+        "paired_change_token_rms": 0.841494043443907,
+        "paired_change_relative_rms": 1.050535144927175,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 3.1087295171439786,
+            "factual_centered_projected_fraction": 0.020374050401421075,
+            "reference_centered_projected_energy": 2.1727838228412315,
+            "reference_centered_projected_fraction": 0.016223216318633556,
+            "paired_difference_uncentered_projected_energy": 4.873962691901279,
+            "paired_difference_uncentered_projected_fraction": 0.017924575690116507,
+            "euclidean_orthogonality_max_abs": 4.440892098500626e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 105.20120228467462,
+            "factual_centered_projected_fraction": 0.6894696324713365,
+            "reference_centered_projected_energy": 48.3620373866717,
+            "reference_centered_projected_fraction": 0.3610979545622056,
+            "paired_difference_uncentered_projected_energy": 116.34648588845504,
+            "paired_difference_uncentered_projected_fraction": 0.4278779966970098,
+            "euclidean_orthogonality_max_abs": 1.9984014443252818e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 57.21623848626783,
+            "factual_centered_projected_fraction": 0.3749848676992374,
+            "reference_centered_projected_energy": 0.4457126430086806,
+            "reference_centered_projected_fraction": 0.0033279392765472055,
+            "paired_difference_uncentered_projected_energy": 82.95501567881865,
+            "paired_difference_uncentered_projected_fraction": 0.30507690587794595,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      },
+      "encoder.layers.5.self_attn.v_proj": {
+        "factual_centered_covariance": {
+          "min_eigenvalue": 0.0004128627094855641,
+          "max_eigenvalue": 38.82001896425946,
+          "psd_absolute_tolerance": 1.3445085504370097e-09,
+          "positive_directions": 384,
+          "trace": 152.58279310662485
+        },
+        "reference_centered_covariance": {
+          "min_eigenvalue": 3.8030315106335663e-06,
+          "max_eigenvalue": 59.80979510083612,
+          "psd_absolute_tolerance": 1.2873893733701364e-09,
+          "positive_directions": 384,
+          "trace": 133.9305215542019
+        },
+        "paired_difference_uncentered_moment": {
+          "min_eigenvalue": 0.0005188159094719346,
+          "max_eigenvalue": 94.65307721003829,
+          "psd_absolute_tolerance": 1.4838320264509377e-09,
+          "positive_directions": 384,
+          "trace": 271.9150944582052
+        },
+        "generalized_spectrum": {
+          "min_eigenvalue": 0.001483850489104302,
+          "max_eigenvalue": 71.15708000805809,
+          "psd_absolute_tolerance": 1.696192280035459e-09,
+          "positive_directions": 384,
+          "trace": 310.8305224738121
+        },
+        "regularized_reference_min_eigenvalue": 0.3487812029122448,
+        "ridge_trace_scale": 0.34877739988073414,
+        "ridge_absolute": 0.34877739988073414,
+        "selected_total_eigenvalues": [
+          38.82001896425946,
+          24.485876791839345,
+          12.213126509785724,
+          7.30215190403549,
+          7.000697408968813,
+          5.815250902766957,
+          5.051880281053446,
+          4.512199521965335
+        ],
+        "selected_generalized_eigenvalues": [
+          71.15708000805809,
+          48.38917994573721,
+          18.0978111912477,
+          17.28948939432915,
+          16.146654659118305,
+          12.218514715720467,
+          9.129613116851353,
+          8.146239277882989
+        ],
+        "generalized_equation_relative_residual": 4.931054864067152e-15,
+        "total_covariance_equation_relative_residual": 9.32918015884408e-16,
+        "pre_qr_reference_metric_orthogonality_max_abs": 2.6645352591003757e-15,
+        "factual_token_rms": 0.8010146519203228,
+        "paired_change_token_rms": 0.841494043443907,
+        "paired_change_relative_rms": 1.050535144927175,
+        "projection_energies": {
+          "random_fixed": {
+            "factual_centered_projected_energy": 3.316452978260833,
+            "factual_centered_projected_fraction": 0.021735432356014717,
+            "reference_centered_projected_energy": 2.2821695744388775,
+            "reference_centered_projected_fraction": 0.01703995137146748,
+            "paired_difference_uncentered_projected_energy": 5.237722058986789,
+            "paired_difference_uncentered_projected_fraction": 0.019262343892394156,
+            "euclidean_orthogonality_max_abs": 7.771561172376096e-16
+          },
+          "total_activation_covariance": {
+            "factual_centered_projected_energy": 105.20120228467462,
+            "factual_centered_projected_fraction": 0.6894696324713365,
+            "reference_centered_projected_energy": 48.3620373866717,
+            "reference_centered_projected_fraction": 0.3610979545622056,
+            "paired_difference_uncentered_projected_energy": 116.34648588845504,
+            "paired_difference_uncentered_projected_fraction": 0.4278779966970098,
+            "euclidean_orthogonality_max_abs": 1.9984014443252818e-15
+          },
+          "self_reference_generalized_eigen": {
+            "factual_centered_projected_energy": 57.21623848626783,
+            "factual_centered_projected_fraction": 0.3749848676992374,
+            "reference_centered_projected_energy": 0.4457126430086806,
+            "reference_centered_projected_fraction": 0.0033279392765472055,
+            "paired_difference_uncentered_projected_energy": 82.95501567881865,
+            "paired_difference_uncentered_projected_fraction": 0.30507690587794595,
+            "euclidean_orthogonality_max_abs": 6.661338147750939e-16
+          }
+        }
+      }
+    }
+  }
+}

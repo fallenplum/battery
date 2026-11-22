@@ -1,0 +1,135 @@
+{
+  "status": "REGISTERED_FIT_AND_INNER_VALIDATION_ONLY",
+  "study_id": "spectral_mapper_budget_v1",
+  "implementation_sha256": "4c1a916ebedc600dbb34cc98f3de3d8e89225cd030d73b00b22f908bef3eeffd",
+  "old_run_identity_sha256": "77d476e2a06b64a5e7688c62e4215d0e4999555d669f45612e04837314907822",
+  "old_plan_sha256": "94e617c065d005f63396ffd7fc4bff173f960e3d74628e87684235720ce75438",
+  "old_hyperparameters_sha256": "7be1970e12a4f504fd6ad41ac833f2912ed53d1accd9d0a94f27fc5dbd95494e",
+  "old_development_lock_sha256": "751e84d5934af573a6db611d762066fd5fbcc28bfaeef1c4d900f7115d0146c5",
+  "meta_training_seed": 42,
+  "outer_objective": "exact_masked_cell_macro_MAE",
+  "support_sgd_steps": 3,
+  "old_schedule_repetitions": 8,
+  "schedule": "Repeat the original ordered 32 episodes eight times with one uninterrupted Adam",
+  "milestones": [
+    0,
+    32,
+    64,
+    128,
+    256
+  ],
+  "methods": [
+    "ROTATION_TRUE",
+    "ROTATION_CONST",
+    "ROTATION_SHUFFLED",
+    "GAIN"
+  ],
+  "fit_probe_episodes": {
+    "0": {
+      "draw": 3,
+      "support": [
+        "MATR_b1c43",
+        "MATR_b4c34",
+        "MATR_b2c6"
+      ],
+      "query": [
+        "MATR_b1c3",
+        "MATR_b1c33",
+        "MATR_b4c14"
+      ],
+      "donors": {
+        "support": [
+          "MATR_b4c34",
+          "MATR_b2c6",
+          "MATR_b1c43"
+        ],
+        "query": [
+          "MATR_b1c33",
+          "MATR_b4c14",
+          "MATR_b1c3"
+        ],
+        "anchor": [
+          "MATR_b4c42",
+          "MATR_b4c33",
+          "MATR_b2c42",
+          "MATR_b2c12",
+          "MATR_b3c24",
+          "MATR_b2c32",
+          "MATR_b1c31",
+          "MATR_b1c25"
+        ]
+      }
+    },
+    "1": {
+      "draw": 0,
+      "support": [
+        "MATR_b4c12",
+        "MATR_b1c39",
+        "MATR_b1c16"
+      ],
+      "query": [
+        "MATR_b1c34",
+        "MATR_b4c35",
+        "MATR_b4c2"
+      ],
+      "donors": {
+        "support": [
+          "MATR_b1c39",
+          "MATR_b1c16",
+          "MATR_b4c12"
+        ],
+        "query": [
+          "MATR_b4c35",
+          "MATR_b4c2",
+          "MATR_b1c34"
+        ],
+        "anchor": [
+          "MATR_b3c29",
+          "MATR_b4c39",
+          "MATR_b4c28",
+          "MATR_b2c10",
+          "MATR_b1c0",
+          "MATR_b2c2",
+          "MATR_b2c23",
+          "MATR_b2c5"
+        ]
+      }
+    },
+    "2": {
+      "draw": 3,
+      "support": [
+        "MATR_b4c1",
+        "MATR_b1c14",
+        "MATR_b2c40"
+      ],
+      "query": [
+        "MATR_b1c9",
+        "MATR_b2c27",
+        "MATR_b1c44"
+      ],
+      "donors": {
+        "support": [
+          "MATR_b1c14",
+          "MATR_b2c40",
+          "MATR_b4c1"
+        ],
+        "query": [
+          "MATR_b2c27",
+          "MATR_b1c44",
+          "MATR_b1c9"
+        ],
+        "anchor": [
+          "MATR_b1c24",
+          "MATR_b2c4",
+          "MATR_b1c11",
+          "MATR_b1c39",
+          "MATR_b4c20",
+          "MATR_b1c31",
+          "MATR_b4c28",
+          "MATR_b2c34"
+        ]
+      }
+    }
+  },
+  "output_fit_and_inner_validation_only": true
+}
