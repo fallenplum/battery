@@ -1,0 +1,61 @@
+{
+  "status": "COMPLETE_SOURCE_HEAD_BRIDGE_TEACHER_ABLATION",
+  "domain": "MATR",
+  "folds": [
+    0,
+    1,
+    2
+  ],
+  "methods": [
+    "WARMUP_ONLY_12",
+    "FULL_FT_12",
+    "HEAD_ONLY",
+    "BRIDGE_ONLY",
+    "HEAD_BRIDGE",
+    "HEAD_LATE_BACKBONE",
+    "HEAD_ALL_BACKBONE"
+  ],
+  "input_channels": 12,
+  "epoch": 8,
+  "definition": "HEAD_ALL_BACKBONE includes Head plus bridge.backbone.module parameters and excludes fusion12",
+  "target_future_labels_read": 0,
+  "outer_labels_read": 0,
+  "seed": 42,
+  "private_checkpoint_hashes": [
+    {
+      "fold": 0,
+      "epoch": 0,
+      "sha256": "52a90b3625083daf7d9a6d95a167123c88ccfdbb049cf963619209ef551ed1e2"
+    },
+    {
+      "fold": 0,
+      "epoch": 8,
+      "sha256": "d195d99fd4c9a5d8979ca6e80a6b29e2a83ddf93862e2dba2af4f17ac013ad9b"
+    },
+    {
+      "fold": 1,
+      "epoch": 0,
+      "sha256": "dee0de49228d1c54b7682ff0402c94fe71d9d07bb212f9fe4446323db78df0cf"
+    },
+    {
+      "fold": 1,
+      "epoch": 8,
+      "sha256": "95b0b07433094e8fd6abbd8e632657ff636b57f726a9ee42423eed7e1ea17fa3"
+    },
+    {
+      "fold": 2,
+      "epoch": 0,
+      "sha256": "e891bdc9b400bd3241735676bc3a16d25faec22d185c76c432299fcfb530f626"
+    },
+    {
+      "fold": 2,
+      "epoch": 8,
+      "sha256": "4594341b544cf466f65d919fb95303fc2ff6c646f314232de412776d0a48c95f"
+    }
+  ],
+  "files": {
+    "HEAD_BRIDGE_TEACHER_SCORES.csv": "b77d59dcbc58a6500688306ca3e7a5b3d9afa92647a4e522796c94e98ec2d346",
+    "HEAD_BRIDGE_TEACHER_CELL.csv": "ac11977bb674c7b6e89ad0c1aab51bde985f8275887806288352eec6c2a2b385",
+    "HEAD_BRIDGE_TEACHER_SUMMARY.csv": "8ca474e05344a1db5c4b4c27d1159042e593431fda39de93390274dadb5cee7d"
+  }
+}
