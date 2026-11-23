@@ -1,0 +1,57 @@
+{
+  "study_id": "MATR_HEAD_AWARE_SEED3407_SOURCE_V1",
+  "parent_revision": "5c0426cc09d3d0c7c0a9c112522f5408157342a1",
+  "parent_plan": "results/drs_peft/spectral_objective_v1/REGISTERED_EPISODES.json",
+  "source_registry": "configs/drs_peft/onesided_fewshot_v1/EPISODES.json",
+  "domain": "MATR",
+  "seed": 3407,
+  "folds": [
+    0,
+    1,
+    2
+  ],
+  "minimum_tuning_cells": 10,
+  "prefix": [
+    1,
+    100
+  ],
+  "future_grid": [
+    101,
+    5000
+  ],
+  "train_objective": "equal_cell_MAE_on_all_observed_future_points",
+  "warmup_epochs": 6,
+  "warmup_lr": 0.0003,
+  "warmup_view_weights": {
+    "12": 0.5,
+    "30": 0.5
+  },
+  "adapter_epoch_checkpoints": [
+    2,
+    4,
+    8
+  ],
+  "adapter_rates": [
+    0.0001,
+    0.001
+  ],
+  "self_reference_ridge_multipliers": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "train_batch_size": 8,
+  "activation_batch_size": 4,
+  "methods": [
+    "LORA_12",
+    "LORA_30",
+    "RANDOM_30",
+    "VARIANCE_30",
+    "SELF_REFERENCE_30"
+  ],
+  "lora_rank": 4,
+  "fixed_input_rank": 8,
+  "expected_adapter_parameters": 36864,
+  "supports_at_inference": 0,
+  "target_future_label_access": false
+}

@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETE_SOURCE_HEAD_BRIDGE_AWARE_PEFT",
+  "domain": "MATR",
+  "folds": [
+    0,
+    1,
+    2
+  ],
+  "methods": [
+    "HEAD_ONLY_TRAIN",
+    "BRIDGE12_ONLY_TRAIN",
+    "HEAD_BRIDGE_TRAIN",
+    "HEAD_LORA",
+    "HEAD_BRIDGE_LORA",
+    "BACKBONE_ONLY"
+  ],
+  "input_channels": 12,
+  "epochs": 8,
+  "learning_rates": [
+    0.0001,
+    0.001
+  ],
+  "target_future_labels_read": 0,
+  "outer_labels_read": 0,
+  "seed": 123,
+  "files": {
+    "PEFT_SCORES.csv": "d1d97ab797e9dc3e23aaca8d457d0b640bc4b9bde436283b8775ddff4a6dd40c",
+    "PEFT_TRACE.csv": "7b40fb6699428cfdb7e78d537d9ecca08b7fb27577f2ad42cb21ee6929a5141c",
+    "PEFT_CELL.csv": "a6215effe9cb1d2704107db4dba79e9de8f1e90c44145eed2fa1537f793edcb4",
+    "PEFT_BUDGETS.csv": "c6ea95076c50a9cdec40cfbe892d103a03423e5825c9397f8b1902a074c84fad",
+    "PEFT_SUMMARY.csv": "d3afe1dc0b7cc8763dc754bd38d24576add82c60a153d3a53b861b01829ebaa9"
+  }
+}
