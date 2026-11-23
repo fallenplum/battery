@@ -1,0 +1,55 @@
+{
+  "status": "LOCKED_BEFORE_NEW_FAMILY_PREDICTION",
+  "family": "SNL",
+  "methods": [
+    "HEAD_ONLY_TRAIN",
+    "HEAD_LORA",
+    "HEAD_BRIDGE_LORA"
+  ],
+  "target_ids": [
+    "SNL_18650_LFP_25C_0-100_0.5-0.5C_a",
+    "SNL_18650_NCA_15C_0-100_0.5-1C_a",
+    "SNL_18650_NCA_15C_0-100_0.5-1C_b",
+    "SNL_18650_NCA_25C_0-100_0.5-0.5C_a",
+    "SNL_18650_NCA_25C_0-100_0.5-0.5C_b",
+    "SNL_18650_NCA_25C_0-100_0.5-1C_a",
+    "SNL_18650_NCA_25C_0-100_0.5-1C_b",
+    "SNL_18650_NCA_25C_0-100_0.5-1C_c",
+    "SNL_18650_NCA_25C_0-100_0.5-1C_d",
+    "SNL_18650_NCA_25C_20-80_0.5-0.5C_a",
+    "SNL_18650_NCA_25C_20-80_0.5-0.5C_b",
+    "SNL_18650_NCA_25C_20-80_0.5-0.5C_c",
+    "SNL_18650_NCA_25C_20-80_0.5-0.5C_d",
+    "SNL_18650_NCA_35C_0-100_0.5-1C_a",
+    "SNL_18650_NCA_35C_0-100_0.5-1C_b",
+    "SNL_18650_NCA_35C_0-100_0.5-1C_c",
+    "SNL_18650_NCA_35C_0-100_0.5-1C_d",
+    "SNL_18650_NMC_15C_0-100_0.5-1C_a",
+    "SNL_18650_NMC_15C_0-100_0.5-1C_b",
+    "SNL_18650_NMC_25C_0-100_0.5-0.5C_b",
+    "SNL_18650_NMC_25C_0-100_0.5-1C_a",
+    "SNL_18650_NMC_25C_0-100_0.5-1C_b",
+    "SNL_18650_NMC_25C_0-100_0.5-1C_c",
+    "SNL_18650_NMC_25C_0-100_0.5-1C_d",
+    "SNL_18650_NMC_35C_0-100_0.5-1C_a",
+    "SNL_18650_NMC_35C_0-100_0.5-1C_b",
+    "SNL_18650_NMC_35C_0-100_0.5-1C_c",
+    "SNL_18650_NMC_35C_0-100_0.5-1C_d"
+  ],
+  "input_channels": 12,
+  "prediction_grid": [
+    101,
+    5000
+  ],
+  "source_config_sha256": "269ca64be677cf3c17213472355bc622fc95b0c32611d3f936b968d5fa1df11b",
+  "prefix_cache_sha256": "9ff31c33c8483de4ee8a4f2db3ac30b8ff29088019d4ef0700a84a3fe10931c6",
+  "common_checkpoint_sha256": {
+    "0": "0eb1e8437541de87bb5594d7e419dcd0d97e72a6be120413736541236037bf72",
+    "1": "25dfae3b2103cabbd81dcca7b32d016b1cbbc8edb883ed61c98527b42e714869",
+    "2": "a0b98348576ba1f6e4f8d33ea18afa9b95c1f47e15743c5b006738c88ff9e5c4"
+  },
+  "selection": "source MATR fit/tune only, minimum tune MAE then lower learning rate",
+  "target_future_labels_read": 0,
+  "prediction_status": "PENDING",
+  "historical_exposure_risk": "The family is absent from the current Head-aware method-selection records. Generic BatteryLife baseline exposure is not independently ruled out."
+}

@@ -1,0 +1,39 @@
+{
+  "status": "LOCKED_BEFORE_NEW_FAMILY_PREDICTION",
+  "family": "CALCE",
+  "methods": [
+    "HEAD_ONLY_TRAIN",
+    "HEAD_LORA",
+    "HEAD_BRIDGE_LORA"
+  ],
+  "target_ids": [
+    "CALCE_CS2_33",
+    "CALCE_CS2_34",
+    "CALCE_CS2_35",
+    "CALCE_CS2_36",
+    "CALCE_CS2_37",
+    "CALCE_CS2_38",
+    "CALCE_CX2_33",
+    "CALCE_CX2_34",
+    "CALCE_CX2_35",
+    "CALCE_CX2_36",
+    "CALCE_CX2_37",
+    "CALCE_CX2_38"
+  ],
+  "input_channels": 12,
+  "prediction_grid": [
+    101,
+    5000
+  ],
+  "source_config_sha256": "269ca64be677cf3c17213472355bc622fc95b0c32611d3f936b968d5fa1df11b",
+  "prefix_cache_sha256": "33b305a7749336069abac7cd44965702e8bf9185bcaa391209b08d61aedccebb",
+  "common_checkpoint_sha256": {
+    "0": "0eb1e8437541de87bb5594d7e419dcd0d97e72a6be120413736541236037bf72",
+    "1": "25dfae3b2103cabbd81dcca7b32d016b1cbbc8edb883ed61c98527b42e714869",
+    "2": "a0b98348576ba1f6e4f8d33ea18afa9b95c1f47e15743c5b006738c88ff9e5c4"
+  },
+  "selection": "source MATR fit/tune only, minimum tune MAE then lower learning rate",
+  "target_future_labels_read": 0,
+  "prediction_status": "PENDING",
+  "historical_exposure_risk": "The family is absent from the current Head-aware method-selection records. Generic BatteryLife baseline exposure is not independently ruled out."
+}
