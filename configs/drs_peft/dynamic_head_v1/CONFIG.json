@@ -1,0 +1,22 @@
+{
+  "study_id": "DYNAMIC_HEAD_CALIBRATION_SOURCE_V1",
+  "parent_config": "configs/drs_peft/self_reference_v1/CONFIG.json",
+  "domain": "MATR",
+  "seed": 42,
+  "input_channels": 12,
+  "prefix_cycles": 100,
+  "future_grid": [101, 5000],
+  "methods": ["HEAD_ONLY_TRAIN", "CONST_HEAD_R4", "DYNAMIC_HEAD_R4"],
+  "dynamic_rank": 4,
+  "dynamic_conditioning": "24-dimensional prefix-only z=[masked_channel_mean, last_valid_channel_value] from the 12 native channels",
+  "dynamic_parameterization": "anchor-preserving final-head correction; train only a rank-4 hidden-direction basis and a z-to-coefficient mapper",
+  "dynamic_parameters": 228,
+  "adapter_rates": [0.0001, 0.001],
+  "epochs": [2, 4, 8],
+  "train_batch_size": 8,
+  "gradient_clip_norm": 1.0,
+  "selection": "minimum tune MAE, then lower learning rate",
+  "source_roles": "registered self_reference_v1 fit/tune/screen; target and outer labels unopened",
+  "target_future_label_access": false,
+  "outer_label_access": false
+}
