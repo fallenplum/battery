@@ -43,7 +43,7 @@ def current_reference(cycles: list[dict], nominal: float) -> float | None:
     return float(np.median(values)) if values else None
 
 
-def qv_curve(cycle: dict, reference_current: float | None, nominal: float, grid: np.ndarray, current_tolerance: float) -> tuple[np.ndarray, np.ndarray] | None:
+def qv_curve(cycle: dict, reference_current: float | None, nominal: float, grid: np.ndarray, current_tolerance: float, min_voltage_points: int) -> tuple[np.ndarray, np.ndarray] | None:
     voltage = np.asarray(cycle.get("voltage_in_V", []), dtype=float)
     current = np.asarray(cycle.get("current_in_A", []), dtype=float)
     capacity = np.asarray(cycle.get("discharge_capacity_in_Ah", []), dtype=float)
@@ -63,7 +63,7 @@ def qv_curve(cycle: dict, reference_current: float | None, nominal: float, grid:
     voltage, capacity = voltage[order], capacity[order]
     voltage, unique = np.unique(voltage, return_index=True)
     capacity = capacity[unique]
-    if len(voltage) < 12 or voltage[0] > grid[0] or voltage[-1] < grid[-1]:
+    if len(voltage) < min_voltage_points or voltage[0] > grid[0] or voltage[-1] < grid[-1]:
         return None
     q_grid = np.interp(grid, voltage, capacity).astype(np.float32)
     return q_grid, np.full_like(q_grid, -reference_current / nominal, dtype=np.float32)
@@ -82,7 +82,7 @@ def stats(raw: np.ndarray) -> np.ndarray:
     return np.concatenate((mean, deviation, span, covariance)).astype(np.float32)
 
 
-def inspect_cell(path: Path, grid: np.ndarray, current_tolerance: float) -> tuple[dict, np.ndarray, np.ndarray, np.ndarray, np.ndarray, float] | None:
+def inspect_cell(path: Path, grid: np.ndarray, current_tolerance: float, min_voltage_points: int, min_curve_rows: int) -> tuple[dict, np.ndarray, np.ndarray, np.ndarray, np.ndarray, float] | None:
     with path.open("rb") as handle:
         payload = pickle.load(handle)
     cycles = payload["cycle_data"]
@@ -95,16 +95,19 @@ def inspect_cell(path: Path, grid: np.ndarray, current_tolerance: float) -> tupl
     capacities: dict[int, float] = {}
     for cycle in prefix:
         number = int(cycle["cycle_number"])
-        curve = qv_curve(cycle, reference_current, nominal, grid, current_tolerance)
+        curve = qv_curve(cycle, reference_current, nominal, grid, current_tolerance, min_voltage_points)
         if curve is not None:
             curves[number] = curve
         q = np.asarray(cycle.get("discharge_capacity_in_Ah", []), dtype=float)
         if len(q) and np.isfinite(q).any():
             capacities[number] = float(np.nanmax(q) / nominal)
     valid = sorted(curves)
-    if len(valid) < MIN_CURVE_ROWS or not set(range(1, PREFIX + 1)).issubset(curves):
+    if len(valid) < min_curve_rows:
         return None
-    reference = np.median(np.stack([curves[n][0] for n in valid if n <= 10]), axis=0)
+    reference_sources = [curves[n][0] for n in valid if n <= 10]
+    if not reference_sources:
+        return None
+    reference = np.median(np.stack(reference_sources), axis=0)
     if not np.isfinite(reference).all():
         return None
     real = np.zeros((PREFIX, 12), dtype=np.float32)
@@ -112,6 +115,8 @@ def inspect_cell(path: Path, grid: np.ndarray, current_tolerance: float) -> tupl
     mask = np.zeros((PREFIX, 12), dtype=bool)
     cycles_out = np.zeros(PREFIX, dtype=np.int64)
     for n in range(1, PREFIX + 1):
+        if n not in curves:
+            continue
         q_grid, current_grid = curves[n]
         drift = q_grid - reference
         raw = np.stack((grid, current_grid, q_grid / nominal, drift / nominal), axis=-1)
@@ -141,12 +146,14 @@ def main() -> None:
     parser.add_argument("--voltage-min", type=float, default=2.8)
     parser.add_argument("--voltage-max", type=float, default=3.3)
     parser.add_argument("--current-tolerance", type=float, default=0.0)
+    parser.add_argument("--min-voltage-points", type=int, default=12)
+    parser.add_argument("--min-curve-rows", type=int, default=MIN_CURVE_ROWS)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     rows, features, references, masks, cycles, anchors = [], [], [], [], [], []
     grid = np.linspace(args.voltage_min, args.voltage_max, 64, dtype=np.float32)
     for path in sorted((args.dataset_root / args.family).glob("*.pkl")):
-        result = inspect_cell(path, grid, args.current_tolerance)
+        result = inspect_cell(path, grid, args.current_tolerance, args.min_voltage_points, args.min_curve_rows)
         if result is None:
             continue
         metadata, real, reference, mask, cycle_ids, anchor = result
@@ -184,7 +191,7 @@ def main() -> None:
         "source_selection_labels_read": 0,
         "cache_sha256": sha256(args.output / "PAIRED_PREFIXES.npz"),
         "metadata_sha256": sha256(args.output / "CELL_METADATA.csv"),
-        "preprocessing": f"BatteryLife {args.family} pickle, discharge active-segment rule with current_tolerance={args.current_tolerance}, common {args.voltage_min}-{args.voltage_max}V grid, cycle-statistics 12 channels",
+        "preprocessing": f"BatteryLife {args.family} pickle, discharge active-segment rule with current_tolerance={args.current_tolerance}, common {args.voltage_min}-{args.voltage_max}V grid, min_voltage_points={args.min_voltage_points}, min_curve_rows={args.min_curve_rows}, cycle-statistics 12 channels",
         "cells": rows,
     }
     (args.output / "PREFIX_CACHE_RECEIPT.json").write_text(

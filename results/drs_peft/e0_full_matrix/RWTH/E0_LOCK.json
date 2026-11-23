@@ -1,0 +1,78 @@
+{
+  "status": "E0_LOCKED_BEFORE_TARGET_LABELS",
+  "family": "RWTH",
+  "methods": [
+    "WARMUP_ONLY",
+    "LORA_12",
+    "HEAD_ONLY_TRAIN",
+    "HEAD_LORA",
+    "HEAD_BRIDGE_TRAIN",
+    "HEAD_BRIDGE_LORA",
+    "FULL_FT_TUNED"
+  ],
+  "target_ids": [
+    "RWTH_002",
+    "RWTH_003",
+    "RWTH_004",
+    "RWTH_005",
+    "RWTH_006",
+    "RWTH_007",
+    "RWTH_008",
+    "RWTH_009",
+    "RWTH_010",
+    "RWTH_011",
+    "RWTH_012",
+    "RWTH_013",
+    "RWTH_015",
+    "RWTH_016",
+    "RWTH_017",
+    "RWTH_018",
+    "RWTH_020",
+    "RWTH_021",
+    "RWTH_022",
+    "RWTH_023",
+    "RWTH_024",
+    "RWTH_026",
+    "RWTH_027",
+    "RWTH_028",
+    "RWTH_029",
+    "RWTH_030",
+    "RWTH_031",
+    "RWTH_032",
+    "RWTH_033",
+    "RWTH_035",
+    "RWTH_036",
+    "RWTH_037",
+    "RWTH_039",
+    "RWTH_041",
+    "RWTH_043",
+    "RWTH_045",
+    "RWTH_046",
+    "RWTH_047",
+    "RWTH_048",
+    "RWTH_049"
+  ],
+  "input_channels": 12,
+  "prefix_cache_sha256": "d6bd12f12c1b7361944e57683f85b3c8b44978743d5bd835a7a2d4c3a8d496d1",
+  "source_config_sha256": "269ca64be677cf3c17213472355bc622fc95b0c32611d3f936b968d5fa1df11b",
+  "source_selection": "MATR fit/tune only",
+  "target_future_labels_read": 0,
+  "window_rule": [
+    [
+      101,
+      200
+    ],
+    [
+      201,
+      500
+    ],
+    [
+      501,
+      1000
+    ],
+    [
+      1001,
+      5000
+    ]
+  ]
+}

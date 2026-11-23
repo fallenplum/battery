@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE_E3_HUST_RETROSPECTIVE_AUDIT",
+  "target_query_count": 39,
+  "eol80_events": 0,
+  "methods": [
+    "WARMUP_ONLY",
+    "LORA_12",
+    "HEAD_ONLY_TRAIN",
+    "HEAD_LORA",
+    "HEAD_BRIDGE_TRAIN",
+    "HEAD_BRIDGE_LORA",
+    "FULL_FT_TUNED"
+  ],
+  "seeds": [
+    123,
+    3407
+  ],
+  "feature_shift_relations": [
+    {
+      "gain": "gain_vs_HEAD_ONLY_TRAIN",
+      "spearman_r": -0.11215669110405953,
+      "cells": 38
+    },
+    {
+      "gain": "gain_vs_HEAD_LORA",
+      "spearman_r": -0.21523142575774157,
+      "cells": 38
+    }
+  ],
+  "eol80_grouping": "forbidden because events are 0/77"
+}
