@@ -1,0 +1,75 @@
+{
+  "family": "SNL",
+  "cells": 28,
+  "features": 60,
+  "comparisons": {
+    "HEAD_ONLY_TRAIN": {
+      "gain_definition": "HEAD_ONLY_TRAIN_MAE_minus_HEAD_BRIDGE_LORA_MAE",
+      "gain_mean": 0.003666104969977338,
+      "gain_positive_fraction": 0.5357142857142857,
+      "loo_r2": -0.3129558061492095,
+      "loo_sign_accuracy": 0.8571428571428571,
+      "top_spearman_features": [
+        [
+          "last20_9",
+          0.3488739453103447,
+          0.7219485495347564
+        ],
+        [
+          "last20_7",
+          0.3271299991921581,
+          0.7192118226600985
+        ],
+        [
+          "late_minus_early_7",
+          0.6711486011324272,
+          0.6995073891625616
+        ],
+        [
+          "late_minus_early_9",
+          0.6966202388649304,
+          0.6973180076628351
+        ],
+        [
+          "mean_2",
+          0.6801447777505962,
+          0.6672140120415982
+        ]
+      ]
+    },
+    "HEAD_LORA": {
+      "gain_definition": "HEAD_LORA_MAE_minus_HEAD_BRIDGE_LORA_MAE",
+      "gain_mean": 0.004713691744933873,
+      "gain_positive_fraction": 0.6428571428571429,
+      "loo_r2": -0.3333959313889716,
+      "loo_sign_accuracy": 0.8928571428571429,
+      "top_spearman_features": [
+        [
+          "late_minus_early_7",
+          0.6662673828968334,
+          0.7192118226600985
+        ],
+        [
+          "last20_9",
+          0.35124364892738713,
+          0.7170224411603723
+        ],
+        [
+          "late_minus_early_9",
+          0.691392579567351,
+          0.7170224411603723
+        ],
+        [
+          "last20_7",
+          0.33305664086164266,
+          0.715927750410509
+        ],
+        [
+          "mean_2",
+          0.5908396541457421,
+          0.629447181171319
+        ]
+      ]
+    }
+  }
+}

@@ -6,6 +6,7 @@
 2. CALCE/SNL 四窗口误差与逐电芯残差诊断。
 3. CALCE/SNL 的 Warmup、LoRA-12、Full FT 回顾性补充比较。
 4. MICH/RWTH 的三方法主矩阵和三种回顾性补充矩阵预先锁定。
+5. 使用前 100 圈摘要做 Bridge 相对收益的事后可预测性诊断。
 
 ## 当前结果
 
@@ -28,5 +29,5 @@ MICH 和 RWTH 只完成 prefix-only 资格审计和矩阵锁定，尚未构建 c
 
 ## 研究判断
 
-当前证据支持保留 `HEAD_BRIDGE_LORA` 作为总体优先候选，但 SNL 化学体系分组方向不一致，尚不能把 Bridge 的收益归因于所有电芯都共享同一结构优势。下一步应使用 MICH/RWTH 的锁定矩阵复核，并分析前 100 圈输入是否能在新 family 中预测 Bridge 的相对收益。
+当前证据支持保留 `HEAD_BRIDGE_LORA` 作为总体优先候选，但 SNL 化学体系分组方向不一致，尚不能把 Bridge 的收益归因于所有电芯都共享同一结构优势。前 100 圈摘要对 CALCE 的 Bridge 收益有小样本拟合信号，对 SNL 的留一 R² 为负，尚不能启动动态状态条件化方法。下一步应使用 MICH/RWTH 的锁定矩阵复核。
 
